@@ -384,7 +384,7 @@ export class Nav extends React.Component {
           </NavSection>
 
           <NavSection text="应用容器" icon="fa fa-folder-open-o">
-            <ResourceNSLink resource="pods" name="Pods" onClick={this.close} />
+            <ResourceNSLink resource="pods" name="容器组" onClick={this.close} />
             <ResourceNSLink resource="deployments" name="Deployments" onClick={this.close} />
             <ResourceNSLink resource="deploymentconfigs" name={DeploymentConfigModel.labelPlural} onClick={this.close} required={FLAGS.OPENSHIFT} />
             <ResourceNSLink resource="statefulsets" name="Stateful Sets" onClick={this.close} />
