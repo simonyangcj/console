@@ -383,7 +383,7 @@ export class Nav extends React.Component {
             <ResourceNSLink model={InstallPlanModel} resource={InstallPlanModel.plural} name="Install Plans" onClick={this.close} />
           </NavSection>
 
-          <NavSection text="Workloads" icon="fa fa-folder-open-o">
+          <NavSection text="应用容器" icon="fa fa-folder-open-o">
             <ResourceNSLink resource="pods" name="Pods" onClick={this.close} />
             <ResourceNSLink resource="deployments" name="Deployments" onClick={this.close} />
             <ResourceNSLink resource="deploymentconfigs" name={DeploymentConfigModel.labelPlural} onClick={this.close} required={FLAGS.OPENSHIFT} />
