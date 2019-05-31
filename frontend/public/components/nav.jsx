@@ -369,7 +369,7 @@ export class Nav extends React.Component {
       <div id="sidebar" className={classNames({'open': isOpen})}>
         <ClusterPickerNavSection />
         <div ref={this.scroller} onWheel={this.preventScroll} className="navigation-container">
-          <NavSection text="Home" icon="pficon pficon-home">
+          <NavSection text="首页" icon="pficon pficon-home">
             <HrefLink href="/status" name="Status" activePath="/status/" onClick={this.close} />
             <HrefLink href="/search" name="Search" onClick={this.close} startsWith={searchStartsWith} />
             <ResourceNSLink resource="events" name="Events" onClick={this.close} />
@@ -387,7 +387,7 @@ export class Nav extends React.Component {
             <ResourceNSLink resource="pods" name="容器组" onClick={this.close} />
             <ResourceNSLink resource="deployments" name="容器复制器" onClick={this.close} />
             {/* <ResourceNSLink resource="deploymentconfigs" name={DeploymentConfigModel.labelPlural} onClick={this.close} required={FLAGS.OPENSHIFT} /> */}
-            <ResourceNSLink resource="deploymentconfigs" name="简易容器复制器" onClick={this.close} required={FLAGS.OPENSHIFT} /> 
+            <ResourceNSLink resource="deploymentconfigs" name="简易容器复制器" onClick={this.close} required={FLAGS.OPENSHIFT} />
             <ResourceNSLink resource="statefulsets" name="Stateful Sets" onClick={this.close} />
             <ResourceNSLink resource="secrets" name="Secrets" onClick={this.close} />
             <ResourceNSLink resource="configmaps" name="Config Maps" onClick={this.close} />
@@ -400,7 +400,7 @@ export class Nav extends React.Component {
             <ResourceNSLink resource="horizontalpodautoscalers" name="HPAs" onClick={this.close} />
           </NavSection>
 
-          <NavSection text="Networking" img={routingImg} activeImg={routingActiveImg} >
+          <NavSection text="网络" img={routingImg} activeImg={routingActiveImg} >
             <ResourceNSLink resource="services" name="Services" onClick={this.close} />
             <ResourceNSLink resource="routes" name="Routes" onClick={this.close} required={FLAGS.OPENSHIFT} />
             <ResourceNSLink resource="ingresses" name="Ingress" onClick={this.close} />
