@@ -1,0 +1,53 @@
+$primary-color: #1890ff;
+/* 全局主色 */
+$background-color: #f0f2f5;
+/* 背景灰色 */
+$background-hover-color-gray: rgba(0, 0, 0, .025);
+/* 选中背景灰色 */
+$background-hover-color-blue: #e6f7ff;
+/* 选中背景蓝色 */
+$link-color: #1890ff;
+/* 链接色 */
+$link-hover-color: #40a9ff;
+$success-color: #52c41a;
+/* 成功色 */
+$warning-color: #faad14;
+/* 警告色 */
+$error-color: #f5222d;
+/* 错误色 */
+$font-size-base: 14px;
+/* 主字号 */
+$heading-color: rgba(0, 0, 0, 0.85);
+/* 标题色 */
+$text-color: rgba(0, 0, 0, 0.65);
+/* 主文本色 */
+$text-color-secondary: rgba(0, 0, 0, .45);
+/* 次文本色 */
+$disabled-color: rgba(0, 0, 0, .25);
+$border-radius-base: 4px;
+/* 组件/浮层圆角 */
+$border-color-base: #d9d9d9;
+/* 边框色 */
+$box-shadow-base: 0 2px 8px rgba(0, 0, 0, 0.15);
+/* 浮层阴影 */
+$menu-color: rgb(0, 21, 41);
+$menu-color-sub: rgb(0, 12, 23);
+
+body {
+    color: $text-color;
+}
+.co-masthead {
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 21, 41, .08);
+    color: $text-color;
+}
+.contextselector-pf .bootstrap-select>.dropdown-toggle:hover {
+    background-color: $background-hover-color-gray;
+    color: var(--text-color);
+}
+a {
+    color: $link-color;
+}
+a:hover {
+    color: $link-hover-color;
+}
