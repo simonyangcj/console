@@ -15,7 +15,13 @@
     "test-gui-openshift": "yarn run test-suite --suite crud --params.openshift true",
     "test-gui": "yarn run test-suite --suite all",
     "test-suite": "ts-node -O '{\"module\":\"commonjs\"}' ./node_modules/.bin/protractor integration-tests/protractor.conf.ts",
-    "analyze": "NODE_ENV=production ts-node -O '{\"module\":\"commonjs\"}' ./node_modules/.bin/webpack --mode=production --profile --json | awk '{if(NR>2)print}' > public/dist/stats.json && ts-node -O '{\"module\":\"commonjs\"}' ./node_modules/.bin/webpack-bundle-analyzer --mode static -r public/dist/report.html public/dist/stats.json"
+    "analyze": "NODE_ENV=production ts-node -O '{\"module\":\"commonjs\"}' ./node_modules/.bin/webpack --mode=production --profile --json | awk '{if(NR>2)print}' > public/dist/stats.json && ts-node -O '{\"module\":\"commonjs\"}' ./node_modules/.bin/webpack-bundle-analyzer --mode static -r public/dist/report.html public/dist/stats.json",
+    "collect": "find -regex \".*\\.js\\|.*\\.jsx\\|.*\\.tsx\" -not -path \"./node_modules/*\" > list && xgettext --files-from=list --language=javascript --from-code=UTF-8 --no-location -j -o messages.pot",
+    "collect2": "node collect-pot.js",
+    "makemessage:zh": "msgmerge messages.po messages.pot -o messages.po && po2json --pretty --format=mf messages.po public/components/utils/locale/zh-cn.json",
+    "makemessage:zh2": "msgmerge messages.po messages.pot -o messages.po",
+    "makemessage:zh3": "po2json --pretty --format=mf messages.po public/components/utils/locale/zh-cn.json",
+    "makemessage:en": "po2json --pretty --format=mf messages.pot public/components/utils/locale/en-us.json"
   },
   "jest": {
     "moduleFileExtensions": [
@@ -124,8 +130,10 @@
     "jasmine-reporters": "2.x",
     "jest": "21.x",
     "jest-cli": "21.x",
+    "js-cookie": "^2.2.0",
     "mini-css-extract-plugin": "0.4.x",
-    "node-sass": "4.8.x",
+    "node-sass": "^4.8.3",
+    "po2json": "^1.0.0-alpha",
     "protractor": "5.x",
     "protractor-fail-fast": "3.x",
     "protractor-jasmine2-screenshot-reporter": "0.5.x",
@@ -140,7 +148,9 @@
     "typescript-eslint-parser": "16.0.1",
     "webpack": "4.12.0",
     "webpack-bundle-analyzer": "2.x",
-    "webpack-cli": "^2.0.12"
+    "webpack-cli": "^2.0.12",
+    "gettext-extractor": "^3.4.3",
+    "commonjs": "0.0.1"
   },
   "engines": {
     "node": ">=8.x <=10.x"

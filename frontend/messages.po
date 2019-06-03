@@ -1,0 +1,16 @@
+msgid ""
+msgstr ""
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-06-03 16:48+0800\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Language: CN -> EN"
+msgstr ""
+
+msgid "Language: EN -> CN"
+msgstr ""
+
+msgid "Logout"
+msgstr ""
+

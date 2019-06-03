@@ -41,13 +41,132 @@ body {
     box-shadow: 0 2px 8px rgba(0, 21, 41, .08);
     color: $text-color;
 }
+.contextselector-pf .bootstrap-select>.dropdown-toggle {
+    color: var(--text-color);
+}
 .contextselector-pf .bootstrap-select>.dropdown-toggle:hover {
     background-color: $background-hover-color-gray;
     color: var(--text-color);
+}
+.contextselector-pf .dropdown.open, .contextselector-pf .dropdown:hover {
+    background-color: $background-hover-color-gray;
 }
 a {
     color: $link-color;
 }
 a:hover {
     color: $link-hover-color;
+}
+.dropdown-menu>.active>a, .dropdown-menu>.active>a:hover, .dropdown-menu>.active>a:focus {
+    background-color: $primary-color !important;
+    border-color: $primary-color !important;
+}
+.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus {
+    background-color: $background-hover-color-blue;
+}
+.dropdown-menu>li>a:active {
+    background-color: $primary-color !important;
+    border-color: $primary-color !important;    
+}
+.navigation-container__section, .navigation-container__section__separator {
+    border-bottom: none;
+}
+#sidebar {
+    background-color: $menu-color;
+    color: $text-color;
+}
+.navigation-container__section__title {
+    color: $text-color;
+}
+.navigation-container__section__title__icon {
+    color: $text-color;
+}
+.navigation-container__section__title__icon--active {
+    color: #fff;
+}
+.co-m-nav-link.active {
+    border-left: 3px solid $menu-color;
+}
+.co-m-nav-link a:hover {
+    color: #fff;
+}
+.btn-primary:active:hover, .btn-primary:active:focus, .btn-primary:active.focus, .btn-primary.active:hover, .btn-primary.active:focus, .btn-primary.active.focus, .btn-primary .open .dropdown-toggle.btn-primary:hover, .btn-primary .open .dropdown-toggle.btn-primary:focus, .btn-primary .open .dropdown-toggle.btn-primary.focus {
+    background-color: $primary-color;
+    border-color: $primary-color;
+}
+.btn-primary {
+    background-color: $primary-color;
+    border-color: $primary-color;
+    background-image: none;
+}
+  
+.btn-primary.active,
+.btn-primary:active,
+.btn-primary:focus,
+.btn-primary:hover,
+.open .dropdown-toggle.btn-primary {
+    background-color: $primary-color;
+    border-color: $primary-color;
+}
+  
+.btn-primary.active.focus,
+.btn-primary.active:focus,
+.btn-primary.active:hover,
+.btn-primary:active.focus,
+.btn-primary:active:focus,
+.btn-primary:active:hover,
+.open .dropdown-toggle.btn-primary.focus,
+.open .dropdown-toggle.btn-primary:focus,
+.open .dropdown-toggle.btn-primary:hover {
+    background-color: $primary-color;
+    border-color: $primary-color;
+}
+
+.btn-primary:focus,
+.btn-primary:hover {
+    color: #fff;
+    background-color: $link-hover-color;
+    border-color: $link-hover-color;
+}
+.co-m-resource-namespace, .co-m-resource-project {
+    background-color: $success-color;
+}
+.co-m-cog {
+    color: $text-color-secondary;
+}
+.co-m-table-grid__head {
+    color: $text-color-secondary;
+}
+.text-muted {
+    color: $text-color-secondary;
+}
+.form-control {
+    color: $text-color;
+    border: 1px solid $border-color-base;
+    border-radius: $border-radius-base;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+}
+.form-control:hover {
+    border-color:var(--primary-color);
+    border-right-width: 1px !important;
+    box-shadow: none;
+}
+.form-control:focus {
+    border-color:var(--primary-color);
+    box-shadow: rgba(24, 144, 255, 0.2) 0px 0px 0px 2px;
+    border-right-width: 1px !important;
+}
+.co-namespace-selector {
+    background-color: $menu-color;
+    color: $text-color;
+}
+.row-filter--box__active {
+    outline: 1px solid $primary-color;
+}
+.row-filter--box__empty {
+    color: $text-color-secondary;
+}
+.row-filter--box__active {
+    background-color: $link-hover-color;
 }

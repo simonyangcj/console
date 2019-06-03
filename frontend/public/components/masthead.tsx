@@ -9,10 +9,11 @@ import * as dedicatedLogoImg from '../imgs/openshift-dedicated-logo.svg';
 import * as azureLogoImg from '../imgs/azure-red-hat-openshift-logo.svg';
 import { FLAGS, connectToFlags, flagPending } from '../features';
 import { authSvc } from '../module/auth';
-import { Dropdown, ActionsMenu } from './utils';
+import { Dropdown, ActionsMenu, gettext } from './utils';
 
 import { coFetchJSON } from '../co-fetch';
 import { SafetyFirst } from './safety-first';
+import cookie from 'js-cookie';
 
 const developerConsoleURL = (window as any).SERVER_FLAGS.developerConsoleURL;
 
@@ -46,10 +47,29 @@ const UserMenuWrapper = connectToFlags(FLAGS.AUTH_ENABLED, FLAGS.OPENSHIFT)((pro
       }
     };
     actions.push({
-      label: 'Logout',
+      label: gettext('Logout'),
       callback: logout
     });
   }
+  const handleLanguage = (v) => {
+    (window as any).locale = v;
+    cookie.set('locale', v);
+    location.reload();
+  }
+  console.log(gettext('%s hello', 'abc'));
+  const lanuageTitle = () => {
+    const currentLanguage = cookie.get('locale') || 'zh-cn';
+    return currentLanguage === 'zh-cn' ? gettext('Language: CN -> EN') : gettext('Language: EN -> CN');
+  }
+  const changeLanguage = e => {
+    e.preventDefault();
+    const currentLanguage = cookie.get('locale') || 'zh-cn';
+    currentLanguage === 'zh-cn' ? handleLanguage('en-us') : handleLanguage('zh-cn');
+  }
+  actions.push({
+    label: lanuageTitle(),
+    callback: changeLanguage
+  });
 
   if (props.flags[FLAGS.OPENSHIFT]) {
     return <OSUserMenu actions={actions} />;
@@ -125,11 +145,14 @@ export const LogoImage = () => {
       break;
     default:
       logoImg = okdLogoImg;
+      logoImg = require("../imgs/logo.png");
       logoAlt = 'OKD';
   }
 
   return <div className="co-masthead__logo">
+    {/* <Link to="/" className="co-masthead__logo-link"><img src={logoImg} alt={logoAlt} /></Link> */}
     <Link to="/" className="co-masthead__logo-link"><img src={logoImg} alt={logoAlt} /></Link>
+    
   </div>;
 };
 
