@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import * as _ from 'lodash-es';
 import { Link } from 'react-router-dom';
-import * as okdLogoImg from '../imgs/okd-logo.svg';
+import * as okdLogoImg from '../imgs/logo.png';
 import * as ocpLogoImg from '../imgs/openshift-platform-logo.svg';
 import * as onlineLogoImg from '../imgs/openshift-online-logo.svg';
 import * as dedicatedLogoImg from '../imgs/openshift-dedicated-logo.svg';
