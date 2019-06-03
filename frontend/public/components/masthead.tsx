@@ -37,20 +37,7 @@ const UserMenuWrapper = connectToFlags(FLAGS.AUTH_ENABLED, FLAGS.OPENSHIFT)((pro
   }
 
   const actions: Actions = [];
-  if (props.flags[FLAGS.AUTH_ENABLED]) {
-    const logout = e => {
-      e.preventDefault();
-      if (props.flags[FLAGS.OPENSHIFT]) {
-        authSvc.deleteOpenShiftToken().then(() => authSvc.logout());
-      } else {
-        authSvc.logout();
-      }
-    };
-    actions.push({
-      label: gettext('Logout'),
-      callback: logout
-    });
-  }
+  
   const handleLanguage = (v) => {
     (window as any).locale = v;
     cookie.set('locale', v);
@@ -70,6 +57,21 @@ const UserMenuWrapper = connectToFlags(FLAGS.AUTH_ENABLED, FLAGS.OPENSHIFT)((pro
     label: lanuageTitle(),
     callback: changeLanguage
   });
+
+  if (props.flags[FLAGS.AUTH_ENABLED]) {
+    const logout = e => {
+      e.preventDefault();
+      if (props.flags[FLAGS.OPENSHIFT]) {
+        authSvc.deleteOpenShiftToken().then(() => authSvc.logout());
+      } else {
+        authSvc.logout();
+      }
+    };
+    actions.push({
+      label: gettext('Logout'),
+      callback: logout
+    });
+  }
 
   if (props.flags[FLAGS.OPENSHIFT]) {
     return <OSUserMenu actions={actions} />;

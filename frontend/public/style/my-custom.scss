@@ -76,10 +76,10 @@ a:hover {
     color: $text-color;
 }
 .navigation-container__section__title {
-    color: $text-color;
+    color: rgba(255, 255, 255, 0.65);
 }
 .navigation-container__section__title__icon {
-    color: $text-color;
+    color: rgba(255, 255, 255, 0.65);
 }
 .navigation-container__section__title__icon--active {
     color: #fff;
@@ -169,4 +169,11 @@ a:hover {
 }
 .row-filter--box__active {
     background-color: $link-hover-color;
+}
+// logo
+.co-masthead__logo {
+    width: 80px;
+}
+.co-masthead__logo-link {
+    height: 26px;
 }
