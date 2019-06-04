@@ -42,11 +42,11 @@ body {
     color: $text-color;
 }
 .contextselector-pf .bootstrap-select>.dropdown-toggle {
-    color: var(--text-color);
+    color: $text-color;
 }
 .contextselector-pf .bootstrap-select>.dropdown-toggle:hover {
     background-color: $background-hover-color-gray;
-    color: var(--text-color);
+    color: $text-color;
 }
 .contextselector-pf .dropdown.open, .contextselector-pf .dropdown:hover {
     background-color: $background-hover-color-gray;
@@ -104,6 +104,7 @@ a:hover {
     border-color: $primary-color;
     background-image: none;
     border-radius: $border-radius-base;
+    color: #fff;
 }
   
 .btn-primary.active,
@@ -136,6 +137,8 @@ a:hover {
 }
 .btn-default {
     color: $text-color;
+    background-color: #fff;
+    background-image: none;
 }
 .btn {
     color: $text-color;
@@ -187,7 +190,7 @@ a:hover {
     color: $text-color-secondary;
 }
 .row-filter--box__active {
-    background-color: $link-hover-color;
+    background-color: $background-hover-color-blue;
 }
 // logo
 .co-masthead__logo {
@@ -222,4 +225,11 @@ a:hover {
 }
 .co-m-loader-dot__one, .co-m-loader-dot__two, .co-m-loader-dot__three {
     background-color: $primary-color;
+}
+.co-sysevent-stream__connection-error {
+    color: $error-color;
+}
+.dropdown-toggle:focus {
+    outline: none;
+    outline-offset: 0;
 }
