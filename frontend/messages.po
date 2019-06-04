@@ -1,16 +1,19 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-03 16:48+0800\n"
+"POT-Creation-Date: 2019-06-04 09:40+0800\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 msgid "Language: CN -> EN"
-msgstr ""
+msgstr "语言：中文 -> 英文"
 
 msgid "Language: EN -> CN"
-msgstr ""
+msgstr "语言：英文 -> 中文"
 
 msgid "Logout"
-msgstr ""
+msgstr "退出"
 
+#, javascript-format
+msgid "%s hello"
+msgstr "{0} 你好"
