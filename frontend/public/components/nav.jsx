@@ -18,7 +18,7 @@ import * as operatorImg from '../imgs/operator.svg';
 import * as operatorActiveImg from '../imgs/operator-active.svg';
 import * as routingImg from '../imgs/routing.svg';
 import * as routingActiveImg from '../imgs/routing-active.svg';
-import { history, stripBasePath } from './utils';
+import { history, stripBasePath, gettext } from './utils';
 
 export const matchesPath = (resourcePath, prefix) => resourcePath === prefix || _.startsWith(resourcePath, `${prefix}/`);
 export const matchesModel = (resourcePath, model) => model && matchesPath(resourcePath, referenceForModel(model));
@@ -369,51 +369,51 @@ export class Nav extends React.Component {
       <div id="sidebar" className={classNames({'open': isOpen})}>
         <ClusterPickerNavSection />
         <div ref={this.scroller} onWheel={this.preventScroll} className="navigation-container">
-          <NavSection text="首页" icon="pficon pficon-home">
-            <HrefLink href="/status" name="Status" activePath="/status/" onClick={this.close} />
-            <HrefLink href="/search" name="Search" onClick={this.close} startsWith={searchStartsWith} />
-            <ResourceNSLink resource="events" name="Events" onClick={this.close} />
+          <NavSection text={gettext('Home')} icon="pficon pficon-home">
+            <HrefLink href="/status" name={gettext('Status')} activePath="/status/" onClick={this.close} />
+            <HrefLink href="/search" name={gettext('Search')} onClick={this.close} startsWith={searchStartsWith} />
+            <ResourceNSLink resource="events" name={gettext('Events')} onClick={this.close} />
           </NavSection>
 
-          <NavSection required={FLAGS.OPERATOR_LIFECYCLE_MANAGER} text="Operators" img={operatorImg} activeImg={operatorActiveImg} >
-            <ResourceNSLink model={ClusterServiceVersionModel} resource={ClusterServiceVersionModel.plural} name="Cluster Service Versions" onClick={this.close} />
+          <NavSection required={FLAGS.OPERATOR_LIFECYCLE_MANAGER} text={gettext('Operators')} img={operatorImg} activeImg={operatorActiveImg} >
+            <ResourceNSLink model={ClusterServiceVersionModel} resource={ClusterServiceVersionModel.plural} name={gettext('Cluster Service Versions')} onClick={this.close} />
             <Sep />
-            <ResourceNSLink model={CatalogSourceModel} resource={CatalogSourceModel.plural} name="Catalog Sources" onClick={this.close} />
-            <ResourceNSLink model={SubscriptionModel} resource={SubscriptionModel.plural} name="Subscriptions" onClick={this.close} />
-            <ResourceNSLink model={InstallPlanModel} resource={InstallPlanModel.plural} name="Install Plans" onClick={this.close} />
+            <ResourceNSLink model={CatalogSourceModel} resource={CatalogSourceModel.plural} name={gettext('Catalog Sources')} onClick={this.close} />
+            <ResourceNSLink model={SubscriptionModel} resource={SubscriptionModel.plural} name={gettext('Subscriptions')} onClick={this.close} />
+            <ResourceNSLink model={InstallPlanModel} resource={InstallPlanModel.plural} name={gettext('Install Plans')} onClick={this.close} />
           </NavSection>
 
-          <NavSection text="应用容器" icon="fa fa-folder-open-o">
-            <ResourceNSLink resource="pods" name="容器组" onClick={this.close} />
-            <ResourceNSLink resource="deployments" name="容器复制器" onClick={this.close} />
+          <NavSection text={gettext('Workloads')} icon="fa fa-folder-open-o">
+            <ResourceNSLink resource="pods" name={gettext('Pods')} onClick={this.close} />
+            <ResourceNSLink resource="deployments" name={gettext('Deployments')} onClick={this.close} />
             {/* <ResourceNSLink resource="deploymentconfigs" name={DeploymentConfigModel.labelPlural} onClick={this.close} required={FLAGS.OPENSHIFT} /> */}
-            <ResourceNSLink resource="deploymentconfigs" name="简易容器复制器" onClick={this.close} required={FLAGS.OPENSHIFT} />
-            <ResourceNSLink resource="statefulsets" name="Stateful Sets" onClick={this.close} />
-            <ResourceNSLink resource="secrets" name="Secrets" onClick={this.close} />
-            <ResourceNSLink resource="configmaps" name="Config Maps" onClick={this.close} />
+            <ResourceNSLink resource="deploymentconfigs" name={DeploymentConfigModel.labelPlural} onClick={this.close} required={FLAGS.OPENSHIFT} />
+            <ResourceNSLink resource="statefulsets" name={gettext('Stateful Sets')} onClick={this.close} />
+            <ResourceNSLink resource="secrets" name={gettext('Secrets')} onClick={this.close} />
+            <ResourceNSLink resource="configmaps" name={gettext('Config Maps')} onClick={this.close} />
             <Sep />
-            <ResourceNSLink resource="cronjobs" name="Cron Jobs" onClick={this.close} />
-            <ResourceNSLink resource="jobs" name="Jobs" onClick={this.close} />
-            <ResourceNSLink resource="daemonsets" name="Daemon Sets" onClick={this.close} />
-            <ResourceNSLink resource="replicasets" name="Replica Sets" onClick={this.close} />
-            <ResourceNSLink resource="replicationcontrollers" name="Replication Controllers" onClick={this.close} />
-            <ResourceNSLink resource="horizontalpodautoscalers" name="HPAs" onClick={this.close} />
+            <ResourceNSLink resource="cronjobs" name={gettext('Cron Jobs')} onClick={this.close} />
+            <ResourceNSLink resource="jobs" name={gettext('Jobs')} onClick={this.close} />
+            <ResourceNSLink resource="daemonsets" name={gettext('Daemon Sets')} onClick={this.close} />
+            <ResourceNSLink resource="replicasets" name={gettext('Replica Sets')} onClick={this.close} />
+            <ResourceNSLink resource="replicationcontrollers" name={gettext('Replication Controllers')} onClick={this.close} />
+            <ResourceNSLink resource="horizontalpodautoscalers" name={gettext('HPAs')} onClick={this.close} />
           </NavSection>
 
-          <NavSection text="网络" img={routingImg} activeImg={routingActiveImg} >
-            <ResourceNSLink resource="services" name="Services" onClick={this.close} />
-            <ResourceNSLink resource="routes" name="Routes" onClick={this.close} required={FLAGS.OPENSHIFT} />
-            <ResourceNSLink resource="ingresses" name="Ingress" onClick={this.close} />
-            <ResourceNSLink resource="networkpolicies" name="Network Policies" onClick={this.close} />
+          <NavSection text={gettext('Networking')} img={routingImg} activeImg={routingActiveImg} >
+            <ResourceNSLink resource="services" name={gettext('Services')} onClick={this.close} />
+            <ResourceNSLink resource="routes" name={gettext('Routes')} onClick={this.close} required={FLAGS.OPENSHIFT} />
+            <ResourceNSLink resource="ingresses" name={gettext('Ingress')} onClick={this.close} />
+            <ResourceNSLink resource="networkpolicies" name={gettext('Network Policies')} onClick={this.close} />
           </NavSection>
 
-          <NavSection text="Storage" icon="pficon pficon-container-node">
-            <ResourceClusterLink resource="persistentvolumes" name="Persistent Volumes" onClick={this.close} required={FLAGS.CAN_LIST_PV} />
-            <ResourceNSLink resource="persistentvolumeclaims" name="Persistent Volume Claims" onClick={this.close} />
-            <ResourceClusterLink resource="storageclasses" name="Storage Classes" onClick={this.close} required={FLAGS.CAN_LIST_STORE} />
+          <NavSection text={gettext('Storage')} icon="pficon pficon-container-node">
+            <ResourceClusterLink resource="persistentvolumes" name={gettext('Persistent Volumes')} onClick={this.close} required={FLAGS.CAN_LIST_PV} />
+            <ResourceNSLink resource="persistentvolumeclaims" name={gettext('Persistent Volume Claims')} onClick={this.close} />
+            <ResourceClusterLink resource="storageclasses" name={gettext('Storage Classes')} onClick={this.close} required={FLAGS.CAN_LIST_STORE} />
           </NavSection>
 
-          <NavSection text="Builds" icon="pficon pficon-build">
+          <NavSection text={gettext('Builds')} icon="pficon pficon-build">
             <ResourceNSLink resource="buildconfigs" name={BuildConfigModel.labelPlural} onClick={this.close} required={FLAGS.OPENSHIFT} />
             <ResourceNSLink resource="builds" name={BuildModel.labelPlural} onClick={this.close} required={FLAGS.OPENSHIFT} />
             <ResourceNSLink resource="imagestreams" name={ImageStreamModel.labelPlural} onClick={this.close} required={FLAGS.OPENSHIFT} startsWith={imagestreamsStartsWith} />
@@ -421,17 +421,17 @@ export class Nav extends React.Component {
 
           <MonitoringNavSection closeMenu={this.close} />
 
-          <NavSection text="Administration" icon="fa fa-cog">
-            <ResourceClusterLink resource="projects" name="Projects" onClick={this.close} required={FLAGS.OPENSHIFT} />
-            <ResourceClusterLink resource="namespaces" name="Namespaces" onClick={this.close} required={FLAGS.CAN_LIST_NS} />
-            <ResourceClusterLink resource="nodes" name="Nodes" onClick={this.close} required={FLAGS.CAN_LIST_NODE} />
-            <HrefLink href="/settings/cluster" name="Cluster Settings" onClick={this.close} startsWith={clusterSettingsStartsWith} disallowed={FLAGS.OPENSHIFT} />
-            <ResourceNSLink resource="serviceaccounts" name="Service Accounts" onClick={this.close} />
-            <ResourceNSLink resource="roles" name="Roles" startsWith={rolesStartsWith} onClick={this.close} />
-            <ResourceNSLink resource="rolebindings" name="Role Bindings" onClick={this.close} startsWith={rolebindingsStartsWith} />
-            <ResourceNSLink resource="resourcequotas" name="Resource Quotas" onClick={this.close} />
-            <ResourceNSLink resource="chargeback.coreos.com:v1alpha1:Report" name="Chargeback" onClick={this.close} disallowed={FLAGS.OPENSHIFT} />
-            <ResourceClusterLink resource="customresourcedefinitions" name="CRDs" onClick={this.close} required={FLAGS.CAN_LIST_CRD} />
+          <NavSection text={gettext('Administration')} icon="fa fa-cog">
+            <ResourceClusterLink resource="projects" name={gettext('Projects')} onClick={this.close} required={FLAGS.OPENSHIFT} />
+            <ResourceClusterLink resource="namespaces" name={gettext('Namespaces')} onClick={this.close} required={FLAGS.CAN_LIST_NS} />
+            <ResourceClusterLink resource="nodes" name={gettext('Nodes')} onClick={this.close} required={FLAGS.CAN_LIST_NODE} />
+            <HrefLink href="/settings/cluster" name={gettext('Cluster Settings')} onClick={this.close} startsWith={clusterSettingsStartsWith} disallowed={FLAGS.OPENSHIFT} />
+            <ResourceNSLink resource="serviceaccounts" name={gettext('Service Accounts')} onClick={this.close} />
+            <ResourceNSLink resource="roles" name={gettext('Roles')} startsWith={rolesStartsWith} onClick={this.close} />
+            <ResourceNSLink resource="rolebindings" name={gettext('Role Bindings')} onClick={this.close} startsWith={rolebindingsStartsWith} />
+            <ResourceNSLink resource="resourcequotas" name={gettext('Resource Quotas')} onClick={this.close} />
+            <ResourceNSLink resource="chargeback.coreos.com:v1alpha1:Report" name={gettext('Chargeback')} onClick={this.close} disallowed={FLAGS.OPENSHIFT} />
+            <ResourceClusterLink resource="customresourcedefinitions" name={gettext('CRDs')} onClick={this.close} required={FLAGS.CAN_LIST_CRD} />
           </NavSection>
 
           <UserNavSection closeMenu={this.close} />

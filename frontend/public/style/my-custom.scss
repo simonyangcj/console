@@ -95,6 +95,15 @@ a:hover {
     color: #fff;
 }
 // btn
+.btn {
+    color: $text-color;
+    border: 1px solid $border-color-base;
+    border-radius: $border-radius-base;
+}
+.btn:focus, .btn.focus, .btn:active:focus, .btn:active.focus, .btn.active:focus, .btn.active.focus {
+    outline: none;
+    outline-offset: 0;
+}
 .btn-primary:active:hover, .btn-primary:active:focus, .btn-primary:active.focus, .btn-primary.active:hover, .btn-primary.active:focus, .btn-primary.active.focus, .btn-primary .open .dropdown-toggle.btn-primary:hover, .btn-primary .open .dropdown-toggle.btn-primary:focus, .btn-primary .open .dropdown-toggle.btn-primary.focus {
     background-color: $primary-color;
     border-color: $primary-color;
@@ -139,11 +148,6 @@ a:hover {
     color: $text-color;
     background-color: #fff;
     background-image: none;
-}
-.btn {
-    color: $text-color;
-    border: 1px solid $border-color-base;
-    border-radius: $border-radius-base;
 }
 .btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .btn-default .open .dropdown-toggle.btn-default {
     color: $primary-color;
