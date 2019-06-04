@@ -7,17 +7,17 @@ import * as PropTypes from 'prop-types';
 
 import k8sActions from '../../module/k8s/k8s-actions';
 import { CheckBoxes, storagePrefix } from '../row-filter';
-import { Dropdown, Firehose, kindObj, NavTitle, history, inject, Disabled} from '../utils';
+import { Dropdown, Firehose, kindObj, NavTitle, history, inject, Disabled, gettext} from '../utils';
 import { ErrorPage404 } from '../error';
 import { makeReduxID, makeQuery } from '../utils/k8s-watcher';
 import { referenceForModel } from '../../module/k8s';
 
 export const CompactExpandButtons = ({expand = false, onExpandChange = _.noop}) => <div className="btn-group btn-group-sm" data-toggle="buttons">
   <label className={classNames('btn compaction-btn', expand ? 'btn-default' : 'btn-primary')}>
-    <input type="radio" onClick={() => onExpandChange(false)} /> Compact
+    <input type="radio" onClick={() => onExpandChange(false)} /> {gettext('Compact')}
   </label>
   <label className={classNames('btn compaction-btn', expand ? 'btn-primary' : 'btn-default')}>
-    <input type="radio" onClick={() => onExpandChange(true)} /> Expand
+    <input type="radio" onClick={() => onExpandChange(true)} /> {gettext('Expand')}
   </label>
 </div>;
 
@@ -37,7 +37,7 @@ export const TextFilter = ({label, onChange, defaultValue, style, className, aut
     style={style}
     className={classNames('form-control text-filter', className)}
     tabIndex={0}
-    placeholder={`Filter ${label}...`}
+    placeholder={`${gettext('Filter')} ${label}...`}
     onChange={onChange}
     autoFocus={autoFocus}
     defaultValue={defaultValue}
@@ -260,13 +260,13 @@ export const ListPage = props => {
 
   return <MultiListPage
     filterLabel={filterLabel || `${labelPlural} by name`}
-    selectorFilterLabel="Filter by selector (app=nginx) ..."
+    selectorFilterLabel={gettext('Filter by selector (app=nginx) ...')}
     createProps={createProps}
     title={title}
     showTitle={showTitle}
     canCreate={props.canCreate}
     canExpand={props.canExpand}
-    createButtonText={createButtonText || `Create ${label}`}
+    createButtonText={createButtonText || `${gettext('Create')} ${label}`}
     textFilter={props.textFilter}
     resources={resources}
     autoFocus={props.autoFocus}

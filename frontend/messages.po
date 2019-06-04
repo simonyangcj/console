@@ -7,7 +7,7 @@ msgstr ""
 
 #: public/components/nav.jsx:424
 msgid "Administration"
-msgstr ""
+msgstr "管理平台"
 
 #: public/models/index.ts:103
 msgid "Alertmanagers"
@@ -17,84 +17,81 @@ msgstr ""
 msgid "AppVersions"
 msgstr ""
 
-#: public/components/build-config.tsx:111
 #: public/models/index.ts:280
 msgid "Build Configs"
-msgstr ""
+msgstr "构建配置"
 
-#: public/components/nav.jsx:416
-#: public/models/index.ts:294
+#: public/components/nav.jsx:416 public/models/index.ts:294
 msgid "Builds"
-msgstr ""
+msgstr "构建"
 
 #: public/components/nav.jsx:381
 msgid "Catalog Sources"
-msgstr ""
+msgstr "目录来源"
 
 #: public/models/index.ts:8
 msgid "CatalogSources"
-msgstr ""
+msgstr "目录来源"
 
 #: public/models/index.ts:544
 msgid "Channel Operator Configs"
-msgstr ""
+msgstr "频道配置"
 
 #: public/components/nav.jsx:433
 msgid "Chargeback"
-msgstr ""
+msgstr "充值"
 
 #: public/models/index.ts:467
 msgid "Cluster Role Bindings"
-msgstr ""
+msgstr "集群角色绑定"
 
 #: public/models/index.ts:479
 msgid "Cluster Roles"
-msgstr ""
+msgstr "集群角色"
 
 #: public/models/index.ts:676
 msgid "Cluster Service Brokers"
-msgstr ""
+msgstr "集群服务商"
 
 #: public/models/index.ts:689
 msgid "Cluster Service Classes"
-msgstr ""
+msgstr "集群服务类"
 
 #: public/models/index.ts:702
 msgid "Cluster Service Plans"
-msgstr ""
+msgstr "集群服务方案"
 
 #: public/components/nav.jsx:379
 msgid "Cluster Service Versions"
-msgstr ""
+msgstr "集群服务版本"
 
 #: public/components/nav.jsx:428
 msgid "Cluster Settings"
-msgstr ""
+msgstr "集群设置"
 
 #: public/models/index.ts:117
 msgid "Clusters"
-msgstr ""
+msgstr "集群"
 
 #: public/models/index.ts:21
 msgid "ClusterServiceVersions"
-msgstr ""
+msgstr "集群服务版本"
 
 #: public/components/factory/list-page.jsx:17
 msgid "Compact"
-msgstr ""
+msgstr "合并"
 
 #: public/models/index.ts:365
 msgid "Component Statuses"
-msgstr ""
+msgstr "组件状态"
 
-#: public/components/nav.jsx:393
-#: public/models/index.ts:443
+#: public/components/nav.jsx:393 public/models/index.ts:443
 msgid "Config Maps"
-msgstr ""
+msgstr "配置映射"
 
 #: public/models/index.ts:172
 msgid "Containers"
-msgstr ""
+msgstr "容器"
 
 #: public/components/nav.jsx:434
 msgid "CRDs"
@@ -102,59 +99,55 @@ msgstr ""
 
 #: public/components/factory/list-page.jsx:269
 msgid "Create"
-msgstr ""
+msgstr "创建"
 
-#: public/components/nav.jsx:395
-#: public/models/index.ts:657
+#: public/components/nav.jsx:395 public/models/index.ts:657
 msgid "Cron Jobs"
-msgstr ""
+msgstr "定时任务"
 
 #: public/models/index.ts:644
 msgid "Custom Resource Definitions"
-msgstr ""
+msgstr "自定义资源类型"
 
-#: public/components/nav.jsx:397
-#: public/models/index.ts:186
+#: public/components/nav.jsx:397 public/models/index.ts:186
 msgid "Daemon Sets"
-msgstr ""
+msgstr "守护进程"
 
 #: public/models/index.ts:266
 msgid "Deployment Configs"
-msgstr ""
+msgstr "部署配置"
 
-#: public/components/nav.jsx:388
-#: public/models/index.ts:252
+#: public/components/nav.jsx:388 public/models/index.ts:252
 msgid "Deployments"
-msgstr ""
+msgstr "部署"
 
 #: public/models/index.ts:61
 msgid "Etcd Clusters"
-msgstr ""
+msgstr "Etcd集群"
 
-#: public/components/nav.jsx:375
-#: public/models/index.ts:359
+#: public/components/nav.jsx:375 public/models/index.ts:359
 msgid "Events"
-msgstr ""
+msgstr "事件"
 
 #: public/components/factory/list-page.jsx:20
 msgid "Expand"
-msgstr ""
+msgstr "展开"
 
 #: public/components/factory/list-page.jsx:40
 msgid "Filter"
-msgstr ""
+msgstr "筛选"
 
 #: public/components/factory/list-page.jsx:263
 msgid "Filter by selector (app=nginx) ..."
-msgstr ""
+msgstr "输入app筛选，如 (app=nginx) ..."
 
 #: public/components/nav.jsx:372
 msgid "Home"
-msgstr ""
+msgstr "首页"
 
 #: public/models/index.ts:212
 msgid "Horizontal Pod Autoscalers"
-msgstr ""
+msgstr "Pod水平扩展"
 
 #: public/components/nav.jsx:400
 msgid "HPAs"
@@ -184,39 +177,35 @@ msgstr ""
 msgid "InstallPlans"
 msgstr ""
 
-#: public/components/nav.jsx:396
-#: public/models/index.ts:336
+#: public/components/nav.jsx:396 public/models/index.ts:336
 msgid "Jobs"
 msgstr ""
 
 #: public/components/masthead.tsx:49
 msgid "Language: CN -> EN"
-msgstr ""
+msgstr "语言：中文 -> 英文"
 
 #: public/components/masthead.tsx:49
 msgid "Language: EN -> CN"
-msgstr ""
+msgstr "语言：英文 -> 中文"
 
 #: public/components/masthead.tsx:71
 msgid "Logout"
-msgstr ""
+msgstr "退出"
 
-#: public/components/nav.jsx:426
-#: public/models/index.ts:381
+#: public/components/nav.jsx:426 public/models/index.ts:381
 msgid "Namespaces"
-msgstr ""
+msgstr "命名空间"
 
-#: public/components/nav.jsx:407
-#: public/models/index.ts:623
+#: public/components/nav.jsx:407 public/models/index.ts:623
 msgid "Network Policies"
 msgstr ""
 
 #: public/components/nav.jsx:403
 msgid "Networking"
-msgstr ""
+msgstr "网络"
 
-#: public/components/nav.jsx:427
-#: public/models/index.ts:347
+#: public/components/nav.jsx:427 public/models/index.ts:347
 msgid "Nodes"
 msgstr ""
 
@@ -224,13 +213,11 @@ msgstr ""
 msgid "Operators"
 msgstr ""
 
-#: public/components/nav.jsx:412
-#: public/models/index.ts:580
+#: public/components/nav.jsx:412 public/models/index.ts:580
 msgid "Persistent Volume Claims"
 msgstr ""
 
-#: public/components/nav.jsx:411
-#: public/models/index.ts:568
+#: public/components/nav.jsx:411 public/models/index.ts:568
 msgid "Persistent Volumes"
 msgstr ""
 
@@ -238,8 +225,7 @@ msgstr ""
 msgid "Petsets"
 msgstr ""
 
-#: public/components/nav.jsx:387
-#: public/models/index.ts:161
+#: public/components/nav.jsx:387 public/models/index.ts:161
 msgid "Pods"
 msgstr ""
 
@@ -247,8 +233,7 @@ msgstr ""
 msgid "Project Requests"
 msgstr ""
 
-#: public/components/nav.jsx:425
-#: public/models/index.ts:393
+#: public/components/nav.jsx:425 public/models/index.ts:393
 msgid "Projects"
 msgstr ""
 
@@ -256,107 +241,95 @@ msgstr ""
 msgid "Prometheuses"
 msgstr ""
 
-#: public/components/nav.jsx:398
-#: public/models/index.ts:238
+#: public/components/nav.jsx:398 public/models/index.ts:238
 msgid "Replica Sets"
-msgstr ""
+msgstr "副本控制器"
 
-#: public/components/nav.jsx:399
-#: public/models/index.ts:199
+#: public/components/nav.jsx:399 public/models/index.ts:199
 msgid "Replication Controllers"
-msgstr ""
+msgstr "副本控制器"
 
 #: public/models/index.ts:130
 msgid "Reports"
 msgstr ""
 
-#: public/components/nav.jsx:432
-#: public/models/index.ts:618
+#: public/components/nav.jsx:432 public/models/index.ts:618
 msgid "Resource Quotas"
-msgstr ""
+msgstr "资源配额"
 
-#: public/components/nav.jsx:431
-#: public/models/index.ts:492
+#: public/components/nav.jsx:431 public/models/index.ts:492
 msgid "Role Bindings"
-msgstr ""
+msgstr "角色绑定"
 
-#: public/components/nav.jsx:430
-#: public/models/index.ts:505
+#: public/components/nav.jsx:430 public/models/index.ts:505
 msgid "Roles"
-msgstr ""
+msgstr "角色"
 
-#: public/components/nav.jsx:405
-#: public/models/index.ts:423
+#: public/components/nav.jsx:405 public/models/index.ts:423
 msgid "Routes"
-msgstr ""
+msgstr "路由"
 
 #: public/components/nav.jsx:374
 msgid "Search"
-msgstr ""
+msgstr "查找"
 
-#: public/components/nav.jsx:392
-#: public/models/index.ts:455
+#: public/components/nav.jsx:392 public/models/index.ts:455
 msgid "Secrets"
-msgstr ""
+msgstr "安全"
 
 #: public/models/index.ts:518
 msgid "Self Subject Access Reviews"
 msgstr ""
 
-#: public/components/nav.jsx:429
-#: public/models/index.ts:224
+#: public/components/nav.jsx:429 public/models/index.ts:224
 msgid "Service Accounts"
-msgstr ""
+msgstr "服务账户"
 
 #: public/models/index.ts:728
 msgid "Service Bindings"
-msgstr ""
+msgstr "服务绑定"
 
 #: public/models/index.ts:715
 msgid "Service Instances"
-msgstr ""
+msgstr "服务实例"
 
 #: public/models/index.ts:89
 msgid "Service Monitors"
-msgstr ""
+msgstr "服务监控"
 
-#: public/components/nav.jsx:404
-#: public/models/index.ts:149
+#: public/components/nav.jsx:404 public/models/index.ts:149
 msgid "Services"
-msgstr ""
+msgstr "服务"
 
-#: public/components/nav.jsx:391
-#: public/models/index.ts:606
+#: public/components/nav.jsx:391 public/models/index.ts:606
 msgid "Stateful Sets"
-msgstr ""
+msgstr "状态集"
 
 #: public/components/nav.jsx:373
 msgid "Status"
-msgstr ""
+msgstr "状态"
 
 #: public/components/nav.jsx:410
 msgid "Storage"
-msgstr ""
+msgstr "存储"
 
-#: public/components/nav.jsx:413
-#: public/models/index.ts:663
+#: public/components/nav.jsx:413 public/models/index.ts:663
 msgid "Storage Classes"
-msgstr ""
+msgstr "存储类"
 
-#: public/components/nav.jsx:382
-#: public/models/index.ts:48
+#: public/components/nav.jsx:382 public/models/index.ts:48
 msgid "Subscriptions"
-msgstr ""
+msgstr "订阅"
 
 #: public/models/index.ts:531
 msgid "Tectonic Versions"
-msgstr ""
+msgstr "构造版本"
 
 #: public/components/nav.jsx:386
 msgid "Workloads"
-msgstr ""
+msgstr "应用容器"
 
 #: public/components/masthead.tsx:46
-msgctxt "abc"
+#, fuzzy
 msgid "%s hello"
-msgstr ""
+msgstr "{0} 你好"
