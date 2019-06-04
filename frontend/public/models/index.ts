@@ -1,10 +1,11 @@
 // eslint-disable-next-line no-unused-vars
 import { K8sKind } from '../module/k8s';
+import { gettext } from '../components/utils/gettext';
 
 export const CatalogSourceModel: K8sKind = {
   kind: 'CatalogSource',
   label: 'CatalogSource',
-  labelPlural: 'CatalogSources',
+  labelPlural: gettext('CatalogSources'),
   apiGroup: 'operators.coreos.com',
   apiVersion: 'v1alpha1',
   path: 'catalogsources',
@@ -17,7 +18,7 @@ export const CatalogSourceModel: K8sKind = {
 export const ClusterServiceVersionModel: K8sKind = {
   kind: 'ClusterServiceVersion',
   label: 'ClusterServiceVersion',
-  labelPlural: 'ClusterServiceVersions',
+  labelPlural: gettext('ClusterServiceVersions'),
   apiGroup: 'operators.coreos.com',
   apiVersion: 'v1alpha1',
   path: 'clusterserviceversions',
@@ -31,7 +32,7 @@ export const ClusterServiceVersionModel: K8sKind = {
 export const InstallPlanModel: K8sKind = {
   kind: 'InstallPlan',
   label: 'InstallPlan',
-  labelPlural: 'InstallPlans',
+  labelPlural: gettext('InstallPlans'),
   apiGroup: 'operators.coreos.com',
   apiVersion: 'v1alpha1',
   path: 'installplans',
@@ -44,7 +45,7 @@ export const InstallPlanModel: K8sKind = {
 export const SubscriptionModel: K8sKind = {
   kind: 'Subscription',
   label: 'Subscription',
-  labelPlural: 'Subscriptions',
+  labelPlural: gettext('Subscriptions'),
   apiGroup: 'operators.coreos.com',
   apiVersion: 'v1alpha1',
   path: 'subscriptions',
@@ -57,7 +58,7 @@ export const SubscriptionModel: K8sKind = {
 export const EtcdClusterModel: K8sKind = {
   kind: 'EtcdCluster',
   label: 'etcd Cluster',
-  labelPlural: 'Etcd Clusters',
+  labelPlural: gettext('Etcd Clusters'),
   apiGroup: 'etcd.database.coreos.com',
   apiVersion: 'v1beta2',
   path: 'etcdclusters',
@@ -71,7 +72,7 @@ export const EtcdClusterModel: K8sKind = {
 export const PrometheusModel: K8sKind = {
   kind: 'Prometheus',
   label: 'Prometheus',
-  labelPlural: 'Prometheuses',
+  labelPlural: gettext('Prometheuses'),
   apiGroup: 'monitoring.coreos.com',
   apiVersion: 'v1',
   path: 'prometheuses',
@@ -85,7 +86,7 @@ export const PrometheusModel: K8sKind = {
 export const ServiceMonitorModel: K8sKind = {
   kind: 'ServiceMonitor',
   label: 'Service Monitor',
-  labelPlural: 'Service Monitors',
+  labelPlural:  gettext('Service Monitors'),
   apiGroup: 'monitoring.coreos.com',
   apiVersion: 'v1',
   path: 'servicemonitors',
@@ -99,7 +100,7 @@ export const ServiceMonitorModel: K8sKind = {
 export const AlertmanagerModel: K8sKind = {
   kind: 'Alertmanager',
   label: 'Alertmanager',
-  labelPlural: 'Alertmanagers',
+  labelPlural:  gettext('Alertmanagers'),
   apiGroup: 'monitoring.coreos.com',
   apiVersion: 'v1',
   path: 'alertmanagers',
@@ -113,7 +114,7 @@ export const AlertmanagerModel: K8sKind = {
 export const ClusterModel: K8sKind = {
   kind: 'Cluster',
   label: 'Cluster',
-  labelPlural: 'Clusters',
+  labelPlural:  gettext('Clusters'),
   apiGroup: 'multicluster.coreos.com',
   path: 'clusters',
   apiVersion: 'v1',
@@ -126,7 +127,7 @@ export const ClusterModel: K8sKind = {
 export const ChargebackReportModel: K8sKind = {
   kind: 'Report',
   label: 'Report',
-  labelPlural: 'Reports',
+  labelPlural:  gettext('Reports'),
   apiGroup: 'chargeback.coreos.com',
   path: 'reports',
   apiVersion: 'v1alpha1',
@@ -145,7 +146,7 @@ export const ServiceModel: K8sKind = {
   namespaced: true,
   kind: 'Service',
   id: 'service',
-  labelPlural: 'Services'
+  labelPlural:  gettext('Services')
 };
 
 export const PodModel: K8sKind = {
@@ -157,7 +158,7 @@ export const PodModel: K8sKind = {
   namespaced: true,
   kind: 'Pod',
   id: 'pod',
-  labelPlural: 'Pods'
+  labelPlural:  gettext('Pods')
 };
 
 export const ContainerModel: K8sKind = {
@@ -168,7 +169,7 @@ export const ContainerModel: K8sKind = {
   abbr: 'C',
   kind: 'Container',
   id: 'container',
-  labelPlural: 'Containers'
+  labelPlural:  gettext('Containers')
 };
 
 export const DaemonSetModel: K8sKind = {
@@ -182,7 +183,7 @@ export const DaemonSetModel: K8sKind = {
   propagationPolicy: 'Foreground',
   kind: 'DaemonSet',
   id: 'daemonset',
-  labelPlural: 'Daemon Sets'
+  labelPlural:  gettext('Daemon Sets')
 };
 
 export const ReplicationControllerModel: K8sKind = {
@@ -195,7 +196,7 @@ export const ReplicationControllerModel: K8sKind = {
   propagationPolicy: 'Foreground',
   kind: 'ReplicationController',
   id: 'replicationcontroller',
-  labelPlural: 'Replication Controllers'
+  labelPlural:  gettext('Replication Controllers')
 };
 
 export const HorizontalPodAutoscalerModel: K8sKind = {
@@ -208,7 +209,7 @@ export const HorizontalPodAutoscalerModel: K8sKind = {
   namespaced: true,
   kind: 'HorizontalPodAutoscaler',
   id: 'horizontalpodautoscaler',
-  labelPlural: 'Horizontal Pod Autoscalers'
+  labelPlural:  gettext('Horizontal Pod Autoscalers')
 };
 
 export const ServiceAccountModel: K8sKind = {
@@ -220,7 +221,7 @@ export const ServiceAccountModel: K8sKind = {
   namespaced: true,
   kind: 'ServiceAccount',
   id: 'serviceaccount',
-  labelPlural: 'Service Accounts'
+  labelPlural:  gettext('Service Accounts')
 };
 
 export const ReplicaSetModel: K8sKind = {
@@ -234,7 +235,7 @@ export const ReplicaSetModel: K8sKind = {
   propagationPolicy: 'Foreground',
   kind: 'ReplicaSet',
   id: 'replicaset',
-  labelPlural: 'Replica Sets'
+  labelPlural:  gettext('Replica Sets')
 };
 
 export const DeploymentModel: K8sKind = {
@@ -248,7 +249,7 @@ export const DeploymentModel: K8sKind = {
   propagationPolicy: 'Foreground',
   kind: 'Deployment',
   id: 'deployment',
-  labelPlural: 'Deployments'
+  labelPlural:  gettext('Deployments')
 };
 
 export const DeploymentConfigModel: K8sKind = {
@@ -262,7 +263,7 @@ export const DeploymentConfigModel: K8sKind = {
   propagationPolicy: 'Foreground',
   kind: 'DeploymentConfig',
   id: 'deploymentconfig',
-  labelPlural: 'Deployment Configs'
+  labelPlural:  gettext('Deployment Configs')
 };
 
 export const BuildConfigModel: K8sKind = {
@@ -276,7 +277,7 @@ export const BuildConfigModel: K8sKind = {
   propagationPolicy: 'Foreground',
   kind: 'BuildConfig',
   id: 'buildconfig',
-  labelPlural: 'Build Configs'
+  labelPlural:  gettext('Build Configs')
 };
 
 export const BuildModel: K8sKind = {
@@ -290,7 +291,7 @@ export const BuildModel: K8sKind = {
   propagationPolicy: 'Foreground',
   kind: 'Build',
   id: 'build',
-  labelPlural: 'Builds'
+  labelPlural:  gettext('Builds')
 };
 
 export const ImageStreamModel: K8sKind = {
@@ -304,7 +305,7 @@ export const ImageStreamModel: K8sKind = {
   propagationPolicy: 'Foreground',
   kind: 'ImageStream',
   id: 'imagestream',
-  labelPlural: 'Image Streams'
+  labelPlural:  gettext('Image Streams')
 };
 
 export const ImageStreamTagModel: K8sKind = {
@@ -318,7 +319,7 @@ export const ImageStreamTagModel: K8sKind = {
   propagationPolicy: 'Foreground',
   kind: 'ImageStreamTag',
   id: 'imagestreamtag',
-  labelPlural: 'Image Stream Tags'
+  labelPlural:  gettext('Image Stream Tags')
 };
 
 export const JobModel: K8sKind = {
@@ -332,7 +333,7 @@ export const JobModel: K8sKind = {
   propagationPolicy: 'Foreground',
   kind: 'Job',
   id: 'job',
-  labelPlural: 'Jobs'
+  labelPlural:  gettext('Jobs')
 };
 
 export const NodeModel: K8sKind = {
@@ -343,7 +344,7 @@ export const NodeModel: K8sKind = {
   abbr: 'N',
   kind: 'Node',
   id: 'node',
-  labelPlural: 'Nodes'
+  labelPlural:  gettext('Nodes')
 };
 
 export const EventModel: K8sKind = {
@@ -355,13 +356,13 @@ export const EventModel: K8sKind = {
   namespaced: true,
   kind: 'Event',
   id: 'event',
-  labelPlural: 'Events'
+  labelPlural:  gettext('Events')
 };
 
 export const ComponentStatusModel: K8sKind = {
   apiVersion: 'v1',
   label: 'Component Status',
-  labelPlural: 'Component Statuses',
+  labelPlural:  gettext('Component Statuses'),
   path: 'componentstatuses',
   plural: 'componentstatuses',
   abbr: 'CS',
@@ -377,7 +378,7 @@ export const NamespaceModel: K8sKind = {
   abbr: 'NS',
   kind: 'Namespace',
   id: 'namespace',
-  labelPlural: 'Namespaces'
+  labelPlural:  gettext('Namespaces')
 };
 
 export const ProjectModel: K8sKind = {
@@ -389,7 +390,7 @@ export const ProjectModel: K8sKind = {
   abbr: 'PR',
   kind: 'Project',
   id: 'project',
-  labelPlural: 'Projects'
+  labelPlural:  gettext('Projects')
 };
 
 export const ProjectRequestModel: K8sKind = {
@@ -401,12 +402,12 @@ export const ProjectRequestModel: K8sKind = {
   abbr: '',
   kind: 'ProjectRequest',
   id: 'projectrequest',
-  labelPlural: 'Project Requests'
+  labelPlural:  gettext('Project Requests')
 };
 
 export const IngressModel: K8sKind = {
   label: 'Ingress',
-  labelPlural: 'Ingresses',
+  labelPlural:  gettext('Ingresses'),
   apiGroup: 'extensions',
   apiVersion: 'v1beta1',
   path: 'ingresses',
@@ -419,7 +420,7 @@ export const IngressModel: K8sKind = {
 
 export const RouteModel: K8sKind = {
   label: 'Route',
-  labelPlural: 'Routes',
+  labelPlural:  gettext('Routes'),
   apiGroup: 'route.openshift.io',
   apiVersion: 'v1',
   path: 'routes',
@@ -439,7 +440,7 @@ export const ConfigMapModel: K8sKind = {
   namespaced: true,
   kind: 'ConfigMap',
   id: 'configmap',
-  labelPlural: 'Config Maps'
+  labelPlural:  gettext('Config Maps')
 };
 
 export const SecretModel: K8sKind = {
@@ -451,7 +452,7 @@ export const SecretModel: K8sKind = {
   namespaced: true,
   kind: 'Secret',
   id: 'secret',
-  labelPlural: 'Secrets'
+  labelPlural:  gettext('Secrets')
 };
 
 export const ClusterRoleBindingModel: K8sKind = {
@@ -463,7 +464,7 @@ export const ClusterRoleBindingModel: K8sKind = {
   abbr: 'CRB',
   kind: 'ClusterRoleBinding',
   id: 'clusterrolebinding',
-  labelPlural: 'Cluster Role Bindings'
+  labelPlural:  gettext('Cluster Role Bindings')
 };
 
 export const ClusterRoleModel: K8sKind = {
@@ -475,7 +476,7 @@ export const ClusterRoleModel: K8sKind = {
   abbr: 'CR',
   kind: 'ClusterRole',
   id: 'clusterrole',
-  labelPlural: 'Cluster Roles'
+  labelPlural:  gettext('Cluster Roles')
 };
 
 export const RoleBindingModel: K8sKind = {
@@ -488,7 +489,7 @@ export const RoleBindingModel: K8sKind = {
   namespaced: true,
   kind: 'RoleBinding',
   id: 'rolebinding',
-  labelPlural: 'Role Bindings'
+  labelPlural:  gettext('Role Bindings')
 };
 
 export const RoleModel: K8sKind = {
@@ -501,7 +502,7 @@ export const RoleModel: K8sKind = {
   namespaced: true,
   kind: 'Role',
   id: 'role',
-  labelPlural: 'Roles'
+  labelPlural:  gettext('Roles')
 };
 
 export const SelfSubjectAccessReviewModel: K8sKind = {
@@ -514,7 +515,7 @@ export const SelfSubjectAccessReviewModel: K8sKind = {
   namespaced: true,
   kind: 'SelfSubjectAccessReview',
   id: 'selfsubjectaccessreview',
-  labelPlural: 'Self Subject Access Reviews'
+  labelPlural:  gettext('Self Subject Access Reviews')
 };
 
 export const TectonicVersionModel: K8sKind = {
@@ -527,7 +528,7 @@ export const TectonicVersionModel: K8sKind = {
   namespaced: true,
   kind: 'TectonicVersion',
   id: 'tectonicversion',
-  labelPlural: 'Tectonic Versions'
+  labelPlural:  gettext('Tectonic Versions')
 };
 
 export const ChannelOperatorConfigModel: K8sKind = {
@@ -540,7 +541,7 @@ export const ChannelOperatorConfigModel: K8sKind = {
   namespaced: true,
   kind: 'ChannelOperatorConfig',
   id: 'channeloperatorconfig',
-  labelPlural: 'Channel Operator Configs'
+  labelPlural:  gettext('Channel Operator Configs')
 };
 
 export const AppVersionModel: K8sKind = {
@@ -553,7 +554,7 @@ export const AppVersionModel: K8sKind = {
   namespaced: true,
   kind: 'AppVersion',
   id: 'appversion',
-  labelPlural: 'AppVersions'
+  labelPlural:  gettext('AppVersions')
 };
 
 export const PersistentVolumeModel: K8sKind = {
@@ -564,7 +565,7 @@ export const PersistentVolumeModel: K8sKind = {
   abbr: 'PV',
   kind: 'PersistentVolume',
   id: 'persistentvolume',
-  labelPlural: 'Persistent Volumes'
+  labelPlural:  gettext('Persistent Volumes')
 };
 
 export const PersistentVolumeClaimModel: K8sKind = {
@@ -576,7 +577,7 @@ export const PersistentVolumeClaimModel: K8sKind = {
   namespaced: true,
   kind: 'PersistentVolumeClaim',
   id: 'persistentvolumeclaim',
-  labelPlural: 'Persistent Volume Claims'
+  labelPlural:  gettext('Persistent Volume Claims')
 };
 
 export const PetsetModel: K8sKind = {
@@ -588,7 +589,7 @@ export const PetsetModel: K8sKind = {
   propagationPolicy: 'Foreground',
   kind: 'Petset',
   id: 'petset',
-  labelPlural: 'Petsets'
+  labelPlural:  gettext('Petsets')
 };
 
 export const StatefulSetModel: K8sKind = {
@@ -602,7 +603,7 @@ export const StatefulSetModel: K8sKind = {
   propagationPolicy: 'Foreground',
   kind: 'StatefulSet',
   id: 'statefulset',
-  labelPlural: 'Stateful Sets'
+  labelPlural:  gettext('Stateful Sets')
 };
 
 export const ResourceQuotaModel: K8sKind = {
@@ -614,12 +615,12 @@ export const ResourceQuotaModel: K8sKind = {
   namespaced: true,
   kind: 'ResourceQuota',
   id: 'resourcequota',
-  labelPlural: 'Resource Quotas'
+  labelPlural:  gettext('Resource Quotas')
 };
 
 export const NetworkPolicyModel: K8sKind = {
   label: 'Network Policy',
-  labelPlural: 'Network Policies',
+  labelPlural:  gettext('Network Policies'),
   apiVersion: 'v1',
   apiGroup: 'networking.k8s.io',
   path: 'networkpolicies',
@@ -640,7 +641,7 @@ export const CustomResourceDefinitionModel: K8sKind = {
   plural: 'customresourcedefinitions',
   kind: 'CustomResourceDefinition',
   id: 'customresourcedefinition',
-  labelPlural: 'Custom Resource Definitions'
+  labelPlural:  gettext('Custom Resource Definitions')
 };
 
 export const CronJobModel: K8sKind = {
@@ -653,13 +654,13 @@ export const CronJobModel: K8sKind = {
   namespaced: true,
   kind: 'CronJob',
   id: 'cronjob',
-  labelPlural: 'Cron Jobs',
+  labelPlural:  gettext('Cron Jobs'),
   propagationPolicy : 'Foreground',
 };
 
 export const StorageClassModel: K8sKind = {
   label: 'Storage Class',
-  labelPlural: 'Storage Classes',
+  labelPlural:  gettext('Storage Classes'),
   apiVersion: 'v1',
   path: 'storageclasses',
   apiGroup: 'storage.k8s.io',
@@ -672,7 +673,7 @@ export const StorageClassModel: K8sKind = {
 
 export const ClusterServiceBrokerModel: K8sKind = {
   label: 'Cluster Service Broker',
-  labelPlural: 'Cluster Service Brokers',
+  labelPlural:  gettext('Cluster Service Brokers'),
   apiVersion: 'v1beta1',
   path: 'clusterservicebrokers',
   apiGroup: 'servicecatalog.k8s.io',
@@ -685,7 +686,7 @@ export const ClusterServiceBrokerModel: K8sKind = {
 
 export const ClusterServiceClassModel: K8sKind = {
   label: 'Cluster Service Class',
-  labelPlural: 'Cluster Service Classes',
+  labelPlural:  gettext('Cluster Service Classes'),
   apiVersion: 'v1beta1',
   path: 'clusterserviceclasses',
   apiGroup: 'servicecatalog.k8s.io',
@@ -698,7 +699,7 @@ export const ClusterServiceClassModel: K8sKind = {
 
 export const ClusterServicePlanModel: K8sKind = {
   label: 'Cluster Service Plan',
-  labelPlural: 'Cluster Service Plans',
+  labelPlural:  gettext('Cluster Service Plans'),
   apiVersion: 'v1beta1',
   path: 'clusterserviceplans',
   apiGroup: 'servicecatalog.k8s.io',
@@ -711,7 +712,7 @@ export const ClusterServicePlanModel: K8sKind = {
 
 export const ServiceInstanceModel: K8sKind = {
   label: 'Service Instance',
-  labelPlural: 'Service Instances',
+  labelPlural:  gettext('Service Instances'),
   apiVersion: 'v1beta1',
   path: 'serviceinstances',
   apiGroup: 'servicecatalog.k8s.io',
@@ -724,7 +725,7 @@ export const ServiceInstanceModel: K8sKind = {
 
 export const ServiceBindingModel: K8sKind = {
   label: 'Service Binding',
-  labelPlural: 'Service Bindings',
+  labelPlural:  gettext('Service Bindings'),
   apiVersion: 'v1beta1',
   path: 'servicebindings',
   apiGroup: 'servicecatalog.k8s.io',
