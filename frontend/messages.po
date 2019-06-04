@@ -5,17 +5,42 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#: public/components/cluster-overview.jsx:189
+msgid "Additional Support"
+msgstr "其他支持"
+
 #: public/components/nav.jsx:424
 msgid "Administration"
 msgstr "管理平台"
 
 #: public/models/index.ts:103
 msgid "Alertmanagers"
+msgstr "报警管理"
+
+#: public/components/cluster-overview.jsx:60
+msgid "Alerts"
+msgstr "报警"
+
+#: public/components/cluster-overview.jsx:59
+msgid "Alerts Firing"
 msgstr ""
+
+#: public/components/cluster-overview.jsx:24
+#: public/components/cluster-overview.jsx:31
+msgid "All good"
+msgstr "全好"
+
+#: public/components/cluster-overview.jsx:95
+msgid "API Request Success Rate"
+msgstr "API请求成功率"
+
+#: public/components/cluster-overview.jsx:86
+msgid "API Servers Up"
+msgstr "API服务状态"
 
 #: public/models/index.ts:557
 msgid "AppVersions"
-msgstr ""
+msgstr "APP版本"
 
 #: public/models/index.ts:280
 msgid "Build Configs"
@@ -69,6 +94,10 @@ msgstr "集群服务版本"
 msgid "Cluster Settings"
 msgstr "集群设置"
 
+#: public/components/cluster-overview.jsx:243
+msgid "Cluster Status"
+msgstr "集群设置"
+
 #: public/models/index.ts:117
 msgid "Clusters"
 msgstr "集群"
@@ -92,6 +121,18 @@ msgstr "配置映射"
 #: public/models/index.ts:172
 msgid "Containers"
 msgstr "容器"
+
+#: public/components/cluster-overview.jsx:89
+msgid "Controller Managers Up"
+msgstr "控制器状态"
+
+#: public/components/cluster-overview.jsx:111
+msgid "CPU Usage"
+msgstr "CPU使用率"
+
+#: public/components/cluster-overview.jsx:67
+msgid "Crashlooping Pods"
+msgstr ""
 
 #: public/components/nav.jsx:434
 msgid "CRDs"
@@ -121,11 +162,20 @@ msgstr "部署配置"
 msgid "Deployments"
 msgstr "部署"
 
+#: public/components/cluster-overview.jsx:117
+msgid "Disk Usage"
+msgstr "硬盘使用率"
+
+#: public/components/cluster-overview.jsx:181
+msgid "Documentation"
+msgstr "文档"
+
 #: public/models/index.ts:61
 msgid "Etcd Clusters"
 msgstr "Etcd集群"
 
-#: public/components/nav.jsx:375 public/models/index.ts:359
+#: public/components/cluster-overview.jsx:162 public/components/nav.jsx:375
+#: public/models/index.ts:359
 msgid "Events"
 msgstr "事件"
 
@@ -141,6 +191,10 @@ msgstr "筛选"
 msgid "Filter by selector (app=nginx) ..."
 msgstr "输入app筛选，如 (app=nginx) ..."
 
+#: public/components/cluster-overview.jsx:46
+msgid "Health"
+msgstr "健康"
+
 #: public/components/nav.jsx:372
 msgid "Home"
 msgstr "首页"
@@ -155,30 +209,35 @@ msgstr ""
 
 #: public/models/index.ts:322
 msgid "Image Stream Tags"
-msgstr ""
+msgstr "镜像标签"
 
 #: public/models/index.ts:308
 msgid "Image Streams"
-msgstr ""
+msgstr "镜像组"
 
 #: public/components/nav.jsx:406
 msgid "Ingress"
-msgstr ""
+msgstr "边缘路由器"
 
 #: public/models/index.ts:410
 msgid "Ingresses"
-msgstr ""
+msgstr "边缘路由器组"
 
 #: public/components/nav.jsx:383
 msgid "Install Plans"
-msgstr ""
+msgstr "安装计划"
 
 #: public/models/index.ts:35
 msgid "InstallPlans"
-msgstr ""
+msgstr "安装计划"
 
 #: public/components/nav.jsx:396 public/models/index.ts:336
 msgid "Jobs"
+msgstr "任务"
+
+#: public/components/cluster-overview.jsx:142
+#: public/components/cluster-overview.jsx:52
+msgid "Kubernetes API"
 msgstr ""
 
 #: public/components/masthead.tsx:49
@@ -193,13 +252,17 @@ msgstr "语言：英文 -> 中文"
 msgid "Logout"
 msgstr "退出"
 
+#: public/components/cluster-overview.jsx:114
+msgid "Memory Usage"
+msgstr "内存使用率"
+
 #: public/components/nav.jsx:426 public/models/index.ts:381
 msgid "Namespaces"
 msgstr "命名空间"
 
 #: public/components/nav.jsx:407 public/models/index.ts:623
 msgid "Network Policies"
-msgstr ""
+msgstr "网络规则"
 
 #: public/components/nav.jsx:403
 msgid "Networking"
@@ -207,35 +270,54 @@ msgstr "网络"
 
 #: public/components/nav.jsx:427 public/models/index.ts:347
 msgid "Nodes"
-msgstr ""
+msgstr "节点"
+
+#: public/components/cluster-overview.jsx:134
+msgid "OKD Console"
+msgstr "OKD控制台"
+
+#: public/components/cluster-overview.jsx:134
+#: public/components/cluster-overview.jsx:55
+msgid "OpenShift Console"
+msgstr "OpenShift控制台"
 
 #: public/components/nav.jsx:378
 msgid "Operators"
-msgstr ""
+msgstr "运算"
+
+#: public/components/cluster-overview.jsx:248
+#: public/components/cluster-overview.jsx:250
+msgid "Overview"
+msgstr "概述"
 
 #: public/components/nav.jsx:412 public/models/index.ts:580
 msgid "Persistent Volume Claims"
-msgstr ""
+msgstr "持久化卷声明"
 
 #: public/components/nav.jsx:411 public/models/index.ts:568
 msgid "Persistent Volumes"
-msgstr ""
+msgstr "持久化卷"
 
 #: public/models/index.ts:592
 msgid "Petsets"
 msgstr ""
 
-#: public/components/nav.jsx:387 public/models/index.ts:161
+#: public/components/cluster-overview.jsx:120
+msgid "Pod Usage"
+msgstr "Pod使用率"
+
+#: public/components/cluster-overview.jsx:68 public/components/nav.jsx:387
+#: public/models/index.ts:161
 msgid "Pods"
 msgstr ""
 
 #: public/models/index.ts:405
 msgid "Project Requests"
-msgstr ""
+msgstr "项目请求"
 
 #: public/components/nav.jsx:425 public/models/index.ts:393
 msgid "Projects"
-msgstr ""
+msgstr "项目"
 
 #: public/models/index.ts:75
 msgid "Prometheuses"
@@ -251,7 +333,7 @@ msgstr "副本控制器"
 
 #: public/models/index.ts:130
 msgid "Reports"
-msgstr ""
+msgstr "报告"
 
 #: public/components/nav.jsx:432 public/models/index.ts:618
 msgid "Resource Quotas"
@@ -269,6 +351,10 @@ msgstr "角色"
 msgid "Routes"
 msgstr "路由"
 
+#: public/components/cluster-overview.jsx:92
+msgid "Schedulers Up"
+msgstr "调度状态"
+
 #: public/components/nav.jsx:374
 msgid "Search"
 msgstr "查找"
@@ -279,7 +365,7 @@ msgstr "安全"
 
 #: public/models/index.ts:518
 msgid "Self Subject Access Reviews"
-msgstr ""
+msgstr "自查"
 
 #: public/components/nav.jsx:429 public/models/index.ts:224
 msgid "Service Accounts"
@@ -301,6 +387,11 @@ msgstr "服务监控"
 msgid "Services"
 msgstr "服务"
 
+#: public/components/cluster-overview.jsx:173
+#: public/components/cluster-overview.jsx:252
+msgid "Software Info"
+msgstr "软件信息"
+
 #: public/components/nav.jsx:391 public/models/index.ts:606
 msgid "Stateful Sets"
 msgstr "状态集"
@@ -308,6 +399,11 @@ msgstr "状态集"
 #: public/components/nav.jsx:373
 msgid "Status"
 msgstr "状态"
+
+#: public/components/cluster-overview.jsx:243
+#, fuzzy
+msgid "Status of %s"
+msgstr "%s 状态"
 
 #: public/components/nav.jsx:410
 msgid "Storage"
@@ -324,6 +420,14 @@ msgstr "订阅"
 #: public/models/index.ts:531
 msgid "Tectonic Versions"
 msgstr "构造版本"
+
+#: public/components/cluster-overview.jsx:32
+msgid "The console service cannot be reached"
+msgstr "无法连接控制台"
+
+#: public/components/cluster-overview.jsx:35
+msgid "View Grafana Dashboard"
+msgstr "查看Grafana仪表板"
 
 #: public/components/nav.jsx:386
 msgid "Workloads"

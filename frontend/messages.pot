@@ -11,12 +11,37 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#: public/components/cluster-overview.jsx:189
+msgid "Additional Support"
+msgstr ""
+
 #: public/components/nav.jsx:424
 msgid "Administration"
 msgstr ""
 
 #: public/models/index.ts:103
 msgid "Alertmanagers"
+msgstr ""
+
+#: public/components/cluster-overview.jsx:60
+msgid "Alerts"
+msgstr ""
+
+#: public/components/cluster-overview.jsx:59
+msgid "Alerts Firing"
+msgstr ""
+
+#: public/components/cluster-overview.jsx:24
+#: public/components/cluster-overview.jsx:31
+msgid "All good"
+msgstr ""
+
+#: public/components/cluster-overview.jsx:95
+msgid "API Request Success Rate"
+msgstr ""
+
+#: public/components/cluster-overview.jsx:86
+msgid "API Servers Up"
 msgstr ""
 
 #: public/models/index.ts:557
@@ -76,6 +101,10 @@ msgstr ""
 msgid "Cluster Settings"
 msgstr ""
 
+#: public/components/cluster-overview.jsx:243
+msgid "Cluster Status"
+msgstr ""
+
 #: public/models/index.ts:117
 msgid "Clusters"
 msgstr ""
@@ -99,6 +128,18 @@ msgstr ""
 
 #: public/models/index.ts:172
 msgid "Containers"
+msgstr ""
+
+#: public/components/cluster-overview.jsx:89
+msgid "Controller Managers Up"
+msgstr ""
+
+#: public/components/cluster-overview.jsx:111
+msgid "CPU Usage"
+msgstr ""
+
+#: public/components/cluster-overview.jsx:67
+msgid "Crashlooping Pods"
 msgstr ""
 
 #: public/components/nav.jsx:434
@@ -132,10 +173,19 @@ msgstr ""
 msgid "Deployments"
 msgstr ""
 
+#: public/components/cluster-overview.jsx:117
+msgid "Disk Usage"
+msgstr ""
+
+#: public/components/cluster-overview.jsx:181
+msgid "Documentation"
+msgstr ""
+
 #: public/models/index.ts:61
 msgid "Etcd Clusters"
 msgstr ""
 
+#: public/components/cluster-overview.jsx:162
 #: public/components/nav.jsx:375
 #: public/models/index.ts:359
 msgid "Events"
@@ -151,6 +201,10 @@ msgstr ""
 
 #: public/components/factory/list-page.jsx:263
 msgid "Filter by selector (app=nginx) ..."
+msgstr ""
+
+#: public/components/cluster-overview.jsx:46
+msgid "Health"
 msgstr ""
 
 #: public/components/nav.jsx:372
@@ -194,6 +248,11 @@ msgstr ""
 msgid "Jobs"
 msgstr ""
 
+#: public/components/cluster-overview.jsx:142
+#: public/components/cluster-overview.jsx:52
+msgid "Kubernetes API"
+msgstr ""
+
 #: public/components/masthead.tsx:49
 msgid "Language: CN -> EN"
 msgstr ""
@@ -204,6 +263,10 @@ msgstr ""
 
 #: public/components/masthead.tsx:71
 msgid "Logout"
+msgstr ""
+
+#: public/components/cluster-overview.jsx:114
+msgid "Memory Usage"
 msgstr ""
 
 #: public/components/nav.jsx:426
@@ -225,8 +288,22 @@ msgstr ""
 msgid "Nodes"
 msgstr ""
 
+#: public/components/cluster-overview.jsx:134
+msgid "OKD Console"
+msgstr ""
+
+#: public/components/cluster-overview.jsx:134
+#: public/components/cluster-overview.jsx:55
+msgid "OpenShift Console"
+msgstr ""
+
 #: public/components/nav.jsx:378
 msgid "Operators"
+msgstr ""
+
+#: public/components/cluster-overview.jsx:248
+#: public/components/cluster-overview.jsx:250
+msgid "Overview"
 msgstr ""
 
 #: public/components/nav.jsx:412
@@ -243,6 +320,11 @@ msgstr ""
 msgid "Petsets"
 msgstr ""
 
+#: public/components/cluster-overview.jsx:120
+msgid "Pod Usage"
+msgstr ""
+
+#: public/components/cluster-overview.jsx:68
 #: public/components/nav.jsx:387
 #: public/models/index.ts:161
 msgid "Pods"
@@ -295,6 +377,10 @@ msgstr ""
 msgid "Routes"
 msgstr ""
 
+#: public/components/cluster-overview.jsx:92
+msgid "Schedulers Up"
+msgstr ""
+
 #: public/components/nav.jsx:374
 msgid "Search"
 msgstr ""
@@ -330,6 +416,11 @@ msgstr ""
 msgid "Services"
 msgstr ""
 
+#: public/components/cluster-overview.jsx:173
+#: public/components/cluster-overview.jsx:252
+msgid "Software Info"
+msgstr ""
+
 #: public/components/nav.jsx:391
 #: public/models/index.ts:606
 msgid "Stateful Sets"
@@ -337,6 +428,10 @@ msgstr ""
 
 #: public/components/nav.jsx:373
 msgid "Status"
+msgstr ""
+
+#: public/components/cluster-overview.jsx:243
+msgid "Status of %s"
 msgstr ""
 
 #: public/components/nav.jsx:410
@@ -355,6 +450,14 @@ msgstr ""
 
 #: public/models/index.ts:531
 msgid "Tectonic Versions"
+msgstr ""
+
+#: public/components/cluster-overview.jsx:32
+msgid "The console service cannot be reached"
+msgstr ""
+
+#: public/components/cluster-overview.jsx:35
+msgid "View Grafana Dashboard"
 msgstr ""
 
 #: public/components/nav.jsx:386
