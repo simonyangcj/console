@@ -3,7 +3,7 @@ import * as React from 'react';
 import * as classNames from 'classnames';
 import * as PropTypes from 'prop-types';
 
-import {LoadingInline, taskStatuses, operatorStates, calculateChannelState, determineOperatorState, orderedTaskStatuses} from '../utils';
+import {LoadingInline, taskStatuses, operatorStates, calculateChannelState, determineOperatorState, orderedTaskStatuses, gettext} from '../utils';
 import {configureOperatorStrategyModal, configureOperatorChannelModal,} from '../modals';
 import {DetailConfig} from './detail-config';
 import {DetailStatus} from './detail-status';
@@ -79,13 +79,13 @@ const Details = ({config, channelState, tcAppVersion}) => {
     <DetailWrapper title="Status">
       <DetailStatus config={config} channelState={channelState} version={tcAppVersion.desiredVersion} />
     </DetailWrapper>
-    <DetailWrapper title="Current Version">
+    <DetailWrapper title={gettext('Current Version')}>
       {tcAppVersion.currentVersion || <LoadingInline />}
     </DetailWrapper>
-    <DetailWrapper title="Channel">
+    <DetailWrapper title={gettext('Channel')}>
       <DetailConfig config={config} field="channel" modal={configureOperatorChannelModal} displayFunction={_.capitalize} />
     </DetailWrapper>
-    <DetailWrapper title="Strategy">
+    <DetailWrapper title={gettext('Strategy')}>
       <DetailConfig config={config} field="automaticUpdate" modal={configureOperatorStrategyModal}
         modalData={{updateAvailable: channelState === 'UpdateAvailable'}}
         displayFunction={(value) => value ? 'Automatic' : 'Admin Approval'} />
@@ -153,7 +153,7 @@ const TectonicClusterAppVersion = ({tcAppVersion, secondaryAppVersions, tectonic
     </div>
 
     <div className="co-cluster-updates__operator-logs">
-      <a className="co-cluster-updates__breakdown-button btn btn-default" href={logsUrl} target="_blank">View Logs</a>
+      <a className="co-cluster-updates__breakdown-button btn btn-default" href={logsUrl} target="_blank">{gettext('View Logs')}</a>
     </div>
     {groupedTaskStatuses && _.map(groupedTaskStatuses, (taskStatus, index) => <TaskStatus taskStatus={taskStatus} key={index} isTCAppVersion={true} secondaryAppVersions={secondaryAppVersions}
       tcAppVersion={tcAppVersion}
@@ -193,7 +193,7 @@ const SecondaryAppVersion = ({appVersion, tcAppVersion, tectonicVersions}) => {
       </div>
     </div>
     {state !== 'Complete' && logsUrl && <div className="co-cluster-updates__operator-logs">
-      <a className="co-cluster-updates__breakdown-button btn btn-default" href={logsUrl} target="_blank">View Logs</a>
+      <a className="co-cluster-updates__breakdown-button btn btn-default" href={logsUrl} target="_blank">{gettext('View Logs')}</a>
     </div>}
     {_.map(appVersion.taskStatuses, (taskStatus, index) =>
       <TaskStatus taskStatus={taskStatus} key={index} isTCAppVersion={false} /> )
@@ -244,7 +244,7 @@ class TaskStatus extends React.Component {
             <a onClick={() => {
               this.setState({isErrorMsgVisible: !this.state.isErrorMsgVisible});
             }}>
-              {this.state.isErrorMsgVisible ? 'Hide Failed Reason' : 'Show Failed Reason'}
+              {this.state.isErrorMsgVisible ? gettext('Hide Failed Reason') : gettext('Show Failed Reason')}
             </a>
           </div>
         }
