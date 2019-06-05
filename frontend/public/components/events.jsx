@@ -144,7 +144,7 @@ class EventsStreamPage_ extends React.Component {
       { showGettingStarted && showTitle && <OpenShiftGettingStarted /> }
       <div className={classNames({'co-disabled': showGettingStarted })}>
         { showTitle && <Helmet>
-          <title>`${gettext('Events')}`</title>
+          <title>{gettext('Events')}</title>
         </Helmet> }
         { showTitle && <NavTitle title={gettext('Events')} /> }
         <div className="co-m-pane__filter-bar">
@@ -411,7 +411,7 @@ class EventStream extends SafetyFirst {
         <div className={klass}>
           <TogglePlay active={active} onClick={this.toggleStream} className="co-sysevent-stream__timeline__btn" />
           <div className="co-sysevent-stream__timeline__end-message">
-            {gettext('There are no events before', <Timestamp timestamp={this.state.oldestTimestamp} />)}
+            {gettext('There are no events before')} <Timestamp timestamp={this.state.oldestTimestamp} />
           </div>
         </div>
         { count > 0 &&
