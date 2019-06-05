@@ -5,7 +5,7 @@ import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 
 import { k8sCreate, k8sUpdate, K8sResourceKind } from '../../module/k8s';
-import { ButtonBar, Firehose, history, kindObj, StatusBox, FileInput, gettext } from '../utils';
+import { ButtonBar, Firehose, history, kindObj, StatusBox, FileInput } from '../utils';
 import { formatNamespacedRouteForResource } from '../../ui/ui-actions';
 import { WebHookSecretKey } from '../secret';
 
@@ -31,8 +31,8 @@ export type BasicAuthSubformState = {
 };
 
 const secretFormExplanation = {
-  [SecretTypeAbstraction.source]: gettext('Source secrets allow you to authenticate against the SCM server.'),
-  [SecretTypeAbstraction.webhook]: gettext('Webhook secrets allow you to authenticate a webhook trigger.'),
+  [SecretTypeAbstraction.source]: 'Source secrets allow you to authenticate against the SCM server.',
+  [SecretTypeAbstraction.webhook]: 'Webhook secrets allow you to authenticate a webhook trigger.',
 };
 
 const determineDefaultSecretType = (typeAbstraction: SecretTypeAbstraction) => {
@@ -115,7 +115,7 @@ const withSecretForm = (SubForm) => class SecretFormComponent extends React.Comp
 
         <fieldset disabled={!this.props.isCreate}>
           <div className="form-group">
-            <label className="control-label" htmlFor="secret-name">{gettext('Secret Name')}</label>
+            <label className="control-label" htmlFor="secret-name">Secret Name</label>
             <div>
               <input className="form-control"
                 type="text"
@@ -124,7 +124,7 @@ const withSecretForm = (SubForm) => class SecretFormComponent extends React.Comp
                 aria-describedby="secret-name-help"
                 id="secret-name"
                 required />
-              <p className="help-block" id="secret-name-help">{gettext('Unique name of the new secret.')}</p>
+              <p className="help-block" id="secret-name-help">Unique name of the new secret.</p>
             </div>
           </div>
         </fieldset>
@@ -135,8 +135,8 @@ const withSecretForm = (SubForm) => class SecretFormComponent extends React.Comp
           isCreate={this.props.isCreate}
         />
         <ButtonBar errorMessage={this.state.error} inProgress={this.state.inProgress} >
-          <button type="submit" className="btn btn-primary" id="save-changes">{this.props.saveButtonText || gettext('Create')}</button>
-          <Link to={formatNamespacedRouteForResource('secrets')} className="btn btn-default" id="cancel">{gettext('Cancel')}</Link>
+          <button type="submit" className="btn btn-primary" id="save-changes">{this.props.saveButtonText || 'Create'}</button>
+          <Link to={formatNamespacedRouteForResource('secrets')} className="btn btn-default" id="cancel">Cancel</Link>
         </ButtonBar>
       </form>
     </div>;
