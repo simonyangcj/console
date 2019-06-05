@@ -43,7 +43,6 @@ const UserMenuWrapper = connectToFlags(FLAGS.AUTH_ENABLED, FLAGS.OPENSHIFT)((pro
     cookie.set('locale', v);
     location.reload();
   }
-  console.log(gettext('%s hello', 'abc'));
   const lanuageTitle = () => {
     const currentLanguage = cookie.get('locale') || 'zh-cn';
     return currentLanguage === 'zh-cn' ? gettext('Language: CN -> EN') : gettext('Language: EN -> CN');

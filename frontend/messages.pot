@@ -1,15 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-04 09:40+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
-"MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
 
 #: public/components/cluster-overview.jsx:189
 msgid "Additional Support"
@@ -31,9 +22,22 @@ msgstr ""
 msgid "Alerts Firing"
 msgstr ""
 
+#: public/components/events.jsx:123
+#: public/components/events.jsx:153
+msgid "All Categories"
+msgstr ""
+
 #: public/components/cluster-overview.jsx:24
 #: public/components/cluster-overview.jsx:31
 msgid "All good"
+msgstr ""
+
+#: public/components/events.jsx:152
+msgid "All Types"
+msgstr ""
+
+#: public/components/events.jsx:383
+msgid "An error occurred during event retrieval. Attempting to reconnect..."
 msgstr ""
 
 #: public/components/cluster-overview.jsx:95
@@ -55,6 +59,10 @@ msgstr ""
 #: public/components/nav.jsx:416
 #: public/models/index.ts:294
 msgid "Builds"
+msgstr ""
+
+#: public/components/secrets/create-secret.tsx:139
+msgid "Cancel"
 msgstr ""
 
 #: public/components/nav.jsx:381
@@ -126,6 +134,10 @@ msgstr ""
 msgid "Config Maps"
 msgstr ""
 
+#: public/components/events.jsx:230
+msgid "Connection did not close cleanly."
+msgstr ""
+
 #: public/models/index.ts:172
 msgid "Containers"
 msgstr ""
@@ -147,6 +159,7 @@ msgid "CRDs"
 msgstr ""
 
 #: public/components/factory/list-page.jsx:269
+#: public/components/secrets/create-secret.tsx:138
 msgid "Create"
 msgstr ""
 
@@ -181,14 +194,48 @@ msgstr ""
 msgid "Documentation"
 msgstr ""
 
+#: public/components/events.jsx:123
+msgid "Error"
+msgstr ""
+
+#: public/components/events.jsx:379
+msgid "Error connecting to event stream"
+msgstr ""
+
+#: public/components/events.jsx:382
+msgid "Error Loading Events"
+msgstr ""
+
 #: public/models/index.ts:61
 msgid "Etcd Clusters"
 msgstr ""
 
+#: public/components/events.jsx:398
+msgid "event"
+msgstr ""
+
+#: public/components/events.jsx:392
+msgid "Event stream is paused."
+msgstr ""
+
+#: public/components/events.jsx:398
+msgid "events"
+msgstr ""
+
 #: public/components/cluster-overview.jsx:162
+#: public/components/events.jsx:147
+#: public/components/events.jsx:149
 #: public/components/nav.jsx:375
 #: public/models/index.ts:359
 msgid "Events"
+msgstr ""
+
+#: public/components/events.jsx:156
+msgid "Events by name or message"
+msgstr ""
+
+#: public/components/events.jsx:372
+msgid "events exist, but none match the current filter"
 msgstr ""
 
 #: public/components/factory/list-page.jsx:20
@@ -196,7 +243,7 @@ msgid "Expand"
 msgstr ""
 
 #: public/components/factory/list-page.jsx:40
-msgid "Filter"
+msgid "Filter %s"
 msgstr ""
 
 #: public/components/factory/list-page.jsx:263
@@ -227,6 +274,10 @@ msgstr ""
 msgid "Image Streams"
 msgstr ""
 
+#: public/components/events.jsx:123
+msgid "Info"
+msgstr ""
+
 #: public/components/nav.jsx:406
 msgid "Ingress"
 msgstr ""
@@ -253,15 +304,19 @@ msgstr ""
 msgid "Kubernetes API"
 msgstr ""
 
-#: public/components/masthead.tsx:49
+#: public/components/masthead.tsx:48
 msgid "Language: CN -> EN"
 msgstr ""
 
-#: public/components/masthead.tsx:49
+#: public/components/masthead.tsx:48
 msgid "Language: EN -> CN"
 msgstr ""
 
-#: public/components/masthead.tsx:71
+#: public/components/events.jsx:387
+msgid "Loading events..."
+msgstr ""
+
+#: public/components/masthead.tsx:70
 msgid "Logout"
 msgstr ""
 
@@ -281,6 +336,14 @@ msgstr ""
 
 #: public/components/nav.jsx:403
 msgid "Networking"
+msgstr ""
+
+#: public/components/events.jsx:362
+msgid "No Events in the past hour"
+msgstr ""
+
+#: public/components/events.jsx:370
+msgid "No Matching Events"
 msgstr ""
 
 #: public/components/nav.jsx:427
@@ -385,6 +448,10 @@ msgstr ""
 msgid "Search"
 msgstr ""
 
+#: public/components/secrets/create-secret.tsx:118
+msgid "Secret Name"
+msgstr ""
+
 #: public/components/nav.jsx:392
 #: public/models/index.ts:455
 msgid "Secrets"
@@ -416,9 +483,17 @@ msgstr ""
 msgid "Services"
 msgstr ""
 
+#: public/components/events.jsx:398
+msgid "Showing"
+msgstr ""
+
 #: public/components/cluster-overview.jsx:173
 #: public/components/cluster-overview.jsx:252
 msgid "Software Info"
+msgstr ""
+
+#: public/components/secrets/create-secret.tsx:34
+msgid "Source secrets allow you to authenticate against the SCM server."
 msgstr ""
 
 #: public/components/nav.jsx:391
@@ -443,6 +518,10 @@ msgstr ""
 msgid "Storage Classes"
 msgstr ""
 
+#: public/components/events.jsx:390
+msgid "Streaming events..."
+msgstr ""
+
 #: public/components/nav.jsx:382
 #: public/models/index.ts:48
 msgid "Subscriptions"
@@ -456,14 +535,26 @@ msgstr ""
 msgid "The console service cannot be reached"
 msgstr ""
 
+#: public/components/events.jsx:414
+msgid "There are no events before"
+msgstr ""
+
+#: public/components/secrets/create-secret.tsx:127
+msgid "Unique name of the new secret."
+msgstr ""
+
+#: public/components/cluster-overview.jsx:163
+msgid "View All"
+msgstr ""
+
 #: public/components/cluster-overview.jsx:35
 msgid "View Grafana Dashboard"
 msgstr ""
 
-#: public/components/nav.jsx:386
-msgid "Workloads"
+#: public/components/secrets/create-secret.tsx:35
+msgid "Webhook secrets allow you to authenticate a webhook trigger."
 msgstr ""
 
-#: public/components/masthead.tsx:46
-msgid "%s hello"
+#: public/components/nav.jsx:386
+msgid "Workloads"
 msgstr ""

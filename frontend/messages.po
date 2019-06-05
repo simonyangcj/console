@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-04 09:40+0800\n"
+"POT-Creation-Date: 2019-06-04 18:07+0800\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
@@ -25,10 +25,22 @@ msgstr "报警"
 msgid "Alerts Firing"
 msgstr ""
 
+#: public/components/events.jsx:123 public/components/events.jsx:153
+msgid "All Categories"
+msgstr "所有分类"
+
 #: public/components/cluster-overview.jsx:24
 #: public/components/cluster-overview.jsx:31
 msgid "All good"
-msgstr "全好"
+msgstr "完美"
+
+#: public/components/events.jsx:152
+msgid "All Types"
+msgstr "所有类型"
+
+#: public/components/events.jsx:383
+msgid "An error occurred during event retrieval. Attempting to reconnect..."
+msgstr "时间检索过程中出错，正在尝试重新连接..."
 
 #: public/components/cluster-overview.jsx:95
 msgid "API Request Success Rate"
@@ -50,13 +62,17 @@ msgstr "构建配置"
 msgid "Builds"
 msgstr "构建"
 
+#: public/components/secrets/create-secret.tsx:139
+msgid "Cancel"
+msgstr "取消"
+
 #: public/components/nav.jsx:381
 msgid "Catalog Sources"
-msgstr "目录来源"
+msgstr "目录源"
 
 #: public/models/index.ts:8
 msgid "CatalogSources"
-msgstr "目录来源"
+msgstr "目录源"
 
 #: public/models/index.ts:544
 msgid "Channel Operator Configs"
@@ -118,6 +134,10 @@ msgstr "组件状态"
 msgid "Config Maps"
 msgstr "配置映射"
 
+#: public/components/events.jsx:230
+msgid "Connection did not close cleanly."
+msgstr "连接没有完全关闭"
+
 #: public/models/index.ts:172
 msgid "Containers"
 msgstr "容器"
@@ -139,6 +159,7 @@ msgid "CRDs"
 msgstr ""
 
 #: public/components/factory/list-page.jsx:269
+#: public/components/secrets/create-secret.tsx:138
 msgid "Create"
 msgstr "创建"
 
@@ -152,7 +173,7 @@ msgstr "自定义资源类型"
 
 #: public/components/nav.jsx:397 public/models/index.ts:186
 msgid "Daemon Sets"
-msgstr "守护进程"
+msgstr ""
 
 #: public/models/index.ts:266
 msgid "Deployment Configs"
@@ -170,22 +191,58 @@ msgstr "硬盘使用率"
 msgid "Documentation"
 msgstr "文档"
 
+#: public/components/events.jsx:123
+msgid "Error"
+msgstr "错误"
+
+#: public/components/events.jsx:379
+msgid "Error connecting to event stream"
+msgstr "连接事件流出错"
+
+#: public/components/events.jsx:382
+msgid "Error Loading Events"
+msgstr "加载事件出错"
+
 #: public/models/index.ts:61
 msgid "Etcd Clusters"
 msgstr "Etcd集群"
 
-#: public/components/cluster-overview.jsx:162 public/components/nav.jsx:375
+#: public/components/events.jsx:398
+#, fuzzy
+msgid "event"
+msgstr "事件"
+
+#: public/components/events.jsx:392
+msgid "Event stream is paused."
+msgstr "事件流已暂停"
+
+#: public/components/events.jsx:398
+#, fuzzy
+msgid "events"
+msgstr "事件"
+
+#: public/components/cluster-overview.jsx:162 public/components/events.jsx:147
+#: public/components/events.jsx:149 public/components/nav.jsx:375
 #: public/models/index.ts:359
 msgid "Events"
 msgstr "事件"
+
+#: public/components/events.jsx:156
+msgid "Events by name or message"
+msgstr "事件 通过 名称/信息 "
+
+#: public/components/events.jsx:372
+msgid "events exist, but none match the current filter"
+msgstr "事件，但不匹配当前筛选器"
 
 #: public/components/factory/list-page.jsx:20
 msgid "Expand"
 msgstr "展开"
 
 #: public/components/factory/list-page.jsx:40
-msgid "Filter"
-msgstr "筛选"
+#, fuzzy
+msgid "Filter %s"
+msgstr "筛选 %s"
 
 #: public/components/factory/list-page.jsx:263
 msgid "Filter by selector (app=nginx) ..."
@@ -215,13 +272,17 @@ msgstr "镜像标签"
 msgid "Image Streams"
 msgstr "镜像组"
 
+#: public/components/events.jsx:123
+msgid "Info"
+msgstr "信息"
+
 #: public/components/nav.jsx:406
 msgid "Ingress"
-msgstr "边缘路由器"
+msgstr ""
 
 #: public/models/index.ts:410
 msgid "Ingresses"
-msgstr "边缘路由器组"
+msgstr ""
 
 #: public/components/nav.jsx:383
 msgid "Install Plans"
@@ -240,15 +301,19 @@ msgstr "任务"
 msgid "Kubernetes API"
 msgstr ""
 
-#: public/components/masthead.tsx:49
+#: public/components/masthead.tsx:48
 msgid "Language: CN -> EN"
 msgstr "语言：中文 -> 英文"
 
-#: public/components/masthead.tsx:49
+#: public/components/masthead.tsx:48
 msgid "Language: EN -> CN"
 msgstr "语言：英文 -> 中文"
 
-#: public/components/masthead.tsx:71
+#: public/components/events.jsx:387
+msgid "Loading events..."
+msgstr "加载事件..."
+
+#: public/components/masthead.tsx:70
 msgid "Logout"
 msgstr "退出"
 
@@ -267,6 +332,14 @@ msgstr "网络规则"
 #: public/components/nav.jsx:403
 msgid "Networking"
 msgstr "网络"
+
+#: public/components/events.jsx:362
+msgid "No Events in the past hour"
+msgstr "过去一小时内没有任何事件"
+
+#: public/components/events.jsx:370
+msgid "No Matching Events"
+msgstr "没有匹配的事件"
 
 #: public/components/nav.jsx:427 public/models/index.ts:347
 msgid "Nodes"
@@ -329,7 +402,7 @@ msgstr "副本控制器"
 
 #: public/components/nav.jsx:399 public/models/index.ts:199
 msgid "Replication Controllers"
-msgstr "副本控制器"
+msgstr ""
 
 #: public/models/index.ts:130
 msgid "Reports"
@@ -359,9 +432,13 @@ msgstr "调度状态"
 msgid "Search"
 msgstr "查找"
 
+#: public/components/secrets/create-secret.tsx:118
+msgid "Secret Name"
+msgstr ""
+
 #: public/components/nav.jsx:392 public/models/index.ts:455
 msgid "Secrets"
-msgstr "安全"
+msgstr ""
 
 #: public/models/index.ts:518
 msgid "Self Subject Access Reviews"
@@ -387,14 +464,22 @@ msgstr "服务监控"
 msgid "Services"
 msgstr "服务"
 
+#: public/components/events.jsx:398
+msgid "Showing"
+msgstr "展示"
+
 #: public/components/cluster-overview.jsx:173
 #: public/components/cluster-overview.jsx:252
 msgid "Software Info"
 msgstr "软件信息"
 
+#: public/components/secrets/create-secret.tsx:34
+msgid "Source secrets allow you to authenticate against the SCM server."
+msgstr "源允许您针对SCM服务器进行身份验证。"
+
 #: public/components/nav.jsx:391 public/models/index.ts:606
 msgid "Stateful Sets"
-msgstr "状态集"
+msgstr ""
 
 #: public/components/nav.jsx:373
 msgid "Status"
@@ -413,6 +498,10 @@ msgstr "存储"
 msgid "Storage Classes"
 msgstr "存储类"
 
+#: public/components/events.jsx:390
+msgid "Streaming events..."
+msgstr ""
+
 #: public/components/nav.jsx:382 public/models/index.ts:48
 msgid "Subscriptions"
 msgstr "订阅"
@@ -425,15 +514,26 @@ msgstr "构造版本"
 msgid "The console service cannot be reached"
 msgstr "无法连接控制台"
 
+#: public/components/events.jsx:414
+msgid "There are no events before"
+msgstr "以前没有事件"
+
+#: public/components/secrets/create-secret.tsx:127
+msgid "Unique name of the new secret."
+msgstr "唯一标识"
+
+#: public/components/cluster-overview.jsx:163
+msgid "View All"
+msgstr "查看全部"
+
 #: public/components/cluster-overview.jsx:35
 msgid "View Grafana Dashboard"
 msgstr "查看Grafana仪表板"
 
+#: public/components/secrets/create-secret.tsx:35
+msgid "Webhook secrets allow you to authenticate a webhook trigger."
+msgstr ""
+
 #: public/components/nav.jsx:386
 msgid "Workloads"
 msgstr "应用容器"
-
-#: public/components/masthead.tsx:46
-#, fuzzy
-msgid "%s hello"
-msgstr "{0} 你好"
