@@ -63,7 +63,7 @@ export const ClusterServiceVersionResourceRow: React.SFC<ClusterServiceVersionRe
 };
 
 export const ClusterServiceVersionResourceList: React.SFC<ClusterServiceVersionResourceListProps> = (props) => {
-  const EmptyMsg = () => <MsgBox title={getext('No Application Resources Found')} detail={gettext('Application resources are declarative components used to define the behavior of the application.')} />;
+  const EmptyMsg = () => <MsgBox title={gettext('No Application Resources Found')} detail={gettext('Application resources are declarative components used to define the behavior of the application.')} />;
 
   return <List {...props} EmptyMsg={EmptyMsg} Header={ClusterServiceVersionResourceHeader} Row={ClusterServiceVersionResourceRow} label={gettext('Application Resources')} />;
 };

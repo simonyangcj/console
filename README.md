@@ -16,6 +16,18 @@ The console is a more friendly `kubectl` in the form of a single page webapp.  I
 
 ## Quickstart
 
+### translate:
+
+1. add gettext
+2. yarn run collect
+3. yarn run makemessage:zh (need install xgettext for linux)
+4. update messages.po file, add translation
+5. yarn run makemessage:zh
+6. push to github
+7. ansible-playbook -i inventory.example deploy_image_console.yml
+
+### Build everything:
+
 ### Dependencies:
 
 1. [node.js](https://nodejs.org/) >= 8 & [yarn](https://yarnpkg.com/en/docs/install) >= 1.3.2
