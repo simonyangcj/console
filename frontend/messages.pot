@@ -2,6 +2,8 @@ msgid ""
 msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 
+#: public/components/deployment-config.tsx:67
+#: public/components/deployment.jsx:65
 #: public/components/namespace.jsx:26
 msgid "Active"
 msgstr ""
@@ -30,9 +32,21 @@ msgstr ""
 msgid "Alerts Firing"
 msgstr ""
 
+#: public/components/events.jsx:153
+msgid "All Categories"
+msgstr ""
+
 #: public/components/cluster-overview.jsx:24
 #: public/components/cluster-overview.jsx:31
 msgid "All good"
+msgstr ""
+
+#: public/components/events.jsx:152
+msgid "All Types"
+msgstr ""
+
+#: public/components/events.jsx:383
+msgid "An error occurred during event retrieval. Attempting to reconnect..."
 msgstr ""
 
 #: public/components/cluster-overview.jsx:95
@@ -166,6 +180,10 @@ msgstr ""
 msgid "Config Maps"
 msgstr ""
 
+#: public/components/events.jsx:230
+msgid "Connection did not close cleanly."
+msgstr ""
+
 #: public/models/index.ts:172
 msgid "Containers"
 msgstr ""
@@ -267,8 +285,20 @@ msgstr ""
 msgid "Documentation"
 msgstr ""
 
+#: public/components/deployment.jsx:16
+msgid "Edit Update Strategy"
+msgstr ""
+
 #: public/components/image-stream-tag.tsx:65
 msgid "Entrypoint"
+msgstr ""
+
+#: public/components/events.jsx:379
+msgid "Error connecting to event stream"
+msgstr ""
+
+#: public/components/events.jsx:382
+msgid "Error Loading Events"
 msgstr ""
 
 #: public/components/cloud-services/catalog-source.tsx:109
@@ -280,10 +310,22 @@ msgstr ""
 msgid "Etcd Clusters"
 msgstr ""
 
+#: public/components/events.jsx:392
+msgid "Event stream is paused."
+msgstr ""
+
 #: public/components/cluster-overview.jsx:162
 #: public/components/nav.jsx:375
 #: public/models/index.ts:359
 msgid "Events"
+msgstr ""
+
+#: public/components/events.jsx:156
+msgid "Events by name or message"
+msgstr ""
+
+#: public/components/events.jsx:372
+msgid "events exist, but none match the current filter"
 msgstr ""
 
 #: public/components/factory/list-page.jsx:20
@@ -338,6 +380,7 @@ msgstr ""
 msgid "Id"
 msgstr ""
 
+#: public/components/deployment.jsx:43
 #: public/components/pod.jsx:125
 msgid "Image"
 msgstr ""
@@ -368,6 +411,10 @@ msgstr ""
 
 #: public/models/index.ts:35
 msgid "InstallPlans"
+msgstr ""
+
+#: public/components/deployment-config.tsx:82
+msgid "Interval"
 msgstr ""
 
 #: public/components/namespace.jsx:41
@@ -404,7 +451,12 @@ msgid "Last Updated"
 msgstr ""
 
 #: public/components/cloud-services/catalog-source.tsx:36
+#: public/components/deployment-config.tsx:72
 msgid "Latest Version"
+msgstr ""
+
+#: public/components/events.jsx:387
+msgid "Loading events..."
 msgstr ""
 
 #: public/components/service.jsx:23
@@ -416,12 +468,26 @@ msgstr ""
 msgid "Logout"
 msgstr ""
 
+#: public/components/deployment-config.tsx:86
+#: public/components/deployment.jsx:74
+msgid "Max Surge"
+msgstr ""
+
+#: public/components/deployment-config.tsx:84
+#: public/components/deployment.jsx:72
+msgid "Max Unavailable"
+msgstr ""
+
 #: public/components/cluster-overview.jsx:114
 msgid "Memory Usage"
 msgstr ""
 
 #: public/components/namespace.jsx:184
 msgid "Memory Usage by Pod (Top 10)"
+msgstr ""
+
+#: public/components/deployment.jsx:78
+msgid "Min Ready Seconds"
 msgstr ""
 
 #: public/components/cloud-services/spec-descriptors/configure-size.tsx:13
@@ -434,6 +500,7 @@ msgstr ""
 #: public/components/cloud-services/clusterserviceversion-resource.tsx:197
 #: public/components/cloud-services/clusterserviceversion-resource.tsx:20
 #: public/components/cloud-services/clusterserviceversion.tsx:20
+#: public/components/deployment.jsx:42
 #: public/components/image-stream-tag.tsx:110
 #: public/components/image-stream-tag.tsx:89
 #: public/components/namespace.jsx:56
@@ -491,6 +558,10 @@ msgstr ""
 msgid "No labels"
 msgstr ""
 
+#: public/components/events.jsx:370
+msgid "No Matching Events"
+msgstr ""
+
 #: public/components/cloud-services/catalog-source.tsx:80
 msgid "No Packages Found"
 msgstr ""
@@ -521,6 +592,7 @@ msgstr ""
 msgid "Not available"
 msgstr ""
 
+#: public/components/deployment.jsx:79
 #: public/components/namespace.jsx:160
 msgid "Not Configured"
 msgstr ""
@@ -612,6 +684,14 @@ msgstr ""
 msgid "Port"
 msgstr ""
 
+#: public/components/deployment.jsx:45
+msgid "Ports"
+msgstr ""
+
+#: public/components/deployment.jsx:76
+msgid "Progress Deadline"
+msgstr ""
+
 #: public/models/index.ts:405
 msgid "Project Requests"
 msgstr ""
@@ -642,6 +722,10 @@ msgstr ""
 msgid "Readiness"
 msgstr ""
 
+#: public/components/deployment-config.tsx:74
+msgid "Reason"
+msgstr ""
+
 #: public/components/nav.jsx:398
 #: public/models/index.ts:238
 msgid "Replica Sets"
@@ -659,6 +743,10 @@ msgstr ""
 #: public/components/namespace.jsx:198
 #: public/components/namespace.jsx:82
 msgid "Requester"
+msgstr ""
+
+#: public/components/deployment.jsx:44
+msgid "Resource Limits"
 msgstr ""
 
 #: public/components/nav.jsx:432
@@ -686,6 +774,10 @@ msgstr ""
 #: public/components/nav.jsx:430
 #: public/models/index.ts:505
 msgid "Roles"
+msgstr ""
+
+#: public/components/deployment.jsx:71
+msgid "RollingUpdate"
 msgstr ""
 
 #: public/components/nav.jsx:405
@@ -774,6 +866,8 @@ msgstr ""
 
 #: public/components/cloud-services/clusterserviceversion-resource.tsx:23
 #: public/components/cloud-services/clusterserviceversion.tsx:23
+#: public/components/deployment-config.tsx:66
+#: public/components/deployment.jsx:64
 #: public/components/namespace.jsx:204
 #: public/components/namespace.jsx:57
 #: public/components/namespace.jsx:81
@@ -798,6 +892,10 @@ msgstr ""
 
 #: public/components/channel-operators/app-version.jsx:88
 msgid "Strategy"
+msgstr ""
+
+#: public/components/events.jsx:390
+msgid "Streaming events..."
 msgstr ""
 
 #: public/components/cloud-services/catalog-source.tsx:37
@@ -835,6 +933,14 @@ msgstr ""
 msgid "This application was not properly installed or configured."
 msgstr ""
 
+#: public/components/deployment-config.tsx:78
+msgid "Timeout"
+msgstr ""
+
+#: public/components/deployment-config.tsx:90
+msgid "Triggers"
+msgstr ""
+
 #: public/components/cloud-services/clusterserviceversion-resource.tsx:22
 #: public/components/pod.jsx:215
 #: public/components/service.jsx:71
@@ -848,6 +954,20 @@ msgstr ""
 
 #: public/components/cloud-services/clusterserviceversion-resource.tsx:82
 msgid "Unknown graph type:"
+msgstr ""
+
+#: public/components/deployment-config.tsx:80
+msgid "Update Period"
+msgstr ""
+
+#: public/components/deployment-config.tsx:76
+#: public/components/deployment.jsx:70
+msgid "Update Strategy"
+msgstr ""
+
+#: public/components/deployment-config.tsx:67
+#: public/components/deployment.jsx:65
+msgid "Updating"
 msgstr ""
 
 #: public/components/image-stream-tag.tsx:73

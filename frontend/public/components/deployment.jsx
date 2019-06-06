@@ -4,7 +4,7 @@ import * as _ from 'lodash-es';
 import { DeploymentModel } from '../models';
 import { configureUpdateStrategyModal } from './modals';
 import { DetailsPage, List, ListPage, WorkloadListHeader, WorkloadListRow } from './factory';
-import { Cog, DeploymentPodCounts, SectionHeading, LoadingInline, navFactory, Overflow, pluralize, ResourceSummary } from './utils';
+import { Cog, DeploymentPodCounts, SectionHeading, LoadingInline, navFactory, Overflow, pluralize, ResourceSummary, gettext } from './utils';
 import { Conditions } from './conditions';
 import { EnvironmentPage } from './environment';
 import { ResourceEventStream } from './events';
@@ -13,7 +13,7 @@ import { formatDuration } from './utils/datetime';
 const {ModifyCount, EditEnvironment, common} = Cog.factory;
 
 const UpdateStrategy = (kind, deployment) => ({
-  label: 'Edit Update Strategy',
+  label: gettext('Edit Update Strategy'),
   callback: () => configureUpdateStrategyModal({deployment}),
 });
 
@@ -39,10 +39,10 @@ const ContainerRow = ({container}) => {
 
 export const ContainerTable = ({containers}) => <div className="co-m-table-grid co-m-table-grid--bordered">
   <div className="row co-m-table-grid__head">
-    <div className="col-xs-6 col-sm-4 col-md-3">Name</div>
-    <div className="col-xs-6 col-sm-4 col-md-3">Image</div>
-    <div className="col-sm-4 col-md-3 hidden-xs">Resource Limits</div>
-    <div className="col-md-3 hidden-xs hidden-sm">Ports</div>
+    <div className="col-xs-6 col-sm-4 col-md-3">{gettext('Name')}</div>
+    <div className="col-xs-6 col-sm-4 col-md-3">{gettext('Image')}</div>
+    <div className="col-sm-4 col-md-3 hidden-xs">{gettext('Resource Limits')}</div>
+    <div className="col-md-3 hidden-xs hidden-sm">{gettext('Ports')}</div>
   </div>
   <div className="co-m-table-grid__body">
     {_.map(containers, (c, i) => <ContainerRow key={i} container={c} />)}
@@ -61,22 +61,22 @@ const DeploymentDetails = ({obj: deployment}) => {
         <div className="row">
           <div className="col-sm-6">
             <ResourceSummary resource={deployment}>
-              <dt>Status</dt>
-              <dd>{deployment.status.availableReplicas === deployment.status.updatedReplicas ? <span>Active</span> : <div><span className="co-icon-space-r"><LoadingInline /></span> Updating</div>}</dd>
+              <dt>{gettext('Status')}</dt>
+              <dd>{deployment.status.availableReplicas === deployment.status.updatedReplicas ? <span>{gettext('Active')}</span> : <div><span className="co-icon-space-r"><LoadingInline /></span> {gettext('Updating')}</div>}</dd>
             </ResourceSummary>
           </div>
           <div className="col-sm-6">
             <dl className="co-m-pane__details">
-              <dt>Update Strategy</dt>
-              <dd>{deployment.spec.strategy.type || 'RollingUpdate'}</dd>
-              {isRecreate || <dt>Max Unavailable</dt>}
+              <dt>{gettext('Update Strategy')}</dt>
+              <dd>{deployment.spec.strategy.type || gettext('RollingUpdate')}</dd>
+              {isRecreate || <dt>{gettext('Max Unavailable')}</dt>}
               {isRecreate || <dd>{deployment.spec.strategy.rollingUpdate.maxUnavailable || 1} of {pluralize(deployment.spec.replicas, 'pod')}</dd>}
-              {isRecreate || <dt>Max Surge</dt>}
+              {isRecreate || <dt>{gettext('Max Surge')}</dt>}
               {isRecreate || <dd>{deployment.spec.strategy.rollingUpdate.maxSurge || 1} greater than {pluralize(deployment.spec.replicas, 'pod')}</dd>}
-              {progressDeadlineSeconds && <dt>Progress Deadline</dt>}
+              {progressDeadlineSeconds && <dt>{gettext('Progress Deadline')}</dt>}
               {progressDeadlineSeconds && <dd>{/* Convert to ms for formatDuration */ formatDuration(progressDeadlineSeconds * 1000)}</dd>}
-              <dt>Min Ready Seconds</dt>
-              <dd>{deployment.spec.minReadySeconds ? pluralize(deployment.spec.minReadySeconds, 'second') : 'Not Configured'}</dd>
+              <dt>{gettext('Min Ready Seconds')}</dt>
+              <dd>{deployment.spec.minReadySeconds ? pluralize(deployment.spec.minReadySeconds, 'second') : gettext('Not Configured')}</dd>
             </dl>
           </div>
         </div>

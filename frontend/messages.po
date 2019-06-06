@@ -5,7 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: public/components/namespace.jsx:26
+#: public/components/deployment-config.tsx:67
+#: public/components/deployment.jsx:65 public/components/namespace.jsx:26
 msgid "Active"
 msgstr "运行中"
 
@@ -33,10 +34,23 @@ msgstr "报警"
 msgid "Alerts Firing"
 msgstr ""
 
+#: public/components/events.jsx:153
+msgid "All Categories"
+msgstr "所有分类"
+
 #: public/components/cluster-overview.jsx:24
 #: public/components/cluster-overview.jsx:31
 msgid "All good"
 msgstr "完美"
+
+#: public/components/events.jsx:152
+#, fuzzy
+msgid "All Types"
+msgstr "所有类型"
+
+#: public/components/events.jsx:383
+msgid "An error occurred during event retrieval. Attempting to reconnect..."
+msgstr "时间检索过程中出错，正在尝试重新连接..."
 
 #: public/components/cluster-overview.jsx:95
 msgid "API Request Success Rate"
@@ -177,6 +191,10 @@ msgstr "组件状态"
 msgid "Config Maps"
 msgstr "配置映射"
 
+#: public/components/events.jsx:230
+msgid "Connection did not close cleanly."
+msgstr "连接没有完全关闭"
+
 #: public/models/index.ts:172
 msgid "Containers"
 msgstr "容器"
@@ -277,9 +295,21 @@ msgstr "名称"
 msgid "Documentation"
 msgstr "文档"
 
+#: public/components/deployment.jsx:16
+msgid "Edit Update Strategy"
+msgstr "编辑更新策略"
+
 #: public/components/image-stream-tag.tsx:65
 msgid "Entrypoint"
 msgstr "入口"
+
+#: public/components/events.jsx:379
+msgid "Error connecting to event stream"
+msgstr "连接事件流出错"
+
+#: public/components/events.jsx:382
+msgid "Error Loading Events"
+msgstr "加载事件出错"
 
 #: public/components/cloud-services/catalog-source.tsx:109
 #: public/components/cloud-services/catalog-source.tsx:155
@@ -290,10 +320,22 @@ msgstr "分析目录出错"
 msgid "Etcd Clusters"
 msgstr "Etcd集群"
 
+#: public/components/events.jsx:392
+msgid "Event stream is paused."
+msgstr "事件流已暂停"
+
 #: public/components/cluster-overview.jsx:162 public/components/nav.jsx:375
 #: public/models/index.ts:359
 msgid "Events"
 msgstr "事件"
+
+#: public/components/events.jsx:156
+msgid "Events by name or message"
+msgstr "事件 通过 名称/信息 "
+
+#: public/components/events.jsx:372
+msgid "events exist, but none match the current filter"
+msgstr "事件，但不匹配当前筛选器"
 
 #: public/components/factory/list-page.jsx:20
 msgid "Expand"
@@ -348,7 +390,7 @@ msgstr ""
 msgid "Id"
 msgstr ""
 
-#: public/components/pod.jsx:125
+#: public/components/deployment.jsx:43 public/components/pod.jsx:125
 #, fuzzy
 msgid "Image"
 msgstr "镜像组"
@@ -382,6 +424,10 @@ msgstr "安装计划"
 msgid "InstallPlans"
 msgstr "安装计划"
 
+#: public/components/deployment-config.tsx:82
+msgid "Interval"
+msgstr "间隔"
+
 #: public/components/namespace.jsx:41
 msgid "is already terminating"
 msgstr "已终止"
@@ -414,17 +460,33 @@ msgid "Last Updated"
 msgstr "上次更新时间"
 
 #: public/components/cloud-services/catalog-source.tsx:36
+#: public/components/deployment-config.tsx:72
 msgid "Latest Version"
 msgstr "构造版本"
+
+#: public/components/events.jsx:387
+msgid "Loading events..."
+msgstr "加载事件..."
 
 #: public/components/service.jsx:23 public/components/service.jsx:72
 #, fuzzy
 msgid "Location"
-msgstr "文档"
+msgstr "地址"
 
 #: public/components/masthead.tsx:70
 msgid "Logout"
 msgstr "退出"
+
+#: public/components/deployment-config.tsx:86
+#: public/components/deployment.jsx:74
+msgid "Max Surge"
+msgstr "最大涌动"
+
+#: public/components/deployment-config.tsx:84
+#: public/components/deployment.jsx:72
+#, fuzzy
+msgid "Max Unavailable"
+msgstr "不可用"
 
 #: public/components/cluster-overview.jsx:114
 msgid "Memory Usage"
@@ -434,6 +496,10 @@ msgstr "内存使用率"
 #, fuzzy
 msgid "Memory Usage by Pod (Top 10)"
 msgstr "内存使用率"
+
+#: public/components/deployment.jsx:78
+msgid "Min Ready Seconds"
+msgstr "最小就绪秒数"
 
 #: public/components/cloud-services/spec-descriptors/configure-size.tsx:13
 msgid "Modify"
@@ -445,6 +511,7 @@ msgstr "更改"
 #: public/components/cloud-services/clusterserviceversion-resource.tsx:197
 #: public/components/cloud-services/clusterserviceversion-resource.tsx:20
 #: public/components/cloud-services/clusterserviceversion.tsx:20
+#: public/components/deployment.jsx:42
 #: public/components/image-stream-tag.tsx:110
 #: public/components/image-stream-tag.tsx:89 public/components/namespace.jsx:56
 #: public/components/namespace.jsx:80 public/components/pod.jsx:123
@@ -496,6 +563,10 @@ msgstr "无环境变量"
 msgid "No labels"
 msgstr "无标签"
 
+#: public/components/events.jsx:370
+msgid "No Matching Events"
+msgstr "没有匹配的事件"
+
 #: public/components/cloud-services/catalog-source.tsx:80
 msgid "No Packages Found"
 msgstr "找不到包"
@@ -525,7 +596,7 @@ msgstr "节点"
 msgid "Not available"
 msgstr "不可用"
 
-#: public/components/namespace.jsx:160
+#: public/components/deployment.jsx:79 public/components/namespace.jsx:160
 msgid "Not Configured"
 msgstr "未配置"
 
@@ -618,6 +689,16 @@ msgstr ""
 msgid "Port"
 msgstr "端口"
 
+#: public/components/deployment.jsx:45
+#, fuzzy
+msgid "Ports"
+msgstr "端口"
+
+#: public/components/deployment.jsx:76
+#, fuzzy
+msgid "Progress Deadline"
+msgstr "有效截止日期"
+
 #: public/models/index.ts:405
 msgid "Project Requests"
 msgstr "项目请求"
@@ -647,6 +728,10 @@ msgstr "发布者"
 msgid "Readiness"
 msgstr "准备就绪"
 
+#: public/components/deployment-config.tsx:74
+msgid "Reason"
+msgstr "原因"
+
 #: public/components/nav.jsx:398 public/models/index.ts:238
 msgid "Replica Sets"
 msgstr "副本控制器"
@@ -662,6 +747,11 @@ msgstr "报告"
 #: public/components/namespace.jsx:198 public/components/namespace.jsx:82
 msgid "Requester"
 msgstr "请求"
+
+#: public/components/deployment.jsx:44
+#, fuzzy
+msgid "Resource Limits"
+msgstr "资源配额"
 
 #: public/components/nav.jsx:432 public/models/index.ts:618
 msgid "Resource Quotas"
@@ -687,6 +777,10 @@ msgstr "角色绑定"
 #: public/components/nav.jsx:430 public/models/index.ts:505
 msgid "Roles"
 msgstr "角色"
+
+#: public/components/deployment.jsx:71
+msgid "RollingUpdate"
+msgstr ""
 
 #: public/components/nav.jsx:405 public/models/index.ts:423
 msgid "Routes"
@@ -771,9 +865,11 @@ msgstr ""
 
 #: public/components/cloud-services/clusterserviceversion-resource.tsx:23
 #: public/components/cloud-services/clusterserviceversion.tsx:23
-#: public/components/namespace.jsx:204 public/components/namespace.jsx:57
-#: public/components/namespace.jsx:81 public/components/nav.jsx:373
-#: public/components/pod.jsx:184 public/components/pod.jsx:70
+#: public/components/deployment-config.tsx:66
+#: public/components/deployment.jsx:64 public/components/namespace.jsx:204
+#: public/components/namespace.jsx:57 public/components/namespace.jsx:81
+#: public/components/nav.jsx:373 public/components/pod.jsx:184
+#: public/components/pod.jsx:70
 msgid "Status"
 msgstr "状态"
 
@@ -792,6 +888,11 @@ msgstr "存储类"
 #: public/components/channel-operators/app-version.jsx:88
 msgid "Strategy"
 msgstr "策略"
+
+#: public/components/events.jsx:390
+#, fuzzy
+msgid "Streaming events..."
+msgstr "加载事件..."
 
 #: public/components/cloud-services/catalog-source.tsx:37
 #: public/components/nav.jsx:382 public/models/index.ts:48
@@ -828,6 +929,14 @@ msgstr "无法检索目录源的内容。"
 msgid "This application was not properly installed or configured."
 msgstr "此应用程序未正确安装或配置。"
 
+#: public/components/deployment-config.tsx:78
+msgid "Timeout"
+msgstr "超时"
+
+#: public/components/deployment-config.tsx:90
+msgid "Triggers"
+msgstr "触发器"
+
 #: public/components/cloud-services/clusterserviceversion-resource.tsx:22
 #: public/components/pod.jsx:215 public/components/service.jsx:71
 msgid "Type"
@@ -841,6 +950,21 @@ msgstr "未知"
 #: public/components/cloud-services/clusterserviceversion-resource.tsx:82
 msgid "Unknown graph type:"
 msgstr "未知的图表类型： "
+
+#: public/components/deployment-config.tsx:80
+msgid "Update Period"
+msgstr "更新时间"
+
+#: public/components/deployment-config.tsx:76
+#: public/components/deployment.jsx:70
+#, fuzzy
+msgid "Update Strategy"
+msgstr "策略"
+
+#: public/components/deployment-config.tsx:67
+#: public/components/deployment.jsx:65
+msgid "Updating"
+msgstr "更新中"
 
 #: public/components/image-stream-tag.tsx:73
 msgid "User"
@@ -915,53 +1039,23 @@ msgstr "应用容器"
 #~ msgid "Running"
 #~ msgstr "运行中"
 
-#~ msgid "All Categories"
-#~ msgstr "所有分类"
-
-#~ msgid "An error occurred during event retrieval. Attempting to reconnect..."
-#~ msgstr "时间检索过程中出错，正在尝试重新连接..."
-
 #~ msgid "Cancel"
 #~ msgstr "取消"
-
-#~ msgid "Connection did not close cleanly."
-#~ msgstr "连接没有完全关闭"
 
 #~ msgid "Error"
 #~ msgstr "错误"
 
-#~ msgid "Error connecting to event stream"
-#~ msgstr "连接事件流出错"
-
-#~ msgid "Error Loading Events"
-#~ msgstr "加载事件出错"
-
 #~ msgid "event"
 #~ msgstr "事件"
-
-#~ msgid "Event stream is paused."
-#~ msgstr "事件流已暂停"
 
 #~ msgid "events"
 #~ msgstr "事件"
 
-#~ msgid "Events by name or message"
-#~ msgstr "事件 通过 名称/信息 "
-
-#~ msgid "events exist, but none match the current filter"
-#~ msgstr "事件，但不匹配当前筛选器"
-
 #~ msgid "Info"
 #~ msgstr "信息"
 
-#~ msgid "Loading events..."
-#~ msgstr "加载事件..."
-
 #~ msgid "No Events in the past hour"
 #~ msgstr "过去一小时内没有任何事件"
-
-#~ msgid "No Matching Events"
-#~ msgstr "没有匹配的事件"
 
 #~ msgid "Showing"
 #~ msgstr "展示"

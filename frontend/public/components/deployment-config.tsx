@@ -6,7 +6,7 @@ import { k8sCreate, K8sResourceKindReference } from '../module/k8s';
 import { errorModal } from './modals';
 import { DeploymentConfigModel } from '../models';
 import { DetailsPage, List, ListPage, WorkloadListHeader, WorkloadListRow } from './factory';
-import { Cog, DeploymentPodCounts, SectionHeading, LoadingInline, navFactory, pluralize, ResourceSummary } from './utils';
+import { Cog, DeploymentPodCounts, SectionHeading, LoadingInline, navFactory, pluralize, ResourceSummary, gettext } from './utils';
 import { Conditions } from './conditions';
 import { EnvironmentPage } from './environment';
 import { ResourceEventStream } from './events';
@@ -63,31 +63,31 @@ export const DeploymentConfigsDetails: React.SFC<{obj: any}> = ({obj: deployment
         <div className="row">
           <div className="col-sm-6">
             <ResourceSummary resource={deploymentConfig}>
-              <dt>Status</dt>
-              <dd>{deploymentConfig.status.availableReplicas === deploymentConfig.status.updatedReplicas ? <span>Active</span> : <div><span className="co-icon-space-r"><LoadingInline /></span> Updating</div>}</dd>
+              <dt>{gettext('Status')}</dt>
+              <dd>{deploymentConfig.status.availableReplicas === deploymentConfig.status.updatedReplicas ? <span>{gettext('Active')}</span> : <div><span className="co-icon-space-r"><LoadingInline /></span> {gettext('Updating')}</div>}</dd>
             </ResourceSummary>
           </div>
           <div className="col-sm-6">
             <dl className="co-m-pane__details">
-              <dt>Latest Version</dt>
+              <dt>{gettext('Latest Version')}</dt>
               <dd>{_.get(deploymentConfig, 'status.latestVersion', '-')}</dd>
-              {reason && <dt>Reason</dt>}
+              {reason && <dt>{gettext('Reason')}</dt>}
               {reason && <dd>{reason}</dd>}
-              <dt>Update Strategy</dt>
+              <dt>{gettext('Update Strategy')}</dt>
               <dd>{_.get(deploymentConfig, 'spec.strategy.type', 'Rolling')}</dd>
-              {timeout && <dt>Timeout</dt>}
+              {timeout && <dt>{gettext('Timeout')}</dt>}
               {timeout && <dd>{pluralize(timeout, 'second')}</dd>}
-              {updatePeriod && <dt>Update Period</dt>}
+              {updatePeriod && <dt>{gettext('Update Period')}</dt>}
               {updatePeriod && <dd>{pluralize(updatePeriod, 'second')}</dd>}
-              {interval && <dt>Interval</dt>}
+              {interval && <dt>{gettext('Interval')}</dt>}
               {interval && <dd>{pluralize(interval, 'second')}</dd>}
-              {isRecreate || <dt>Max Unavailable</dt>}
+              {isRecreate || <dt>{gettext('Max Unavailable')}</dt>}
               {isRecreate || <dd>{_.get(deploymentConfig, 'spec.strategy.rollingParams.maxUnavailable', 1)} of {pluralize(deploymentConfig.spec.replicas, 'pod')}</dd>}
-              {isRecreate || <dt>Max Surge</dt>}
+              {isRecreate || <dt>{gettext('Max Surge')}</dt>}
               {isRecreate || <dd>{_.get(deploymentConfig, 'spec.strategy.rollingParams.maxSurge', 1)} greater than {pluralize(deploymentConfig.spec.replicas, 'pod')}</dd>}
               <dt>Min Ready Seconds</dt>
               <dd>{deploymentConfig.spec.minReadySeconds ? pluralize(deploymentConfig.spec.minReadySeconds, 'second') : 'Not Configured'}</dd>
-              {triggers && <dt>Triggers</dt>}
+              {triggers && <dt>{gettext('Triggers')}</dt>}
               {triggers && <dd>{triggers}</dd>}
             </dl>
           </div>

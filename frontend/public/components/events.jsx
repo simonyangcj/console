@@ -12,7 +12,7 @@ import { watchURL } from '../module/k8s';
 import { EventModel, NodeModel } from '../models';
 import { SafetyFirst } from './safety-first';
 import { TextFilter } from './factory';
-import { Dropdown, ResourceLink, Box, Loading, NavTitle, Timestamp, TogglePlay, pluralize, resourcePathFromModel } from './utils';
+import { Dropdown, ResourceLink, Box, Loading, NavTitle, Timestamp, TogglePlay, pluralize, resourcePathFromModel, gettext } from './utils';
 import { WSFactory } from '../module/ws-factory';
 import { ResourceListDropdown } from './resource-dropdown';
 import { connectToFlags, FLAGS, flagPending } from '../features';
@@ -149,11 +149,11 @@ class EventsStreamPage_ extends React.Component {
         { showTitle && <NavTitle title="Events" /> }
         <div className="co-m-pane__filter-bar">
           <div className="co-m-pane__filter-bar-group">
-            <ResourceListDropdown title="All Types" className="btn-group" onChange={v => this.setState({kind: v})} showAll selected={kind} />
-            <Dropdown title="All Categories" className="btn-group" items={categories} onChange={v => this.setState({category: v})} />
+            <ResourceListDropdown title={gettext('All Types')} className="btn-group" onChange={v => this.setState({kind: v})} showAll selected={kind} />
+            <Dropdown title={gettext('All Categories')} className="btn-group" items={categories} onChange={v => this.setState({category: v})} />
           </div>
           <div className="co-m-pane__filter-bar-group co-m-pane__filter-bar-group--filter">
-            <TextFilter label="Events by name or message" onChange={e => this.setState({textFilter: e.target.value || ''})} autoFocus={autoFocus} />
+            <TextFilter label={gettext('Events by name or message')} onChange={e => this.setState({textFilter: e.target.value || ''})} autoFocus={autoFocus} />
           </div>
         </div>
         <EventStream {...this.props} category={category} kind={kind} textFilter={textFilter} fake={showGettingStarted} />
@@ -227,7 +227,7 @@ class EventStream extends SafetyFirst {
       })
       .onclose(evt => {
         if (evt && evt.wasClean === false) {
-          this.setState({error: evt.reason || 'Connection did not close cleanly.'});
+          this.setState({error: evt.reason || gettext('Connection did not close cleanly.')});
         }
         this.messages = {};
         this.setState({sortedMessages: [], filteredEvents: []});
@@ -367,29 +367,29 @@ class EventStream extends SafetyFirst {
     if (noMatches && !resourceEventStream) {
       sysEventStatus = (
         <Box className="co-sysevent-stream__status-box-empty">
-          <div className="cos-status-box__title">No Matching Events</div>
+          <div className="cos-status-box__title">{gettext('No Matching Events')}</div>
           <div className="text-center cos-status-box__detail">
-            {allCount}{allCount >= maxMessages && '+'} events exist, but none match the current filter
+            {allCount}{allCount >= maxMessages && '+'} {gettext('events exist, but none match the current filter')}
           </div>
         </Box>
       );
     }
 
     if (error) {
-      statusBtnTxt = <span className="co-sysevent-stream__connection-error">Error connecting to event stream{_.isString(error) && `: ${error}`}</span>;
+      statusBtnTxt = <span className="co-sysevent-stream__connection-error">{gettext('Error connecting to event stream')}{_.isString(error) && `: ${error}`}</span>;
       sysEventStatus = (
         <Box>
-          <div className="cos-status-box__title cos-error-title">Error Loading Events</div>
-          <div className="cos-status-box__detail text-center">An error occurred during event retrieval. Attempting to reconnect...</div>
+          <div className="cos-status-box__title cos-error-title">{gettext('Error Loading Events')}</div>
+          <div className="cos-status-box__detail text-center">{gettext('An error occurred during event retrieval. Attempting to reconnect...')}</div>
         </Box>
       );
     } else if (loading) {
-      statusBtnTxt = <span>Loading events...</span>;
+      statusBtnTxt = <span>{gettext('Loading events...')}</span>;
       sysEventStatus = <Loading />;
     } else if (active) {
-      statusBtnTxt = <span>Streaming events...</span>;
+      statusBtnTxt = <span>{gettext('Streaming events...')}</span>;
     } else {
-      statusBtnTxt = <span>Event stream is paused.</span>;
+      statusBtnTxt = <span>{gettext('Event stream is paused.')}</span>;
     }
 
     const klass = classNames('co-sysevent-stream__timeline', {
