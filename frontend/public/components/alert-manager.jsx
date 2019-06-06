@@ -4,7 +4,7 @@ import * as React from 'react';
 import { referenceForModel } from '../module/k8s';
 import { SafetyFirst } from './safety-first';
 import { ColHead, List, ListHeader, ListPage, ResourceRow, DetailsPage } from './factory';
-import { SectionHeading, LabelList, navFactory, ResourceLink, Selector, Firehose, LoadingInline, pluralize } from './utils';
+import { SectionHeading, LabelList, navFactory, ResourceLink, Selector, Firehose, LoadingInline, pluralize, gettext } from './utils';
 import { SettingsRow, SettingsContent } from './cluster-settings/cluster-settings';
 import { configureReplicaCountModal } from './modals';
 import { AlertmanagerModel } from '../models';
@@ -47,23 +47,23 @@ class Details extends SafetyFirst {
         <div className="row">
           <div className="col-sm-6 col-xs-12">
             <dl className="co-m-pane__details">
-              <dt>Name</dt>
+              <dt>{gettext('Name')}</dt>
               <dd>{metadata.name}</dd>
-              <dt>Labels</dt>
+              <dt>{gettext('Labels')}</dt>
               <dd><LabelList kind="Alertmanager" labels={metadata.labels} /></dd>
-              {spec.nodeSelector && <dt>Alert Manager Node Selector</dt>}
+              {spec.nodeSelector && <dt>{gettext('Alert Manager Node Selector')}</dt>}
               {spec.nodeSelector && <dd><Selector selector={spec.nodeSelector} kind="Node" /></dd>}
             </dl>
           </div>
           <div className="col-sm-6 col-xs-12">
             <dl className="co-m-pane__details">
-              <dt>Version</dt>
+              <dt>{gettext('Version')}</dt>
               <dd>{spec.version}</dd>
-              <dt>Replicas</dt>
+              <dt>{gettext('Replicas')}</dt>
               <dd>{this.state.desiredCountOutdated ? <LoadingInline /> : <a className="co-m-modal-link" href="#"
                 onClick={this._openReplicaCountModal}>{pluralize(spec.replicas, 'pod')}</a>}</dd>
-              <dt>Resource Request</dt>
-              <dd><span className="text-muted">Memory:</span> {_.get(spec, 'resources.requests.memory')}</dd>
+              <dt>{gettext('Resource Request')}</dt>
+              <dd><span className="text-muted">{gettext('Memory:')}</span> {_.get(spec, 'resources.requests.memory')}</dd>
             </dl>
           </div>
         </div>

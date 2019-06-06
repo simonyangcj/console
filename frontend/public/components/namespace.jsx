@@ -95,7 +95,7 @@ const ProjectRow = ({obj: project}) => {
       {getStatus(project.status.phase)}
     </div>
     <div className="col-md-3 col-sm-3 hidden-xs">
-      {requester || <span className="text-muted">{getetxt('No requester')}</span>}
+      {requester || <span className="text-muted">{gettext('No requester')}</span>}
     </div>
     <div className="col-md-3 hidden-sm hidden-xs">
       <LabelList kind="Project" labels={project.metadata.labels} />

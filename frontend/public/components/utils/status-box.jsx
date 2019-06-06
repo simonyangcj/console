@@ -4,15 +4,16 @@ import * as classNames from 'classnames';
 
 import * as restrictedSignImg from '../../imgs/restricted-sign.svg';
 import { TimeoutError } from '../../co-fetch';
+import { gettext } from './gettext'
 
 export const Box = ({children, className}) => <div className={classNames('cos-status-box', className)}>{children}</div>;
 
 /** @type {React.SFC<{className?: string, label: string, message?: string, canRetry?: boolean}>} */
 export const LoadError = ({label, className, message, canRetry=true}) => <Box className={className}>
   <div className="text-center cos-error-title">
-    Error Loading {label}{_.isString(message) ? `: ${message}` : ''}
+    {gettext('Error Loading')} {label}{_.isString(message) ? `: ${message}` : ''}
   </div>
-  {canRetry && <div className="text-center">Please <a onClick={window.location.reload.bind(window.location)}>try again</a>.</div>}
+  {canRetry && <div className="text-center">{gettext('Please')} <a onClick={window.location.reload.bind(window.location)}>{gettext('try again')}</a>.</div>}
 </Box>;
 
 export const Loading = ({className}) => <div className={classNames('co-m-loader co-an-fade-in-out', className)}>
@@ -28,7 +29,7 @@ export const LoadingBox = ({className}) => <Box className={className}><Loading /
 LoadingBox.displayName = 'LoadingBox';
 
 export const EmptyBox = ({label}) => <Box>
-  <div className="text-center">{label ? `No ${label} Found` : 'Not Found'}</div>
+  <div className="text-center">{label ? gettext('No %s Found', label) : gettext('Not Found')}</div>
 </Box>;
 EmptyBox.displayName = 'EmptyBox';
 
@@ -40,7 +41,7 @@ MsgBox.displayName = 'MsgBox';
 
 export const AccessDenied = ({message}) => <Box className="text-center">
   <img className="cos-status-box__access-denied-icon" src={restrictedSignImg} />
-  <MsgBox title="Restricted Access" detail="You don't have access to this section due to cluster policy." />
+  <MsgBox title={gettext('Restricted Access')} detail={gettext('You don\'t have access to this section due to cluster policy.')} />
   { _.isString(message) && <div className="alert alert-danger text-left"><span className="pficon pficon-error-circle-o"></span>{ message }</div>}
 </Box>;
 AccessDenied.displayName = 'AccessDenied';
@@ -63,7 +64,7 @@ export const StatusBox = props => {
     const status = _.get(loadError, 'response.status');
     if (status === 404) {
       return <div className="co-m-pane__body">
-        <h1 className="co-m-pane__heading co-m-pane__heading--center">404: Not Found</h1>
+        <h1 className="co-m-pane__heading co-m-pane__heading--center">{gettext('404: Not Found')}</h1>
       </div>;
     }
     if (status === 403 || _.includes(_.toLower(loadError), 'access denied')) {
@@ -72,7 +73,7 @@ export const StatusBox = props => {
 
     if (loaded && loadError instanceof TimeoutError) {
       return <Data {...props}>
-        <div className="co-m-timeout-error text-muted">Timed out fetching new data. The data below is stale.</div>
+        <div className="co-m-timeout-error text-muted">{gettext('Timed out fetching new data. The data below is stale.')}</div>
         {props.children}
       </Data>;
     }

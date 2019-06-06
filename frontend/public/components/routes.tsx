@@ -2,7 +2,7 @@ import * as _ from 'lodash-es';
 import * as React from 'react';
 
 import { ColHead, DetailsPage, List, ListHeader, ListPage, ResourceRow } from './factory';
-import { Cog, CopyToClipboard, SectionHeading, ResourceCog, detailsPage, navFactory, ResourceLink, ResourceSummary } from './utils';
+import { Cog, CopyToClipboard, SectionHeading, ResourceCog, detailsPage, navFactory, ResourceLink, ResourceSummary, gettext } from './utils';
 import { MaskedData } from './configmap-and-secret-data';
 // eslint-disable-next-line no-unused-vars
 import { K8sResourceKind, K8sResourceKindReference } from '../module/k8s';
@@ -99,17 +99,17 @@ export const RouteStatus: React.SFC<RouteStatusProps> = ({obj: route}) => {
     case 'Pending':
       return <span>
         <span className="fa fa-hourglass-half co-m-route-status-icon" aria-hidden="true"></span>
-        Pending
+        {gettext('Pending')}
       </span>;
     case 'Accepted':
       return <span className="route-accepted">
         <span className="fa fa-check co-m-route-status-icon" aria-hidden="true"></span>
-        Accepted
+        {gettext('Accepted')}
       </span>;
     case 'Rejected':
       return <span className="route-rejected">
         <span className="fa fa-times-circle co-m-route-status-icon" aria-hidden="true"></span>
-        Rejected
+        {gettext('Rejected')}
       </span>;
     default:
       break;
@@ -118,11 +118,11 @@ export const RouteStatus: React.SFC<RouteStatusProps> = ({obj: route}) => {
 RouteStatus.displayName = 'RouteStatus';
 
 const RouteListHeader: React.SFC<RouteHeaderProps> = props => <ListHeader>
-  <ColHead {...props} className="col-lg-3 col-md-3 col-sm-4 col-xs-6" sortField="metadata.name">Name</ColHead>
-  <ColHead {...props} className="col-lg-2 col-md-3 col-sm-4 col-xs-6" sortField="metadata.namespace">Namespace</ColHead>
-  <ColHead {...props} className="col-lg-3 col-md-3 col-sm-4 hidden-xs" sortField="spec.host">Location</ColHead>
-  <ColHead {...props} className="col-lg-2 col-md-3 hidden-sm hidden-xs" sortField="spec.to.name">Service</ColHead>
-  <ColHead {...props} className="col-lg-2 hidden-md hidden-sm hidden-xs">Status</ColHead>
+  <ColHead {...props} className="col-lg-3 col-md-3 col-sm-4 col-xs-6" sortField="metadata.name">{gettext('Name')}</ColHead>
+  <ColHead {...props} className="col-lg-2 col-md-3 col-sm-4 col-xs-6" sortField="metadata.namespace">{gettext('Namespace')}</ColHead>
+  <ColHead {...props} className="col-lg-3 col-md-3 col-sm-4 hidden-xs" sortField="spec.host">{gettext('Location')}</ColHead>
+  <ColHead {...props} className="col-lg-2 col-md-3 hidden-sm hidden-xs" sortField="spec.to.name">{gettext('Service')}</ColHead>
+  <ColHead {...props} className="col-lg-2 hidden-md hidden-sm hidden-xs">{gettext('Status')}</ColHead>
 </ListHeader>;
 
 const RouteListRow: React.SFC<RoutesRowProps> = ({obj: route}) => <ResourceRow obj={route}>
@@ -160,28 +160,28 @@ class TLSSettings extends SafetyFirst<TLSDataProps, TLSDataState> {
     const visibleKeyValue = showPrivateKey ? tls.key : <MaskedData /> ;
 
     return !tls ?
-      'TLS is not enabled.' :
+      gettext('TLS is not enabled.') :
       <dl>
-        <dt>Termination Type</dt>
+        <dt>{gettext('Termination Type')}</dt>
         <dd>{tls.termination}</dd>
-        <dt>Insecure Traffic</dt>
+        <dt>{gettext('Insecure Traffic')}</dt>
         <dd>{tls.insecureEdgeTerminationPolicy || '-'}</dd>
-        <dt>Certificate</dt>
+        <dt>{gettext('Certificate')}</dt>
         <dd>{tls.certificate ? <CopyToClipboard value={tls.certificate} /> : '-'}</dd>
         <dt className="co-m-route-tls-reveal__title">Key {tls.key &&
           <button className="btn btn-link co-m-route-tls-reveal__btn" type="button" onClick={this.toggleKey}>
             {
               showPrivateKey
-                ? <React.Fragment><i className="fa fa-eye-slash" aria-hidden="true"></i> Hide</React.Fragment>
-                : <React.Fragment><i className="fa fa-eye" aria-hidden="true"></i> Reveal</React.Fragment>
+                ? <React.Fragment><i className="fa fa-eye-slash" aria-hidden="true"></i> {gettext('Hide')}</React.Fragment>
+                : <React.Fragment><i className="fa fa-eye" aria-hidden="true"></i> {gettext('Reveal')}</React.Fragment>
             }
           </button>}
         </dt>
         <dd>{tls.key ? <CopyToClipboard value={tls.key} visibleValue={visibleKeyValue} /> : '-'}</dd>
-        <dt>CA Certificate</dt>
+        <dt>{gettext('CA Certificate')}</dt>
         <dd>{tls.caCertificate ? <CopyToClipboard value={tls.caCertificate} /> : '-'}</dd>
         {tls.termination === 'reencrypt' && <React.Fragment>
-          <dt>Destination CA Cert</dt>
+          <dt>{gettext('Destination CA Cert')}</dt>
           <dd>{tls.destinationCACertificate ? <CopyToClipboard value={tls.destinationCACertificate} /> : '-'}</dd>
         </React.Fragment>}
       </dl>;
@@ -214,12 +214,12 @@ const RouteIngressStatus: React.SFC<RouteIngressStatusProps> = ({ingresses}) =>
       <div key={ingress.routerName} className="co-m-route-ingress-status">
         <SectionHeading text={`Router: ${ingress.routerName}`} />
         <dl>
-          <dt>Hostname</dt>
+          <dt>{gettext('Hostname')}</dt>
           <dd>{ingress.host}</dd>
-          <dt>Wildcard Policy</dt>
+          <dt>{gettext('Wildcard Policy')}</dt>
           <dd>{ingress.wildcardPolicy}</dd>
         </dl>
-        <h3 className="co-section-heading-secondary">Conditions</h3>
+        <h3 className="co-section-heading-secondary">{gettext('Conditions')}</h3>
         <Conditions conditions={ingress.conditions} />
       </div>)}
   </React.Fragment>;
@@ -234,20 +234,20 @@ const RouteDetails: React.SFC<RoutesDetailsProps> = ({obj: route}) => <React.Fra
           <dd><ResourceLink kind={route.spec.to.kind} name={route.spec.to.name} namespace={route.metadata.namespace}
             title={route.spec.to.name} />
           </dd>
-          <dt>Target Port</dt>
+          <dt>{gettext('Target Port')}</dt>
           <dd>{_.get(route, 'spec.port.targetPort', '-')}</dd>
         </ResourceSummary>
       </div>
       <div className="col-sm-6">
-        <dt>Location</dt>
+        <dt>{gettext('Location')}</dt>
         <dd><RouteLocation obj={route} /></dd>
-        <dt>Status</dt>
+        <dt>{gettext('Status')}</dt>
         <dd>
           <RouteStatus obj={route} />
         </dd>
-        <dt>Hostname</dt>
+        <dt>{gettext('Hostname')}</dt>
         <dd>{route.spec.host}</dd>
-        <dt>Path</dt>
+        <dt>{gettext('Path')}</dt>
         <dd>{route.spec.path || '-'}</dd>
       </div>
     </div>
@@ -259,15 +259,15 @@ const RouteDetails: React.SFC<RoutesDetailsProps> = ({obj: route}) => <React.Fra
   { !_.isEmpty(route.spec.alternateBackends) && <div className="co-m-pane__body">
     <SectionHeading text="Traffic" />
     <p className="co-m-pane__explanation">
-      This route splits traffic across multiple services.
+      {gettext('This route splits traffic across multiple services.')}
     </p>
     <div className="co-table-container">
       <table className="table">
         <thead>
           <tr>
-            <th>Service</th>
-            <th>Weight</th>
-            <th>Percent</th>
+            <th>{gettext('Service')}</th>
+            <th>{gettext('Weight')}</th>
+            <th>{gettext('Percent')}</th>
           </tr>
         </thead>
         <tbody>
@@ -279,7 +279,7 @@ const RouteDetails: React.SFC<RoutesDetailsProps> = ({obj: route}) => <React.Fra
   </div> }
   {_.isEmpty(route.status.ingress)
     ? <div className="cos-status-box">
-      <div className="text-center">No Route Status</div>
+      <div className="text-center">{gettext('No Route Status')}</div>
     </div>
     : <div className="co-m-pane__body">
       <RouteIngressStatus ingresses={route.status.ingress} />

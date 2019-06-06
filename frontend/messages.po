@@ -1,111 +1,98 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-04 18:07+0800\n"
+"POT-Creation-Date: 2019-06-06 15:13+0800\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: public/components/utils/operator-states.jsx:45
-#, fuzzy
 msgid " is available"
-msgstr "不可用"
+msgstr "可用"
 
-#: public/components/deployment-config.tsx:67
-#: public/components/deployment.jsx:65 public/components/namespace.jsx:26
+msgid "404: Not Found"
+msgstr "404: 未找到"
+
+msgid "Accepted"
+msgstr "已接受"
+
 msgid "Active"
 msgstr "运行中"
 
-#: public/components/pod.jsx:191
 msgid "Active Deadline"
 msgstr "有效截止日期"
 
-#: public/components/cluster-overview.jsx:189
+msgid "Active Pods"
+msgstr "运行中Pods"
+
 msgid "Additional Support"
 msgstr "其他支持"
 
-#: public/components/nav.jsx:424
 msgid "Administration"
 msgstr "管理平台"
 
-#: public/models/index.ts:103
+msgid "Alert Manager Node Selector"
+msgstr "报警管理器节点选择器"
+
 msgid "Alertmanagers"
 msgstr "报警管理"
 
-#: public/components/cluster-overview.jsx:60
 msgid "Alerts"
 msgstr "报警"
 
-#: public/components/cluster-overview.jsx:59
 msgid "Alerts Firing"
-msgstr ""
+msgstr "警报触发"
 
-#: public/components/events.jsx:153
 msgid "All Categories"
 msgstr "所有分类"
 
-#: public/components/cluster-overview.jsx:24
-#: public/components/cluster-overview.jsx:31
 msgid "All good"
 msgstr "完美"
 
-#: public/components/events.jsx:152
-#, fuzzy
 msgid "All Types"
 msgstr "所有类型"
 
-#: public/components/events.jsx:383
 msgid "An error occurred during event retrieval. Attempting to reconnect..."
 msgstr "时间检索过程中出错，正在尝试重新连接..."
 
-#: public/components/cluster-overview.jsx:95
 msgid "API Request Success Rate"
 msgstr "API请求成功率"
 
-#: public/components/cluster-overview.jsx:86
 msgid "API Servers Up"
 msgstr "API服务状态"
 
-#: public/components/cloud-services/clusterserviceversion-resource.tsx:68
 msgid "Application Resources"
 msgstr "应用程序资源"
 
-#: public/components/cloud-services/clusterserviceversion-resource.tsx:66
 msgid ""
 "Application resources are declarative components used to define the behavior "
 "of the application."
 msgstr "应用程序资源是用于定义应用程序行为的声明性组件。"
 
-#: public/models/index.ts:557
 msgid "AppVersions"
 msgstr "APP版本"
 
-#: public/components/image-stream-tag.tsx:75
 msgid "Architecture"
-msgstr ""
+msgstr "架构"
 
-#: public/models/index.ts:280
 msgid "Build Configs"
 msgstr "构建配置"
 
-#: public/components/nav.jsx:416 public/models/index.ts:294
 msgid "Builds"
 msgstr "构建"
 
-#: public/components/cloud-services/catalog-source.tsx:225
+msgid "CA Certificate"
+msgstr "CA证书"
+
 msgid "Cannot create a Subscription to a non-existent package."
 msgstr "无法创建对不存在的包的订阅。"
 
-#: public/components/nav.jsx:381
 msgid "Catalog Sources"
 msgstr "目录源"
 
-#: public/components/cloud-services/catalog-source.tsx:141
 msgid ""
 "Catalog Sources contain packaged Operators which can be subscribed to for "
 "automatic upgrades."
 msgstr "目标源包含打包控制器，可订阅这些控制器进行自动升级。"
 
-#: public/components/cloud-services/catalog-source.tsx:140
 msgid ""
 "Catalogs are groups of Operators you can make available on the cluster. "
 "Subscribe and grant a namespace access to use the installed Operators."
@@ -113,997 +100,875 @@ msgstr ""
 "目录是可以在集群上使用的操作控制器。订阅并授予命名空间访问权以使用已安装的控"
 "制器。"
 
-#: public/models/index.ts:8
 msgid "CatalogSources"
 msgstr "目录源"
 
-#: public/components/channel-operators/app-version.jsx:85
+msgid "Certificate"
+msgstr "证书"
+
 msgid "Channel"
 msgstr "频道"
 
-#: public/models/index.ts:544
 msgid "Channel Operator Configs"
 msgstr "频道配置"
 
-#: public/components/nav.jsx:433
 msgid "Chargeback"
 msgstr "充值"
 
-#: public/components/service.jsx:65
-#, fuzzy
 msgid "Cluster IP"
-msgstr "集群"
+msgstr "集群IP"
 
-#: public/models/index.ts:467
 msgid "Cluster Role Bindings"
 msgstr "集群角色绑定"
 
-#: public/models/index.ts:479
 msgid "Cluster Roles"
 msgstr "集群角色"
 
-#: public/models/index.ts:676
 msgid "Cluster Service Brokers"
 msgstr "集群服务商"
 
-#: public/models/index.ts:689
 msgid "Cluster Service Classes"
 msgstr "集群服务类"
 
-#: public/models/index.ts:702
 msgid "Cluster Service Plans"
 msgstr "集群服务方案"
 
-#: public/components/cloud-services/clusterserviceversion.tsx:88
-#: public/components/nav.jsx:379
 msgid "Cluster Service Versions"
 msgstr "集群服务版本"
 
-#: public/components/cloud-services/clusterserviceversion.tsx:94
-#, fuzzy
 msgid "Cluster Service Versions by name"
-msgstr "集群服务版本"
+msgstr "按群集服务版本名称"
 
-#: public/components/nav.jsx:428
 msgid "Cluster Settings"
 msgstr "集群设置"
 
-#: public/components/cluster-overview.jsx:243
 msgid "Cluster Status"
 msgstr "集群设置"
 
-#: public/models/index.ts:117
 msgid "Clusters"
 msgstr "集群"
 
-#: public/models/index.ts:21
 msgid "ClusterServiceVersions"
 msgstr "集群服务版本"
 
-#: public/components/image-stream-tag.tsx:67
 msgid "Command"
 msgstr "命令"
 
-#: public/components/factory/list-page.jsx:17
 msgid "Compact"
 msgstr "合并"
 
-#: public/components/utils/operator-states.jsx:114
-#, fuzzy
 msgid "Complete"
-msgstr "合并"
+msgstr "完成"
 
-#: public/components/utils/operator-states.jsx:11
-#, fuzzy
 msgid "Completed"
-msgstr "合并"
+msgstr "已完成"
 
-#: public/models/index.ts:365
+msgid "Completion Time"
+msgstr "完成时间"
+
+msgid "Completions"
+msgstr "完成"
+
 msgid "Component Statuses"
 msgstr "组件状态"
 
-#: public/components/nav.jsx:393 public/models/index.ts:443
+msgid "Concurrency Policy"
+msgstr "并发策略"
+
+msgid "Conditions"
+msgstr "状况"
+
 msgid "Config Maps"
 msgstr "配置映射"
 
-#: public/components/events.jsx:230
 msgid "Connection did not close cleanly."
 msgstr "连接没有完全关闭"
 
-#: public/models/index.ts:172
 msgid "Containers"
 msgstr "容器"
 
-#: public/components/cluster-overview.jsx:89
 msgid "Controller Managers Up"
 msgstr "控制器状态"
 
-#: public/components/cluster-overview.jsx:111
 msgid "CPU Usage"
 msgstr "CPU使用率"
 
-#: public/components/cluster-overview.jsx:67
 msgid "Crashlooping Pods"
 msgstr ""
 
-#: public/components/nav.jsx:434
 msgid "CRDs"
 msgstr ""
 
-#: public/components/factory/list-page.jsx:269
 msgid "Create"
 msgstr "创建"
 
-#: public/components/namespace.jsx:109
 msgid "Create a project for your application."
 msgstr "为你的应用程序创建项目。"
 
-#: public/components/cloud-services/clusterserviceversion-resource.tsx:124
-#: public/components/cloud-services/clusterserviceversion.tsx:114
 msgid "Create New"
 msgstr "创建"
 
-#: public/components/cloud-services/catalog-source.tsx:62
 msgid "Create Subscription"
 msgstr "订阅"
 
-#: public/components/cloud-services/catalog-source.tsx:115
 msgid "Created"
 msgstr "创建"
 
-#: public/components/cloud-services/clusterserviceversion-resource.tsx:201
-#: public/components/cloud-services/clusterserviceversion.tsx:122
 msgid "Created At"
-msgstr "创建"
+msgstr "创建于"
 
-#: public/components/nav.jsx:395 public/models/index.ts:657
 msgid "Cron Jobs"
 msgstr "定时任务"
 
-#: public/components/channel-operators/app-version.jsx:82
+msgid "Current Count"
+msgstr "当前数量"
+
 msgid "Current Version"
 msgstr "集群服务版本"
 
-#: public/models/index.ts:644
 msgid "Custom Resource Definitions"
 msgstr "自定义资源类型"
 
-#: public/components/nav.jsx:397 public/models/index.ts:186
 msgid "Daemon Sets"
 msgstr ""
 
-#: public/components/namespace.jsx:39
+msgid "Deadline"
+msgstr "截止日期"
+
 msgid "default cannot be deleted"
 msgstr "默认无法删除"
 
-#: public/components/namespace.jsx:206
 msgid "Default Pull Secret"
 msgstr "默认拉取Secret"
 
-#: public/components/cloud-services/clusterserviceversion.tsx:22
-#, fuzzy
 msgid "Deployment"
 msgstr "部署"
 
-#: public/models/index.ts:266
 msgid "Deployment Configs"
 msgstr "部署配置"
 
-#: public/components/nav.jsx:388 public/models/index.ts:252
 msgid "Deployments"
 msgstr "部署"
 
-#: public/components/cloud-services/clusterserviceversion.tsx:146
-#, fuzzy
 msgid "Description"
 msgstr "订阅"
 
-#: public/components/cluster-overview.jsx:117
+msgid "Desired Completions"
+msgstr "订阅完成"
+
+msgid "Desired Count"
+msgstr "期望数量"
+
+msgid "Destination CA Cert"
+msgstr "目标CA证书"
+
 msgid "Disk Usage"
 msgstr "硬盘使用率"
 
-#: public/components/namespace.jsx:196
 msgid "Display Name"
 msgstr "名称"
 
-#: public/components/cluster-overview.jsx:181
 msgid "Documentation"
 msgstr "文档"
 
-#: public/components/deployment.jsx:16
+msgid "Duration"
+msgstr "持续时间"
+
 msgid "Edit Update Strategy"
 msgstr "编辑更新策略"
 
-#: public/components/image-stream-tag.tsx:65
 msgid "Entrypoint"
 msgstr "入口"
 
-#: public/components/events.jsx:379
 msgid "Error connecting to event stream"
 msgstr "连接事件流出错"
 
-#: public/components/events.jsx:382
+msgid "Error Loading"
+msgstr "错误加载"
+
 msgid "Error Loading Events"
 msgstr "加载事件出错"
 
-#: public/components/cloud-services/catalog-source.tsx:109
-#: public/components/cloud-services/catalog-source.tsx:155
 msgid "Error Parsing Catalog"
 msgstr "分析目录出错"
 
-#: public/models/index.ts:61
 msgid "Etcd Clusters"
 msgstr "Etcd集群"
 
-#: public/components/events.jsx:392
 msgid "Event stream is paused."
 msgstr "事件流已暂停"
 
-#: public/components/cluster-overview.jsx:162 public/components/nav.jsx:375
-#: public/models/index.ts:359
 msgid "Events"
 msgstr "事件"
 
-#: public/components/events.jsx:156
 msgid "Events by name or message"
 msgstr "事件 通过 名称/信息 "
 
-#: public/components/events.jsx:372
 msgid "events exist, but none match the current filter"
 msgstr "事件，但不匹配当前筛选器"
 
-#: public/components/factory/list-page.jsx:20
 msgid "Expand"
 msgstr "展开"
 
-#: public/components/image-stream-tag.tsx:71
 msgid "Exposed Ports"
 msgstr "暴露的端口"
 
-#: public/components/service.jsx:61
 msgid "External Load Balancer"
 msgstr "外部负载均衡器"
 
-#: public/components/service.jsx:63
-#, fuzzy
 msgid "External Service Name"
-msgstr "集群服务类"
+msgstr "外部服务名称"
 
-#: public/components/utils/operator-states.jsx:103
-#: public/components/utils/operator-states.jsx:143
 msgid "Failed"
 msgstr "失败"
 
-#: public/components/factory/list-page.jsx:40
+msgid "Failed Pods"
+msgstr "失败Pods"
+
 msgid "Filter"
 msgstr "筛选"
 
-#: public/components/factory/list-page.jsx:263
 msgid "Filter by selector (app=nginx) ..."
 msgstr "输入app筛选，如 (app=nginx) ..."
 
-#: public/components/pod.jsx:129
 msgid "Finished"
 msgstr "结束"
 
-#: public/components/cluster-overview.jsx:46
+msgid "Generation Query"
+msgstr "生成查询"
+
+msgid "Grace Period"
+msgstr "宽限期"
+
 msgid "Health"
 msgstr "健康"
 
-#: public/components/channel-operators/app-version.jsx:247
+msgid "Hide"
+msgstr "隐藏"
+
 msgid "Hide Failed Reason"
 msgstr "隐藏失败原因"
 
-#: public/components/nav.jsx:372
 msgid "Home"
 msgstr "首页"
 
-#: public/models/index.ts:212
 msgid "Horizontal Pod Autoscalers"
 msgstr "Pod水平扩展"
 
-#: public/components/nav.jsx:400
+msgid "Hostname"
+msgstr "主机名"
+
 msgid "HPAs"
 msgstr ""
 
-#: public/components/pod.jsx:124
 msgid "Id"
 msgstr ""
 
-#: public/components/deployment.jsx:43 public/components/pod.jsx:125
-#, fuzzy
 msgid "Image"
-msgstr "镜像组"
+msgstr "镜像"
 
-#: public/components/image-stream-tag.tsx:54
-#, fuzzy
 msgid "Image Name"
-msgstr "镜像组"
+msgstr "镜像名称"
 
-#: public/models/index.ts:322
 msgid "Image Stream Tags"
 msgstr "镜像标签"
 
-#: public/models/index.ts:308
 msgid "Image Streams"
 msgstr "镜像组"
 
-#: public/components/nav.jsx:406
 msgid "Ingress"
 msgstr ""
 
-#: public/models/index.ts:410
 msgid "Ingresses"
 msgstr ""
 
-#: public/components/nav.jsx:383
+msgid "Insecure Traffic"
+msgstr "不安全的通信"
+
 msgid "Install Plans"
 msgstr "安装计划"
 
-#: public/models/index.ts:35
 msgid "InstallPlans"
 msgstr "安装计划"
 
-#: public/components/deployment-config.tsx:82
 msgid "Interval"
 msgstr "间隔"
 
-#: public/components/namespace.jsx:41
 msgid "is already terminating"
 msgstr "已终止"
 
-#: public/components/nav.jsx:396 public/models/index.ts:336
 msgid "Jobs"
 msgstr "任务"
 
-#: public/components/cluster-overview.jsx:142
-#: public/components/cluster-overview.jsx:52
 msgid "Kubernetes API"
 msgstr ""
 
-#: public/components/cloud-services/clusterserviceversion-resource.tsx:21
-#: public/components/namespace.jsx:58 public/components/namespace.jsx:83
-#: public/components/service.jsx:21
 msgid "Labels"
 msgstr "标签"
 
-#: public/components/masthead.tsx:48
 msgid "Language: CN -> EN"
 msgstr "语言：中文 -> 英文"
 
-#: public/components/masthead.tsx:48
 msgid "Language: EN -> CN"
 msgstr "语言：英文 -> 中文"
 
-#: public/components/cloud-services/clusterserviceversion-resource.tsx:25
+msgid "Last Schedule Time"
+msgstr "上次计划时间"
+
 msgid "Last Updated"
 msgstr "上次更新时间"
 
-#: public/components/cloud-services/catalog-source.tsx:36
-#: public/components/deployment-config.tsx:72
 msgid "Latest Version"
 msgstr "构造版本"
 
-#: public/components/events.jsx:387
 msgid "Loading events..."
 msgstr "加载事件..."
 
-#: public/components/service.jsx:23 public/components/service.jsx:72
-#, fuzzy
 msgid "Location"
 msgstr "地址"
 
-#: public/components/masthead.tsx:70
+msgid "Log Snippet"
+msgstr "日志片段"
+
 msgid "Logout"
 msgstr "退出"
 
-#: public/components/deployment-config.tsx:86
-#: public/components/deployment.jsx:74
 msgid "Max Surge"
 msgstr "最大涌动"
 
-#: public/components/deployment-config.tsx:84
-#: public/components/deployment.jsx:72
-#, fuzzy
 msgid "Max Unavailable"
-msgstr "不可用"
+msgstr "最大不可用"
 
-#: public/components/cluster-overview.jsx:114
 msgid "Memory Usage"
 msgstr "内存使用率"
 
-#: public/components/namespace.jsx:184
-#, fuzzy
 msgid "Memory Usage by Pod (Top 10)"
-msgstr "内存使用率"
+msgstr "Pod的内存使用量（前10名）"
 
-#: public/components/deployment.jsx:78
+msgid "Memory:"
+msgstr "内存："
+
 msgid "Min Ready Seconds"
 msgstr "最小就绪秒数"
 
-#: public/components/cloud-services/spec-descriptors/configure-size.tsx:13
 msgid "Modify"
 msgstr "更改"
 
-#: public/components/cloud-services/catalog-source.tsx:112
-#: public/components/cloud-services/catalog-source.tsx:35
-#: public/components/cloud-services/catalog-source.tsx:92
-#: public/components/cloud-services/clusterserviceversion-resource.tsx:197
-#: public/components/cloud-services/clusterserviceversion-resource.tsx:20
-#: public/components/cloud-services/clusterserviceversion.tsx:20
-#: public/components/deployment.jsx:42
-#: public/components/image-stream-tag.tsx:110
-#: public/components/image-stream-tag.tsx:89 public/components/namespace.jsx:56
-#: public/components/namespace.jsx:80 public/components/pod.jsx:123
-#: public/components/pod.jsx:214 public/components/pod.jsx:66
-#: public/components/service.jsx:19 public/components/service.jsx:83
 msgid "Name"
 msgstr "名称"
 
-#: public/components/cloud-services/catalog-source.tsx:113
-#: public/components/cloud-services/clusterserviceversion-resource.tsx:199
-#: public/components/cloud-services/clusterserviceversion.tsx:21
-#: public/components/pod.jsx:67 public/components/service.jsx:20
 msgid "Namespace"
 msgstr "命名空间"
 
-#: public/components/nav.jsx:426 public/models/index.ts:381
 msgid "Namespaces"
 msgstr "命名空间"
 
-#: public/components/namespace.jsx:208 public/components/namespace.jsx:210
-#: public/components/nav.jsx:407 public/models/index.ts:623
 msgid "Network Policies"
 msgstr "网络规则"
 
-#: public/components/nav.jsx:403
 msgid "Networking"
 msgstr "网络"
 
-#: public/components/cloud-services/clusterserviceversion-resource.tsx:94
+msgid "No %s Found"
+msgstr "%s 无记录"
+
 msgid "No Application Resources Defined"
 msgstr "未定义应用程序资源"
 
-#: public/components/cloud-services/clusterserviceversion-resource.tsx:66
-#, fuzzy
 msgid "No Application Resources Found"
-msgstr "未定义应用程序资源"
+msgstr "找不到应用程序资源"
 
-#: public/components/cloud-services/catalog-source.tsx:141
 msgid "No Catalog Sources Found"
 msgstr " 找不到目录源 "
 
-#: public/components/image-stream-tag.tsx:105
 msgid "No environment variables"
 msgstr "无环境变量"
 
-#: public/components/image-stream-tag.tsx:84
-#: public/components/utils/label-list.tsx:33
-#, fuzzy
 msgid "No labels"
 msgstr "无标签"
 
-#: public/components/events.jsx:370
 msgid "No Matching Events"
 msgstr "没有匹配的事件"
 
-#: public/components/cloud-services/catalog-source.tsx:80
 msgid "No Packages Found"
 msgstr "找不到包"
 
-#: public/components/pod.jsx:198 public/components/pod.jsx:69
-#, fuzzy
+msgid "No requester"
+msgstr "无请求者"
+
+msgid "No Route Status"
+msgstr "没有路由状态"
+
+msgid "No stages have started."
+msgstr "尚未开始任何步骤。"
+
 msgid "Node"
 msgstr "节点"
 
-#: public/components/service.jsx:59 public/components/service.jsx:94
-#, fuzzy
 msgid "Node Port"
-msgstr "暴露的端口"
+msgstr "节点端口"
 
-#: public/components/pod.jsx:178
 msgid "Node Selector"
 msgstr "节点选择器"
 
-#: public/components/nav.jsx:427 public/models/index.ts:347
 msgid "Nodes"
 msgstr "节点"
 
-#: public/components/cloud-services/clusterserviceversion.tsx:121
-#: public/components/cloud-services/clusterserviceversion.tsx:131
-#: public/components/cloud-services/clusterserviceversion.tsx:139
-#: public/components/cloud-services/clusterserviceversion.tsx:147
 msgid "Not available"
 msgstr "不可用"
 
-#: public/components/deployment.jsx:79 public/components/namespace.jsx:160
 msgid "Not Configured"
 msgstr "未配置"
 
-#: public/components/cluster-overview.jsx:134
+msgid "Not Found"
+msgstr "找不到"
+
 msgid "OKD Console"
 msgstr "OKD控制台"
 
-#: public/components/cluster-overview.jsx:134
-#: public/components/cluster-overview.jsx:55
 msgid "OpenShift Console"
 msgstr "OpenShift控制台"
 
-#: public/components/cloud-services/catalog-source.tsx:163
 msgid "Operator Catalog Sources"
 msgstr "目录源"
 
-#: public/components/cloud-services/clusterserviceversion.tsx:85
 msgid "Operator Lifecycle Manager not enabled for this namespace"
 msgstr "没有为此命名空间启用Operator Lifecycle管理器"
 
-#: public/components/nav.jsx:378
 msgid "Operators"
 msgstr "操作控制器"
 
-#: public/components/cluster-overview.jsx:248
-#: public/components/cluster-overview.jsx:250
-#: public/components/namespace.jsx:192
 msgid "Overview"
 msgstr "概述"
 
-#: public/components/cloud-services/catalog-source.tsx:225
 msgid "Package Not Found"
 msgstr "找不到包"
 
-#: public/components/cloud-services/catalog-source.tsx:166
 msgid "Packages by name"
 msgstr "按名称"
 
-#: public/components/utils/operator-states.jsx:107
-#: public/components/utils/operator-states.jsx:135
+msgid "Parallelism"
+msgstr ""
+
+msgid "Path"
+msgstr ""
+
 msgid "Paused"
 msgstr "已暂停"
 
-#: public/components/utils/operator-states.jsx:29
 msgid "Paused..."
 msgstr "已暂停..."
 
-#: public/components/utils/operator-states.jsx:139
 msgid "Pausing"
 msgstr "暂停中"
 
-#: public/components/utils/operator-states.jsx:34
 msgid "Pausing..."
 msgstr "暂停中..."
 
-#: public/components/utils/operator-states.jsx:114
-#, fuzzy
 msgid "Pending"
-msgstr "角色绑定"
+msgstr "等待中"
 
-#: public/components/pod.jsx:216
-#, fuzzy
+msgid "Percent"
+msgstr "百分比"
+
 msgid "Permissions"
-msgstr "APP版本"
+msgstr "权限"
 
-#: public/components/nav.jsx:412 public/models/index.ts:580
 msgid "Persistent Volume Claims"
 msgstr "持久化卷声明"
 
-#: public/components/nav.jsx:411 public/models/index.ts:568
 msgid "Persistent Volumes"
 msgstr "持久化卷"
 
-#: public/models/index.ts:592
+msgid "PersistentVolume Overview"
+msgstr "持久化卷概况"
+
 msgid "Petsets"
 msgstr ""
 
-#: public/components/cloud-services/clusterserviceversion.tsx:85
+msgid "Phase"
+msgstr ""
+
+msgid "Please"
+msgstr "请"
+
 msgid ""
 "Please contact a system administrator and ask them to enable Operator "
 "Lifecycle Manager to continue."
 msgstr "请与系统管理员联系，要求他们启用Operator Lifecycle Manager以继续。"
 
-#: public/components/pod.jsx:196
 msgid "Pod IP"
 msgstr ""
 
-#: public/components/pod.jsx:68
-#, fuzzy
 msgid "Pod Labels"
-msgstr "标签"
+msgstr "Pod标签"
 
-#: public/components/service.jsx:86
 msgid "Pod Port or Name"
 msgstr "Pod端口或名称"
 
-#: public/components/service.jsx:22
-#, fuzzy
 msgid "Pod Selector"
-msgstr "节点选择器"
+msgstr "Pod选择器"
 
-#: public/components/cluster-overview.jsx:120
 msgid "Pod Usage"
 msgstr "Pod使用率"
 
-#: public/components/cluster-overview.jsx:68 public/components/nav.jsx:387
-#: public/models/index.ts:161
 msgid "Pods"
 msgstr ""
 
-#: public/components/service.jsx:84
 msgid "Port"
 msgstr "端口"
 
-#: public/components/deployment.jsx:45
-#, fuzzy
 msgid "Ports"
 msgstr "端口"
 
-#: public/components/deployment.jsx:76
-#, fuzzy
 msgid "Progress Deadline"
-msgstr "有效截止日期"
+msgstr "进度截止日期"
 
-#: public/models/index.ts:405
 msgid "Project Requests"
 msgstr "项目请求"
 
-#: public/components/nav.jsx:425 public/models/index.ts:393
 msgid "Projects"
 msgstr "项目"
 
-#: public/models/index.ts:75
 msgid "Prometheuses"
 msgstr ""
 
-#: public/components/service.jsx:85
 msgid "Protocol"
 msgstr "协议"
 
-#: public/components/cloud-services/clusterserviceversion.tsx:120
 msgid "Provider"
 msgstr "供应商"
 
-#: public/components/cloud-services/catalog-source.tsx:114
-#: public/components/cloud-services/catalog-source.tsx:98
 msgid "Publisher"
 msgstr "发布者"
 
-#: public/components/pod.jsx:71
 msgid "Readiness"
 msgstr "准备就绪"
 
-#: public/components/deployment-config.tsx:74
 msgid "Reason"
 msgstr "原因"
 
-#: public/components/nav.jsx:398 public/models/index.ts:238
+msgid "Rejected"
+msgstr "已拒绝"
+
+msgid "Replica Set Overview"
+msgstr "副本集概况"
+
 msgid "Replica Sets"
+msgstr "副本集"
+
+msgid "Replicas"
+msgstr "副本集"
+
+msgid "ReplicaSet Details"
+msgstr "副本集详细信息"
+
+msgid "Replication Controller Overview"
+msgstr "副本控制器详细信息"
+
+msgid "Replication Controllers"
 msgstr "副本控制器"
 
-#: public/components/nav.jsx:399 public/models/index.ts:199
-msgid "Replication Controllers"
-msgstr ""
+msgid "ReplicationController Details"
+msgstr "副本控制器详细信息"
 
-#: public/models/index.ts:130
+msgid "Report Generation Query"
+msgstr "报告生成查询"
+
+msgid "Reporting End"
+msgstr "报告结束"
+
+msgid "Reporting Start"
+msgstr "报告开始"
+
 msgid "Reports"
 msgstr "报告"
 
-#: public/components/utils/operator-states.jsx:147
-#, fuzzy
 msgid "Requested"
-msgstr "请求"
+msgstr "已请求"
 
-#: public/components/namespace.jsx:198 public/components/namespace.jsx:82
 msgid "Requester"
-msgstr "请求"
+msgstr "请求者"
 
-#: public/components/deployment.jsx:44
-#, fuzzy
 msgid "Resource Limits"
-msgstr "资源配额"
+msgstr "资源限制"
 
-#: public/components/nav.jsx:432 public/models/index.ts:618
 msgid "Resource Quotas"
 msgstr "资源配额"
 
-#: public/components/cloud-services/clusterserviceversion-resource.tsx:119
+msgid "Resource Request"
+msgstr "资源请求"
+
 msgid "Resources by name"
-msgstr "资源配额"
+msgstr "按资源名称"
 
-#: public/components/pod.jsx:186
-#, fuzzy
 msgid "Restart Policy"
-msgstr "网络规则"
+msgstr "重启策略"
 
-#: public/components/pod.jsx:127
 msgid "Restarts"
 msgstr "重启"
 
-#: public/components/nav.jsx:431 public/models/index.ts:492
+msgid "Restricted Access"
+msgstr "禁止进入"
+
+msgid "Reveal"
+msgstr "展示"
+
 msgid "Role Bindings"
 msgstr "角色绑定"
 
-#: public/components/nav.jsx:430 public/models/index.ts:505
 msgid "Roles"
 msgstr "角色"
 
-#: public/components/deployment.jsx:71
 msgid "RollingUpdate"
-msgstr ""
+msgstr "滚动更新"
 
-#: public/components/nav.jsx:405 public/models/index.ts:423
 msgid "Routes"
 msgstr "路由"
 
-#: public/components/cluster-overview.jsx:92
+msgid "Run Immediately?"
+msgstr "马上运行？"
+
+msgid "Schedule"
+msgstr "调度"
+
 msgid "Schedulers Up"
 msgstr "调度状态"
 
-#: public/components/nav.jsx:374 public/components/search.jsx:79
-#: public/components/search.jsx:81
 msgid "Search"
 msgstr "查找"
 
-#: public/components/nav.jsx:392 public/models/index.ts:455
+msgid "seconds"
+msgstr "秒"
+
 msgid "Secrets"
 msgstr ""
 
-#: public/models/index.ts:518
 msgid "Self Subject Access Reviews"
 msgstr "自查"
 
-#: public/components/nav.jsx:429 public/models/index.ts:224
+msgid "Service"
+msgstr "服务"
+
 msgid "Service Accounts"
 msgstr "服务账户"
 
-#: public/components/service.jsx:124
-#, fuzzy
 msgid "Service Address"
-msgstr "服务"
+msgstr "服务地址"
 
-#: public/models/index.ts:728
 msgid "Service Bindings"
 msgstr "服务绑定"
 
-#: public/models/index.ts:715
 msgid "Service Instances"
 msgstr "服务实例"
 
-#: public/models/index.ts:89
 msgid "Service Monitors"
 msgstr "服务监控"
 
-#: public/components/service.jsx:128
-#, fuzzy
 msgid "Service Port Mapping"
-msgstr "服务绑定"
+msgstr "服务端口映射"
 
-#: public/components/nav.jsx:404 public/models/index.ts:149
 msgid "Services"
 msgstr "服务"
 
-#: public/components/service.jsx:117
 msgid "Session Affinity"
 msgstr "会话关联"
 
-#: public/components/channel-operators/app-version.jsx:247
 msgid "Show Failed Reason"
 msgstr "显示失败原因"
 
-#: public/components/image-stream-tag.tsx:58
 msgid "Size"
 msgstr "大小"
 
-#: public/components/cluster-overview.jsx:173
-#: public/components/cluster-overview.jsx:252
 msgid "Software Info"
 msgstr "软件信息"
 
-#: public/components/utils/operator-states.jsx:16
 msgid "Software update failed"
 msgstr "软件更新失败"
 
-#: public/components/pod.jsx:128
+msgid "Start Time"
+msgstr "开始时间"
+
 msgid "Started"
 msgstr "启动"
 
-#: public/components/pod.jsx:126
-#, fuzzy
+msgid "Starting Deadline Seconds"
+msgstr ""
+
 msgid "State"
 msgstr "状态"
 
-#: public/components/nav.jsx:391 public/models/index.ts:606
 msgid "Stateful Sets"
 msgstr ""
 
-#: public/components/stateful-set.jsx:15
-#: public/dist/stateful-set-d306743e4d876d21f226.js:61
 msgid "StatefulSet Overview"
 msgstr "StatefulSet概况"
 
-#: public/components/cloud-services/clusterserviceversion-resource.tsx:23
-#: public/components/cloud-services/clusterserviceversion.tsx:23
-#: public/components/deployment-config.tsx:66
-#: public/components/deployment.jsx:64 public/components/namespace.jsx:204
-#: public/components/namespace.jsx:57 public/components/namespace.jsx:81
-#: public/components/nav.jsx:373 public/components/pod.jsx:184
-#: public/components/pod.jsx:70
 msgid "Status"
 msgstr "状态"
 
-#: public/components/cluster-overview.jsx:243
+#, javascript-format
 msgid "Status of %s"
 msgstr "%s 状态"
 
-#: public/components/nav.jsx:410
 msgid "Storage"
 msgstr "存储"
 
-#: public/components/nav.jsx:413 public/models/index.ts:663
 msgid "Storage Classes"
 msgstr "存储类"
 
-#: public/components/channel-operators/app-version.jsx:88
 msgid "Strategy"
 msgstr "策略"
 
-#: public/components/events.jsx:390
-#, fuzzy
 msgid "Streaming events..."
 msgstr "加载事件..."
 
-#: public/components/cloud-services/catalog-source.tsx:37
-#: public/components/nav.jsx:382 public/models/index.ts:48
 msgid "Subscriptions"
 msgstr "订阅"
 
-#: public/components/image-stream-tag.tsx:56
+msgid "Succeeded Pods"
+msgstr "成功的Pods"
+
 msgid "Summary"
 msgstr "概况"
 
-#: public/models/index.ts:531
+msgid "Target Port"
+msgstr "目标端口"
+
 msgid "Tectonic Versions"
 msgstr "构造版本"
 
-#: public/components/namespace.jsx:27
-#, fuzzy
 msgid "Terminating"
-msgstr "已终止"
+msgstr "终止中"
 
-#: public/components/cloud-services/catalog-source.tsx:80
+msgid "Termination Type"
+msgstr "终止类型"
+
 msgid "The catalog author has not added any packages."
 msgstr "目录管理员未添加任何包。"
 
-#: public/components/cluster-overview.jsx:32
 msgid "The console service cannot be reached"
 msgstr "无法连接控制台"
 
-#: public/components/cloud-services/catalog-source.tsx:109
-#: public/components/cloud-services/catalog-source.tsx:155
 msgid "The contents of the catalog source could not be retrieved."
 msgstr "无法检索目录源的内容。"
 
-#: public/components/cloud-services/clusterserviceversion-resource.tsx:94
+msgid "The environment variable editor does not support build strategy:"
+msgstr "环境变量编辑器不支持生成策略："
+
 msgid "This application was not properly installed or configured."
 msgstr "此应用程序未正确安装或配置。"
 
-#: public/components/deployment-config.tsx:78
+msgid "This route splits traffic across multiple services."
+msgstr "该路由将流量分成多个服务。"
+
+msgid "Timed out fetching new data. The data below is stale."
+msgstr "获取新数据时超时。以下数据已过时。"
+
 msgid "Timeout"
 msgstr "超时"
 
-#: public/components/deployment-config.tsx:90
+msgid "TLS is not enabled."
+msgstr "未启用TLS。"
+
+msgid "Triggered By"
+msgstr "触发器"
+
 msgid "Triggers"
 msgstr "触发器"
 
-#: public/components/cloud-services/clusterserviceversion-resource.tsx:22
-#: public/components/pod.jsx:215 public/components/service.jsx:71
+msgid "try again"
+msgstr "再试一次"
+
 msgid "Type"
 msgstr "所有类型"
 
-#: public/components/cloud-services/clusterserviceversion-resource.tsx:54
-#: public/components/cloud-services/clusterserviceversion-resource.tsx:57
 msgid "Unknown"
 msgstr "未知"
 
-#: public/components/cloud-services/clusterserviceversion-resource.tsx:82
 msgid "Unknown graph type:"
 msgstr "未知的图表类型： "
 
-#: public/components/utils/operator-states.jsx:59
 msgid "Up to date"
 msgstr "最新"
 
-#: public/components/utils/operator-states.jsx:24
 msgid "Update Needs Attention"
 msgstr "更新需要注意"
 
-#: public/components/deployment-config.tsx:80
 msgid "Update Period"
 msgstr "更新时间"
 
-#: public/components/utils/operator-states.jsx:40
 msgid "Update Requested..."
 msgstr " 请求更新…"
 
-#: public/components/deployment-config.tsx:76
-#: public/components/deployment.jsx:70
-#, fuzzy
 msgid "Update Strategy"
-msgstr "策略"
+msgstr "更新策略"
 
-#: public/components/utils/operator-states.jsx:131
-#, fuzzy
 msgid "UpdateAvailable"
-msgstr "不可用"
+msgstr "更新可用"
 
-#: public/components/deployment-config.tsx:67
-#: public/components/deployment.jsx:65
-#: public/components/utils/operator-states.jsx:111
-#: public/components/utils/operator-states.jsx:50
-#: public/components/utils/operator-states.jsx:55
 msgid "Updating"
 msgstr "更新中"
 
-#: public/components/utils/operator-states.jsx:150
 msgid "UpToDate"
 msgstr "最新"
 
-#: public/components/image-stream-tag.tsx:73
 msgid "User"
 msgstr "用户"
 
-#: public/components/pod.jsx:217
 msgid "Utilized By"
 msgstr "使用人"
 
-#: public/components/image-stream-tag.tsx:111
-#: public/components/image-stream-tag.tsx:90
 msgid "Value"
 msgstr "值"
 
-#: public/components/cloud-services/clusterserviceversion-resource.tsx:24
 msgid "Version"
 msgstr "APP版本"
 
-#: public/components/cluster-overview.jsx:163
 msgid "View All"
 msgstr "查看全部"
 
-#: public/components/cloud-services/catalog-source.tsx:149
 msgid "View catalog details"
 msgstr "查看目录详细信息"
 
-#: public/components/cloud-services/catalog-source.tsx:187
 msgid "View Contents..."
 msgstr "查看内容…"
 
-#: public/components/cluster-overview.jsx:35
 msgid "View Grafana Dashboard"
 msgstr "查看Grafana仪表板"
 
-#: public/components/cloud-services/clusterserviceversion.tsx:52
-#, fuzzy
 msgid "View instances"
-msgstr "服务实例"
+msgstr "查看实例"
 
-#: public/components/channel-operators/app-version.jsx:156
-#: public/components/channel-operators/app-version.jsx:196
+msgid "View Log"
+msgstr "查看日志"
+
 msgid "View Logs"
 msgstr "查看日志"
 
-#: public/components/cloud-services/catalog-source.tsx:47
 msgid "View subscription"
 msgstr "查看订阅"
 
-#: public/components/cloud-services/catalog-source.tsx:48
 msgid "View subscriptions"
 msgstr "查看订阅"
 
-#: public/components/image-stream-tag.tsx:69
+msgid "Weight"
+msgstr "权重"
+
+msgid "Wildcard Policy"
+msgstr "通配符策略"
+
 msgid "Working Dir"
 msgstr "工作路径"
 
-#: public/components/nav.jsx:386
 msgid "Workloads"
 msgstr "应用容器"
+
+msgid "You don't have access to this section due to cluster policy."
+msgstr "由于群集策略，您没有访问此部分的权限。"
+
+msgid "No Data"
+msgstr "无数据"
 
 #~ msgid "Running"
 #~ msgstr "运行中"

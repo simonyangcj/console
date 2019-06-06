@@ -7,7 +7,7 @@ import { K8sResourceKindReference, referenceFor } from '../module/k8s';
 import { cloneBuild, formatBuildDuration } from '../module/k8s/builds';
 import { ColHead, DetailsPage, List, ListHeader, ListPage } from './factory';
 import { errorModal } from './modals';
-import { BuildHooks, BuildStrategy, Cog, SectionHeading, history, navFactory, ResourceCog, ResourceLink, resourceObjPath, ResourceSummary, Timestamp } from './utils';
+import { BuildHooks, BuildStrategy, Cog, SectionHeading, history, navFactory, ResourceCog, ResourceLink, resourceObjPath, ResourceSummary, Timestamp, gettext } from './utils';
 import { BuildPipeline } from './build-pipeline';
 import { breadcrumbsForOwnerRefs } from './utils/breadcrumbs';
 import { fromNow } from './utils/datetime';
@@ -59,21 +59,21 @@ export const BuildsDetails: React.SFC<BuildsDetailsProps> = ({ obj: build }) => 
       <div className="row">
         <div className="col-sm-6">
           <ResourceSummary resource={build} showPodSelector={false} showNodeSelector={false}>
-            {triggeredBy && <dt>Triggered By</dt>}
+            {triggeredBy && <dt>{gettext('Triggered By')}</dt>}
             {triggeredBy && <dd>{triggeredBy}</dd>}
-            {startTimestamp && <dt>Started</dt>}
+            {startTimestamp && <dt>{gettext('Started')}</dt>}
             {startTimestamp && <dd><Timestamp timestamp={startTimestamp} /></dd>}
           </ResourceSummary>
         </div>
         <div className="col-sm-6">
           <BuildStrategy resource={build}>
-            <dt>Status</dt>
+            <dt>{gettext('Status')}</dt>
             <dd>{build.status.phase}</dd>
-            {logSnippet && <dt>Log Snippet</dt>}
+            {logSnippet && <dt>{gettext('Log Snippet')}</dt>}
             {logSnippet && <dd><pre>{logSnippet}</pre></dd>}
-            {message && <dt>Reason</dt>}
+            {message && <dt>{gettext('Reason')}</dt>}
             {message && <dd>{message}</dd>}
-            {duration && <dt>Duration</dt>}
+            {duration && <dt>{gettext('Duration')}</dt>}
             {duration && <dd>{duration}</dd>}
           </BuildStrategy>
         </div>
@@ -115,8 +115,7 @@ export const BuildEnvironmentComponent = (props) => {
       readOnly={readOnly} />;
   }
   return <div className="cos-status-box">
-    <div className="text-center">The environment variable editor does not support build
-      strategy: {obj.spec.strategy.type}.
+    <div className="text-center">{gettext('The environment variable editor does not support build strategy:')} {obj.spec.strategy.type}.
     </div>
   </div>;
 };
@@ -142,10 +141,10 @@ export const BuildsDetailsPage: React.SFC<BuildsDetailsPageProps> = props =>
 BuildsDetailsPage.displayName = 'BuildsDetailsPage';
 
 const BuildsHeader = props => <ListHeader>
-  <ColHead {...props} className="col-sm-3 col-xs-6" sortField="metadata.name">Name</ColHead>
-  <ColHead {...props} className="col-sm-3 col-xs-6" sortField="metadata.namespace">Namespace</ColHead>
-  <ColHead {...props} className="col-sm-3 hidden-xs" sortField="status.phase">Status</ColHead>
-  <ColHead {...props} className="col-sm-3 hidden-xs" sortField="metadata.creationTimestamp">Created</ColHead>
+  <ColHead {...props} className="col-sm-3 col-xs-6" sortField="metadata.name">{gettext('Name')}</ColHead>
+  <ColHead {...props} className="col-sm-3 col-xs-6" sortField="metadata.namespace">{gettext('Namespace')}</ColHead>
+  <ColHead {...props} className="col-sm-3 hidden-xs" sortField="status.phase">{gettext('Status')}</ColHead>
+  <ColHead {...props} className="col-sm-3 hidden-xs" sortField="metadata.creationTimestamp">{gettext('Created')}</ColHead>
 </ListHeader>;
 
 const BuildsRow: React.SFC<BuildsRowProps> = ({ obj }) => <div className="row co-resource-list__item">

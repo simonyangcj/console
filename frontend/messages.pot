@@ -1,1103 +1,981 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
 msgid ""
 msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-06-06 15:13+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
 
-#: public/components/utils/operator-states.jsx:45
 msgid " is available"
 msgstr ""
 
-#: public/components/deployment-config.tsx:67
-#: public/components/deployment.jsx:65
-#: public/components/namespace.jsx:26
+msgid "404: Not Found"
+msgstr ""
+
+msgid "Accepted"
+msgstr ""
+
 msgid "Active"
 msgstr ""
 
-#: public/components/pod.jsx:191
 msgid "Active Deadline"
 msgstr ""
 
-#: public/components/cluster-overview.jsx:189
+msgid "Active Pods"
+msgstr ""
+
 msgid "Additional Support"
 msgstr ""
 
-#: public/components/nav.jsx:424
 msgid "Administration"
 msgstr ""
 
-#: public/models/index.ts:103
+msgid "Alert Manager Node Selector"
+msgstr ""
+
 msgid "Alertmanagers"
 msgstr ""
 
-#: public/components/cluster-overview.jsx:60
 msgid "Alerts"
 msgstr ""
 
-#: public/components/cluster-overview.jsx:59
 msgid "Alerts Firing"
 msgstr ""
 
-#: public/components/events.jsx:153
 msgid "All Categories"
 msgstr ""
 
-#: public/components/cluster-overview.jsx:24
-#: public/components/cluster-overview.jsx:31
 msgid "All good"
 msgstr ""
 
-#: public/components/events.jsx:152
 msgid "All Types"
 msgstr ""
 
-#: public/components/events.jsx:383
 msgid "An error occurred during event retrieval. Attempting to reconnect..."
 msgstr ""
 
-#: public/components/cluster-overview.jsx:95
 msgid "API Request Success Rate"
 msgstr ""
 
-#: public/components/cluster-overview.jsx:86
 msgid "API Servers Up"
 msgstr ""
 
-#: public/components/cloud-services/clusterserviceversion-resource.tsx:68
 msgid "Application Resources"
 msgstr ""
 
-#: public/components/cloud-services/clusterserviceversion-resource.tsx:66
-msgid "Application resources are declarative components used to define the behavior of the application."
+msgid ""
+"Application resources are declarative components used to define the behavior "
+"of the application."
 msgstr ""
 
-#: public/models/index.ts:557
 msgid "AppVersions"
 msgstr ""
 
-#: public/components/image-stream-tag.tsx:75
 msgid "Architecture"
 msgstr ""
 
-#: public/models/index.ts:280
 msgid "Build Configs"
 msgstr ""
 
-#: public/components/nav.jsx:416
-#: public/models/index.ts:294
 msgid "Builds"
 msgstr ""
 
-#: public/components/cloud-services/catalog-source.tsx:225
+msgid "CA Certificate"
+msgstr ""
+
 msgid "Cannot create a Subscription to a non-existent package."
 msgstr ""
 
-#: public/components/nav.jsx:381
 msgid "Catalog Sources"
 msgstr ""
 
-#: public/components/cloud-services/catalog-source.tsx:141
-msgid "Catalog Sources contain packaged Operators which can be subscribed to for automatic upgrades."
+msgid ""
+"Catalog Sources contain packaged Operators which can be subscribed to for "
+"automatic upgrades."
 msgstr ""
 
-#: public/components/cloud-services/catalog-source.tsx:140
-msgid "Catalogs are groups of Operators you can make available on the cluster. Subscribe and grant a namespace access to use the installed Operators."
+msgid ""
+"Catalogs are groups of Operators you can make available on the cluster. "
+"Subscribe and grant a namespace access to use the installed Operators."
 msgstr ""
 
-#: public/models/index.ts:8
 msgid "CatalogSources"
 msgstr ""
 
-#: public/components/channel-operators/app-version.jsx:85
+msgid "Certificate"
+msgstr ""
+
 msgid "Channel"
 msgstr ""
 
-#: public/models/index.ts:544
 msgid "Channel Operator Configs"
 msgstr ""
 
-#: public/components/nav.jsx:433
 msgid "Chargeback"
 msgstr ""
 
-#: public/components/service.jsx:65
 msgid "Cluster IP"
 msgstr ""
 
-#: public/models/index.ts:467
 msgid "Cluster Role Bindings"
 msgstr ""
 
-#: public/models/index.ts:479
 msgid "Cluster Roles"
 msgstr ""
 
-#: public/models/index.ts:676
 msgid "Cluster Service Brokers"
 msgstr ""
 
-#: public/models/index.ts:689
 msgid "Cluster Service Classes"
 msgstr ""
 
-#: public/models/index.ts:702
 msgid "Cluster Service Plans"
 msgstr ""
 
-#: public/components/cloud-services/clusterserviceversion.tsx:88
-#: public/components/nav.jsx:379
 msgid "Cluster Service Versions"
 msgstr ""
 
-#: public/components/cloud-services/clusterserviceversion.tsx:94
 msgid "Cluster Service Versions by name"
 msgstr ""
 
-#: public/components/nav.jsx:428
 msgid "Cluster Settings"
 msgstr ""
 
-#: public/components/cluster-overview.jsx:243
 msgid "Cluster Status"
 msgstr ""
 
-#: public/models/index.ts:117
 msgid "Clusters"
 msgstr ""
 
-#: public/models/index.ts:21
 msgid "ClusterServiceVersions"
 msgstr ""
 
-#: public/components/image-stream-tag.tsx:67
 msgid "Command"
 msgstr ""
 
-#: public/components/factory/list-page.jsx:17
 msgid "Compact"
 msgstr ""
 
-#: public/components/utils/operator-states.jsx:114
 msgid "Complete"
 msgstr ""
 
-#: public/components/utils/operator-states.jsx:11
 msgid "Completed"
 msgstr ""
 
-#: public/models/index.ts:365
+msgid "Completion Time"
+msgstr ""
+
+msgid "Completions"
+msgstr ""
+
 msgid "Component Statuses"
 msgstr ""
 
-#: public/components/nav.jsx:393
-#: public/models/index.ts:443
+msgid "Concurrency Policy"
+msgstr ""
+
+msgid "Conditions"
+msgstr ""
+
 msgid "Config Maps"
 msgstr ""
 
-#: public/components/events.jsx:230
 msgid "Connection did not close cleanly."
 msgstr ""
 
-#: public/models/index.ts:172
 msgid "Containers"
 msgstr ""
 
-#: public/components/cluster-overview.jsx:89
 msgid "Controller Managers Up"
 msgstr ""
 
-#: public/components/cluster-overview.jsx:111
 msgid "CPU Usage"
 msgstr ""
 
-#: public/components/cluster-overview.jsx:67
 msgid "Crashlooping Pods"
 msgstr ""
 
-#: public/components/nav.jsx:434
 msgid "CRDs"
 msgstr ""
 
-#: public/components/factory/list-page.jsx:269
 msgid "Create"
 msgstr ""
 
-#: public/components/namespace.jsx:109
 msgid "Create a project for your application."
 msgstr ""
 
-#: public/components/cloud-services/clusterserviceversion-resource.tsx:124
-#: public/components/cloud-services/clusterserviceversion.tsx:114
 msgid "Create New"
 msgstr ""
 
-#: public/components/cloud-services/catalog-source.tsx:62
 msgid "Create Subscription"
 msgstr ""
 
-#: public/components/cloud-services/catalog-source.tsx:115
 msgid "Created"
 msgstr ""
 
-#: public/components/cloud-services/clusterserviceversion-resource.tsx:201
-#: public/components/cloud-services/clusterserviceversion.tsx:122
 msgid "Created At"
 msgstr ""
 
-#: public/components/nav.jsx:395
-#: public/models/index.ts:657
 msgid "Cron Jobs"
 msgstr ""
 
-#: public/components/channel-operators/app-version.jsx:82
+msgid "Current Count"
+msgstr ""
+
 msgid "Current Version"
 msgstr ""
 
-#: public/models/index.ts:644
 msgid "Custom Resource Definitions"
 msgstr ""
 
-#: public/components/nav.jsx:397
-#: public/models/index.ts:186
 msgid "Daemon Sets"
 msgstr ""
 
-#: public/components/namespace.jsx:39
+msgid "Deadline"
+msgstr ""
+
 msgid "default cannot be deleted"
 msgstr ""
 
-#: public/components/namespace.jsx:206
 msgid "Default Pull Secret"
 msgstr ""
 
-#: public/components/cloud-services/clusterserviceversion.tsx:22
 msgid "Deployment"
 msgstr ""
 
-#: public/models/index.ts:266
 msgid "Deployment Configs"
 msgstr ""
 
-#: public/components/nav.jsx:388
-#: public/models/index.ts:252
 msgid "Deployments"
 msgstr ""
 
-#: public/components/cloud-services/clusterserviceversion.tsx:146
 msgid "Description"
 msgstr ""
 
-#: public/components/cluster-overview.jsx:117
+msgid "Desired Completions"
+msgstr ""
+
+msgid "Desired Count"
+msgstr ""
+
+msgid "Destination CA Cert"
+msgstr ""
+
 msgid "Disk Usage"
 msgstr ""
 
-#: public/components/namespace.jsx:196
 msgid "Display Name"
 msgstr ""
 
-#: public/components/cluster-overview.jsx:181
 msgid "Documentation"
 msgstr ""
 
-#: public/components/deployment.jsx:16
+msgid "Duration"
+msgstr ""
+
 msgid "Edit Update Strategy"
 msgstr ""
 
-#: public/components/image-stream-tag.tsx:65
 msgid "Entrypoint"
 msgstr ""
 
-#: public/components/events.jsx:379
 msgid "Error connecting to event stream"
 msgstr ""
 
-#: public/components/events.jsx:382
+msgid "Error Loading"
+msgstr ""
+
 msgid "Error Loading Events"
 msgstr ""
 
-#: public/components/cloud-services/catalog-source.tsx:109
-#: public/components/cloud-services/catalog-source.tsx:155
 msgid "Error Parsing Catalog"
 msgstr ""
 
-#: public/models/index.ts:61
 msgid "Etcd Clusters"
 msgstr ""
 
-#: public/components/events.jsx:392
 msgid "Event stream is paused."
 msgstr ""
 
-#: public/components/cluster-overview.jsx:162
-#: public/components/nav.jsx:375
-#: public/models/index.ts:359
 msgid "Events"
 msgstr ""
 
-#: public/components/events.jsx:156
 msgid "Events by name or message"
 msgstr ""
 
-#: public/components/events.jsx:372
 msgid "events exist, but none match the current filter"
 msgstr ""
 
-#: public/components/factory/list-page.jsx:20
 msgid "Expand"
 msgstr ""
 
-#: public/components/image-stream-tag.tsx:71
 msgid "Exposed Ports"
 msgstr ""
 
-#: public/components/service.jsx:61
 msgid "External Load Balancer"
 msgstr ""
 
-#: public/components/service.jsx:63
 msgid "External Service Name"
 msgstr ""
 
-#: public/components/utils/operator-states.jsx:103
-#: public/components/utils/operator-states.jsx:143
 msgid "Failed"
 msgstr ""
 
-#: public/components/factory/list-page.jsx:40
+msgid "Failed Pods"
+msgstr ""
+
 msgid "Filter"
 msgstr ""
 
-#: public/components/factory/list-page.jsx:263
 msgid "Filter by selector (app=nginx) ..."
 msgstr ""
 
-#: public/components/pod.jsx:129
 msgid "Finished"
 msgstr ""
 
-#: public/components/cluster-overview.jsx:46
+msgid "Generation Query"
+msgstr ""
+
+msgid "Grace Period"
+msgstr ""
+
 msgid "Health"
 msgstr ""
 
-#: public/components/channel-operators/app-version.jsx:247
+msgid "Hide"
+msgstr ""
+
 msgid "Hide Failed Reason"
 msgstr ""
 
-#: public/components/nav.jsx:372
 msgid "Home"
 msgstr ""
 
-#: public/models/index.ts:212
 msgid "Horizontal Pod Autoscalers"
 msgstr ""
 
-#: public/components/nav.jsx:400
+msgid "Hostname"
+msgstr ""
+
 msgid "HPAs"
 msgstr ""
 
-#: public/components/pod.jsx:124
 msgid "Id"
 msgstr ""
 
-#: public/components/deployment.jsx:43
-#: public/components/pod.jsx:125
 msgid "Image"
 msgstr ""
 
-#: public/components/image-stream-tag.tsx:54
 msgid "Image Name"
 msgstr ""
 
-#: public/models/index.ts:322
 msgid "Image Stream Tags"
 msgstr ""
 
-#: public/models/index.ts:308
 msgid "Image Streams"
 msgstr ""
 
-#: public/components/nav.jsx:406
 msgid "Ingress"
 msgstr ""
 
-#: public/models/index.ts:410
 msgid "Ingresses"
 msgstr ""
 
-#: public/components/nav.jsx:383
+msgid "Insecure Traffic"
+msgstr ""
+
 msgid "Install Plans"
 msgstr ""
 
-#: public/models/index.ts:35
 msgid "InstallPlans"
 msgstr ""
 
-#: public/components/deployment-config.tsx:82
 msgid "Interval"
 msgstr ""
 
-#: public/components/namespace.jsx:41
 msgid "is already terminating"
 msgstr ""
 
-#: public/components/nav.jsx:396
-#: public/models/index.ts:336
 msgid "Jobs"
 msgstr ""
 
-#: public/components/cluster-overview.jsx:142
-#: public/components/cluster-overview.jsx:52
 msgid "Kubernetes API"
 msgstr ""
 
-#: public/components/cloud-services/clusterserviceversion-resource.tsx:21
-#: public/components/namespace.jsx:58
-#: public/components/namespace.jsx:83
-#: public/components/service.jsx:21
 msgid "Labels"
 msgstr ""
 
-#: public/components/masthead.tsx:48
 msgid "Language: CN -> EN"
 msgstr ""
 
-#: public/components/masthead.tsx:48
 msgid "Language: EN -> CN"
 msgstr ""
 
-#: public/components/cloud-services/clusterserviceversion-resource.tsx:25
+msgid "Last Schedule Time"
+msgstr ""
+
 msgid "Last Updated"
 msgstr ""
 
-#: public/components/cloud-services/catalog-source.tsx:36
-#: public/components/deployment-config.tsx:72
 msgid "Latest Version"
 msgstr ""
 
-#: public/components/events.jsx:387
 msgid "Loading events..."
 msgstr ""
 
-#: public/components/service.jsx:23
-#: public/components/service.jsx:72
 msgid "Location"
 msgstr ""
 
-#: public/components/masthead.tsx:70
+msgid "Log Snippet"
+msgstr ""
+
 msgid "Logout"
 msgstr ""
 
-#: public/components/deployment-config.tsx:86
-#: public/components/deployment.jsx:74
 msgid "Max Surge"
 msgstr ""
 
-#: public/components/deployment-config.tsx:84
-#: public/components/deployment.jsx:72
 msgid "Max Unavailable"
 msgstr ""
 
-#: public/components/cluster-overview.jsx:114
 msgid "Memory Usage"
 msgstr ""
 
-#: public/components/namespace.jsx:184
 msgid "Memory Usage by Pod (Top 10)"
 msgstr ""
 
-#: public/components/deployment.jsx:78
+msgid "Memory:"
+msgstr ""
+
 msgid "Min Ready Seconds"
 msgstr ""
 
-#: public/components/cloud-services/spec-descriptors/configure-size.tsx:13
 msgid "Modify"
 msgstr ""
 
-#: public/components/cloud-services/catalog-source.tsx:112
-#: public/components/cloud-services/catalog-source.tsx:35
-#: public/components/cloud-services/catalog-source.tsx:92
-#: public/components/cloud-services/clusterserviceversion-resource.tsx:197
-#: public/components/cloud-services/clusterserviceversion-resource.tsx:20
-#: public/components/cloud-services/clusterserviceversion.tsx:20
-#: public/components/deployment.jsx:42
-#: public/components/image-stream-tag.tsx:110
-#: public/components/image-stream-tag.tsx:89
-#: public/components/namespace.jsx:56
-#: public/components/namespace.jsx:80
-#: public/components/pod.jsx:123
-#: public/components/pod.jsx:214
-#: public/components/pod.jsx:66
-#: public/components/service.jsx:19
-#: public/components/service.jsx:83
 msgid "Name"
 msgstr ""
 
-#: public/components/cloud-services/catalog-source.tsx:113
-#: public/components/cloud-services/clusterserviceversion-resource.tsx:199
-#: public/components/cloud-services/clusterserviceversion.tsx:21
-#: public/components/pod.jsx:67
-#: public/components/service.jsx:20
 msgid "Namespace"
 msgstr ""
 
-#: public/components/nav.jsx:426
-#: public/models/index.ts:381
 msgid "Namespaces"
 msgstr ""
 
-#: public/components/namespace.jsx:208
-#: public/components/namespace.jsx:210
-#: public/components/nav.jsx:407
-#: public/models/index.ts:623
 msgid "Network Policies"
 msgstr ""
 
-#: public/components/nav.jsx:403
 msgid "Networking"
 msgstr ""
 
-#: public/components/cloud-services/clusterserviceversion-resource.tsx:94
+msgid "No %s Found"
+msgstr ""
+
 msgid "No Application Resources Defined"
 msgstr ""
 
-#: public/components/cloud-services/clusterserviceversion-resource.tsx:66
 msgid "No Application Resources Found"
 msgstr ""
 
-#: public/components/cloud-services/catalog-source.tsx:141
 msgid "No Catalog Sources Found"
 msgstr ""
 
-#: public/components/image-stream-tag.tsx:105
 msgid "No environment variables"
 msgstr ""
 
-#: public/components/image-stream-tag.tsx:84
-#: public/components/utils/label-list.tsx:33
 msgid "No labels"
 msgstr ""
 
-#: public/components/events.jsx:370
 msgid "No Matching Events"
 msgstr ""
 
-#: public/components/cloud-services/catalog-source.tsx:80
 msgid "No Packages Found"
 msgstr ""
 
-#: public/components/pod.jsx:198
-#: public/components/pod.jsx:69
+msgid "No requester"
+msgstr ""
+
+msgid "No Route Status"
+msgstr ""
+
+msgid "No stages have started."
+msgstr ""
+
 msgid "Node"
 msgstr ""
 
-#: public/components/service.jsx:59
-#: public/components/service.jsx:94
 msgid "Node Port"
 msgstr ""
 
-#: public/components/pod.jsx:178
 msgid "Node Selector"
 msgstr ""
 
-#: public/components/nav.jsx:427
-#: public/models/index.ts:347
 msgid "Nodes"
 msgstr ""
 
-#: public/components/cloud-services/clusterserviceversion.tsx:121
-#: public/components/cloud-services/clusterserviceversion.tsx:131
-#: public/components/cloud-services/clusterserviceversion.tsx:139
-#: public/components/cloud-services/clusterserviceversion.tsx:147
 msgid "Not available"
 msgstr ""
 
-#: public/components/deployment.jsx:79
-#: public/components/namespace.jsx:160
 msgid "Not Configured"
 msgstr ""
 
-#: public/components/cluster-overview.jsx:134
+msgid "Not Found"
+msgstr ""
+
 msgid "OKD Console"
 msgstr ""
 
-#: public/components/cluster-overview.jsx:134
-#: public/components/cluster-overview.jsx:55
 msgid "OpenShift Console"
 msgstr ""
 
-#: public/components/cloud-services/catalog-source.tsx:163
 msgid "Operator Catalog Sources"
 msgstr ""
 
-#: public/components/cloud-services/clusterserviceversion.tsx:85
 msgid "Operator Lifecycle Manager not enabled for this namespace"
 msgstr ""
 
-#: public/components/nav.jsx:378
 msgid "Operators"
 msgstr ""
 
-#: public/components/cluster-overview.jsx:248
-#: public/components/cluster-overview.jsx:250
-#: public/components/namespace.jsx:192
 msgid "Overview"
 msgstr ""
 
-#: public/components/cloud-services/catalog-source.tsx:225
 msgid "Package Not Found"
 msgstr ""
 
-#: public/components/cloud-services/catalog-source.tsx:166
 msgid "Packages by name"
 msgstr ""
 
-#: public/components/utils/operator-states.jsx:107
-#: public/components/utils/operator-states.jsx:135
+msgid "Parallelism"
+msgstr ""
+
+msgid "Path"
+msgstr ""
+
 msgid "Paused"
 msgstr ""
 
-#: public/components/utils/operator-states.jsx:29
 msgid "Paused..."
 msgstr ""
 
-#: public/components/utils/operator-states.jsx:139
 msgid "Pausing"
 msgstr ""
 
-#: public/components/utils/operator-states.jsx:34
 msgid "Pausing..."
 msgstr ""
 
-#: public/components/utils/operator-states.jsx:114
 msgid "Pending"
 msgstr ""
 
-#: public/components/pod.jsx:216
+msgid "Percent"
+msgstr ""
+
 msgid "Permissions"
 msgstr ""
 
-#: public/components/nav.jsx:412
-#: public/models/index.ts:580
 msgid "Persistent Volume Claims"
 msgstr ""
 
-#: public/components/nav.jsx:411
-#: public/models/index.ts:568
 msgid "Persistent Volumes"
 msgstr ""
 
-#: public/models/index.ts:592
+msgid "PersistentVolume Overview"
+msgstr ""
+
 msgid "Petsets"
 msgstr ""
 
-#: public/components/cloud-services/clusterserviceversion.tsx:85
-msgid "Please contact a system administrator and ask them to enable Operator Lifecycle Manager to continue."
+msgid "Phase"
 msgstr ""
 
-#: public/components/pod.jsx:196
+msgid "Please"
+msgstr ""
+
+msgid ""
+"Please contact a system administrator and ask them to enable Operator "
+"Lifecycle Manager to continue."
+msgstr ""
+
 msgid "Pod IP"
 msgstr ""
 
-#: public/components/pod.jsx:68
 msgid "Pod Labels"
 msgstr ""
 
-#: public/components/service.jsx:86
 msgid "Pod Port or Name"
 msgstr ""
 
-#: public/components/service.jsx:22
 msgid "Pod Selector"
 msgstr ""
 
-#: public/components/cluster-overview.jsx:120
 msgid "Pod Usage"
 msgstr ""
 
-#: public/components/cluster-overview.jsx:68
-#: public/components/nav.jsx:387
-#: public/models/index.ts:161
 msgid "Pods"
 msgstr ""
 
-#: public/components/service.jsx:84
 msgid "Port"
 msgstr ""
 
-#: public/components/deployment.jsx:45
 msgid "Ports"
 msgstr ""
 
-#: public/components/deployment.jsx:76
 msgid "Progress Deadline"
 msgstr ""
 
-#: public/models/index.ts:405
 msgid "Project Requests"
 msgstr ""
 
-#: public/components/nav.jsx:425
-#: public/models/index.ts:393
 msgid "Projects"
 msgstr ""
 
-#: public/models/index.ts:75
 msgid "Prometheuses"
 msgstr ""
 
-#: public/components/service.jsx:85
 msgid "Protocol"
 msgstr ""
 
-#: public/components/cloud-services/clusterserviceversion.tsx:120
 msgid "Provider"
 msgstr ""
 
-#: public/components/cloud-services/catalog-source.tsx:114
-#: public/components/cloud-services/catalog-source.tsx:98
 msgid "Publisher"
 msgstr ""
 
-#: public/components/pod.jsx:71
 msgid "Readiness"
 msgstr ""
 
-#: public/components/deployment-config.tsx:74
 msgid "Reason"
 msgstr ""
 
-#: public/components/nav.jsx:398
-#: public/models/index.ts:238
+msgid "Rejected"
+msgstr ""
+
+msgid "Replica Set Overview"
+msgstr ""
+
 msgid "Replica Sets"
 msgstr ""
 
-#: public/components/nav.jsx:399
-#: public/models/index.ts:199
+msgid "Replicas"
+msgstr ""
+
+msgid "ReplicaSet Details"
+msgstr ""
+
+msgid "Replication Controller Overview"
+msgstr ""
+
 msgid "Replication Controllers"
 msgstr ""
 
-#: public/models/index.ts:130
+msgid "ReplicationController Details"
+msgstr ""
+
+msgid "Report Generation Query"
+msgstr ""
+
+msgid "Reporting End"
+msgstr ""
+
+msgid "Reporting Start"
+msgstr ""
+
 msgid "Reports"
 msgstr ""
 
-#: public/components/utils/operator-states.jsx:147
 msgid "Requested"
 msgstr ""
 
-#: public/components/namespace.jsx:198
-#: public/components/namespace.jsx:82
 msgid "Requester"
 msgstr ""
 
-#: public/components/deployment.jsx:44
 msgid "Resource Limits"
 msgstr ""
 
-#: public/components/nav.jsx:432
-#: public/models/index.ts:618
 msgid "Resource Quotas"
 msgstr ""
 
-#: public/components/cloud-services/clusterserviceversion-resource.tsx:119
+msgid "Resource Request"
+msgstr ""
+
 msgid "Resources by name"
 msgstr ""
 
-#: public/components/pod.jsx:186
 msgid "Restart Policy"
 msgstr ""
 
-#: public/components/pod.jsx:127
 msgid "Restarts"
 msgstr ""
 
-#: public/components/nav.jsx:431
-#: public/models/index.ts:492
+msgid "Restricted Access"
+msgstr ""
+
+msgid "Reveal"
+msgstr ""
+
 msgid "Role Bindings"
 msgstr ""
 
-#: public/components/nav.jsx:430
-#: public/models/index.ts:505
 msgid "Roles"
 msgstr ""
 
-#: public/components/deployment.jsx:71
 msgid "RollingUpdate"
 msgstr ""
 
-#: public/components/nav.jsx:405
-#: public/models/index.ts:423
 msgid "Routes"
 msgstr ""
 
-#: public/components/cluster-overview.jsx:92
+msgid "Run Immediately?"
+msgstr ""
+
+msgid "Schedule"
+msgstr ""
+
 msgid "Schedulers Up"
 msgstr ""
 
-#: public/components/nav.jsx:374
-#: public/components/search.jsx:79
-#: public/components/search.jsx:81
 msgid "Search"
 msgstr ""
 
-#: public/components/nav.jsx:392
-#: public/models/index.ts:455
+msgid "seconds"
+msgstr ""
+
 msgid "Secrets"
 msgstr ""
 
-#: public/models/index.ts:518
 msgid "Self Subject Access Reviews"
 msgstr ""
 
-#: public/components/nav.jsx:429
-#: public/models/index.ts:224
+msgid "Service"
+msgstr ""
+
 msgid "Service Accounts"
 msgstr ""
 
-#: public/components/service.jsx:124
 msgid "Service Address"
 msgstr ""
 
-#: public/models/index.ts:728
 msgid "Service Bindings"
 msgstr ""
 
-#: public/models/index.ts:715
 msgid "Service Instances"
 msgstr ""
 
-#: public/models/index.ts:89
 msgid "Service Monitors"
 msgstr ""
 
-#: public/components/service.jsx:128
 msgid "Service Port Mapping"
 msgstr ""
 
-#: public/components/nav.jsx:404
-#: public/models/index.ts:149
 msgid "Services"
 msgstr ""
 
-#: public/components/service.jsx:117
 msgid "Session Affinity"
 msgstr ""
 
-#: public/components/channel-operators/app-version.jsx:247
 msgid "Show Failed Reason"
 msgstr ""
 
-#: public/components/image-stream-tag.tsx:58
 msgid "Size"
 msgstr ""
 
-#: public/components/cluster-overview.jsx:173
-#: public/components/cluster-overview.jsx:252
 msgid "Software Info"
 msgstr ""
 
-#: public/components/utils/operator-states.jsx:16
 msgid "Software update failed"
 msgstr ""
 
-#: public/components/pod.jsx:128
+msgid "Start Time"
+msgstr ""
+
 msgid "Started"
 msgstr ""
 
-#: public/components/pod.jsx:126
+msgid "Starting Deadline Seconds"
+msgstr ""
+
 msgid "State"
 msgstr ""
 
-#: public/components/nav.jsx:391
-#: public/models/index.ts:606
 msgid "Stateful Sets"
 msgstr ""
 
-#: public/components/stateful-set.jsx:15
-#: public/dist/stateful-set-d306743e4d876d21f226.js:61
 msgid "StatefulSet Overview"
 msgstr ""
 
-#: public/components/cloud-services/clusterserviceversion-resource.tsx:23
-#: public/components/cloud-services/clusterserviceversion.tsx:23
-#: public/components/deployment-config.tsx:66
-#: public/components/deployment.jsx:64
-#: public/components/namespace.jsx:204
-#: public/components/namespace.jsx:57
-#: public/components/namespace.jsx:81
-#: public/components/nav.jsx:373
-#: public/components/pod.jsx:184
-#: public/components/pod.jsx:70
 msgid "Status"
 msgstr ""
 
-#: public/components/cluster-overview.jsx:243
+#, javascript-format
 msgid "Status of %s"
 msgstr ""
 
-#: public/components/nav.jsx:410
 msgid "Storage"
 msgstr ""
 
-#: public/components/nav.jsx:413
-#: public/models/index.ts:663
 msgid "Storage Classes"
 msgstr ""
 
-#: public/components/channel-operators/app-version.jsx:88
 msgid "Strategy"
 msgstr ""
 
-#: public/components/events.jsx:390
 msgid "Streaming events..."
 msgstr ""
 
-#: public/components/cloud-services/catalog-source.tsx:37
-#: public/components/nav.jsx:382
-#: public/models/index.ts:48
 msgid "Subscriptions"
 msgstr ""
 
-#: public/components/image-stream-tag.tsx:56
+msgid "Succeeded Pods"
+msgstr ""
+
 msgid "Summary"
 msgstr ""
 
-#: public/models/index.ts:531
+msgid "Target Port"
+msgstr ""
+
 msgid "Tectonic Versions"
 msgstr ""
 
-#: public/components/namespace.jsx:27
 msgid "Terminating"
 msgstr ""
 
-#: public/components/cloud-services/catalog-source.tsx:80
+msgid "Termination Type"
+msgstr ""
+
 msgid "The catalog author has not added any packages."
 msgstr ""
 
-#: public/components/cluster-overview.jsx:32
 msgid "The console service cannot be reached"
 msgstr ""
 
-#: public/components/cloud-services/catalog-source.tsx:109
-#: public/components/cloud-services/catalog-source.tsx:155
 msgid "The contents of the catalog source could not be retrieved."
 msgstr ""
 
-#: public/components/cloud-services/clusterserviceversion-resource.tsx:94
+msgid "The environment variable editor does not support build strategy:"
+msgstr ""
+
 msgid "This application was not properly installed or configured."
 msgstr ""
 
-#: public/components/deployment-config.tsx:78
+msgid "This route splits traffic across multiple services."
+msgstr ""
+
+msgid "Timed out fetching new data. The data below is stale."
+msgstr ""
+
 msgid "Timeout"
 msgstr ""
 
-#: public/components/deployment-config.tsx:90
+msgid "TLS is not enabled."
+msgstr ""
+
+msgid "Triggered By"
+msgstr ""
+
 msgid "Triggers"
 msgstr ""
 
-#: public/components/cloud-services/clusterserviceversion-resource.tsx:22
-#: public/components/pod.jsx:215
-#: public/components/service.jsx:71
+msgid "try again"
+msgstr ""
+
 msgid "Type"
 msgstr ""
 
-#: public/components/cloud-services/clusterserviceversion-resource.tsx:54
-#: public/components/cloud-services/clusterserviceversion-resource.tsx:57
 msgid "Unknown"
 msgstr ""
 
-#: public/components/cloud-services/clusterserviceversion-resource.tsx:82
 msgid "Unknown graph type:"
 msgstr ""
 
-#: public/components/utils/operator-states.jsx:59
 msgid "Up to date"
 msgstr ""
 
-#: public/components/utils/operator-states.jsx:24
 msgid "Update Needs Attention"
 msgstr ""
 
-#: public/components/deployment-config.tsx:80
 msgid "Update Period"
 msgstr ""
 
-#: public/components/utils/operator-states.jsx:40
 msgid "Update Requested..."
 msgstr ""
 
-#: public/components/deployment-config.tsx:76
-#: public/components/deployment.jsx:70
 msgid "Update Strategy"
 msgstr ""
 
-#: public/components/utils/operator-states.jsx:131
 msgid "UpdateAvailable"
 msgstr ""
 
-#: public/components/deployment-config.tsx:67
-#: public/components/deployment.jsx:65
-#: public/components/utils/operator-states.jsx:111
-#: public/components/utils/operator-states.jsx:50
-#: public/components/utils/operator-states.jsx:55
 msgid "Updating"
 msgstr ""
 
-#: public/components/utils/operator-states.jsx:150
 msgid "UpToDate"
 msgstr ""
 
-#: public/components/image-stream-tag.tsx:73
 msgid "User"
 msgstr ""
 
-#: public/components/pod.jsx:217
 msgid "Utilized By"
 msgstr ""
 
-#: public/components/image-stream-tag.tsx:111
-#: public/components/image-stream-tag.tsx:90
 msgid "Value"
 msgstr ""
 
-#: public/components/cloud-services/clusterserviceversion-resource.tsx:24
 msgid "Version"
 msgstr ""
 
-#: public/components/cluster-overview.jsx:163
 msgid "View All"
 msgstr ""
 
-#: public/components/cloud-services/catalog-source.tsx:149
 msgid "View catalog details"
 msgstr ""
 
-#: public/components/cloud-services/catalog-source.tsx:187
 msgid "View Contents..."
 msgstr ""
 
-#: public/components/cluster-overview.jsx:35
 msgid "View Grafana Dashboard"
 msgstr ""
 
-#: public/components/cloud-services/clusterserviceversion.tsx:52
 msgid "View instances"
 msgstr ""
 
-#: public/components/channel-operators/app-version.jsx:156
-#: public/components/channel-operators/app-version.jsx:196
+msgid "View Log"
+msgstr ""
+
 msgid "View Logs"
 msgstr ""
 
-#: public/components/cloud-services/catalog-source.tsx:47
 msgid "View subscription"
 msgstr ""
 
-#: public/components/cloud-services/catalog-source.tsx:48
 msgid "View subscriptions"
 msgstr ""
 
-#: public/components/image-stream-tag.tsx:69
+msgid "Weight"
+msgstr ""
+
+msgid "Wildcard Policy"
+msgstr ""
+
 msgid "Working Dir"
 msgstr ""
 
-#: public/components/nav.jsx:386
 msgid "Workloads"
+msgstr ""
+
+msgid "You don't have access to this section due to cluster policy."
+msgstr ""
+
+msgid "No Data"
 msgstr ""

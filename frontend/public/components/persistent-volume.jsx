@@ -1,14 +1,14 @@
 import * as React from 'react';
 
 import { ColHead, DetailsPage, List, ListHeader, ListPage } from './factory';
-import { Cog, LabelList, navFactory, ResourceCog, SectionHeading, ResourceLink, ResourceSummary, Timestamp } from './utils';
+import { Cog, LabelList, navFactory, ResourceCog, SectionHeading, ResourceLink, ResourceSummary, Timestamp, gettext } from './utils';
 
 const menuActions = [Cog.factory.ModifyLabels, Cog.factory.ModifyAnnotations, Cog.factory.Edit, Cog.factory.Delete];
 
 const Header = props => <ListHeader>
-  <ColHead {...props} className="col-sm-4 col-xs-6" sortField="metadata.name">Name</ColHead>
-  <ColHead {...props} className="col-sm-4 col-xs-6" sortField="metadata.labels">Labels</ColHead>
-  <ColHead {...props} className="col-sm-4 hidden-xs" sortField="metadata.creationTimestamp">Created</ColHead>
+  <ColHead {...props} className="col-sm-4 col-xs-6" sortField="metadata.name">{gettext('Name')}</ColHead>
+  <ColHead {...props} className="col-sm-4 col-xs-6" sortField="metadata.labels">{gettext('Labels')}</ColHead>
+  <ColHead {...props} className="col-sm-4 hidden-xs" sortField="metadata.creationTimestamp">{gettext('Created')}</ColHead>
 </ListHeader>;
 
 const kind = 'PersistentVolume';
@@ -27,7 +27,7 @@ const Row = ({obj}) => <div className="row co-resource-list__item">
 
 const Details = ({obj}) => <React.Fragment>
   <div className="co-m-pane__body">
-    <SectionHeading text="PersistentVolume Overview" />
+    <SectionHeading text={gettext('PersistentVolume Overview')} />
     <ResourceSummary resource={obj} podSelector="spec.podSelector" showNodeSelector={false} />
   </div>
 </React.Fragment>;

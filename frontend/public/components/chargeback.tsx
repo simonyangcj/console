@@ -5,7 +5,7 @@ import * as classNames from 'classnames';
 import { SafetyFirst } from './safety-first';
 import { FLAGS, connectToFlags, flagPending } from '../features';
 import { ColHead, DetailsPage, List, ListHeader, ListPage } from './factory';
-import { Cog, navFactory, NavBar, NavTitle, ResourceCog, SectionHeading, ResourceLink, ResourceSummary, Timestamp, LabelList, DownloadButton } from './utils';
+import { Cog, navFactory, NavBar, NavTitle, ResourceCog, SectionHeading, ResourceLink, ResourceSummary, Timestamp, LabelList, DownloadButton, gettext } from './utils';
 import { LoadError, LoadingBox, LoadingInline, MsgBox } from './utils/status-box';
 import { getQueryArgument, setQueryArgument } from './utils/router';
 import { coFetchJSON } from '../co-fetch';
@@ -45,12 +45,12 @@ const ChargebackNavBar: React.SFC<{match: {url: string}}> = props => <div>
 
 
 const ReportsHeader = props => <ListHeader>
-  <ColHead {...props} className="col-lg-3 col-md-3 col-xs-4" sortField="metadata.name">Name</ColHead>
-  <ColHead {...props} className="col-lg-2 col-md-3 col-xs-4" sortField="metadata.namespace">Namespace</ColHead>
-  <ColHead {...props} className="col-lg-2 hidden-md hidden-sm hidden-xs">Report Generation Query</ColHead>
-  <ColHead {...props} className="col-lg-1 col-md-2 col-xs-4" sortField="spec.status.phase">Status</ColHead>
-  <ColHead {...props} className="col-lg-2 col-md-2 hidden-sm hidden-xs" sortField="spec.reportingStart">Reporting Start</ColHead>
-  <ColHead {...props} className="col-lg-2 col-md-2 hidden-sm hidden-xs" sortField="spec.reportingEnd">Reporting End</ColHead>
+  <ColHead {...props} className="col-lg-3 col-md-3 col-xs-4" sortField="metadata.name">{gettext('Name')}</ColHead>
+  <ColHead {...props} className="col-lg-2 col-md-3 col-xs-4" sortField="metadata.namespace">{gettext('Namespace')}</ColHead>
+  <ColHead {...props} className="col-lg-2 hidden-md hidden-sm hidden-xs">{gettext('Report Generation Query')}</ColHead>
+  <ColHead {...props} className="col-lg-1 col-md-2 col-xs-4" sortField="spec.status.phase">{gettext('Status')}</ColHead>
+  <ColHead {...props} className="col-lg-2 col-md-2 hidden-sm hidden-xs" sortField="spec.reportingStart">{gettext('Reporting Start')}</ColHead>
+  <ColHead {...props} className="col-lg-2 col-md-2 hidden-sm hidden-xs" sortField="spec.reportingEnd">{gettext('Reporting End')}</ColHead>
 </ListHeader>;
 
 const ReportsRow: React.SFC<ReportsRowProps> = ({obj}) => {
@@ -80,17 +80,17 @@ class ReportsDetails extends React.Component<ReportsDetailsProps> {
           </div>
           <div className="col-sm-6 col-xs-12">
             <dl className="co-m-pane__details">
-              <dt>Phase</dt>
+              <dt>{gettext('Phase')}</dt>
               <dd>{phase}</dd>
-              <dt>Reporting Start</dt>
+              <dt>{gettext('Reporting Start')}</dt>
               <dd><Timestamp timestamp={_.get(obj, ['spec', 'reportingStart'])} /></dd>
-              <dt>Reporting End</dt>
+              <dt>{gettext('Reporting End')}</dt>
               <dd><Timestamp timestamp={_.get(obj, ['spec', 'reportingEnd'])} /></dd>
-              <dt>Generation Query</dt>
+              <dt>{gettext('Generation Query')}</dt>
               <dd><ResourceLink kind={ReportGenerationQueryReference} name={_.get(obj, ['spec', 'generationQuery'])} namespace={obj.metadata.namespace} title={obj.metadata.namespace} /></dd>
-              <dt>Grace Period</dt>
+              <dt>{gettext('Grace Period')}</dt>
               <dd>{_.get(obj, ['spec', 'gracePeriod'])}</dd>
-              <dt>Run Immediately?</dt>
+              <dt>{gettext('Run Immediately?')}</dt>
               <dd>{Boolean(_.get(obj, ['spec', 'runImmediately'])).toString()}</dd>
             </dl>
           </div>
@@ -298,7 +298,7 @@ class ReportData extends SafetyFirst<ReportDataProps, ReportDataState> {
 
     const {data, reduceBy, sortBy, orderBy, keys, rows, maxValues, totals, inFlight, error} = this.state;
 
-    let dataElem = <MsgBox title="No Data" detail="Report not finished running." />;
+    let dataElem = <MsgBox title={gettext('No Data')} detail={gettext('Report not finished running.')} />;
     if (inFlight) {
       dataElem = <div className="row"><div className="col-xs-12 text-center"><LoadingInline /></div></div>;
     } else if (error) {
@@ -307,7 +307,7 @@ class ReportData extends SafetyFirst<ReportDataProps, ReportDataState> {
       if (data) {
         dataElem = <DataTable sortBy={sortBy} orderBy={orderBy} keys={keys} rows={rows} maxValues={maxValues} totals={totals} applySort={(sb, func, ob) => this.applySort(sb, func, ob)} />;
       } else {
-        dataElem = <MsgBox title="No Data" detail="" />;
+        dataElem = <MsgBox title={gettext('No Data')} detail="" />;
       }
     } else if (phase === 'Error') {
       dataElem = <LoadError label="Report" message={_.get(obj, ['status', 'output'])} canRetry={false} />;

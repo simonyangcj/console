@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 import * as _ from 'lodash-es';
-import { resourcePath } from './utils';
+import { resourcePath, gettext } from './utils';
 import { fromNow } from './utils/datetime';
 import { K8sResourceKind } from '../module/k8s';
 
@@ -43,13 +43,13 @@ const BuildLogLink: React.SFC<BuildLogLinkProps> = ({ obj }) => {
   const link = getJenkinsLogURL(obj);
   return link
     ? <div className="build-pipeline__link">
-      <a href={link} className="build-pipeline__log-link" target="_blank" rel="noopener noreferrer">View Log</a>
+      <a href={link} className="build-pipeline__log-link" target="_blank" rel="noopener noreferrer">{gettext('View Log')}</a>
     </div>
     : null;
 };
 
 const StagesNotStarted: React.SFC = () => <div className="build-pipeline__stage build-pipeline__stage--none">
-  No stages have started.
+  {gettext('No stages have started.')}
 </div>;
 
 const BuildSummaryTimestamp: React.SFC<BuildSummaryTimestampProps> = ({ timestamp }) => <span className="build-pipeline__timestamp text-muted">

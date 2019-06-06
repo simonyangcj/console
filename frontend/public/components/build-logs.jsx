@@ -1,6 +1,6 @@
 import * as _ from 'lodash-es';
 import * as React from 'react';
-import { LOG_SOURCE_RUNNING, LOG_SOURCE_TERMINATED, LOG_SOURCE_WAITING, MsgBox, ResourceLog } from './utils';
+import { LOG_SOURCE_RUNNING, LOG_SOURCE_TERMINATED, LOG_SOURCE_WAITING, MsgBox, ResourceLog, gettext } from './utils';
 import { getJenkinsLogURL } from './build-pipeline';
 import { BuildStrategyType } from './build';
 
@@ -12,7 +12,7 @@ const PipelineLogMessage = ({ build }) => {
 
   const detail = <React.Fragment>
     <p>{message}</p>
-    { logURL && <a href={logURL} target="_blank" rel="noopener noreferrer">View Log</a> }
+    { logURL && <a href={logURL} target="_blank" rel="noopener noreferrer">{gettext('View Log')}</a> }
   </React.Fragment>;
 
   return <MsgBox title="See Jenkins Log" detail={detail} />;
