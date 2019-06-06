@@ -486,7 +486,7 @@ msgstr "无环境变量"
 #: public/components/utils/label-list.tsx:33
 #, fuzzy
 msgid "No labels"
-msgstr "标签"
+msgstr "无标签"
 
 #: public/components/cloud-services/catalog-source.tsx:80
 msgid "No Packages Found"
