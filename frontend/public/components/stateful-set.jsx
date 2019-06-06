@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { DetailsPage, List, ListPage, WorkloadListHeader, WorkloadListRow } from './factory';
-import { Cog, navFactory, SectionHeading, ResourceSummary } from './utils';
+import { Cog, navFactory, SectionHeading, ResourceSummary, get } from './utils';
 import { EnvironmentPage } from './environment';
 import { ResourceEventStream } from './events';
 
@@ -12,7 +12,7 @@ const Row = props => <WorkloadListRow {...props} kind={kind} actions={menuAction
 
 const Details = ({obj: ss}) => <React.Fragment>
   <div className="co-m-pane__body">
-    <SectionHeading text="StatefulSet Overview" />
+    <SectionHeading text={gettext('StatefulSet Overview')} />
     <ResourceSummary resource={ss} showNodeSelector={false} />
   </div>
 </React.Fragment>;

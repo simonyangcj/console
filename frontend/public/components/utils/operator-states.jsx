@@ -2,17 +2,18 @@ import * as _ from 'lodash-es';
 import * as React from 'react';
 
 import {LoadingInline} from './index';
+import { gettext } from './gettext';
 
 export const operatorStates = {
   Complete: {
     suffix: 'complete',
     icon: 'fa-check-circle',
-    statusText: 'Completed'
+    statusText: gettext('Completed')
   },
   Failed: {
     suffix: 'failed',
     icon: 'fa-ban',
-    statusText: 'Software update failed'
+    statusText: gettext('Software update failed')
   },
   Loading: {
     suffix: 'loading',
@@ -20,42 +21,42 @@ export const operatorStates = {
   NeedsAttention: {
     suffix: 'needs-attention',
     icon: 'fa-exclamation-triangle',
-    statusText: 'Update Needs Attention'
+    statusText: gettext('Update Needs Attention')
   },
   Paused: {
     suffix: 'paused',
     icon: 'fa-pause-circle-o',
-    statusText: 'Paused...'
+    statusText: gettext('Paused...')
   },
   Pausing: {
     suffix: 'pausing',
     icon: 'fa-pause-circle-o',
-    statusText: 'Pausing...'
+    statusText: gettext('Pausing...')
 
   },
   Requested: {
     suffix: 'requested',
     icon: 'fa-ban',
-    statusText: 'Update Requested...'
+    statusText: gettext('Update Requested...')
   },
   UpdateAvailable: {
     suffix: 'update-available',
     icon: 'fa-arrow-circle-down',
-    statusText: ' is available'
+    statusText: gettext(' is available')
   },
   Updating: {
     suffix: 'updating',
     icon: 'fa-circle-o-notch fa-spin',
-    statusText: 'Updating'
+    statusText: gettext('Updating')
   },
   Pending: {
     suffix: 'pending',
     icon: 'fa-circle-o',
-    statusText: 'Updating'
+    statusText: gettext('Updating')
   },
   UpToDate: {
     suffix: 'up-to-date',
-    statusText: 'Up to date'
+    statusText: gettext('Up to date')
   }
 };
 
@@ -99,18 +100,18 @@ export const OperatorState = ({opState, version}) => {
 
 export const determineOperatorState = (operator) => {
   if (operator.failureStatus) {
-    return 'Failed';
+    return gettext('Failed');
   }
 
   if (operator.pausedStatus) {
-    return 'Paused';
+    return gettext('Paused');
   }
 
   if (operator.targetVersion) {
-    return 'Updating';
+    return gettext('Updating');
   }
 
-  return operator.currentVersion === operator.desiredVersion ? 'Complete' : 'Pending';
+  return operator.currentVersion === operator.desiredVersion ? gettext('Complete') : gettext('Pending');
 };
 
 export const calculateChannelState = (allComponents, primaryComponent, config) => {
@@ -127,24 +128,24 @@ export const calculateChannelState = (allComponents, primaryComponent, config) =
 
   // "pending" doesn't match a channel state
   if (channelState === 'Pending') {
-    return 'UpdateAvailable';
+    return gettext('UpdateAvailable');
   }
 
   if (primaryComponent.pausedStatus && primaryComponent.pausedSpec) {
-    return 'Paused';
+    return gettext('Paused');
   }
 
   if (primaryComponent.pausedSpec) {
-    return 'Pausing';
+    return gettext('Pausing');
   }
 
   if (primaryComponent.failureStatus) {
-    return 'Failed';
+    return gettext('Failed');
   }
 
   if (config && config.triggerUpdate && channelState === 'UpdateAvailable') {
-    return 'Requested';
+    return gettext('Requested');
   }
 
-  return channelState || 'UpToDate';
+  return channelState || gettext('UpToDate');
 };

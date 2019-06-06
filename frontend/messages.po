@@ -5,6 +5,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#: public/components/utils/operator-states.jsx:45
+#, fuzzy
+msgid " is available"
+msgstr "不可用"
+
 #: public/components/deployment-config.tsx:67
 #: public/components/deployment.jsx:65 public/components/namespace.jsx:26
 msgid "Active"
@@ -183,6 +188,16 @@ msgstr "命令"
 msgid "Compact"
 msgstr "合并"
 
+#: public/components/utils/operator-states.jsx:114
+#, fuzzy
+msgid "Complete"
+msgstr "合并"
+
+#: public/components/utils/operator-states.jsx:11
+#, fuzzy
+msgid "Completed"
+msgstr "合并"
+
 #: public/models/index.ts:365
 msgid "Component Statuses"
 msgstr "组件状态"
@@ -353,6 +368,11 @@ msgstr "外部负载均衡器"
 #, fuzzy
 msgid "External Service Name"
 msgstr "集群服务类"
+
+#: public/components/utils/operator-states.jsx:103
+#: public/components/utils/operator-states.jsx:143
+msgid "Failed"
+msgstr "失败"
 
 #: public/components/factory/list-page.jsx:40
 msgid "Filter"
@@ -635,6 +655,28 @@ msgstr "找不到包"
 msgid "Packages by name"
 msgstr "按名称"
 
+#: public/components/utils/operator-states.jsx:107
+#: public/components/utils/operator-states.jsx:135
+msgid "Paused"
+msgstr "已暂停"
+
+#: public/components/utils/operator-states.jsx:29
+msgid "Paused..."
+msgstr "已暂停..."
+
+#: public/components/utils/operator-states.jsx:139
+msgid "Pausing"
+msgstr "暂停中"
+
+#: public/components/utils/operator-states.jsx:34
+msgid "Pausing..."
+msgstr "暂停中..."
+
+#: public/components/utils/operator-states.jsx:114
+#, fuzzy
+msgid "Pending"
+msgstr "角色绑定"
+
 #: public/components/pod.jsx:216
 #, fuzzy
 msgid "Permissions"
@@ -744,6 +786,11 @@ msgstr ""
 msgid "Reports"
 msgstr "报告"
 
+#: public/components/utils/operator-states.jsx:147
+#, fuzzy
+msgid "Requested"
+msgstr "请求"
+
 #: public/components/namespace.jsx:198 public/components/namespace.jsx:82
 msgid "Requester"
 msgstr "请求"
@@ -850,6 +897,10 @@ msgstr "大小"
 msgid "Software Info"
 msgstr "软件信息"
 
+#: public/components/utils/operator-states.jsx:16
+msgid "Software update failed"
+msgstr "软件更新失败"
+
 #: public/components/pod.jsx:128
 msgid "Started"
 msgstr "启动"
@@ -862,6 +913,11 @@ msgstr "状态"
 #: public/components/nav.jsx:391 public/models/index.ts:606
 msgid "Stateful Sets"
 msgstr ""
+
+#: public/components/stateful-set.jsx:15
+#: public/dist/stateful-set-d306743e4d876d21f226.js:61
+msgid "StatefulSet Overview"
+msgstr "StatefulSet概况"
 
 #: public/components/cloud-services/clusterserviceversion-resource.tsx:23
 #: public/components/cloud-services/clusterserviceversion.tsx:23
@@ -951,9 +1007,21 @@ msgstr "未知"
 msgid "Unknown graph type:"
 msgstr "未知的图表类型： "
 
+#: public/components/utils/operator-states.jsx:59
+msgid "Up to date"
+msgstr "最新"
+
+#: public/components/utils/operator-states.jsx:24
+msgid "Update Needs Attention"
+msgstr "更新需要注意"
+
 #: public/components/deployment-config.tsx:80
 msgid "Update Period"
 msgstr "更新时间"
+
+#: public/components/utils/operator-states.jsx:40
+msgid "Update Requested..."
+msgstr " 请求更新…"
 
 #: public/components/deployment-config.tsx:76
 #: public/components/deployment.jsx:70
@@ -961,10 +1029,22 @@ msgstr "更新时间"
 msgid "Update Strategy"
 msgstr "策略"
 
+#: public/components/utils/operator-states.jsx:131
+#, fuzzy
+msgid "UpdateAvailable"
+msgstr "不可用"
+
 #: public/components/deployment-config.tsx:67
 #: public/components/deployment.jsx:65
+#: public/components/utils/operator-states.jsx:111
+#: public/components/utils/operator-states.jsx:50
+#: public/components/utils/operator-states.jsx:55
 msgid "Updating"
 msgstr "更新中"
+
+#: public/components/utils/operator-states.jsx:150
+msgid "UpToDate"
+msgstr "最新"
 
 #: public/components/image-stream-tag.tsx:73
 msgid "User"
@@ -1024,17 +1104,6 @@ msgstr "工作路径"
 #: public/components/nav.jsx:386
 msgid "Workloads"
 msgstr "应用容器"
-
-#, fuzzy
-#~ msgid "Completed"
-#~ msgstr "合并"
-
-#~ msgid "Failed"
-#~ msgstr "失败"
-
-#, fuzzy
-#~ msgid "Pending"
-#~ msgstr "角色绑定"
 
 #~ msgid "Running"
 #~ msgstr "运行中"
