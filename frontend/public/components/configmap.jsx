@@ -3,16 +3,16 @@ import * as React from 'react';
 
 import { ColHead, DetailsPage, List, ListHeader, ListPage, ResourceRow } from './factory';
 import { ConfigMapData } from './configmap-and-secret-data';
-import { Cog, SectionHeading, navFactory, ResourceCog, ResourceLink, ResourceSummary } from './utils';
+import { Cog, SectionHeading, navFactory, ResourceCog, ResourceLink, ResourceSummary, gettext } from './utils';
 import { fromNow } from './utils/datetime';
 
 const menuActions = Cog.factory.common;
 
 const ConfigMapHeader = props => <ListHeader>
-  <ColHead {...props} className="col-sm-4 col-xs-6" sortField="metadata.name">Name</ColHead>
-  <ColHead {...props} className="col-sm-4 col-xs-6" sortField="metadata.namespace">Namespace</ColHead>
-  <ColHead {...props} className="col-sm-2 hidden-xs" sortFunc="dataSize">Size</ColHead>
-  <ColHead {...props} className="col-sm-2 hidden-xs" sortField="metadata.creationTimestamp">Created</ColHead>
+  <ColHead {...props} className="col-sm-4 col-xs-6" sortField="metadata.name">{gettext('Name')}</ColHead>
+  <ColHead {...props} className="col-sm-4 col-xs-6" sortField="metadata.namespace">{gettext('Namespace')}</ColHead>
+  <ColHead {...props} className="col-sm-2 hidden-xs" sortFunc="dataSize">{gettext('Size')}</ColHead>
+  <ColHead {...props} className="col-sm-2 hidden-xs" sortField="metadata.creationTimestamp">{gettext('Created')}</ColHead>
 </ListHeader>;
 
 const ConfigMapRow = ({obj: configMap}) => <ResourceRow obj={configMap}>

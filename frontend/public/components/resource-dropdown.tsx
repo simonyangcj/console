@@ -8,7 +8,7 @@ import { Map as ImmutableMap, OrderedMap, Set as ImmutableSet } from 'immutable'
 import * as classNames from 'classnames';
 import * as fuzzy from 'fuzzysearch';
 
-import { Dropdown, ResourceIcon } from './utils';
+import { Dropdown, ResourceIcon, gettext } from './utils';
 import { K8sKind, K8sResourceKindReference, referenceForModel, apiVersionForReference, kindForReference } from '../module/k8s';
 
 // Blacklist known duplicate resources.
@@ -89,7 +89,7 @@ const ResourceListDropdown_: React.SFC<ResourceListDropdownProps> = props => {
         <span className="co-resource-icon--fixed-width">
           <ResourceIcon kind="All" />
         </span>
-        <span className="co-resource-link__resource-name">All Types</span>
+        <span className="co-resource-link__resource-name">{gettext('All Types')}</span>
       </span>
       {/* <ResourceIcon kind="All" /> */}
     </React.Fragment>}).concat(items)

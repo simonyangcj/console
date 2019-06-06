@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { DetailsPage, List, ListPage, WorkloadListHeader, WorkloadListRow } from './factory';
-import { Cog, navFactory, SectionHeading, ResourceSummary, ResourcePodCount } from './utils';
+import { Cog, navFactory, SectionHeading, ResourceSummary, ResourcePodCount, gettext } from './utils';
 import { breadcrumbsForOwnerRefs } from './utils/breadcrumbs';
 import { EnvironmentPage } from './environment';
 import { ResourceEventStream } from './events';
@@ -11,7 +11,7 @@ export const replicaSetMenuActions = [ModifyCount, EditEnvironment, ...common];
 
 const Details = ({obj: replicaSet}) => <React.Fragment>
   <div className="co-m-pane__body">
-    <SectionHeading text="Replica Set Overview" />
+    <SectionHeading text={gettext('Replica Set Overview')} />
     <div className="row">
       <div className="col-md-6">
         <ResourceSummary resource={replicaSet} />
@@ -35,7 +35,7 @@ const {details, editYaml, pods, envEditor, events} = navFactory;
 const ReplicaSetsDetailsPage = props => <DetailsPage
   {...props}
   breadcrumbsFor={obj => breadcrumbsForOwnerRefs(obj).concat({
-    name: 'ReplicaSet Details',
+    name: gettext('ReplicaSet Details'),
     path: props.match.url,
   })}
   menuActions={replicaSetMenuActions}

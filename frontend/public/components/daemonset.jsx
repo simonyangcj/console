@@ -2,17 +2,17 @@ import * as React from 'react';
 import { Link } from 'react-router-dom';
 
 import { ColHead, DetailsPage, List, ListHeader, ListPage, ResourceRow } from './factory';
-import { SectionHeading, Cog, LabelList, ResourceCog, ResourceLink, ResourceSummary, Selector, navFactory, detailsPage } from './utils';
+import { SectionHeading, Cog, LabelList, ResourceCog, ResourceLink, ResourceSummary, Selector, navFactory, detailsPage, gettext } from './utils';
 import { EnvironmentPage } from './environment';
 
 const menuActions = [Cog.factory.EditEnvironment, ...Cog.factory.common];
 
 const DaemonSetHeader = props => <ListHeader>
-  <ColHead {...props} className="col-lg-2 col-md-3 col-sm-4 col-xs-6" sortField="metadata.name">Name</ColHead>
-  <ColHead {...props} className="col-lg-2 col-md-3 col-sm-4 col-xs-6" sortField="metadata.namespace">Namespace</ColHead>
-  <ColHead {...props} className="col-lg-3 col-md-4 col-sm-4 hidden-xs" sortField="metadata.labels">Labels</ColHead>
-  <ColHead {...props} className="col-lg-2 col-md-2 hidden-sm hidden-xs" sortFunc="daemonsetNumScheduled">Status</ColHead>
-  <ColHead {...props} className="col-lg-3 hidden-md hidden-sm hidden-xs" sortField="spec.selector">Pod Selector</ColHead>
+  <ColHead {...props} className="col-lg-2 col-md-3 col-sm-4 col-xs-6" sortField="metadata.name">{gettext('Name')}</ColHead>
+  <ColHead {...props} className="col-lg-2 col-md-3 col-sm-4 col-xs-6" sortField="metadata.namespace">{gettext('Namespace')}</ColHead>
+  <ColHead {...props} className="col-lg-3 col-md-4 col-sm-4 hidden-xs" sortField="metadata.labels">{gettext('Labels')}</ColHead>
+  <ColHead {...props} className="col-lg-2 col-md-2 hidden-sm hidden-xs" sortFunc="daemonsetNumScheduled">{gettext('Status')}</ColHead>
+  <ColHead {...props} className="col-lg-3 hidden-md hidden-sm hidden-xs" sortField="spec.selector">{gettext('Pod Selector')}</ColHead>
 </ListHeader>;
 
 const DaemonSetRow = ({obj: daemonset}) => <ResourceRow obj={daemonset}>
@@ -44,9 +44,9 @@ const Details = ({obj: daemonset}) => <div className="co-m-pane__body">
     </div>
     <div className="col-lg-6">
       <dl className="co-m-pane__details">
-        <dt>Current Count</dt>
+        <dt>{gettext('Current Count')}</dt>
         <dd>{daemonset.status.currentNumberScheduled || '-'}</dd>
-        <dt>Desired Count</dt>
+        <dt>{gettext('Desired Count')}</dt>
         <dd>{daemonset.status.desiredNumberScheduled || '-'}</dd>
       </dl>
     </div>

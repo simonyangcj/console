@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { DetailsPage, List, ListPage, WorkloadListHeader, WorkloadListRow } from './factory';
-import { Cog, navFactory, SectionHeading, ResourceSummary, get } from './utils';
+import { Cog, navFactory, SectionHeading, ResourceSummary, gettext } from './utils';
 import { EnvironmentPage } from './environment';
 import { ResourceEventStream } from './events';
 

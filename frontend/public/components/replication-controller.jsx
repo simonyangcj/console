@@ -3,13 +3,13 @@ import * as React from 'react';
 import { ResourceEventStream } from './events';
 import { DetailsPage, List, ListPage, WorkloadListHeader, WorkloadListRow } from './factory';
 import { replicaSetMenuActions } from './replicaset';
-import { navFactory, SectionHeading, ResourceSummary, ResourcePodCount } from './utils';
+import { navFactory, SectionHeading, ResourceSummary, ResourcePodCount, gettext } from './utils';
 import { breadcrumbsForOwnerRefs } from './utils/breadcrumbs';
 import { EnvironmentPage } from './environment';
 
 const Details = ({obj: replicationController}) => <React.Fragment>
   <div className="co-m-pane__body">
-    <SectionHeading text="Replication Controller Overview" />
+    <SectionHeading text={gettext('Replication Controller Overview')} />
     <div className="row">
       <div className="col-md-6">
         <ResourceSummary resource={replicationController} />
@@ -34,7 +34,7 @@ const {details, editYaml, pods, envEditor, events} = navFactory;
 export const ReplicationControllersDetailsPage = props => <DetailsPage
   {...props}
   breadcrumbsFor={obj => breadcrumbsForOwnerRefs(obj).concat({
-    name: 'ReplicationController Details',
+    name: gettext('ReplicationController Details'),
     path: props.match.url,
   })}
   menuActions={replicaSetMenuActions}
