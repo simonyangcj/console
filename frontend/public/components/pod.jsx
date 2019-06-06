@@ -6,7 +6,7 @@ import { getVolumeType, getVolumeLocation, getVolumeMountPermissions, getVolumeM
 import { getContainerState, getContainerStatus } from '../module/k8s/docker';
 import { ResourceEventStream } from './events';
 import { ColHead, DetailsPage, List, ListHeader, ListPage, ResourceRow } from './factory';
-import { SectionHeading, Cog, LabelList, navFactory, NodeLink, Overflow, ResourceCog, ResourceIcon, ResourceLink, ResourceSummary, ScrollToTopOnMount, Selector, Timestamp, VolumeIcon, units, AsyncComponent } from './utils';
+import { SectionHeading, Cog, LabelList, navFactory, NodeLink, Overflow, ResourceCog, ResourceIcon, ResourceLink, ResourceSummary, ScrollToTopOnMount, Selector, Timestamp, VolumeIcon, units, AsyncComponent, gettext } from './utils';
 import { PodLogs } from './pod-logs';
 import { Line, requirePrometheus } from './graphs';
 import { breadcrumbsForOwnerRefs } from './utils/breadcrumbs';
@@ -63,12 +63,12 @@ export const PodRow = ({obj: pod}) => {
 PodRow.displayName = 'PodRow';
 
 const PodHeader = props => <ListHeader>
-  <ColHead {...props} className="col-lg-2 col-md-3 col-sm-4 col-xs-6" sortField="metadata.name">Name</ColHead>
-  <ColHead {...props} className="col-lg-2 col-md-2 col-sm-4 col-xs-6" sortField="metadata.namespace">Namespace</ColHead>
-  <ColHead {...props} className="col-lg-2 col-md-3 col-sm-4 hidden-xs" sortField="metadata.labels">Pod Labels</ColHead>
-  <ColHead {...props} className="col-lg-2 col-md-2 hidden-sm hidden-xs" sortField="spec.nodeName">Node</ColHead>
-  <ColHead {...props} className="col-lg-2 col-md-2 hidden-sm hidden-xs" sortFunc="podPhase">Status</ColHead>
-  <ColHead {...props} className="col-lg-2 hidden-md hidden-sm hidden-xs" sortFunc="podReadiness">Readiness</ColHead>
+  <ColHead {...props} className="col-lg-2 col-md-3 col-sm-4 col-xs-6" sortField="metadata.name">{gettext('Name')}</ColHead>
+  <ColHead {...props} className="col-lg-2 col-md-2 col-sm-4 col-xs-6" sortField="metadata.namespace">{gettext('Namespace')}</ColHead>
+  <ColHead {...props} className="col-lg-2 col-md-3 col-sm-4 hidden-xs" sortField="metadata.labels">{gettext('Pod Labels')}</ColHead>
+  <ColHead {...props} className="col-lg-2 col-md-2 hidden-sm hidden-xs" sortField="spec.nodeName">{gettext('Node')}</ColHead>
+  <ColHead {...props} className="col-lg-2 col-md-2 hidden-sm hidden-xs" sortFunc="podPhase">{gettext('Status')}</ColHead>
+  <ColHead {...props} className="col-lg-2 hidden-md hidden-sm hidden-xs" sortFunc="podReadiness">{gettext('Readiness')}</ColHead>
 </ListHeader>;
 
 const ContainerLink = ({pod, name}) => <span className="co-resource-link co-resource-link--inline">
@@ -120,13 +120,13 @@ const ContainerTable = ({heading, containers, pod}) => <div className="co-m-pane
   <div className="row">
     <div className="co-m-table-grid co-m-table-grid--bordered">
       <div className="row co-m-table-grid__head">
-        <div className="col-sm-2 col-xs-4">Name</div>
-        <div className="col-md-2 col-sm-3 hidden-xs">Id</div>
-        <div className="col-md-2 col-sm-3 col-xs-8">Image</div>
-        <div className="col-md-1 col-sm-2 hidden-xs">State</div>
-        <div className="col-md-1 col-sm-2 hidden-xs">Restarts</div>
-        <div className="col-md-2 hidden-sm hidden-xs">Started</div>
-        <div className="col-md-2 hidden-sm hidden-xs">Finished</div>
+        <div className="col-sm-2 col-xs-4">{gettext('Name')}</div>
+        <div className="col-md-2 col-sm-3 hidden-xs">{gettext('Id')}</div>
+        <div className="col-md-2 col-sm-3 col-xs-8">{gettext('Image')}</div>
+        <div className="col-md-1 col-sm-2 hidden-xs">{gettext('State')}</div>
+        <div className="col-md-1 col-sm-2 hidden-xs">{gettext('Restarts')}</div>
+        <div className="col-md-2 hidden-sm hidden-xs">{gettext('Started')}</div>
+        <div className="col-md-2 hidden-sm hidden-xs">{gettext('Finished')}</div>
       </div>
       <div className="co-m-table-grid__body">
         {containers.map((c, i) => <ContainerRow key={i} pod={pod} container={c} />)}
@@ -175,27 +175,27 @@ const Details = ({obj: pod}) => {
       <div className="row">
         <div className="col-sm-6">
           <ResourceSummary resource={pod} showPodSelector={false} showNodeSelector={false}>
-            <dt>Node Selector</dt>
+            <dt>{gettext('Node Selector')}</dt>
             <dd><Selector kind="Node" selector={pod.spec.nodeSelector} /></dd>
           </ResourceSummary>
         </div>
         <div className="col-sm-6">
           <dl className="co-m-pane__details">
-            <dt>Status</dt>
+            <dt>{gettext('Status')}</dt>
             <dd>{podPhase(pod)}</dd>
-            <dt>Restart Policy</dt>
+            <dt>{gettext('Restart Policy')}</dt>
             <dd>{getRestartPolicyLabel(pod)}</dd>
             {
               activeDeadlineSeconds &&
                 <React.Fragment>
-                  <dt>Active Deadline</dt>
+                  <dt>{gettext('Active Deadline')}</dt>
                   {/* Convert to ms for formatDuration */}
                   <dd>{formatDuration(activeDeadlineSeconds * 1000)}</dd>
                 </React.Fragment>
             }
-            <dt>Pod IP</dt>
+            <dt>{gettext('Pod IP')}</dt>
             <dd>{pod.status.podIP || '-'}</dd>
-            <dt>Node</dt>
+            <dt>{gettext('Node')}</dt>
             <dd><NodeLink name={pod.spec.nodeName} /></dd>
           </dl>
         </div>
@@ -211,10 +211,10 @@ const Details = ({obj: pod}) => {
       <div className="row">
         <div className="co-m-table-grid co-m-table-grid--bordered">
           <div className="row co-m-table-grid__head">
-            <div className="col-sm-3 col-xs-4">Name</div>
-            <div className="col-sm-3 col-xs-4">Type</div>
-            <div className="col-sm-3 hidden-xs">Permissions</div>
-            <div className="col-sm-3 col-xs-4">Utilized By</div>
+            <div className="col-sm-3 col-xs-4">{gettext('Name')}</div>
+            <div className="col-sm-3 col-xs-4">{gettext('Type')}</div>
+            <div className="col-sm-3 hidden-xs">{gettext('Permissions')}</div>
+            <div className="col-sm-3 col-xs-4">{gettext('Utilized By')}</div>
           </div>
           <div className="co-m-table-grid__body">
             {getVolumeMountsByPermissions(pod).map((v, i) => <Volume key={i} pod={pod} volume={v} />)}
@@ -275,15 +275,15 @@ const filters = [{
   selected: [ 'Running', 'Pending', 'Terminating', 'CrashLoopBackOff' ],
   reducer: podPhaseFilterReducer,
   items: [
-    { id: 'Running', title: 'Running' },
-    { id: 'Pending', title: 'Pending' },
-    { id: 'Terminating', title: 'Terminating' },
-    { id: 'CrashLoopBackOff', title: 'CrashLoopBackOff' },
+    { id: 'Running', title: gettext('Running') },
+    { id: 'Pending', title: gettext('Pending') },
+    { id: 'Terminating', title: gettext('Terminating') },
+    { id: 'CrashLoopBackOff', title: gettext('CrashLoopBackOff') },
     // Use title "Completed" to match what appears in the status column for the pod.
     // The pod phase is "Succeeded," but the container state is "Completed."
-    { id: 'Succeeded', title: 'Completed' },
-    { id: 'Failed', title: 'Failed' },
-    { id: 'Unknown', title: 'Unknown '}
+    { id: 'Succeeded', title: gettext('Completed') },
+    { id: 'Failed', title: gettext('Failed') },
+    { id: 'Unknown', title: gettext('Unknown') }
   ]
 }];
 

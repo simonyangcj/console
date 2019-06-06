@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import * as classNames from 'classnames';
 import * as _ from 'lodash-es';
 import { K8sResourceKindReference, kindForReference } from '../../module/k8s';
+import { gettext } from './gettext';
 
 const Label: React.SFC<LabelProps> = ({kind, name, value, expand}) => {
   const href = `/search?kind=${kind}&q=${value ? encodeURIComponent(`${name}=${value}`) : name}`;
@@ -29,7 +30,7 @@ export class LabelList extends React.Component<LabelListProps> {
     let list = _.map(labels, (label, key) => <Label key={key} kind={kind} name={key} value={label} expand={expand} />);
 
     if (_.isEmpty(list)) {
-      list = [<div className="text-muted" key="0">No labels</div>];
+      list = [<div className="text-muted" key="0">{gettext('No labels')}</div>];
     }
 
     return <div className="co-m-label-list">{list}</div>;

@@ -2,6 +2,14 @@ msgid ""
 msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 
+#: public/components/namespace.jsx:26
+msgid "Active"
+msgstr ""
+
+#: public/components/pod.jsx:191
+msgid "Active Deadline"
+msgstr ""
+
 #: public/components/cluster-overview.jsx:189
 msgid "Additional Support"
 msgstr ""
@@ -145,6 +153,10 @@ msgstr ""
 msgid "Compact"
 msgstr ""
 
+#: public/components/pod.jsx:284
+msgid "Completed"
+msgstr ""
+
 #: public/models/index.ts:365
 msgid "Component Statuses"
 msgstr ""
@@ -166,6 +178,10 @@ msgstr ""
 msgid "CPU Usage"
 msgstr ""
 
+#: public/components/pod.jsx:281
+msgid "CrashLoopBackOff"
+msgstr ""
+
 #: public/components/cluster-overview.jsx:67
 msgid "Crashlooping Pods"
 msgstr ""
@@ -178,7 +194,7 @@ msgstr ""
 msgid "Create"
 msgstr ""
 
-#: public/components/namespace.jsx:102
+#: public/components/namespace.jsx:109
 msgid "Create a project for your application."
 msgstr ""
 
@@ -218,11 +234,11 @@ msgstr ""
 msgid "Daemon Sets"
 msgstr ""
 
-#: public/components/namespace.jsx:32
+#: public/components/namespace.jsx:39
 msgid "default cannot be deleted"
 msgstr ""
 
-#: public/components/namespace.jsx:199
+#: public/components/namespace.jsx:206
 msgid "Default Pull Secret"
 msgstr ""
 
@@ -247,7 +263,7 @@ msgstr ""
 msgid "Disk Usage"
 msgstr ""
 
-#: public/components/namespace.jsx:189
+#: public/components/namespace.jsx:196
 msgid "Display Name"
 msgstr ""
 
@@ -282,12 +298,20 @@ msgstr ""
 msgid "Exposed Ports"
 msgstr ""
 
+#: public/components/pod.jsx:285
+msgid "Failed"
+msgstr ""
+
 #: public/components/factory/list-page.jsx:40
 msgid "Filter"
 msgstr ""
 
 #: public/components/factory/list-page.jsx:263
 msgid "Filter by selector (app=nginx) ..."
+msgstr ""
+
+#: public/components/pod.jsx:129
+msgid "Finished"
 msgstr ""
 
 #: public/components/cluster-overview.jsx:46
@@ -308,6 +332,14 @@ msgstr ""
 
 #: public/components/nav.jsx:400
 msgid "HPAs"
+msgstr ""
+
+#: public/components/pod.jsx:124
+msgid "Id"
+msgstr ""
+
+#: public/components/pod.jsx:125
+msgid "Image"
 msgstr ""
 
 #: public/components/image-stream-tag.tsx:54
@@ -338,7 +370,7 @@ msgstr ""
 msgid "InstallPlans"
 msgstr ""
 
-#: public/components/namespace.jsx:34
+#: public/components/namespace.jsx:41
 msgid "is already terminating"
 msgstr ""
 
@@ -353,8 +385,8 @@ msgid "Kubernetes API"
 msgstr ""
 
 #: public/components/cloud-services/clusterserviceversion-resource.tsx:21
-#: public/components/namespace.jsx:51
-#: public/components/namespace.jsx:76
+#: public/components/namespace.jsx:58
+#: public/components/namespace.jsx:83
 msgid "Labels"
 msgstr ""
 
@@ -382,7 +414,7 @@ msgstr ""
 msgid "Memory Usage"
 msgstr ""
 
-#: public/components/namespace.jsx:177
+#: public/components/namespace.jsx:184
 msgid "Memory Usage by Pod (Top 10)"
 msgstr ""
 
@@ -398,14 +430,18 @@ msgstr ""
 #: public/components/cloud-services/clusterserviceversion.tsx:20
 #: public/components/image-stream-tag.tsx:110
 #: public/components/image-stream-tag.tsx:89
-#: public/components/namespace.jsx:49
-#: public/components/namespace.jsx:73
+#: public/components/namespace.jsx:56
+#: public/components/namespace.jsx:80
+#: public/components/pod.jsx:123
+#: public/components/pod.jsx:214
+#: public/components/pod.jsx:66
 msgid "Name"
 msgstr ""
 
 #: public/components/cloud-services/catalog-source.tsx:113
 #: public/components/cloud-services/clusterserviceversion-resource.tsx:199
 #: public/components/cloud-services/clusterserviceversion.tsx:21
+#: public/components/pod.jsx:67
 msgid "Namespace"
 msgstr ""
 
@@ -414,8 +450,8 @@ msgstr ""
 msgid "Namespaces"
 msgstr ""
 
-#: public/components/namespace.jsx:201
-#: public/components/namespace.jsx:203
+#: public/components/namespace.jsx:208
+#: public/components/namespace.jsx:210
 #: public/components/nav.jsx:407
 #: public/models/index.ts:623
 msgid "Network Policies"
@@ -442,11 +478,21 @@ msgid "No environment variables"
 msgstr ""
 
 #: public/components/image-stream-tag.tsx:84
+#: public/components/utils/label-list.tsx:33
 msgid "No labels"
 msgstr ""
 
 #: public/components/cloud-services/catalog-source.tsx:80
 msgid "No Packages Found"
+msgstr ""
+
+#: public/components/pod.jsx:198
+#: public/components/pod.jsx:69
+msgid "Node"
+msgstr ""
+
+#: public/components/pod.jsx:178
+msgid "Node Selector"
 msgstr ""
 
 #: public/components/nav.jsx:427
@@ -461,7 +507,7 @@ msgstr ""
 msgid "Not available"
 msgstr ""
 
-#: public/components/namespace.jsx:153
+#: public/components/namespace.jsx:160
 msgid "Not Configured"
 msgstr ""
 
@@ -488,7 +534,7 @@ msgstr ""
 
 #: public/components/cluster-overview.jsx:248
 #: public/components/cluster-overview.jsx:250
-#: public/components/namespace.jsx:185
+#: public/components/namespace.jsx:192
 msgid "Overview"
 msgstr ""
 
@@ -498,6 +544,14 @@ msgstr ""
 
 #: public/components/cloud-services/catalog-source.tsx:166
 msgid "Packages by name"
+msgstr ""
+
+#: public/components/pod.jsx:279
+msgid "Pending"
+msgstr ""
+
+#: public/components/pod.jsx:216
+msgid "Permissions"
 msgstr ""
 
 #: public/components/nav.jsx:412
@@ -516,6 +570,14 @@ msgstr ""
 
 #: public/components/cloud-services/clusterserviceversion.tsx:85
 msgid "Please contact a system administrator and ask them to enable Operator Lifecycle Manager to continue."
+msgstr ""
+
+#: public/components/pod.jsx:196
+msgid "Pod IP"
+msgstr ""
+
+#: public/components/pod.jsx:68
+msgid "Pod Labels"
 msgstr ""
 
 #: public/components/cluster-overview.jsx:120
@@ -550,6 +612,10 @@ msgstr ""
 msgid "Publisher"
 msgstr ""
 
+#: public/components/pod.jsx:71
+msgid "Readiness"
+msgstr ""
+
 #: public/components/nav.jsx:398
 #: public/models/index.ts:238
 msgid "Replica Sets"
@@ -564,8 +630,8 @@ msgstr ""
 msgid "Reports"
 msgstr ""
 
-#: public/components/namespace.jsx:191
-#: public/components/namespace.jsx:75
+#: public/components/namespace.jsx:198
+#: public/components/namespace.jsx:82
 msgid "Requester"
 msgstr ""
 
@@ -576,6 +642,14 @@ msgstr ""
 
 #: public/components/cloud-services/clusterserviceversion-resource.tsx:119
 msgid "Resources by name"
+msgstr ""
+
+#: public/components/pod.jsx:186
+msgid "Restart Policy"
+msgstr ""
+
+#: public/components/pod.jsx:127
+msgid "Restarts"
 msgstr ""
 
 #: public/components/nav.jsx:431
@@ -591,6 +665,10 @@ msgstr ""
 #: public/components/nav.jsx:405
 #: public/models/index.ts:423
 msgid "Routes"
+msgstr ""
+
+#: public/components/pod.jsx:278
+msgid "Running"
 msgstr ""
 
 #: public/components/cluster-overview.jsx:92
@@ -645,6 +723,14 @@ msgstr ""
 msgid "Software Info"
 msgstr ""
 
+#: public/components/pod.jsx:128
+msgid "Started"
+msgstr ""
+
+#: public/components/pod.jsx:126
+msgid "State"
+msgstr ""
+
 #: public/components/nav.jsx:391
 #: public/models/index.ts:606
 msgid "Stateful Sets"
@@ -652,10 +738,12 @@ msgstr ""
 
 #: public/components/cloud-services/clusterserviceversion-resource.tsx:23
 #: public/components/cloud-services/clusterserviceversion.tsx:23
-#: public/components/namespace.jsx:197
-#: public/components/namespace.jsx:50
-#: public/components/namespace.jsx:74
+#: public/components/namespace.jsx:204
+#: public/components/namespace.jsx:57
+#: public/components/namespace.jsx:81
 #: public/components/nav.jsx:373
+#: public/components/pod.jsx:184
+#: public/components/pod.jsx:70
 msgid "Status"
 msgstr ""
 
@@ -690,6 +778,11 @@ msgstr ""
 msgid "Tectonic Versions"
 msgstr ""
 
+#: public/components/namespace.jsx:27
+#: public/components/pod.jsx:280
+msgid "Terminating"
+msgstr ""
+
 #: public/components/cloud-services/catalog-source.tsx:80
 msgid "The catalog author has not added any packages."
 msgstr ""
@@ -708,11 +801,13 @@ msgid "This application was not properly installed or configured."
 msgstr ""
 
 #: public/components/cloud-services/clusterserviceversion-resource.tsx:22
+#: public/components/pod.jsx:215
 msgid "Type"
 msgstr ""
 
 #: public/components/cloud-services/clusterserviceversion-resource.tsx:54
 #: public/components/cloud-services/clusterserviceversion-resource.tsx:57
+#: public/components/pod.jsx:286
 msgid "Unknown"
 msgstr ""
 
@@ -722,6 +817,10 @@ msgstr ""
 
 #: public/components/image-stream-tag.tsx:73
 msgid "User"
+msgstr ""
+
+#: public/components/pod.jsx:217
+msgid "Utilized By"
 msgstr ""
 
 #: public/components/image-stream-tag.tsx:111

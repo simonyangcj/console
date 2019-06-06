@@ -22,6 +22,13 @@ import { createProjectMessageStateToProps } from '../ui/ui-reducers';
 const getModel = useProjects => useProjects ? ProjectModel : NamespaceModel;
 const getDisplayName = obj => _.get(obj, ['metadata', 'annotations', 'openshift.io/display-name']);
 const getRequester = obj => _.get(obj, ['metadata', 'annotations', 'openshift.io/requester']);
+const statusList = {
+  'Active': gettext('Active'),
+  'Terminating': gettext('Terminating')
+}
+const getStatus = (status) => {
+  return statusList[status] ? statusList[status] : status;
+};
 
 const deleteModal = (kind, ns) => {
   let {label, weight} = Cog.factory.Delete(kind, ns);
@@ -57,7 +64,7 @@ const NamespaceRow = ({obj: ns}) => <ResourceRow obj={ns}>
     <ResourceLink kind="Namespace" name={ns.metadata.name} title={ns.metadata.uid} />
   </div>
   <div className="col-sm-4 col-xs-6 co-break-word">
-    {ns.status.phase}
+    {getStatus(ns.status.phase)}
   </div>
   <div className="col-sm-4 hidden-xs">
     <LabelList kind="Namespace" labels={ns.metadata.labels} />
@@ -85,7 +92,7 @@ const ProjectRow = ({obj: project}) => {
       <ResourceLink kind="Project" name={project.metadata.name} title={displayName || project.metadata.uid} />
     </div>
     <div className="col-md-3 col-sm-3 col-xs-4">
-      {project.status.phase}
+      {getStatus(project.status.phase)}
     </div>
     <div className="col-md-3 col-sm-3 hidden-xs">
       {requester || <span className="text-muted">{getetxt('No requester')}</span>}
@@ -195,7 +202,7 @@ const Details = ({obj: ns}) => {
         <div className="col-sm-6 col-xs-12">
           <dl className="co-m-pane__details">
             <dt>{gettext('Status')}</dt>
-            <dd>{ns.status.phase}</dd>
+            <dd>{getStatus(ns.status.phase)}</dd>
             <dt>{gettext('Default Pull Secret')}</dt>
             <dd><PullSecret namespace={ns} /></dd>
             <dt>{gettext('Network Policies')}</dt>
