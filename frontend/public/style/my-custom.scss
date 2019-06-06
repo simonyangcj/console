@@ -43,14 +43,14 @@ body {
     color: #fff;
 }
 .contextselector-pf .bootstrap-select>.dropdown-toggle {
-    color: $text-color;
+    color: #fff;
 }
 .contextselector-pf .bootstrap-select>.dropdown-toggle:hover {
-    background-color: $background-hover-color-gray;
-    color: $text-color;
+    background-color: $header-color;
+    color: #fff;
 }
 .contextselector-pf .dropdown.open, .contextselector-pf .dropdown:hover {
-    background-color: $background-hover-color-gray;
+    background-color: $header-color;
 }
 a {
     color: $link-color;

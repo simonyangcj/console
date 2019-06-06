@@ -5,7 +5,7 @@ import * as _ from 'lodash-es';
 import { match, Link } from 'react-router-dom';
 import { safeLoad } from 'js-yaml';
 
-import { SectionHeading, Firehose, MsgBox, LoadingBox, ResourceCog, ResourceLink, Cog, navFactory, resourceObjPath, Timestamp, StatusBox } from '../utils';
+import { SectionHeading, Firehose, MsgBox, LoadingBox, ResourceCog, ResourceLink, Cog, navFactory, resourceObjPath, Timestamp, StatusBox, gettext } from '../utils';
 import { withFallback } from '../utils/error-boundary';
 import { CreateYAML } from '../create-yaml';
 import { ClusterServiceVersionLogo, CatalogSourceKind, ClusterServiceVersionKind, Package, SubscriptionKind, olmNamespace } from './index';
@@ -32,9 +32,9 @@ const clusterServiceVersionsFor: ClusterServiceVersionsFor = configMap => _.get(
   : [];
 
 export const PackageHeader: React.SFC<PackageHeaderProps> = (props) => <ListHeader>
-  <ColHead {...props} className="col-sm-4 col-xs-6">Name</ColHead>
-  <ColHead {...props} className="col-sm-4 hidden-xs">Latest Version</ColHead>
-  <ColHead {...props} className="col-sm-4 col-xs-6">Subscriptions</ColHead>
+  <ColHead {...props} className="col-sm-4 col-xs-6">{gettext('Name')}</ColHead>
+  <ColHead {...props} className="col-sm-4 hidden-xs">{gettext('Latest Version')}</ColHead>
+  <ColHead {...props} className="col-sm-4 col-xs-6">{gettext('Subscriptions')}</ColHead>
 </ListHeader>;
 
 export const PackageRow: React.SFC<PackageRowProps> = (props) => {
@@ -44,8 +44,8 @@ export const PackageRow: React.SFC<PackageRowProps> = (props) => {
   const channel = !_.isEmpty(obj.defaultChannel) ? obj.channels.find(ch => ch.name === obj.defaultChannel) : obj.channels[0];
 
   const subscriptionLink = () => ns !== ALL_NAMESPACES_KEY
-    ? <Link to={`/k8s/ns/${ns}/${SubscriptionModel.plural}/${subscription.metadata.name}`}>View subscription</Link>
-    : <Link to={`/k8s/all-namespaces/${SubscriptionModel.plural}?name=${obj.packageName}`}>View subscriptions</Link>;
+    ? <Link to={`/k8s/ns/${ns}/${SubscriptionModel.plural}/${subscription.metadata.name}`}>{gettext('View subscription')}</Link>
+    : <Link to={`/k8s/all-namespaces/${SubscriptionModel.plural}?name=${obj.packageName}`}>{gettext('View subscriptions')}</Link>;
 
   const createSubscriptionLink = () => `/k8s/ns/${ns === ALL_NAMESPACES_KEY ? 'default' : ns}/${SubscriptionModel.plural}/new?pkg=${obj.packageName}&catalog=${catalogSource.metadata.name}&catalogNamespace=${catalogSource.metadata.namespace}`;
 
@@ -59,7 +59,7 @@ export const PackageRow: React.SFC<PackageRowProps> = (props) => {
         ? subscriptionLink()
         : <span className="text-muted">Not subscribed</span> }
       { (!subscription || ns === ALL_NAMESPACES_KEY) && <Link to={createSubscriptionLink()}>
-        <button className="btn btn-primary">Create Subscription</button>
+        <button className="btn btn-primary">{gettext('Create Subscription')}</button>
       </Link> }
     </div>
   </div>;
@@ -77,7 +77,7 @@ export const PackageList: React.SFC<PackageListProps> = (props) => <List
     catalogSource={props.catalogSource}
     subscription={props.subscriptions.find(sub => sub.spec.name === rowProps.obj.packageName)} />}
   label="Packages"
-  EmptyMsg={() => <MsgBox title="No Packages Found" detail="The catalog author has not added any packages." />} />;
+  EmptyMsg={() => <MsgBox title={gettext('No Packages Found')} detail={gettext('The catalog author has not added any packages.')} />} />;
 
 export const CatalogSourceDetails = withFallback<CatalogSourceDetailsProps>(({obj, configMap, subscription}) => {
   const packages = packagesFor(configMap) || [];
@@ -89,13 +89,13 @@ export const CatalogSourceDetails = withFallback<CatalogSourceDetailsProps>(({ob
       <div className="co-m-pane__body">
         <div className="col-xs-4">
           <dl className="co-m-pane__details">
-            <dt>Name</dt>
+            <dt>{gettext('Name')}</dt>
             <dd>{obj.spec.displayName}</dd>
           </dl>
         </div>
         <div className="col-xs-4">
           <dl className="co-m-pane__details">
-            <dt>Publisher</dt>
+            <dt>{gettext('Publisher')}</dt>
             <dd>{obj.spec.publisher}</dd>
           </dl>
         </div>
@@ -106,13 +106,13 @@ export const CatalogSourceDetails = withFallback<CatalogSourceDetailsProps>(({ob
       </div>
     </div>
     : <div />;
-}, () => <MsgBox title="Error Parsing Catalog" detail="The contents of the catalog source could not be retrieved." />);
+}, () => <MsgBox title={gettext('Error Parsing Catalog')} detail={gettext('The contents of the catalog source could not be retrieved.')} />);
 
 export const CatalogSourceHeader: React.SFC<CatalogSourceHeaderProps> = (props) => <ListHeader>
-  <ColHead {...props} className="col-md-3" sortField="metadata.name">Name</ColHead>
-  <ColHead {...props} className="col-md-2" sortField="metadata.namespace">Namespace</ColHead>
-  <ColHead {...props} className="col-md-2" sortField="spec.publisher">Publisher</ColHead>
-  <ColHead {...props} className="col-md-2">Created</ColHead>
+  <ColHead {...props} className="col-md-3" sortField="metadata.name">{gettext('Name')}</ColHead>
+  <ColHead {...props} className="col-md-2" sortField="metadata.namespace">{gettext('Namespace')}</ColHead>
+  <ColHead {...props} className="col-md-2" sortField="spec.publisher">{gettext('Publisher')}</ColHead>
+  <ColHead {...props} className="col-md-2">{gettext('Created')}</ColHead>
 </ListHeader>;
 
 export const CatalogSourceRow: React.SFC<CatalogSourceRowProps> = (props) => <ResourceRow obj={props.obj}>
@@ -137,8 +137,8 @@ export const CatalogSourceList = withFallback((props: CatalogSourceListProps) =>
 
   return props.loaded
     ? <React.Fragment>
-      <p className="co-m-pane__explanation">Catalogs are groups of Operators you can make available on the cluster. Subscribe and grant a namespace access to use the installed Operators.</p>
-      { _.isEmpty(data) && <MsgBox title="No Catalog Sources Found" detail="Catalog Sources contain packaged Operators which can be subscribed to for automatic upgrades." /> }
+      <p className="co-m-pane__explanation">{gettext('Catalogs are groups of Operators you can make available on the cluster. Subscribe and grant a namespace access to use the installed Operators.')}</p>
+      { _.isEmpty(data) && <MsgBox title={gettext('No Catalog Sources Found')} detail={gettext('Catalog Sources contain packaged Operators which can be subscribed to for automatic upgrades.')} /> }
       {/* TODO(alecmerdler): Handle filtering based on package name */}
       { data.map((obj) => <div key={obj.metadata.uid} className="co-catalogsource-list__section">
         <div className="co-catalogsource-list__section__packages">
@@ -146,13 +146,13 @@ export const CatalogSourceList = withFallback((props: CatalogSourceListProps) =>
             <h3>{obj.spec.displayName || obj.metadata.name}</h3>
             <span className="text-muted">Packaged by {obj.spec.publisher}</span>
           </div>
-          <Link to={`/k8s/ns/${obj.metadata.namespace}/${CatalogSourceModel.plural}/${obj.metadata.name}`}>View catalog details</Link>
+          <Link to={`/k8s/ns/${obj.metadata.namespace}/${CatalogSourceModel.plural}/${obj.metadata.name}`}>{gettext('View catalog details')}</Link>
         </div>
         <PackageList catalogSource={obj} clusterServiceVersions={csvsFor(obj)} packages={pkgsFor(obj)} subscriptions={subsFor(obj)} filters={props.filters} />
       </div>) }
     </React.Fragment>
     : <StatusBox loaded={props.loaded} loadError={props.loadError} label={CatalogSourceModel.labelPlural} />;
-}, () => <MsgBox title="Error Parsing Catalog" detail="The contents of the catalog source could not be retrieved." />);
+}, () => <MsgBox title={gettext('Error Parsing Catalog')} detail={gettext('The contents of the catalog source could not be retrieved.')} />);
 
 export const CatalogSourcesPage: React.SFC<CatalogSourcePageProps> = (props) => {
   type Flatten = (resources: {[kind: string]: {data: K8sResourceKind[]}}) => K8sResourceKind[];
@@ -160,10 +160,10 @@ export const CatalogSourcesPage: React.SFC<CatalogSourcePageProps> = (props) => 
 
   return <MultiListPage
     {...props}
-    title="Operator Catalog Sources"
+    title={gettext('Operator Catalog Sources')}
     showTitle={true}
     ListComponent={CatalogSourceList}
-    filterLabel="Packages by name"
+    filterLabel={gettext('Packages by name')}
     flatten={flatten}
     resources={[
       {kind: referenceForModel(CatalogSourceModel), isList: true, namespaced: true, prop: 'catalogSource'},
@@ -184,7 +184,7 @@ export const CatalogSourceDetailsPage: React.SFC<CatalogSourceDetailsPageProps> 
     navFactory.details(CatalogSourceDetails),
     navFactory.editYaml(),
   ]}
-  menuActions={[...Cog.factory.common, (kind, obj) => ({label: 'View Contents...', href: resourceObjPath(obj, ConfigMapModel.kind)})]}
+  menuActions={[...Cog.factory.common, (kind, obj) => ({label: gettext('View Contents...'), href: resourceObjPath(obj, ConfigMapModel.kind)})]}
   resources={[{
     kind: ConfigMapModel.kind,
     isList: false,
@@ -222,7 +222,7 @@ export const CreateSubscriptionYAML: React.SFC<CreateSubscriptionYAMLProps> = (p
       return <CreateYAML {...props as any} plural={SubscriptionModel.plural} template={template} />;
     }
     return <LoadingBox />;
-  }, () => <MsgBox title="Package Not Found" detail="Cannot create a Subscription to a non-existent package." />);
+  }, () => <MsgBox title={gettext('Package Not Found')} detail={gettext('Cannot create a Subscription to a non-existent package.')} />);
 
   return <Firehose resources={[{
     kind: ConfigMapModel.kind,

@@ -3,16 +3,17 @@
 import { configureCountModal } from '../../modals';
 import { K8sResourceKind, K8sKind } from '../../../module/k8s';
 import { SpecDescriptor } from '../spec-descriptors';
+import { gettext } from '../../utils/gettext';
 
 export const configureSizeModal: ConfigureSizeModal = (kindObj, resource, specDescriptor, specValue, wasChanged) => {
   return configureCountModal({
     resourceKind: kindObj,
     resource: resource,
     defaultValue: specValue || 0,
-    title: `Modify ${specDescriptor.displayName}`,
+    title: `${gettext('Modify')} ${specDescriptor.displayName}`,
     message: specDescriptor.description,
     path: `/spec/${specDescriptor.path}`,
-    buttonText: `Update ${specDescriptor.displayName}`,
+    buttonText: `${'Update'} ${specDescriptor.displayName}`,
     invalidateState: (isInvalid) => {
       // NOTE: Necessary until https://github.com/kubernetes/kubernetes/pull/53345 fixes WebSocket loading of the custom resources.
       if (isInvalid) {
