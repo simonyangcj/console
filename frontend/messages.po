@@ -25,22 +25,10 @@ msgstr "报警"
 msgid "Alerts Firing"
 msgstr ""
 
-#: public/components/events.jsx:123 public/components/events.jsx:153
-msgid "All Categories"
-msgstr "所有分类"
-
 #: public/components/cluster-overview.jsx:24
 #: public/components/cluster-overview.jsx:31
 msgid "All good"
 msgstr "完美"
-
-#: public/components/events.jsx:152
-msgid "All Types"
-msgstr "所有类型"
-
-#: public/components/events.jsx:383
-msgid "An error occurred during event retrieval. Attempting to reconnect..."
-msgstr "时间检索过程中出错，正在尝试重新连接..."
 
 #: public/components/cluster-overview.jsx:95
 msgid "API Request Success Rate"
@@ -49,6 +37,16 @@ msgstr "API请求成功率"
 #: public/components/cluster-overview.jsx:86
 msgid "API Servers Up"
 msgstr "API服务状态"
+
+#: public/components/cloud-services/clusterserviceversion-resource.tsx:68
+msgid "Application Resources"
+msgstr "应用程序资源"
+
+#: public/components/cloud-services/clusterserviceversion-resource.tsx:66
+msgid ""
+"Application resources are declarative components used to define the behavior "
+"of the application."
+msgstr "应用程序资源是用于定义应用程序行为的声明性组件。"
 
 #: public/models/index.ts:557
 msgid "AppVersions"
@@ -62,17 +60,35 @@ msgstr "构建配置"
 msgid "Builds"
 msgstr "构建"
 
-#: public/components/secrets/create-secret.tsx:139
-msgid "Cancel"
-msgstr "取消"
+#: public/components/cloud-services/catalog-source.tsx:225
+msgid "Cannot create a Subscription to a non-existent package."
+msgstr "无法创建对不存在的包的订阅。"
 
 #: public/components/nav.jsx:381
 msgid "Catalog Sources"
 msgstr "目录源"
 
+#: public/components/cloud-services/catalog-source.tsx:141
+msgid ""
+"Catalog Sources contain packaged Operators which can be subscribed to for "
+"automatic upgrades."
+msgstr "目标源包含打包控制器，可订阅这些控制器进行自动升级。"
+
+#: public/components/cloud-services/catalog-source.tsx:140
+msgid ""
+"Catalogs are groups of Operators you can make available on the cluster. "
+"Subscribe and grant a namespace access to use the installed Operators."
+msgstr ""
+"目录是可以在集群上使用的操作控制器。订阅并授予命名空间访问权以使用已安装的控"
+"制器。 "
+
 #: public/models/index.ts:8
 msgid "CatalogSources"
 msgstr "目录源"
+
+#: public/components/channel-operators/app-version.jsx:85
+msgid "Channel"
+msgstr "频道"
 
 #: public/models/index.ts:544
 msgid "Channel Operator Configs"
@@ -134,10 +150,6 @@ msgstr "组件状态"
 msgid "Config Maps"
 msgstr "配置映射"
 
-#: public/components/events.jsx:230
-msgid "Connection did not close cleanly."
-msgstr "连接没有完全关闭"
-
 #: public/models/index.ts:172
 msgid "Containers"
 msgstr "容器"
@@ -159,13 +171,32 @@ msgid "CRDs"
 msgstr ""
 
 #: public/components/factory/list-page.jsx:269
-#: public/components/secrets/create-secret.tsx:138
 msgid "Create"
+msgstr "创建"
+
+#: public/components/cloud-services/clusterserviceversion-resource.tsx:124
+msgid "Create New"
+msgstr "创建"
+
+#: public/components/cloud-services/catalog-source.tsx:62
+msgid "Create Subscription"
+msgstr "订阅"
+
+#: public/components/cloud-services/catalog-source.tsx:115
+msgid "Created"
+msgstr "创建"
+
+#: public/components/cloud-services/clusterserviceversion-resource.tsx:201
+msgid "Created At"
 msgstr "创建"
 
 #: public/components/nav.jsx:395 public/models/index.ts:657
 msgid "Cron Jobs"
 msgstr "定时任务"
+
+#: public/components/channel-operators/app-version.jsx:82
+msgid "Current Version"
+msgstr "集群服务版本"
 
 #: public/models/index.ts:644
 msgid "Custom Resource Definitions"
@@ -191,58 +222,27 @@ msgstr "硬盘使用率"
 msgid "Documentation"
 msgstr "文档"
 
-#: public/components/events.jsx:123
-msgid "Error"
-msgstr "错误"
-
-#: public/components/events.jsx:379
-msgid "Error connecting to event stream"
-msgstr "连接事件流出错"
-
-#: public/components/events.jsx:382
-msgid "Error Loading Events"
-msgstr "加载事件出错"
+#: public/components/cloud-services/catalog-source.tsx:109
+#: public/components/cloud-services/catalog-source.tsx:155
+msgid "Error Parsing Catalog"
+msgstr "分析目录出错"
 
 #: public/models/index.ts:61
 msgid "Etcd Clusters"
 msgstr "Etcd集群"
 
-#: public/components/events.jsx:398
-#, fuzzy
-msgid "event"
-msgstr "事件"
-
-#: public/components/events.jsx:392
-msgid "Event stream is paused."
-msgstr "事件流已暂停"
-
-#: public/components/events.jsx:398
-#, fuzzy
-msgid "events"
-msgstr "事件"
-
-#: public/components/cluster-overview.jsx:162 public/components/events.jsx:147
-#: public/components/events.jsx:149 public/components/nav.jsx:375
+#: public/components/cluster-overview.jsx:162 public/components/nav.jsx:375
 #: public/models/index.ts:359
 msgid "Events"
 msgstr "事件"
-
-#: public/components/events.jsx:156
-msgid "Events by name or message"
-msgstr "事件 通过 名称/信息 "
-
-#: public/components/events.jsx:372
-msgid "events exist, but none match the current filter"
-msgstr "事件，但不匹配当前筛选器"
 
 #: public/components/factory/list-page.jsx:20
 msgid "Expand"
 msgstr "展开"
 
 #: public/components/factory/list-page.jsx:40
-#, fuzzy
-msgid "Filter %s"
-msgstr "筛选 %s"
+msgid "Filter"
+msgstr "筛选"
 
 #: public/components/factory/list-page.jsx:263
 msgid "Filter by selector (app=nginx) ..."
@@ -251,6 +251,10 @@ msgstr "输入app筛选，如 (app=nginx) ..."
 #: public/components/cluster-overview.jsx:46
 msgid "Health"
 msgstr "健康"
+
+#: public/components/channel-operators/app-version.jsx:247
+msgid "Hide Failed Reason"
+msgstr "隐藏失败原因"
 
 #: public/components/nav.jsx:372
 msgid "Home"
@@ -271,10 +275,6 @@ msgstr "镜像标签"
 #: public/models/index.ts:308
 msgid "Image Streams"
 msgstr "镜像组"
-
-#: public/components/events.jsx:123
-msgid "Info"
-msgstr "信息"
 
 #: public/components/nav.jsx:406
 msgid "Ingress"
@@ -301,6 +301,10 @@ msgstr "任务"
 msgid "Kubernetes API"
 msgstr ""
 
+#: public/components/cloud-services/clusterserviceversion-resource.tsx:21
+msgid "Labels"
+msgstr "标签"
+
 #: public/components/masthead.tsx:48
 msgid "Language: CN -> EN"
 msgstr "语言：中文 -> 英文"
@@ -309,9 +313,13 @@ msgstr "语言：中文 -> 英文"
 msgid "Language: EN -> CN"
 msgstr "语言：英文 -> 中文"
 
-#: public/components/events.jsx:387
-msgid "Loading events..."
-msgstr "加载事件..."
+#: public/components/cloud-services/clusterserviceversion-resource.tsx:25
+msgid "Last Updated"
+msgstr "上次更新时间"
+
+#: public/components/cloud-services/catalog-source.tsx:36
+msgid "Latest Version"
+msgstr "构造版本"
 
 #: public/components/masthead.tsx:70
 msgid "Logout"
@@ -320,6 +328,23 @@ msgstr "退出"
 #: public/components/cluster-overview.jsx:114
 msgid "Memory Usage"
 msgstr "内存使用率"
+
+#: public/components/cloud-services/spec-descriptors/configure-size.tsx:13
+msgid "Modify"
+msgstr "更改"
+
+#: public/components/cloud-services/catalog-source.tsx:112
+#: public/components/cloud-services/catalog-source.tsx:35
+#: public/components/cloud-services/catalog-source.tsx:92
+#: public/components/cloud-services/clusterserviceversion-resource.tsx:197
+#: public/components/cloud-services/clusterserviceversion-resource.tsx:20
+msgid "Name"
+msgstr "名称"
+
+#: public/components/cloud-services/catalog-source.tsx:113
+#: public/components/cloud-services/clusterserviceversion-resource.tsx:199
+msgid "Namespace"
+msgstr "命名空间"
 
 #: public/components/nav.jsx:426 public/models/index.ts:381
 msgid "Namespaces"
@@ -333,13 +358,17 @@ msgstr "网络规则"
 msgid "Networking"
 msgstr "网络"
 
-#: public/components/events.jsx:362
-msgid "No Events in the past hour"
-msgstr "过去一小时内没有任何事件"
+#: public/components/cloud-services/clusterserviceversion-resource.tsx:94
+msgid "No Application Resources Defined"
+msgstr "未定义应用程序资源"
 
-#: public/components/events.jsx:370
-msgid "No Matching Events"
-msgstr "没有匹配的事件"
+#: public/components/cloud-services/catalog-source.tsx:141
+msgid "No Catalog Sources Found"
+msgstr " 找不到目录源 "
+
+#: public/components/cloud-services/catalog-source.tsx:80
+msgid "No Packages Found"
+msgstr "找不到包"
 
 #: public/components/nav.jsx:427 public/models/index.ts:347
 msgid "Nodes"
@@ -354,14 +383,26 @@ msgstr "OKD控制台"
 msgid "OpenShift Console"
 msgstr "OpenShift控制台"
 
+#: public/components/cloud-services/catalog-source.tsx:163
+msgid "Operator Catalog Sources"
+msgstr "目录源"
+
 #: public/components/nav.jsx:378
 msgid "Operators"
-msgstr "运算"
+msgstr "操作控制器"
 
 #: public/components/cluster-overview.jsx:248
 #: public/components/cluster-overview.jsx:250
 msgid "Overview"
 msgstr "概述"
+
+#: public/components/cloud-services/catalog-source.tsx:225
+msgid "Package Not Found"
+msgstr "找不到包"
+
+#: public/components/cloud-services/catalog-source.tsx:166
+msgid "Packages by name"
+msgstr "按名称"
 
 #: public/components/nav.jsx:412 public/models/index.ts:580
 msgid "Persistent Volume Claims"
@@ -396,6 +437,11 @@ msgstr "项目"
 msgid "Prometheuses"
 msgstr ""
 
+#: public/components/cloud-services/catalog-source.tsx:114
+#: public/components/cloud-services/catalog-source.tsx:98
+msgid "Publisher"
+msgstr "发布者"
+
 #: public/components/nav.jsx:398 public/models/index.ts:238
 msgid "Replica Sets"
 msgstr "副本控制器"
@@ -410,6 +456,10 @@ msgstr "报告"
 
 #: public/components/nav.jsx:432 public/models/index.ts:618
 msgid "Resource Quotas"
+msgstr "资源配额"
+
+#: public/components/cloud-services/clusterserviceversion-resource.tsx:119
+msgid "Resources by name"
 msgstr "资源配额"
 
 #: public/components/nav.jsx:431 public/models/index.ts:492
@@ -431,10 +481,6 @@ msgstr "调度状态"
 #: public/components/nav.jsx:374
 msgid "Search"
 msgstr "查找"
-
-#: public/components/secrets/create-secret.tsx:118
-msgid "Secret Name"
-msgstr ""
 
 #: public/components/nav.jsx:392 public/models/index.ts:455
 msgid "Secrets"
@@ -464,29 +510,25 @@ msgstr "服务监控"
 msgid "Services"
 msgstr "服务"
 
-#: public/components/events.jsx:398
-msgid "Showing"
-msgstr "展示"
+#: public/components/channel-operators/app-version.jsx:247
+msgid "Show Failed Reason"
+msgstr "显示失败原因"
 
 #: public/components/cluster-overview.jsx:173
 #: public/components/cluster-overview.jsx:252
 msgid "Software Info"
 msgstr "软件信息"
 
-#: public/components/secrets/create-secret.tsx:34
-msgid "Source secrets allow you to authenticate against the SCM server."
-msgstr "源允许您针对SCM服务器进行身份验证。"
-
 #: public/components/nav.jsx:391 public/models/index.ts:606
 msgid "Stateful Sets"
 msgstr ""
 
+#: public/components/cloud-services/clusterserviceversion-resource.tsx:23
 #: public/components/nav.jsx:373
 msgid "Status"
 msgstr "状态"
 
 #: public/components/cluster-overview.jsx:243
-#, fuzzy
 msgid "Status of %s"
 msgstr "%s 状态"
 
@@ -498,10 +540,11 @@ msgstr "存储"
 msgid "Storage Classes"
 msgstr "存储类"
 
-#: public/components/events.jsx:390
-msgid "Streaming events..."
-msgstr ""
+#: public/components/channel-operators/app-version.jsx:88
+msgid "Strategy"
+msgstr "策略"
 
+#: public/components/cloud-services/catalog-source.tsx:37
 #: public/components/nav.jsx:382 public/models/index.ts:48
 msgid "Subscriptions"
 msgstr "订阅"
@@ -510,30 +553,129 @@ msgstr "订阅"
 msgid "Tectonic Versions"
 msgstr "构造版本"
 
+#: public/components/cloud-services/catalog-source.tsx:80
+msgid "The catalog author has not added any packages."
+msgstr "目录管理员未添加任何包。"
+
 #: public/components/cluster-overview.jsx:32
 msgid "The console service cannot be reached"
 msgstr "无法连接控制台"
 
-#: public/components/events.jsx:414
-msgid "There are no events before"
-msgstr "以前没有事件"
+#: public/components/cloud-services/catalog-source.tsx:109
+#: public/components/cloud-services/catalog-source.tsx:155
+msgid "The contents of the catalog source could not be retrieved."
+msgstr "无法检索目录源的内容。"
 
-#: public/components/secrets/create-secret.tsx:127
-msgid "Unique name of the new secret."
-msgstr "唯一标识"
+#: public/components/cloud-services/clusterserviceversion-resource.tsx:94
+msgid "This application was not properly installed or configured."
+msgstr "此应用程序未正确安装或配置。"
+
+#: public/components/cloud-services/clusterserviceversion-resource.tsx:22
+msgid "Type"
+msgstr "所有类型"
+
+#: public/components/cloud-services/clusterserviceversion-resource.tsx:54
+#: public/components/cloud-services/clusterserviceversion-resource.tsx:57
+msgid "Unknown"
+msgstr "未知"
+
+#: public/components/cloud-services/clusterserviceversion-resource.tsx:82
+msgid "Unknown graph type:"
+msgstr "未知的图表类型： "
+
+#: public/components/cloud-services/clusterserviceversion-resource.tsx:24
+msgid "Version"
+msgstr "APP版本"
 
 #: public/components/cluster-overview.jsx:163
 msgid "View All"
 msgstr "查看全部"
 
+#: public/components/cloud-services/catalog-source.tsx:149
+msgid "View catalog details"
+msgstr "查看目录详细信息"
+
+#: public/components/cloud-services/catalog-source.tsx:187
+msgid "View Contents..."
+msgstr "查看内容…"
+
 #: public/components/cluster-overview.jsx:35
 msgid "View Grafana Dashboard"
 msgstr "查看Grafana仪表板"
 
-#: public/components/secrets/create-secret.tsx:35
-msgid "Webhook secrets allow you to authenticate a webhook trigger."
-msgstr ""
+#: public/components/channel-operators/app-version.jsx:156
+#: public/components/channel-operators/app-version.jsx:196
+msgid "View Logs"
+msgstr "查看日志"
+
+#: public/components/cloud-services/catalog-source.tsx:47
+msgid "View subscription"
+msgstr "查看订阅"
+
+#: public/components/cloud-services/catalog-source.tsx:48
+msgid "View subscriptions"
+msgstr "查看订阅"
 
 #: public/components/nav.jsx:386
 msgid "Workloads"
 msgstr "应用容器"
+
+#~ msgid "All Categories"
+#~ msgstr "所有分类"
+
+#~ msgid "An error occurred during event retrieval. Attempting to reconnect..."
+#~ msgstr "时间检索过程中出错，正在尝试重新连接..."
+
+#~ msgid "Cancel"
+#~ msgstr "取消"
+
+#~ msgid "Connection did not close cleanly."
+#~ msgstr "连接没有完全关闭"
+
+#~ msgid "Error"
+#~ msgstr "错误"
+
+#~ msgid "Error connecting to event stream"
+#~ msgstr "连接事件流出错"
+
+#~ msgid "Error Loading Events"
+#~ msgstr "加载事件出错"
+
+#~ msgid "event"
+#~ msgstr "事件"
+
+#~ msgid "Event stream is paused."
+#~ msgstr "事件流已暂停"
+
+#~ msgid "events"
+#~ msgstr "事件"
+
+#~ msgid "Events by name or message"
+#~ msgstr "事件 通过 名称/信息 "
+
+#~ msgid "events exist, but none match the current filter"
+#~ msgstr "事件，但不匹配当前筛选器"
+
+#~ msgid "Info"
+#~ msgstr "信息"
+
+#~ msgid "Loading events..."
+#~ msgstr "加载事件..."
+
+#~ msgid "No Events in the past hour"
+#~ msgstr "过去一小时内没有任何事件"
+
+#~ msgid "No Matching Events"
+#~ msgstr "没有匹配的事件"
+
+#~ msgid "Showing"
+#~ msgstr "展示"
+
+#~ msgid "Source secrets allow you to authenticate against the SCM server."
+#~ msgstr "源允许您针对SCM服务器进行身份验证。"
+
+#~ msgid "There are no events before"
+#~ msgstr "以前没有事件"
+
+#~ msgid "Unique name of the new secret."
+#~ msgstr "唯一标识"

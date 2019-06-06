@@ -22,22 +22,9 @@ msgstr ""
 msgid "Alerts Firing"
 msgstr ""
 
-#: public/components/events.jsx:123
-#: public/components/events.jsx:153
-msgid "All Categories"
-msgstr ""
-
 #: public/components/cluster-overview.jsx:24
 #: public/components/cluster-overview.jsx:31
 msgid "All good"
-msgstr ""
-
-#: public/components/events.jsx:152
-msgid "All Types"
-msgstr ""
-
-#: public/components/events.jsx:383
-msgid "An error occurred during event retrieval. Attempting to reconnect..."
 msgstr ""
 
 #: public/components/cluster-overview.jsx:95
@@ -46,6 +33,14 @@ msgstr ""
 
 #: public/components/cluster-overview.jsx:86
 msgid "API Servers Up"
+msgstr ""
+
+#: public/components/cloud-services/clusterserviceversion-resource.tsx:68
+msgid "Application Resources"
+msgstr ""
+
+#: public/components/cloud-services/clusterserviceversion-resource.tsx:66
+msgid "Application resources are declarative components used to define the behavior of the application."
 msgstr ""
 
 #: public/models/index.ts:557
@@ -61,16 +56,28 @@ msgstr ""
 msgid "Builds"
 msgstr ""
 
-#: public/components/secrets/create-secret.tsx:139
-msgid "Cancel"
+#: public/components/cloud-services/catalog-source.tsx:225
+msgid "Cannot create a Subscription to a non-existent package."
 msgstr ""
 
 #: public/components/nav.jsx:381
 msgid "Catalog Sources"
 msgstr ""
 
+#: public/components/cloud-services/catalog-source.tsx:141
+msgid "Catalog Sources contain packaged Operators which can be subscribed to for automatic upgrades."
+msgstr ""
+
+#: public/components/cloud-services/catalog-source.tsx:140
+msgid "Catalogs are groups of Operators you can make available on the cluster. Subscribe and grant a namespace access to use the installed Operators."
+msgstr ""
+
 #: public/models/index.ts:8
 msgid "CatalogSources"
+msgstr ""
+
+#: public/components/channel-operators/app-version.jsx:85
+msgid "Channel"
 msgstr ""
 
 #: public/models/index.ts:544
@@ -134,10 +141,6 @@ msgstr ""
 msgid "Config Maps"
 msgstr ""
 
-#: public/components/events.jsx:230
-msgid "Connection did not close cleanly."
-msgstr ""
-
 #: public/models/index.ts:172
 msgid "Containers"
 msgstr ""
@@ -159,13 +162,32 @@ msgid "CRDs"
 msgstr ""
 
 #: public/components/factory/list-page.jsx:269
-#: public/components/secrets/create-secret.tsx:138
 msgid "Create"
+msgstr ""
+
+#: public/components/cloud-services/clusterserviceversion-resource.tsx:124
+msgid "Create New"
+msgstr ""
+
+#: public/components/cloud-services/catalog-source.tsx:62
+msgid "Create Subscription"
+msgstr ""
+
+#: public/components/cloud-services/catalog-source.tsx:115
+msgid "Created"
+msgstr ""
+
+#: public/components/cloud-services/clusterserviceversion-resource.tsx:201
+msgid "Created At"
 msgstr ""
 
 #: public/components/nav.jsx:395
 #: public/models/index.ts:657
 msgid "Cron Jobs"
+msgstr ""
+
+#: public/components/channel-operators/app-version.jsx:82
+msgid "Current Version"
 msgstr ""
 
 #: public/models/index.ts:644
@@ -194,48 +216,19 @@ msgstr ""
 msgid "Documentation"
 msgstr ""
 
-#: public/components/events.jsx:123
-msgid "Error"
-msgstr ""
-
-#: public/components/events.jsx:379
-msgid "Error connecting to event stream"
-msgstr ""
-
-#: public/components/events.jsx:382
-msgid "Error Loading Events"
+#: public/components/cloud-services/catalog-source.tsx:109
+#: public/components/cloud-services/catalog-source.tsx:155
+msgid "Error Parsing Catalog"
 msgstr ""
 
 #: public/models/index.ts:61
 msgid "Etcd Clusters"
 msgstr ""
 
-#: public/components/events.jsx:398
-msgid "event"
-msgstr ""
-
-#: public/components/events.jsx:392
-msgid "Event stream is paused."
-msgstr ""
-
-#: public/components/events.jsx:398
-msgid "events"
-msgstr ""
-
 #: public/components/cluster-overview.jsx:162
-#: public/components/events.jsx:147
-#: public/components/events.jsx:149
 #: public/components/nav.jsx:375
 #: public/models/index.ts:359
 msgid "Events"
-msgstr ""
-
-#: public/components/events.jsx:156
-msgid "Events by name or message"
-msgstr ""
-
-#: public/components/events.jsx:372
-msgid "events exist, but none match the current filter"
 msgstr ""
 
 #: public/components/factory/list-page.jsx:20
@@ -243,7 +236,7 @@ msgid "Expand"
 msgstr ""
 
 #: public/components/factory/list-page.jsx:40
-msgid "Filter %s"
+msgid "Filter"
 msgstr ""
 
 #: public/components/factory/list-page.jsx:263
@@ -252,6 +245,10 @@ msgstr ""
 
 #: public/components/cluster-overview.jsx:46
 msgid "Health"
+msgstr ""
+
+#: public/components/channel-operators/app-version.jsx:247
+msgid "Hide Failed Reason"
 msgstr ""
 
 #: public/components/nav.jsx:372
@@ -272,10 +269,6 @@ msgstr ""
 
 #: public/models/index.ts:308
 msgid "Image Streams"
-msgstr ""
-
-#: public/components/events.jsx:123
-msgid "Info"
 msgstr ""
 
 #: public/components/nav.jsx:406
@@ -304,6 +297,10 @@ msgstr ""
 msgid "Kubernetes API"
 msgstr ""
 
+#: public/components/cloud-services/clusterserviceversion-resource.tsx:21
+msgid "Labels"
+msgstr ""
+
 #: public/components/masthead.tsx:48
 msgid "Language: CN -> EN"
 msgstr ""
@@ -312,8 +309,12 @@ msgstr ""
 msgid "Language: EN -> CN"
 msgstr ""
 
-#: public/components/events.jsx:387
-msgid "Loading events..."
+#: public/components/cloud-services/clusterserviceversion-resource.tsx:25
+msgid "Last Updated"
+msgstr ""
+
+#: public/components/cloud-services/catalog-source.tsx:36
+msgid "Latest Version"
 msgstr ""
 
 #: public/components/masthead.tsx:70
@@ -322,6 +323,23 @@ msgstr ""
 
 #: public/components/cluster-overview.jsx:114
 msgid "Memory Usage"
+msgstr ""
+
+#: public/components/cloud-services/spec-descriptors/configure-size.tsx:13
+msgid "Modify"
+msgstr ""
+
+#: public/components/cloud-services/catalog-source.tsx:112
+#: public/components/cloud-services/catalog-source.tsx:35
+#: public/components/cloud-services/catalog-source.tsx:92
+#: public/components/cloud-services/clusterserviceversion-resource.tsx:197
+#: public/components/cloud-services/clusterserviceversion-resource.tsx:20
+msgid "Name"
+msgstr ""
+
+#: public/components/cloud-services/catalog-source.tsx:113
+#: public/components/cloud-services/clusterserviceversion-resource.tsx:199
+msgid "Namespace"
 msgstr ""
 
 #: public/components/nav.jsx:426
@@ -338,12 +356,16 @@ msgstr ""
 msgid "Networking"
 msgstr ""
 
-#: public/components/events.jsx:362
-msgid "No Events in the past hour"
+#: public/components/cloud-services/clusterserviceversion-resource.tsx:94
+msgid "No Application Resources Defined"
 msgstr ""
 
-#: public/components/events.jsx:370
-msgid "No Matching Events"
+#: public/components/cloud-services/catalog-source.tsx:141
+msgid "No Catalog Sources Found"
+msgstr ""
+
+#: public/components/cloud-services/catalog-source.tsx:80
+msgid "No Packages Found"
 msgstr ""
 
 #: public/components/nav.jsx:427
@@ -360,6 +382,10 @@ msgstr ""
 msgid "OpenShift Console"
 msgstr ""
 
+#: public/components/cloud-services/catalog-source.tsx:163
+msgid "Operator Catalog Sources"
+msgstr ""
+
 #: public/components/nav.jsx:378
 msgid "Operators"
 msgstr ""
@@ -367,6 +393,14 @@ msgstr ""
 #: public/components/cluster-overview.jsx:248
 #: public/components/cluster-overview.jsx:250
 msgid "Overview"
+msgstr ""
+
+#: public/components/cloud-services/catalog-source.tsx:225
+msgid "Package Not Found"
+msgstr ""
+
+#: public/components/cloud-services/catalog-source.tsx:166
+msgid "Packages by name"
 msgstr ""
 
 #: public/components/nav.jsx:412
@@ -406,6 +440,11 @@ msgstr ""
 msgid "Prometheuses"
 msgstr ""
 
+#: public/components/cloud-services/catalog-source.tsx:114
+#: public/components/cloud-services/catalog-source.tsx:98
+msgid "Publisher"
+msgstr ""
+
 #: public/components/nav.jsx:398
 #: public/models/index.ts:238
 msgid "Replica Sets"
@@ -423,6 +462,10 @@ msgstr ""
 #: public/components/nav.jsx:432
 #: public/models/index.ts:618
 msgid "Resource Quotas"
+msgstr ""
+
+#: public/components/cloud-services/clusterserviceversion-resource.tsx:119
+msgid "Resources by name"
 msgstr ""
 
 #: public/components/nav.jsx:431
@@ -446,10 +489,6 @@ msgstr ""
 
 #: public/components/nav.jsx:374
 msgid "Search"
-msgstr ""
-
-#: public/components/secrets/create-secret.tsx:118
-msgid "Secret Name"
 msgstr ""
 
 #: public/components/nav.jsx:392
@@ -483,8 +522,8 @@ msgstr ""
 msgid "Services"
 msgstr ""
 
-#: public/components/events.jsx:398
-msgid "Showing"
+#: public/components/channel-operators/app-version.jsx:247
+msgid "Show Failed Reason"
 msgstr ""
 
 #: public/components/cluster-overview.jsx:173
@@ -492,15 +531,12 @@ msgstr ""
 msgid "Software Info"
 msgstr ""
 
-#: public/components/secrets/create-secret.tsx:34
-msgid "Source secrets allow you to authenticate against the SCM server."
-msgstr ""
-
 #: public/components/nav.jsx:391
 #: public/models/index.ts:606
 msgid "Stateful Sets"
 msgstr ""
 
+#: public/components/cloud-services/clusterserviceversion-resource.tsx:23
 #: public/components/nav.jsx:373
 msgid "Status"
 msgstr ""
@@ -518,10 +554,11 @@ msgstr ""
 msgid "Storage Classes"
 msgstr ""
 
-#: public/components/events.jsx:390
-msgid "Streaming events..."
+#: public/components/channel-operators/app-version.jsx:88
+msgid "Strategy"
 msgstr ""
 
+#: public/components/cloud-services/catalog-source.tsx:37
 #: public/components/nav.jsx:382
 #: public/models/index.ts:48
 msgid "Subscriptions"
@@ -531,28 +568,67 @@ msgstr ""
 msgid "Tectonic Versions"
 msgstr ""
 
+#: public/components/cloud-services/catalog-source.tsx:80
+msgid "The catalog author has not added any packages."
+msgstr ""
+
 #: public/components/cluster-overview.jsx:32
 msgid "The console service cannot be reached"
 msgstr ""
 
-#: public/components/events.jsx:414
-msgid "There are no events before"
+#: public/components/cloud-services/catalog-source.tsx:109
+#: public/components/cloud-services/catalog-source.tsx:155
+msgid "The contents of the catalog source could not be retrieved."
 msgstr ""
 
-#: public/components/secrets/create-secret.tsx:127
-msgid "Unique name of the new secret."
+#: public/components/cloud-services/clusterserviceversion-resource.tsx:94
+msgid "This application was not properly installed or configured."
+msgstr ""
+
+#: public/components/cloud-services/clusterserviceversion-resource.tsx:22
+msgid "Type"
+msgstr ""
+
+#: public/components/cloud-services/clusterserviceversion-resource.tsx:54
+#: public/components/cloud-services/clusterserviceversion-resource.tsx:57
+msgid "Unknown"
+msgstr ""
+
+#: public/components/cloud-services/clusterserviceversion-resource.tsx:82
+msgid "Unknown graph type:"
+msgstr ""
+
+#: public/components/cloud-services/clusterserviceversion-resource.tsx:24
+msgid "Version"
 msgstr ""
 
 #: public/components/cluster-overview.jsx:163
 msgid "View All"
 msgstr ""
 
+#: public/components/cloud-services/catalog-source.tsx:149
+msgid "View catalog details"
+msgstr ""
+
+#: public/components/cloud-services/catalog-source.tsx:187
+msgid "View Contents..."
+msgstr ""
+
 #: public/components/cluster-overview.jsx:35
 msgid "View Grafana Dashboard"
 msgstr ""
 
-#: public/components/secrets/create-secret.tsx:35
-msgid "Webhook secrets allow you to authenticate a webhook trigger."
+#: public/components/channel-operators/app-version.jsx:156
+#: public/components/channel-operators/app-version.jsx:196
+msgid "View Logs"
+msgstr ""
+
+#: public/components/cloud-services/catalog-source.tsx:47
+msgid "View subscription"
+msgstr ""
+
+#: public/components/cloud-services/catalog-source.tsx:48
+msgid "View subscriptions"
 msgstr ""
 
 #: public/components/nav.jsx:386
