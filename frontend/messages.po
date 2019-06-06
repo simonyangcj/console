@@ -110,6 +110,11 @@ msgstr "频道配置"
 msgid "Chargeback"
 msgstr "充值"
 
+#: public/components/service.jsx:65
+#, fuzzy
+msgid "Cluster IP"
+msgstr "集群"
+
 #: public/models/index.ts:467
 msgid "Cluster Role Bindings"
 msgstr "集群角色绑定"
@@ -164,11 +169,6 @@ msgstr "命令"
 msgid "Compact"
 msgstr "合并"
 
-#: public/components/pod.jsx:284
-#, fuzzy
-msgid "Completed"
-msgstr "合并"
-
 #: public/models/index.ts:365
 msgid "Component Statuses"
 msgstr "组件状态"
@@ -188,10 +188,6 @@ msgstr "控制器状态"
 #: public/components/cluster-overview.jsx:111
 msgid "CPU Usage"
 msgstr "CPU使用率"
-
-#: public/components/pod.jsx:281
-msgid "CrashLoopBackOff"
-msgstr ""
 
 #: public/components/cluster-overview.jsx:67
 msgid "Crashlooping Pods"
@@ -307,9 +303,14 @@ msgstr "展开"
 msgid "Exposed Ports"
 msgstr "暴露的端口"
 
-#: public/components/pod.jsx:285
-msgid "Failed"
-msgstr "失败"
+#: public/components/service.jsx:61
+msgid "External Load Balancer"
+msgstr "外部负载均衡器"
+
+#: public/components/service.jsx:63
+#, fuzzy
+msgid "External Service Name"
+msgstr "集群服务类"
 
 #: public/components/factory/list-page.jsx:40
 msgid "Filter"
@@ -396,6 +397,7 @@ msgstr ""
 
 #: public/components/cloud-services/clusterserviceversion-resource.tsx:21
 #: public/components/namespace.jsx:58 public/components/namespace.jsx:83
+#: public/components/service.jsx:21
 msgid "Labels"
 msgstr "标签"
 
@@ -414,6 +416,11 @@ msgstr "上次更新时间"
 #: public/components/cloud-services/catalog-source.tsx:36
 msgid "Latest Version"
 msgstr "构造版本"
+
+#: public/components/service.jsx:23 public/components/service.jsx:72
+#, fuzzy
+msgid "Location"
+msgstr "文档"
 
 #: public/components/masthead.tsx:70
 msgid "Logout"
@@ -442,13 +449,14 @@ msgstr "更改"
 #: public/components/image-stream-tag.tsx:89 public/components/namespace.jsx:56
 #: public/components/namespace.jsx:80 public/components/pod.jsx:123
 #: public/components/pod.jsx:214 public/components/pod.jsx:66
+#: public/components/service.jsx:19 public/components/service.jsx:83
 msgid "Name"
 msgstr "名称"
 
 #: public/components/cloud-services/catalog-source.tsx:113
 #: public/components/cloud-services/clusterserviceversion-resource.tsx:199
 #: public/components/cloud-services/clusterserviceversion.tsx:21
-#: public/components/pod.jsx:67
+#: public/components/pod.jsx:67 public/components/service.jsx:20
 msgid "Namespace"
 msgstr "命名空间"
 
@@ -496,6 +504,11 @@ msgstr "找不到包"
 #, fuzzy
 msgid "Node"
 msgstr "节点"
+
+#: public/components/service.jsx:59 public/components/service.jsx:94
+#, fuzzy
+msgid "Node Port"
+msgstr "暴露的端口"
 
 #: public/components/pod.jsx:178
 msgid "Node Selector"
@@ -551,11 +564,6 @@ msgstr "找不到包"
 msgid "Packages by name"
 msgstr "按名称"
 
-#: public/components/pod.jsx:279
-#, fuzzy
-msgid "Pending"
-msgstr "角色绑定"
-
 #: public/components/pod.jsx:216
 #, fuzzy
 msgid "Permissions"
@@ -588,6 +596,15 @@ msgstr ""
 msgid "Pod Labels"
 msgstr "标签"
 
+#: public/components/service.jsx:86
+msgid "Pod Port or Name"
+msgstr "Pod端口或名称"
+
+#: public/components/service.jsx:22
+#, fuzzy
+msgid "Pod Selector"
+msgstr "节点选择器"
+
 #: public/components/cluster-overview.jsx:120
 msgid "Pod Usage"
 msgstr "Pod使用率"
@@ -596,6 +613,10 @@ msgstr "Pod使用率"
 #: public/models/index.ts:161
 msgid "Pods"
 msgstr ""
+
+#: public/components/service.jsx:84
+msgid "Port"
+msgstr "端口"
 
 #: public/models/index.ts:405
 msgid "Project Requests"
@@ -608,6 +629,10 @@ msgstr "项目"
 #: public/models/index.ts:75
 msgid "Prometheuses"
 msgstr ""
+
+#: public/components/service.jsx:85
+msgid "Protocol"
+msgstr "协议"
 
 #: public/components/cloud-services/clusterserviceversion.tsx:120
 msgid "Provider"
@@ -667,15 +692,12 @@ msgstr "角色"
 msgid "Routes"
 msgstr "路由"
 
-#: public/components/pod.jsx:278
-msgid "Running"
-msgstr "运行中"
-
 #: public/components/cluster-overview.jsx:92
 msgid "Schedulers Up"
 msgstr "调度状态"
 
-#: public/components/nav.jsx:374
+#: public/components/nav.jsx:374 public/components/search.jsx:79
+#: public/components/search.jsx:81
 msgid "Search"
 msgstr "查找"
 
@@ -691,6 +713,11 @@ msgstr "自查"
 msgid "Service Accounts"
 msgstr "服务账户"
 
+#: public/components/service.jsx:124
+#, fuzzy
+msgid "Service Address"
+msgstr "服务"
+
 #: public/models/index.ts:728
 msgid "Service Bindings"
 msgstr "服务绑定"
@@ -703,9 +730,18 @@ msgstr "服务实例"
 msgid "Service Monitors"
 msgstr "服务监控"
 
+#: public/components/service.jsx:128
+#, fuzzy
+msgid "Service Port Mapping"
+msgstr "服务绑定"
+
 #: public/components/nav.jsx:404 public/models/index.ts:149
 msgid "Services"
 msgstr "服务"
+
+#: public/components/service.jsx:117
+msgid "Session Affinity"
+msgstr "会话关联"
 
 #: public/components/channel-operators/app-version.jsx:247
 msgid "Show Failed Reason"
@@ -770,7 +806,7 @@ msgstr "概况"
 msgid "Tectonic Versions"
 msgstr "构造版本"
 
-#: public/components/namespace.jsx:27 public/components/pod.jsx:280
+#: public/components/namespace.jsx:27
 #, fuzzy
 msgid "Terminating"
 msgstr "已终止"
@@ -793,13 +829,12 @@ msgid "This application was not properly installed or configured."
 msgstr "此应用程序未正确安装或配置。"
 
 #: public/components/cloud-services/clusterserviceversion-resource.tsx:22
-#: public/components/pod.jsx:215
+#: public/components/pod.jsx:215 public/components/service.jsx:71
 msgid "Type"
 msgstr "所有类型"
 
 #: public/components/cloud-services/clusterserviceversion-resource.tsx:54
 #: public/components/cloud-services/clusterserviceversion-resource.tsx:57
-#: public/components/pod.jsx:286
 msgid "Unknown"
 msgstr "未知"
 
@@ -865,6 +900,20 @@ msgstr "工作路径"
 #: public/components/nav.jsx:386
 msgid "Workloads"
 msgstr "应用容器"
+
+#, fuzzy
+#~ msgid "Completed"
+#~ msgstr "合并"
+
+#~ msgid "Failed"
+#~ msgstr "失败"
+
+#, fuzzy
+#~ msgid "Pending"
+#~ msgstr "角色绑定"
+
+#~ msgid "Running"
+#~ msgstr "运行中"
 
 #~ msgid "All Categories"
 #~ msgstr "所有分类"

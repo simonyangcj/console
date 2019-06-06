@@ -5,7 +5,7 @@ import { Helmet } from 'react-helmet';
 import * as PropTypes from 'prop-types';
 import * as classNames from 'classnames';
 
-import { history, NavTitle, SelectorInput, LoadingBox } from './utils';
+import { history, NavTitle, SelectorInput, LoadingBox, gettext } from './utils';
 import { namespaceProptype } from '../propTypes';
 import { split, selectorFromString } from '../module/k8s/selector';
 import { requirementFromString } from '../module/k8s/selector-requirement';
@@ -76,9 +76,9 @@ class SearchPage_ extends React.PureComponent {
       { showGettingStarted && <OpenShiftGettingStarted /> }
       <div className={classNames({'co-disabled': showGettingStarted})}>
         <Helmet>
-          <title>Search</title>
+          <title>{gettext('Search')}</title>
         </Helmet>
-        <NavTitle detail={true} title="Search" >
+        <NavTitle detail={true} title={gettext('Search')} >
           <div className="co-search">
             <div className="input-group input-group-select">
               <div className="input-group-btn">

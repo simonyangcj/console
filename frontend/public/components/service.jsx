@@ -2,7 +2,7 @@ import * as _ from 'lodash-es';
 import * as React from 'react';
 
 import { ColHead, DetailsPage, List, ListHeader, ListPage, ResourceRow } from './factory';
-import { Cog, navFactory, LabelList, ResourceCog, SectionHeading, ResourceIcon, ResourceLink, ResourceSummary, Selector } from './utils';
+import { Cog, navFactory, LabelList, ResourceCog, SectionHeading, ResourceIcon, ResourceLink, ResourceSummary, Selector, gettext } from './utils';
 
 const menuActions = [Cog.factory.ModifyPodSelector, ...Cog.factory.common];
 
@@ -16,11 +16,11 @@ const ServiceIP = ({s}) => {
 };
 
 const ServiceHeader = props => <ListHeader>
-  <ColHead {...props} className="col-lg-3 col-md-3 col-sm-4 col-xs-6" sortField="metadata.name">Name</ColHead>
-  <ColHead {...props} className="col-lg-2 col-md-3 col-sm-4 col-xs-6" sortField="metadata.namespace">Namespace</ColHead>
-  <ColHead {...props} className="col-lg-3 col-md-3 col-sm-4 hidden-xs" sortField="metadata.labels">Labels</ColHead>
-  <ColHead {...props} className="col-lg-2 col-md-3 hidden-sm hidden-xs" sortField="spec.selector">Pod Selector</ColHead>
-  <ColHead {...props} className="col-lg-2 hidden-md hidden-sm hidden-xs" sortField="spec.clusterIP">Location</ColHead>
+  <ColHead {...props} className="col-lg-3 col-md-3 col-sm-4 col-xs-6" sortField="metadata.name">{gettext('Name')}</ColHead>
+  <ColHead {...props} className="col-lg-2 col-md-3 col-sm-4 col-xs-6" sortField="metadata.namespace">{gettext('Namespace')}</ColHead>
+  <ColHead {...props} className="col-lg-3 col-md-3 col-sm-4 hidden-xs" sortField="metadata.labels">{gettext('Labels')}</ColHead>
+  <ColHead {...props} className="col-lg-2 col-md-3 hidden-sm hidden-xs" sortField="spec.selector">{gettext('Pod Selector')}</ColHead>
+  <ColHead {...props} className="col-lg-2 hidden-md hidden-sm hidden-xs" sortField="spec.clusterIP">{gettext('Location')}</ColHead>
 </ListHeader>;
 
 const ServiceRow = ({obj: s}) => <ResourceRow obj={s}>
@@ -56,20 +56,20 @@ const ServiceAddress = ({s}) => {
   const ServiceType = (type) => {
     switch (type) {
       case 'NodePort':
-        return ServiceIPsRow('Node Port', 'Accessible outside the cluster', _.map(s.spec.ports, 'nodePort'), '(all nodes): ');
+        return ServiceIPsRow(gettext('Node Port'), 'Accessible outside the cluster', _.map(s.spec.ports, 'nodePort'), '(all nodes): ');
       case 'LoadBalancer':
-        return ServiceIPsRow('External Load Balancer', 'Ingress point(s) of load balancer', _.map(s.status.loadBalancer.ingress, i => i.hostname || i.ip || '-'));
+        return ServiceIPsRow(gettext('External Load Balancer'), 'Ingress point(s) of load balancer', _.map(s.status.loadBalancer.ingress, i => i.hostname || i.ip || '-'));
       case 'ExternalName':
-        return ServiceIPsRow('External Service Name', 'Location of the resource that backs the service', [s.spec.externalName]);
+        return ServiceIPsRow(gettext('External Service Name'), 'Location of the resource that backs the service', [s.spec.externalName]);
       default:
-        return ServiceIPsRow('Cluster IP', 'Accessible within the cluster only', [s.spec.clusterIP]);
+        return ServiceIPsRow(gettext('Cluster IP'), 'Accessible within the cluster only', [s.spec.clusterIP]);
     }
   };
 
   return <div>
     <div className="row co-ip-header">
-      <div className="col-xs-6">Type</div>
-      <div className="col-xs-6">Location</div>
+      <div className="col-xs-6">{gettext('Type')}</div>
+      <div className="col-xs-6">{gettext('Location')}</div>
     </div>
     <div className="rows">
       {ServiceType(s.spec.type)}
@@ -80,10 +80,10 @@ const ServiceAddress = ({s}) => {
 
 const ServicePortMapping = ({ports}) => <div>
   <div className="row co-ip-header">
-    <div className="col-xs-3">Name</div>
-    <div className="col-xs-3">Port</div>
-    <div className="col-xs-3">Protocol</div>
-    <div className="col-xs-3">Pod Port or Name</div>
+    <div className="col-xs-3">{gettext('Name')}</div>
+    <div className="col-xs-3">{gettext('Port')}</div>
+    <div className="col-xs-3">{gettext('Protocol')}</div>
+    <div className="col-xs-3">{gettext('Pod Port or Name')}</div>
   </div>
   <div className="rows">
     {ports.map((portObj, i) => {
@@ -91,7 +91,7 @@ const ServicePortMapping = ({ports}) => <div>
         <div className="row">
           <div className="col-xs-3 co-text-service">
             <p>{portObj.name || '-'}</p>
-            {portObj.nodePort && <p className="co-text-node">Node Port</p>}
+            {portObj.nodePort && <p className="co-text-node">{gettext('Node Port')}</p>}
           </div>
           <div className="col-xs-3 co-text-service">
             <p><ResourceIcon kind="Service" /><span>{portObj.port}</span></p>
@@ -114,18 +114,18 @@ const Details = ({obj: s}) => <div className="co-m-pane__body">
     <div className="col-sm-6">
       <SectionHeading text="Service Overview" />
       <ResourceSummary resource={s} showNodeSelector={false}>
-        <dt>Session Affinity</dt>
+        <dt>{gettext('Session Affinity')}</dt>
         <dd>{s.spec.sessionAffinity || '-'}</dd>
       </ResourceSummary>
     </div>
     <div className="col-sm-6">
       <SectionHeading text="Service Routing" />
       <dl>
-        <dt>Service Address</dt>
+        <dt>{gettext('Service Address')}</dt>
         <dd className="service-ips">
           <ServiceAddress s={s} />
         </dd>
-        <dt>Service Port Mapping</dt>
+        <dt>{gettext('Service Port Mapping')}</dt>
         <dd className="service-ips">
           {s.spec.ports ? <ServicePortMapping ports={s.spec.ports} /> : '-'}
         </dd>

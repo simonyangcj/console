@@ -100,6 +100,10 @@ msgstr ""
 msgid "Chargeback"
 msgstr ""
 
+#: public/components/service.jsx:65
+msgid "Cluster IP"
+msgstr ""
+
 #: public/models/index.ts:467
 msgid "Cluster Role Bindings"
 msgstr ""
@@ -153,10 +157,6 @@ msgstr ""
 msgid "Compact"
 msgstr ""
 
-#: public/components/pod.jsx:284
-msgid "Completed"
-msgstr ""
-
 #: public/models/index.ts:365
 msgid "Component Statuses"
 msgstr ""
@@ -176,10 +176,6 @@ msgstr ""
 
 #: public/components/cluster-overview.jsx:111
 msgid "CPU Usage"
-msgstr ""
-
-#: public/components/pod.jsx:281
-msgid "CrashLoopBackOff"
 msgstr ""
 
 #: public/components/cluster-overview.jsx:67
@@ -298,8 +294,12 @@ msgstr ""
 msgid "Exposed Ports"
 msgstr ""
 
-#: public/components/pod.jsx:285
-msgid "Failed"
+#: public/components/service.jsx:61
+msgid "External Load Balancer"
+msgstr ""
+
+#: public/components/service.jsx:63
+msgid "External Service Name"
 msgstr ""
 
 #: public/components/factory/list-page.jsx:40
@@ -387,6 +387,7 @@ msgstr ""
 #: public/components/cloud-services/clusterserviceversion-resource.tsx:21
 #: public/components/namespace.jsx:58
 #: public/components/namespace.jsx:83
+#: public/components/service.jsx:21
 msgid "Labels"
 msgstr ""
 
@@ -404,6 +405,11 @@ msgstr ""
 
 #: public/components/cloud-services/catalog-source.tsx:36
 msgid "Latest Version"
+msgstr ""
+
+#: public/components/service.jsx:23
+#: public/components/service.jsx:72
+msgid "Location"
 msgstr ""
 
 #: public/components/masthead.tsx:70
@@ -435,6 +441,8 @@ msgstr ""
 #: public/components/pod.jsx:123
 #: public/components/pod.jsx:214
 #: public/components/pod.jsx:66
+#: public/components/service.jsx:19
+#: public/components/service.jsx:83
 msgid "Name"
 msgstr ""
 
@@ -442,6 +450,7 @@ msgstr ""
 #: public/components/cloud-services/clusterserviceversion-resource.tsx:199
 #: public/components/cloud-services/clusterserviceversion.tsx:21
 #: public/components/pod.jsx:67
+#: public/components/service.jsx:20
 msgid "Namespace"
 msgstr ""
 
@@ -489,6 +498,11 @@ msgstr ""
 #: public/components/pod.jsx:198
 #: public/components/pod.jsx:69
 msgid "Node"
+msgstr ""
+
+#: public/components/service.jsx:59
+#: public/components/service.jsx:94
+msgid "Node Port"
 msgstr ""
 
 #: public/components/pod.jsx:178
@@ -546,10 +560,6 @@ msgstr ""
 msgid "Packages by name"
 msgstr ""
 
-#: public/components/pod.jsx:279
-msgid "Pending"
-msgstr ""
-
 #: public/components/pod.jsx:216
 msgid "Permissions"
 msgstr ""
@@ -580,6 +590,14 @@ msgstr ""
 msgid "Pod Labels"
 msgstr ""
 
+#: public/components/service.jsx:86
+msgid "Pod Port or Name"
+msgstr ""
+
+#: public/components/service.jsx:22
+msgid "Pod Selector"
+msgstr ""
+
 #: public/components/cluster-overview.jsx:120
 msgid "Pod Usage"
 msgstr ""
@@ -588,6 +606,10 @@ msgstr ""
 #: public/components/nav.jsx:387
 #: public/models/index.ts:161
 msgid "Pods"
+msgstr ""
+
+#: public/components/service.jsx:84
+msgid "Port"
 msgstr ""
 
 #: public/models/index.ts:405
@@ -601,6 +623,10 @@ msgstr ""
 
 #: public/models/index.ts:75
 msgid "Prometheuses"
+msgstr ""
+
+#: public/components/service.jsx:85
+msgid "Protocol"
 msgstr ""
 
 #: public/components/cloud-services/clusterserviceversion.tsx:120
@@ -667,15 +693,13 @@ msgstr ""
 msgid "Routes"
 msgstr ""
 
-#: public/components/pod.jsx:278
-msgid "Running"
-msgstr ""
-
 #: public/components/cluster-overview.jsx:92
 msgid "Schedulers Up"
 msgstr ""
 
 #: public/components/nav.jsx:374
+#: public/components/search.jsx:79
+#: public/components/search.jsx:81
 msgid "Search"
 msgstr ""
 
@@ -693,6 +717,10 @@ msgstr ""
 msgid "Service Accounts"
 msgstr ""
 
+#: public/components/service.jsx:124
+msgid "Service Address"
+msgstr ""
+
 #: public/models/index.ts:728
 msgid "Service Bindings"
 msgstr ""
@@ -705,9 +733,17 @@ msgstr ""
 msgid "Service Monitors"
 msgstr ""
 
+#: public/components/service.jsx:128
+msgid "Service Port Mapping"
+msgstr ""
+
 #: public/components/nav.jsx:404
 #: public/models/index.ts:149
 msgid "Services"
+msgstr ""
+
+#: public/components/service.jsx:117
+msgid "Session Affinity"
 msgstr ""
 
 #: public/components/channel-operators/app-version.jsx:247
@@ -779,7 +815,6 @@ msgid "Tectonic Versions"
 msgstr ""
 
 #: public/components/namespace.jsx:27
-#: public/components/pod.jsx:280
 msgid "Terminating"
 msgstr ""
 
@@ -802,12 +837,12 @@ msgstr ""
 
 #: public/components/cloud-services/clusterserviceversion-resource.tsx:22
 #: public/components/pod.jsx:215
+#: public/components/service.jsx:71
 msgid "Type"
 msgstr ""
 
 #: public/components/cloud-services/clusterserviceversion-resource.tsx:54
 #: public/components/cloud-services/clusterserviceversion-resource.tsx:57
-#: public/components/pod.jsx:286
 msgid "Unknown"
 msgstr ""
 
