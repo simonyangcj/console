@@ -10,7 +10,7 @@ import { k8sGet } from '../module/k8s';
 import { UIActions } from '../ui/ui-actions';
 import { ColHead, DetailsPage, List, ListHeader, ListPage, ResourceRow } from './factory';
 import { SafetyFirst } from './safety-first';
-import { Cog, Dropdown, Firehose, LabelList, LoadingInline, navFactory, ResourceCog, SectionHeading, ResourceLink, ResourceSummary, humanizeMem, MsgBox } from './utils';
+import { Cog, Dropdown, Firehose, LabelList, LoadingInline, navFactory, ResourceCog, SectionHeading, ResourceLink, ResourceSummary, humanizeMem, MsgBox, gettext } from './utils';
 import { createNamespaceModal, createProjectModal, deleteNamespaceModal, configureNamespacePullSecretModal } from './modals';
 import { RoleBindingsPage } from './RBAC';
 import { Bar, Line, requirePrometheus } from './graphs';
@@ -29,9 +29,9 @@ const deleteModal = (kind, ns) => {
   let tooltip;
 
   if (ns.metadata.name === 'default') {
-    tooltip = `${kind.label} default cannot be deleted`;
+    tooltip = `${kind.label} ${gettext('default cannot be deleted')}`;
   } else if (ns.status.phase === 'Terminating') {
-    tooltip = `${kind.label} is already terminating`;
+    tooltip = `${kind.label} ${gettext('is already terminating')}`;
   } else {
     callback = () => deleteNamespaceModal({kind, resource: ns});
   }
@@ -46,9 +46,9 @@ const deleteModal = (kind, ns) => {
 const nsMenuActions = [Cog.factory.ModifyLabels, Cog.factory.ModifyAnnotations, Cog.factory.Edit, deleteModal];
 
 const NamespaceHeader = props => <ListHeader>
-  <ColHead {...props} className="col-sm-4 col-xs-6" sortField="metadata.name">Name</ColHead>
-  <ColHead {...props} className="col-sm-4 col-xs-6" sortField="status.phase">Status</ColHead>
-  <ColHead {...props} className="col-sm-4 hidden-xs" sortField="metadata.labels">Labels</ColHead>
+  <ColHead {...props} className="col-sm-4 col-xs-6" sortField="metadata.name">{gettext('Name')}</ColHead>
+  <ColHead {...props} className="col-sm-4 col-xs-6" sortField="status.phase">{gettext('Status')}</ColHead>
+  <ColHead {...props} className="col-sm-4 hidden-xs" sortField="metadata.labels">{gettext('Labels')}</ColHead>
 </ListHeader>;
 
 const NamespaceRow = ({obj: ns}) => <ResourceRow obj={ns}>
@@ -70,10 +70,10 @@ export const NamespacesPage = props => <ListPage {...props} ListComponent={Names
 const projectMenuActions = [Cog.factory.Edit, deleteModal];
 
 const ProjectHeader = props => <ListHeader>
-  <ColHead {...props} className="col-md-3 col-sm-6 col-xs-8" sortField="metadata.name">Name</ColHead>
-  <ColHead {...props} className="col-md-3 col-sm-3 col-xs-4" sortField="status.phase">Status</ColHead>
-  <ColHead {...props} className="col-md-3 col-sm-3 hidden-xs" sortField="metadata.annotations.['openshift.io/requester']">Requester</ColHead>
-  <ColHead {...props} className="col-md-3 hidden-sm hidden-xs" sortField="metadata.labels">Labels</ColHead>
+  <ColHead {...props} className="col-md-3 col-sm-6 col-xs-8" sortField="metadata.name">{gettext('Name')}</ColHead>
+  <ColHead {...props} className="col-md-3 col-sm-3 col-xs-4" sortField="status.phase">{gettext('Status')}</ColHead>
+  <ColHead {...props} className="col-md-3 col-sm-3 hidden-xs" sortField="metadata.annotations.['openshift.io/requester']">{gettext('Requester')}</ColHead>
+  <ColHead {...props} className="col-md-3 hidden-sm hidden-xs" sortField="metadata.labels">{gettext('Labels')}</ColHead>
 </ListHeader>;
 
 const ProjectRow = ({obj: project}) => {
@@ -88,7 +88,7 @@ const ProjectRow = ({obj: project}) => {
       {project.status.phase}
     </div>
     <div className="col-md-3 col-sm-3 hidden-xs">
-      {requester || <span className="text-muted">No requester</span>}
+      {requester || <span className="text-muted">{getetxt('No requester')}</span>}
     </div>
     <div className="col-md-3 hidden-sm hidden-xs">
       <LabelList kind="Project" labels={project.metadata.labels} />
@@ -99,7 +99,7 @@ const ProjectRow = ({obj: project}) => {
 const ProjectList_ = props => {
   const ProjectEmptyMessageDetail = <React.Fragment>
     <p className="co-pre-line">
-      {props.createProjectMessage || 'Create a project for your application.'}
+      {props.createProjectMessage || gettext('Create a project for your application.')}
     </p>
     <p>
       To learn more, visit the OpenShift <a href={openshiftHelpBase} target="_blank" rel="noopener noreferrer">documentation</a>.
@@ -150,7 +150,7 @@ class PullSecret extends SafetyFirst {
       return <LoadingInline />;
     }
     const modal = () => configureNamespacePullSecretModal({namespace: this.props.namespace, pullSecret: this.state.data});
-    return <a className="co-m-modal-link" onClick={modal}>{_.get(this.state.data, 'metadata.name') || 'Not Configured'}</a>;
+    return <a className="co-m-modal-link" onClick={modal}>{_.get(this.state.data, 'metadata.name') || gettext('Not Configured')}</a>;
   }
 }
 
@@ -174,7 +174,7 @@ const ResourceUsage = requirePrometheus(({ns}) => <div className="co-m-pane__bod
       ]} />
     </div>
   </div>
-  <Bar title="Memory Usage by Pod (Top 10)" query={`sort(topk(10, sum by (pod_name)(container_memory_usage_bytes{pod_name!="", namespace="${ns.metadata.name}"})))`} humanize={humanizeMem} metric="pod_name" />
+  <Bar title={gettext('Memory Usage by Pod (Top 10)')} query={`sort(topk(10, sum by (pod_name)(container_memory_usage_bytes{pod_name!="", namespace="${ns.metadata.name}"})))`} humanize={humanizeMem} metric="pod_name" />
 </div>);
 
 const Details = ({obj: ns}) => {
@@ -182,25 +182,25 @@ const Details = ({obj: ns}) => {
   const requester = getRequester(ns);
   return <div>
     <div className="co-m-pane__body">
-      <SectionHeading text={`${ns.kind} Overview`} />
+      <SectionHeading text={`${ns.kind} ${gettext('Overview')}`} />
       <div className="row">
         <div className="col-sm-6 col-xs-12">
           <ResourceSummary resource={ns} showPodSelector={false} showNodeSelector={false}>
-            {displayName && <dt>Display Name</dt>}
+            {displayName && <dt>{gettext('Display Name')}</dt>}
             {displayName && <dd>{displayName}</dd>}
-            {requester && <dt>Requester</dt>}
+            {requester && <dt>{gettext('Requester')}</dt>}
             {requester && <dd>{requester}</dd>}
           </ResourceSummary>
         </div>
         <div className="col-sm-6 col-xs-12">
           <dl className="co-m-pane__details">
-            <dt>Status</dt>
+            <dt>{gettext('Status')}</dt>
             <dd>{ns.status.phase}</dd>
-            <dt>Default Pull Secret</dt>
+            <dt>{gettext('Default Pull Secret')}</dt>
             <dd><PullSecret namespace={ns} /></dd>
-            <dt>Network Policies</dt>
+            <dt>{gettext('Network Policies')}</dt>
             <dd>
-              <Link to={`/k8s/ns/${ns.metadata.name}/networkpolicies`}>Network Policies</Link>
+              <Link to={`/k8s/ns/${ns.metadata.name}/networkpolicies`}>{gettext('Network Policies')}</Link>
             </dd>
           </dl>
         </div>

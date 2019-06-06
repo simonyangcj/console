@@ -4,7 +4,7 @@ import * as _ from 'lodash-es';
 // eslint-disable-next-line no-unused-vars
 import { K8sResourceKind, K8sResourceKindReference } from '../module/k8s';
 import { DetailsPage } from './factory';
-import { Cog, SectionHeading, navFactory, Overflow, ResourceSummary } from './utils';
+import { Cog, SectionHeading, navFactory, Overflow, ResourceSummary, gettext } from './utils';
 import { humanizeMem } from './utils/units';
 
 const ImageStreamTagsReference: K8sResourceKindReference = 'ImageStreamTag';
@@ -51,28 +51,28 @@ export const ImageStreamTagsDetails: React.SFC<ImageStreamTagsDetailsProps> = ({
         <div className="col-md-6 col-sm-12">
           <SectionHeading text="Image Overview" />
           <ResourceSummary resource={imageStreamTag} showPodSelector={false} showNodeSelector={false}>
-            {labels.name && <dt>Image Name</dt>}
+            {labels.name && <dt>{gettext('Image Name')}</dt>}
             {labels.name && <dd>{labels.name}</dd>}
-            {labels.summary && <dt>Summary</dt>}
+            {labels.summary && <dt>{gettext('Summary')}</dt>}
             {labels.summary && <dd>{labels.summary}</dd>}
-            {humanizedSize && <dt>Size</dt>}
+            {humanizedSize && <dt>{gettext('Size')}</dt>}
             {humanizedSize && <dd>{humanizedSize}</dd>}
           </ResourceSummary>
         </div>
         <div className="col-md-6 col-sm-12">
           <SectionHeading text="Configuration" />
           <dl className="co-m-pane__details">
-            {entrypoint && <dt>Entrypoint</dt>}
+            {entrypoint && <dt>{gettext('Entrypoint')}</dt>}
             {entrypoint && <dd><Overflow value={entrypoint} /></dd>}
-            {cmd && <dt>Command</dt>}
+            {cmd && <dt>{gettext('Command')}</dt>}
             {cmd && <dd><Overflow value={cmd} /></dd>}
-            {config.WorkingDir && <dt>Working Dir</dt>}
+            {config.WorkingDir && <dt>{gettext('Working Dir')}</dt>}
             {config.WorkingDir && <dd><Overflow value={config.WorkingDir} /></dd>}
-            {exposedPorts && <dt>Exposed Ports</dt>}
+            {exposedPorts && <dt>{gettext('Exposed Ports')}</dt>}
             {exposedPorts && <dd><Overflow value={exposedPorts} /></dd>}
-            {config.User && <dt>User</dt>}
+            {config.User && <dt>{gettext('User')}</dt>}
             {config.User && <dd>{config.User}</dd>}
-            {architecture && <dt>Architecture</dt>}
+            {architecture && <dt>{gettext('Architecture')}</dt>}
             {architecture && <dd>{architecture}</dd>}
           </dl>
         </div>
@@ -81,13 +81,13 @@ export const ImageStreamTagsDetails: React.SFC<ImageStreamTagsDetailsProps> = ({
     <div className="co-m-pane__body-group">
       <SectionHeading text="Image Labels" />
       {_.isEmpty(sortedLabels)
-        ? <span className="text-muted">No labels</span>
+        ? <span className="text-muted">{gettext('No labels')}</span>
         : <div className="co-table-container">
           <table className="table">
             <thead>
               <tr>
-                <th>Name</th>
-                <th>Value</th>
+                <th>{gettext('Name')}</th>
+                <th>{gettext('Value')}</th>
               </tr>
             </thead>
             <tbody>
@@ -102,13 +102,13 @@ export const ImageStreamTagsDetails: React.SFC<ImageStreamTagsDetailsProps> = ({
     <div className="co-m-pane__body-group">
       <SectionHeading text="Environment Variables" />
       {_.isEmpty(config.Env)
-        ? <span className="text-muted">No environment variables</span>
+        ? <span className="text-muted">{gettext('No environment variables')}</span>
         : <div className="co-table-container">
           <table className="table">
             <thead>
               <tr>
-                <th>Name</th>
-                <th>Value</th>
+                <th>{gettext('Name')}</th>
+                <th>{gettext('Value')}</th>
               </tr>
             </thead>
             <tbody>

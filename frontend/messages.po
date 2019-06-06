@@ -52,6 +52,10 @@ msgstr "应用程序资源是用于定义应用程序行为的声明性组件。
 msgid "AppVersions"
 msgstr "APP版本"
 
+#: public/components/image-stream-tag.tsx:75
+msgid "Architecture"
+msgstr ""
+
 #: public/models/index.ts:280
 msgid "Build Configs"
 msgstr "构建配置"
@@ -80,7 +84,7 @@ msgid ""
 "Subscribe and grant a namespace access to use the installed Operators."
 msgstr ""
 "目录是可以在集群上使用的操作控制器。订阅并授予命名空间访问权以使用已安装的控"
-"制器。 "
+"制器。"
 
 #: public/models/index.ts:8
 msgid "CatalogSources"
@@ -118,8 +122,14 @@ msgstr "集群服务类"
 msgid "Cluster Service Plans"
 msgstr "集群服务方案"
 
+#: public/components/cloud-services/clusterserviceversion.tsx:88
 #: public/components/nav.jsx:379
 msgid "Cluster Service Versions"
+msgstr "集群服务版本"
+
+#: public/components/cloud-services/clusterserviceversion.tsx:94
+#, fuzzy
+msgid "Cluster Service Versions by name"
 msgstr "集群服务版本"
 
 #: public/components/nav.jsx:428
@@ -137,6 +147,10 @@ msgstr "集群"
 #: public/models/index.ts:21
 msgid "ClusterServiceVersions"
 msgstr "集群服务版本"
+
+#: public/components/image-stream-tag.tsx:67
+msgid "Command"
+msgstr "命令"
 
 #: public/components/factory/list-page.jsx:17
 msgid "Compact"
@@ -174,7 +188,12 @@ msgstr ""
 msgid "Create"
 msgstr "创建"
 
+#: public/components/namespace.jsx:102
+msgid "Create a project for your application."
+msgstr "为你的应用程序创建项目。"
+
 #: public/components/cloud-services/clusterserviceversion-resource.tsx:124
+#: public/components/cloud-services/clusterserviceversion.tsx:114
 msgid "Create New"
 msgstr "创建"
 
@@ -187,6 +206,7 @@ msgid "Created"
 msgstr "创建"
 
 #: public/components/cloud-services/clusterserviceversion-resource.tsx:201
+#: public/components/cloud-services/clusterserviceversion.tsx:122
 msgid "Created At"
 msgstr "创建"
 
@@ -206,6 +226,19 @@ msgstr "自定义资源类型"
 msgid "Daemon Sets"
 msgstr ""
 
+#: public/components/namespace.jsx:32
+msgid "default cannot be deleted"
+msgstr "默认无法删除"
+
+#: public/components/namespace.jsx:199
+msgid "Default Pull Secret"
+msgstr "默认拉取Secret"
+
+#: public/components/cloud-services/clusterserviceversion.tsx:22
+#, fuzzy
+msgid "Deployment"
+msgstr "部署"
+
 #: public/models/index.ts:266
 msgid "Deployment Configs"
 msgstr "部署配置"
@@ -214,13 +247,26 @@ msgstr "部署配置"
 msgid "Deployments"
 msgstr "部署"
 
+#: public/components/cloud-services/clusterserviceversion.tsx:146
+#, fuzzy
+msgid "Description"
+msgstr "订阅"
+
 #: public/components/cluster-overview.jsx:117
 msgid "Disk Usage"
 msgstr "硬盘使用率"
 
+#: public/components/namespace.jsx:189
+msgid "Display Name"
+msgstr "名称"
+
 #: public/components/cluster-overview.jsx:181
 msgid "Documentation"
 msgstr "文档"
+
+#: public/components/image-stream-tag.tsx:65
+msgid "Entrypoint"
+msgstr "入口"
 
 #: public/components/cloud-services/catalog-source.tsx:109
 #: public/components/cloud-services/catalog-source.tsx:155
@@ -239,6 +285,10 @@ msgstr "事件"
 #: public/components/factory/list-page.jsx:20
 msgid "Expand"
 msgstr "展开"
+
+#: public/components/image-stream-tag.tsx:71
+msgid "Exposed Ports"
+msgstr "暴露的端口"
 
 #: public/components/factory/list-page.jsx:40
 msgid "Filter"
@@ -268,6 +318,11 @@ msgstr "Pod水平扩展"
 msgid "HPAs"
 msgstr ""
 
+#: public/components/image-stream-tag.tsx:54
+#, fuzzy
+msgid "Image Name"
+msgstr "镜像组"
+
 #: public/models/index.ts:322
 msgid "Image Stream Tags"
 msgstr "镜像标签"
@@ -292,6 +347,10 @@ msgstr "安装计划"
 msgid "InstallPlans"
 msgstr "安装计划"
 
+#: public/components/namespace.jsx:34
+msgid "is already terminating"
+msgstr "已终止"
+
 #: public/components/nav.jsx:396 public/models/index.ts:336
 msgid "Jobs"
 msgstr "任务"
@@ -302,6 +361,7 @@ msgid "Kubernetes API"
 msgstr ""
 
 #: public/components/cloud-services/clusterserviceversion-resource.tsx:21
+#: public/components/namespace.jsx:51 public/components/namespace.jsx:76
 msgid "Labels"
 msgstr "标签"
 
@@ -329,6 +389,11 @@ msgstr "退出"
 msgid "Memory Usage"
 msgstr "内存使用率"
 
+#: public/components/namespace.jsx:177
+#, fuzzy
+msgid "Memory Usage by Pod (Top 10)"
+msgstr "内存使用率"
+
 #: public/components/cloud-services/spec-descriptors/configure-size.tsx:13
 msgid "Modify"
 msgstr "更改"
@@ -338,11 +403,16 @@ msgstr "更改"
 #: public/components/cloud-services/catalog-source.tsx:92
 #: public/components/cloud-services/clusterserviceversion-resource.tsx:197
 #: public/components/cloud-services/clusterserviceversion-resource.tsx:20
+#: public/components/cloud-services/clusterserviceversion.tsx:20
+#: public/components/image-stream-tag.tsx:110
+#: public/components/image-stream-tag.tsx:89 public/components/namespace.jsx:49
+#: public/components/namespace.jsx:73
 msgid "Name"
 msgstr "名称"
 
 #: public/components/cloud-services/catalog-source.tsx:113
 #: public/components/cloud-services/clusterserviceversion-resource.tsx:199
+#: public/components/cloud-services/clusterserviceversion.tsx:21
 msgid "Namespace"
 msgstr "命名空间"
 
@@ -350,6 +420,7 @@ msgstr "命名空间"
 msgid "Namespaces"
 msgstr "命名空间"
 
+#: public/components/namespace.jsx:201 public/components/namespace.jsx:203
 #: public/components/nav.jsx:407 public/models/index.ts:623
 msgid "Network Policies"
 msgstr "网络规则"
@@ -362,9 +433,23 @@ msgstr "网络"
 msgid "No Application Resources Defined"
 msgstr "未定义应用程序资源"
 
+#: public/components/cloud-services/clusterserviceversion-resource.tsx:66
+#, fuzzy
+msgid "No Application Resources Found"
+msgstr "未定义应用程序资源"
+
 #: public/components/cloud-services/catalog-source.tsx:141
 msgid "No Catalog Sources Found"
 msgstr " 找不到目录源 "
+
+#: public/components/image-stream-tag.tsx:105
+msgid "No environment variables"
+msgstr "无环境变量"
+
+#: public/components/image-stream-tag.tsx:84
+#, fuzzy
+msgid "No labels"
+msgstr "标签"
 
 #: public/components/cloud-services/catalog-source.tsx:80
 msgid "No Packages Found"
@@ -373,6 +458,17 @@ msgstr "找不到包"
 #: public/components/nav.jsx:427 public/models/index.ts:347
 msgid "Nodes"
 msgstr "节点"
+
+#: public/components/cloud-services/clusterserviceversion.tsx:121
+#: public/components/cloud-services/clusterserviceversion.tsx:131
+#: public/components/cloud-services/clusterserviceversion.tsx:139
+#: public/components/cloud-services/clusterserviceversion.tsx:147
+msgid "Not available"
+msgstr "不可用"
+
+#: public/components/namespace.jsx:153
+msgid "Not Configured"
+msgstr "未配置"
 
 #: public/components/cluster-overview.jsx:134
 msgid "OKD Console"
@@ -387,12 +483,17 @@ msgstr "OpenShift控制台"
 msgid "Operator Catalog Sources"
 msgstr "目录源"
 
+#: public/components/cloud-services/clusterserviceversion.tsx:85
+msgid "Operator Lifecycle Manager not enabled for this namespace"
+msgstr "没有为此命名空间启用Operator Lifecycle管理器"
+
 #: public/components/nav.jsx:378
 msgid "Operators"
 msgstr "操作控制器"
 
 #: public/components/cluster-overview.jsx:248
 #: public/components/cluster-overview.jsx:250
+#: public/components/namespace.jsx:185
 msgid "Overview"
 msgstr "概述"
 
@@ -416,6 +517,12 @@ msgstr "持久化卷"
 msgid "Petsets"
 msgstr ""
 
+#: public/components/cloud-services/clusterserviceversion.tsx:85
+msgid ""
+"Please contact a system administrator and ask them to enable Operator "
+"Lifecycle Manager to continue."
+msgstr "请与系统管理员联系，要求他们启用Operator Lifecycle Manager以继续。"
+
 #: public/components/cluster-overview.jsx:120
 msgid "Pod Usage"
 msgstr "Pod使用率"
@@ -437,6 +544,10 @@ msgstr "项目"
 msgid "Prometheuses"
 msgstr ""
 
+#: public/components/cloud-services/clusterserviceversion.tsx:120
+msgid "Provider"
+msgstr ""
+
 #: public/components/cloud-services/catalog-source.tsx:114
 #: public/components/cloud-services/catalog-source.tsx:98
 msgid "Publisher"
@@ -453,6 +564,10 @@ msgstr ""
 #: public/models/index.ts:130
 msgid "Reports"
 msgstr "报告"
+
+#: public/components/namespace.jsx:191 public/components/namespace.jsx:75
+msgid "Requester"
+msgstr "请求"
 
 #: public/components/nav.jsx:432 public/models/index.ts:618
 msgid "Resource Quotas"
@@ -514,6 +629,10 @@ msgstr "服务"
 msgid "Show Failed Reason"
 msgstr "显示失败原因"
 
+#: public/components/image-stream-tag.tsx:58
+msgid "Size"
+msgstr "大小"
+
 #: public/components/cluster-overview.jsx:173
 #: public/components/cluster-overview.jsx:252
 msgid "Software Info"
@@ -524,7 +643,9 @@ msgid "Stateful Sets"
 msgstr ""
 
 #: public/components/cloud-services/clusterserviceversion-resource.tsx:23
-#: public/components/nav.jsx:373
+#: public/components/cloud-services/clusterserviceversion.tsx:23
+#: public/components/namespace.jsx:197 public/components/namespace.jsx:50
+#: public/components/namespace.jsx:74 public/components/nav.jsx:373
 msgid "Status"
 msgstr "状态"
 
@@ -548,6 +669,10 @@ msgstr "策略"
 #: public/components/nav.jsx:382 public/models/index.ts:48
 msgid "Subscriptions"
 msgstr "订阅"
+
+#: public/components/image-stream-tag.tsx:56
+msgid "Summary"
+msgstr "概况"
 
 #: public/models/index.ts:531
 msgid "Tectonic Versions"
@@ -583,6 +708,15 @@ msgstr "未知"
 msgid "Unknown graph type:"
 msgstr "未知的图表类型： "
 
+#: public/components/image-stream-tag.tsx:73
+msgid "User"
+msgstr "用户"
+
+#: public/components/image-stream-tag.tsx:111
+#: public/components/image-stream-tag.tsx:90
+msgid "Value"
+msgstr "值"
+
 #: public/components/cloud-services/clusterserviceversion-resource.tsx:24
 msgid "Version"
 msgstr "APP版本"
@@ -603,6 +737,11 @@ msgstr "查看内容…"
 msgid "View Grafana Dashboard"
 msgstr "查看Grafana仪表板"
 
+#: public/components/cloud-services/clusterserviceversion.tsx:52
+#, fuzzy
+msgid "View instances"
+msgstr "服务实例"
+
 #: public/components/channel-operators/app-version.jsx:156
 #: public/components/channel-operators/app-version.jsx:196
 msgid "View Logs"
@@ -615,6 +754,10 @@ msgstr "查看订阅"
 #: public/components/cloud-services/catalog-source.tsx:48
 msgid "View subscriptions"
 msgstr "查看订阅"
+
+#: public/components/image-stream-tag.tsx:69
+msgid "Working Dir"
+msgstr "工作路径"
 
 #: public/components/nav.jsx:386
 msgid "Workloads"

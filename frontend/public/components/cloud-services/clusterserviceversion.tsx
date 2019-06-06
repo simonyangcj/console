@@ -7,7 +7,7 @@ import { connect } from 'react-redux';
 import { ClusterServiceVersionKind, ClusterServiceVersionLogo, CRDDescription, ClusterServiceVersionPhase, referenceForCRDDesc } from './index';
 import { ClusterServiceVersionResourcesPage } from './clusterserviceversion-resource';
 import { DetailsPage, ListHeader, ColHead, List, ListPage } from '../factory';
-import { navFactory, Timestamp, ResourceLink, OverflowLink, Dropdown, history, MsgBox, Box, Cog, ResourceCog, NavTitle, LoadingBox } from '../utils';
+import { navFactory, Timestamp, ResourceLink, OverflowLink, Dropdown, history, MsgBox, Box, Cog, ResourceCog, NavTitle, LoadingBox, gettext } from '../utils';
 import { withFallback } from '../utils/error-boundary';
 import { referenceForModel, referenceFor } from '../../module/k8s';
 import { ClusterServiceVersionModel } from '../../models';
@@ -17,10 +17,10 @@ import { FLAGS as featureFlags } from '../../features';
 import * as operatorLogo from '../../imgs/operator.svg';
 
 export const ClusterServiceVersionHeader: React.SFC = () => <ListHeader>
-  <ColHead className="col-xs-3" sortField="metadata.name">Name</ColHead>
-  <ColHead className="col-xs-3">Namespace</ColHead>
-  <ColHead className="col-xs-2">Deployment</ColHead>
-  <ColHead className="col-xs-2">Status</ColHead>
+  <ColHead className="col-xs-3" sortField="metadata.name">{gettext('Name')}</ColHead>
+  <ColHead className="col-xs-3">{gettext('Namespace')}</ColHead>
+  <ColHead className="col-xs-2">{gettext('Deployment')}</ColHead>
+  <ColHead className="col-xs-2">{gettext('Status')}</ColHead>
   <ColHead className="col-xs-2" />
 </ListHeader>;
 
@@ -49,7 +49,7 @@ export const ClusterServiceVersionRow = withFallback<ClusterServiceVersionRowPro
     <div className="col-xs-2">{obj.metadata.deletionTimestamp ? 'Disabling' : installStatus}</div>
     <div className="col-xs-2">
       <div style={{display: 'flex', justifyContent: 'flex-end', alignItems: 'center'}}>
-        <Link to={`${route}/instances`} title="View instances">View instances</Link>
+        <Link to={`${route}/instances`} title={gettext('View instances')}>{gettext('View instances')}</Link>
       </div>
     </div>
   </div>;
@@ -82,16 +82,16 @@ export const ClusterServiceVersionsPage = connect(stateToProps)((props: ClusterS
   return props.match.params.ns && !props.namespaceEnabled
     ? <Box className="text-center">
       <img className="co-clusterserviceversion-list__disabled-icon" src={operatorLogo} />
-      <MsgBox title="Operator Lifecycle Manager not enabled for this namespace" detail="Please contact a system administrator and ask them to enable Operator Lifecycle Manager to continue." />
+      <MsgBox title={gettext('Operator Lifecycle Manager not enabled for this namespace')} detail={gettext('Please contact a system administrator and ask them to enable Operator Lifecycle Manager to continue.')} />
     </Box>
     : <React.Fragment>
-      <NavTitle title="Cluster Service Versions" />
+      <NavTitle title={gettext('Cluster Service Versions')} />
       <ListPage
         {...props}
         namespace={props.match.params.ns}
         kind={referenceForModel(ClusterServiceVersionModel)}
         ListComponent={ClusterServiceVersionList}
-        filterLabel="Cluster Service Versions by name"
+        filterLabel={gettext('Cluster Service Versions by name')}
         showTitle={false} />
     </React.Fragment>;
 });
@@ -111,15 +111,15 @@ export const ClusterServiceVersionDetails: React.SFC<ClusterServiceVersionDetail
         { status.phase !== ClusterServiceVersionPhase.CSVPhaseSucceeded && <button disabled={true} className="btn btn-primary">Create New</button> }
         { status.phase === ClusterServiceVersionPhase.CSVPhaseSucceeded && ownedCRDs.length > 1 && <Dropdown
           buttonClassName="btn-primary"
-          title="Create New"
+          title={gettext('Create New')}
           items={ownedCRDs.reduce((acc, crd) => ({...acc, [crd.name]: crd.displayName}), {})}
           onChange={(name) => history.push(route(name))} /> }
         { status.phase === ClusterServiceVersionPhase.CSVPhaseSucceeded && ownedCRDs.length === 1 && <Link to={route(ownedCRDs[0].name)} className="btn btn-primary">{`Create ${ownedCRDs[0].displayName}`}</Link> }
       </div>
       <dl className="co-clusterserviceversion-details__section--info__item">
-        <dt>Provider</dt>
-        <dd>{spec.provider && spec.provider.name ? spec.provider.name : 'Not available'}</dd>
-        <dt>Created At</dt>
+        <dt>{gettext('Provider')}</dt>
+        <dd>{spec.provider && spec.provider.name ? spec.provider.name : gettext('Not available')}</dd>
+        <dt>{gettext('Created At')}</dt>
         <dd><Timestamp timestamp={metadata.creationTimestamp} /></dd>
       </dl>
       <dl className="co-clusterserviceversion-details__section--info__item">
@@ -128,7 +128,7 @@ export const ClusterServiceVersionDetails: React.SFC<ClusterServiceVersionDetail
           ? spec.links.map((link, i) => <dd key={i} style={{display: 'flex', flexDirection: 'column'}}>
             {link.name} <OverflowLink value={link.url} href={link.url} />
           </dd>)
-          : <dd>Not available</dd> }
+          : <dd>{gettext('Not available')}</dd> }
       </dl>
       <dl className="co-clusterserviceversion-details__section--info__item">
         <dt>Maintainers</dt>
@@ -136,15 +136,15 @@ export const ClusterServiceVersionDetails: React.SFC<ClusterServiceVersionDetail
           ? spec.maintainers.map((maintainer, i) => <dd key={i} style={{display: 'flex', flexDirection: 'column'}}>
             {maintainer.name} <OverflowLink value={maintainer.email} href={`mailto:${maintainer.email}`} />
           </dd>)
-          : <dd>Not available</dd> }
+          : <dd>{gettext('Not available')}</dd> }
       </dl>
     </div>
     <div className="co-clusterserviceversion-details__section co-clusterserviceversion-details__section--description">
       { status.phase !== ClusterServiceVersionPhase.CSVPhaseSucceeded && <div className="co-clusterserviceversion-detail__error-box">
         <strong>{status.phase}</strong>: {status.message}
       </div> }
-      <h1>Description</h1>
-      <MarkdownView content={spec.description || 'Not available'} />
+      <h1>{gettext('Description')}</h1>
+      <MarkdownView content={spec.description || gettext('Not available')} />
     </div>
   </div>;
 };

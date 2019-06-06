@@ -47,6 +47,10 @@ msgstr ""
 msgid "AppVersions"
 msgstr ""
 
+#: public/components/image-stream-tag.tsx:75
+msgid "Architecture"
+msgstr ""
+
 #: public/models/index.ts:280
 msgid "Build Configs"
 msgstr ""
@@ -108,8 +112,13 @@ msgstr ""
 msgid "Cluster Service Plans"
 msgstr ""
 
+#: public/components/cloud-services/clusterserviceversion.tsx:88
 #: public/components/nav.jsx:379
 msgid "Cluster Service Versions"
+msgstr ""
+
+#: public/components/cloud-services/clusterserviceversion.tsx:94
+msgid "Cluster Service Versions by name"
 msgstr ""
 
 #: public/components/nav.jsx:428
@@ -126,6 +135,10 @@ msgstr ""
 
 #: public/models/index.ts:21
 msgid "ClusterServiceVersions"
+msgstr ""
+
+#: public/components/image-stream-tag.tsx:67
+msgid "Command"
 msgstr ""
 
 #: public/components/factory/list-page.jsx:17
@@ -165,7 +178,12 @@ msgstr ""
 msgid "Create"
 msgstr ""
 
+#: public/components/namespace.jsx:102
+msgid "Create a project for your application."
+msgstr ""
+
 #: public/components/cloud-services/clusterserviceversion-resource.tsx:124
+#: public/components/cloud-services/clusterserviceversion.tsx:114
 msgid "Create New"
 msgstr ""
 
@@ -178,6 +196,7 @@ msgid "Created"
 msgstr ""
 
 #: public/components/cloud-services/clusterserviceversion-resource.tsx:201
+#: public/components/cloud-services/clusterserviceversion.tsx:122
 msgid "Created At"
 msgstr ""
 
@@ -199,6 +218,18 @@ msgstr ""
 msgid "Daemon Sets"
 msgstr ""
 
+#: public/components/namespace.jsx:32
+msgid "default cannot be deleted"
+msgstr ""
+
+#: public/components/namespace.jsx:199
+msgid "Default Pull Secret"
+msgstr ""
+
+#: public/components/cloud-services/clusterserviceversion.tsx:22
+msgid "Deployment"
+msgstr ""
+
 #: public/models/index.ts:266
 msgid "Deployment Configs"
 msgstr ""
@@ -208,12 +239,24 @@ msgstr ""
 msgid "Deployments"
 msgstr ""
 
+#: public/components/cloud-services/clusterserviceversion.tsx:146
+msgid "Description"
+msgstr ""
+
 #: public/components/cluster-overview.jsx:117
 msgid "Disk Usage"
 msgstr ""
 
+#: public/components/namespace.jsx:189
+msgid "Display Name"
+msgstr ""
+
 #: public/components/cluster-overview.jsx:181
 msgid "Documentation"
+msgstr ""
+
+#: public/components/image-stream-tag.tsx:65
+msgid "Entrypoint"
 msgstr ""
 
 #: public/components/cloud-services/catalog-source.tsx:109
@@ -233,6 +276,10 @@ msgstr ""
 
 #: public/components/factory/list-page.jsx:20
 msgid "Expand"
+msgstr ""
+
+#: public/components/image-stream-tag.tsx:71
+msgid "Exposed Ports"
 msgstr ""
 
 #: public/components/factory/list-page.jsx:40
@@ -263,6 +310,10 @@ msgstr ""
 msgid "HPAs"
 msgstr ""
 
+#: public/components/image-stream-tag.tsx:54
+msgid "Image Name"
+msgstr ""
+
 #: public/models/index.ts:322
 msgid "Image Stream Tags"
 msgstr ""
@@ -287,6 +338,10 @@ msgstr ""
 msgid "InstallPlans"
 msgstr ""
 
+#: public/components/namespace.jsx:34
+msgid "is already terminating"
+msgstr ""
+
 #: public/components/nav.jsx:396
 #: public/models/index.ts:336
 msgid "Jobs"
@@ -298,6 +353,8 @@ msgid "Kubernetes API"
 msgstr ""
 
 #: public/components/cloud-services/clusterserviceversion-resource.tsx:21
+#: public/components/namespace.jsx:51
+#: public/components/namespace.jsx:76
 msgid "Labels"
 msgstr ""
 
@@ -325,6 +382,10 @@ msgstr ""
 msgid "Memory Usage"
 msgstr ""
 
+#: public/components/namespace.jsx:177
+msgid "Memory Usage by Pod (Top 10)"
+msgstr ""
+
 #: public/components/cloud-services/spec-descriptors/configure-size.tsx:13
 msgid "Modify"
 msgstr ""
@@ -334,11 +395,17 @@ msgstr ""
 #: public/components/cloud-services/catalog-source.tsx:92
 #: public/components/cloud-services/clusterserviceversion-resource.tsx:197
 #: public/components/cloud-services/clusterserviceversion-resource.tsx:20
+#: public/components/cloud-services/clusterserviceversion.tsx:20
+#: public/components/image-stream-tag.tsx:110
+#: public/components/image-stream-tag.tsx:89
+#: public/components/namespace.jsx:49
+#: public/components/namespace.jsx:73
 msgid "Name"
 msgstr ""
 
 #: public/components/cloud-services/catalog-source.tsx:113
 #: public/components/cloud-services/clusterserviceversion-resource.tsx:199
+#: public/components/cloud-services/clusterserviceversion.tsx:21
 msgid "Namespace"
 msgstr ""
 
@@ -347,6 +414,8 @@ msgstr ""
 msgid "Namespaces"
 msgstr ""
 
+#: public/components/namespace.jsx:201
+#: public/components/namespace.jsx:203
 #: public/components/nav.jsx:407
 #: public/models/index.ts:623
 msgid "Network Policies"
@@ -360,8 +429,20 @@ msgstr ""
 msgid "No Application Resources Defined"
 msgstr ""
 
+#: public/components/cloud-services/clusterserviceversion-resource.tsx:66
+msgid "No Application Resources Found"
+msgstr ""
+
 #: public/components/cloud-services/catalog-source.tsx:141
 msgid "No Catalog Sources Found"
+msgstr ""
+
+#: public/components/image-stream-tag.tsx:105
+msgid "No environment variables"
+msgstr ""
+
+#: public/components/image-stream-tag.tsx:84
+msgid "No labels"
 msgstr ""
 
 #: public/components/cloud-services/catalog-source.tsx:80
@@ -371,6 +452,17 @@ msgstr ""
 #: public/components/nav.jsx:427
 #: public/models/index.ts:347
 msgid "Nodes"
+msgstr ""
+
+#: public/components/cloud-services/clusterserviceversion.tsx:121
+#: public/components/cloud-services/clusterserviceversion.tsx:131
+#: public/components/cloud-services/clusterserviceversion.tsx:139
+#: public/components/cloud-services/clusterserviceversion.tsx:147
+msgid "Not available"
+msgstr ""
+
+#: public/components/namespace.jsx:153
+msgid "Not Configured"
 msgstr ""
 
 #: public/components/cluster-overview.jsx:134
@@ -386,12 +478,17 @@ msgstr ""
 msgid "Operator Catalog Sources"
 msgstr ""
 
+#: public/components/cloud-services/clusterserviceversion.tsx:85
+msgid "Operator Lifecycle Manager not enabled for this namespace"
+msgstr ""
+
 #: public/components/nav.jsx:378
 msgid "Operators"
 msgstr ""
 
 #: public/components/cluster-overview.jsx:248
 #: public/components/cluster-overview.jsx:250
+#: public/components/namespace.jsx:185
 msgid "Overview"
 msgstr ""
 
@@ -417,6 +514,10 @@ msgstr ""
 msgid "Petsets"
 msgstr ""
 
+#: public/components/cloud-services/clusterserviceversion.tsx:85
+msgid "Please contact a system administrator and ask them to enable Operator Lifecycle Manager to continue."
+msgstr ""
+
 #: public/components/cluster-overview.jsx:120
 msgid "Pod Usage"
 msgstr ""
@@ -440,6 +541,10 @@ msgstr ""
 msgid "Prometheuses"
 msgstr ""
 
+#: public/components/cloud-services/clusterserviceversion.tsx:120
+msgid "Provider"
+msgstr ""
+
 #: public/components/cloud-services/catalog-source.tsx:114
 #: public/components/cloud-services/catalog-source.tsx:98
 msgid "Publisher"
@@ -457,6 +562,11 @@ msgstr ""
 
 #: public/models/index.ts:130
 msgid "Reports"
+msgstr ""
+
+#: public/components/namespace.jsx:191
+#: public/components/namespace.jsx:75
+msgid "Requester"
 msgstr ""
 
 #: public/components/nav.jsx:432
@@ -526,6 +636,10 @@ msgstr ""
 msgid "Show Failed Reason"
 msgstr ""
 
+#: public/components/image-stream-tag.tsx:58
+msgid "Size"
+msgstr ""
+
 #: public/components/cluster-overview.jsx:173
 #: public/components/cluster-overview.jsx:252
 msgid "Software Info"
@@ -537,6 +651,10 @@ msgid "Stateful Sets"
 msgstr ""
 
 #: public/components/cloud-services/clusterserviceversion-resource.tsx:23
+#: public/components/cloud-services/clusterserviceversion.tsx:23
+#: public/components/namespace.jsx:197
+#: public/components/namespace.jsx:50
+#: public/components/namespace.jsx:74
 #: public/components/nav.jsx:373
 msgid "Status"
 msgstr ""
@@ -562,6 +680,10 @@ msgstr ""
 #: public/components/nav.jsx:382
 #: public/models/index.ts:48
 msgid "Subscriptions"
+msgstr ""
+
+#: public/components/image-stream-tag.tsx:56
+msgid "Summary"
 msgstr ""
 
 #: public/models/index.ts:531
@@ -598,6 +720,15 @@ msgstr ""
 msgid "Unknown graph type:"
 msgstr ""
 
+#: public/components/image-stream-tag.tsx:73
+msgid "User"
+msgstr ""
+
+#: public/components/image-stream-tag.tsx:111
+#: public/components/image-stream-tag.tsx:90
+msgid "Value"
+msgstr ""
+
 #: public/components/cloud-services/clusterserviceversion-resource.tsx:24
 msgid "Version"
 msgstr ""
@@ -618,6 +749,10 @@ msgstr ""
 msgid "View Grafana Dashboard"
 msgstr ""
 
+#: public/components/cloud-services/clusterserviceversion.tsx:52
+msgid "View instances"
+msgstr ""
+
 #: public/components/channel-operators/app-version.jsx:156
 #: public/components/channel-operators/app-version.jsx:196
 msgid "View Logs"
@@ -629,6 +764,10 @@ msgstr ""
 
 #: public/components/cloud-services/catalog-source.tsx:48
 msgid "View subscriptions"
+msgstr ""
+
+#: public/components/image-stream-tag.tsx:69
+msgid "Working Dir"
 msgstr ""
 
 #: public/components/nav.jsx:386
