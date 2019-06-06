@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Helmet } from 'react-helmet';
 
-import {NavTitle, DocumentationSidebar} from '../utils';
+import {NavTitle, DocumentationSidebar, gettext} from '../utils';
 import {LDAPSetting} from './ldap';
 import {CertsInfoContainer} from './certs-info';
 import {SafetyFirst} from '../safety-first';
@@ -30,7 +30,7 @@ export const ClusterSettingsPage = connectToFlags(FLAGS.CLUSTER_UPDATES)(
                 <div className="co-cluster-updates">
                   <div className="co-cluster-updates__component">
                     <div className="co-cluster-updates__heading--name-wrapper">
-                      <span className="co-cluster-updates__heading--name">General</span>
+                      <span className="co-cluster-updates__heading--name">{gettext('General')}</span>
                     </div>
                     <br />
                     <LDAPSetting />

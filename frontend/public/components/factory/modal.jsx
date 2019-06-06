@@ -9,6 +9,7 @@ import { Router } from 'react-router-dom';
 import store from '../../redux';
 import { ButtonBar } from '../utils/button-bar';
 import { history } from '../utils/router';
+import { gettext } from '../utils/gettext';
 
 export const createModalLauncher = (Component) => (props = {}) => {
   const modalContainer = document.getElementById('modal-container');
@@ -60,7 +61,7 @@ export const ModalSubmitFooter = ({message, errorMessage, inProgress, cancel, su
     cancel(e);
   };
   return <ModalFooter inProgress={inProgress} errorMessage={errorMessage} message={message}>
-    <button type="button" onClick={onCancelClick} className="btn btn-default">Cancel</button>
+    <button type="button" onClick={onCancelClick} className="btn btn-default">{gettext('Cancel')}</button>
     <button type="submit" className="btn btn-primary" disabled={submitDisabled} id="confirm-action">{submitText}</button>
   </ModalFooter>;
 };

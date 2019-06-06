@@ -4,7 +4,7 @@ import * as React from 'react';
 import { coFetchJSON } from '../../co-fetch';
 import { SettingsRow, SettingsLabel, SettingsContent } from './cluster-settings';
 import { SafetyFirst } from '../safety-first';
-import { Timestamp, ResourceLink } from '../utils';
+import { Timestamp, ResourceLink, gettext } from '../utils';
 
 export class CertsInfoContainer extends SafetyFirst {
   constructor(props){
@@ -47,10 +47,10 @@ export const CertsInfo = (props) => {
 
   return <div>
     {caCertDate && <SettingsRow>
-      <SettingsLabel>CA Certificate</SettingsLabel>
+      <SettingsLabel>{gettext('CA Certificate')}</SettingsLabel>
       <SettingsContent>
         <div className="certs-info-cert">
-          <ResourceLink kind="Secret" name="tectonic-ca-cert-secret" namespace="tectonic-system" displayName="Tectonic CA certificate" />
+          <ResourceLink kind="Secret" name="tectonic-ca-cert-secret" namespace="tectonic-system" displayName={gettext('Tectonic CA certificate')} />
         </div>
         <div>
           Expires: <div className="certs-info-exp">

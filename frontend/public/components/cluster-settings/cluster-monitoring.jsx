@@ -7,7 +7,7 @@ import { Field, reduxForm } from 'redux-form';
 
 import { k8sPatch } from '../../module/k8s';
 import { ConfigMapModel } from '../../models';
-import { Firehose, StatusBox, PromiseComponent, ResourceLink, validate, units } from '../utils';
+import { Firehose, StatusBox, PromiseComponent, ResourceLink, validate, units, gettext } from '../utils';
 import { AlertManagersListContainer } from '../alert-manager';
 import { createModalLauncher, ModalTitle, ModalBody, ModalSubmitFooter } from '../factory/modal';
 
@@ -60,7 +60,7 @@ class PromSettingsModal extends PromiseComponent {
           submitDisabled={invalid}
           errorMessage={errorMessage}
           inProgress={inProgress}
-          submitText="Save Changes"
+          submitText={gettext('Save Changes')}
           cancel={e => this.props.cancel(e)} />
       </form>
     );
@@ -187,18 +187,18 @@ const MemCPUModalLink = ({section, type, config, obj}) => {
         See <a href="https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/#meaning-of-cpu" target="_blank" className="co-external-link" rel="noopener noreferrer">Meaning of CPU</a> for details.
       </div>
       : <div className="col-xs-12 text-muted" style={{paddingTop: 15, paddingBottom: 10}}>
-        Requests and limits for memory are measured in bytes.
-        For example, the following are roughly equivalent: 128974848 ≈ 129M ≈ 123Mi.
+        {gettext('Requests and limits for memory are measured in bytes.')}
+        {gettext('For example, the following are roughly equivalent: 128974848 ≈ 129M ≈ 123Mi.')}
         See <a href="https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/#meaning-of-memory" target="_blank" className="co-external-link" rel="noopener  noreferrer">Meaning of memory</a> for more details.
       </div>;
 
     const FormBody = ({error}) => <div>
       <div className="col-xs-5">
-        <label style={labelStyle} className="text-muted text-uppercase" htmlFor="request">Request</label>
+        <label style={labelStyle} className="text-muted text-uppercase" htmlFor="request">{gettext('Request')}</label>
         <Field name="request" type="text" placeholder={type === 'cpu' ? '500m' : '2Gi'} component={renderField} autoFocus />
       </div>
       <div className="col-xs-5">
-        <label style={labelStyle} className="text-muted text-uppercase" htmlFor="limit">Limit</label>
+        <label style={labelStyle} className="text-muted text-uppercase" htmlFor="limit">{gettext('Limit')}</label>
         <Field name="limit" type="text" placeholder={type === 'cpu' ? '500m' : '2Gi'} component={renderField} />
       </div>
       {helpText}
@@ -235,11 +235,11 @@ const RetentionModalLink = ({config, obj}) => {
   const onClick = () => {
     const modal = createModalLauncher(props => <PromSettingsModal {...props} />);
     const initialValues = { retention };
-    const description = 'Specify the retention time of cluster monitoring samples.';
-    const title = 'Cluster Monitoring Sample Retention';
+    const description = gettext('Specify the retention time of cluster monitoring samples.');
+    const title = gettext('Cluster Monitoring Sample Retention');
     const FormBody = () => <div>
       <div className="col-xs-5">
-        <label style={labelStyle} className="text-muted text-uppercase" htmlFor="retention">sample retention</label>
+        <label style={labelStyle} className="text-muted text-uppercase" htmlFor="retention">{gettext('sample retention')}</label>
         <Field name="retention" type="text" component={renderField} autoFocus placeholder="24h" />
       </div>
     </div>;
@@ -272,8 +272,8 @@ class Expander extends React.PureComponent {
         <a className="co-cluster-updates__toggle" onClick={this.expand}>
           {
             this.state.expanded
-              ? 'Collapse'
-              : 'Expand'
+              ? gettext('Collapse')
+              : gettext('Expand')
           }
         </a>
       </div>
@@ -301,21 +301,21 @@ class ClusterMonitoring_ extends React.PureComponent {
         <div className="co-cluster-updates__details">
           <div className="co-cluster-updates__detail">
             <dl>
-              <dt>CPU Resources</dt>
+              <dt>{gettext('CPU Resources')}</dt>
               <dd>
                 <MemCPUModalLink section="prometheusK8s" type="cpu" config={config} obj={obj} />
               </dd>
-              <dt>Memory Resources</dt>
+              <dt>{gettext('Memory Resources')}</dt>
               <dd>
                 <MemCPUModalLink section="prometheusK8s" type="memory" config={config} obj={obj} />
               </dd>
-              <dt>Alert manager</dt>
+              <dt>{gettext('Alert manager')}</dt>
               <dd><AlertManagersListContainer /></dd>
             </dl>
           </div>
           <div className="co-cluster-updates__detail">
             <dl>
-              <dt>Retention</dt>
+              <dt>{gettext('Retention')}</dt>
               <dd>
                 <RetentionModalLink config={config} obj={obj} />
               </dd>
@@ -327,11 +327,11 @@ class ClusterMonitoring_ extends React.PureComponent {
         <div className="co-cluster-updates__details">
           <div className="co-cluster-updates__detail">
             <dl>
-              <dt>CPU Resources</dt>
+              <dt>{gettext('CPU Resources')}</dt>
               <dd>
                 <MemCPUModalLink section="alertmanagerMain" type="cpu" config={config} obj={obj} />
               </dd>
-              <dt>Memory Resources</dt>
+              <dt>{gettext('Memory Resources')}</dt>
               <dd>
                 <MemCPUModalLink section="alertmanagerMain" type="memory" config={config} obj={obj} />
               </dd>
@@ -339,7 +339,7 @@ class ClusterMonitoring_ extends React.PureComponent {
           </div>
           <div className="co-cluster-updates__detail">
             <dl>
-              <dt>Storage</dt>
+              <dt>{gettext('Storage')}</dt>
               <dd>
                 {vct}
               </dd>

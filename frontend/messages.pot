@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-06 15:13+0800\n"
+"POT-Creation-Date: 2019-06-06 16:57+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -978,4 +978,233 @@ msgid "You don't have access to this section due to cluster policy."
 msgstr ""
 
 msgid "No Data"
+msgstr ""
+
+msgid "Components"
+msgstr ""
+
+msgid "None"
+msgstr ""
+
+msgid "No Install Plans Found"
+msgstr ""
+
+msgid ""
+"Install Plans are created automatically by subscriptions or manually using "
+"kubectl."
+msgstr ""
+
+msgid "Install Plans by name"
+msgstr ""
+
+msgid ""
+"Inspect the requirements for the components specified in this install plan "
+"before approving."
+msgstr ""
+
+msgid ""
+"Once approved, the following resources will be created in order to satisfy "
+"the requirements for the components specified in the plan."
+msgstr ""
+
+msgid "API Version"
+msgstr ""
+
+msgid "Approval Strategy"
+msgstr ""
+
+msgid "default"
+msgstr ""
+
+msgid "Subscriptions by package"
+msgstr ""
+
+msgid "Installed Version"
+msgstr ""
+
+msgid "Approval"
+msgstr ""
+
+msgid "Upgrade Status"
+msgstr ""
+
+msgid "1 installed"
+msgstr ""
+
+msgid "1 installing"
+msgstr ""
+
+msgid "Tectonic CA certificate"
+msgstr ""
+
+msgid "Save Changes"
+msgstr ""
+
+msgid "Specify the retention time of cluster monitoring samples."
+msgstr ""
+
+msgid "Cluster Monitoring Sample Retention"
+msgstr ""
+
+msgid "sample retention"
+msgstr ""
+
+msgid "CPU Resources"
+msgstr ""
+
+msgid "Memory Resources"
+msgstr ""
+
+msgid "Alert manager"
+msgstr ""
+
+msgid "Retention"
+msgstr ""
+
+msgid "Host"
+msgstr ""
+
+msgid "Host and optional port of the LDAP server in the form \"host:port\"."
+msgstr ""
+
+msgid "Username"
+msgstr ""
+
+msgid "Password"
+msgstr ""
+
+msgid "Base DN"
+msgstr ""
+
+msgid ""
+"BaseDN to start the user search from. It will translate to the query: "
+"\"(&(objectClass=person)(uid=<username>))\"."
+msgstr ""
+
+msgid "Optional filter to apply when searching the directory."
+msgstr ""
+
+msgid "Username Attribute"
+msgstr ""
+
+msgid ""
+"Username attribute used for comparing user entries. This will be translated "
+"and combined with the other filter as \"(<attr>=<username>)\". For the end "
+"user, this is the field they'll use as their username."
+msgstr ""
+
+msgid "User Id Attribute"
+msgstr ""
+
+msgid "String representation of the user's unique identifier."
+msgstr ""
+
+msgid "Email Attribute"
+msgstr ""
+
+msgid "Required. Attribute to map to Email."
+msgstr ""
+
+msgid "Name Attribute"
+msgstr ""
+
+msgid "Maps to display name of users. No default value."
+msgstr ""
+
+msgid ""
+"BaseDN to start the group search from. It will translate to the query: "
+"(&(objectClass=group)(member=<user uid>))."
+msgstr ""
+
+msgid "User Attribute"
+msgstr ""
+
+msgid "Matches the user attribute against a group."
+msgstr ""
+
+msgid "Member Attribute"
+msgstr ""
+
+msgid "Matches a user to a group."
+msgstr ""
+
+msgid "The name of a group."
+msgstr ""
+
+msgid "LDAP Service Account"
+msgstr ""
+
+msgid ""
+"If your LDAP server allows anonymous authorization, you must provide "
+"additional credentials to search for users and groups."
+msgstr ""
+
+msgid "LDAP User Info"
+msgstr ""
+
+msgid "Users"
+msgstr ""
+
+msgid "LDAP Group Info"
+msgstr ""
+
+msgid "Groups"
+msgstr ""
+
+msgid "Test LDAP config"
+msgstr ""
+
+msgid "Test Configuration"
+msgstr ""
+
+msgid ""
+"Supply your credentials to test the current configuration. The LDAP server "
+"must be reachable from the Tectonic Console for testing to work."
+msgstr ""
+
+msgid "Required if LDAP host does not use SSL."
+msgstr ""
+
+msgid "Don&rsquo;t verify the CA."
+msgstr ""
+
+msgid "PEM data containing the root CAs."
+msgstr ""
+
+msgid "Error"
+msgstr ""
+
+msgid "username"
+msgstr ""
+
+msgid "email"
+msgstr ""
+
+msgid "groups"
+msgstr ""
+
+msgid "Next: Update Tectonic Identity"
+msgstr ""
+
+msgid "Continue"
+msgstr ""
+
+msgid "Update Tectonic Identity"
+msgstr ""
+
+msgid "The last step is to apply the updated configuration to the cluster."
+msgstr ""
+
+msgid ""
+"It is highly recommended you use the root kubeconfig and that you download a "
+"backup of the current configuration before proceeding."
+msgstr ""
+
+msgid "Download New Config"
+msgstr ""
+
+msgid "Download Existing Config"
+msgstr ""
+
+msgid "Cancel"
 msgstr ""

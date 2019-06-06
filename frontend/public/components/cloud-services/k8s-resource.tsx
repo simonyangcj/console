@@ -5,7 +5,7 @@ import * as _ from 'lodash-es';
 
 import { connectToPlural } from '../../kinds';
 import { CRDDescription, ClusterServiceVersionKind, ClusterServiceVersionResourceLink, ClusterServiceVersionResourceKind } from './index';
-import { ResourceLink, Timestamp, MsgBox } from '../utils';
+import { ResourceLink, Timestamp, MsgBox, gettext } from '../utils';
 import { ColHead, ListHeader, MultiListPage, List } from '../factory';
 import { K8sResourceKind, GroupVersionKind, kindForReference, K8sKind } from '../../module/k8s';
 
@@ -40,10 +40,10 @@ export const Resources = connectToPlural((props: ResourceProps) => {
   const isCR = (k8sObj) => crds.find((kind) => kind === k8sObj.kind);
 
   const ResourceHeader: React.SFC<ResourceHeaderProps> = (headerProps) => <ListHeader>
-    <ColHead {...headerProps} className="col-xs-4" sortField="metadata.name">Name</ColHead>
-    <ColHead {...headerProps} className="col-xs-2" sortField="kind">Type</ColHead>
-    <ColHead {...headerProps} className="col-xs-2" sortField="status.phase">Status</ColHead>
-    <ColHead {...headerProps} className="col-xs-4" sortField="metadata.creationTimestamp">Created</ColHead>
+    <ColHead {...headerProps} className="col-xs-4" sortField="metadata.name">{gettext('Name')}</ColHead>
+    <ColHead {...headerProps} className="col-xs-2" sortField="kind">{gettext('Type')}</ColHead>
+    <ColHead {...headerProps} className="col-xs-2" sortField="status.phase">{gettext('Status')}</ColHead>
+    <ColHead {...headerProps} className="col-xs-4" sortField="metadata.creationTimestamp">{gettext('Created')}</ColHead>
   </ListHeader>;
 
   const ResourceRow: React.SFC<ResourceRowProps> = ({obj}) => <div className="row co-resource-list__item">
@@ -56,7 +56,7 @@ export const Resources = connectToPlural((props: ResourceProps) => {
   </div>;
 
   return <MultiListPage
-    filterLabel="Resources by name"
+    filterLabel={gettext('Resources by name')}
     resources={firehoseResources}
     rowFilters={[{
       type: 'clusterserviceversion-resource-kind',
@@ -69,7 +69,7 @@ export const Resources = connectToPlural((props: ResourceProps) => {
     ListComponent={(listProps) => <List
       {...listProps}
       data={listProps.data.map(o => ({...o, rowKey: o.metadata.uid}))}
-      EmptyMsg={() => <MsgBox title="No Resources Found" detail={`There are no Kubernetes resources used by this ${props.obj.kind}.`} />}
+      EmptyMsg={() => <MsgBox title={gettext('No Resources Found')} detail={`${gettext('There are no Kubernetes resources used by this %s.', props.obj.kind)}`} />}
       Header={ResourceHeader}
       Row={ResourceRow} />}
   />;

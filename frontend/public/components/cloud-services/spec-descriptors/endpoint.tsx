@@ -3,7 +3,7 @@
 import * as React from 'react';
 import * as _ from 'lodash-es';
 
-import { ResourceIcon } from '../../utils';
+import { ResourceIcon, gettext } from '../../utils';
 
 export const EndpointRow: React.SFC<EndpointRowProps> = ({endpoint}) => {
   const detail = ['scheme', 'honorLabels', 'targetPort'].reduce((element, field) => _.get(endpoint, field)
@@ -13,8 +13,8 @@ export const EndpointRow: React.SFC<EndpointRowProps> = ({endpoint}) => {
 
   return <div>
     <div className="row co-ip-header">
-      <div className="col-xs-6">Port</div>
-      <div className="col-xs-2">Interval</div>
+      <div className="col-xs-6">{gettext('Port')}</div>
+      <div className="col-xs-2">{gettext('Interval')}</div>
       <div className="col-xs-4"></div>
     </div>
     <div className="rows">

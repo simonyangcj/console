@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-06 15:13+0800\n"
+"POT-Creation-Date: 2019-06-06 16:57+0800\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
@@ -970,14 +970,244 @@ msgstr "由于群集策略，您没有访问此部分的权限。"
 msgid "No Data"
 msgstr "无数据"
 
+msgid "Components"
+msgstr "组件"
+
+msgid "None"
+msgstr "无"
+
+msgid "No Install Plans Found"
+msgstr "无安装计划"
+
+msgid ""
+"Install Plans are created automatically by subscriptions or manually using "
+"kubectl."
+msgstr "安装计划由订阅自动创建或使用kubectl手动创建。"
+
+msgid "Install Plans by name"
+msgstr "按安装计划名称"
+
+msgid ""
+"Inspect the requirements for the components specified in this install plan "
+"before approving."
+msgstr "在批准之前，请检查本安装计划中指定的组件的要求。"
+
+msgid ""
+"Once approved, the following resources will be created in order to satisfy "
+"the requirements for the components specified in the plan."
+msgstr "获得批准后，将创建以下资源，以满足计划中指定的组件的要求。"
+
+msgid "API Version"
+msgstr "API版本"
+
+msgid "Approval Strategy"
+msgstr "审批策略"
+
+msgid "default"
+msgstr "默认"
+
+msgid "Subscriptions by package"
+msgstr "按订阅包"
+
+msgid "Installed Version"
+msgstr "已安装的版本"
+
+msgid "Approval"
+msgstr "赞同"
+
+msgid "Upgrade Status"
+msgstr "升级状态"
+
+msgid "1 installed"
+msgstr "1个已安装"
+
+msgid "1 installing"
+msgstr "1个安装中"
+
+msgid "Tectonic CA certificate"
+msgstr "构造CA证书"
+
+msgid "Save Changes"
+msgstr "保存更改"
+
+msgid "Specify the retention time of cluster monitoring samples."
+msgstr "指定群集监视样本的保留时间。"
+
+msgid "Cluster Monitoring Sample Retention"
+msgstr "群集监控样本留样"
+
+msgid "sample retention"
+msgstr "留样"
+
+msgid "CPU Resources"
+msgstr " CPU资源"
+
+msgid "Memory Resources"
+msgstr "内存资源"
+
+msgid "Alert manager"
+msgstr "报警管理"
+
+msgid "Retention"
+msgstr ""
+
+msgid "Host"
+msgstr "主机"
+
+msgid "Host and optional port of the LDAP server in the form \"host:port\"."
+msgstr "LDAP服务器的主机和可选端口，格式为\"host：port\"。"
+
+msgid "Username"
+msgstr "用户名"
+
+msgid "Password"
+msgstr "密码"
+
+msgid "Base DN"
+msgstr "基础DN"
+
+msgid ""
+"BaseDN to start the user search from. It will translate to the query: "
+"\"(&(objectClass=person)(uid=<username>))\"."
+msgstr ""
+"BaseDN启动用户搜索。 它将转换为查询：\"(&(objectClass=person)"
+"(uid=<username>))\"。"
+
+msgid "Optional filter to apply when searching the directory."
+msgstr "搜索目录时要应用的可选过滤器。"
+
+msgid "Username Attribute"
+msgstr "用户名属性"
+
+msgid ""
+"Username attribute used for comparing user entries. This will be translated "
+"and combined with the other filter as \"(<attr>=<username>)\". For the end "
+"user, this is the field they'll use as their username."
+msgstr ""
+"用户名属性用于比较用户条目。 这将被翻译并与其他过滤器合并为"
+"\"(<attr>=<username>)\"。 对于最终用户，这是他们将用作用户名的字段。"
+
+msgid "User Id Attribute"
+msgstr "用户Id属性"
+
+msgid "String representation of the user's unique identifier."
+msgstr "用户唯一标识符的字符串表示形式。"
+
+msgid "Email Attribute"
+msgstr "Email属性"
+
+msgid "Required. Attribute to map to Email."
+msgstr "必填。 要映射到Email属性。"
+
+msgid "Name Attribute"
+msgstr "名称属性"
+
+msgid "Maps to display name of users. No default value."
+msgstr "用于显示用户名称。 没有默认值。"
+
+msgid ""
+"BaseDN to start the group search from. It will translate to the query: "
+"(&(objectClass=group)(member=<user uid>))."
+msgstr ""
+"BaseDN启动组搜索。 它将转换为查询：(&(objectClass=group)(member=<user "
+"uid>))。"
+
+msgid "User Attribute"
+msgstr "用户属性"
+
+msgid "Matches the user attribute against a group."
+msgstr "将用户属性与组匹配。"
+
+msgid "Member Attribute"
+msgstr "成员属性"
+
+msgid "Matches a user to a group."
+msgstr "将用户与组匹配。"
+
+msgid "The name of a group."
+msgstr "组名"
+
+msgid "LDAP Service Account"
+msgstr "LDAP服务帐户"
+
+msgid ""
+"If your LDAP server allows anonymous authorization, you must provide "
+"additional credentials to search for users and groups."
+msgstr ""
+
+msgid "LDAP User Info"
+msgstr "如果LDAP服务器允许匿名授权，必须提供其他凭据才能搜索用户和组。"
+
+msgid "Users"
+msgstr "用户"
+
+msgid "LDAP Group Info"
+msgstr "LDAP组信息"
+
+msgid "Groups"
+msgstr "组"
+
+msgid "Test LDAP config"
+msgstr "测试LDAP配置"
+
+msgid "Test Configuration"
+msgstr "测试配置"
+
+msgid ""
+"Supply your credentials to test the current configuration. The LDAP server "
+"must be reachable from the Tectonic Console for testing to work."
+msgstr ""
+"提供凭据以测试当前配置。 必须可以从Tectonic控制台访问LDAP服务器以进行测试。"
+
+msgid "Required if LDAP host does not use SSL."
+msgstr "如果LDAP主机不使用SSL，必填"
+
+msgid "Don&rsquo;t verify the CA."
+msgstr "不验证CA."
+
+msgid "PEM data containing the root CAs."
+msgstr "PEM数据包含root CAs"
+
+msgid "Error"
+msgstr "错误"
+
+msgid "username"
+msgstr "用户名"
+
+msgid "email"
+msgstr "email"
+
+msgid "groups"
+msgstr "组"
+
+msgid "Next: Update Tectonic Identity"
+msgstr "下一步：更新构造身份"
+
+msgid "Continue"
+msgstr "继续"
+
+msgid "Update Tectonic Identity"
+msgstr "更新构造身份"
+
+msgid "The last step is to apply the updated configuration to the cluster."
+msgstr "最后一步是将更新的配置应用到集群。"
+
+msgid ""
+"It is highly recommended you use the root kubeconfig and that you download a "
+"backup of the current configuration before proceeding."
+msgstr "强烈建议您使用root kubeconfig，并在继续前备份当前配置。"
+
+msgid "Download New Config"
+msgstr "下载新配置 "
+
+msgid "Download Existing Config"
+msgstr "下载现有配置"
+
+msgid "Cancel"
+msgstr "取消"
+
 #~ msgid "Running"
 #~ msgstr "运行中"
-
-#~ msgid "Cancel"
-#~ msgstr "取消"
-
-#~ msgid "Error"
-#~ msgstr "错误"
 
 #~ msgid "event"
 #~ msgstr "事件"

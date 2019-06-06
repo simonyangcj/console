@@ -8,7 +8,7 @@ import { ResourceRequirementsModalLink } from './resource-requirements';
 import { EndpointList } from './endpoint';
 import { configureSizeModal } from './configure-size';
 import { K8sKind } from '../../../module/k8s';
-import { LoadingInline, Selector, ResourceLink } from '../../utils';
+import { LoadingInline, Selector, ResourceLink, gettext } from '../../utils';
 
 /**
  * Main entrypoint component for rendering custom UI for a given spec descriptor. This should be used instead of importing
@@ -43,9 +43,9 @@ export class ClusterServiceVersionResourceSpec extends React.Component<SpecDescr
           return <ResourceLink kind="Namespace" name={specValue.matchNames[0]} title={specValue.matchNames[0]} namespace={namespace} />;
         case ALMSpecDescriptors.resourceRequirements:
           return <dl className="co-spec-descriptor--resource-requirements">
-            <dt>Resource Limits</dt>
+            <dt>{gettext('Resource Limits')}</dt>
             <dd><ResourceRequirementsModalLink type="limits" obj={resource} path={specDescriptor.path} onChange={wasChanged} /></dd>
-            <dt>Request Limits</dt>
+            <dt>{gettext('Request Limits')}</dt>
             <dd><ResourceRequirementsModalLink type="requests" obj={resource} path={specDescriptor.path} onChange={wasChanged} /></dd>
           </dl>;
         default:
@@ -54,7 +54,7 @@ export class ClusterServiceVersionResourceSpec extends React.Component<SpecDescr
           } else if (specCapability.startsWith(ALMSpecDescriptors.selector)) {
             return <Selector selector={specValue} kind={specCapability.split(ALMSpecDescriptors.selector)[1]} />;
           }
-          return <span>(Unsupported)</span>;
+          return <span>{gettext('(Unsupported)')}</span>;
       }
     }, <span />);
 

@@ -6,7 +6,7 @@ import { match, Link } from 'react-router-dom';
 import { safeLoad } from 'js-yaml';
 
 import { List, ListHeader, ColHead, DetailsPage, ListPage } from '../factory';
-import { MsgBox, ResourceLink, ResourceCog, navFactory, Cog, ResourceSummary, LoadingInline, SectionHeading } from '../utils';
+import { MsgBox, ResourceLink, ResourceCog, navFactory, Cog, ResourceSummary, LoadingInline, SectionHeading, gettext } from '../utils';
 import { SubscriptionKind, SubscriptionState, Package, InstallPlanApproval, ClusterServiceVersionKind, olmNamespace } from './index';
 import { referenceForModel, k8sKill, k8sUpdate, ConfigMapKind } from '../../module/k8s';
 import { SubscriptionModel, ClusterServiceVersionModel, CatalogSourceModel, ConfigMapModel, InstallPlanModel } from '../../models';
@@ -15,19 +15,19 @@ import { createSubscriptionChannelModal } from '../modals/subscription-channel-m
 import { createInstallPlanApprovalModal } from '../modals/installplan-approval-modal';
 
 export const SubscriptionHeader: React.SFC<SubscriptionHeaderProps> = (props) => <ListHeader>
-  <ColHead {...props} className="col-xs-6 col-sm-4 col-md-3" sortField="metadata.name">Name</ColHead>
-  <ColHead {...props} className="col-xs-6 col-sm-4 col-md-3" sortField="metadata.namespace">Namespace</ColHead>
-  <ColHead {...props} className="hidden-xs col-sm-4 col-md-3 col-lg-2">Status</ColHead>
-  <ColHead {...props} className="hidden-xs hidden-sm col-md-3 col-lg-2">Channel</ColHead>
-  <ColHead {...props} className="hidden-xs hidden-sm hidden-md col-lg-2">Approval Strategy</ColHead>
+  <ColHead {...props} className="col-xs-6 col-sm-4 col-md-3" sortField="metadata.name">{gettext('Name')}</ColHead>
+  <ColHead {...props} className="col-xs-6 col-sm-4 col-md-3" sortField="metadata.namespace">{gettext('Namespace')}</ColHead>
+  <ColHead {...props} className="hidden-xs col-sm-4 col-md-3 col-lg-2">{gettext('Status')}</ColHead>
+  <ColHead {...props} className="hidden-xs hidden-sm col-md-3 col-lg-2">{gettext('Channel')}</ColHead>
+  <ColHead {...props} className="hidden-xs hidden-sm hidden-md col-lg-2">{gettext('Approval Strategy')}</ColHead>
 </ListHeader>;
 
 const subscriptionState = (state: SubscriptionState) => {
   switch (state) {
-    case SubscriptionState.SubscriptionStateUpgradeAvailable: return <span><i className="fa fa-exclamation-triangle text-warning" /> Upgrade available</span>;
-    case SubscriptionState.SubscriptionStateUpgradePending: return <span><i className="fa fa-spin fa-circle-o-notch co-catalog-spinner--downloading" /> Upgrading</span>;
-    case SubscriptionState.SubscriptionStateAtLatest: return <span><i className="fa fa-check-circle" style={{color: '#2ec98e'}} /> Up to date</span>;
-    default: return <span className={_.isEmpty(state) && 'text-muted'}>{state || 'Unknown'}</span>;
+    case SubscriptionState.SubscriptionStateUpgradeAvailable: return <span><i className="fa fa-exclamation-triangle text-warning" /> {gettext('Upgrade available')}</span>;
+    case SubscriptionState.SubscriptionStateUpgradePending: return <span><i className="fa fa-spin fa-circle-o-notch co-catalog-spinner--downloading" /> {gettext('Upgrading')}</span>;
+    case SubscriptionState.SubscriptionStateAtLatest: return <span><i className="fa fa-check-circle" style={{color: '#2ec98e'}} /> {gettext('Up to date')}</span>;
+    default: return <span className={_.isEmpty(state) && 'text-muted'}>{state || gettext('Unknown')}</span>;
   }
 };
 
@@ -56,7 +56,7 @@ export const SubscriptionRow: React.SFC<SubscriptionRowProps> = (props) => {
       {subscriptionState(_.get(props.obj.status, 'state'))}
     </div>
     <div className="hidden-xs hidden-sm col-md-3 col-lg-2">
-      {props.obj.spec.channel || 'default'}
+      {props.obj.spec.channel || gettext('default')}
     </div>
     <div className="hidden-xs hidden-sm hidden-md col-lg-2">
       {props.obj.spec.installPlanApproval || 'Automatic'}
@@ -68,18 +68,18 @@ export const SubscriptionsList: React.SFC<SubscriptionsListProps> = (props) => <
   {...props}
   Row={SubscriptionRow}
   Header={SubscriptionHeader}
-  EmptyMsg={() => <MsgBox title="No Subscriptions Found" detail="Each namespace can subscribe to a single channel of a package for automatic updates." />} />;
+  EmptyMsg={() => <MsgBox title={gettext('No Subscriptions Found')} detail={gettext('Each namespace can subscribe to a single channel of a package for automatic updates.')} />} />;
 
 export const SubscriptionsPage: React.SFC<SubscriptionsPageProps> = (props) => <ListPage
   {...props}
   kind={referenceForModel(SubscriptionModel)}
-  title="Subscriptions"
+  title={gettext('Subscriptions')}
   showTitle={true}
   canCreate={true}
   createProps={{to: props.namespace ? `/k8s/ns/${props.namespace}/${CatalogSourceModel.plural}` : `/k8s/all-namespaces/${CatalogSourceModel.plural}`}}
-  createButtonText="Create Subscription"
+  createButtonText={gettext('Create Subscription')}
   ListComponent={SubscriptionsList}
-  filterLabel="Subscriptions by package" />;
+  filterLabel={gettext('Subscriptions by package')} />;
 
 export const SubscriptionDetails: React.SFC<SubscriptionDetailsProps> = (props) => {
   const {obj, installedCSV, pkg} = props;
@@ -97,15 +97,15 @@ export const SubscriptionDetails: React.SFC<SubscriptionDetailsProps> = (props) 
         </div>
         <div className="col-sm-6">
           <dl className="co-m-pane__details">
-            <dt>Installed Version</dt>
+            <dt>{gettext('Installed Version')}</dt>
             <dd>
               { _.get(obj.status, 'installedCSV') && installedCSV
                 ? <ResourceLink kind={referenceForModel(ClusterServiceVersionModel)} name={obj.status.installedCSV} namespace={obj.metadata.namespace} title={obj.status.installedCSV} />
                 : 'None' }
             </dd>
-            <dt>Starting Version</dt>
+            <dt>{gettext('Starting Version')}</dt>
             <dd>{obj.spec.startingCSV || 'None'}</dd>
-            <dt>Catalog</dt>
+            <dt>{gettext('Catalog')}</dt>
             <dd>
               <ResourceLink kind={referenceForModel(CatalogSourceModel)} name={obj.spec.source} namespace={catalogNS} title={obj.spec.source} />
             </dd>
@@ -146,7 +146,7 @@ export class SubscriptionUpdates extends React.Component<SubscriptionUpdatesProp
       <div className="co-detail-table__row row">
         <div className="co-detail-table__section col-sm-3">
           <dl className="co-m-pane__details">
-            <dt className="co-detail-table__section-header">Channel</dt>
+            <dt className="co-detail-table__section-header">{gettext('Channel')}</dt>
             <dd>{ this.state.waitingForUpdate
               ? <LoadingInline />
               : <a className="co-m-modal-link" onClick={() => channelModal()}>{obj.spec.channel || 'default'}</a>
@@ -155,7 +155,7 @@ export class SubscriptionUpdates extends React.Component<SubscriptionUpdatesProp
         </div>
         <div className="co-detail-table__section col-sm-3">
           <dl className="co-m-pane__details">
-            <dt className="co-detail-table__section-header">Approval</dt>
+            <dt className="co-detail-table__section-header">{gettext('Approval')}</dt>
             <dd>{ this.state.waitingForUpdate
               ? <LoadingInline />
               : <a className="co-m-modal-link" onClick={() => approvalModal()}>{obj.spec.installPlanApproval || 'Automatic'}</a>
@@ -164,17 +164,17 @@ export class SubscriptionUpdates extends React.Component<SubscriptionUpdatesProp
         </div>
         <div className="co-detail-table__section co-detail-table__section--last col-sm-6">
           <dl className="co-m-pane__details">
-            <dt className="co-detail-table__section-header">Upgrade Status</dt>
+            <dt className="co-detail-table__section-header">{gettext('Upgrade Status')}</dt>
             <dd>{subscriptionState(_.get(obj.status, 'state'))}</dd>
           </dl>
           <div className="co-detail-table__bracket"></div>
           <div className="co-detail-table__breakdown">
             { _.get(obj.status, 'installedCSV') && installedCSV
-              ? <Link to={`/k8s/ns/${obj.metadata.namespace}/${ClusterServiceVersionModel.plural}/${_.get(obj.status, 'installedCSV')}`}>1 installed</Link>
-              : <span>0 installed</span> }
+              ? <Link to={`/k8s/ns/${obj.metadata.namespace}/${ClusterServiceVersionModel.plural}/${_.get(obj.status, 'installedCSV')}`}>{gettext('1 installed')}</Link>
+              : <span>{gettext('0 installed')}</span> }
             { _.get(obj.status, 'state') === SubscriptionState.SubscriptionStateUpgradePending && _.get(obj.status, 'installplan')
-              ? <Link to={`/k8s/ns/${obj.metadata.namespace}/${InstallPlanModel.plural}/${_.get(obj.status, 'installplan.name')}`}>1 installing</Link>
-              : <span>0 installing</span> }
+              ? <Link to={`/k8s/ns/${obj.metadata.namespace}/${InstallPlanModel.plural}/${_.get(obj.status, 'installplan.name')}`}>{gettext('1 installing')}</Link>
+              : <span>{gettext('0 installing')}</span> }
           </div>
         </div>
       </div>

@@ -6,18 +6,18 @@ import { match, Link } from 'react-router-dom';
 import { Map as ImmutableMap } from 'immutable';
 
 import { ListPage, List, ListHeader, ColHead, ResourceRow, DetailsPage } from '../factory';
-import { SectionHeading, MsgBox, ResourceLink, ResourceCog, Cog, ResourceIcon, navFactory, ResourceSummary } from '../utils';
+import { SectionHeading, MsgBox, ResourceLink, ResourceCog, Cog, ResourceIcon, navFactory, ResourceSummary, gettext } from '../utils';
 import { InstallPlanKind, InstallPlanApproval, Step } from './index';
 import { referenceForModel, referenceForOwnerRef, k8sUpdate } from '../../module/k8s';
 import { SubscriptionModel, ClusterServiceVersionModel, InstallPlanModel, CatalogSourceModel } from '../../models';
 import { breadcrumbsForOwnerRefs } from '../utils/breadcrumbs';
 
 export const InstallPlanHeader: React.SFC<InstallPlanHeaderProps> = (props) => <ListHeader>
-  <ColHead {...props} className="col-xs-6 col-sm-4 col-md-3" sortField="metadata.name">Name</ColHead>
-  <ColHead {...props} className="col-xs-6 col-sm-4 col-md-3" sortField="metadata.namespace">Namespace</ColHead>
-  <ColHead {...props} className="hidden-xs col-sm-4 col-md-3 col-lg-2">Components</ColHead>
-  <ColHead {...props} className="hidden-xs hidden-sm col-md-3 col-lg-2">Subscriptions</ColHead>
-  <ColHead {...props} className="hidden-xs hidden-sm hidden-md col-lg-2" sortField="status.phase">Status</ColHead>
+  <ColHead {...props} className="col-xs-6 col-sm-4 col-md-3" sortField="metadata.name">{gettext('Name')}</ColHead>
+  <ColHead {...props} className="col-xs-6 col-sm-4 col-md-3" sortField="metadata.namespace">{gettext('Namespace')}</ColHead>
+  <ColHead {...props} className="hidden-xs col-sm-4 col-md-3 col-lg-2">{gettext('Components')}</ColHead>
+  <ColHead {...props} className="hidden-xs hidden-sm col-md-3 col-lg-2">{gettext('Subscriptions')}</ColHead>
+  <ColHead {...props} className="hidden-xs hidden-sm hidden-md col-lg-2" sortField="status.phase">{gettext('Status')}</ColHead>
 </ListHeader>;
 
 export const InstallPlanRow: React.SFC<InstallPlanRowProps> = (props) => {
@@ -41,7 +41,7 @@ export const InstallPlanRow: React.SFC<InstallPlanRowProps> = (props) => {
         .filter(ref => referenceForOwnerRef(ref) === referenceForModel(SubscriptionModel))
         .map(ref => <div key={ref.uid}>
           <ResourceLink kind={referenceForModel(SubscriptionModel)} name={ref.name} namespace={props.obj.metadata.namespace} title={ref.uid} />
-        </div>) || <span className="text-muted">None</span> }
+        </div>) || <span className="text-muted">{gettext('None')}</span> }
     </div>
     <div className="hidden-xs hidden-sm hidden-md col-lg-2">
       {phaseFor(_.get(props.obj.status, 'phase')) || 'Unknown'}
@@ -49,16 +49,16 @@ export const InstallPlanRow: React.SFC<InstallPlanRowProps> = (props) => {
   </ResourceRow>;
 };
 export const InstallPlansList: React.SFC<InstallPlansListProps> = (props) => {
-  const EmptyMsg = () => <MsgBox title="No Install Plans Found" detail="Install Plans are created automatically by subscriptions or manually using kubectl." />;
+  const EmptyMsg = () => <MsgBox title={gettext('No Install Plans Found')} detail={gettext('Install Plans are created automatically by subscriptions or manually using kubectl.')} />;
   return <List {...props} Header={InstallPlanHeader} Row={InstallPlanRow} EmptyMsg={EmptyMsg} />;
 };
 
 export const InstallPlansPage: React.SFC<InstallPlansPageProps> = (props) => <ListPage
   {...props}
-  title="Install Plans"
+  title={gettext('Install Plans')}
   showTitle={true}
   ListComponent={InstallPlansList}
-  filterLabel="Install Plans by name"
+  filterLabel={gettext('Install Plans by name')}
   kind={referenceForModel(InstallPlanModel)} />;
 
 export const InstallPlanDetails: React.SFC<InstallPlanDetailsProps> = ({obj}) => {
@@ -66,10 +66,10 @@ export const InstallPlanDetails: React.SFC<InstallPlanDetailsProps> = ({obj}) =>
 
   return <React.Fragment>
     { needsApproval && <div className="co-well">
-      <h4>Review Manual Install Plan</h4>
-      <p>Inspect the requirements for the components specified in this install plan before approving.</p>
+      <h4>{gettext('Review Manual Install Plan')}</h4>
+      <p>{gettext('Inspect the requirements for the components specified in this install plan before approving.')}</p>
       <Link to={`/k8s/ns/${obj.metadata.namespace}/${referenceForModel(InstallPlanModel)}/${obj.metadata.name}/components`}>
-        <button className="btn btn-info">Preview Install Plan</button>
+        <button className="btn btn-info">{gettext('Preview Install Plan')}</button>
       </Link>
     </div> }
     <div className="co-m-pane__body">
@@ -83,7 +83,7 @@ export const InstallPlanDetails: React.SFC<InstallPlanDetailsProps> = ({obj}) =>
             <dl className="co-m-pane__details">
               <dt>Status</dt>
               <dd>{_.get(obj.status, 'phase', 'Unknown')}</dd>
-              <dt>Components</dt>
+              <dt>{gettext('Components')}</dt>
               { (obj.spec.clusterServiceVersionNames || []).map((csvName, i) => <dd key={i}>
                 { obj.status.phase === 'Complete'
                   ? <ResourceLink kind={referenceForModel(ClusterServiceVersionModel)} name={csvName} namespace={obj.metadata.namespace} title={csvName} />
@@ -127,8 +127,8 @@ export class InstallPlanPreview extends React.Component<InstallPlanPreviewProps,
       ? <React.Fragment>
         { this.state.error && <div className="co-clusterserviceversion-detail__error-box">{this.state.error}</div> }
         { this.state.needsApproval && <div className="co-well">
-          <h4>Review Manual Install Plan</h4>
-          <p>Once approved, the following resources will be created in order to satisfy the requirements for the components specified in the plan.</p>
+          <h4>{gettext('Review Manual Install Plan')}</h4>
+          <p>{gettext('Once approved, the following resources will be created in order to satisfy the requirements for the components specified in the plan.')}</p>
           <button
             className="btn btn-info"
             disabled={!this.state.needsApproval}
@@ -142,10 +142,10 @@ export class InstallPlanPreview extends React.Component<InstallPlanPreviewProps,
             <table className="table">
               <thead>
                 <tr>
-                  <th>Name</th>
-                  <th>Kind</th>
-                  <th>API Version</th>
-                  <th>Status</th>
+                  <th>{gettext('Name')}</th>
+                  <th>{gettext('Kind')}</th>
+                  <th>{gettext('API Version')}</th>
+                  <th>{gettext('Status')}</th>
                 </tr>
               </thead>
               <tbody>

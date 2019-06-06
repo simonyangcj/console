@@ -12,7 +12,7 @@ import { k8sGet } from '../../module/k8s';
 import { ConfigMapModel } from '../../models';
 import { SafetyFirst } from '../safety-first';
 import { coFetchJSON } from '../../co-fetch';
-import { LoadingInline, LoadError, NavTitle } from '../utils';
+import { LoadingInline, LoadError, NavTitle, gettext } from '../utils';
 import { SettingsRow, SettingsLabel, SettingsContent } from './cluster-settings';
 
 export const LDAPSetting = () => <SettingsRow>
@@ -59,8 +59,8 @@ const Fields = {
   Globals: [
     {
       name: Host,
-      label: 'Host',
-      help: 'Host and optional port of the LDAP server in the form "host:port".',
+      label: gettext('Host'),
+      help: gettext('Host and optional port of the LDAP server in the form "host:port".'),
       placeholder: 'ldap.example.com:636',
       autoFocus: true,
     },
@@ -68,23 +68,23 @@ const Fields = {
   TestData: [
     {
       name: Username,
-      label: 'Username',
+      label: gettext('Username'),
     },
     {
       name: Password,
-      label: 'Password',
+      label: gettext('Password'),
       type: 'password'
     },
   ],
   ServiceAccount: [
     {
       name: ServiceAccountDN,
-      label: 'Username',
+      label: gettext('Username'),
       placeholder: 'uid=seviceaccount,cn=users,dc=example,dc=com',
     },
     {
       name: ServiceAccountPassword,
-      label: 'Password',
+      label: gettext('Password'),
       type: 'password',
       placeholder: 'password',
     },
@@ -92,70 +92,70 @@ const Fields = {
   Users: [
     {
       name: UserBaseDN,
-      label: 'Base DN',
-      help: 'BaseDN to start the user search from. It will translate to the query: "(&(objectClass=person)(uid=<username>))".',
+      label: gettext('Base DN'),
+      help: gettext('BaseDN to start the user search from. It will translate to the query: "(&(objectClass=person)(uid=<username>))".'),
       placeholder: 'cn=users,dc=example,dc=com',
     },
     {
       name: UserFilter,
-      label: 'Filter',
-      help: 'Optional filter to apply when searching the directory.',
+      label: gettext('Filter'),
+      help: gettext('Optional filter to apply when searching the directory.'),
       placeholder: '(objectClass=person)',
     },
     {
       name: UserUsername,
-      label: 'Username Attribute',
-      help: 'Username attribute used for comparing user entries. This will be translated and combined with the other filter as "(<attr>=<username>)". For the end user, this is the field they\'ll use as their username.',
+      label: gettext('Username Attribute'),
+      help: gettext('Username attribute used for comparing user entries. This will be translated and combined with the other filter as "(<attr>=<username>)". For the end user, this is the field they\'ll use as their username.'),
       default: 'mail',
     },
     {
       name: UserUserId,
-      label: 'User Id Attribute',
-      help: 'String representation of the user\'s unique identifier.',
+      label: gettext('User Id Attribute'),
+      help: gettext('String representation of the user\'s unique identifier.'),
       default: 'uid',
     },
     {
       name: UserEmailAttr,
-      label: 'Email Attribute',
-      help: 'Required. Attribute to map to Email.',
+      label: gettext('Email Attribute'),
+      help: gettext('Required. Attribute to map to Email.'),
       default: 'mail',
     },
     {
       name: UserNameAttribute,
-      label: 'Name Attribute',
-      help: 'Maps to display name of users. No default value.',
+      label: gettext('Name Attribute'),
+      help: gettext('Maps to display name of users. No default value.'),
       default: 'name',
     },
   ],
   Groups: [
     {
       name: GroupBaseDN,
-      label: 'Base DN',
-      help: 'BaseDN to start the group search from. It will translate to the query: (&(objectClass=group)(member=<user uid>)).',
+      label: gettext('Base DN'),
+      help: gettext('BaseDN to start the group search from. It will translate to the query: (&(objectClass=group)(member=<user uid>)).'),
       placeholder: 'cn=groups,dc=freeipa,dc=example,dc=com',
     },
     {
       name: GroupFilter,
-      label: 'Filter',
-      help: 'Optional filter to apply when searching the directory.',
+      label: gettext('Filter'),
+      help: gettext('Optional filter to apply when searching the directory.'),
       placeholder: '(objectClass=group)',
     },
     {
       name: GroupUserAttribute,
-      label: 'User Attribute',
-      help: 'Matches the user attribute against a group.',
+      label: gettext('User Attribute'),
+      help: gettext('Matches the user attribute against a group.'),
       default: 'uid',
     },
     {
       name: GroupMemberAttribute,
-      label: 'Member Attribute',
-      help: 'Matches a user to a group.',
+      label: gettext('Member Attribute'),
+      help: gettext('Matches a user to a group.'),
       default: 'member',
     },
     {
       name: GroupNameAttribute,
-      label: 'Name Attribute',
-      help: 'The name of a group.',
+      label: gettext('Name Attribute'),
+      help: gettext('The name of a group.'),
       default: 'name',
     },
   ],
@@ -164,28 +164,28 @@ const Fields = {
 const Steps = [
   {
     fields: 'Globals',
-    next: 'LDAP Service Account',
+    next: gettext('LDAP Service Account'),
   },
   {
     fields: 'ServiceAccount',
-    name: 'LDAP Service Account',
-    description: 'If your LDAP server allows anonymous authorization, you must provide additional credentials to search for users and groups.',
-    next: 'LDAP User Info',
+    name: gettext('LDAP Service Account'),
+    description: gettext('If your LDAP server allows anonymous authorization, you must provide additional credentials to search for users and groups.'),
+    next: gettext('LDAP User Info'),
   },
   {
     fields: 'Users',
-    name: 'Users',
-    next: 'LDAP Group Info',
+    name: gettext('Users'),
+    next: gettext('LDAP Group Info'),
   },
   {
     fields: 'Groups',
-    name: 'Groups',
-    next: 'Test LDAP config',
+    name: gettext('Groups'),
+    next: gettext('Test LDAP config'),
   },
   {
     fields: 'TestData',
-    name: 'Test Configuration',
-    description: 'Supply your credentials to test the current configuration. The LDAP server must be reachable from the Tectonic Console for testing to work.',
+    name: gettext('Test Configuration'),
+    description: gettext('Supply your credentials to test the current configuration. The LDAP server must be reachable from the Tectonic Console for testing to work.'),
   },
 ];
 
@@ -281,16 +281,16 @@ const selector = formValueSelector(LDAPFormName);
 const Security = connect(state => ({sslValue: selector(state, SSLType)})
 )(({sslValue}) => <div>
   <Row name={SSLType}>
-    <label><Field name={SSLType} component="input" type="radio" value={NoSSL} /> No SSL</label>
-    <Help>Required if LDAP host does not use SSL.</Help>
+    <label><Field name={SSLType} component="input" type="radio" value={NoSSL} /> {gettext('No SSL')}</label>
+    <Help>{gettext('Required if LDAP host does not use SSL.')}</Help>
   </Row>
   <Row name={SSLType}>
-    <label><Field name={SSLType} component="input" type="radio" value={Skip} /> Skip Verification</label>
-    <Help>Don&rsquo;t verify the CA.</Help>
+    <label><Field name={SSLType} component="input" type="radio" value={Skip} /> {gettext('Skip Verification')}</label>
+    <Help>{gettext('Don&rsquo;t verify the CA.')}</Help>
   </Row>
   <Row name={SSLType}>
-    <label><Field name={SSLType} component="input" type="radio" value={RootCA} /> Root CA</label>
-    <Help>PEM data containing the root CAs.</Help>
+    <label><Field name={SSLType} component="input" type="radio" value={RootCA} /> {gettext('Root CA')}</label>
+    <Help>{gettext('PEM data containing the root CAs.')}</Help>
     { sslValue === RootCA &&
       <div>
         <br />
@@ -455,7 +455,7 @@ const LDAPs = reduxForm({
       }
 
       if (!this.state.tectonicIdentityConfig) {
-        return <div>Loading Configuration <LoadingInline /></div>;
+        return <div>{gettext('Loading Configuration')} <LoadingInline /></div>;
       }
 
       // General field errors are under the props.error - see validation above
@@ -477,7 +477,7 @@ const LDAPs = reduxForm({
           { stepName === 'Globals' && <Security /> }
           <hr />
           { s.next && !populated && <div><p className="text-muted">Next: {s.next}</p><hr /></div> }
-          { !lastStep && !populated && <a onClick={() => this.populate(stepName)}><button className="btn btn-primary">Continue</button></a> }
+          { !lastStep && !populated && <a onClick={() => this.populate(stepName)}><button className="btn btn-primary">{gettext('Continue')}</button></a> }
         </div>;
 
         steps.push(step);
@@ -490,17 +490,17 @@ const LDAPs = reduxForm({
           { (stateMachine === STATES.valid || stateMachine === STATES.invalid) &&
           <Row label="Test Results">
             { validationError
-              ? <p className="alert alert-danger"><span className="pficon pficon-error-circle-o"></span>Error - {validationError}:
+              ? <p className="alert alert-danger"><span className="pficon pficon-error-circle-o"></span>{gettext('Error')} - {validationError}:
                 <br />
                 <span>{validationData}</span>
               </p>
               : <div>
                 <dl>
-                  <dt>username</dt>
+                  <dt>{gettext('username')}</dt>
                   <dd>{validationData.username}</dd>
-                  <dt>email</dt>
+                  <dt>{gettext('email')}</dt>
                   <dd>{validationData.email}</dd>
-                  <dt>groups</dt>
+                  <dt>{gettext('groups')}</dt>
                   <dd>{_.map(validationData.groups, g => <div key={g}>{g}</div>)}</dd>
                 </dl>
               </div>
@@ -509,25 +509,25 @@ const LDAPs = reduxForm({
           }
 
           {stateMachine !== STATES.updating && <div>
-            <p className="text-muted">Next: Update Tectonic Identity</p>
+            <p className="text-muted">{gettext('Next: Update Tectonic Identity')}</p>
             <hr />
           </div>}
 
           {(stateMachine === STATES.untested || stateMachine === STATES.invalid) &&
-          <button className="btn btn-primary" onClick={(e) => this.test(e)}>Test Configuration</button>
+          <button className="btn btn-primary" onClick={(e) => this.test(e)}>{gettext('Test Configuration')}</button>
           }
           {stateMachine === STATES.valid &&
-          <button className="btn btn-primary" onClick={e => this.continue(e)} disabled={disabled}>Continue</button>
+          <button className="btn btn-primary" onClick={e => this.continue(e)} disabled={disabled}>{gettext('Continue')}</button>
           }
           {stateMachine === STATES.updating && <div>
-            <h2 className="co-section-heading ldap-group">Update Tectonic Identity</h2>
+            <h2 className="co-section-heading ldap-group">{gettext('Update Tectonic Identity')}</h2>
             <p>
-            The last step is to apply the updated configuration to the cluster.
+              {gettext('The last step is to apply the updated configuration to the cluster.')}
             This is done via <code>kubectl</code> to avoid locking yourself out if something goes wrong.
               <br /><br />
             During installation, an assets bundle was generated which included a kubeconfig (users name <code>kubelet</code>) that bypasses Tectonic Identity in the case that the older configuration needs to be re-applied.
               <br /><br />
-              <b>It is highly recommended you use the root kubeconfig and that you download a backup of the current configuration before proceeding.</b>
+              <b>{gettext('It is highly recommended you use the root kubeconfig and that you download a backup of the current configuration before proceeding.')}</b>
             </p>
 
             <pre>
@@ -543,8 +543,8 @@ const LDAPs = reduxForm({
             </pre>
 
             <p className="row col-sm-12">
-              <button className="btn btn-primary" onClick={e => this.downloadNewConfig(e)}>Download New Config</button>
-              <button className="btn btn-default" onClick={e => this.downloadBackup(e)}>Download Existing Config</button>
+              <button className="btn btn-primary" onClick={e => this.downloadNewConfig(e)}>{gettext('Download New Config')}</button>
+              <button className="btn btn-default" onClick={e => this.downloadBackup(e)}>{gettext('Download Existing Config')}</button>
             </p>
           </div>}
         </div>);
