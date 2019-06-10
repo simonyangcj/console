@@ -3,7 +3,7 @@ import * as _ from 'lodash-es';
 
 import { getContainerState, getContainerStatus, getPullPolicyLabel } from '../module/k8s/docker';
 import * as k8sProbe from '../module/k8s/probe';
-import { SectionHeading, Firehose, Overflow, MsgBox, NavTitle, Timestamp, VertNav, ResourceLink, ScrollToTopOnMount, gettext } from './utils';
+import { SectionHeading, Firehose, Overflow, MsgBox, NavTitle, Timestamp, VertNav, ResourceLink, ScrollToTopOnMount } from './utils';
 
 const formatComputeResources = resources => _.map(resources, (v, k) => `${k}: ${v}`).join(', ');
 
@@ -24,8 +24,8 @@ const Lifecycle = ({lifecycle}) => {
 
   const label = stage => lifecycle && k8sProbe.getLifecycleHookLabel(lifecycle, stage);
   return <div>
-    {postStart && <div><span>{gettext('PostStart:')} {label('postStart')}</span> <code>{postStart}</code></div>}
-    {preStop && <div><span>{gettext('PreStop:')} {label('preStop')}</span> <code>{preStop}</code></div>}
+    {postStart && <div><span>PostStart: {label('postStart')}</span> <code>{postStart}</code></div>}
+    {preStop && <div><span>PreStop: {label('preStop')}</span> <code>{preStop}</code></div>}
     {!postStart && !preStop && <span>-</span>}
   </div>;
 };
@@ -43,14 +43,14 @@ const Probe = ({probe, podIP}) => {
 
 const Ports = ({ports}) => {
   if (!ports || !ports.length) {
-    return <MsgBox className="co-sysevent-stream__status-box-empty" title={gettext('No ports have been exposed')} detail={gettext('Ports allow for traffic to enter this container')} />;
+    return <MsgBox className="co-sysevent-stream__status-box-empty" title="No ports have been exposed" detail="Ports allow for traffic to enter this container" />;
   }
 
   return <table className="table">
     <thead>
       <tr>
-        <th>{gettext('Name')}</th>
-        <th>{gettext('Container')}</th>
+        <th>Name</th>
+        <th>Container</th>
       </tr>
     </thead>
     <tbody>
@@ -64,15 +64,15 @@ const Ports = ({ports}) => {
 
 const Volumes = ({volumes}) => {
   if (!volumes || !volumes.length) {
-    return <MsgBox className="co-sysevent-stream__status-box-empty" title={gettext('No volumes have been mounted')} detail={gettext('Volumes allow data to be shared as files with the pod')} />;
+    return <MsgBox className="co-sysevent-stream__status-box-empty" title="No volumes have been mounted" detail="Volumes allow data to be shared as files with the pod" />;
   }
 
   return <table className="table">
     <thead>
       <tr>
-        <th>{gettext('Access')}</th>
-        <th>{gettext('Location')}</th>
-        <th>{gettext('Mount Path')}</th>
+        <th>Access</th>
+        <th>Location</th>
+        <th>Mount Path</th>
       </tr>
     </thead>
     <tbody>
@@ -87,7 +87,7 @@ const Volumes = ({volumes}) => {
 
 const Env = ({env}) => {
   if (!env || !env.length) {
-    return <MsgBox className="co-sysevent-stream__status-box-empty" title={gettext('No variables have been set')} detail={gettext('An easy way to pass configuration values')} />;
+    return <MsgBox className="co-sysevent-stream__status-box-empty" title="No variables have been set" detail="An easy way to pass configuration values" />;
   }
 
   const value = (e) => {
@@ -107,8 +107,8 @@ const Env = ({env}) => {
   return <table className="table">
     <thead>
       <tr>
-        <th>{gettext('Name')}</th>
-        <th>{gettext('Value')}</th>
+        <th>Name</th>
+        <th>Value</th>
       </tr>
     </thead>
     <tbody>
@@ -151,55 +151,55 @@ const Details = (props) => {
 
     <div className="row">
       <div className="col-lg-4">
-        <SectionHeading text={gettext('Container Overview')} />
+        <SectionHeading text="Container Overview" />
         <dl className="co-m-pane__details">
-          <dt>{gettext('State')}</dt>
+          <dt>State</dt>
           <dd>{state.label}</dd>
-          <dt>{gettext('ID')}</dt>
+          <dt>ID</dt>
           <dd><Overflow value={status.containerID} /></dd>
-          <dt>{gettext('Restarts')}</dt>
+          <dt>Restarts</dt>
           <dd>{status.restartCount}</dd>
-          <dt>{gettext('Resource Requests')}</dt>
+          <dt>Resource Requests</dt>
           <dd>{getResourceRequestsValue(container) || '-'}</dd>
-          <dt>{gettext('Resource Limits')}</dt>
+          <dt>Resource Limits</dt>
           <dd>{getResourceLimitsValue(container) || '-'}</dd>
-          <dt>{gettext('Lifecycle Hooks')}</dt>
+          <dt>Lifecycle Hooks</dt>
           <dd><Lifecycle lifecycle={container.lifecycle} /></dd>
-          <dt>{gettext('Readiness Probe')}</dt>
+          <dt>Readiness Probe</dt>
           <dd><Probe probe={container.readinessProbe} podIP={pod.status.podIP || '-'} /></dd>
-          <dt>{gettext('Liveness Probe')}</dt>
+          <dt>Liveness Probe</dt>
           <dd><Probe probe={container.livenessProbe} podIP={pod.status.podIP || '-'} /></dd>
-          <dt>{gettext('Started')}</dt>
+          <dt>Started</dt>
           <dd><Timestamp timestamp={state.startedAt} /></dd>
-          <dt>{gettext('Finished')}</dt>
+          <dt>Finished</dt>
           <dd><Timestamp timestamp={state.finishedAt} /></dd>
-          <dt>{gettext('Pod')}</dt>
+          <dt>Pod</dt>
           <dd><ResourceLink kind="Pod" name={props.match.params.podName} namespace={props.match.params.ns} /></dd>
         </dl>
       </div>
 
       <div className="col-lg-4">
-        <SectionHeading text={gettext('Image Details')} />
+        <SectionHeading text="Image Details" />
         <dl className="co-m-pane__details">
-          <dt>{gettext('Image')}</dt>
+          <dt>Image</dt>
           <dd><Overflow value={imageName || '-'} /></dd>
-          <dt>{gettext('Image Version/Tag')}</dt>
+          <dt>Image Version/Tag</dt>
           <dd><Overflow value={imageTag || '-'} /></dd>
-          <dt>{gettext('Command')}</dt>
+          <dt>Command</dt>
           <dd>{container.command ? <pre><code>{container.command.join(' ')}</code></pre> : <span>-</span>}</dd>
-          <dt>{gettext('Args')}</dt>
+          <dt>Args</dt>
           <dd>{container.args ? <pre><code>{container.args.join(' ')}</code></pre> : <span>-</span>}</dd>
-          <dt>{gettext('Pull Policy')}</dt>
+          <dt>Pull Policy</dt>
           <dd>{getPullPolicyLabel(container)}</dd>
         </dl>
       </div>
 
       <div className="col-lg-4">
-        <SectionHeading text={gettext('Network')} />
+        <SectionHeading text="Network" />
         <dl className="co-m-pane__details">
-          <dt>{gettext('Node')}</dt>
+          <dt>Node</dt>
           <dd><ResourceLink kind="Node" name={pod.spec.nodeName} title={pod.spec.nodeName} /></dd>
-          <dt>{gettext('Pod IP')}</dt>
+          <dt>Pod IP</dt>
           <dd>{pod.status.podIP || '-'}</dd>
         </dl>
       </div>
@@ -209,21 +209,21 @@ const Details = (props) => {
 
     <div className="row">
       <div className="col-lg-4">
-        <SectionHeading text={gettext('Ports')} />
+        <SectionHeading text="Ports" />
         <div className="co-table-container">
           <Ports ports={container.ports} />
         </div>
       </div>
 
       <div className="col-lg-4">
-        <SectionHeading text={gettext('Mounted Volumes')} />
+        <SectionHeading text="Mounted Volumes" />
         <div className="co-table-container">
           <Volumes volumes={container.volumeMounts} />
         </div>
       </div>
 
       <div className="col-lg-4">
-        <SectionHeading text={gettext('Environment Variables')} />
+        <SectionHeading text="Environment Variables" />
         <div className="co-table-container">
           <Env env={container.env} />
         </div>
