@@ -4,7 +4,7 @@ import * as React from 'react';
 import { coFetch, coFetchJSON } from '../co-fetch';
 import { SafetyFirst } from './safety-first';
 import { confirmModal } from './modals';
-import { Cog, Timestamp, EmptyBox, LoadingInline, LoadError } from './utils';
+import { Cog, Timestamp, EmptyBox, LoadingInline, LoadError, gettext } from './utils';
 
 export class ClientTokensContainer extends SafetyFirst {
   constructor(props){
@@ -41,11 +41,11 @@ export class ClientTokensContainer extends SafetyFirst {
 }
 
 const RevokeToken = (id, onTokenRevocation) => ({
-  label: 'Revoke Access...',
+  label: gettext('Revoke Access...'),
   callback: () => confirmModal({
-    title: 'Confirm Revocation',
-    message: 'Revoking this client\'s access token will immediately remove it. Once removed, you cannot recover the token. If this is the last client authorized, you will loose access to the Console after submitting it.',
-    btnText: 'Revoke Access',
+    title: gettext('Confirm Revocation'),
+    message: gettext('Revoking this client\'s access token will immediately remove it. Once removed, you cannot recover the token. If this is the last client authorized, you will loose access to the Console after submitting it.'),
+    btnText: gettext('Revoke Access'),
     executeFn: () => {
       const data = new FormData();
       data.append('clientId', id);
@@ -76,15 +76,15 @@ const ClientRow = ({client, onTokenRevocation}) => {
 const ClientTokens = ({clients, onTokenRevocation, resourceLoaded, loadingError}) => {
   return <React.Fragment>
     <div className="co-m-pane__body">
-      <h1 className="co-m-pane__heading">Access Management</h1>
+      <h1 className="co-m-pane__heading">{gettext('Access Management')}</h1>
       <p className="co-m-pane__explanation">
-        Each user of Tectonic gets a single kubectl CLI refresh token for use in their kubeconfig file. This token never expires, unless revoked here.
+        {gettext('Each user of Tectonic gets a single kubectl CLI refresh token for use in their kubeconfig file. This token never expires, unless revoked here.')}
       </p>
       <div className="co-m-table-grid co-m-table-grid--bordered">
         <div className="row co-m-table-grid__head">
-          <div className="col-xs-4">Client Id</div>
-          <div className="col-xs-4">Token Created</div>
-          <div className="col-xs-4">Token Last Used</div>
+          <div className="col-xs-4">{gettext('Client Id')}</div>
+          <div className="col-xs-4">{gettext('Token Created')}</div>
+          <div className="col-xs-4">{gettext('Token Last Used')}</div>
         </div>
 
         <div className="co-m-table-grid__body">
