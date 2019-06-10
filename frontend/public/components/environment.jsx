@@ -4,7 +4,7 @@ import * as PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import { k8sPatch, k8sGet, referenceFor } from '../module/k8s';
-import { PromiseComponent, NameValueEditorPair, LoadingBox, AsyncComponent, ResourceIcon } from './utils';
+import { PromiseComponent, NameValueEditorPair, LoadingBox, AsyncComponent, ResourceIcon, gettext } from './utils';
 import { ConfigMapModel, SecretModel } from '../models';
 
 /**
@@ -88,7 +88,7 @@ export const EnvironmentPage = connect(stateToProps)(
       Promise.all([
         k8sGet(ConfigMapModel, null, envNamespace).catch((err) => {
           if (err.response.status !== 403) {
-            const errorMessage = err.message || 'Could not load config maps.';
+            const errorMessage = err.message || gettext('Could not load config maps.');
             this.setState({ errorMessage });
           }
           return {
@@ -97,7 +97,7 @@ export const EnvironmentPage = connect(stateToProps)(
         }),
         k8sGet(SecretModel, null, envNamespace).catch((err) => {
           if (err.response.status !== 403) {
-            const errorMessage = err.message || 'Could not load secrets.';
+            const errorMessage = err.message || gettext('Could not load secrets.');
             this.setState({ errorMessage });
           }
           return {
@@ -216,7 +216,7 @@ export const EnvironmentPage = connect(stateToProps)(
       this.handlePromise(promise).then((res) => {
         const newEnvData = _.get(res, envPath);
         this.setState({
-          success: 'Successfully updated the environment variables.',
+          success: gettext('Successfully updated the environment variables.'),
           errorMessage: null,
           currentEnvVars: envVarsToArray(newEnvData),
           modified: false,
@@ -242,16 +242,16 @@ export const EnvironmentPage = connect(stateToProps)(
 
       return <div className="co-m-pane__body">
         { !readOnly &&
-            <p className="co-m-pane__explanation">Define environment variables as key-value pairs to store configuration settings. You can enter text or add values from a ConfigMap or Secret. Drag and drop environment variables to change the order in which they are run. A variable can reference any other variables that come before it in the list, for example <code>FULLDOMAIN = $(SUBDOMAIN).example.com</code>.</p>
+            <p className="co-m-pane__explanation">{gettext('Define environment variables as key-value pairs to store configuration settings. You can enter text or add values from a ConfigMap or Secret. Drag and drop environment variables to change the order in which they are run. A variable can reference any other variables that come before it in the list, for example')} <code>FULLDOMAIN = $(SUBDOMAIN).example.com</code>.</p>
         }
         {containerVars}
         <div className="co-m-pane__body-group">
           <div className="environment-buttons">
             {errorMessage && <p className="alert alert-danger"><span className="pficon pficon-error-circle-o" aria-hidden="true"></span>{errorMessage}</p>}
-            {stale && <p className="alert alert-info"><span className="pficon pficon-info" aria-hidden="true"></span>The information on this page is no longer current. Click Reload to update and lose edits, or Save Changes to overwrite.</p>}
+            {stale && <p className="alert alert-info"><span className="pficon pficon-info" aria-hidden="true"></span>{gettext('The information on this page is no longer current. Click Reload to update and lose edits, or Save Changes to overwrite.')}</p>}
             {success && <p className="alert alert-success"><span className="pficon pficon-ok" aria-hidden="true"></span>{success}</p>}
-            {!readOnly && <button disabled={inProgress} type="submit" className="btn btn-primary" onClick={this.saveChanges}>Save Changes</button>}
-            {!readOnly && <button disabled={inProgress} type="button" className="btn btn-default" onClick={this.reload}>Reload</button>}
+            {!readOnly && <button disabled={inProgress} type="submit" className="btn btn-primary" onClick={this.saveChanges}>{gettext('Save Changes')}</button>}
+            {!readOnly && <button disabled={inProgress} type="button" className="btn btn-default" onClick={this.reload}>{gettext('Reload')}</button>}
           </div>
         </div>
       </div>;
