@@ -120,7 +120,7 @@ class SysEvent extends React.Component {
   }
 }
 
-const categories = {all: gettext('All Categories'), info: gettext('Info'), error: gettext('Error')};
+const categories = {all: 'All Categories', info: 'Info', error: 'Error'};
 
 class EventsStreamPage_ extends React.Component {
   constructor (props) {
@@ -144,9 +144,9 @@ class EventsStreamPage_ extends React.Component {
       { showGettingStarted && showTitle && <OpenShiftGettingStarted /> }
       <div className={classNames({'co-disabled': showGettingStarted })}>
         { showTitle && <Helmet>
-          <title>{gettext('Events')}</title>
+          <title>Events</title>
         </Helmet> }
-        { showTitle && <NavTitle title={gettext('Events')} /> }
+        { showTitle && <NavTitle title="Events" /> }
         <div className="co-m-pane__filter-bar">
           <div className="co-m-pane__filter-bar-group">
             <ResourceListDropdown title={gettext('All Types')} className="btn-group" onChange={v => this.setState({kind: v})} showAll selected={kind} />
@@ -359,7 +359,7 @@ class EventStream extends SafetyFirst {
       sysEventStatus = (
         <Box className="co-sysevent-stream__status-box-empty">
           <div className="text-center cos-status-box__detail">
-            {gettext('No Events in the past hour')}
+          No Events in the past hour
           </div>
         </Box>
       );
