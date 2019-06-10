@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as _ from 'lodash-es';
 
-import { Timestamp } from './utils';
+import { Timestamp, gettext } from './utils';
 import { CamelCaseWrap } from './utils/camel-case-wrap';
 
 export const Conditions: React.SFC<ConditionsProps> = ({conditions}) => {
@@ -28,18 +28,18 @@ export const Conditions: React.SFC<ConditionsProps> = ({conditions}) => {
     {conditions
       ? <div className="co-m-table-grid co-m-table-grid--bordered">
         <div className="row co-m-table-grid__head">
-          <div className="col-xs-4 col-sm-2 col-md-2">Type</div>
-          <div className="col-xs-4 col-sm-2 col-md-2">Status</div>
-          <div className="hidden-xs hidden-sm col-md-2">Updated</div>
-          <div className="col-xs-4 col-sm-3 col-md-2">Reason</div>
-          <div className="hidden-xs col-sm-5 col-md-4">Message</div>
+          <div className="col-xs-4 col-sm-2 col-md-2">{gettext('Type')}</div>
+          <div className="col-xs-4 col-sm-2 col-md-2">{gettext('Status')}</div>
+          <div className="hidden-xs hidden-sm col-md-2">{gettext('Updated')}</div>
+          <div className="col-xs-4 col-sm-3 col-md-2">{gettext('Reason')}</div>
+          <div className="hidden-xs col-sm-5 col-md-4">{gettext('Message')}</div>
         </div>
         <div className="co-m-table-grid__body">
           {rows}
         </div>
       </div>
       : <div className="cos-status-box">
-        <div className="text-center">No Conditions Found</div>
+        <div className="text-center">{gettext('No Conditions Found')}</div>
       </div>}
   </React.Fragment>;
 };

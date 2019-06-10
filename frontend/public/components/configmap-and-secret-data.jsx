@@ -2,10 +2,10 @@ import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import * as _ from 'lodash-es';
 
-import { CopyToClipboard, EmptyBox, SectionHeading } from './utils';
+import { CopyToClipboard, EmptyBox, SectionHeading, gettext } from './utils';
 
 export const MaskedData = () => <React.Fragment>
-  <span className="sr-only">Value hidden</span>
+  <span className="sr-only">{gettext('Value hidden')}</span>
   <span aria-hidden="true">&bull;&bull;&bull;&bull;&bull;</span>
 </React.Fragment>;
 
@@ -32,7 +32,7 @@ export class SecretData extends React.PureComponent {
 
   getValue(rawValue) {
     if (_.isNil(rawValue)) {
-      return <span className="text-muted">No value</span>;
+      return <span className="text-muted">{gettext('No value')}</span>;
     }
 
     const { showSecret } = this.state;
@@ -55,8 +55,8 @@ export class SecretData extends React.PureComponent {
         {dl.length
           ? <button className="btn btn-link" type="button" onClick={this.toggleSecret}>
             {showSecret
-              ? <React.Fragment><i className="fa fa-eye-slash" aria-hidden="true"></i> Hide Values</React.Fragment>
-              : <React.Fragment><i className="fa fa-eye" aria-hidden="true"></i> Reveal Values</React.Fragment>}
+              ? <React.Fragment><i className="fa fa-eye-slash" aria-hidden="true"></i> {gettext('Hide Values')}</React.Fragment>
+              : <React.Fragment><i className="fa fa-eye" aria-hidden="true"></i> {gettext('Reveal Values')}</React.Fragment>}
           </button>
           : null}
       </SectionHeading>

@@ -55,7 +55,7 @@ const DeploymentDetails = ({obj: deployment}) => {
 
   return <React.Fragment>
     <div className="co-m-pane__body">
-      <SectionHeading text="Deployment Overview" />
+      <SectionHeading text={gettext('Deployment Overview')} />
       <DeploymentPodCounts resource={deployment} resourceKind={DeploymentModel} />
       <div className="co-m-pane__body-group">
         <div className="row">

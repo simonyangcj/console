@@ -2,20 +2,20 @@ import * as _ from 'lodash-es';
 import * as React from 'react';
 import { Helmet } from 'react-helmet';
 
-import {NavTitle, getQueryArgument} from './utils';
+import {NavTitle, getQueryArgument, gettext} from './utils';
 
 //User messages for error_types returned in auth.go
 const messages = {
   auth: {
-    'oauth_error': 'There was an error generating OAuth client from OIDC client.',
-    'login_state_error': 'There was an error generating login state.',
-    'cookie_error': 'There was an error setting login state cookie',
-    'missing_code': 'Auth code is missing in query param.',
-    'missing_state': 'There was an error parsing your state cookie',
-    'invalid_code': 'There was an error logging you in. Please log out and try again.',
-    'invalid_state': 'There was an error verifying your session. Please log out and try again.',
-    'default': 'There was an authentication error with the system. Please try again or contact support.',
-    'logout_error': 'There was an error logging you out. Please try again.',
+    'oauth_error': gettext('There was an error generating OAuth client from OIDC client.'),
+    'login_state_error': gettext('There was an error generating login state.'),
+    'cookie_error': gettext('There was an error setting login state cookie'),
+    'missing_code': gettext('Auth code is missing in query param.'),
+    'missing_state': gettext('There was an error parsing your state cookie'),
+    'invalid_code': gettext('There was an error logging you in. Please log out and try again.'),
+    'invalid_state': gettext('There was an error verifying your session. Please log out and try again.'),
+    'default': gettext('There was an authentication error with the system. Please try again or contact support.'),
+    'logout_error': gettext('There was an error logging you out. Please try again.'),
   },
 };
 
@@ -49,14 +49,14 @@ const ErrorComponent = ({title, message, errMessage}) => <React.Fragment>
 
 export const ErrorPage = () => <div>
   <Helmet>
-    <title>Error</title>
+    <title>{gettext('Error')}</title>
   </Helmet>
   <ErrorComponent title="Oh no! Something went wrong." message={urlMessage()} errMessage={getErrMessage()} />
 </div>;
 
 export const ErrorPage404 = () => <div>
   <Helmet>
-    <title>Page Not Found (404)</title>
+    <title>{gettext('Page Not Found (404)')}</title>
   </Helmet>
-  <ErrorComponent title="404: Page Not Found" />
+  <ErrorComponent title={gettext('404: Page Not Found')} />
 </div>;

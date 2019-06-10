@@ -3,17 +3,17 @@ import * as React from 'react';
 import { Link } from 'react-router-dom';
 
 import { ColHead, List, ListHeader, ListPage } from './factory';
-import { Cog, ResourceCog, ResourceIcon } from './utils';
+import { Cog, ResourceCog, ResourceIcon, gettext } from './utils';
 import { referenceForCRD } from '../module/k8s';
 
 const menuActions = [Cog.factory.ModifyLabels, Cog.factory.ModifyAnnotations, Cog.factory.Edit, Cog.factory.Delete];
 
 const CRDHeader = props => <ListHeader>
-  <ColHead {...props} className="col-lg-4 col-md-4 col-sm-4 col-xs-6" sortField="spec.names.kind">Name</ColHead>
-  <ColHead {...props} className="col-lg-3 col-md-4 col-sm-4 col-xs-6" sortField="spec.group">Group</ColHead>
-  <ColHead {...props} className="col-lg-2 col-md-2 col-sm-4 hidden-xs" sortField="spec.version">Version</ColHead>
-  <ColHead {...props} className="col-lg-2 col-md-2 hidden-sm hidden-xs" sortField="spec.scope">Namespaced</ColHead>
-  <ColHead {...props} className="col-lg-1 hidden-md hidden-sm hidden-xs">Established</ColHead>
+  <ColHead {...props} className="col-lg-4 col-md-4 col-sm-4 col-xs-6" sortField="spec.names.kind">{gettext('Name')}</ColHead>
+  <ColHead {...props} className="col-lg-3 col-md-4 col-sm-4 col-xs-6" sortField="spec.group">{gettext('Group')}</ColHead>
+  <ColHead {...props} className="col-lg-2 col-md-2 col-sm-4 hidden-xs" sortField="spec.version">{gettext('Version')}</ColHead>
+  <ColHead {...props} className="col-lg-2 col-md-2 hidden-sm hidden-xs" sortField="spec.scope">{gettext('Namespaced')}</ColHead>
+  <ColHead {...props} className="col-lg-1 hidden-md hidden-sm hidden-xs">{gettext('Established')}</ColHead>
 </ListHeader>;
 
 const isEstablished = conditions => {
