@@ -120,7 +120,7 @@ class SysEvent extends React.Component {
   }
 }
 
-const categories = {all: gettext('All Categories'), info: gettext('Info'), error: gettext('Error')};
+const categories = {all: 'All Categories', info: 'Info', error: 'Error'};
 
 class EventsStreamPage_ extends React.Component {
   constructor (props) {
@@ -359,7 +359,7 @@ class EventStream extends SafetyFirst {
       sysEventStatus = (
         <Box className="co-sysevent-stream__status-box-empty">
           <div className="text-center cos-status-box__detail">
-          {gettext('No Events in the past hour')}
+            {gettext('No Events in the past hour')}
           </div>
         </Box>
       );
