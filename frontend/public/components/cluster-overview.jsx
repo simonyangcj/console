@@ -77,7 +77,7 @@ const Graphs = requirePrometheus(connectToURLs(MonitoringRoutes.AlertManager)(({
     { !namespace &&
       <div className="group">
         <div className="group__title">
-          <h2 className="h3">Control Plane Status</h2>
+          <h2 className="h3">{gettext('Control Plane Status')}</h2>
           {!isOpenShift && <DashboardLink to="/grafana/dashboard/db/kubernetes-control-plane-status?orgId=1" />}
         </div>
         <div className="container-fluid group__body group__graphs">
@@ -102,7 +102,7 @@ const Graphs = requirePrometheus(connectToURLs(MonitoringRoutes.AlertManager)(({
     { !namespace &&
       <div className="group">
         <div className="group__title">
-          <h2 className="h3">Capacity Planning</h2>
+          <h2 className="h3">{gettext('Capacity Planning')}</h2>
           {!isOpenShift && <DashboardLink to="/grafana/dashboard/db/kubernetes-capacity-planning?orgId=1" />}
         </div>
         <div className="container-fluid group__body group__graphs">
@@ -134,7 +134,7 @@ const LimitedGraphs = ({openshiftFlag}) => {
   const consoleName = window.SERVER_FLAGS.branding === 'okd' ? gettext('OKD Console') : gettext('OpenShift Console');
   return <div className="group">
     <div className="group__title">
-      <h2 className="h3">Health</h2>
+      <h2 className="h3">{gettext('Health')}</h2>
     </div>
     <div className="container-fluid group__body">
       <div className="row">
@@ -209,7 +209,7 @@ const GraphsPage = ({fake, limited, namespace, openshiftFlag}) => {
   }];
 
   return <Firehose resources={resources}>
-    <StatusBox label="Namespaces">
+    <StatusBox label={gettext('Namespaces')}>
       { body }
     </StatusBox>
   </Firehose>;

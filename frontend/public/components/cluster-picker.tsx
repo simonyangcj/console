@@ -3,7 +3,7 @@
 import * as _ from 'lodash-es';
 import * as React from 'react';
 
-import { Firehose, Dropdown } from './utils';
+import { Firehose, Dropdown, gettext } from './utils';
 import { referenceForModel, K8sResourceKind } from '../module/k8s';
 import { connectToFlags, FLAGS } from '../features';
 import { ClusterModel } from '../models';
@@ -38,7 +38,7 @@ const FirehoseToDropdown: React.SFC<FirehoseToDropdownProps> = ({clusters}) => {
 
   masterURL = `${masterURL || ourURL}/k8s/cluster/clusters`;
   const spacerBefore = new Set([masterURL]);
-  items[masterURL] = <div>Manage Cluster Directory…</div>;
+  items[masterURL] = <div>{gettext('Manage Cluster Directory…')}</div>;
 
   return <Dropdown title="Clusters" items={items} selectedKey={selected} noButton={true} className="cluster-picker" menuClassName="dropdown--dark" onChange={url => window.location.href = url} spacerBefore={spacerBefore} />;
 };

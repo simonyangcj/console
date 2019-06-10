@@ -3,7 +3,7 @@ import * as _ from 'lodash-es';
 
 import { FLAGS, connectToFlags, flagPending } from '../features';
 import { ColHead, DetailsPage, List, ListHeader, ListPage } from './factory';
-import { Cog, detailsPage, navFactory, ResourceCog, SectionHeading, ResourceLink, ResourceSummary, LoadingBox, MsgBox } from './utils';
+import { Cog, detailsPage, navFactory, ResourceCog, SectionHeading, ResourceLink, ResourceSummary, LoadingBox, MsgBox, gettext } from './utils';
 // eslint-disable-next-line no-unused-vars
 import { referenceForModel } from '../module/k8s';
 import { ClusterModel } from '../models';
@@ -11,9 +11,9 @@ import { ClusterModel } from '../models';
 const menuActions = [Cog.factory.ModifyLabels, Cog.factory.ModifyAnnotations, Cog.factory.Edit, Cog.factory.Delete];
 
 const ClustersHeader = props => <ListHeader>
-  <ColHead {...props} className="col-xs-4" sortField="metadata.name">Cluster Name</ColHead>
-  <ColHead {...props} className="col-xs-3">Type</ColHead>
-  <ColHead {...props} className="col-xs-5">Addresses</ColHead>
+  <ColHead {...props} className="col-xs-4" sortField="metadata.name">{gettext('Cluster Name')}</ColHead>
+  <ColHead {...props} className="col-xs-3">{gettext('Type')}</ColHead>
+  <ColHead {...props} className="col-xs-5">{gettext('Addresses')}</ColHead>
 </ListHeader>;
 
 const ClustersRow: React.SFC<ClustersRowProps> = ({obj}) => {
@@ -26,11 +26,11 @@ const ClustersRow: React.SFC<ClustersRowProps> = ({obj}) => {
       <ResourceLink kind={referenceForModel(ClusterModel)} name={obj.metadata.name} namespace={undefined} title={obj.metadata.name} />
     </div>
     <div className="col-xs-3">
-      { clusterType ? 'Directory': 'Replica' } Cluster
+      { clusterType ? gettext('Directory Cluster'): gettext('Replica Cluster') }
     </div>
     <div className="col-xs-5">
       {clusterLink
-        ? <span className="text-muted">Console:&nbsp;
+        ? <span className="text-muted">{gettext('Console:')}&nbsp;
           <a href={clusterLink.toString()} target="_blank" className="co-external-link" rel="noopener noreferrer">{clusterLink}</a>
         </span>
         : '—'
@@ -46,7 +46,7 @@ const ClustersDetails: React.SFC<ClustersDetailsProps> = ({obj}) => <React.Fragm
   </div>
 </React.Fragment>;
 
-const EmptyMsg = () => <MsgBox title="No Clusters in Directory" detail="Adding clusters to the directory allows administrators to change configuration across many clusters at once" />;
+const EmptyMsg = () => <MsgBox title={gettext('No Clusters in Directory')} detail={gettext('Adding clusters to the directory allows administrators to change configuration across many clusters at once')} />;
 export const ClustersList: React.SFC = props => <List {...props} Header={ClustersHeader} Row={ClustersRow} EmptyMsg={EmptyMsg} />;
 
 const FeatureFlagGate = connectToFlags(FLAGS.MULTI_CLUSTER)(props => {
@@ -54,20 +54,20 @@ const FeatureFlagGate = connectToFlags(FLAGS.MULTI_CLUSTER)(props => {
     return <LoadingBox />;
   }
   if (props.flags[FLAGS.MULTI_CLUSTER]) {
-    return <ListPage {...props} title="Cluster Directory" kind={referenceForModel(ClusterModel)} ListComponent={ClustersList} canCreate={true} />;
+    return <ListPage {...props} title={gettext('Cluster Directory')} kind={referenceForModel(ClusterModel)} ListComponent={ClustersList} canCreate={true} />;
   }
   return <div>
     <div className="co-well">
-      <h4>Getting Started</h4>
+      <h4>{gettext('Getting Started')}</h4>
       <p>
-      Multi-Cluster Directory is not yet installed and enabled.
-      See our documention for instructions on how to install Multi-Cluster Directory on your Tectonic Cluster.
+      {gettext('Multi-Cluster Directory is not yet installed and enabled.')}
+      {gettext('See our documention for instructions on how to install Multi-Cluster Directory on your Tectonic Cluster.')}
       </p>
       <p>
-        Multi-Cluster is an alpha feature.
+        {gettext('Multi-Cluster is an alpha feature.')}
       </p>
       <a href="https://coreos.com/tectonic/docs/latest/admin/multi-cluster.html" target="_blank" rel="noopener noreferrer">
-        <button className="btn btn-info">Installing Multi-cluster Directory <i className="fa fa-external-link" /></button>
+        <button className="btn btn-info">{gettext('Installing Multi-cluster Directory')} <i className="fa fa-external-link" /></button>
       </a>
     </div>
     <ListPage {...props} title="Cluster Directory" kind={referenceForModel(ClusterModel)} ListComponent={ClustersList} canCreate={true} fake={true} />
