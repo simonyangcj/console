@@ -12,7 +12,7 @@ import 'brace/ext/language_tools';
 import 'brace/snippets/yaml';
 
 import { k8sCreate, k8sUpdate, referenceFor, getCompletions, groupVersionFor, snippets, referenceForModel } from '../module/k8s';
-import { history, Loading, resourceObjPath, gettext } from './utils';
+import { history, Loading, resourceObjPath } from './utils';
 import { SafetyFirst } from './safety-first';
 import { coFetchJSON } from '../co-fetch';
 import { ResourceSidebar } from './sidebars/resource-sidebar';
@@ -164,7 +164,7 @@ export const EditYAML = connect(stateToProps)(
       try {
         yaml = safeDump(obj);
       } catch (e) {
-        yaml = `${gettext('Error dumping YAML:')} ${e}`;
+        yaml = `Error dumping YAML: ${e}`;
       }
       this.doc.setValue(yaml);
       this.ace.moveCursorTo(0, 0);
@@ -189,23 +189,23 @@ export const EditYAML = connect(stateToProps)(
       try {
         obj = safeLoad(this.doc.getValue());
       } catch (e) {
-        this.handleError(`${gettext('Error parsing YAML:')} ${e}`);
+        this.handleError(`Error parsing YAML: ${e}`);
         return;
       }
 
       if (!obj.apiVersion) {
-        this.handleError(gettext('No "apiVersion" field found in YAML.'));
+        this.handleError('No "apiVersion" field found in YAML.');
         return;
       }
 
       if (!obj.kind) {
-        this.handleError(gettext('No "kind" field found in YAML.'));
+        this.handleError('No "kind" field found in YAML.');
         return;
       }
 
       const model = this.getModel(obj);
       if (!model) {
-        this.handleError(`${gettext('The server doesn\'t have a resource type "kind:')} ${obj.kind}, ${gettext('apiVersion:')} ${obj.apiVersion}".`);
+        this.handleError(`The server doesn't have a resource type "kind: ${obj.kind}, apiVersion: ${obj.apiVersion}".`);
         return;
       }
       const { namespace, name } = this.props.obj.metadata;
@@ -213,22 +213,22 @@ export const EditYAML = connect(stateToProps)(
 
       if (!this.props.create) {
         if (name !== newName) {
-          this.handleError(`${gettext('Cannot change resource name (original:')} "${name}", ${gettext('updated:')} "${newName}").`);
+          this.handleError(`Cannot change resource name (original: "${name}", updated: "${newName}").`);
           return;
         }
         if (namespace !== newNamespace) {
-          this.handleError(`${gettext('Cannot change resource namespace (original:')} "${namespace}", ${gettext('updated:')} "${newNamespace}").`);
+          this.handleError(`Cannot change resource namespace (original: "${namespace}", updated: "${newNamespace}").`);
           return;
         }
         if (this.props.obj.kind !== obj.kind) {
-          this.handleError(`${gettext('Cannot change resource kind (original:')} "${this.props.obj.kind}", ${gettext('updated:')} "${obj.kind}").`);
+          this.handleError(`Cannot change resource kind (original: "${this.props.obj.kind}", updated: "${obj.kind}").`);
           return;
         }
 
         const apiGroup = groupVersionFor(this.props.obj.apiVersion).group;
         const newAPIGroup = groupVersionFor(obj.apiVersion).group;
         if (apiGroup !== newAPIGroup) {
-          this.handleError(`${gettext('Cannot change API group (original:')} "${apiGroup}", ${gettext('updated:')} "${newAPIGroup}").`);
+          this.handleError(`Cannot change API group (original: "${apiGroup}", updated: "${newAPIGroup}").`);
           return;
         }
       }
@@ -248,7 +248,7 @@ export const EditYAML = connect(stateToProps)(
               // TODO: (ggreer). show message on new page. maybe delete old obj?
               return;
             }
-            const success = `${newName} ${gettext('has been updated to version')} ${o.metadata.resourceVersion}`;
+            const success = `${newName} has been updated to version ${o.metadata.resourceVersion}`;
             this.setState({success, error: null});
             this.loadYaml(true, o);
           })
@@ -310,13 +310,13 @@ export const EditYAML = connect(stateToProps)(
                     {error && <p className="alert alert-danger"><span className="pficon pficon-error-circle-o"></span>{error}</p>}
                     {success && <p className="alert alert-success"><span className="pficon pficon-ok"></span>{success}</p>}
                     {stale && <p className="alert alert-info">
-                      <span className="pficon pficon-info"></span>{gettext('This object has been updated. Click reload to see the new version.')}
+                      <span className="pficon pficon-info"></span>This object has been updated. Click reload to see the new version.
                     </p>}
-                    {create && <button type="submit" className="btn btn-primary" id="save-changes" onClick={() => this.save()}>{getttext('Create')}</button>}
-                    {!create && <button type="submit" className="btn btn-primary" id="save-changes" onClick={() => this.save()}>{gettext('Save Changes')}</button>}
-                    {!create && <button type="submit" className="btn btn-default" id="reload-object" onClick={() => this.reload()}>{gettext('Reload')}</button>}
-                    <button className="btn btn-default" id="cancel" onClick={() => this.onCancel()}>{gettext('Cancel')}</button>
-                    <button type="submit" className="btn btn-default pull-right hidden-sm hidden-xs" onClick={() => this.download()}><i className="fa fa-download"></i>&nbsp;{gettext('Download')}</button>
+                    {create && <button type="submit" className="btn btn-primary" id="save-changes" onClick={() => this.save()}>Create</button>}
+                    {!create && <button type="submit" className="btn btn-primary" id="save-changes" onClick={() => this.save()}>Save Changes</button>}
+                    {!create && <button type="submit" className="btn btn-default" id="reload-object" onClick={() => this.reload()}>Reload</button>}
+                    <button className="btn btn-default" id="cancel" onClick={() => this.onCancel()}>Cancel</button>
+                    <button type="submit" className="btn btn-default pull-right hidden-sm hidden-xs" onClick={() => this.download()}><i className="fa fa-download"></i>&nbsp;Download</button>
                   </div>
                 </div>
               </div>
