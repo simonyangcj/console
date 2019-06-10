@@ -133,12 +133,12 @@ const AlertManagerRow = ({obj: alertManager}) => {
 };
 
 const AlertManagerHeader = props => <ListHeader>
-  <ColHead {...props} className="col-md-2 col-sm-3 col-xs-6" sortField="metadata.name">Name</ColHead>
-  <ColHead {...props} className="col-md-2 col-sm-3 col-xs-6" sortField="metadata.namespace">Namespace</ColHead>
-  <ColHead {...props} className="col-md-4 col-sm-3 hidden-xs" sortField="metadata.labels">Labels</ColHead>
-  <ColHead {...props} className="col-md-1 hidden-sm hidden-xs" sortField="spec.version">Version</ColHead>
+  <ColHead {...props} className="col-md-2 col-sm-3 col-xs-6" sortField="metadata.name">{gettext('Name')}</ColHead>
+  <ColHead {...props} className="col-md-2 col-sm-3 col-xs-6" sortField="metadata.namespace">{gettext('Namespace')}</ColHead>
+  <ColHead {...props} className="col-md-4 col-sm-3 hidden-xs" sortField="metadata.labels">{gettext('Labels')}</ColHead>
+  <ColHead {...props} className="col-md-1 hidden-sm hidden-xs" sortField="spec.version">{gettext('Version')}</ColHead>
   <ColHead {...props} className="col-md-3 col-sm-3 hidden-xs" sortField="spec.nodeSelector">
-    Node Selector
+    {gettext('Node Selector')}
   </ColHead>
 </ListHeader>;
 

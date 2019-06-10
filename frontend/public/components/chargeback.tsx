@@ -343,7 +343,7 @@ const reportsPages = [
   navFactory.editYaml(),
 ];
 
-const EmptyMsg = () => <MsgBox title="No reports have been generated" detail="Reports allow resource usage and cost to be tracked per namespace, pod, and more." />;
+const EmptyMsg = () => <MsgBox title={gettext('No reports have been generated')} detail={gettext('Reports allow resource usage and cost to be tracked per namespace, pod, and more.')} />;
 export const ReportsList: React.SFC = props => <List {...props} Header={ReportsHeader} Row={ReportsRow} EmptyMsg={EmptyMsg} />;
 
 const ReportsPage_: React.SFC<ReportsPageProps> = props => {
@@ -358,16 +358,16 @@ const ReportsPage_: React.SFC<ReportsPageProps> = props => {
   }
   return <div>
     <div className="co-well">
-      <h4>Getting Started</h4>
+      <h4>{gettext('Getting Started')}</h4>
       <p>
-      Chargeback is not yet installed and enabled.
-      See our documention for instructions on how to install Chargeback Report on your Tectonic Cluster.
+      {gettext('Chargeback is not yet installed and enabled.')}
+      {gettext('See our documention for instructions on how to install Chargeback Report on your Tectonic Cluster.')}
       </p>
       <p>
-        Chargeback is an alpha feature.
+        {gettext('Chargeback is an alpha feature.')}
       </p>
       <a href="https://coreos.com/tectonic/docs/latest/reports/install-chargeback.html" target="_blank" rel="noopener noreferrer">
-        <button className="btn btn-info">Installing Chargeback Report <i className="fa fa-external-link" /></button>
+        <button className="btn btn-info">{gettext('Installing Chargeback Report')} <i className="fa fa-external-link" /></button>
       </a>
     </div>
     <ListPage {...props} title="Chargeback Reporting" kind={ReportReference} ListComponent={ReportsList} canCreate={true} fake={true} />
@@ -385,10 +385,10 @@ export const ReportsDetailsPage: React.SFC<ReportsDetailsPageProps> = props => {
 
 
 const ReportGenerationQueriesHeader = props => <ListHeader>
-  <ColHead {...props} className="col-md-3 col-sm-4" sortField="metadata.name">Name</ColHead>
-  <ColHead {...props} className="col-md-3 col-sm-4" sortField="metadata.namespace">Namespace</ColHead>
-  <ColHead {...props} className="col-md-3 hidden-sm hidden-xs">Labels</ColHead>
-  <ColHead {...props} className="col-md-3 col-sm-4" sortField="metadata.creationTimestamp">Created At</ColHead>
+  <ColHead {...props} className="col-md-3 col-sm-4" sortField="metadata.name">{gettext('Name')}</ColHead>
+  <ColHead {...props} className="col-md-3 col-sm-4" sortField="metadata.namespace">{gettext('Namespace')}</ColHead>
+  <ColHead {...props} className="col-md-3 hidden-sm hidden-xs">{gettext('Labels')}</ColHead>
+  <ColHead {...props} className="col-md-3 col-sm-4" sortField="metadata.creationTimestamp">{gettext('Created At')}</ColHead>
 </ListHeader>;
 
 const ReportGenerationQueriesRow: React.SFC<ReportGenerationQueriesRowProps> = ({obj}) => {
@@ -413,17 +413,17 @@ const ReportGenerationQueriesDetails: React.SFC<ReportGenerationQueriesDetailsPr
     <div className="co-m-pane__body">
       <SectionHeading text="Chargeback Report Generation Query" />
       <ResourceSummary resource={obj} showNodeSelector={false} showPodSelector={false} showAnnotations={true}>
-        <dt>Query</dt>
+        <dt>{gettext('Query')}</dt>
         <dd><pre><code>{_.get(obj, ['spec', 'query'])}</code></pre></dd>
         <div className="row">
           <div className="col-xs-12">
-            <h3>Columns</h3>
+            <h3>{gettext('Columns')}</h3>
             <div className="co-table-container">
               <table className="table">
                 <thead>
                   <tr>
-                    <th>Column</th>
-                    <th>Type</th>
+                    <th>{gettext('Column')}</th>
+                    <th>{gettext('Type')}</th>
                   </tr>
                 </thead>
                 <tbody>
