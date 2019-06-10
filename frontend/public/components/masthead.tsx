@@ -40,16 +40,16 @@ const UserMenuWrapper = connectToFlags(FLAGS.AUTH_ENABLED, FLAGS.OPENSHIFT)((pro
   
   const handleLanguage = (v) => {
     (window as any).locale = v;
-    cookie.set('locale', v);
+    cookie.set('openshift_language', v);
     location.reload();
   }
   const lanuageTitle = () => {
-    const currentLanguage = cookie.get('locale') || 'zh-cn';
+    const currentLanguage = cookie.get('openshift_language') || 'zh-cn';
     return currentLanguage === 'zh-cn' ? gettext('Language: CN -> EN') : gettext('Language: EN -> CN');
   }
   const changeLanguage = e => {
     e.preventDefault();
-    const currentLanguage = cookie.get('locale') || 'zh-cn';
+    const currentLanguage = cookie.get('openshift_language') || 'zh-cn';
     currentLanguage === 'zh-cn' ? handleLanguage('en-us') : handleLanguage('zh-cn');
   }
   actions.push({

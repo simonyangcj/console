@@ -4,7 +4,7 @@ import locale from './locale';
 
 export const gettext = (str, value) => {
   if (!window.locale) {
-    window.locale = cookie.get('locale') || 'zh-cn';
+    window.locale = cookie.get('openshift_language') || 'zh-cn';
   }
   const locales = locale[window.locale];
   if (!value) {
