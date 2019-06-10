@@ -312,7 +312,7 @@ export const EditYAML = connect(stateToProps)(
                     {stale && <p className="alert alert-info">
                       <span className="pficon pficon-info"></span>{gettext('This object has been updated. Click reload to see the new version.')}
                     </p>}
-                    {create && <button type="submit" className="btn btn-primary" id="save-changes" onClick={() => this.save()}>{getttext('Create')}</button>}
+                    {create && <button type="submit" className="btn btn-primary" id="save-changes" onClick={() => this.save()}>{gettext('Create')}</button>}
                     {!create && <button type="submit" className="btn btn-primary" id="save-changes" onClick={() => this.save()}>{gettext('Save Changes')}</button>}
                     {!create && <button type="submit" className="btn btn-default" id="reload-object" onClick={() => this.reload()}>{gettext('Reload')}</button>}
                     <button className="btn btn-default" id="cancel" onClick={() => this.onCancel()}>{gettext('Cancel')}</button>
