@@ -2,7 +2,7 @@ import * as _ from 'lodash-es';
 import * as React from 'react';
 
 import { ColHead, DetailsPage, List, ListHeader, ListPage } from './factory';
-import { Cog, navFactory, ResourceCog, SectionHeading, ResourceLink, ResourceSummary, kindObj } from './utils';
+import { Cog, navFactory, ResourceCog, SectionHeading, ResourceLink, ResourceSummary, kindObj, gettext } from './utils';
 import { fromNow } from './utils/datetime';
 import { referenceFor, kindForReference } from '../module/k8s';
 
@@ -10,9 +10,9 @@ import { referenceFor, kindForReference } from '../module/k8s';
 const menuActions = [Cog.factory.ModifyLabels, Cog.factory.ModifyAnnotations, Cog.factory.Edit, Cog.factory.Delete];
 
 const Header = props => <ListHeader>
-  <ColHead {...props} className="col-xs-6 col-sm-4" sortField="metadata.name">Name</ColHead>
-  <ColHead {...props} className="col-xs-6 col-sm-4" sortField="metadata.namespace">Namespace</ColHead>
-  <ColHead {...props} className="col-sm-4 hidden-xs" sortField="metadata.creationTimestamp">Created</ColHead>
+  <ColHead {...props} className="col-xs-6 col-sm-4" sortField="metadata.name">{gettext('Name')}</ColHead>
+  <ColHead {...props} className="col-xs-6 col-sm-4" sortField="metadata.namespace">{gettext('Namespace')}</ColHead>
+  <ColHead {...props} className="col-sm-4 hidden-xs" sortField="metadata.creationTimestamp">{gettext('Created')}</ColHead>
 </ListHeader>;
 
 const RowForKind = kind => function RowForKind_ ({obj}) {
