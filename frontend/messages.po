@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-10 09:45+0800\n"
+"POT-Creation-Date: 2019-06-10 17:40+0800\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
@@ -212,7 +212,7 @@ msgid "Create Subscription"
 msgstr "创建订阅"
 
 msgid "Created"
-msgstr "创建"
+msgstr "创建时间"
 
 msgid "Created At"
 msgstr "创建时间"
@@ -1476,6 +1476,122 @@ msgstr "找不到页（404）"
 
 msgid "404: Page Not Found"
 msgstr "404: 找不到页"
+
+msgid "Target"
+msgstr "目标"
+
+msgid "(unrecognized type)"
+msgstr "(无法识别的类型)"
+
+msgid "Min Pods"
+msgstr "最小Pods"
+
+msgid "Max Pods"
+msgstr "最大Pods"
+
+msgid "Last Scale Time"
+msgstr "上次调节时间"
+
+msgid "pushed image"
+msgstr "推镜像"
+
+msgid "Image Repository"
+msgstr "镜像存储库"
+
+msgid "Public Image Repository"
+msgstr "公共镜像存储库"
+
+msgid "Image Count"
+msgstr "镜像数量"
+
+msgid "Identifier"
+msgstr "标识"
+
+msgid "Not configured"
+msgstr "未配置"
+
+msgid "Hosts"
+msgstr "主机"
+
+msgid "Service Port"
+msgstr "服务端口"
+
+msgid ""
+"These rules are handled by a routing layer (Ingress Controller) which is "
+"updated as the rules are modified. The Ingress controller implementation "
+"defines how headers and other metadata are forwarded or manipulated."
+msgstr ""
+"这些规则由路由层（Ingress控制器）处理，该路由层在修改规则时更新。 Ingress控制"
+"器实现定义了如何转发或操纵头和其他元数据。"
+
+msgid "target pods"
+msgstr "目标pods"
+
+msgid "to ports"
+msgstr "到端口"
+
+msgid "Pod Selector:"
+msgstr "Pod选择器: "
+
+msgid "NS Selector:"
+msgstr "命名空间选择器: "
+
+msgid "All traffic is allowed to Pods in"
+msgstr "允许所有流量进入Pods"
+
+msgid "Node Addresses"
+msgstr "节点地址"
+
+msgid "Node Name"
+msgstr "节点名称"
+
+msgid "Node Labels"
+msgstr "节点标签"
+
+msgid "Ready"
+msgstr "准备"
+
+msgid "Not Ready"
+msgstr "没准备好"
+
+msgid "Container Linux"
+msgstr "容器Linux"
+
+msgid "Last checked on"
+msgstr "上次检查时间"
+
+msgid "Provider ID"
+msgstr "供应商ID"
+
+msgid "Unschedulable"
+msgstr "不可调度"
+
+msgid "Update Status"
+msgstr "更新状态"
+
+msgid "Changed"
+msgstr "改变"
+
+msgid "Persistent Volume"
+msgstr "持久化卷"
+
+msgid "Connecting to"
+msgstr "连接到"
+
+msgid "Profile"
+msgstr "概述"
+
+msgid "Download Configuration"
+msgstr "下载配置 "
+
+msgid "Monitoring Namespace"
+msgstr "监控命名空间"
+
+msgid "View My Projects"
+msgstr "查看我的项目"
+
+msgid "Reclaim Policy"
+msgstr "回收政策"
 
 #~ msgid "Running"
 #~ msgstr "运行中"

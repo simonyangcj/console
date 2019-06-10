@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-10 09:45+0800\n"
+"POT-Creation-Date: 2019-06-10 17:40+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1474,4 +1474,118 @@ msgid "Page Not Found (404)"
 msgstr ""
 
 msgid "404: Page Not Found"
+msgstr ""
+
+msgid "Target"
+msgstr ""
+
+msgid "(unrecognized type)"
+msgstr ""
+
+msgid "Min Pods"
+msgstr ""
+
+msgid "Max Pods"
+msgstr ""
+
+msgid "Last Scale Time"
+msgstr ""
+
+msgid "pushed image"
+msgstr ""
+
+msgid "Image Repository"
+msgstr ""
+
+msgid "Public Image Repository"
+msgstr ""
+
+msgid "Image Count"
+msgstr ""
+
+msgid "Identifier"
+msgstr ""
+
+msgid "Not configured"
+msgstr ""
+
+msgid "Hosts"
+msgstr ""
+
+msgid "Service Port"
+msgstr ""
+
+msgid ""
+"These rules are handled by a routing layer (Ingress Controller) which is "
+"updated as the rules are modified. The Ingress controller implementation "
+"defines how headers and other metadata are forwarded or manipulated."
+msgstr ""
+
+msgid "target pods"
+msgstr ""
+
+msgid "to ports"
+msgstr ""
+
+msgid "Pod Selector:"
+msgstr ""
+
+msgid "NS Selector:"
+msgstr ""
+
+msgid "All traffic is allowed to Pods in"
+msgstr ""
+
+msgid "Node Addresses"
+msgstr ""
+
+msgid "Node Name"
+msgstr ""
+
+msgid "Node Labels"
+msgstr ""
+
+msgid "Ready"
+msgstr ""
+
+msgid "Not Ready"
+msgstr ""
+
+msgid "Container Linux"
+msgstr ""
+
+msgid "Last checked on"
+msgstr ""
+
+msgid "Provider ID"
+msgstr ""
+
+msgid "Unschedulable"
+msgstr ""
+
+msgid "Update Status"
+msgstr ""
+
+msgid "Changed"
+msgstr ""
+
+msgid "Persistent Volume"
+msgstr ""
+
+msgid "Connecting to"
+msgstr ""
+
+msgid "Profile"
+msgstr ""
+
+msgid "Download Configuration"
+msgstr ""
+
+msgid "Monitoring Namespace"
+msgstr ""
+
+msgid "View My Projects"
+msgstr ""
+
+msgid "Reclaim Policy"
 msgstr ""
