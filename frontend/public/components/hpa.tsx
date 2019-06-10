@@ -5,7 +5,7 @@ import * as _ from 'lodash-es';
 import { K8sResourceKindReference } from '../module/k8s';
 import { Conditions } from './conditions';
 import { ColHead, DetailsPage, List, ListHeader, ListPage } from './factory';
-import { Cog, SectionHeading, LabelList, navFactory, ResourceCog, ResourceLink, ResourceSummary, Timestamp } from './utils';
+import { Cog, SectionHeading, LabelList, navFactory, ResourceCog, ResourceLink, ResourceSummary, Timestamp, gettext } from './utils';
 import { ResourceEventStream } from './events';
 
 const HorizontalPodAutoscalersReference: K8sResourceKindReference = 'HorizontalPodAutoscaler';
@@ -99,9 +99,9 @@ const MetricsTable: React.SFC<MetricsTableProps> = ({obj: hpa}) => {
     <SectionHeading text="Metrics" />
     <div className="co-m-table-grid co-m-table-grid--bordered">
       <div className="row co-m-table-grid__head">
-        <div className="col-xs-6">Type</div>
-        <div className="col-xs-3">Current</div>
-        <div className="col-xs-3">Target</div>
+        <div className="col-xs-6">{gettext('Type')}</div>
+        <div className="col-xs-3">{gettext('Current')}</div>
+        <div className="col-xs-3">{gettext('Target')}</div>
       </div>
       <div className="co-m-table-grid__body">
         {hpa.spec.metrics.map((metric, i) => {
@@ -119,7 +119,7 @@ const MetricsTable: React.SFC<MetricsTableProps> = ({obj: hpa}) => {
             default:
               return <div key={i} className="row">
                 <div className="col-xs-12">
-                  {metric.type} <span className="small text-muted">(unrecognized type)</span>
+                  {metric.type} <span className="small text-muted">{gettext('(unrecognized type)')}</span>
                 </div>
               </div>;
           }
@@ -138,19 +138,19 @@ export const HorizontalPodAutoscalersDetails: React.SFC<HorizontalPodAutoscalers
       </div>
       <div className="col-sm-6">
         <dl className="co-m-pane__details">
-          <dt>Scale Target</dt>
+          <dt>{gettext('Scale Target')}</dt>
           <dd>
             <ResourceLink kind={hpa.spec.scaleTargetRef.kind} name={hpa.spec.scaleTargetRef.name} namespace={hpa.metadata.namespace} title={hpa.spec.scaleTargetRef.name} />
           </dd>
-          <dt>Min Pods</dt>
+          <dt>{gettext('Min Pods')}</dt>
           <dd>{hpa.spec.minReplicas}</dd>
-          <dt>Max Pods</dt>
+          <dt>{gettext('Max Pods')}</dt>
           <dd>{hpa.spec.maxReplicas}</dd>
-          <dt>Last Scale Time</dt>
+          <dt>{gettext('Last Scale Time')}</dt>
           <dd><Timestamp timestamp={hpa.status.lastScaleTime} /></dd>
-          <dt>Current Pods</dt>
+          <dt>{gettext('Current Pods')}</dt>
           <dd>{hpa.status.currentReplicas}</dd>
-          <dt>Desired Pods</dt>
+          <dt>{gettext('Desired Pods')}</dt>
           <dd>{hpa.status.desiredReplicas}</dd>
         </dl>
       </div>
@@ -175,12 +175,12 @@ export const HorizontalPodAutoscalersDetailsPage: React.SFC<HorizontalPodAutosca
 HorizontalPodAutoscalersDetailsPage.displayName = 'HorizontalPodAutoscalersDetailsPage';
 
 const HorizontalPodAutoscalersHeader = props => <ListHeader>
-  <ColHead {...props} className="col-lg-3 col-md-3 col-sm-4 col-xs-6" sortField="metadata.name">Name</ColHead>
-  <ColHead {...props} className="col-lg-2 col-md-3 col-sm-4 col-xs-6 " sortField="metadata.namespace">Namespace</ColHead>
-  <ColHead {...props} className="col-lg-3 col-md-3 col-sm-4 hidden-xs" sortField="metadata.labels">Labels</ColHead>
-  <ColHead {...props} className="col-lg-2 col-md-3 hidden-sm hidden-xs" sortField="spec.scaleTargetRef.name">Scale Target</ColHead>
-  <ColHead {...props} className="col-lg-1 hidden-md hidden-sm hidden-xs" sortField="spec.minReplicas">Min Pods</ColHead>
-  <ColHead {...props} className="col-lg-1 hidden-md hidden-sm hidden-xs" sortField="spec.maxReplicas">Max Pods</ColHead>
+  <ColHead {...props} className="col-lg-3 col-md-3 col-sm-4 col-xs-6" sortField="metadata.name">{gettext('Name')}</ColHead>
+  <ColHead {...props} className="col-lg-2 col-md-3 col-sm-4 col-xs-6 " sortField="metadata.namespace">{gettext('Namespace')}</ColHead>
+  <ColHead {...props} className="col-lg-3 col-md-3 col-sm-4 hidden-xs" sortField="metadata.labels">{gettext('Labels')}</ColHead>
+  <ColHead {...props} className="col-lg-2 col-md-3 hidden-sm hidden-xs" sortField="spec.scaleTargetRef.name">{gettext('Scale Target')}</ColHead>
+  <ColHead {...props} className="col-lg-1 hidden-md hidden-sm hidden-xs" sortField="spec.minReplicas">{gettext('Min Pods')}</ColHead>
+  <ColHead {...props} className="col-lg-1 hidden-md hidden-sm hidden-xs" sortField="spec.maxReplicas">{gettext('Max Pods')}</ColHead>
 </ListHeader>;
 
 const HorizontalPodAutoscalersRow: React.SFC<HorizontalPodAutoscalersRowProps> = ({obj}) => <div className="row co-resource-list__item">

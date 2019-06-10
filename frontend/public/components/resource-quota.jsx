@@ -1,13 +1,13 @@
 import * as React from 'react';
 
 import { ColHead, DetailsPage, List, ListHeader, ListPage } from './factory';
-import { Cog, SectionHeading, navFactory, ResourceCog, ResourceLink, ResourceSummary } from './utils';
+import { Cog, SectionHeading, navFactory, ResourceCog, ResourceLink, ResourceSummary, gettext } from './utils';
 
 const menuActions = [Cog.factory.ModifyLabels, Cog.factory.ModifyAnnotations, Cog.factory.Edit, Cog.factory.Delete];
 
 const Header = props => <ListHeader>
-  <ColHead {...props} className="col-md-5 col-xs-6" sortField="metadata.name">Name</ColHead>
-  <ColHead {...props} className="col-md-7 col-xs-6" sortField="metadata.namespace">Namespace</ColHead>
+  <ColHead {...props} className="col-md-5 col-xs-6" sortField="metadata.name">{gettext('Name')}</ColHead>
+  <ColHead {...props} className="col-md-7 col-xs-6" sortField="metadata.namespace">{gettext('Namespace')}</ColHead>
 </ListHeader>;
 
 const kind = 'ResourceQuota';

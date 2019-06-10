@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet';
 
 import { authSvc } from '../module/auth';
 import { kubectlConfigModal } from './modals';
-import { NavTitle } from './utils';
+import { NavTitle, gettext } from './utils';
 import { SafetyFirst } from './safety-first';
 import { ClientTokensContainer } from './client-tokens';
 
@@ -23,17 +23,17 @@ export class ProfilePage extends SafetyFirst {
   render() {
     return <div className="co-p-profile">
       <Helmet>
-        <title>Profile</title>
+        <title>{gettext('Profile')}</title>
       </Helmet>
       <NavTitle detail={true} title="Profile" />
       <div className="co-m-pane__body">
         <dl className="co-m-pane__details">
-          <dt>Name</dt>
+          <dt>{gettext('Name')}</dt>
           <dd>{authSvc.name() || '-'}</dd>
-          <dt>Email Address</dt>
+          <dt>{gettext('Email Address')}</dt>
           <dd>{authSvc.email() || '-'}</dd>
           <dt>kubectl</dt>
-          <dd><button className="btn btn-default" type="button" onClick={() => kubectlConfigModal({ callback: this._onKubeCtlDownloaded })}>Download Configuration</button></dd>
+          <dd><button className="btn btn-default" type="button" onClick={() => kubectlConfigModal({ callback: this._onKubeCtlDownloaded })}>{gettext('Download Configuration')}</button></dd>
         </dl>
       </div>
       <ClientTokensContainer isKubeCtlDownloaded={this.state.kubectl} />

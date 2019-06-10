@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { Terminal as XTerminal } from 'xterm';
 import * as fit from 'xterm/lib/addons/fit/fit';
 import * as full from 'xterm/lib/addons/fullscreen/fullscreen';
+import { gettext } from './utils';
 
 XTerminal.applyAddon(fit);
 XTerminal.applyAddon(full);
@@ -104,7 +105,7 @@ export class Terminal extends React.Component {
     return <div ref={this.outerRef} style={this.state} className={this.props.className}>
       <div ref={this.innerRef} className="console">
         { this.isFullscreen && <button className="btn btn-link console-collapse-link" onClick={() => this.setFullscreen(false)}>
-          <i className="fa fa-compress" aria-hidden="true" /> Collapse
+          <i className="fa fa-compress" aria-hidden="true" /> {gettext('Collapse')}
         </button> }
       </div>
     </div>;

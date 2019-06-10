@@ -2,7 +2,7 @@ import * as React from 'react';
 import * as _ from 'lodash-es';
 
 import store from '../redux';
-import { LoadingBox, LoadingInline, Dropdown, ResourceIcon } from './utils';
+import { LoadingBox, LoadingInline, Dropdown, ResourceIcon, gettext } from './utils';
 import { connectToFlags, FLAGS } from '../features';
 import { Terminal } from './terminal';
 import { WSFactory } from '../module/ws-factory';
@@ -169,7 +169,7 @@ export const PodExec = connectToFlags(FLAGS.OPENSHIFT)(class PodExec extends Rea
       <div className="co-toolbar">
         <div className="co-toolbar__group co-toolbar__group--left">
           <div className="co-toolbar__item">
-            Connecting to
+            {gettext('Connecting to')}
           </div>
           <div className="co-toolbar__item">
             <Dropdown className="btn-group" items={_.mapValues(containers, nameWithIcon)} title={nameWithIcon(activeContainer || <LoadingInline />)} onChange={this.onChangeContainer} />
@@ -178,7 +178,7 @@ export const PodExec = connectToFlags(FLAGS.OPENSHIFT)(class PodExec extends Rea
         {!error && <div className="co-toolbar__group co-toolbar__group--right">
           <div className="co-toolbar__item">
             <button className="btn btn-link" onClick={() => this.setFullscreen(true)}>
-              <i className="fa fa-expand" aria-hidden="true" /> Expand
+              <i className="fa fa-expand" aria-hidden="true" /> {gettext('Expand')}
             </button>
           </div>
         </div>}

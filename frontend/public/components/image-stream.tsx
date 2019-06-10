@@ -4,7 +4,7 @@ import * as _ from 'lodash-es';
 // eslint-disable-next-line no-unused-vars
 import { K8sResourceKindReference } from '../module/k8s';
 import { ColHead, DetailsPage, List, ListHeader, ListPage } from './factory';
-import { Cog, SectionHeading, LabelList, navFactory, Overflow, ResourceCog, ResourceLink, ResourceSummary, Timestamp } from './utils';
+import { Cog, SectionHeading, LabelList, navFactory, Overflow, ResourceCog, ResourceLink, ResourceSummary, Timestamp, gettext } from './utils';
 import { fromNow } from './utils/datetime';
 
 const ImageStreamsReference: K8sResourceKindReference = 'ImageStream';
@@ -31,7 +31,7 @@ const ImageStreamTagsRow: React.SFC<ImageStreamTagsRowProps> = ({imageStream, sp
     <span className="col-md-3 col-sm-4 col-xs-8 co-break-word">
       {from && referencesTag && <ResourceLink kind={ImageStreamTagsReference} name={getImageStreamTagName(imageStream.metadata.name, from.name)} namespace={imageStream.metadata.namespace} title={from.name} />}
       {from && !referencesTag && <Overflow value={from.name} />}
-      {!from && <span className="text-muted">pushed image</span>}
+      {!from && <span className="text-muted">{gettext('pushed image')}</span>}
     </span>
     <span className="col-md-4 col-sm-4 hidden-xs">
       {image && <Overflow value={image} />}
@@ -54,25 +54,25 @@ export const ImageStreamsDetails: React.SFC<ImageStreamsDetailsProps> = ({obj: i
     <div className="co-m-pane__body">
       <SectionHeading text="Image Stream Overview" />
       <ResourceSummary resource={imageStream} showPodSelector={false} showNodeSelector={false}>
-        {imageRepository && <dt>Image Repository</dt>}
+        {imageRepository && <dt>{gettext('Image Repository')}</dt>}
         {imageRepository && <dd>{imageRepository}</dd>}
-        {publicImageRepository && <dt>Public Image Repository</dt>}
+        {publicImageRepository && <dt>{gettext('Public Image Repository')}</dt>}
         {publicImageRepository && <dd>{publicImageRepository}</dd>}
-        <dt>Image Count</dt>
+        <dt>{gettext('Image Count')}</dt>
         <dd>{imageCount ? imageCount : 0}</dd>
       </ResourceSummary>
     </div>
     <div className="co-m-pane__body">
       <SectionHeading text="Tags" />
       {_.isEmpty(imageStream.status.tags)
-        ? <span className="text-muted">No tags</span>
+        ? <span className="text-muted">{gettext('No tags')}</span>
         : <div className="row">
           <div className="co-m-table-grid co-m-table-grid--bordered">
             <div className="row co-m-table-grid__head">
-              <div className="col-md-2 col-sm-4 col-xs-4">Name</div>
-              <div className="col-md-3 col-sm-4 col-xs-8">From</div>
-              <div className="col-md-4 col-sm-4 hidden-xs">Identifier</div>
-              <div className="col-md-3 hidden-sm hidden-xs">Last Updated</div>
+              <div className="col-md-2 col-sm-4 col-xs-4">{gettext('Name')}</div>
+              <div className="col-md-3 col-sm-4 col-xs-8">{gettext('From')}</div>
+              <div className="col-md-4 col-sm-4 hidden-xs">{gettext('Identifier')}</div>
+              <div className="col-md-3 hidden-sm hidden-xs">{gettext('Last Updated')}</div>
             </div>
             <div className="co-m-table-grid__body">
               {_.map(imageStream.status.tags, (statusTag) =>
@@ -98,10 +98,10 @@ export const ImageStreamsDetailsPage: React.SFC<ImageStreamsDetailsPageProps> = 
 ImageStreamsDetailsPage.displayName = 'ImageStreamsDetailsPage';
 
 const ImageStreamsHeader = props => <ListHeader>
-  <ColHead {...props} className="col-sm-3 col-xs-6" sortField="metadata.name">Name</ColHead>
-  <ColHead {...props} className="col-sm-3 col-xs-6" sortField="metadata.namespace">Namespace</ColHead>
-  <ColHead {...props} className="col-sm-3 hidden-xs" sortField="metadata.labels">Labels</ColHead>
-  <ColHead {...props} className="col-sm-3 hidden-xs" sortField="metadata.creationTimestamp">Created</ColHead>
+  <ColHead {...props} className="col-sm-3 col-xs-6" sortField="metadata.name">{gettext('Name')}</ColHead>
+  <ColHead {...props} className="col-sm-3 col-xs-6" sortField="metadata.namespace">{gettext('Namespace')}</ColHead>
+  <ColHead {...props} className="col-sm-3 hidden-xs" sortField="metadata.labels">{gettext('Labels')}</ColHead>
+  <ColHead {...props} className="col-sm-3 hidden-xs" sortField="metadata.creationTimestamp">{gettext('Created')}</ColHead>
 </ListHeader>;
 
 const ImageStreamsRow: React.SFC<ImageStreamsRowProps> = ({obj}) => <div className="row co-resource-list__item">

@@ -4,14 +4,14 @@ import { Link } from 'react-router-dom';
 
 import { FLAGS, connectToFlags } from '../features';
 import { ColHead, DetailsPage, List, ListHeader, ListPage } from './factory';
-import { Cog, navFactory, ResourceCog, SectionHeading, ResourceLink, ResourceSummary, Selector, helpLink, HELP_TOPICS } from './utils';
+import { Cog, navFactory, ResourceCog, SectionHeading, ResourceLink, ResourceSummary, Selector, helpLink, HELP_TOPICS, gettext } from './utils';
 
 const menuActions = [Cog.factory.ModifyLabels, Cog.factory.ModifyAnnotations, Cog.factory.Edit, Cog.factory.Delete];
 
 const Header = props => <ListHeader>
-  <ColHead {...props} className="col-xs-4" sortField="metadata.name">Name</ColHead>
-  <ColHead {...props} className="col-xs-3" sortField="metadata.namespace">Namespace</ColHead>
-  <ColHead {...props} className="col-xs-5" sortField="spec.podSelector">Pod Selector</ColHead>
+  <ColHead {...props} className="col-xs-4" sortField="metadata.name">{gettext('Name')}</ColHead>
+  <ColHead {...props} className="col-xs-3" sortField="metadata.namespace">{gettext('Namespace')}</ColHead>
+  <ColHead {...props} className="col-xs-5" sortField="spec.podSelector">{gettext('Pod Selector')}</ColHead>
 </ListHeader>;
 
 const kind = 'NetworkPolicy';
@@ -38,9 +38,9 @@ export const NetworkPoliciesPage = props => <ListPage {...props} ListComponent={
 
 
 const IngressHeader = () => <div className="row co-m-table-grid__head">
-  <div className="col-xs-4">target pods</div>
-  <div className="col-xs-5">from</div>
-  <div className="col-xs-3">to ports</div>
+  <div className="col-xs-4">{gettext('target pods')}</div>
+  <div className="col-xs-5">{gettext('from')}</div>
+  <div className="col-xs-3">{gettext('to ports')}</div>
 </div>;
 
 const IngressRow = ({ingress, namespace, podSelector}) => {
@@ -59,7 +59,7 @@ const IngressRow = ({ingress, namespace, podSelector}) => {
   return <div className="row co-resource-list__item">
     <div className="col-xs-4">
       <div>
-        <span className="text-muted">Pod Selector:</span>
+        <span className="text-muted">{gettext('Pod Selector:')}</span>
       </div>
       <div style={style}>
         <Selector selector={podSelector} namespace={namespace} />
@@ -69,13 +69,13 @@ const IngressRow = ({ingress, namespace, podSelector}) => {
       <div>
         { !podSelectors.length ? null :
           <div>
-            <span className="text-muted">Pod Selector:</span>
+            <span className="text-muted">{gettext('Pod Selector:')}</span>
             {podSelectors}
           </div>
         }
         { !nsSelectors.length ? null :
           <div style={{paddingTop: podSelectors.length ? 10 : 0}}>
-            <span className="text-muted">NS Selector:</span>
+            <span className="text-muted">{gettext('NS Selector:')}</span>
             {nsSelectors}
           </div>
         }
@@ -101,14 +101,14 @@ const Details_ = ({flags, obj: np}) => {
     <div className="co-m-pane__body">
       <SectionHeading text="Ingress Rules" />
       <p className="co-m-pane__explanation">
-        Pods accept all traffic by default.
-        They can be isolated via Network Policies which specify a whitelist of ingress rules.
-        When a Pod is selected by a Network Policy, it will reject all traffic not explicitly allowed via a Network Policy.
+        {gettext('Pods accept all traffic by default.')}
+        {gettext('They can be isolated via Network Policies which specify a whitelist of ingress rules.')}
+        {gettext('When a Pod is selected by a Network Policy, it will reject all traffic not explicitly allowed via a Network Policy.')}
         See more details in <a target="_blank" rel="noopener noreferrer" href={networkPolicyDocs}>Network Policies Documentation</a>.
       </p>
       {
         _.isEmpty(_.get(np, 'spec.ingress[0]', [])) ?
-          `All traffic is allowed to Pods in ${np.metadata.namespace}.` :
+          `${gettext('All traffic is allowed to Pods in')} ${np.metadata.namespace}.` :
           <div className="co-m-table-grid co-m-table-grid--bordered">
             <IngressHeader />
             <div className="co-m-table-grid__body">

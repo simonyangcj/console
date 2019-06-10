@@ -5,7 +5,7 @@ import { ResourceEventStream } from './events';
 import { ColHead, DetailsPage, List, ListHeader, ListPage, ResourceRow } from './factory';
 import { configureUnschedulableModal } from './modals';
 import { PodsPage } from './pod';
-import { Cog, navFactory, LabelList, ResourceCog, SectionHeading, ResourceLink, Timestamp, units, cloudProviderNames, cloudProviderID, pluralize, containerLinuxUpdateOperator } from './utils';
+import { Cog, navFactory, LabelList, ResourceCog, SectionHeading, ResourceLink, Timestamp, units, cloudProviderNames, cloudProviderID, pluralize, containerLinuxUpdateOperator, gettext } from './utils';
 import { Line, requirePrometheus } from './graphs';
 import { NodeModel } from '../models';
 import { CamelCaseWrap } from './utils/camel-case-wrap';
@@ -40,21 +40,21 @@ const Header = props => {
     return null;
   }
   return <ListHeader>
-    <ColHead {...props} className="col-xs-4" sortField="metadata.name">Node Name</ColHead>
-    <ColHead {...props} className="col-sm-2 col-xs-4" sortFunc="nodeReadiness">Status</ColHead>
-    <ColHead {...props} className="col-sm-3 col-xs-4" sortFunc="nodeUpdateStatus">OS Update</ColHead>
-    <ColHead {...props} className="col-sm-3 hidden-xs" sortField="status.addresses">Node Addresses</ColHead>
+    <ColHead {...props} className="col-xs-4" sortField="metadata.name">{gettext('Node Name')}</ColHead>
+    <ColHead {...props} className="col-sm-2 col-xs-4" sortFunc="nodeReadiness">{gettext('Status')}</ColHead>
+    <ColHead {...props} className="col-sm-3 col-xs-4" sortFunc="nodeUpdateStatus">{gettext('OS Update')}</ColHead>
+    <ColHead {...props} className="col-sm-3 hidden-xs" sortField="status.addresses">{gettext('Node Addresses')}</ColHead>
   </ListHeader>;
 };
 
 const HeaderSearch = props => <ListHeader>
-  <ColHead {...props} className="col-lg-2 col-md-3 col-sm-4 col-xs-5" sortField="metadata.name">Node Name</ColHead>
-  <ColHead {...props} className="col-md-2 hidden-sm hidden-xs" sortFunc="nodeReadiness">Status</ColHead>
-  <ColHead {...props} className="col-sm-5 col-xs-7" sortField="metadata.labels">Node Labels</ColHead>
-  <ColHead {...props} className="col-md-2 col-sm-3 hidden-xs" sortField="status.addresses">Node Addresses</ColHead>
+  <ColHead {...props} className="col-lg-2 col-md-3 col-sm-4 col-xs-5" sortField="metadata.name">{gettext('Node Name')}</ColHead>
+  <ColHead {...props} className="col-md-2 hidden-sm hidden-xs" sortFunc="nodeReadiness">{gettext('Status')}</ColHead>
+  <ColHead {...props} className="col-sm-5 col-xs-7" sortField="metadata.labels">{gettext('Node Labels')}</ColHead>
+  <ColHead {...props} className="col-md-2 col-sm-3 hidden-xs" sortField="status.addresses">{gettext('Node Addresses')}</ColHead>
 </ListHeader>;
 
-const NodeStatus = ({node}) => isNodeReady(node) ? <span className="node-ready"><i className="fa fa-check"></i> Ready</span> : <span className="node-not-ready"><i className="fa fa-minus-circle"></i> Not Ready</span>;
+const NodeStatus = ({node}) => isNodeReady(node) ? <span className="node-ready"><i className="fa fa-check"></i> {gettext('Ready')}</span> : <span className="node-not-ready"><i className="fa fa-minus-circle"></i> {gettext('Not Ready')}</span>;
 
 const NodeCLUpdateStatus = ({node}) => {
   const updateStatus = containerLinuxUpdateOperator.getUpdateStatus(node);
@@ -65,11 +65,11 @@ const NodeCLUpdateStatus = ({node}) => {
     {updateStatus ? <span>{updateStatus.className && <span><i className={updateStatus.className}></i>&nbsp;&nbsp;</span>}{updateStatus.text}</span> : null}
     {!_.isEmpty(newVersion) && !containerLinuxUpdateOperator.isSoftwareUpToDate(node) &&
       <div>
-        <small className="">Container Linux {containerLinuxUpdateOperator.getVersion(node)} &#10141; {newVersion}</small>
+        <small className="">{gettext('Container Linux')} {containerLinuxUpdateOperator.getVersion(node)} &#10141; {newVersion}</small>
       </div>}
     {lastCheckedDate && containerLinuxUpdateOperator.isSoftwareUpToDate(node) &&
       <div>
-        <small className="">Last checked on <div className="co-inline-block">{<Timestamp timestamp={lastCheckedDate} isUnix={true} />}</div></small>
+        <small className="">{gettext('Last checked on')} <div className="co-inline-block">{<Timestamp timestamp={lastCheckedDate} isUnix={true} />}</div></small>
       </div>}
   </div>;
 };
@@ -89,7 +89,7 @@ const NodeRow = ({obj: node, expand}) => {
     </div>
     <div className="col-sm-2 col-xs-4"><NodeStatus node={node} /></div>
     <div className="col-sm-3 col-xs-4">
-      {isOperatorInstalled ? <NodeCLStatusRow node={node} /> : <span className="text-muted">Not configured</span>}
+      {isOperatorInstalled ? <NodeCLStatusRow node={node} /> : <span className="text-muted">{gettext('Not configured')}</span>}
     </div>
     <div className="col-sm-3 hidden-xs"><NodeIPList ips={node.status.addresses} expand={expand} /></div>
     {expand && <div className="col-xs-12">
@@ -169,40 +169,40 @@ const Details = ({obj: node}) => {
       <div className="row">
         <div className="col-md-6 col-xs-12">
           <dl className="co-m-pane__details">
-            <dt>Node Name</dt>
+            <dt>{gettext('Node Name')}</dt>
             <dd>{node.metadata.name || '-'}</dd>
-            <dt>External ID</dt>
+            <dt>{gettext('External ID')}</dt>
             <dd>{_.get(node, 'spec.externalID', '-')}</dd>
-            <dt>Node Addresses</dt>
+            <dt>{gettext('Node Addresses')}</dt>
             <dd><NodeIPList ips={_.get(node, 'status.addresses')} expand={true} /></dd>
-            <dt>Node Labels</dt>
+            <dt>{gettext('Node Labels')}</dt>
             <dd><LabelList kind="Node" labels={node.metadata.labels} /></dd>
-            <dt>Annotations</dt>
+            <dt>{gettext('Annotations')}</dt>
             <dd><a className="co-m-modal-link" onClick={Cog.factory.ModifyAnnotations(NodeModel, node).callback}>{pluralize(_.size(node.metadata.annotations), 'Annotation')}</a></dd>
-            <dt>Provider ID</dt>
+            <dt>{gettext('Provider ID')}</dt>
             <dd>{cloudProviderNames([cloudProviderID(node)])}</dd>
-            {_.has(node, 'spec.unschedulable') && <dt>Unschedulable</dt>}
+            {_.has(node, 'spec.unschedulable') && <dt>{gettext('Unschedulable')}</dt>}
             {_.has(node, 'spec.unschedulable') && <dd className="text-capitalize">{_.get(node, 'spec.unschedulable', '-').toString()}
             </dd>}
-            <dt>Created</dt>
+            <dt>{gettext('Created')}</dt>
             <dd><Timestamp timestamp={node.metadata.creationTimestamp} /></dd>
           </dl>
         </div>
         <div className="col-md-6 col-xs-12">
           <dl className="co-m-pane__details">
-            <dt>Operating System</dt>
+            <dt>{gettext('Operating System')}</dt>
             <dd className="text-capitalize">{_.get(node, 'status.nodeInfo.operatingSystem', '-')}</dd>
-            <dt>Architecture</dt>
+            <dt>{gettext('Architecture')}</dt>
             <dd className="text-uppercase">{_.get(node, 'status.nodeInfo.architecture', '-')}</dd>
-            <dt>Kernel Version</dt>
+            <dt>{gettext('Kernel Version')}</dt>
             <dd>{_.get(node, 'status.nodeInfo.kernelVersion', '-')}</dd>
-            <dt>Boot ID</dt>
+            <dt>{gettext('Boot ID')}</dt>
             <dd>{_.get(node, 'status.nodeInfo.bootID', '-')}</dd>
-            <dt>Container Runtime</dt>
+            <dt>{gettext('Container Runtime')}</dt>
             <dd>{_.get(node, 'status.nodeInfo.containerRuntimeVersion', '-')}</dd>
-            <dt>Kubelet Version</dt>
+            <dt>{gettext('Kubelet Version')}</dt>
             <dd>{_.get(node, 'status.nodeInfo.kubeletVersion', '-')}</dd>
-            <dt>Kube-Proxy Version</dt>
+            <dt>{gettext('Kube-Proxy Version')}</dt>
             <dd>{_.get(node, 'status.nodeInfo.kubeProxyVersion', '-')}</dd>
           </dl>
         </div>
@@ -214,15 +214,15 @@ const Details = ({obj: node}) => {
       <div className="row">
         <div className="col-md-6 col-xs-12">
           <dl className="co-m-pane__details">
-            <dt>Current Version</dt>
+            <dt>{gettext('Current Version')}</dt>
             <dd>{containerLinuxUpdateOperator.getVersion(node)}</dd>
-            <dt>Channel</dt>
+            <dt>{gettext('Channel')}</dt>
             <dd className="text-capitalize">{containerLinuxUpdateOperator.getChannel(node)}</dd>
           </dl>
         </div>
         <div className="col-md-6 col-xs-12">
           <dl className="co-m-pane__details">
-            <dt>Update Status</dt>
+            <dt>{gettext('Update Status')}</dt>
             <dd><NodeCLUpdateStatus node={node} /></dd>
           </dl>
         </div>
@@ -235,11 +235,11 @@ const Details = ({obj: node}) => {
         <table className="table">
           <thead>
             <tr>
-              <th>Type</th>
-              <th>Status</th>
-              <th>Reason</th>
-              <th>Updated</th>
-              <th>Changed</th>
+              <th>{gettext('Type')}</th>
+              <th>{gettext('Status')}</th>
+              <th>{gettext('Reason')}</th>
+              <th>{gettext('Updated')}</th>
+              <th>{gettext('Changed')}</th>
             </tr>
           </thead>
           <tbody>
@@ -261,8 +261,8 @@ const Details = ({obj: node}) => {
         <table className="table">
           <thead>
             <tr>
-              <th>Name</th>
-              <th>Size</th>
+              <th>{gettext('Name')}</th>
+              <th>{gettext('Size')}</th>
             </tr>
           </thead>
           <tbody>

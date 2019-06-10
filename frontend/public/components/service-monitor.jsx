@@ -2,7 +2,7 @@ import * as _ from 'lodash-es';
 import * as React from 'react';
 
 import { ColHead, List, ListHeader, ListPage, ResourceRow } from './factory';
-import { Cog, ResourceCog, ResourceLink, Selector } from './utils';
+import { Cog, ResourceCog, ResourceLink, Selector, gettext } from './utils';
 import { ServiceMonitorModel } from '../models';
 import { referenceForModel } from '../module/k8s';
 
@@ -48,11 +48,11 @@ const ServiceMonitorRow = ({obj: sm}) => {
 };
 
 const ServiceMonitorHeader = props => <ListHeader>
-  <ColHead {...props} className="col-md-3 col-sm-3 col-xs-6" sortField="metadata.name">Name</ColHead>
-  <ColHead {...props} className="col-md-3 col-sm-3 col-xs-6" sortField="metadata.namespace">Namespace</ColHead>
-  <ColHead {...props} className="col-md-3 col-sm-6 hidden-xs" sortField="spec.selector">Service Selector</ColHead>
+  <ColHead {...props} className="col-md-3 col-sm-3 col-xs-6" sortField="metadata.name">{gettext('Name')}</ColHead>
+  <ColHead {...props} className="col-md-3 col-sm-3 col-xs-6" sortField="metadata.namespace">{gettext('Namespace')}</ColHead>
+  <ColHead {...props} className="col-md-3 col-sm-6 hidden-xs" sortField="spec.selector">{gettext('Service Selector')}</ColHead>
   <ColHead {...props} className="col-md-3 hidden-sm hidden-xs" sortField="spec.namespaceSelector">
-    Monitoring Namespace
+    {gettext('Monitoring Namespace')}
   </ColHead>
 </ListHeader>;
 

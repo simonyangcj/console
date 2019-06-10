@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { ColHead, List, ListHeader, ListPage, ResourceRow } from './factory';
-import { Cog, LabelList, ResourceCog, ResourceLink, Selector } from './utils';
+import { Cog, LabelList, ResourceCog, ResourceLink, Selector, gettext } from './utils';
 import { PrometheusModel } from '../models';
 import { referenceForModel } from '../module/k8s';
 
@@ -30,12 +30,12 @@ const PrometheusRow = ({obj: instance}) => {
 };
 
 const PrometheusHeader = props => <ListHeader>
-  <ColHead {...props} className="col-lg-3 col-md-3 col-sm-4 col-xs-6" sortField="metadata.name">Name</ColHead>
-  <ColHead {...props} className="col-lg-3 col-md-3 col-sm-4 col-xs-6" sortField="metadata.namespace">Namespace</ColHead>
-  <ColHead {...props} className="col-lg-3 col-md-4 col-sm-4 hidden-xs" sortField="metadata.labels">Labels</ColHead>
-  <ColHead {...props} className="col-lg-1 col-md-2 hidden-sm hidden-xs" sortField="spec.version">Version</ColHead>
+  <ColHead {...props} className="col-lg-3 col-md-3 col-sm-4 col-xs-6" sortField="metadata.name">{gettext('Name')}</ColHead>
+  <ColHead {...props} className="col-lg-3 col-md-3 col-sm-4 col-xs-6" sortField="metadata.namespace">{gettext('Namespace')}</ColHead>
+  <ColHead {...props} className="col-lg-3 col-md-4 col-sm-4 hidden-xs" sortField="metadata.labels">{gettext('Labels')}</ColHead>
+  <ColHead {...props} className="col-lg-1 col-md-2 hidden-sm hidden-xs" sortField="spec.version">{gettext('Version')}</ColHead>
   <ColHead {...props} className="col-lg-2 hidden-md hidden-sm hidden-xs" sortField="spec.serviceMonitorSelector">
-    Service Monitor Selector
+    {gettext('Service Monitor Selector')}
   </ColHead>
 </ListHeader>;
 

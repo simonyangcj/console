@@ -2,7 +2,7 @@ import * as React from 'react';
 import * as _ from 'lodash-es';
 
 import { ColHead, DetailsPage, List, ListHeader, ListPage } from './factory';
-import { Cog, detailsPage, navFactory, ResourceCog, SectionHeading, ResourceLink, ResourceSummary } from './utils';
+import { Cog, detailsPage, navFactory, ResourceCog, SectionHeading, ResourceLink, ResourceSummary, gettext } from './utils';
 // eslint-disable-next-line no-unused-vars
 import { K8sResourceKind, K8sResourceKindReference } from '../module/k8s';
 
@@ -14,10 +14,10 @@ const defaultClassAnnotation = 'storageclass.kubernetes.io/is-default-class';
 const isDefaultClass = (storageClass: K8sResourceKind) => _.get(storageClass, ['metadata', 'annotations', defaultClassAnnotation], 'false');
 
 const StorageClassHeader = props => <ListHeader>
-  <ColHead {...props} className="col-sm-4 col-xs-6" sortField="metadata.name">Name</ColHead>
-  <ColHead {...props} className="col-sm-4 col-xs-6" sortField="provisioner">Provisioner</ColHead>
-  <ColHead {...props} className="col-sm-2 hidden-xs" sortField="reclaimPolicy">Reclaim Policy</ColHead>
-  <ColHead {...props} className="col-sm-2 hidden-xs" sortField={`metadata.annotations['${defaultClassAnnotation}']`}>Default Class</ColHead>
+  <ColHead {...props} className="col-sm-4 col-xs-6" sortField="metadata.name">{gettext('Name')}</ColHead>
+  <ColHead {...props} className="col-sm-4 col-xs-6" sortField="provisioner">{gettext('Provisioner')}</ColHead>
+  <ColHead {...props} className="col-sm-2 hidden-xs" sortField="reclaimPolicy">{gettext('Reclaim Policy')}</ColHead>
+  <ColHead {...props} className="col-sm-2 hidden-xs" sortField={`metadata.annotations['${defaultClassAnnotation}']`}>{gettext('Default Class')}</ColHead>
 </ListHeader>;
 
 const StorageClassRow: React.SFC<StorageClassRowProps> = ({obj}) => {
@@ -42,11 +42,11 @@ const StorageClassDetails: React.SFC<StorageClassDetailsProps> = ({obj}) => <Rea
   <div className="co-m-pane__body">
     <SectionHeading text="StorageClass Overview" />
     <ResourceSummary resource={obj} showNodeSelector={false} showPodSelector={false}>
-      <dt>Provisioner</dt>
+      <dt>{gettext('Provisioner')}</dt>
       <dd>{obj.provisioner || '-'}</dd>
-      <dt>Reclaim Policy</dt>
+      <dt>{gettext('Reclaim Policy')}</dt>
       <dd>{obj.reclaimPolicy || '-'}</dd>
-      <dt>Default Class</dt>
+      <dt>{gettext('Default Class')}</dt>
       <dd>{isDefaultClass(obj)}</dd>
     </ResourceSummary>
   </div>

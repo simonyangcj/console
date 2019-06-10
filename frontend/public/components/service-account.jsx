@@ -3,7 +3,7 @@ import * as React from 'react';
 import { safeDump } from 'js-yaml';
 
 import { ColHead, DetailsPage, List, ListHeader, ListPage, ResourceRow } from './factory';
-import { Cog, SectionHeading, navFactory, ResourceCog, ResourceLink, ResourceSummary } from './utils';
+import { Cog, SectionHeading, navFactory, ResourceCog, ResourceLink, ResourceSummary, gettext } from './utils';
 import { fromNow } from './utils/datetime';
 import { k8sGet } from '../module/k8s';
 import { SecretModel } from '../models';
@@ -64,10 +64,10 @@ const KubeConfigify = (kind, sa) => ({
 const menuActions = [KubeConfigify, Cog.factory.Delete];
 
 const Header = props => <ListHeader>
-  <ColHead {...props} className="col-sm-4 col-xs-6" sortField="metadata.name">Name</ColHead>
-  <ColHead {...props} className="col-sm-4 col-xs-6" sortField="metadata.namespace">Namespace</ColHead>
-  <ColHead {...props} className="col-sm-2 hidden-xs" sortField="secrets">Secrets</ColHead>
-  <ColHead {...props} className="col-sm-2 hidden-xs" sortField="metadata.creationTimestamp">Age</ColHead>
+  <ColHead {...props} className="col-sm-4 col-xs-6" sortField="metadata.name">{gettext('Name')}</ColHead>
+  <ColHead {...props} className="col-sm-4 col-xs-6" sortField="metadata.namespace">{gettext('Namespace')}</ColHead>
+  <ColHead {...props} className="col-sm-2 hidden-xs" sortField="secrets">{gettext('Secrets')}</ColHead>
+  <ColHead {...props} className="col-sm-2 hidden-xs" sortField="metadata.creationTimestamp">{gettext('Age')}</ColHead>
 </ListHeader>;
 
 const ServiceAccountRow = ({obj: serviceaccount}) => {

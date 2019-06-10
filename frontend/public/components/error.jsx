@@ -2,7 +2,7 @@ import * as _ from 'lodash-es';
 import * as React from 'react';
 import { Helmet } from 'react-helmet';
 
-import {NavTitle, getQueryArgument} from './utils';
+import {NavTitle, getQueryArgument, gettext} from './utils';
 
 //User messages for error_types returned in auth.go
 const messages = {
@@ -56,7 +56,7 @@ export const ErrorPage = () => <div>
 
 export const ErrorPage404 = () => <div>
   <Helmet>
-    <title>Page Not Found (404)</title>
+    <title>{gettext('Page Not Found (404)')}</title>
   </Helmet>
-  <ErrorComponent title="404: Page Not Found" />
+  <ErrorComponent title={gettext('404: Page Not Found')} />
 </div>;

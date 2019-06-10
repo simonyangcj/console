@@ -2,7 +2,7 @@ import * as _ from 'lodash-es';
 import * as React from 'react';
 
 import { ColHead, DetailsPage, List, ListHeader, ListPage, ResourceRow } from './factory';
-import { Cog, SectionHeading, LabelList, ResourceCog, ResourceIcon, detailsPage, EmptyBox, navFactory, ResourceLink, ResourceSummary } from './utils';
+import { Cog, SectionHeading, LabelList, ResourceCog, ResourceIcon, detailsPage, EmptyBox, navFactory, ResourceLink, ResourceSummary, gettext } from './utils';
 
 const menuActions = Cog.factory.common;
 
@@ -15,12 +15,12 @@ const getHosts = (ingress) => {
     return <div>{hosts.join(', ')}</div>;
   }
 
-  return <div className="text-muted">No hosts</div>;
+  return <div className="text-muted">{gettext('No hosts')}</div>;
 };
 
 const getTLSCert = (ingress) => {
   if (!_.has(ingress.spec, 'tls')) {
-    return <div><span>Not configured</span></div>;
+    return <div><span>{gettext('Not configured')}</span></div>;
   }
 
   const certs = _.map(ingress.spec.tls, 'secretName');
@@ -32,10 +32,10 @@ const getTLSCert = (ingress) => {
 };
 
 const IngressListHeader = props => <ListHeader>
-  <ColHead {...props} className="col-md-3 col-sm-4 col-xs-6" sortField="metadata.name">Name</ColHead>
-  <ColHead {...props} className="col-md-3 col-sm-4 col-xs-6" sortField="metadata.namespace">Namespace</ColHead>
-  <ColHead {...props} className="col-md-3 col-sm-4 hidden-xs" sortField="metadata.labels">Labels</ColHead>
-  <ColHead {...props} className="col-md-3 hidden-sm hidden-xs" sortFunc="ingressValidHosts">Hosts</ColHead>
+  <ColHead {...props} className="col-md-3 col-sm-4 col-xs-6" sortField="metadata.name">{gettext('Name')}</ColHead>
+  <ColHead {...props} className="col-md-3 col-sm-4 col-xs-6" sortField="metadata.namespace">{gettext('Namespace')}</ColHead>
+  <ColHead {...props} className="col-md-3 col-sm-4 hidden-xs" sortField="metadata.labels">{gettext('Labels')}</ColHead>
+  <ColHead {...props} className="col-md-3 hidden-sm hidden-xs" sortFunc="ingressValidHosts">{gettext('Hosts')}</ColHead>
 </ListHeader>;
 
 const IngressListRow = ({obj: ingress}) => <ResourceRow obj={ingress}>
@@ -54,10 +54,10 @@ const IngressListRow = ({obj: ingress}) => <ResourceRow obj={ingress}>
 </ResourceRow>;
 
 const RulesHeader = () => <div className="row co-m-table-grid__head">
-  <div className="col-xs-3">Host</div>
-  <div className="col-xs-3">Path</div>
-  <div className="col-xs-3">Service</div>
-  <div className="col-xs-2">Service Port</div>
+  <div className="col-xs-3">{gettext('Host')}</div>
+  <div className="col-xs-3">{gettext('Path')}</div>
+  <div className="col-xs-3">{gettext('Service')}</div>
+  <div className="col-xs-2">{gettext('Service Port')}</div>
 </div>;
 
 const RulesRow = ({rule, namespace}) => {
@@ -117,13 +117,13 @@ const Details = ({obj: ingress}) => <React.Fragment>
   <div className="co-m-pane__body">
     <SectionHeading text="Ingress Overview" />
     <ResourceSummary resource={ingress} showPodSelector={false} showNodeSelector={false}>
-      <dt>TLS Certificate</dt>
+      <dt>{gettext('TLS Certificate')}</dt>
       <dd>{getTLSCert(ingress)}</dd>
     </ResourceSummary>
   </div>
   <div className="co-m-pane__body">
     <SectionHeading text="Ingress Rules" />
-    <p className="co-m-pane__explanation">These rules are handled by a routing layer (Ingress Controller) which is updated as the rules are modified. The Ingress controller implementation defines how headers and other metadata are forwarded or manipulated.</p>
+    <p className="co-m-pane__explanation">{gettext('These rules are handled by a routing layer (Ingress Controller) which is updated as the rules are modified. The Ingress controller implementation defines how headers and other metadata are forwarded or manipulated.')}</p>
     <div className="co-m-table-grid co-m-table-grid--bordered">
       <RulesHeader />
       <RulesRows spec={ingress.spec} namespace={ingress.metadata.namespace} />
