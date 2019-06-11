@@ -3,7 +3,7 @@ import * as React from 'react';
 
 import { k8sPatch, referenceForModel } from '../../module/k8s';
 import { createModalLauncher, ModalTitle, ModalBody, ModalSubmitFooter } from '../factory/modal';
-import { PromiseComponent, ResourceIcon, SelectorInput } from '../utils';
+import { PromiseComponent, ResourceIcon, SelectorInput, gettext } from '../utils';
 
 const LABELS_PATH = '/metadata/labels';
 const TEMPLATE_SELECTOR_PATH = '/spec/template/metadata/labels';
@@ -51,15 +51,15 @@ class BaseLabelsModal extends PromiseComponent {
     const { kind, resource, description, message, labelClassName } = this.props;
 
     return <form onSubmit={this._submit} name="form">
-      <ModalTitle>Edit {description || 'Labels'}</ModalTitle>
+      <ModalTitle>{gettext('Edit')} {description || gettext('Labels')}</ModalTitle>
       <ModalBody>
         <div className="row co-m-form-row">
-          <div className="col-sm-12">{message || 'Labels help you organize and select resources. Adding labels below will let you query for objects that have similar, overlapping or dissimilar labels.'}</div>
+          <div className="col-sm-12">{message || gettext('Labels help you organize and select resources. Adding labels below will let you query for objects that have similar, overlapping or dissimilar labels.')}</div>
         </div>
         <div className="row co-m-form-row">
           <div className="col-sm-12">
             <label htmlFor="tags-input" className="control-label">
-              {_.capitalize(description) || 'Labels'} for <ResourceIcon kind={kind.crd ? referenceForModel(kind) : kind.kind} /> {resource.metadata.name}
+              {_.capitalize(description) || gettext('Labels')} for <ResourceIcon kind={kind.crd ? referenceForModel(kind) : kind.kind} /> {resource.metadata.name}
             </label>
             <SelectorInput onChange={labels => this.setState({labels})} tags={this.state.labels} labelClassName={labelClassName || `co-text-${kind.id}`} autoFocus />
           </div>
@@ -78,8 +78,8 @@ export const labelsModal = createModalLauncher((props) => <BaseLabelsModal
 export const podSelectorModal = createModalLauncher((props) => <BaseLabelsModal
   path={['replicationcontrolleres', 'services'].includes(props.kind.plural) ? '/spec/selector' : '/spec/selector/matchLabels'}
   isPodSelector={true}
-  description="Pod Selector"
-  message={`Determines the set of pods targeted by this ${props.kind.label.toLowerCase()}.`}
+  description={gettext('Pod Selector')}
+  message={gettext('Determines the set of pods targeted by this %s.', props.kind.label.toLowerCase())}
   labelClassName="co-text-pod"
   {...props}
 />);

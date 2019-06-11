@@ -297,7 +297,7 @@ class ClusterMonitoring_ extends React.PureComponent {
     }
 
     return <div>
-      <Expander title="Cluster Monitoring">
+      <Expander title={gettext('Cluster Monitoring')}>
         <div className="co-cluster-updates__details">
           <div className="co-cluster-updates__detail">
             <dl>
@@ -323,7 +323,7 @@ class ClusterMonitoring_ extends React.PureComponent {
           </div>
         </div>
       </Expander>
-      <Expander title="Cluster Alerting">
+      <Expander title={gettext('Cluster Alerting')}>
         <div className="co-cluster-updates__details">
           <div className="co-cluster-updates__detail">
             <dl>
@@ -352,7 +352,7 @@ class ClusterMonitoring_ extends React.PureComponent {
 }
 
 const SettingsWrapper = props => <div className="co-cluster-updates">
-  <StatusBox {...props.obj} label="Tectonic Monitoring Configuration">
+  <StatusBox {...props.obj} label={gettext('Tectonic Monitoring Configuration')}>
     <ClusterMonitoring_ obj={props.obj.data} />
   </StatusBox>
 </div>;

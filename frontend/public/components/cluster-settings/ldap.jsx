@@ -451,7 +451,7 @@ const LDAPs = reduxForm({
 
     render () {
       if (this.state.loadError) {
-        return <LoadError label="Tectonic Identity Configuration" loadError={this.state.loadError} />;
+        return <LoadError label={gettext('Tectonic Identity Configuration')} loadError={this.state.loadError} />;
       }
 
       if (!this.state.tectonicIdentityConfig) {
@@ -488,7 +488,7 @@ const LDAPs = reduxForm({
       if (steps.length === Steps.length) {
         test = (<div>
           { (stateMachine === STATES.valid || stateMachine === STATES.invalid) &&
-          <Row label="Test Results">
+          <Row label={gettext('Test Results')}>
             { validationError
               ? <p className="alert alert-danger"><span className="pficon pficon-error-circle-o"></span>{gettext('Error')} - {validationError}:
                 <br />

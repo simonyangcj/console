@@ -280,7 +280,7 @@ const MonitoringNavSection_ = ({urls, closeMenu}) => {
   const alertManagerURL = urls[MonitoringRoutes.AlertManager];
   const grafanaURL = urls[MonitoringRoutes.Grafana];
   return prometheusURL || alertManagerURL || grafanaURL
-    ? <NavSection text="Monitoring" icon="pficon pficon-screen">
+    ? <NavSection text={gettext('Monitoring')} icon="pficon pficon-screen">
       {prometheusURL && <HrefLink href={prometheusURL} target="_blank" name="Metrics" onClick={closeMenu} isExternal={true} />}
       {alertManagerURL && <HrefLink href={alertManagerURL} target="_blank" name="Alerts" onClick={closeMenu} isExternal={true} />}
       {grafanaURL && <HrefLink href={grafanaURL} target="_blank" name="Dashboards" onClick={closeMenu} isExternal={true} />}
@@ -304,10 +304,10 @@ const UserNavSection = connectToFlags(FLAGS.AUTH_ENABLED, FLAGS.OPENSHIFT)(({fla
   };
 
   if (flags[FLAGS.OPENSHIFT]) {
-    return <NavSection text="Logout" icon="pficon pficon-user" klass="visible-xs-block" onClick={logout} />;
+    return <NavSection text={gettext('Logout')} icon="pficon pficon-user" klass="visible-xs-block" onClick={logout} />;
   }
 
-  return <NavSection text="User" icon="pficon pficon-user" klass="visible-xs-block">
+  return <NavSection text={gettext('User')} icon="pficon pficon-user" klass="visible-xs-block">
     <HrefLink href="/settings/profile" name="My Account" onClick={closeMenu} key="myAccount" />
     <HrefLink href="#" name="Logout" onClick={logout} key="logout" />
   </NavSection>;
@@ -361,7 +361,7 @@ export class Nav extends React.Component {
 
     return <React.Fragment>
       <button type="button" className="sidebar-toggle" aria-controls="sidebar" aria-expanded={isOpen} onClick={this.toggle}>
-        <span className="sr-only">Toggle navigation</span>
+        <span className="sr-only">{gettext('Toggle navigation')}</span>
         <span className="icon-bar" aria-hidden="true"></span>
         <span className="icon-bar" aria-hidden="true"></span>
         <span className="icon-bar" aria-hidden="true"></span>

@@ -96,7 +96,7 @@ class Details extends React.Component {
           </div>
           */}
           <div className="co-m-pane__filter-bar-group co-m-pane__filter-bar-group--filter">
-            <TextFilter label="Rules by action or resource" onChange={this.changeFilter} />
+            <TextFilter label={gettext('Rules by action or resource')} onChange={this.changeFilter} />
           </div>
         </div>
         <RulesList rules={rules} name={name} namespace={namespace} />
@@ -137,13 +137,13 @@ export const BindingsForRolePage = (props) => {
   }
   return <MultiListPage
     canCreate={true}
-    createButtonText="Create Binding"
+    createButtonText={gettext('Create Binding')}
     createProps={{to: `/k8s/${ns ? `ns/${ns}` : 'cluster'}/rolebindings/new?rolekind=${kind}&rolename=${name}`}}
     ListComponent={BindingsListComponent}
     staticFilters={[{'role-binding-roleRef': name}]}
     resources={resources}
     textFilter="role-binding"
-    filterLabel="Role Bindings by role or subject"
+    filterLabel={gettext('Role Bindings by role or subject')}
     namespace={ns}
     flatten={bindingsFlatten} />;
 };
@@ -176,9 +176,9 @@ export const RolesPage = connectToFlags(FLAGS.PROJECTS_AVAILBLE, FLAGS.PROJECTS_
     canCreate={true}
     showTitle={showTitle}
     namespace={namespace}
-    createButtonText="Create Role"
+    createButtonText={gettext('Create Role')}
     createProps={{to: `/k8s/ns/${namespace || 'default'}/roles/new`}}
-    filterLabel="Roles by name"
+    filterLabel={gettext('Roles by name')}
     flatten={resources => _.flatMap(resources, 'data').filter(r => !!r)}
     resources={[
       {kind: 'Role', namespaced: true, optional: !projectsAvailable},

@@ -39,7 +39,7 @@ const JobRow = ({obj: job}) => {
         <LabelList kind="Job" labels={job.metadata.labels} />
       </div>
       <div className="col-lg-2 col-md-2 hidden-sm hidden-xs">
-        <Link to={`/k8s/ns/${job.metadata.namespace}/jobs/${job.metadata.name}/pods`} title="pods">
+        <Link to={`/k8s/ns/${job.metadata.namespace}/jobs/${job.metadata.name}/pods`} title={gettext('pods')}>
           {job.status.succeeded || 0} of {completions}
         </Link>
       </div>

@@ -2,7 +2,7 @@ import * as _ from 'lodash-es';
 import * as React from 'react';
 
 import { createModalLauncher, ModalTitle, ModalBody, ModalSubmitFooter } from '../factory/modal';
-import { PromiseComponent, history, resourceListPathFromModel } from '../utils';
+import { PromiseComponent, history, resourceListPathFromModel, gettext } from '../utils';
 import { k8sKill } from '../../module/k8s/';
 
 //Modal for resource deletion and allows cascading deletes if propagationPolicy is provided for the enum
@@ -44,18 +44,18 @@ class DeleteModal extends PromiseComponent {
   render() {
     const {kind, resource} = this.props;
     return <form onSubmit={this._submit} name="form">
-      <ModalTitle>Delete {kind.label}</ModalTitle>
+      <ModalTitle>{gettext('Delete')} {kind.label}</ModalTitle>
       <ModalBody>
-        Are you sure you want to delete <strong>{resource.metadata.name}</strong>
+        {gettext('Are you sure you want to delete')} <strong>{resource.metadata.name}</strong>
         {_.has(resource.metadata, 'namespace') && <span> in namespace <strong>{resource.metadata.namespace}</strong>?</span>}
         {_.has(kind, 'propagationPolicy') && <div className="co-delete-modal-checkbox">
           <label className="co-delete-modal-checkbox-label">
             <input type="checkbox" onChange={() => this.setState({isChecked: !this.state.isChecked})} checked={!!this.state.isChecked} />
-            &nbsp;&nbsp; <span>Delete dependent objects of this resource</span>
+            &nbsp;&nbsp; <span>{gettext('Delete dependent objects of this resource')}</span>
           </label>
         </div>}
       </ModalBody>
-      <ModalSubmitFooter errorMessage={this.state.errorMessage} inProgress={this.state.inProgress} submitText={this.props.btnText || 'Confirm'} cancel={this._cancel} />
+      <ModalSubmitFooter errorMessage={this.state.errorMessage} inProgress={this.state.inProgress} submitText={this.props.btnText || gettext('Confirm')} cancel={this._cancel} />
     </form>;
   }
 }

@@ -51,32 +51,32 @@ export const ClusterHealth = () => <div>
   <div className="cluster-overview-cell container-fluid">
     <div className="row">
       <div className="col-lg-3 col-md-6">
-        <Gauge title="CPU Usage" query={'100 - (sum(rate(node_cpu{job="node-exporter",mode="idle"}[2m])) / count(node_cpu{job="node-exporter", mode="idle"})) * 100'} />
+        <Gauge title={gettext('CPU Usage')} query={'100 - (sum(rate(node_cpu{job="node-exporter",mode="idle"}[2m])) / count(node_cpu{job="node-exporter", mode="idle"})) * 100'} />
         <div className="row">
           <div className="col-xs-6">
-            <Scalar title="Used Cores" unit="numeric" query={'(1 - sum(rate(node_cpu{job="node-exporter",mode="idle"}[2m])) / count(node_cpu{job="node-exporter", mode="idle"})) * sum(machine_cpu_cores)'} />
+            <Scalar title={gettext('Used Cores')} unit="numeric" query={'(1 - sum(rate(node_cpu{job="node-exporter",mode="idle"}[2m])) / count(node_cpu{job="node-exporter", mode="idle"})) * sum(machine_cpu_cores)'} />
           </div>
           <div className="col-xs-6">
-            <Scalar title="Total Cores" unit="numeric" query={'sum(machine_cpu_cores)'} />
+            <Scalar title={gettext('Total Cores')} unit="numeric" query={'sum(machine_cpu_cores)'} />
           </div>
         </div>
       </div>
       <div className="col-lg-6 col-md-6">
-        <Line title="Cluster Load Average" query={multiLoadQueries} />
+        <Line title={gettext('Cluster Load Average')} query={multiLoadQueries} />
       </div>
       <div className="col-lg-3 col-md-6">
-        <Bar title="CPU Usage by Namespace" query={'sort(topk(10, sum by (namespace) (namespace:container_cpu_usage:sum)))'} humanize={humanizeCPU} metric="namespace" />
+        <Bar title={gettext('CPU Usage by Namespace')} query={'sort(topk(10, sum by (namespace) (namespace:container_cpu_usage:sum)))'} humanize={humanizeCPU} metric="namespace" />
       </div>
     </div>
     <div className="row">
       <div className="col-lg-3 col-md-6">
-        <Gauge title="Memory Usage" query={'((sum(node_memory_MemTotal) - sum(node_memory_MemFree) - sum(node_memory_Buffers) - sum(node_memory_Cached)) / sum(node_memory_MemTotal)) * 100'} />
+        <Gauge title={gettext('Memory Usage')} query={'((sum(node_memory_MemTotal) - sum(node_memory_MemFree) - sum(node_memory_Buffers) - sum(node_memory_Cached)) / sum(node_memory_MemTotal)) * 100'} />
         <div className="row">
           <div className="col-xs-6">
-            <Scalar title="Used" unit="binaryBytes" query={'sum(node_memory_MemTotal) - sum(node_memory_MemFree) - sum(node_memory_Buffers) - sum(node_memory_Cached)'} />
+            <Scalar title={gettext('Used')} unit="binaryBytes" query={'sum(node_memory_MemTotal) - sum(node_memory_MemFree) - sum(node_memory_Buffers) - sum(node_memory_Cached)'} />
           </div>
           <div className="col-xs-6">
-            <Scalar title="Total" unit="binaryBytes" query={'sum(node_memory_MemTotal)'} />
+            <Scalar title={gettext('Total')} unit="binaryBytes" query={'sum(node_memory_MemTotal)'} />
           </div>
         </div>
       </div>

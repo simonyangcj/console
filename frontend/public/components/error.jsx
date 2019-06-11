@@ -39,7 +39,7 @@ const getErrMessage = () => {
 };
 
 const ErrorComponent = ({title, message, errMessage}) => <React.Fragment>
-  <NavTitle detail={true} title="Error" />
+  <NavTitle detail={true} title={gettext('Error')} />
   <div className="co-m-pane__body">
     <h1 className="co-m-pane__heading co-m-pane__heading--center">{title}</h1>
     {message && <div className="text-center">{message}</div>}
@@ -51,7 +51,7 @@ export const ErrorPage = () => <div>
   <Helmet>
     <title>Error</title>
   </Helmet>
-  <ErrorComponent title="Oh no! Something went wrong." message={urlMessage()} errMessage={getErrMessage()} />
+  <ErrorComponent title={gettext('Oh no! Something went wrong.')} message={urlMessage()} errMessage={getErrMessage()} />
 </div>;
 
 export const ErrorPage404 = () => <div>

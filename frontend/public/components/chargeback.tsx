@@ -39,7 +39,7 @@ const dataURL = (obj, format='json') => {
 };
 
 const ChargebackNavBar: React.SFC<{match: {url: string}}> = props => <div>
-  <NavTitle title="Chargeback Reporting" style={{paddingBottom: 15}} />
+  <NavTitle title={gettext('Chargeback Reporting')} style={{paddingBottom: 15}} />
   <NavBar pages={reportPages} basePath={props.match.url.split('/').slice(0, -1).join('/')} />
 </div>;
 
@@ -302,7 +302,7 @@ class ReportData extends SafetyFirst<ReportDataProps, ReportDataState> {
     if (inFlight) {
       dataElem = <div className="row"><div className="col-xs-12 text-center"><LoadingInline /></div></div>;
     } else if (error) {
-      dataElem = <LoadError label="Report" message={error} />;
+      dataElem = <LoadError label={gettext('Report')} message={error} />;
     } else if (phase === 'Finished') {
       if (data) {
         dataElem = <DataTable sortBy={sortBy} orderBy={orderBy} keys={keys} rows={rows} maxValues={maxValues} totals={totals} applySort={(sb, func, ob) => this.applySort(sb, func, ob)} />;
@@ -310,7 +310,7 @@ class ReportData extends SafetyFirst<ReportDataProps, ReportDataState> {
         dataElem = <MsgBox title={gettext('No Data')} detail="" />;
       }
     } else if (phase === 'Error') {
-      dataElem = <LoadError label="Report" message={_.get(obj, ['status', 'output'])} canRetry={false} />;
+      dataElem = <LoadError label={gettext('Report')} message={_.get(obj, ['status', 'output'])} canRetry={false} />;
     }
 
     const name = _.get(obj, ['metadata', 'name']);
@@ -370,7 +370,7 @@ const ReportsPage_: React.SFC<ReportsPageProps> = props => {
         <button className="btn btn-info">{gettext('Installing Chargeback Report')} <i className="fa fa-external-link" /></button>
       </a>
     </div>
-    <ListPage {...props} title="Chargeback Reporting" kind={ReportReference} ListComponent={ReportsList} canCreate={true} fake={true} />
+    <ListPage {...props} title={gettext('Chargeback Reporting')} kind={ReportReference} ListComponent={ReportsList} canCreate={true} fake={true} />
     <div style={{marginTop: '-60px', textAlign: 'center'}}>
       <EmptyMsg />
     </div>

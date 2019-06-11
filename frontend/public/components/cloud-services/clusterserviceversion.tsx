@@ -57,11 +57,11 @@ export const ClusterServiceVersionRow = withFallback<ClusterServiceVersionRowPro
 
 export const ClusterServiceVersionList: React.SFC<ClusterServiceVersionListProps> = (props) => {
   const EmptyMsg = () => <MsgBox
-    title="No Cluster Service Versions Found"
+    title={gettext('No Cluster Service Versions Found')}
     detail={<div>
-      Cluster Service Versions are installed per namespace from Catalog Sources. For more information, see <a href="https://coreos.com/tectonic/docs/latest/alm/using-ocs.html" target="_blank" className="co-external-link" rel="noopener noreferrer">Using Open Cloud Services</a>.
+      {gettext('Cluster Service Versions are installed per namespace from Catalog Sources. For more information, see')} <a href="https://coreos.com/tectonic/docs/latest/alm/using-ocs.html" target="_blank" className="co-external-link" rel="noopener noreferrer">{gettext('Using Open Cloud Services')}</a>.
 
-      Or create an Operator and Cluster Service Version using the <a href="https://github.com/operator-framework/helm-app-operator-kit" target="_blank" className="co-external-link" rel="noopener noreferrer">Helm App Operator Kit</a>.
+      {gettext('Or create an Operator and Cluster Service Version using the')} <a href="https://github.com/operator-framework/helm-app-operator-kit" target="_blank" className="co-external-link" rel="noopener noreferrer">{gettext('Helm App Operator Kit')}</a>.
     </div>} />;
 
   return <List {...props} Row={ClusterServiceVersionRow} Header={ClusterServiceVersionHeader} EmptyMsg={EmptyMsg} />;

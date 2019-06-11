@@ -118,7 +118,7 @@ const ContextSwitcher = () => {
   };
 
   return <div className="contextselector-pf">
-    <Dropdown title="Cluster Console" items={items} selectedKey={(window as any).SERVER_FLAGS.basePath}
+    <Dropdown title={gettext('Cluster Console')} items={items} selectedKey={(window as any).SERVER_FLAGS.basePath}
       dropDownClassName="bootstrap-select btn-group" onChange={url => window.location.href = url} />
   </div>;
 };

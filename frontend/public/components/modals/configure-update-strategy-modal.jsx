@@ -6,7 +6,7 @@ import { Tooltip } from '../utils/tooltip';
 import { k8sPatch } from '../../module/k8s';
 import { DeploymentModel } from '../../models';
 import { createModalLauncher, ModalTitle, ModalBody, ModalSubmitFooter } from '../factory/modal';
-import { PromiseComponent, pluralize } from '../utils';
+import { PromiseComponent, pluralize, gettext } from '../utils';
 import { RadioInput } from '../radio';
 
 const getNumberOrPercent = (value) => {
@@ -62,11 +62,11 @@ class ConfigureUpdateStrategyModal extends PromiseComponent {
     const maxSurge = _.get(this.deployment.spec, 'strategy.rollingUpdate.maxSurge', '');
 
     return <form onSubmit={this._submit} name="form">
-      <ModalTitle>Edit Update Strategy</ModalTitle>
+      <ModalTitle>{gettext('Edit Update Strategy')}</ModalTitle>
       <ModalBody>
         <div className="co-m-form-row">
           <p>
-            How should the pods be replaced when a new revision is created?
+            {gettext('How should the pods be replaced when a new revision is created?')}
           </p>
         </div>
 
@@ -76,18 +76,18 @@ class ConfigureUpdateStrategyModal extends PromiseComponent {
               onChange={this._onTypeChange}
               value="RollingUpdate"
               checked={this.state.strategyType === 'RollingUpdate'}
-              title="RollingUpdate"
-              subTitle="(default)"
+              title={gettext('RollingUpdate')}
+              subTitle={gettext('(default)')}
               autoFocus={this.state.strategyType === 'RollingUpdate'}>
               <div className="co-m-radio-desc">
                 <p className="text-muted">
-                  Execute a smooth roll out of the new revision, based on the settings below
+                  {gettext('Execute a smooth roll out of the new revision, based on the settings below')}
                 </p>
 
                 <div className="row co-m-form-row">
                   <div className="col-sm-3">
                     <label htmlFor="input-max-unavailable" className="control-label">
-                      Max Unavailable
+                      {gettext('Max Unavailable')}
                     </label>
                   </div>
                   <div className="co-m-form-col col-sm-9">
@@ -102,13 +102,13 @@ class ConfigureUpdateStrategyModal extends PromiseComponent {
                         </span>
                       </div>
                     </div>
-                    <p className="help-block text-muted">Number or percentage of total pods at the start of the update (optional)</p>
+                    <p className="help-block text-muted">{gettext('Number or percentage of total pods at the start of the update (optional)')}</p>
                   </div>
                 </div>
 
                 <div className="row co-m-form-row">
                   <div className="col-sm-3">
-                    <label htmlFor="input-max-surge" className="control-label">Max Surge</label>
+                    <label htmlFor="input-max-surge" className="control-label">{gettext('Max Surge')}</label>
                   </div>
                   <div className="co-m-form-col col-sm-9">
                     <div className="form-inline">
@@ -117,11 +117,11 @@ class ConfigureUpdateStrategyModal extends PromiseComponent {
                           id="input-max-surge"
                           defaultValue={maxSurge} />
                         <span className="input-group-addon">
-                          <Tooltip content="Current desired pod count">greater than { pluralize(this.deployment.spec.replicas, 'pod')}</Tooltip>
+                          <Tooltip content={gettext('Current desired pod count')}>{gettext('greater than')} { pluralize(this.deployment.spec.replicas, 'pod')}</Tooltip>
                         </span>
                       </div>
                     </div>
-                    <p className="help-block text-muted">Number or percentage of total pods at the start of the update (optional)</p>
+                    <p className="help-block text-muted">{gettext('Number or percentage of total pods at the start of the update (optional)')}</p>
                   </div>
                 </div>
               </div>
@@ -133,8 +133,8 @@ class ConfigureUpdateStrategyModal extends PromiseComponent {
               onChange={this._onTypeChange}
               value="Recreate"
               checked={this.state.strategyType === 'Recreate'}
-              title="Recreate"
-              desc="Shut down all existing pods before creating new ones"
+              title={gettext('Recreate')}
+              desc={gettext('Shut down all existing pods before creating new ones')}
               autoFocus={this.state.strategyType === 'Recreate'} />
           </div>
 
@@ -144,7 +144,7 @@ class ConfigureUpdateStrategyModal extends PromiseComponent {
       <ModalSubmitFooter
         errorMessage={this.state.errorMessage}
         inProgress={this.state.inProgress}
-        submitText="Save Strategy"
+        submitText={gettext('Save Strategy')}
         cancel={this._cancel} />
     </form>;
   }

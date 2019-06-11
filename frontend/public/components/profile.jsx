@@ -25,7 +25,7 @@ export class ProfilePage extends SafetyFirst {
       <Helmet>
         <title>{gettext('Profile')}</title>
       </Helmet>
-      <NavTitle detail={true} title="Profile" />
+      <NavTitle detail={true} title={gettext('Profile')} />
       <div className="co-m-pane__body">
         <dl className="co-m-pane__details">
           <dt>{gettext('Name')}</dt>

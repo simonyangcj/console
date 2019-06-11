@@ -294,12 +294,12 @@ export const MultiListPage = props => {
 
   const elems = <FireMan_
     filterLabel={filterLabel}
-    selectorFilterLabel="Filter by selector (app=nginx) ..."
+    selectorFilterLabel={gettext('Filter by selector (app=nginx) ...')}
     createProps={createProps}
     title={showTitle ? title : undefined}
     canCreate={props.canCreate}
     canExpand={props.canExpand}
-    createButtonText={createButtonText || 'Create'}
+    createButtonText={createButtonText || gettext('Create')}
     textFilter={props.textFilter}
     resources={resources}
     autoFocus={fake ? false: props.autoFocus}

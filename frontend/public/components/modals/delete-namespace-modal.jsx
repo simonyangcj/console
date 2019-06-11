@@ -3,7 +3,7 @@ import * as PropTypes from 'prop-types';
 
 import { k8sKill } from '../../module/k8s';
 import { createModalLauncher, ModalTitle, ModalBody, ModalSubmitFooter } from '../factory/modal';
-import { history, PromiseComponent} from '../utils';
+import { history, PromiseComponent, gettext} from '../utils';
 
 class DeleteNamespaceModal extends PromiseComponent {
   constructor(props) {
@@ -29,13 +29,13 @@ class DeleteNamespaceModal extends PromiseComponent {
 
   render() {
     return <form onSubmit={this._submit} name="form">
-      <ModalTitle>Delete {this.props.kind.label}</ModalTitle>
+      <ModalTitle>{gettext('Delete')} {this.props.kind.label}</ModalTitle>
       <ModalBody>
-        <p>This action cannot be undone. It will destroy all pods, services and other objects in the deleted namespace.</p>
-        <p>Confirm deletion by typing <strong>{this.props.resource.metadata.name}</strong> below:</p>
-        <input type="text" className="form-control" onKeyUp={this._matchTypedNamespace} placeholder="Enter name" autoFocus={true} />
+        <p>{gettext('This action cannot be undone. It will destroy all pods, services and other objects in the deleted namespace.')}</p>
+        <p>{gettext('Confirm deletion by typing')} <strong>{this.props.resource.metadata.name}</strong> {gettext('below:')}</p>
+        <input type="text" className="form-control" onKeyUp={this._matchTypedNamespace} placeholder={gettext('Enter name')} autoFocus={true} />
       </ModalBody>
-      <ModalSubmitFooter submitText={`Delete ${this.props.kind.label}`} submitDisabled={!this.state.isTypedNsMatching} cancel={this._cancel} errorMessage={this.state.errorMessage} inProgress={this.state.inProgress} />
+      <ModalSubmitFooter submitText={`${gettext('Delete')} ${this.props.kind.label}`} submitDisabled={!this.state.isTypedNsMatching} cancel={this._cancel} errorMessage={this.state.errorMessage} inProgress={this.state.inProgress} />
     </form>;
   }
 }

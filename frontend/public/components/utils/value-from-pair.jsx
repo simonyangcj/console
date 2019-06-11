@@ -3,7 +3,7 @@ import * as PropTypes from 'prop-types';
 import * as _ from 'lodash-es';
 import * as fuzzy from 'fuzzysearch';
 
-import { Dropdown, ResourceName} from './';
+import { Dropdown, ResourceName, gettext } from './';
 
 // https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.10/#envvarsource-v1-core
 //   valueFrom:
@@ -58,7 +58,7 @@ const NameKeyDropdownPair = ({name, key, configMaps, secrets, onChange, kind, na
   const secretItems = {};
   const nameAutocompleteFilter = (text, item) => fuzzy(text, item.props.name);
   const keyAutocompleteFilter = (text, item) => fuzzy(text, item);
-  const keyTitle = _.isEmpty(key) ? <span className="text-muted">Select a key</span> : <span>{key}</span>;
+  const keyTitle = _.isEmpty(key) ? <span className="text-muted">{gettext('Select a key')}</span> : <span>{key}</span>;
 
   _.each(configMaps.items, (v) => {
     cmItems[`${v.metadata.name}:configMapKeyRef`] = <ResourceName kind="ConfigMap" name={v.metadata.name} />;
@@ -122,8 +122,8 @@ const FieldRef = ({data: {fieldPath}}) => <React.Fragment>
 </React.Fragment>;
 
 const ConfigMapSecretKeyRef = ({data: {name, key}, configMaps, secrets, onChange, disabled, kind}) => {
-  const placeholderString = 'Config Map or Secret';
-  const nameTitle = _.isEmpty(name) ? <span className="text-muted">Select a resource</span> : <ResourceName kind={kind} name={name} />;
+  const placeholderString = gettext('Config Map or Secret');
+  const nameTitle = _.isEmpty(name) ? <span className="text-muted">{gettext('Select a resource')}</span> : <ResourceName kind={kind} name={name} />;
 
   if (disabled) {
     return <React.Fragment>

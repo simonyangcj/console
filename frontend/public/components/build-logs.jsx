@@ -15,7 +15,7 @@ const PipelineLogMessage = ({ build }) => {
     { logURL && <a href={logURL} target="_blank" rel="noopener noreferrer">{gettext('View Log')}</a> }
   </React.Fragment>;
 
-  return <MsgBox title="See Jenkins Log" detail={detail} />;
+  return <MsgBox title={gettext('See Jenkins Log')} detail={detail} />;
 };
 
 const buildPhaseToLogSourceStatus = (phase) => {

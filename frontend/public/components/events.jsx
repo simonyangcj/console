@@ -144,9 +144,9 @@ class EventsStreamPage_ extends React.Component {
       { showGettingStarted && showTitle && <OpenShiftGettingStarted /> }
       <div className={classNames({'co-disabled': showGettingStarted })}>
         { showTitle && <Helmet>
-          <title>Events</title>
+          <title>{gettext('Events')}</title>
         </Helmet> }
-        { showTitle && <NavTitle title="Events" /> }
+        { showTitle && <NavTitle title={gettext('Events')} /> }
         <div className="co-m-pane__filter-bar">
           <div className="co-m-pane__filter-bar-group">
             <ResourceListDropdown title={gettext('All Types')} className="btn-group" onChange={v => this.setState({kind: v})} showAll selected={kind} />

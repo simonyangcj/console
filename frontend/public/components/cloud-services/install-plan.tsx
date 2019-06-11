@@ -166,7 +166,7 @@ export class InstallPlanPreview extends React.Component<InstallPlanPreviewProps,
         </div>) }
       </React.Fragment>
       : <div className="co-m-pane__body">
-        <MsgBox title="No Components Resolved" detail="This install plan has not been fully resolved yet." />
+        <MsgBox title={gettext('No Components Resolved')} detail={gettext('This install plan has not been fully resolved yet.')} />
       </div>;
   }
 }

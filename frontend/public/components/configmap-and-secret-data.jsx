@@ -60,7 +60,7 @@ export class SecretData extends React.PureComponent {
           </button>
           : null}
       </SectionHeading>
-      {dl.length ? <dl>{dl}</dl> : <EmptyBox label="Data" />}
+      {dl.length ? <dl>{dl}</dl> : <EmptyBox label={gettext('Data')} />}
     </React.Fragment>;
   }
 }

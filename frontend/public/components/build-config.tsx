@@ -107,7 +107,7 @@ BuildConfigsList.displayName = 'BuildConfigsList';
 export const BuildConfigsPage: React.SFC<BuildConfigsPageProps> = props =>
   <ListPage
     {...props}
-    title="Build Configs"
+    title={gettext('Build Configs')}
     kind={BuildConfigsReference}
     ListComponent={BuildConfigsList}
     canCreate={true}

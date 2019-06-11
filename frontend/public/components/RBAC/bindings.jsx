@@ -14,7 +14,7 @@ import { confirmModal } from '../modals';
 import { SafetyFirst } from '../safety-first';
 import { ButtonBar, Cog, Dropdown, Firehose, history, kindObj, LoadingInline, MsgBox,
   OverflowYFade, ResourceCog, ResourceName, ResourceLink,
-  resourceObjPath, StatusBox, getQueryArgument } from '../utils';
+  resourceObjPath, StatusBox, getQueryArgument, gettext } from '../utils';
 import { isSystemRole } from './index';
 import { connectToFlags, FLAGS, flagPending } from '../../features';
 
@@ -59,9 +59,9 @@ const menuActions = ({subjectIndex, subjects}, startImpersonate) => {
     subjects.length === 1 ? Cog.factory.Delete : (kind, binding) => ({
       label: `Delete ${kind.label} Subject...`,
       callback: () => confirmModal({
-        title: `Delete ${kind.label} Subject`,
+        title: gettext('Delete %s Subject', kind.label),
         message: `Are you sure you want to delete subject ${subject.name} of type ${subject.kind}?`,
-        btnText: 'Delete Subject',
+        btnText: gettext('Delete Subject'),
         executeFn: () => k8sPatch(kind, binding, [{op: 'remove', path: `/subjects/${subjectIndex}`}]),
       }),
     }),
@@ -78,11 +78,11 @@ const menuActions = ({subjectIndex, subjects}, startImpersonate) => {
 };
 
 const Header = props => <ListHeader>
-  <ColHead {...props} className="col-md-3 col-sm-4 col-xs-6" sortField="metadata.name">Name</ColHead>
-  <ColHead {...props} className="col-md-3 col-sm-4 hidden-xs" sortField="roleRef.name">Role Ref</ColHead>
-  <ColHead {...props} className="col-md-2 hidden-sm hidden-xs" sortField="subject.kind">Subject Kind</ColHead>
-  <ColHead {...props} className="col-md-2 hidden-sm hidden-xs" sortField="subject.name">Subject Name</ColHead>
-  <ColHead {...props} className="col-md-2 col-sm-4 col-xs-6" sortField="metadata.namespace">Namespace</ColHead>
+  <ColHead {...props} className="col-md-3 col-sm-4 col-xs-6" sortField="metadata.name">{gettext('Name')}</ColHead>
+  <ColHead {...props} className="col-md-3 col-sm-4 hidden-xs" sortField="roleRef.name">{gettext('Role Ref')}</ColHead>
+  <ColHead {...props} className="col-md-2 hidden-sm hidden-xs" sortField="subject.kind">{gettext('Subject Kind')}</ColHead>
+  <ColHead {...props} className="col-md-2 hidden-sm hidden-xs" sortField="subject.name">{gettext('Subject Name')}</ColHead>
+  <ColHead {...props} className="col-md-2 col-sm-4 col-xs-6" sortField="metadata.namespace">{gettext('Namespace')}</ColHead>
 </ListHeader>;
 
 export const BindingName = connect(null, {startImpersonate: UIActions.startImpersonate})(
@@ -118,7 +118,7 @@ const Row = ({obj: binding}) => <ResourceRow obj={binding}>
   </OverflowYFade>
 </ResourceRow>;
 
-const EmptyMsg = () => <MsgBox title="No Role Bindings Found" detail="Roles grant access to types of objects in the cluster. Roles are applied to a group or user via a Role Binding." />;
+const EmptyMsg = () => <MsgBox title={gettext('No Role Bindings Found')} detail={gettext('Roles grant access to types of objects in the cluster. Roles are applied to a group or user via a Role Binding.')} />;
 
 export const BindingsList = props => <List {...props} EmptyMsg={EmptyMsg} Header={Header} Row={Row} />;
 
@@ -139,12 +139,12 @@ const roleResources = [
 
 export const RoleBindingsPage = ({namespace, showTitle=true, fake}) => <MultiListPage
   canCreate={true}
-  createButtonText="Create Binding"
+  createButtonText={gettext('Create Binding')}
   createProps={{to: '/k8s/cluster/rolebindings/new'}}
   fake={fake}
-  filterLabel="Role Bindings by role or subject"
+  filterLabel={gettext('Role Bindings by role or subject')}
   flatten={flatten}
-  label="Role Bindings"
+  label={gettext('Role Bindings')}
   ListComponent={BindingsList}
   namespace={namespace}
   resources={roleResources}
@@ -154,18 +154,18 @@ export const RoleBindingsPage = ({namespace, showTitle=true, fake}) => <MultiLis
     reducer: bindingType,
     items: ({ClusterRoleBinding: data}) => {
       const items = [
-        {id: 'namespace', title: 'Namespace Role Bindings'},
-        {id: 'system', title: 'System Role Bindings'},
+        {id: 'namespace', title: gettext('Namespace Role Bindings')},
+        {id: 'system', title: gettext('System Role Bindings')},
       ];
       if (data && data.loaded && !data.loadError) {
-        items.unshift({id: 'cluster', title: 'Cluster-wide Role Bindings'});
+        items.unshift({id: 'cluster', title: gettext('Cluster-wide Role Bindings')});
       }
       return items;
     },
   }]}
   showTitle={showTitle}
   textFilter="role-binding"
-  title="Role Bindings"
+  title={gettext('Role Bindings')}
 />;
 
 class ListDropdown_ extends React.Component {
@@ -202,7 +202,7 @@ class ListDropdown_ extends React.Component {
 
     if (loadError) {
       this.setState({
-        title: <div className="cos-error-title">Error Loading {nextProps.desc}</div>
+        title: <div className="cos-error-title">{gettext('Error Loading')} {nextProps.desc}</div>
       });
       return;
     }
@@ -272,7 +272,7 @@ class ListDropdown_ extends React.Component {
 
     return <div>
       { Component }
-      { loaded && _.isEmpty(items) && <p className="alert alert-info"><span className="pficon pficon-info" aria-hidden="true"></span>No {desc} found or defined.</p> }
+      { loaded && _.isEmpty(items) && <p className="alert alert-info"><span className="pficon pficon-info" aria-hidden="true"></span>{gettext('No %s found or defined.', desc)}</p> }
     </div>;
   }
 }
@@ -305,7 +305,7 @@ const NsDropdown_ = props => {
   }
   const kind = openshiftFlag ? 'Project' : 'Namespace';
   const resources = [{ kind }];
-  return <ListDropdown {...props} desc="Namespaces" resources={resources} selectedKeyKind={kind} placeholder="Select namespace" />;
+  return <ListDropdown {...props} desc={gettext('Namespaces')} resources={resources} selectedKeyKind={kind} placeholder={gettext('Select namespace')} />;
 };
 const NsDropdown = connectToFlags(FLAGS.OPENSHIFT)(NsDropdown_);
 
@@ -331,9 +331,9 @@ const NsRoleDropdown_ = props => {
   return <ListDropdown
     {...props}
     dataFilter={roleFilter}
-    desc="Namespace Roles (Role)"
+    desc={gettext('Namespace Roles (Role)')}
     resources={resources}
-    placeholder="Select role name"
+    placeholder={gettext('Select role name')}
   />;
 };
 const NsRoleDropdown = connectToFlags(FLAGS.OPENSHIFT)(NsRoleDropdown_);
@@ -341,19 +341,19 @@ const NsRoleDropdown = connectToFlags(FLAGS.OPENSHIFT)(NsRoleDropdown_);
 const ClusterRoleDropdown = props => <ListDropdown
   {...props}
   dataFilter={role => !isSystemRole(role)}
-  desc="Cluster-wide Roles (ClusterRole)"
+  desc={gettext('Cluster-wide Roles (ClusterRole)')}
   resources={[{ kind: 'ClusterRole' }]}
-  placeholder="Select role name"
+  placeholder={gettext('Select role name')}
 />;
 
 const bindingKinds = [
-  {value: 'RoleBinding', title: 'Namespace Role Binding (RoleBinding)', desc: 'Grant the permissions to a user or set of users within the selected namespace.'},
-  {value: 'ClusterRoleBinding', title: 'Cluster-wide Role Binding (ClusterRoleBinding)', desc: 'Grant the permissions to a user or set of users at the cluster level and in all namespaces.'},
+  {value: 'RoleBinding', title: gettext('Namespace Role Binding (RoleBinding)'), desc: gettext('Grant the permissions to a user or set of users within the selected namespace.')},
+  {value: 'ClusterRoleBinding', title: gettext('Cluster-wide Role Binding (ClusterRoleBinding)'), desc: gettext('Grant the permissions to a user or set of users at the cluster level and in all namespaces.')},
 ];
 const subjectKinds = [
-  {value: 'User', title: 'User'},
-  {value: 'Group', title: 'Group'},
-  {value: 'ServiceAccount', title: 'Service Account'},
+  {value: 'User', title: gettext('User')},
+  {value: 'Group', title: gettext('Group')},
+  {value: 'ServiceAccount', title: gettext('Service Account')},
 ];
 
 const Section = ({label, children}) => <div className="row">
@@ -468,28 +468,28 @@ const BaseEditRoleBinding = connect(null, {setActiveNamespace: UIActions.setActi
         </Helmet>
         <form className="co-m-pane__body-group" onSubmit={this.save}>
           <h1 className="co-m-pane__heading">{title}</h1>
-          <p className="co-m-pane__explanation">Associate a user/group to the selected role to define the type of access and resources that are allowed.</p>
+          <p className="co-m-pane__explanation">{gettext('Associate a user/group to the selected role to define the type of access and resources that are allowed.')}</p>
 
           {!_.get(fixed, 'kind') && <RadioGroup currentValue={kind} items={bindingKinds} onChange={this.setKind} />}
 
           <div className="separator"></div>
 
-          <Section label="Role Binding">
-            <label htmlFor="role-binding-name" className="rbac-edit-binding__input-label">Name</label>
+          <Section label={gettext('Role Binding')}>
+            <label htmlFor="role-binding-name" className="rbac-edit-binding__input-label">{gettext('Name')}</label>
             {_.get(fixed, 'metadata.name')
               ? <ResourceName kind={kind} name={metadata.name} />
-              : <input className="form-control" type="text" onChange={this.changeName} placeholder="Role binding name" value={metadata.name} required id="role-binding-name" />}
+              : <input className="form-control" type="text" onChange={this.changeName} placeholder={gettext('Role binding name')} value={metadata.name} required id="role-binding-name" />}
             {kind === 'RoleBinding' && <div>
               <div className="separator"></div>
-              <label htmlFor="ns-dropdown" className="rbac-edit-binding__input-label">Namespace</label>
+              <label htmlFor="ns-dropdown" className="rbac-edit-binding__input-label">{gettext('Namespace')}</label>
               <NsDropdown fixed={!!_.get(fixed, 'metadata.namespace')} selectedKey={metadata.namespace} onChange={this.changeNamespace} id="ns-dropdown" />
             </div>}
           </Section>
 
           <div className="separator"></div>
 
-          <Section label="Role">
-            <label htmlFor="role-dropdown" className="rbac-edit-binding__input-label">Role Name</label>
+          <Section label={gettext('Role')}>
+            <label htmlFor="role-dropdown" className="rbac-edit-binding__input-label">{gettext('Role Name')}</label>
             <RoleDropdown
               fixed={!!_.get(fixed, 'roleRef.name')}
               namespace={metadata.namespace}
@@ -502,23 +502,23 @@ const BaseEditRoleBinding = connect(null, {setActiveNamespace: UIActions.setActi
 
           <div className="separator"></div>
 
-          <Section label="Subject">
+          <Section label={gettext('Subject')}>
             <RadioGroup currentValue={subject.kind} items={subjectKinds} onChange={this.changeSubjectKind} />
             {subject.kind === 'ServiceAccount' && <div>
               <div className="separator"></div>
-              <label htmlFor="subject-namespace" className="rbac-edit-binding__input-label">Subject Namespace</label>
+              <label htmlFor="subject-namespace" className="rbac-edit-binding__input-label">{gettext('Subject Namespace')}</label>
               <NsDropdown id="subject-namespace" selectedKey={subject.namespace} onChange={this.changeSubjectNamespace} />
             </div>}
             <div className="separator"></div>
-            <label htmlFor="subject-name" className="rbac-edit-binding__input-label">Subject Name</label>
-            <input className="form-control" type="text" onChange={this.changeSubjectName} placeholder="Subject name" value={subject.name} required id="subject-name" />
+            <label htmlFor="subject-name" className="rbac-edit-binding__input-label">{gettext('Subject Name')}</label>
+            <input className="form-control" type="text" onChange={this.changeSubjectName} placeholder={gettext('Subject name')} value={subject.name} required id="subject-name" />
           </Section>
 
           <div className="separator"></div>
 
           <ButtonBar errorMessage={this.state.error} inProgress={this.state.inProgress}>
-            <button type="submit" className="btn btn-primary" id="save-changes">{saveButtonText || 'Create Binding'}</button>
-            <Link to={formatNamespacedRouteForResource('rolebindings')} className="btn btn-default" id="cancel">Cancel</Link>
+            <button type="submit" className="btn btn-primary" id="save-changes">{saveButtonText || gettext('Create Binding')}</button>
+            <Link to={formatNamespacedRouteForResource('rolebindings')} className="btn btn-default" id="cancel">{gettext('Cancel')}</Link>
           </ButtonBar>
         </form>
       </div>;
@@ -557,7 +557,7 @@ const BindingLoadingWrapper = props => {
 };
 
 export const EditRoleBinding = ({match: {params}, kind}) => <Firehose resources={[{kind: kind, name: params.name, namespace: params.ns, isList: false, prop: 'obj'}]}>
-  <BindingLoadingWrapper fixedKeys={['kind', 'metadata', 'roleRef']} subjectIndex={getSubjectIndex()} titleVerb="Edit" saveButtonText="Save Binding" />
+  <BindingLoadingWrapper fixedKeys={['kind', 'metadata', 'roleRef']} subjectIndex={getSubjectIndex()} titleVerb="Edit" saveButtonText={gettext('Save Binding')} />
 </Firehose>;
 
 export const CopyRoleBinding = ({match: {params}, kind}) => <Firehose resources={[{kind: kind, name: params.name, namespace: params.ns, isList: false, prop: 'obj'}]}>

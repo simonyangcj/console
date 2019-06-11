@@ -15,7 +15,7 @@ class PodsComponent extends React.PureComponent {
   render() {
     const {metadata: {namespace}, spec: {selector}} = this.props.obj;
     if (_.isEmpty(selector)) {
-      return <EmptyBox label="Pods" />;
+      return <EmptyBox label={gettext('Pods')} />;
     }
 
     // Hide the create button to avoid confusion when showing pods for an object.

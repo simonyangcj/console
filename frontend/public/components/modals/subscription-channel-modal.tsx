@@ -4,7 +4,7 @@ import * as React from 'react';
 import * as _ from 'lodash-es';
 
 import { createModalLauncher, ModalTitle, ModalBody, ModalSubmitFooter } from '../factory/modal';
-import { PromiseComponent, ResourceLink } from '../utils';
+import { PromiseComponent, ResourceLink, gettext } from '../utils';
 import { K8sKind, K8sResourceKind, referenceForModel } from '../../module/k8s';
 import { SubscriptionKind, Package } from '../cloud-services/index';
 import { SubscriptionModel, ClusterServiceVersionModel } from '../../models';
@@ -29,10 +29,10 @@ export class SubscriptionChannelModal extends PromiseComponent {
 
   render() {
     return <form onSubmit={this.submit.bind(this)} name="form">
-      <ModalTitle className="modal-header">Change Subscription Update Channel</ModalTitle>
+      <ModalTitle className="modal-header">{gettext('Change Subscription Update Channel')}</ModalTitle>
       <ModalBody>
         <div className="co-m-form-row">
-          <p>Which channel is used to receive updates?</p>
+          <p>{gettext('Which channel is used to receive updates?')}</p>
         </div>
         <div className="co-m-form-row row">
           { this.props.pkg.channels.map((channel, i) => <div key={i} className="col-sm-12">
@@ -45,7 +45,7 @@ export class SubscriptionChannelModal extends PromiseComponent {
           </div>) }
         </div>
       </ModalBody>
-      <ModalSubmitFooter inProgress={this.state.inProgress} errorMessage={this.state.errorMessage} cancel={this.props.cancel.bind(this)} submitText="Save Channel" />
+      <ModalSubmitFooter inProgress={this.state.inProgress} errorMessage={this.state.errorMessage} cancel={this.props.cancel.bind(this)} submitText={gettext('Save Channel')} />
     </form>;
   }
 }

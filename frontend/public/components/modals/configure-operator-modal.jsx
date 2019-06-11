@@ -5,7 +5,7 @@ import * as PropTypes from 'prop-types';
 import { k8sPatch } from '../../module/k8s';
 import { ChannelOperatorConfigModel } from '../../models';
 import { createModalLauncher, ModalTitle, ModalBody, ModalSubmitFooter } from '../factory/modal';
-import { PromiseComponent } from '../utils';
+import { PromiseComponent, gettext } from '../utils';
 import { RadioInput } from '../radio';
 
 class ConfigureOperatorModal extends PromiseComponent {
@@ -73,22 +73,22 @@ const configureOperatorModal = createModalLauncher(ConfigureOperatorModal);
 
 export const configureOperatorStrategyModal = (props) => {
   return configureOperatorModal(_.defaults({}, {
-    buttonText: 'Save Strategy',
-    message: <p>Select an update method for the cluster:</p>,
+    buttonText: gettext('Save Strategy'),
+    message: <p>{gettext('maintain the desired number of healthy pods.')}</p>,
     path: '/automaticUpdate',
     radios: [
       {
         value: 'true',
-        title: <span>Automatic <span className="co-no-bold">(recommended)</span></span>,
-        desc: 'Stay up to date with the latest version automatically.'
+        title: <span>{gettext('Automatic')} <span className="co-no-bold">{gettext('(recommended)')}</span></span>,
+        desc: gettext('Stay up to date with the latest version automatically.')
       },
       {
         value: 'false',
-        title: 'Admin Approval',
-        desc: 'All updates must be approved by an admin. Important security patches may be missed.'
+        title: gettext('Admin Approval'),
+        desc: gettext('All updates must be approved by an admin. Important security patches may be missed.')
       }
     ],
-    title: 'Update Strategy',
+    title: gettext('Update Strategy'),
     valueType: 'bool'
   }, props));
 };

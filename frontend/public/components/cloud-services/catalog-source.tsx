@@ -76,7 +76,7 @@ export const PackageList: React.SFC<PackageListProps> = (props) => <List
     currentCSV={props.clusterServiceVersions.find(({metadata}) => metadata.name === rowProps.obj.channels[0].currentCSV)}
     catalogSource={props.catalogSource}
     subscription={props.subscriptions.find(sub => sub.spec.name === rowProps.obj.packageName)} />}
-  label="Packages"
+  label={gettext('Packages')}
   EmptyMsg={() => <MsgBox title={gettext('No Packages Found')} detail={gettext('The catalog author has not added any packages.')} />} />;
 
 export const CatalogSourceDetails = withFallback<CatalogSourceDetailsProps>(({obj, configMap, subscription}) => {

@@ -4,11 +4,11 @@ import { connect } from 'react-redux';
 
 import { k8sPatch } from '../../module/k8s';
 import { RoleModel, ClusterRoleModel } from '../../models';
-import { Cog, EmptyBox, ResourceIcon } from '../utils';
+import { Cog, EmptyBox, ResourceIcon, gettext } from '../utils';
 import { confirmModal } from '../modals';
 
 export const RulesList = ({rules, name, namespace}) => _.isEmpty(rules)
-  ? <EmptyBox label="Rules" />
+  ? <EmptyBox label={gettext('Rules')} />
   : <div className="co-m-table-grid co-m-table-grid--bordered rbac-rules-list">
     <div className="row co-m-table-grid__head">
       <div className="col-xs-5 col-sm-4 col-md-3 col-lg-2">
@@ -32,7 +32,7 @@ const Actions = ({verbs}) => {
   let actions = [];
   _.each(verbs, a => {
     if (a === '*') {
-      actions = <div className="rbac-rule-row">All</div>;
+      actions = <div className="rbac-rule-row">{gettext('All')}</div>;
       return false;
     }
     actions.push(<div className="rbac-rule-row" key={a}>{a}</div>);
@@ -45,7 +45,7 @@ const Groups = ({apiGroups}) => {
   let groups = [];
   _.each(apiGroups, g => {
     if (g === '*') {
-      groups = <div className="rbac-rule-row">* <i>All</i></div>;
+      groups = <div className="rbac-rule-row">* <i>{gettext('All')}</i></div>;
       return false;
     }
     groups.push(<div className="rbac-rule-row" key={g}>{g}</div>);
@@ -58,7 +58,7 @@ const Resources = connect(({k8s}) => ({allModels: k8s.getIn(['RESOURCES', 'model
     let allResources = [];
     resources && _.each([...new Set(resources)].sort(), r => {
       if (r === '*') {
-        allResources = [<span key={r} className="rbac-rule-resource rbac-rule-row">All Resources</span>];
+        allResources = [<span key={r} className="rbac-rule-resource rbac-rule-row">{gettext('All Resources')}</span>];
         return false;
       }
       const base = r.split('/')[0];
@@ -76,7 +76,7 @@ const Resources = connect(({k8s}) => ({allModels: k8s.getIn(['RESOURCES', 'model
       let URLs = [];
       _.each(nonResourceURLs.sort(), r => {
         if (r === '*') {
-          URLs = [<div className="rbac-rule-row" key={r}>All Non-resource URLs</div>];
+          URLs = [<div className="rbac-rule-row" key={r}>{gettext('All Non-resource URLs')}</div>];
           return false;
         }
         URLs.push(<div className="rbac-rule-row" key={r}>{r}</div>);
@@ -87,11 +87,11 @@ const Resources = connect(({k8s}) => ({allModels: k8s.getIn(['RESOURCES', 'model
   });
 
 const DeleteRule = (name, namespace, i) => ({
-  label: 'Delete Rule...',
+  label: gettext('Delete Rule...'),
   callback: () => confirmModal({
-    title: 'Delete Rule',
-    message: `Are you sure you want to delete Rule #${i}?`,
-    btnText: 'Delete Rule',
+    title: gettext('Delete Rule'),
+    message: gettext('Are you sure you want to delete Rule #%s?', i),
+    btnText: gettext('Delete Rule'),
     executeFn: () => {
       const kind = namespace ? RoleModel : ClusterRoleModel;
       return k8sPatch(kind, {metadata: {name, namespace}}, [{

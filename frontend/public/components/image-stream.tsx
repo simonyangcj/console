@@ -128,7 +128,7 @@ export const buildPhase = build => build.status.phase;
 export const ImageStreamsPage: React.SFC<ImageStreamsPageProps> = props =>
   <ListPage
     {...props}
-    title="Image Streams"
+    title={gettext('Image Streams')}
     kind={ImageStreamsReference}
     ListComponent={ImageStreamsList}
     canCreate={true}

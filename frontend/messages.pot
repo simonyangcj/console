@@ -6,12 +6,58 @@ msgstr ""
 msgid " is available"
 msgstr ""
 
+#: public/components/sidebars/role-sidebar.jsx:43
+msgid "\"GET/POST\" requests to non-resource endpoint and all subpaths"
+msgstr ""
+
+#: public/components/modals/configure-update-strategy-modal.jsx:80
+msgid "(default)"
+msgstr ""
+
+#: public/components/sidebars/role-sidebar.jsx:37
+#: public/components/sidebars/role-sidebar.jsx:44
+msgid "(for ClusterRoleBinding)"
+msgstr ""
+
+#: public/components/sidebars/role-sidebar.jsx:30
+msgid "(for RoleBinding)"
+msgstr ""
+
+#: public/components/modals/configure-operator-modal.jsx:82
+msgid "(recommended)"
+msgstr ""
+
 #: public/components/hpa.tsx:122
 msgid "(unrecognized type)"
 msgstr ""
 
 #: public/components/cloud-services/spec-descriptors/index.tsx:57
 msgid "(Unsupported)"
+msgstr ""
+
+#: public/components/utils/datetime.ts:77
+msgid "%s days from now"
+msgstr ""
+
+#: public/components/utils/datetime.ts:71
+msgid "%s hours from now"
+msgstr ""
+
+#: public/components/utils/datetime.ts:65
+msgid "%s minutes from now"
+msgstr ""
+
+#: public/components/utils/datetime.ts:83
+msgid "%s months from now"
+msgstr ""
+
+#: public/components/software-details.jsx:118
+#: public/dist/cluster-overview-807bf9d1cd149a46a0ee.js:484
+msgid "%s version could not be determined."
+msgstr ""
+
+#: public/components/utils/datetime.ts:88
+msgid "%s years from now"
 msgstr ""
 
 #: public/components/cloud-services/subscription.tsx:174
@@ -30,12 +76,76 @@ msgstr ""
 msgid "1 installing"
 msgstr ""
 
+#: public/components/modals/kubectl-config.jsx:148
+msgid "1. Download the kubectl binary for"
+msgstr ""
+
+#: public/components/modals/kubectl-config.jsx:149
+msgid "2. Place the configuration file at"
+msgstr ""
+
+#: public/components/modals/kubectl-config.jsx:150
+msgid "3. Done! Interact with the cluster, i.e."
+msgstr ""
+
 #: public/components/utils/status-box.jsx:67
 msgid "404: Not Found"
 msgstr ""
 
 #: public/components/error.jsx:61
 msgid "404: Page Not Found"
+msgstr ""
+
+#: public/components/utils/datetime.ts:34
+msgid "a day ago"
+msgstr ""
+
+#: public/components/utils/datetime.ts:74
+msgid "a day from now"
+msgstr ""
+
+#: public/components/modals/configure-ns-pull-secret-modal.jsx:179
+msgid "A default pull secret exists, but can't be parsed. Saving this will overwrite it."
+msgstr ""
+
+#: public/components/sidebars/build-config-sidebar.jsx:12
+msgid "A Dockerfile build performs an image build using a Dockerfile in the source repository or specified in build configuration."
+msgstr ""
+
+#: public/components/utils/datetime.ts:55
+msgid "a few seconds ago"
+msgstr ""
+
+#: public/components/utils/datetime.ts:59
+msgid "a few seconds from now"
+msgstr ""
+
+#: public/components/sidebars/network-policy-sidebar.jsx:45
+msgid "A fundamental policy by blocking all cross-pod traffics expect whitelisted ones through the other Network Policies being deployed."
+msgstr ""
+
+#: public/components/utils/datetime.ts:48
+msgid "a minute ago"
+msgstr ""
+
+#: public/components/utils/datetime.ts:62
+msgid "a minute from now"
+msgstr ""
+
+#: public/components/utils/datetime.ts:27
+msgid "a month ago"
+msgstr ""
+
+#: public/components/utils/datetime.ts:80
+msgid "a month from now"
+msgstr ""
+
+#: public/components/utils/datetime.ts:20
+msgid "a year ago"
+msgstr ""
+
+#: public/components/utils/datetime.ts:86
+msgid "a year from now"
 msgstr ""
 
 #: public/components/routes.tsx:107
@@ -52,6 +162,26 @@ msgstr ""
 
 #: public/components/persistent-volume-claim.jsx:82
 msgid "Access Modes"
+msgstr ""
+
+#: public/components/RBAC/edit-rule.jsx:266
+msgid "Access Rule"
+msgstr ""
+
+#: public/components/sidebars/network-policy-sidebar.jsx:19
+msgid "access to the current namespace"
+msgstr ""
+
+#: public/components/service.jsx:59
+msgid "Accessible outside the cluster"
+msgstr ""
+
+#: public/components/service.jsx:65
+msgid "Accessible within the cluster only"
+msgstr ""
+
+#: public/components/RBAC/edit-rule.jsx:324
+msgid "Actions"
 msgstr ""
 
 #: public/components/deployment-config.tsx:67
@@ -77,11 +207,20 @@ msgid "Adding clusters to the directory allows administrators to change configur
 msgstr ""
 
 #: public/components/cluster-overview.jsx:189
+#: public/components/utils/documentation.tsx:60
 msgid "Additional Support"
 msgstr ""
 
 #: public/components/clusters.tsx:16
 msgid "Addresses"
+msgstr ""
+
+#: public/components/modals/configure-operator-modal.jsx:87
+msgid "Admin Approval"
+msgstr ""
+
+#: public/components/RBAC/edit-rule.jsx:387
+msgid "Admin Resources"
 msgstr ""
 
 #: public/components/nav.jsx:424
@@ -116,6 +255,16 @@ msgstr ""
 msgid "Alerts Firing"
 msgstr ""
 
+#: public/components/RBAC/edit-rule.jsx:313
+#: public/components/RBAC/rules.jsx:35
+#: public/components/RBAC/rules.jsx:48
+msgid "All"
+msgstr ""
+
+#: public/components/RBAC/edit-rule.jsx:346
+msgid "All Access"
+msgstr ""
+
 #: public/components/events.jsx:153
 msgid "All Categories"
 msgstr ""
@@ -123,6 +272,18 @@ msgstr ""
 #: public/components/cluster-overview.jsx:24
 #: public/components/cluster-overview.jsx:31
 msgid "All good"
+msgstr ""
+
+#: public/components/RBAC/rules.jsx:79
+msgid "All Non-resource URLs"
+msgstr ""
+
+#: public/components/sidebars/network-policy-sidebar.jsx:43
+msgid "all non-whitelisted traffic in the current namespace"
+msgstr ""
+
+#: public/components/RBAC/rules.jsx:61
+msgid "All Resources"
 msgstr ""
 
 #: public/components/network-policy.jsx:111
@@ -134,12 +295,63 @@ msgstr ""
 msgid "All Types"
 msgstr ""
 
+#: public/components/modals/configure-operator-modal.jsx:88
+msgid "All updates must be approved by an admin. Important security patches may be missed."
+msgstr ""
+
+#: public/components/sidebars/network-policy-sidebar.jsx:34
+#: public/components/sidebars/network-policy-sidebar.jsx:50
+#: public/components/sidebars/network-policy-sidebar.jsx:58
+#: public/components/sidebars/network-policy-sidebar.jsx:66
+msgid "Allow"
+msgstr ""
+
+#: public/components/sidebars/role-sidebar.jsx:23
+msgid "Allow different access rights to different types of resource and API groups"
+msgstr ""
+
+#: public/components/sidebars/network-policy-sidebar.jsx:53
+msgid "Allow external service from public Internet directly or through a Load Balancer to access the pod."
+msgstr ""
+
+#: public/components/sidebars/network-policy-sidebar.jsx:29
+msgid "Allow inbound traffic from only certain Pods. One typical use case is to restrict the connections to a database only to the specific applications."
+msgstr ""
+
+#: public/components/sidebars/role-sidebar.jsx:29
+msgid "Allow reading a ConfigMap in a specific namespace"
+msgstr ""
+
+#: public/components/sidebars/role-sidebar.jsx:36
+msgid "Allow reading Nodes in the core API groups"
+msgstr ""
+
+#: public/components/sidebars/role-sidebar.jsx:11
+msgid "Allow reading the resource in API group"
+msgstr ""
+
+#: public/components/sidebars/role-sidebar.jsx:17
+msgid "Allow reading/writing the resource in API group"
+msgstr ""
+
+#: public/components/RBAC/edit-rule.jsx:338
+msgid "Allowed Resources"
+msgstr ""
+
 #: public/components/container.jsx:90
 msgid "An easy way to pass configuration values"
 msgstr ""
 
 #: public/components/events.jsx:383
 msgid "An error occurred during event retrieval. Attempting to reconnect..."
+msgstr ""
+
+#: public/components/utils/datetime.ts:41
+msgid "an hour ago"
+msgstr ""
+
+#: public/components/utils/datetime.ts:68
+msgid "an hour from now"
 msgstr ""
 
 #: public/components/node.tsx:180
@@ -149,6 +361,10 @@ msgstr ""
 
 #: public/components/cluster-health.jsx:128
 msgid "API Error Rate (5m)"
+msgstr ""
+
+#: public/components/RBAC/edit-rule.jsx:405
+msgid "API Groups"
 msgstr ""
 
 #: public/components/cluster-health.jsx:136
@@ -161,6 +377,10 @@ msgstr ""
 
 #: public/components/cluster-overview.jsx:86
 msgid "API Servers Up"
+msgstr ""
+
+#: public/components/RBAC/edit-rule.jsx:354
+msgid "API URLs that do not correspond to objects"
 msgstr ""
 
 #: public/components/cloud-services/install-plan.tsx:147
@@ -183,6 +403,10 @@ msgstr ""
 msgid "Application resources are declarative components used to define the behavior of the application."
 msgstr ""
 
+#: public/components/container-linux-update-operator/container-linux-update-details.jsx:102
+msgid "Apply Container Linux updates"
+msgstr ""
+
 #: public/components/cloud-services/subscription.tsx:158
 msgid "Approval"
 msgstr ""
@@ -200,13 +424,29 @@ msgstr ""
 msgid "Architecture"
 msgstr ""
 
+#: public/components/modals/delete-modal.jsx:49
+msgid "Are you sure you want to delete"
+msgstr ""
+
+#: public/components/RBAC/rules.jsx:93
+msgid "Are you sure you want to delete Rule #%s?"
+msgstr ""
+
 #: public/components/container.jsx:190
 #: public/components/utils/build-hooks.tsx:20
 msgid "Args"
 msgstr ""
 
+#: public/components/RBAC/bindings.jsx:471
+msgid "Associate a user/group to the selected role to define the type of access and resources that are allowed."
+msgstr ""
+
 #: public/components/secrets/create-secret.tsx:210
 msgid "Authentication Type"
+msgstr ""
+
+#: public/components/modals/configure-operator-modal.jsx:82
+msgid "Automatic"
 msgstr ""
 
 #: public/components/cluster-settings/ldap.jsx:133
@@ -226,6 +466,14 @@ msgstr ""
 msgid "Basic Authentication"
 msgstr ""
 
+#: public/components/modals/delete-namespace-modal.jsx:35
+msgid "below:"
+msgstr ""
+
+#: public/components/utils/documentation.tsx:45
+msgid "Blog"
+msgstr ""
+
 #: public/components/node.tsx:199
 msgid "Boot ID"
 msgstr ""
@@ -238,14 +486,20 @@ msgstr ""
 msgid "Build Config Overview"
 msgstr ""
 
+#: public/components/build-config.tsx:110
 #: public/models/index.ts:280
 msgid "Build Configs"
+msgstr ""
+
+#: public/components/sidebars/build-config-sidebar.jsx:11
+msgid "Build from Dockerfile"
 msgstr ""
 
 #: public/components/build.tsx:53
 msgid "Build Overview"
 msgstr ""
 
+#: public/components/build.tsx:185
 #: public/components/nav.jsx:416
 #: public/components/utils/vertnav.jsx:61
 #: public/models/index.ts:294
@@ -259,6 +513,8 @@ msgstr ""
 
 #: public/components/edit-yaml.jsx:318
 #: public/components/factory/modal.jsx:64
+#: public/components/RBAC/bindings.jsx:521
+#: public/components/RBAC/edit-rule.jsx:420
 #: public/components/secrets/create-secret.tsx:139
 msgid "Cancel"
 msgstr ""
@@ -311,6 +567,14 @@ msgstr ""
 msgid "Certificate"
 msgstr ""
 
+#: public/components/modals/subscription-channel-modal.tsx:32
+msgid "Change Subscription Update Channel"
+msgstr ""
+
+#: public/components/modals/installplan-approval-modal.tsx:38
+msgid "Change Update Approval Strategy"
+msgstr ""
+
 #: public/components/node.tsx:242
 msgid "Changed"
 msgstr ""
@@ -342,11 +606,34 @@ msgstr ""
 msgid "Chargeback Report Generation Query"
 msgstr ""
 
+#: public/components/chargeback.tsx:373
+#: public/components/chargeback.tsx:42
+msgid "Chargeback Reporting"
+msgstr ""
+
 #: public/components/client-tokens.jsx:85
 msgid "Client Id"
 msgstr ""
 
+#: public/components/client-tokens.jsx:92
+#: public/components/client-tokens.jsx:93
+msgid "Clients"
+msgstr ""
+
+#: public/components/modals/token-info-modal.jsx:41
+msgid "Close"
+msgstr ""
+
+#: public/components/cluster-settings/cluster-monitoring.jsx:326
+msgid "Cluster Alerting"
+msgstr ""
+
+#: public/components/masthead.tsx:121
+msgid "Cluster Console"
+msgstr ""
+
 #: public/components/clusters.tsx:57
+#: public/components/clusters.tsx:73
 msgid "Cluster Directory"
 msgstr ""
 
@@ -357,6 +644,14 @@ msgstr ""
 
 #: public/components/service.jsx:65
 msgid "Cluster IP"
+msgstr ""
+
+#: public/components/cluster-health.jsx:65
+msgid "Cluster Load Average"
+msgstr ""
+
+#: public/components/cluster-settings/cluster-monitoring.jsx:300
+msgid "Cluster Monitoring"
 msgstr ""
 
 #: public/components/cluster-settings/cluster-monitoring.jsx:239
@@ -396,10 +691,15 @@ msgstr ""
 msgid "Cluster Service Versions"
 msgstr ""
 
+#: public/components/cloud-services/clusterserviceversion.tsx:62
+msgid "Cluster Service Versions are installed per namespace from Catalog Sources. For more information, see"
+msgstr ""
+
 #: public/components/cloud-services/clusterserviceversion.tsx:94
 msgid "Cluster Service Versions by name"
 msgstr ""
 
+#: public/components/cluster-settings/cluster-settings.jsx:26
 #: public/components/nav.jsx:428
 msgid "Cluster Settings"
 msgstr ""
@@ -408,6 +708,19 @@ msgstr ""
 msgid "Cluster Status"
 msgstr ""
 
+#: public/components/RBAC/bindings.jsx:351
+msgid "Cluster-wide Role Binding (ClusterRoleBinding)"
+msgstr ""
+
+#: public/components/RBAC/bindings.jsx:161
+msgid "Cluster-wide Role Bindings"
+msgstr ""
+
+#: public/components/RBAC/bindings.jsx:344
+msgid "Cluster-wide Roles (ClusterRole)"
+msgstr ""
+
+#: public/components/cluster-picker.tsx:43
 #: public/models/index.ts:117
 msgid "Clusters"
 msgstr ""
@@ -427,6 +740,14 @@ msgstr ""
 
 #: public/components/chargeback.tsx:420
 msgid "Columns"
+msgstr ""
+
+#: public/components/RBAC/edit-rule.jsx:357
+msgid "Comma separated list of non-resource urls (/apis/extensions/v1beta1)"
+msgstr ""
+
+#: public/components/RBAC/edit-rule.jsx:409
+msgid "Comma separated list of the api groups for the selected resources."
 msgstr ""
 
 #: public/components/container.jsx:188
@@ -476,6 +797,10 @@ msgstr ""
 msgid "Conditions"
 msgstr ""
 
+#: public/components/utils/value-from-pair.jsx:125
+msgid "Config Map or Secret"
+msgstr ""
+
 #: public/components/configmap.jsx:33
 msgid "Config Map Overview"
 msgstr ""
@@ -487,6 +812,14 @@ msgstr ""
 
 #: public/components/image-stream-tag.tsx:63
 msgid "Configuration"
+msgstr ""
+
+#: public/components/modals/delete-modal.jsx:58
+msgid "Confirm"
+msgstr ""
+
+#: public/components/modals/delete-namespace-modal.jsx:35
+msgid "Confirm deletion by typing"
 msgstr ""
 
 #: public/components/client-tokens.jsx:46
@@ -509,9 +842,15 @@ msgstr ""
 msgid "Container"
 msgstr ""
 
+#: public/components/container-linux-update-operator/container-linux-update-details.jsx:134
+#: public/components/container-linux-update-operator/container-linux-update-details.jsx:142
 #: public/components/node.tsx:213
 #: public/components/node.tsx:68
 msgid "Container Linux"
+msgstr ""
+
+#: public/components/container-linux-update-operator/container-linux-update-details.jsx:151
+msgid "Container Linux is up to date"
 msgstr ""
 
 #: public/components/container.jsx:154
@@ -549,13 +888,27 @@ msgstr ""
 msgid "Could not load secrets."
 msgstr ""
 
+#: public/components/node.tsx:144
+msgid "CPU"
+msgstr ""
+
 #: public/components/cluster-settings/cluster-monitoring.jsx:304
 #: public/components/cluster-settings/cluster-monitoring.jsx:330
 msgid "CPU Resources"
 msgstr ""
 
+#: public/components/namespace.jsx:168
+#: public/components/pod.jsx:144
+msgid "CPU Shares"
+msgstr ""
+
+#: public/components/cluster-health.jsx:54
 #: public/components/cluster-overview.jsx:111
 msgid "CPU Usage"
+msgstr ""
+
+#: public/components/cluster-health.jsx:68
+msgid "CPU Usage by Namespace"
 msgstr ""
 
 #: public/components/cluster-overview.jsx:67
@@ -566,9 +919,17 @@ msgstr ""
 msgid "CRDs"
 msgstr ""
 
+#: public/components/custom-resource-definition.tsx:51
+msgid "CRDs by name"
+msgstr ""
+
 #: public/components/cloud-services/clusterserviceversion-resource.tsx:124
 #: public/components/edit-yaml.jsx:315
 #: public/components/factory/list-page.jsx:269
+#: public/components/factory/list-page.jsx:302
+#: public/components/modals/create-namespace-modal.jsx:116
+#: public/components/RBAC/edit-rule.jsx:266
+#: public/components/secret.jsx:136
 #: public/components/secrets/create-secret.tsx:138
 msgid "Create"
 msgstr ""
@@ -577,9 +938,24 @@ msgstr ""
 msgid "Create a project for your application."
 msgstr ""
 
+#: public/components/RBAC/bindings.jsx:142
+#: public/components/RBAC/bindings.jsx:520
+#: public/components/RBAC/role.jsx:140
+msgid "Create Binding"
+msgstr ""
+
 #: public/components/cloud-services/clusterserviceversion-resource.tsx:124
 #: public/components/cloud-services/clusterserviceversion.tsx:114
+#: public/components/modals/create-namespace-modal.jsx:80
 msgid "Create New"
+msgstr ""
+
+#: public/components/modals/configure-count-modal.jsx:95
+msgid "create one or more pods and ensure that a specified number of them successfully terminate. When the specified number of completions is successfully reached, the job is complete."
+msgstr ""
+
+#: public/components/RBAC/role.jsx:179
+msgid "Create Role"
 msgstr ""
 
 #: public/components/cloud-services/catalog-source.tsx:62
@@ -608,6 +984,10 @@ msgstr ""
 msgid "Created At"
 msgstr ""
 
+#: public/components/modals/configure-operator-channel-modal.jsx:47
+msgid "Critical security updates will always be delivered to any vulnerable channels."
+msgstr ""
+
 #: public/components/nav.jsx:395
 #: public/models/index.ts:657
 msgid "Cron Jobs"
@@ -615,6 +995,10 @@ msgstr ""
 
 #: public/components/cron-job.jsx:43
 msgid "CronJob Overview"
+msgstr ""
+
+#: public/components/RBAC/edit-rule.jsx:343
+msgid "Curated resources ideal for most users"
 msgstr ""
 
 #: public/components/hpa.tsx:103
@@ -630,9 +1014,18 @@ msgstr ""
 msgid "Current Pods"
 msgstr ""
 
+#: public/components/channel-operators/app-version.jsx:72
 #: public/components/channel-operators/app-version.jsx:82
 #: public/components/node.tsx:217
 msgid "Current Version"
+msgstr ""
+
+#: public/components/RBAC/edit-rule.jsx:349
+msgid "Custom"
+msgstr ""
+
+#: public/components/RBAC/edit-rule.jsx:315
+msgid "Custom (Advanced)"
 msgstr ""
 
 #: public/models/index.ts:644
@@ -650,8 +1043,21 @@ msgstr ""
 
 #: public/components/configmap-and-secret-data.jsx:19
 #: public/components/configmap-and-secret-data.jsx:54
+#: public/components/configmap-and-secret-data.jsx:63
 #: public/components/configmap.jsx:37
 msgid "Data"
+msgstr ""
+
+#: public/components/utils/datetime.ts:34
+msgid "day"
+msgstr ""
+
+#: public/components/utils/datetime.ts:31
+msgid "days"
+msgstr ""
+
+#: public/components/utils/datetime.ts:31
+msgid "days ago"
 msgstr ""
 
 #: public/components/cron-job.jsx:62
@@ -672,12 +1078,60 @@ msgstr ""
 msgid "Default Class"
 msgstr ""
 
+#: public/components/modals/create-namespace-modal.jsx:107
+msgid "Default Network Policy"
+msgstr ""
+
+#: public/components/modals/configure-ns-pull-secret-modal.jsx:173
 #: public/components/namespace.jsx:206
 msgid "Default Pull Secret"
 msgstr ""
 
 #: public/components/environment.jsx:245
 msgid "Define environment variables as key-value pairs to store configuration settings. You can enter text or add values from a ConfigMap or Secret. Drag and drop environment variables to change the order in which they are run. A variable can reference any other variables that come before it in the list, for example"
+msgstr ""
+
+#: public/components/sidebars/network-policy-sidebar.jsx:37
+msgid "Define ingress rules for specific port numbers of an application. The rule applies to all port numbers if not specified."
+msgstr ""
+
+#: public/components/modals/delete-modal.jsx:47
+#: public/components/modals/delete-namespace-modal.jsx:32
+#: public/components/modals/delete-namespace-modal.jsx:38
+msgid "Delete"
+msgstr ""
+
+#: public/components/RBAC/bindings.jsx:62
+msgid "Delete %s Subject"
+msgstr ""
+
+#: public/components/modals/delete-modal.jsx:54
+msgid "Delete dependent objects of this resource"
+msgstr ""
+
+#: public/components/RBAC/rules.jsx:92
+#: public/components/RBAC/rules.jsx:94
+msgid "Delete Rule"
+msgstr ""
+
+#: public/components/RBAC/rules.jsx:90
+msgid "Delete Rule..."
+msgstr ""
+
+#: public/components/RBAC/bindings.jsx:64
+msgid "Delete Subject"
+msgstr ""
+
+#: public/components/sidebars/network-policy-sidebar.jsx:42
+msgid "Deny"
+msgstr ""
+
+#: public/components/modals/create-namespace-modal.jsx:111
+msgid "Deny all inbound traffic."
+msgstr ""
+
+#: public/components/sidebars/network-policy-sidebar.jsx:21
+msgid "Deny traffic from other namespaces while allowing all traffic from the namespaces the Pod is living in."
 msgstr ""
 
 #: public/components/cloud-services/clusterserviceversion.tsx:22
@@ -688,6 +1142,7 @@ msgstr ""
 msgid "Deployment Config Overview"
 msgstr ""
 
+#: public/components/deployment-config.tsx:136
 #: public/models/index.ts:266
 msgid "Deployment Configs"
 msgstr ""
@@ -702,6 +1157,7 @@ msgid "Deployments"
 msgstr ""
 
 #: public/components/cloud-services/clusterserviceversion.tsx:146
+#: public/components/modals/create-namespace-modal.jsx:95
 msgid "Description"
 msgstr ""
 
@@ -723,6 +1179,10 @@ msgstr ""
 msgid "Destination CA Cert"
 msgstr ""
 
+#: public/components/modals/labels-modal.jsx:82
+msgid "Determines the set of pods targeted by this %s."
+msgstr ""
+
 #: public/components/clusters.tsx:29
 msgid "Directory Cluster"
 msgstr ""
@@ -736,11 +1196,17 @@ msgstr ""
 msgid "Disk Usage"
 msgstr ""
 
+#: public/components/modals/create-namespace-modal.jsx:89
 #: public/components/namespace.jsx:196
 msgid "Display Name"
 msgstr ""
 
+#: public/components/namespace.jsx:112
+msgid "documentation"
+msgstr ""
+
 #: public/components/cluster-overview.jsx:181
+#: public/components/utils/documentation.tsx:58
 msgid "Documentation"
 msgstr ""
 
@@ -752,6 +1218,7 @@ msgstr ""
 msgid "Download"
 msgstr ""
 
+#: public/components/modals/kubectl-config.jsx:145
 #: public/components/profile.jsx:36
 msgid "Download Configuration"
 msgstr ""
@@ -760,8 +1227,25 @@ msgstr ""
 msgid "Download Existing Config"
 msgstr ""
 
+#: public/components/modals/kubectl-config.jsx:126
+#: public/components/modals/kubectl-config.jsx:141
+msgid "Download kubectl Configuration"
+msgstr ""
+
 #: public/components/cluster-settings/ldap.jsx:546
 msgid "Download New Config"
+msgstr ""
+
+#: public/components/sidebars/resource-sidebar.jsx:55
+msgid "Download yaml"
+msgstr ""
+
+#: public/components/container-linux-update-operator/container-linux-update-details.jsx:86
+msgid "Downloading..."
+msgstr ""
+
+#: public/components/modals/tags.jsx:43
+msgid "Duplicate keys found."
 msgstr ""
 
 #: public/components/build.tsx:76
@@ -772,15 +1256,37 @@ msgstr ""
 msgid "Each namespace can subscribe to a single channel of a package for automatic updates."
 msgstr ""
 
+#: public/components/RBAC/edit-rule.jsx:278
+msgid "Each role is made up of a set of rules, which defines the type of access and resources that are allowed to be manipulated."
+msgstr ""
+
 #: public/components/client-tokens.jsx:81
 msgid "Each user of Tectonic gets a single kubectl CLI refresh token for use in their kubeconfig file. This token never expires, unless revoked here."
+msgstr ""
+
+#: public/components/modals/labels-modal.jsx:54
+#: public/components/RBAC/edit-rule.jsx:266
+msgid "Edit"
 msgstr ""
 
 #: public/components/modals/tags.jsx:72
 msgid "Edit Annotations"
 msgstr ""
 
+#: public/components/modals/configure-count-modal.jsx:104
+msgid "Edit Cluster Size"
+msgstr ""
+
+#: public/components/modals/configure-count-modal.jsx:84
+msgid "Edit Count"
+msgstr ""
+
+#: public/components/modals/configure-count-modal.jsx:94
+msgid "Edit Parallelism"
+msgstr ""
+
 #: public/components/deployment.jsx:16
+#: public/components/modals/configure-update-strategy-modal.jsx:65
 msgid "Edit Update Strategy"
 msgstr ""
 
@@ -788,12 +1294,25 @@ msgstr ""
 msgid "email"
 msgstr ""
 
+#: public/components/modals/configure-ns-pull-secret-modal.jsx:241
 #: public/components/profile.jsx:33
 msgid "Email Address"
 msgstr ""
 
 #: public/components/cluster-settings/ldap.jsx:119
 msgid "Email Attribute"
+msgstr ""
+
+#: public/components/modals/delete-namespace-modal.jsx:36
+msgid "Enter name"
+msgstr ""
+
+#: public/components/modals/kubectl-config.jsx:128
+msgid "Enter the code from the previous screen to generate your credentials:"
+msgstr ""
+
+#: public/components/modals/configure-ns-pull-secret-modal.jsx:215
+msgid "Enter Username/Password"
 msgstr ""
 
 #: public/components/image-stream-tag.tsx:65
@@ -810,6 +1329,8 @@ msgid "Environment Variables"
 msgstr ""
 
 #: public/components/cluster-settings/ldap.jsx:493
+#: public/components/error.jsx:42
+#: public/components/modals/error-modal.jsx:10
 msgid "Error"
 msgstr ""
 
@@ -821,6 +1342,7 @@ msgstr ""
 msgid "Error dumping YAML:"
 msgstr ""
 
+#: public/components/RBAC/bindings.jsx:205
 #: public/components/utils/status-box.jsx:14
 msgid "Error Loading"
 msgstr ""
@@ -851,6 +1373,8 @@ msgid "Event stream is paused."
 msgstr ""
 
 #: public/components/cluster-overview.jsx:162
+#: public/components/events.jsx:147
+#: public/components/events.jsx:149
 #: public/components/nav.jsx:375
 #: public/components/utils/vertnav.jsx:36
 #: public/models/index.ts:359
@@ -865,6 +1389,10 @@ msgstr ""
 msgid "events exist, but none match the current filter"
 msgstr ""
 
+#: public/components/modals/configure-update-strategy-modal.jsx:84
+msgid "Execute a smooth roll out of the new revision, based on the settings below"
+msgstr ""
+
 #: public/components/cluster-settings/cluster-monitoring.jsx:276
 #: public/components/factory/list-page.jsx:20
 #: public/components/pod-exec.jsx:181
@@ -877,6 +1405,10 @@ msgstr ""
 
 #: public/components/node.tsx:174
 msgid "External ID"
+msgstr ""
+
+#: public/components/service.jsx:76
+msgid "External IP"
 msgstr ""
 
 #: public/components/service.jsx:61
@@ -896,6 +1428,23 @@ msgstr ""
 msgid "Failed Pods"
 msgstr ""
 
+#: public/components/utils/datetime.ts:51
+#: public/components/utils/datetime.ts:55
+msgid "few seconds"
+msgstr ""
+
+#: public/components/modals/configure-ns-pull-secret-modal.jsx:269
+msgid "File Upload"
+msgstr ""
+
+#: public/components/node.tsx:156
+msgid "Filesystem"
+msgstr ""
+
+#: public/components/pod.jsx:147
+msgid "Filesystem (bytes)"
+msgstr ""
+
 #: public/components/cluster-settings/ldap.jsx:101
 #: public/components/cluster-settings/ldap.jsx:139
 #: public/components/factory/list-page.jsx:40
@@ -903,7 +1452,12 @@ msgid "Filter"
 msgstr ""
 
 #: public/components/factory/list-page.jsx:263
+#: public/components/factory/list-page.jsx:297
 msgid "Filter by selector (app=nginx) ..."
+msgstr ""
+
+#: public/components/container-linux-update-operator/container-linux-update-details.jsx:96
+msgid "Finalizing..."
 msgstr ""
 
 #: public/components/container.jsx:174
@@ -915,9 +1469,17 @@ msgstr ""
 msgid "For example, the following are roughly equivalent: 128974848 ≈ 129M ≈ 123Mi."
 msgstr ""
 
+#: public/components/modals/configure-operator-channel-modal.jsx:46
+msgid "for more information."
+msgstr ""
+
 #: public/components/cluster-health.jsx:28
 #: public/components/cluster-health.jsx:39
 msgid "Free"
+msgstr ""
+
+#: public/components/modals/configure-ns-pull-secret-modal.jsx:200
+msgid "Friendly name to help you manage this in the future"
 msgstr ""
 
 #: public/components/network-policy.jsx:42
@@ -928,6 +1490,22 @@ msgstr ""
 msgid "From"
 msgstr ""
 
+#: public/components/utils/documentation.tsx:26
+msgid "From getting started with creating your first application, to trying out more advanced build and deployment techniques, these resources provide what you need to set up and manage your environment as a cluster administrator or an application developer."
+msgstr ""
+
+#: public/components/RBAC/edit-rule.jsx:313
+msgid "Full access to all actions, including deletion"
+msgstr ""
+
+#: public/components/RBAC/edit-rule.jsx:346
+msgid "Full access, including admin resources"
+msgstr ""
+
+#: public/components/utils/documentation.tsx:24
+msgid "Full Documentation"
+msgstr ""
+
 #: public/components/cluster-settings/cluster-settings.jsx:33
 msgid "General"
 msgstr ""
@@ -936,8 +1514,16 @@ msgstr ""
 msgid "Generate"
 msgstr ""
 
+#: public/components/modals/kubectl-config.jsx:136
+msgid "Generate Configuration"
+msgstr ""
+
 #: public/components/chargeback.tsx:89
 msgid "Generation Query"
+msgstr ""
+
+#: public/components/utils/documentation.tsx:28
+msgid "Get Started with the CLI"
 msgstr ""
 
 #: public/components/chargeback.tsx:361
@@ -949,7 +1535,28 @@ msgstr ""
 msgid "Grace Period"
 msgstr ""
 
+#: public/components/RBAC/bindings.jsx:351
+msgid "Grant the permissions to a user or set of users at the cluster level and in all namespaces."
+msgstr ""
+
+#: public/components/RBAC/bindings.jsx:350
+msgid "Grant the permissions to a user or set of users within the selected namespace."
+msgstr ""
+
+#: public/components/RBAC/edit-rule.jsx:315
+msgid "Granular selection of actions"
+msgstr ""
+
+#: public/components/RBAC/edit-rule.jsx:349
+msgid "Granular selection of resources"
+msgstr ""
+
+#: public/components/modals/configure-update-strategy-modal.jsx:120
+msgid "greater than"
+msgstr ""
+
 #: public/components/custom-resource-definition.tsx:13
+#: public/components/RBAC/bindings.jsx:355
 msgid "Group"
 msgstr ""
 
@@ -968,6 +1575,10 @@ msgstr ""
 #: public/components/cluster-overview.jsx:137
 #: public/components/cluster-overview.jsx:46
 msgid "Health"
+msgstr ""
+
+#: public/components/cloud-services/clusterserviceversion.tsx:64
+msgid "Helm App Operator Kit"
 msgstr ""
 
 #: public/components/routes.tsx:175
@@ -1012,8 +1623,36 @@ msgstr ""
 msgid "Hosts"
 msgstr ""
 
+#: public/components/utils/datetime.ts:41
+msgid "hour"
+msgstr ""
+
+#: public/components/utils/datetime.ts:38
+msgid "hours"
+msgstr ""
+
+#: public/components/utils/datetime.ts:38
+msgid "hours ago"
+msgstr ""
+
+#: public/components/modals/configure-update-strategy-modal.jsx:69
+msgid "How should the pods be replaced when a new revision is created?"
+msgstr ""
+
 #: public/components/nav.jsx:400
 msgid "HPAs"
+msgstr ""
+
+#: public/components/hpa.tsx:217
+msgid "HPAs by name"
+msgstr ""
+
+#: public/components/sidebars/network-policy-sidebar.jsx:35
+msgid "http and https ingress within the same namespace"
+msgstr ""
+
+#: public/components/modals/kubectl-config.jsx:153
+msgid "I'm Done."
 msgstr ""
 
 #: public/components/pod.jsx:124
@@ -1070,6 +1709,7 @@ msgstr ""
 msgid "Image Stream Tags"
 msgstr ""
 
+#: public/components/image-stream.tsx:131
 #: public/models/index.ts:308
 msgid "Image Streams"
 msgstr ""
@@ -1092,6 +1732,10 @@ msgstr ""
 
 #: public/components/ingress.jsx:118
 msgid "Ingress Overview"
+msgstr ""
+
+#: public/components/service.jsx:61
+msgid "Ingress point(s) of load balancer"
 msgstr ""
 
 #: public/components/ingress.jsx:125
@@ -1144,9 +1788,21 @@ msgstr ""
 msgid "InstallPlans"
 msgstr ""
 
+#: public/components/utils/documentation.tsx:36
+msgid "Interactive Learning Portal"
+msgstr ""
+
 #: public/components/cloud-services/spec-descriptors/endpoint.tsx:17
 #: public/components/deployment-config.tsx:82
 msgid "Interval"
+msgstr ""
+
+#: public/components/modals/configure-ns-pull-secret-modal.jsx:278
+msgid "Invalid format. Uploaded file is not properly formatted json."
+msgstr ""
+
+#: public/components/service.jsx:76
+msgid "IP Address(es) accepting traffic for service"
 msgstr ""
 
 #: public/components/namespace.jsx:41
@@ -1187,9 +1843,19 @@ msgstr ""
 msgid "Kubelet Version"
 msgstr ""
 
+#: public/components/software-details.jsx:117
+#: public/dist/cluster-overview-807bf9d1cd149a46a0ee.js:483
+msgid "Kubernetes"
+msgstr ""
+
 #: public/components/cluster-overview.jsx:142
 #: public/components/cluster-overview.jsx:52
 msgid "Kubernetes API"
+msgstr ""
+
+#: public/components/software-details.jsx:117
+#: public/dist/cluster-overview-807bf9d1cd149a46a0ee.js:483
+msgid "Kubernetes version could not be determined."
 msgstr ""
 
 #: public/components/persistent-volume-claim.jsx:63
@@ -1207,6 +1873,9 @@ msgstr ""
 #: public/components/image-stream.tsx:103
 #: public/components/ingress.jsx:37
 #: public/components/job.jsx:22
+#: public/components/modals/create-namespace-modal.jsx:101
+#: public/components/modals/labels-modal.jsx:54
+#: public/components/modals/labels-modal.jsx:62
 #: public/components/namespace.jsx:58
 #: public/components/namespace.jsx:83
 #: public/components/persistent-volume.jsx:10
@@ -1214,6 +1883,10 @@ msgstr ""
 #: public/components/service.jsx:21
 #: public/components/utils/details-page.tsx:26
 msgid "Labels"
+msgstr ""
+
+#: public/components/modals/labels-modal.jsx:57
+msgid "Labels help you organize and select resources. Adding labels below will let you query for objects that have similar, overlapping or dissimilar labels."
 msgstr ""
 
 #: public/components/masthead.tsx:48
@@ -1259,11 +1932,17 @@ msgstr ""
 msgid "LDAP User Info"
 msgstr ""
 
+#: public/components/utils/datetime.ts:51
+msgid "less than a minute ago"
+msgstr ""
+
 #: public/components/container.jsx:166
 msgid "Lifecycle Hooks"
 msgstr ""
 
 #: public/components/cluster-settings/cluster-monitoring.jsx:201
+#: public/components/sidebars/network-policy-sidebar.jsx:18
+#: public/components/sidebars/network-policy-sidebar.jsx:26
 msgid "Limit"
 msgstr ""
 
@@ -1279,6 +1958,10 @@ msgstr ""
 msgid "Loading events..."
 msgstr ""
 
+#: public/components/utils/documentation.tsx:39
+msgid "Local Development"
+msgstr ""
+
 #: public/components/container.jsx:74
 #: public/components/routes.tsx:123
 #: public/components/routes.tsx:242
@@ -1287,11 +1970,16 @@ msgstr ""
 msgid "Location"
 msgstr ""
 
+#: public/components/service.jsx:63
+msgid "Location of the resource that backs the service"
+msgstr ""
+
 #: public/components/build.tsx:72
 msgid "Log Snippet"
 msgstr ""
 
 #: public/components/masthead.tsx:70
+#: public/components/nav.jsx:307
 msgid "Logout"
 msgstr ""
 
@@ -1303,12 +1991,26 @@ msgstr ""
 msgid "Lost"
 msgstr ""
 
+#: public/components/modals/configure-count-modal.jsx:105
+#: public/components/modals/configure-count-modal.jsx:85
+#: public/components/modals/configure-operator-modal.jsx:77
+msgid "maintain the desired number of healthy pods."
+msgstr ""
+
 #: public/components/cluster-picker.tsx:41
 msgid "Manage Cluster Directory…"
 msgstr ""
 
 #: public/components/cluster-settings/ldap.jsx:126
 msgid "Maps to display name of users. No default value."
+msgstr ""
+
+#: public/components/modals/configure-unschedulable-modal.jsx:27
+msgid "Mark as Unschedulable"
+msgstr ""
+
+#: public/components/modals/configure-unschedulable-modal.jsx:31
+msgid "Mark Unschedulable"
 msgstr ""
 
 #: public/components/cluster-settings/ldap.jsx:152
@@ -1326,11 +2028,13 @@ msgstr ""
 
 #: public/components/deployment-config.tsx:86
 #: public/components/deployment.jsx:74
+#: public/components/modals/configure-update-strategy-modal.jsx:111
 msgid "Max Surge"
 msgstr ""
 
 #: public/components/deployment-config.tsx:84
 #: public/components/deployment.jsx:72
+#: public/components/modals/configure-update-strategy-modal.jsx:90
 msgid "Max Unavailable"
 msgstr ""
 
@@ -1351,6 +2055,7 @@ msgstr ""
 msgid "Memory Resources"
 msgstr ""
 
+#: public/components/cluster-health.jsx:73
 #: public/components/cluster-overview.jsx:114
 msgid "Memory Usage"
 msgstr ""
@@ -1367,6 +2072,10 @@ msgstr ""
 msgid "Message"
 msgstr ""
 
+#: public/components/modals/configure-ns-pull-secret-modal.jsx:207
+msgid "Method"
+msgstr ""
+
 #: public/components/hpa.tsx:99
 msgid "Metrics"
 msgstr ""
@@ -1380,12 +2089,40 @@ msgstr ""
 msgid "Min Ready Seconds"
 msgstr ""
 
+#: public/components/utils/datetime.ts:48
+msgid "minute"
+msgstr ""
+
+#: public/components/utils/datetime.ts:45
+msgid "minutes"
+msgstr ""
+
+#: public/components/utils/datetime.ts:45
+msgid "minutes ago"
+msgstr ""
+
 #: public/components/cloud-services/spec-descriptors/configure-size.tsx:13
 msgid "Modify"
 msgstr ""
 
+#: public/components/nav.jsx:283
+msgid "Monitoring"
+msgstr ""
+
 #: public/components/service-monitor.jsx:55
 msgid "Monitoring Namespace"
+msgstr ""
+
+#: public/components/utils/datetime.ts:27
+msgid "month"
+msgstr ""
+
+#: public/components/utils/datetime.ts:24
+msgid "months"
+msgstr ""
+
+#: public/components/utils/datetime.ts:24
+msgid "months ago"
 msgstr ""
 
 #: public/components/container.jsx:75
@@ -1436,6 +2173,7 @@ msgstr ""
 #: public/components/image-stream.tsx:72
 #: public/components/ingress.jsx:35
 #: public/components/job.jsx:20
+#: public/components/modals/create-namespace-modal.jsx:83
 #: public/components/namespace.jsx:56
 #: public/components/namespace.jsx:80
 #: public/components/network-policy.jsx:12
@@ -1447,6 +2185,9 @@ msgstr ""
 #: public/components/pod.jsx:66
 #: public/components/profile.jsx:31
 #: public/components/prometheus.jsx:33
+#: public/components/RBAC/bindings.jsx:478
+#: public/components/RBAC/bindings.jsx:81
+#: public/components/RBAC/edit-rule.jsx:285
 #: public/components/RBAC/role.jsx:109
 #: public/components/RBAC/role.jsx:33
 #: public/components/resource-quota.jsx:9
@@ -1485,10 +2226,14 @@ msgstr ""
 #: public/components/image-stream.tsx:102
 #: public/components/ingress.jsx:36
 #: public/components/job.jsx:21
+#: public/components/modals/configure-ns-pull-secret-modal.jsx:183
 #: public/components/network-policy.jsx:13
 #: public/components/persistent-volume-claim.jsx:32
 #: public/components/pod.jsx:67
 #: public/components/prometheus.jsx:34
+#: public/components/RBAC/bindings.jsx:484
+#: public/components/RBAC/bindings.jsx:85
+#: public/components/RBAC/edit-rule.jsx:296
 #: public/components/RBAC/role.jsx:112
 #: public/components/RBAC/role.jsx:34
 #: public/components/RBAC/role.jsx:75
@@ -1506,18 +2251,39 @@ msgstr ""
 msgid "Namespace Overview"
 msgstr ""
 
+#: public/components/RBAC/bindings.jsx:350
+msgid "Namespace Role Binding (RoleBinding)"
+msgstr ""
+
+#: public/components/RBAC/bindings.jsx:157
+msgid "Namespace Role Bindings"
+msgstr ""
+
+#: public/components/RBAC/bindings.jsx:334
+msgid "Namespace Roles (Role)"
+msgstr ""
+
 #: public/components/custom-resource-definition.tsx:15
 msgid "Namespaced"
 msgstr ""
 
 #: public/components/cluster-overview.jsx:212
 #: public/components/nav.jsx:426
+#: public/components/RBAC/bindings.jsx:308
 #: public/models/index.ts:381
 msgid "Namespaces"
 msgstr ""
 
 #: public/components/container.jsx:198
 msgid "Network"
+msgstr ""
+
+#: public/components/node.tsx:150
+msgid "Network In"
+msgstr ""
+
+#: public/components/node.tsx:153
+msgid "Network Out"
 msgstr ""
 
 #: public/components/namespace.jsx:208
@@ -1547,6 +2313,14 @@ msgstr ""
 msgid "Networking"
 msgstr ""
 
+#: public/components/modals/installplan-approval-modal.tsx:66
+msgid "New updates need to be manually approved before installation begins."
+msgstr ""
+
+#: public/components/modals/installplan-approval-modal.tsx:53
+msgid "New updates will be installed as soon as they become available."
+msgstr ""
+
 #: public/components/cluster-settings/ldap.jsx:512
 msgid "Next: Update Tectonic Identity"
 msgstr ""
@@ -1563,6 +2337,10 @@ msgstr ""
 msgid "No %s Found"
 msgstr ""
 
+#: public/components/RBAC/bindings.jsx:275
+msgid "No %s found or defined."
+msgstr ""
+
 #: public/components/cloud-services/clusterserviceversion-resource.tsx:94
 msgid "No Application Resources Defined"
 msgstr ""
@@ -1575,8 +2353,16 @@ msgstr ""
 msgid "No Catalog Sources Found"
 msgstr ""
 
+#: public/components/cloud-services/clusterserviceversion.tsx:60
+msgid "No Cluster Service Versions Found"
+msgstr ""
+
 #: public/components/clusters.tsx:49
 msgid "No Clusters in Directory"
+msgstr ""
+
+#: public/components/cloud-services/install-plan.tsx:169
+msgid "No Components Resolved"
 msgstr ""
 
 #: public/components/conditions.tsx:42
@@ -1633,12 +2419,24 @@ msgstr ""
 msgid "No Resources Found"
 msgstr ""
 
+#: public/components/modals/create-namespace-modal.jsx:110
+msgid "No restrictions (default)"
+msgstr ""
+
+#: public/components/RBAC/bindings.jsx:121
+msgid "No Role Bindings Found"
+msgstr ""
+
 #: public/components/RBAC/role.jsx:158
 msgid "No Roles Found"
 msgstr ""
 
 #: public/components/routes.tsx:282
 msgid "No Route Status"
+msgstr ""
+
+#: public/components/utils/webhooks.tsx:45
+msgid "No secret"
 msgstr ""
 
 #: public/components/cluster-settings/ldap.jsx:284
@@ -1716,6 +2514,10 @@ msgstr ""
 msgid "Nodes"
 msgstr ""
 
+#: public/components/RBAC/edit-rule.jsx:354
+msgid "Non-resource URLs"
+msgstr ""
+
 #: public/components/cloud-services/install-plan.tsx:44
 msgid "None"
 msgstr ""
@@ -1749,12 +2551,33 @@ msgstr ""
 msgid "NS Selector:"
 msgstr ""
 
+#: public/components/node.tsx:147
+msgid "Number of Pods"
+msgstr ""
+
+#: public/components/modals/configure-update-strategy-modal.jsx:105
+#: public/components/modals/configure-update-strategy-modal.jsx:124
+msgid "Number or percentage of total pods at the start of the update (optional)"
+msgstr ""
+
+#: public/components/error.jsx:54
+msgid "Oh no! Something went wrong."
+msgstr ""
+
+#: public/components/modals/error-modal.jsx:12
+msgid "OK"
+msgstr ""
+
 #: public/components/cluster-overview.jsx:134
 msgid "OKD Console"
 msgstr ""
 
 #: public/components/cloud-services/install-plan.tsx:131
 msgid "Once approved, the following resources will be created in order to satisfy the requirements for the components specified in the plan."
+msgstr ""
+
+#: public/components/sidebars/network-policy-sidebar.jsx:61
+msgid "One typical use case is for a common database which is used by deployments in different namespaces."
 msgstr ""
 
 #: public/components/cluster-overview.jsx:134
@@ -1778,6 +2601,7 @@ msgstr ""
 msgid "Operator Lifecycle Manager not enabled for this namespace"
 msgstr ""
 
+#: public/components/channel-operators/tectonic-channel.jsx:176
 #: public/components/nav.jsx:378
 msgid "Operators"
 msgstr ""
@@ -1789,6 +2613,18 @@ msgstr ""
 
 #: public/components/secrets/create-secret.tsx:258
 msgid "Optional username for Git authentication."
+msgstr ""
+
+#: public/components/modals/configure-ns-pull-secret-modal.jsx:245
+msgid "Optional, depending on registry provider"
+msgstr ""
+
+#: public/components/modals/kubectl-config.jsx:148
+msgid "or"
+msgstr ""
+
+#: public/components/cloud-services/clusterserviceversion.tsx:64
+msgid "Or create an Operator and Cluster Service Version using the"
 msgstr ""
 
 #: public/components/node.tsx:45
@@ -1807,6 +2643,7 @@ msgid "Package Not Found"
 msgstr ""
 
 #: public/components/cloud-services/catalog-source.tsx:104
+#: public/components/cloud-services/catalog-source.tsx:79
 msgid "Packages"
 msgstr ""
 
@@ -1825,6 +2662,7 @@ msgstr ""
 
 #: public/components/cluster-settings/ldap.jsx:75
 #: public/components/cluster-settings/ldap.jsx:87
+#: public/components/modals/configure-ns-pull-secret-modal.jsx:258
 msgid "Password"
 msgstr ""
 
@@ -1906,6 +2744,10 @@ msgstr ""
 msgid "Phase"
 msgstr ""
 
+#: public/components/sidebars/build-config-sidebar.jsx:23
+msgid "Pipeline build"
+msgstr ""
+
 #: public/components/utils/status-box.jsx:16
 msgid "Please"
 msgstr ""
@@ -1937,6 +2779,7 @@ msgstr ""
 
 #: public/components/daemonset.jsx:15
 #: public/components/factory/list.tsx:208
+#: public/components/modals/labels-modal.jsx:81
 #: public/components/network-policy.jsx:14
 #: public/components/service.jsx:22
 #: public/components/utils/details-page.tsx:28
@@ -1956,8 +2799,15 @@ msgstr ""
 msgid "Pod Volumes"
 msgstr ""
 
+#: public/components/daemonset.jsx:30
+#: public/components/factory/list.tsx:376
+#: public/components/job.jsx:42
+msgid "pods"
+msgstr ""
+
 #: public/components/cluster-overview.jsx:68
 #: public/components/nav.jsx:387
+#: public/components/utils/vertnav.jsx:18
 #: public/components/utils/vertnav.jsx:51
 #: public/models/index.ts:161
 msgid "Pods"
@@ -2002,6 +2852,7 @@ msgid "Private SSH key file for Git authentication."
 msgstr ""
 
 #: public/components/profile.jsx:26
+#: public/components/profile.jsx:28
 msgid "Profile"
 msgstr ""
 
@@ -2020,6 +2871,10 @@ msgstr ""
 
 #: public/models/index.ts:75
 msgid "Prometheuses"
+msgstr ""
+
+#: public/components/modals/configure-ns-pull-secret-modal.jsx:273
+msgid "Properly configured Docker config file in JSON format. Will be base64 encoded after upload."
 msgstr ""
 
 #: public/components/service.jsx:85
@@ -2060,6 +2915,24 @@ msgstr ""
 msgid "Query"
 msgstr ""
 
+#: public/components/container-linux-update-operator/container-linux-update-details.jsx:108
+msgid "Queued for Update"
+msgstr ""
+
+#: public/components/namespace.jsx:176
+#: public/components/node.tsx:141
+#: public/components/pod.jsx:141
+msgid "RAM"
+msgstr ""
+
+#: public/components/modals/configure-operator-channel-modal.jsx:46
+msgid "Read the release notes"
+msgstr ""
+
+#: public/components/RBAC/edit-rule.jsx:311
+msgid "Read-only (Default)"
+msgstr ""
+
 #: public/components/pod.jsx:71
 msgid "Readiness"
 msgstr ""
@@ -2079,9 +2952,25 @@ msgstr ""
 msgid "Reason"
 msgstr ""
 
+#: public/components/container-linux-update-operator/container-linux-update-details.jsx:113
+msgid "Reboot Success"
+msgstr ""
+
 #: public/components/storage-class.tsx:19
 #: public/components/storage-class.tsx:47
 msgid "Reclaim Policy"
+msgstr ""
+
+#: public/components/RBAC/edit-rule.jsx:343
+msgid "Recommended (Default)"
+msgstr ""
+
+#: public/components/modals/configure-update-strategy-modal.jsx:136
+msgid "Recreate"
+msgstr ""
+
+#: public/components/modals/configure-ns-pull-secret-modal.jsx:233
+msgid "Registry Address"
 msgstr ""
 
 #: public/components/routes.tsx:112
@@ -2091,6 +2980,14 @@ msgstr ""
 #: public/components/edit-yaml.jsx:317
 #: public/components/environment.jsx:254
 msgid "Reload"
+msgstr ""
+
+#: public/components/modals/disable-application-modal.tsx:51
+msgid "Remove"
+msgstr ""
+
+#: public/components/modals/disable-application-modal.tsx:37
+msgid "Remove Subscription"
 msgstr ""
 
 #: public/components/clusters.tsx:29
@@ -2125,6 +3022,11 @@ msgstr ""
 
 #: public/components/replication-controller.jsx:37
 msgid "ReplicationController Details"
+msgstr ""
+
+#: public/components/chargeback.tsx:305
+#: public/components/chargeback.tsx:313
+msgid "Report"
 msgstr ""
 
 #: public/components/chargeback.tsx:50
@@ -2193,6 +3095,10 @@ msgstr ""
 msgid "Resource Limits"
 msgstr ""
 
+#: public/components/resource-quota.jsx:26
+msgid "Resource Quota Overview"
+msgstr ""
+
 #: public/components/nav.jsx:432
 #: public/models/index.ts:618
 msgid "Resource Quotas"
@@ -2222,6 +3128,10 @@ msgstr ""
 #: public/components/container.jsx:160
 #: public/components/pod.jsx:127
 msgid "Restarts"
+msgstr ""
+
+#: public/components/RBAC/edit-rule.jsx:406
+msgid "Restrict this role to a subset of API URLs that don't correspond to objects."
 msgstr ""
 
 #: public/components/utils/status-box.jsx:44
@@ -2257,12 +3167,32 @@ msgstr ""
 msgid "Revoking this client's access token will immediately remove it. Once removed, you cannot recover the token. If this is the last client authorized, you will loose access to the Console after submitting it."
 msgstr ""
 
+#: public/components/RBAC/bindings.jsx:491
+msgid "Role"
+msgstr ""
+
+#: public/components/RBAC/bindings.jsx:477
+msgid "Role Binding"
+msgstr ""
+
+#: public/components/RBAC/bindings.jsx:481
+msgid "Role binding name"
+msgstr ""
+
 #: public/components/nav.jsx:431
+#: public/components/RBAC/bindings.jsx:147
+#: public/components/RBAC/bindings.jsx:168
 #: public/components/utils/vertnav.jsx:56
 #: public/models/index.ts:492
 msgid "Role Bindings"
 msgstr ""
 
+#: public/components/RBAC/bindings.jsx:145
+#: public/components/RBAC/role.jsx:146
+msgid "Role Bindings by role or subject"
+msgstr ""
+
+#: public/components/RBAC/bindings.jsx:492
 #: public/components/RBAC/role.jsx:72
 msgid "Role Name"
 msgstr ""
@@ -2271,9 +3201,21 @@ msgstr ""
 msgid "Role Overview"
 msgstr ""
 
+#: public/components/RBAC/bindings.jsx:82
+msgid "Role Ref"
+msgstr ""
+
 #: public/components/nav.jsx:430
 #: public/models/index.ts:505
 msgid "Roles"
+msgstr ""
+
+#: public/components/RBAC/role.jsx:181
+msgid "Roles by name"
+msgstr ""
+
+#: public/components/RBAC/bindings.jsx:121
+msgid "Roles grant access to types of objects in the cluster. Roles are applied to a group or user via a Role Binding."
 msgstr ""
 
 #: public/components/RBAC/role.jsx:158
@@ -2281,6 +3223,7 @@ msgid "Roles grant access to types of objects in the cluster. Roles are applied 
 msgstr ""
 
 #: public/components/deployment.jsx:71
+#: public/components/modals/configure-update-strategy-modal.jsx:79
 msgid "RollingUpdate"
 msgstr ""
 
@@ -2288,21 +3231,47 @@ msgstr ""
 msgid "Root CA"
 msgstr ""
 
+#: public/components/routes.tsx:229
+msgid "Route Overview"
+msgstr ""
+
 #: public/components/nav.jsx:405
 #: public/models/index.ts:423
 msgid "Routes"
 msgstr ""
 
+#: public/components/ingress.jsx:113
 #: public/components/RBAC/role.jsx:89
+#: public/components/RBAC/rules.jsx:11
 msgid "Rules"
+msgstr ""
+
+#: public/components/RBAC/role.jsx:99
+msgid "Rules by action or resource"
 msgstr ""
 
 #: public/components/chargeback.tsx:93
 msgid "Run Immediately?"
 msgstr ""
 
+#: public/components/sidebars/build-config-sidebar.jsx:18
+msgid "S2I is a tool for building reproducible container images. It produces ready-to-run images by injecting the application source into a container image and assembling a new image."
+msgstr ""
+
+#: public/components/RBAC/edit-rule.jsx:369
+msgid "Safe Resources"
+msgstr ""
+
 #: public/components/cluster-settings/cluster-monitoring.jsx:242
 msgid "sample retention"
+msgstr ""
+
+#: public/components/sidebars/resource-sidebar.jsx:33
+msgid "samples"
+msgstr ""
+
+#: public/components/RBAC/bindings.jsx:560
+msgid "Save Binding"
 msgstr ""
 
 #: public/components/cloud-services/spec-descriptors/resource-requirements.tsx:39
@@ -2312,6 +3281,37 @@ msgstr ""
 #: public/components/modals/tags.jsx:64
 #: public/components/secrets/create-secret.tsx:342
 msgid "Save Changes"
+msgstr ""
+
+#: public/components/modals/configure-operator-channel-modal.jsx:59
+#: public/components/modals/installplan-approval-modal.tsx:73
+#: public/components/modals/subscription-channel-modal.tsx:48
+msgid "Save Channel"
+msgstr ""
+
+#: public/components/modals/configure-count-modal.jsx:107
+msgid "Save Cluster Size"
+msgstr ""
+
+#: public/components/modals/configure-count-modal.jsx:87
+msgid "Save Desired Count"
+msgstr ""
+
+#: public/components/modals/configure-count-modal.jsx:97
+msgid "Save Desired Parallelism"
+msgstr ""
+
+#: public/components/RBAC/edit-rule.jsx:419
+msgid "Save Rule"
+msgstr ""
+
+#: public/components/modals/configure-ns-pull-secret-modal.jsx:289
+msgid "Save Secret"
+msgstr ""
+
+#: public/components/modals/configure-operator-modal.jsx:76
+#: public/components/modals/configure-update-strategy-modal.jsx:147
+msgid "Save Strategy"
 msgstr ""
 
 #: public/components/hpa.tsx:141
@@ -2346,6 +3346,7 @@ msgstr ""
 msgid "Secret"
 msgstr ""
 
+#: public/components/modals/configure-ns-pull-secret-modal.jsx:192
 #: public/components/secrets/create-secret.tsx:118
 msgid "Secret Name"
 msgstr ""
@@ -2361,12 +3362,45 @@ msgstr ""
 msgid "Secrets"
 msgstr ""
 
+#: public/components/build-logs.jsx:18
+msgid "See Jenkins Log"
+msgstr ""
+
 #: public/components/chargeback.tsx:364
 msgid "See our documention for instructions on how to install Chargeback Report on your Tectonic Cluster."
 msgstr ""
 
 #: public/components/clusters.tsx:64
 msgid "See our documention for instructions on how to install Multi-Cluster Directory on your Tectonic Cluster."
+msgstr ""
+
+#: public/components/namespace.jsx:281
+msgid "Select"
+msgstr ""
+
+#: public/components/modals/configure-operator-channel-modal.jsx:46
+msgid "Select a channel that reflects your desired Tectonic Version."
+msgstr ""
+
+#: public/components/utils/value-from-pair.jsx:61
+msgid "Select a key"
+msgstr ""
+
+#: public/components/utils/value-from-pair.jsx:126
+msgid "Select a resource"
+msgstr ""
+
+#: public/components/RBAC/bindings.jsx:308
+msgid "Select namespace"
+msgstr ""
+
+#: public/components/resource-dropdown.tsx:117
+msgid "Select Resource"
+msgstr ""
+
+#: public/components/RBAC/bindings.jsx:336
+#: public/components/RBAC/bindings.jsx:346
+msgid "Select role name"
 msgstr ""
 
 #: public/models/index.ts:518
@@ -2377,6 +3411,10 @@ msgstr ""
 #: public/components/routes.tsx:124
 #: public/components/routes.tsx:268
 msgid "Service"
+msgstr ""
+
+#: public/components/RBAC/bindings.jsx:356
+msgid "Service Account"
 msgstr ""
 
 #: public/components/service-account.jsx:102
@@ -2408,6 +3446,10 @@ msgstr ""
 msgid "Service Monitors"
 msgstr ""
 
+#: public/components/service.jsx:115
+msgid "Service Overview"
+msgstr ""
+
 #: public/components/ingress.jsx:60
 msgid "Service Port"
 msgstr ""
@@ -2433,8 +3475,16 @@ msgstr ""
 msgid "Session Affinity"
 msgstr ""
 
+#: public/components/modals/kubectl-config.jsx:116
+msgid "Set Up kubectl"
+msgstr ""
+
 #: public/components/channel-operators/app-version.jsx:247
 msgid "Show Failed Reason"
+msgstr ""
+
+#: public/components/modals/configure-update-strategy-modal.jsx:137
+msgid "Shut down all existing pods before creating new ones"
 msgstr ""
 
 #: public/components/configmap.jsx:14
@@ -2456,6 +3506,14 @@ msgstr ""
 
 #: public/components/utils/operator-states.jsx:16
 msgid "Software update failed"
+msgstr ""
+
+#: public/components/sidebars/build-config-sidebar.jsx:17
+msgid "Source-to-Image (S2I) build"
+msgstr ""
+
+#: public/components/modals/configure-ns-pull-secret-modal.jsx:176
+msgid "Specify default credentials to be used to authenticate and download containers within this namespace. These credentials will be the default unless a pod references a specific pull secret."
 msgstr ""
 
 #: public/components/cluster-settings/cluster-monitoring.jsx:238
@@ -2505,6 +3563,7 @@ msgstr ""
 
 #: public/components/build.tsx:146
 #: public/components/build.tsx:70
+#: public/components/channel-operators/app-version.jsx:79
 #: public/components/chargeback.tsx:51
 #: public/components/cloud-services/clusterserviceversion-resource.tsx:23
 #: public/components/cloud-services/clusterserviceversion.tsx:23
@@ -2513,6 +3572,7 @@ msgstr ""
 #: public/components/cloud-services/k8s-resource.tsx:45
 #: public/components/cloud-services/subscription.tsx:20
 #: public/components/conditions.tsx:32
+#: public/components/container-linux-update-operator/container-linux-update-details.jsx:11
 #: public/components/daemonset.jsx:14
 #: public/components/deployment-config.tsx:66
 #: public/components/deployment.jsx:64
@@ -2538,6 +3598,10 @@ msgstr ""
 msgid "Status of %s"
 msgstr ""
 
+#: public/components/modals/configure-operator-modal.jsx:83
+msgid "Stay up to date with the latest version automatically."
+msgstr ""
+
 #: public/components/cluster-settings/cluster-monitoring.jsx:342
 #: public/components/nav.jsx:410
 msgid "Storage"
@@ -2548,6 +3612,7 @@ msgid "Storage Class"
 msgstr ""
 
 #: public/components/nav.jsx:413
+#: public/components/storage-class.tsx:59
 #: public/models/index.ts:663
 msgid "Storage Classes"
 msgstr ""
@@ -2568,12 +3633,27 @@ msgstr ""
 msgid "String representation of the user's unique identifier."
 msgstr ""
 
+#: public/components/RBAC/bindings.jsx:505
+msgid "Subject"
+msgstr ""
+
+#: public/components/RBAC/bindings.jsx:83
 #: public/components/RBAC/role.jsx:110
 msgid "Subject Kind"
 msgstr ""
 
+#: public/components/RBAC/bindings.jsx:514
+msgid "Subject name"
+msgstr ""
+
+#: public/components/RBAC/bindings.jsx:513
+#: public/components/RBAC/bindings.jsx:84
 #: public/components/RBAC/role.jsx:111
 msgid "Subject Name"
+msgstr ""
+
+#: public/components/RBAC/bindings.jsx:509
+msgid "Subject Namespace"
 msgstr ""
 
 #: public/components/cloud-services/subscription.tsx:89
@@ -2608,6 +3688,10 @@ msgstr ""
 msgid "Supply your credentials to test the current configuration. The LDAP server must be reachable from the Tectonic Console for testing to work."
 msgstr ""
 
+#: public/components/RBAC/bindings.jsx:158
+msgid "System Role Bindings"
+msgstr ""
+
 #: public/components/image-stream.tsx:66
 msgid "Tags"
 msgstr ""
@@ -2624,12 +3708,28 @@ msgstr ""
 msgid "Target Port"
 msgstr ""
 
+#: public/components/channel-operators/tectonic-channel.jsx:174
+msgid "Tectonic"
+msgstr ""
+
 #: public/components/cluster-settings/certs-info.jsx:53
 msgid "Tectonic CA certificate"
 msgstr ""
 
+#: public/components/cluster-settings/ldap.jsx:454
+msgid "Tectonic Identity Configuration"
+msgstr ""
+
+#: public/components/cluster-settings/cluster-monitoring.jsx:355
+msgid "Tectonic Monitoring Configuration"
+msgstr ""
+
 #: public/models/index.ts:531
 msgid "Tectonic Versions"
+msgstr ""
+
+#: public/components/modals/kubectl-config.jsx:118
+msgid "Tectonic will generate a kubectl configuration file for you. First, we need to generate a set of offline credentials."
 msgstr ""
 
 #: public/components/namespace.jsx:27
@@ -2647,6 +3747,10 @@ msgstr ""
 
 #: public/components/cluster-settings/ldap.jsx:183
 msgid "Test LDAP config"
+msgstr ""
+
+#: public/components/cluster-settings/ldap.jsx:491
+msgid "Test Results"
 msgstr ""
 
 #: public/components/cloud-services/catalog-source.tsx:80
@@ -2678,6 +3782,10 @@ msgstr ""
 msgid "The name of a group."
 msgstr ""
 
+#: public/components/sidebars/build-config-sidebar.jsx:24
+msgid "The Pipeline build strategy allows developers to define a Jenkins pipeline for execution by the Jenkins pipeline plugin. The build can be started, monitored, and managed in the same way as any other build type."
+msgstr ""
+
 #: public/components/edit-yaml.jsx:208
 msgid "The server doesn't have a resource type \"kind:"
 msgstr ""
@@ -2694,8 +3802,40 @@ msgstr ""
 msgid "They can be isolated via Network Policies which specify a whitelist of ingress rules."
 msgstr ""
 
+#: public/components/sidebars/role-sidebar.jsx:45
+msgid "This \"ClusterRole\" is allowed to \"GET\" and \"POST\" requests to the non-resource endpoint \"/healthz\" and all subpaths (must be in the \"ClusterRole\" bound with a \"ClusterRoleBinding\" to be effective)."
+msgstr ""
+
+#: public/components/sidebars/role-sidebar.jsx:38
+msgid "This \"ClusterRole\" is allowed to read the resource \"nodes\" in the core group (because a Node is cluster-scoped, this must be bound with a \"ClusterRoleBinding\" to be effective)."
+msgstr ""
+
+#: public/components/sidebars/role-sidebar.jsx:24
+msgid "This \"Role\" is allowed to read \"Pods\" and read/write \"Jobs\" resources in API groups."
+msgstr ""
+
+#: public/components/sidebars/role-sidebar.jsx:31
+msgid "This \"Role\" is allowed to read a \"ConfigMap\" named \"my-config\" (must be bound with a \"RoleBinding\" to limit to a single \"ConfigMap\" in a single namespace)."
+msgstr ""
+
+#: public/components/sidebars/role-sidebar.jsx:18
+msgid "This \"Role\" is allowed to read and write the \"Deployments\" in both the \"extensions\" and \"apps\" API groups."
+msgstr ""
+
+#: public/components/sidebars/role-sidebar.jsx:12
+msgid "This \"Role\" is allowed to read the resource \"Pods\" in the core API group."
+msgstr ""
+
+#: public/components/modals/delete-namespace-modal.jsx:34
+msgid "This action cannot be undone. It will destroy all pods, services and other objects in the deleted namespace."
+msgstr ""
+
 #: public/components/cloud-services/clusterserviceversion-resource.tsx:94
 msgid "This application was not properly installed or configured."
+msgstr ""
+
+#: public/components/cloud-services/install-plan.tsx:169
+msgid "This install plan has not been fully resolved yet."
 msgstr ""
 
 #: public/components/edit-yaml.jsx:313
@@ -2730,12 +3870,24 @@ msgstr ""
 msgid "To get started, create a project for your application."
 msgstr ""
 
+#: public/components/namespace.jsx:112
+msgid "To learn more, visit the OpenShift"
+msgstr ""
+
 #: public/components/network-policy.jsx:43
 msgid "to ports"
 msgstr ""
 
+#: public/components/nav.jsx:364
+msgid "Toggle navigation"
+msgstr ""
+
 #: public/components/client-tokens.jsx:86
 msgid "Token Created"
+msgstr ""
+
+#: public/components/modals/token-info-modal.jsx:38
+msgid "Token Information"
 msgstr ""
 
 #: public/components/client-tokens.jsx:87
@@ -2752,12 +3904,33 @@ msgstr ""
 
 #: public/components/cluster-health.jsx:24
 #: public/components/cluster-health.jsx:35
+#: public/components/cluster-health.jsx:79
 #: public/components/cluster-health.jsx:99
 msgid "Total"
 msgstr ""
 
+#: public/components/cluster-health.jsx:60
+msgid "Total Cores"
+msgstr ""
+
 #: public/components/routes.tsx:260
 msgid "Traffic"
+msgstr ""
+
+#: public/components/sidebars/network-policy-sidebar.jsx:67
+msgid "traffic from all pods in a particular namespace"
+msgstr ""
+
+#: public/components/sidebars/network-policy-sidebar.jsx:51
+msgid "traffic from external clients"
+msgstr ""
+
+#: public/components/sidebars/network-policy-sidebar.jsx:59
+msgid "traffic to an application from all namespaces"
+msgstr ""
+
+#: public/components/sidebars/network-policy-sidebar.jsx:27
+msgid "traffic to an application within the same namespace"
 msgstr ""
 
 #: public/components/build.tsx:62
@@ -2770,6 +3943,10 @@ msgstr ""
 
 #: public/components/utils/status-box.jsx:16
 msgid "try again"
+msgstr ""
+
+#: public/components/sidebars/resource-sidebar.jsx:52
+msgid "Try it"
 msgstr ""
 
 #: public/components/chargeback.tsx:426
@@ -2786,6 +3963,14 @@ msgstr ""
 #: public/components/utils/details-page.tsx:24
 #: public/components/utils/webhooks.tsx:59
 msgid "Type"
+msgstr ""
+
+#: public/components/RBAC/edit-rule.jsx:307
+msgid "Type of Access"
+msgstr ""
+
+#: public/components/sidebars/network-policy-sidebar.jsx:69
+msgid "Typical use case should be \"only allow deployments in production namespaces to access the database\" or \"allow monitoring tools (in another namespace) to scrape metrics from current namespace.\""
 msgstr ""
 
 #: public/components/secrets/create-secret.tsx:127
@@ -2806,9 +3991,17 @@ msgstr ""
 msgid "Unschedulable"
 msgstr ""
 
+#: public/components/modals/configure-unschedulable-modal.jsx:29
+msgid "Unschedulable nodes won' accept new pods. This is useful for scheduling maintenance or preparing to decommission a node."
+msgstr ""
+
 #: public/components/cloud-services/subscription.tsx:29
 #: public/components/utils/operator-states.jsx:59
 msgid "Up to date"
+msgstr ""
+
+#: public/components/modals/configure-operator-channel-modal.jsx:42
+msgid "Update Channel"
 msgstr ""
 
 #: public/components/utils/operator-states.jsx:24
@@ -2829,6 +4022,7 @@ msgstr ""
 
 #: public/components/deployment-config.tsx:76
 #: public/components/deployment.jsx:70
+#: public/components/modals/configure-operator-modal.jsx:91
 msgid "Update Strategy"
 msgstr ""
 
@@ -2852,6 +4046,10 @@ msgstr ""
 msgid "updated:"
 msgstr ""
 
+#: public/components/container-linux-update-operator/container-linux-update-details.jsx:74
+msgid "Updates are available for %s"
+msgstr ""
+
 #: public/components/deployment-config.tsx:67
 #: public/components/deployment.jsx:65
 #: public/components/utils/operator-states.jsx:111
@@ -2872,6 +4070,10 @@ msgstr ""
 msgid "Upgrading"
 msgstr ""
 
+#: public/components/modals/configure-ns-pull-secret-modal.jsx:224
+msgid "Upload Docker config.json"
+msgstr ""
+
 #: public/components/secrets/create-secret.tsx:303
 msgid "Upload your private SSH key file."
 msgstr ""
@@ -2884,11 +4086,18 @@ msgstr ""
 msgid "Usage Report"
 msgstr ""
 
+#: public/components/cluster-health.jsx:76
 #: public/components/cluster-health.jsx:96
 msgid "Used"
 msgstr ""
 
+#: public/components/cluster-health.jsx:57
+msgid "Used Cores"
+msgstr ""
+
 #: public/components/image-stream-tag.tsx:73
+#: public/components/nav.jsx:310
+#: public/components/RBAC/bindings.jsx:354
 msgid "User"
 msgstr ""
 
@@ -2906,6 +4115,7 @@ msgstr ""
 
 #: public/components/cluster-settings/ldap.jsx:71
 #: public/components/cluster-settings/ldap.jsx:82
+#: public/components/modals/configure-ns-pull-secret-modal.jsx:250
 #: public/components/secrets/create-secret.tsx:249
 msgid "Username"
 msgstr ""
@@ -2920,6 +4130,14 @@ msgstr ""
 
 #: public/components/cluster-settings/ldap.jsx:177
 msgid "Users"
+msgstr ""
+
+#: public/components/RBAC/edit-rule.jsx:311
+msgid "Users can view, but not edit"
+msgstr ""
+
+#: public/components/cloud-services/clusterserviceversion.tsx:62
+msgid "Using Open Cloud Services"
 msgstr ""
 
 #: public/components/pod.jsx:217
@@ -2938,6 +4156,18 @@ msgstr ""
 
 #: public/components/secrets/create-secret.tsx:181
 msgid "Value of the secret will be supplied when invoking the webhook."
+msgstr ""
+
+#: public/components/modals/kubectl-config.jsx:132
+msgid "Verification Code"
+msgstr ""
+
+#: public/components/modals/kubectl-config.jsx:121
+msgid "Verify Identity"
+msgstr ""
+
+#: public/components/container-linux-update-operator/container-linux-update-details.jsx:91
+msgid "Verifying..."
 msgstr ""
 
 #: public/components/alert-manager.jsx:139
@@ -2975,11 +4205,16 @@ msgstr ""
 
 #: public/components/channel-operators/app-version.jsx:156
 #: public/components/channel-operators/app-version.jsx:196
+#: public/components/container-linux-update-operator/container-linux-update-details.jsx:79
 msgid "View Logs"
 msgstr ""
 
 #: public/components/start-guide.jsx:69
 msgid "View My Projects"
+msgstr ""
+
+#: public/components/sidebars/resource-sidebar.jsx:22
+msgid "View samples"
 msgstr ""
 
 #: public/components/cloud-services/catalog-source.tsx:47
@@ -3002,16 +4237,36 @@ msgstr ""
 msgid "Webhook URL"
 msgstr ""
 
+#: public/components/utils/webhooks.tsx:49
+msgid "Webhooks"
+msgstr ""
+
 #: public/components/routes.tsx:269
 msgid "Weight"
+msgstr ""
+
+#: public/components/namespace.jsx:115
+msgid "Welcome to OpenShift"
+msgstr ""
+
+#: public/components/modals/installplan-approval-modal.tsx:41
+msgid "What strategy is used for approving updates?"
 msgstr ""
 
 #: public/components/network-policy.jsx:106
 msgid "When a Pod is selected by a Network Policy, it will reject all traffic not explicitly allowed via a Network Policy."
 msgstr ""
 
+#: public/components/modals/subscription-channel-modal.tsx:35
+msgid "Which channel is used to receive updates?"
+msgstr ""
+
 #: public/components/routes.tsx:219
 msgid "Wildcard Policy"
+msgstr ""
+
+#: public/components/utils/documentation.tsx:30
+msgid "With the %s command line interface (CLI), you can create applications and manage projects from a terminal. Learn how to install and use the oc client tool."
 msgstr ""
 
 #: public/components/image-stream-tag.tsx:69
@@ -3026,6 +4281,26 @@ msgstr ""
 msgid "YAML"
 msgstr ""
 
+#: public/components/utils/datetime.ts:20
+msgid "year"
+msgstr ""
+
+#: public/components/utils/datetime.ts:17
+msgid "years"
+msgstr ""
+
+#: public/components/utils/datetime.ts:17
+msgid "years ago"
+msgstr ""
+
 #: public/components/utils/status-box.jsx:44
 msgid "You don't have access to this section due to cluster policy."
+msgstr ""
+
+#: public/components/modals/kubectl-config.jsx:119
+msgid "Your identity will be verified before generation."
+msgstr ""
+
+#: public/components/utils/documentation.tsx:42
+msgid "YouTube"
 msgstr ""

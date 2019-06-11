@@ -4,23 +4,24 @@ import * as React from 'react';
 import { BuildConfigModel } from '../../models';
 import { referenceForModel } from '../../module/k8s';
 import { SampleYaml } from './resource-sidebar';
+import { gettext } from '../utils/gettext';
 
 const samples = [
   {
-    header: 'Build from Dockerfile',
-    details: 'A Dockerfile build performs an image build using a Dockerfile in the source repository or specified in build configuration.',
+    header: gettext('Build from Dockerfile'),
+    details: gettext('A Dockerfile build performs an image build using a Dockerfile in the source repository or specified in build configuration.'),
     templateName: 'docker-build',
     kind: referenceForModel(BuildConfigModel),
   },
   {
-    header: 'Source-to-Image (S2I) build',
-    details: 'S2I is a tool for building reproducible container images. It produces ready-to-run images by injecting the application source into a container image and assembling a new image.',
+    header: gettext('Source-to-Image (S2I) build'),
+    details: gettext('S2I is a tool for building reproducible container images. It produces ready-to-run images by injecting the application source into a container image and assembling a new image.'),
     templateName: 's2i-build',
     kind: referenceForModel(BuildConfigModel),
   },
   {
-    header: 'Pipeline build',
-    details: 'The Pipeline build strategy allows developers to define a Jenkins pipeline for execution by the Jenkins pipeline plugin. The build can be started, monitored, and managed in the same way as any other build type.',
+    header: gettext('Pipeline build'),
+    details: gettext('The Pipeline build strategy allows developers to define a Jenkins pipeline for execution by the Jenkins pipeline plugin. The build can be started, monitored, and managed in the same way as any other build type.'),
     templateName: 'pipeline-build',
     kind: referenceForModel(BuildConfigModel),
   }

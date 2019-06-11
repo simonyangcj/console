@@ -110,7 +110,7 @@ const RulesRows = (props) => {
     return <div className="co-m-table-grid__body"> {rows} </div>;
   }
 
-  return <EmptyBox label="Rules" />;
+  return <EmptyBox label={gettext('Rules')} />;
 };
 
 const Details = ({obj: ingress}) => <React.Fragment>

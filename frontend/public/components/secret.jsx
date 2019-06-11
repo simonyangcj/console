@@ -133,7 +133,7 @@ const SecretsPage = props => {
     createLink: (type) => `/k8s/ns/${props.namespace || 'default'}/secrets/new/${type !== 'yaml' ? type : ''}`
   };
 
-  return <ListPage ListComponent={SecretsList} canCreate={true} rowFilters={filters} createButtonText="Create" createProps={createProps} {...props} />;
+  return <ListPage ListComponent={SecretsList} canCreate={true} rowFilters={filters} createButtonText={gettext('Create')} createProps={createProps} {...props} />;
 };
 
 const SecretsDetailsPage = props => <DetailsPage

@@ -2,6 +2,7 @@ import * as React from 'react';
 import * as _ from 'lodash-es';
 
 import { productName } from '../../branding';
+import { gettext } from './gettext';
 
 // Prefer the documentation base URL passed as a flag, but fall back to the latest docs if none was specified.
 export const openshiftHelpBase = (window as any).SERVER_FLAGS.documentationBaseURL || 'https://docs.okd.io/latest/';
@@ -20,29 +21,28 @@ export const helpLink = (topic: HELP_TOPICS) => `${openshiftHelpBase}${topic}`;
 
 /* eslint-disable react/jsx-no-target-blank */
 export const DocumentationLinks = () => <dl className="co-documentation-links">
-  <dt className="co-documentation-links__title"><a href={openshiftHelpBase} target="_blank" rel="noopener">Full Documentation</a></dt>
+  <dt className="co-documentation-links__title"><a href={openshiftHelpBase} target="_blank" rel="noopener">{gettext('Full Documentation')}</a></dt>
   <dd className="co-documentation-links__description">
-    From getting started with creating your first application, to trying out more advanced build and deployment techniques, these resources
-    provide what you need to set up and manage your environment as a cluster administrator or an application developer.
+    {gettext('From getting started with creating your first application, to trying out more advanced build and deployment techniques, these resources provide what you need to set up and manage your environment as a cluster administrator or an application developer.')}
   </dd>
-  <dt className="co-documentation-links__title"><a href={helpLink(HELP_TOPICS.GET_STARTED_CLI)} target="_blank" rel="noopener">Get Started with the CLI</a></dt>
+  <dt className="co-documentation-links__title"><a href={helpLink(HELP_TOPICS.GET_STARTED_CLI)} target="_blank" rel="noopener">{gettext('Get Started with the CLI')}</a></dt>
   <dd className="co-documentation-links__description">
-    With the {productName} command line interface (CLI), you can create applications and manage projects from a terminal. Learn how to install
-    and use the oc client tool.
+    {gettext('With the %s command line interface (CLI), you can create applications and manage projects from a terminal. Learn how to install and use the oc client tool.', productName)}
+    
   </dd>
 </dl>;
 
 const supportLinks = [{
-  title: 'Interactive Learning Portal',
+  title: gettext('Interactive Learning Portal'),
   href: 'https://learn.openshift.com',
 }, {
-  title: 'Local Development',
+  title: gettext('Local Development'),
   href: 'https://www.openshift.org/minishift',
 }, {
-  title: 'YouTube',
+  title: gettext('YouTube'),
   href: 'https://www.youtube.com/user/rhopenshift',
 }, {
-  title: 'Blog',
+  title: gettext('Blog'),
   href: 'https://blog.openshift.com',
 }];
 
@@ -55,9 +55,9 @@ export const AdditionalSupportLinks = () => <ul className="co-additional-support
 
 export const DocumentationSidebar = props => <div className="co-p-has-sidebar__sidebar co-p-has-sidebar__sidebar--bordered">
   <div className="co-m-pane__body">
-    <h1 className="co-p-has-sidebar__sidebar-heading co-p-has-sidebar__sidebar-heading--first">Documentation</h1>
+    <h1 className="co-p-has-sidebar__sidebar-heading co-p-has-sidebar__sidebar-heading--first">{gettext('Documentation')}</h1>
     <DocumentationLinks />
-    <h1 className="co-p-has-sidebar__sidebar-heading">Additional Support</h1>
+    <h1 className="co-p-has-sidebar__sidebar-heading">{gettext('Additional Support')}</h1>
     <AdditionalSupportLinks />
   </div>
   {props.children}

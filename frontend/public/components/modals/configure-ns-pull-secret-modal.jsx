@@ -5,7 +5,7 @@ import * as PropTypes from 'prop-types';
 import { k8sPatch, k8sCreate } from '../../module/k8s';
 import { SecretModel } from '../../models';
 import { createModalLauncher, ModalTitle, ModalBody, ModalSubmitFooter } from '../factory/modal';
-import { PromiseComponent, ResourceIcon } from '../utils';
+import { PromiseComponent, ResourceIcon, gettext } from '../utils';
 import { CONST } from '../../const';
 
 const parseExisitingPullSecret = (pullSecret) => {
@@ -170,17 +170,17 @@ class ConfigureNamespacePullSecret extends PromiseComponent {
     const existingData = parseExisitingPullSecret(pullSecret);
 
     return <form onSubmit={this._submit} name="form">
-      <ModalTitle>Default Pull Secret</ModalTitle>
+      <ModalTitle>{gettext('Default Pull Secret')}</ModalTitle>
       <ModalBody>
         <p>
-          Specify default credentials to be used to authenticate and download containers within this namespace. These credentials will be the default unless a pod references a specific pull secret.
+          {gettext('Specify default credentials to be used to authenticate and download containers within this namespace. These credentials will be the default unless a pod references a specific pull secret.')}
         </p>
 
-        {existingData.invalidData && <p className="alert alert-danger"><span className="pficon pficon-error-circle-o"></span>A default pull secret exists, but can&rsquo;t be parsed. Saving this will overwrite it.</p>}
+        {existingData.invalidData && <p className="alert alert-danger"><span className="pficon pficon-error-circle-o"></span>{gettext('A default pull secret exists, but can\'t be parsed. Saving this will overwrite it.')}</p>}
 
         <div className="row co-m-form-row">
           <div className="col-xs-3">
-            <label>Namespace</label>
+            <label>{gettext('Namespace')}</label>
           </div>
           <div className="col-xs-9">
             <ResourceIcon kind="Namespace" className="co-m-resource-icon--align-left" /> &nbsp;{namespace.metadata.name}
@@ -189,7 +189,7 @@ class ConfigureNamespacePullSecret extends PromiseComponent {
 
         <div className="row co-m-form-row">
           <div className="col-xs-3">
-            <label htmlFor="namespace-pull-secret-name">Secret Name</label>
+            <label htmlFor="namespace-pull-secret-name">{gettext('Secret Name')}</label>
           </div>
           { pullSecret ?
             <div className="col-xs-9">
@@ -197,14 +197,14 @@ class ConfigureNamespacePullSecret extends PromiseComponent {
                 &nbsp;{_.get(pullSecret, 'metadata.name')}
             </div> : <div className="col-xs-9">
               <input type="text" className="form-control" id="namespace-pull-secret-name" required />
-              <p className="help-block text-muted">Friendly name to help you manage this in the future</p>
+              <p className="help-block text-muted">{gettext('Friendly name to help you manage this in the future')}</p>
             </div>
           }
         </div>
 
         <div className="row co-m-form-row form-group">
           <div className="col-xs-3">
-            <label>Method</label>
+            <label>{gettext('Method')}</label>
           </div>
           <div className="col-xs-9">
             <div className="radio">
@@ -212,7 +212,7 @@ class ConfigureNamespacePullSecret extends PromiseComponent {
                 <input type="radio" id="namespace-pull-secret-method--form"
                   checked={this.state.method === 'form'}
                   onChange={this._onMethodChange} value="form" />
-                  Enter Username/Password
+                  {gettext('Enter Username/Password')}
               </label>
             </div>
             <div className="radio">
@@ -221,7 +221,7 @@ class ConfigureNamespacePullSecret extends PromiseComponent {
                   checked={this.state.method === 'upload'}
                   onChange={this._onMethodChange}
                   id="namespace-pull-secret-method--upload" value="upload" />
-                Upload Docker config.json
+                {gettext('Upload Docker config.json')}
               </label>
             </div>
           </div>
@@ -230,7 +230,7 @@ class ConfigureNamespacePullSecret extends PromiseComponent {
         { this.state.method === 'form' && <div>
           <div className="row co-m-form-row">
             <div className="col-xs-3">
-              <label htmlFor="namespace-pull-secret-address">Registry Address</label>
+              <label htmlFor="namespace-pull-secret-address">{gettext('Registry Address')}</label>
             </div>
             <div className="col-xs-9">
               <input type="text" className="form-control" id="namespace-pull-secret-address" defaultValue={existingData.address} placeholder="quay.io" required />
@@ -238,16 +238,16 @@ class ConfigureNamespacePullSecret extends PromiseComponent {
           </div>
           <div className="row co-m-form-row">
             <div className="col-xs-3">
-              <label htmlFor="namespace-pull-secret-email">Email Address</label>
+              <label htmlFor="namespace-pull-secret-email">{gettext('Email Address')}</label>
             </div>
             <div className="col-xs-9">
               <input type="email" className="form-control" defaultValue={existingData.email} id="namespace-pull-secret-email" />
-              <p className="help-block text-muted">Optional, depending on registry provider</p>
+              <p className="help-block text-muted">{gettext('Optional, depending on registry provider')}</p>
             </div>
           </div>
           <div className="row co-m-form-row">
             <div className="col-xs-3">
-              <label htmlFor="namespace-pull-secret-username">Username</label>
+              <label htmlFor="namespace-pull-secret-username">{gettext('Username')}</label>
             </div>
             <div className="col-xs-9">
               <input type="text" defaultValue={existingData.username} className="form-control" id="namespace-pull-secret-username" required />
@@ -255,7 +255,7 @@ class ConfigureNamespacePullSecret extends PromiseComponent {
           </div>
           <div className="row co-m-form-row">
             <div className="col-xs-3">
-              <label htmlFor="namespace-pull-secret-password">Password</label>
+              <label htmlFor="namespace-pull-secret-password">{gettext('Password')}</label>
             </div>
             <div className="col-xs-9">
               <input type="text" defaultValue={existingData.password} className="form-control" id="namespace-pull-secret-password" required />
@@ -266,16 +266,16 @@ class ConfigureNamespacePullSecret extends PromiseComponent {
         { this.state.method === 'upload' && <div>
           <div className="row co-m-form-row">
             <div className="col-xs-3">
-              <label htmlFor="namespace-pull-secret-file">File Upload</label>
+              <label htmlFor="namespace-pull-secret-file">{gettext('File Upload')}</label>
             </div>
             <div className="col-xs-9">
               <input type="file" id="namespace-pull-secret-file" onChange={this._onFileChange} />
-              <p className="help-block etext-muted">Properly configured Docker config file in JSON format. Will be base64 encoded after upload.</p>
+              <p className="help-block etext-muted">{gettext('Properly configured Docker config file in JSON format. Will be base64 encoded after upload.')}</p>
             </div>
           </div>
           { this.state.invalidJson || existingData.invalidJson && <div className="row co-m-form-row">
             <div className="col-xs-9 col-sm-offset-3">
-              <div className="alert alert-danger"><span className="pficon pficon-error-circle-o"></span>Invalid format. Uploaded file is not properly formatted json.</div>
+              <div className="alert alert-danger"><span className="pficon pficon-error-circle-o"></span>{gettext('Invalid format. Uploaded file is not properly formatted json.')}</div>
             </div>
           </div> }
           { this.state.fileData &&<div className="row co-m-form-row">
@@ -286,7 +286,7 @@ class ConfigureNamespacePullSecret extends PromiseComponent {
         </div> }
 
       </ModalBody>
-      <ModalSubmitFooter errorMessage={this.state.errorMessage} inProgress={this.state.inProgress} submitText="Save Secret" cancel={this._cancel} />
+      <ModalSubmitFooter errorMessage={this.state.errorMessage} inProgress={this.state.inProgress} submitText={gettext('Save Secret')} cancel={this._cancel} />
     </form>;
   }
 }

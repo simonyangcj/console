@@ -373,7 +373,7 @@ export const WorkloadListRow: React.SFC<WorkloadListRowProps> = ({kind, actions,
     <LabelList kind={kind} labels={o.metadata.labels} />
   </div>
   <div className="col-lg-2 col-md-2 hidden-sm hidden-xs">
-    <Link to={`${resourcePath(kind, o.metadata.name, o.metadata.namespace)}/pods`} title="pods">
+    <Link to={`${resourcePath(kind, o.metadata.name, o.metadata.namespace)}/pods`} title={gettext('pods')}>
       {o.status.replicas || 0} of {o.spec.replicas} pods
     </Link>
   </div>

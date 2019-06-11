@@ -40,7 +40,7 @@ class TagsModal extends PromiseComponent {
 
     const keys = tags.map(t => t[NameValueEditorPair.Name]);
     if (_.uniq(keys).length !== keys.length) {
-      this.setState({errorMessage: 'Duplicate keys found.'});
+      this.setState({errorMessage: gettext('Duplicate keys found.')});
       return;
     }
 

@@ -56,13 +56,13 @@ const ServiceAddress = ({s}) => {
   const ServiceType = (type) => {
     switch (type) {
       case 'NodePort':
-        return ServiceIPsRow(gettext('Node Port'), 'Accessible outside the cluster', _.map(s.spec.ports, 'nodePort'), '(all nodes): ');
+        return ServiceIPsRow(gettext('Node Port'), gettext('Accessible outside the cluster'), _.map(s.spec.ports, 'nodePort'), gettext('(all nodes): '));
       case 'LoadBalancer':
-        return ServiceIPsRow(gettext('External Load Balancer'), 'Ingress point(s) of load balancer', _.map(s.status.loadBalancer.ingress, i => i.hostname || i.ip || '-'));
+        return ServiceIPsRow(gettext('External Load Balancer'), gettext('Ingress point(s) of load balancer'), _.map(s.status.loadBalancer.ingress, i => i.hostname || i.ip || '-'));
       case 'ExternalName':
-        return ServiceIPsRow(gettext('External Service Name'), 'Location of the resource that backs the service', [s.spec.externalName]);
+        return ServiceIPsRow(gettext('External Service Name'), gettext('Location of the resource that backs the service'), [s.spec.externalName]);
       default:
-        return ServiceIPsRow(gettext('Cluster IP'), 'Accessible within the cluster only', [s.spec.clusterIP]);
+        return ServiceIPsRow(gettext('Cluster IP'), gettext('Accessible within the cluster only'), [s.spec.clusterIP]);
     }
   };
 
@@ -73,7 +73,7 @@ const ServiceAddress = ({s}) => {
     </div>
     <div className="rows">
       {ServiceType(s.spec.type)}
-      {s.spec.externalIPs && ServiceIPsRow('External IP', 'IP Address(es) accepting traffic for service', s.spec.externalIPs)}
+      {s.spec.externalIPs && ServiceIPsRow(gettext('External IP'), gettext('IP Address(es) accepting traffic for service'), s.spec.externalIPs)}
     </div>
   </div>;
 };
@@ -112,7 +112,7 @@ const ServicePortMapping = ({ports}) => <div>
 const Details = ({obj: s}) => <div className="co-m-pane__body">
   <div className="row">
     <div className="col-sm-6">
-      <SectionHeading text="Service Overview" />
+      <SectionHeading text={gettext('Service Overview')} />
       <ResourceSummary resource={s} showNodeSelector={false}>
         <dt>{gettext('Session Affinity')}</dt>
         <dd>{s.spec.sessionAffinity || '-'}</dd>

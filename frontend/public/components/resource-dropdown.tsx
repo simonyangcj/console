@@ -114,7 +114,7 @@ const ResourceListDropdown_: React.SFC<ResourceListDropdownProps> = props => {
     title={allItems[selectedKey]}
     onChange={onChange}
     autocompleteFilter={autocompleteFilter}
-    autocompletePlaceholder="Select Resource"
+    autocompletePlaceholder={gettext('Select Resource')}
     selectedKey={selectedKey} />;
 };
 

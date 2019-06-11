@@ -4,7 +4,7 @@ import * as React from 'react';
 import * as _ from 'lodash-es';
 
 import { createModalLauncher, ModalTitle, ModalBody, ModalSubmitFooter } from '../factory/modal';
-import { PromiseComponent } from '../utils';
+import { PromiseComponent, gettext } from '../utils';
 import { ClusterServiceVersionKind, SubscriptionKind } from '../cloud-services';
 import { K8sKind, K8sResourceKind } from '../../module/k8s';
 import { ClusterServiceVersionModel, SubscriptionModel } from '../../models';
@@ -34,7 +34,7 @@ export class DisableApplicationModal extends PromiseComponent {
     const {name} = this.props.subscription.spec;
 
     return <form onSubmit={this.submit.bind(this)} name="form" className="co-catalog-install-modal">
-      <ModalTitle className="modal-header">Remove Subscription</ModalTitle>
+      <ModalTitle className="modal-header">{gettext('Remove Subscription')}</ModalTitle>
       <ModalBody>
         <div>
           <p>
@@ -48,7 +48,7 @@ export class DisableApplicationModal extends PromiseComponent {
           </label>
         </div>
       </ModalBody>
-      <ModalSubmitFooter inProgress={this.state.inProgress} errorMessage={this.state.errorMessage} cancel={this.props.cancel.bind(this)} submitText="Remove" />
+      <ModalSubmitFooter inProgress={this.state.inProgress} errorMessage={this.state.errorMessage} cancel={this.props.cancel.bind(this)} submitText={gettext('Remove')} />
     </form>;
   }
 }

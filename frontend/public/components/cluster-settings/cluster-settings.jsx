@@ -23,7 +23,7 @@ export const ClusterSettingsPage = connectToFlags(FLAGS.CLUSTER_UPDATES)(
           <title>Cluster</title>
         </Helmet>
         <div className="co-p-has-sidebar__body">
-          <NavTitle title="Cluster Settings" />
+          <NavTitle title={gettext('Cluster Settings')} />
           <div className="co-m-pane__body">
             <div className="row" style={{marginBottom: 28}}>
               <div className="col-md-12">

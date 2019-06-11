@@ -56,7 +56,7 @@ export const StorageClassList: React.SFC = props => <List {...props} Header={Sto
 StorageClassList.displayName = 'StorageClassList';
 
 export const StorageClassPage: React.SFC<StorageClassPageProps> = props =>
-  <ListPage {...props} title="Storage Classes" kind={StorageClassReference} ListComponent={StorageClassList} canCreate={true} filterLabel={props.filterLabel} />;
+  <ListPage {...props} title={gettext('Storage Classes')} kind={StorageClassReference} ListComponent={StorageClassList} canCreate={true} filterLabel={props.filterLabel} />;
 StorageClassPage.displayName = 'StorageClassListPage';
 
 

@@ -40,7 +40,7 @@ const FirehoseToDropdown: React.SFC<FirehoseToDropdownProps> = ({clusters}) => {
   const spacerBefore = new Set([masterURL]);
   items[masterURL] = <div>{gettext('Manage Cluster Directory…')}</div>;
 
-  return <Dropdown title="Clusters" items={items} selectedKey={selected} noButton={true} className="cluster-picker" menuClassName="dropdown--dark" onChange={url => window.location.href = url} spacerBefore={spacerBefore} />;
+  return <Dropdown title={gettext('Clusters')} items={items} selectedKey={selected} noButton={true} className="cluster-picker" menuClassName="dropdown--dark" onChange={url => window.location.href = url} spacerBefore={spacerBefore} />;
 };
 
 const resources = [{

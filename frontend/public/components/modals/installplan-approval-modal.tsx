@@ -4,7 +4,7 @@ import * as React from 'react';
 import * as _ from 'lodash-es';
 
 import { createModalLauncher, ModalTitle, ModalBody, ModalSubmitFooter } from '../factory/modal';
-import { PromiseComponent } from '../utils';
+import { PromiseComponent, gettext } from '../utils';
 import { K8sKind, K8sResourceKind, modelFor, referenceFor, referenceForModel } from '../../module/k8s';
 import { SubscriptionKind, InstallPlanApproval, InstallPlanKind } from '../cloud-services/index';
 import { RadioInput } from '../radio';
@@ -35,10 +35,10 @@ export class InstallPlanApprovalModal extends PromiseComponent {
 
   render() {
     return <form onSubmit={this.submit.bind(this)} name="form">
-      <ModalTitle className="modal-header">Change Update Approval Strategy</ModalTitle>
+      <ModalTitle className="modal-header">{gettext('Change Update Approval Strategy')}</ModalTitle>
       <ModalBody>
         <div className="co-m-form-row">
-          <p>What strategy is used for approving updates?</p>
+          <p>{gettext('What strategy is used for approving updates?')}</p>
         </div>
         <div className="co-m-form-row row">
           <div className="col-sm-12">
@@ -50,7 +50,7 @@ export class InstallPlanApprovalModal extends PromiseComponent {
               subTitle="(default)">
               <div className="co-m-radio-desc">
                 <p className="text-muted">
-                  New updates will be installed as soon as they become available.
+                  {gettext('New updates will be installed as soon as they become available.')}
                 </p>
               </div>
             </RadioInput>
@@ -63,14 +63,14 @@ export class InstallPlanApprovalModal extends PromiseComponent {
               title={InstallPlanApproval.Manual}>
               <div className="co-m-radio-desc">
                 <p className="text-muted">
-                  New updates need to be manually approved before installation begins.
+                  {gettext('New updates need to be manually approved before installation begins.')}
                 </p>
               </div>
             </RadioInput>
           </div>
         </div>
       </ModalBody>
-      <ModalSubmitFooter inProgress={this.state.inProgress} errorMessage={this.state.errorMessage} cancel={this.props.cancel.bind(this)} submitText="Save Channel" />
+      <ModalSubmitFooter inProgress={this.state.inProgress} errorMessage={this.state.errorMessage} cancel={this.props.cancel.bind(this)} submitText={gettext('Save Channel')} />
     </form>;
   }
 }

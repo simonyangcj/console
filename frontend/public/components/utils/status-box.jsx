@@ -4,7 +4,7 @@ import * as classNames from 'classnames';
 
 import * as restrictedSignImg from '../../imgs/restricted-sign.svg';
 import { TimeoutError } from '../../co-fetch';
-import { gettext } from './gettext'
+import { gettext } from './gettext';
 
 export const Box = ({children, className}) => <div className={classNames('cos-status-box', className)}>{children}</div>;
 

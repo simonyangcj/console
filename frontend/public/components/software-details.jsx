@@ -114,8 +114,8 @@ export const SoftwareDetails = connectToFlags(FLAGS.OPENSHIFT)(
       }
 
       return <React.Fragment>
-        <SoftwareDetailRow title="Kubernetes" detail={kubernetesVersion} text="Kubernetes version could not be determined." />
-        {openshiftFlag && <SoftwareDetailRow title={productName} detail={openshiftVersion} text={`${productName} version could not be determined.`} />}
+        <SoftwareDetailRow title={gettext('Kubernetes')} detail={kubernetesVersion} text={gettext('Kubernetes version could not be determined.')} />
+        {openshiftFlag && <SoftwareDetailRow title={productName} detail={openshiftVersion} text={gettext('%s version could not be determined.', productName)} />}
       </React.Fragment>;
     }
   });

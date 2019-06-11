@@ -109,10 +109,10 @@ const ProjectList_ = props => {
       {props.createProjectMessage || gettext('Create a project for your application.')}
     </p>
     <p>
-      To learn more, visit the OpenShift <a href={openshiftHelpBase} target="_blank" rel="noopener noreferrer">documentation</a>.
+      {gettext('To learn more, visit the OpenShift')} <a href={openshiftHelpBase} target="_blank" rel="noopener noreferrer">{gettext('documentation')}</a>.
     </p>
   </React.Fragment>;
-  const ProjectEmptyMessage = () => <MsgBox title="Welcome to OpenShift" detail={ProjectEmptyMessageDetail} />;
+  const ProjectEmptyMessage = () => <MsgBox title={gettext('Welcome to OpenShift')} detail={ProjectEmptyMessageDetail} />;
   return <List {...props} Header={ProjectHeader} Row={ProjectRow} EmptyMsg={ProjectEmptyMessage} />;
 };
 export const ProjectList = connect(createProjectMessageStateToProps)(ProjectList_);
@@ -165,7 +165,7 @@ const ResourceUsage = requirePrometheus(({ns}) => <div className="co-m-pane__bod
   <SectionHeading text={gettext('Resource Usage')} />
   <div className="row">
     <div className="col-sm-6 col-xs-12">
-      <Line title="CPU Shares" query={[
+      <Line title={gettext('CPU Shares')} query={[
         {
           name: 'Used',
           query: `namespace:container_spec_cpu_shares:sum{namespace='${ns.metadata.name}'}`,
@@ -173,7 +173,7 @@ const ResourceUsage = requirePrometheus(({ns}) => <div className="co-m-pane__bod
       ]} />
     </div>
     <div className="col-sm-6 col-xs-12">
-      <Line title="RAM" query={[
+      <Line title={gettext('RAM')} query={[
         {
           name: 'Used',
           query: `namespace:container_memory_usage_bytes:sum{namespace='${ns.metadata.name}'}`,
@@ -278,7 +278,7 @@ class NamespaceDropdown_ extends React.Component {
         onChange={onChange}
         selectedKey={activeNamespace || ALL_NAMESPACES_KEY}
         autocompleteFilter={autocompleteFilter}
-        autocompletePlaceholder={`Select ${model.label.toLowerCase()}...`}
+        autocompletePlaceholder={`${gettext('Select')} ${model.label.toLowerCase()}...`}
         defaultBookmarks={defaultBookmarks}
         storageKey={NAMESPACE_LOCAL_STORAGE_KEY}
         shortCut="n" />

@@ -226,7 +226,7 @@ const RouteIngressStatus: React.SFC<RouteIngressStatusProps> = ({ingresses}) =>
 
 const RouteDetails: React.SFC<RoutesDetailsProps> = ({obj: route}) => <React.Fragment>
   <div className="co-m-pane__body">
-    <SectionHeading text="Route Overview" />
+    <SectionHeading text={gettext('Route Overview')} />
     <div className="row">
       <div className="col-sm-6">
         <ResourceSummary resource={route} showPodSelector={false} showNodeSelector={false}>

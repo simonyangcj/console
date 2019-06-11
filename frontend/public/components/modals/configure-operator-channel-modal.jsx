@@ -5,7 +5,7 @@ import * as PropTypes from 'prop-types';
 import { k8sPatch } from '../../module/k8s';
 import { ChannelOperatorConfigModel } from '../../models';
 import { createModalLauncher, ModalTitle, ModalBody, ModalSubmitFooter } from '../factory/modal';
-import { PromiseComponent, Dropdown } from '../utils';
+import { PromiseComponent, Dropdown, gettext } from '../utils';
 
 class ConfigureOperatorChannel extends PromiseComponent {
   constructor(props) {
@@ -39,12 +39,12 @@ class ConfigureOperatorChannel extends PromiseComponent {
       'tectonic-1.9-production': 'Tectonic-1.9-production',
     };
     return <form onSubmit={this._submit} name="form">
-      <ModalTitle>Update Channel</ModalTitle>
+      <ModalTitle>{gettext('Update Channel')}</ModalTitle>
       <ModalBody>
         <div className="co-m-form-row">
           <div>
-            <p>Select a channel that reflects your desired Tectonic Version. <a href="https://coreos.com/tectonic/releases/" target="_blank" rel="noopener noreferrer">Read the release notes</a> for more information.</p>
-            <p>Critical security updates will always be delivered to any vulnerable channels.</p>
+            <p>{gettext('Select a channel that reflects your desired Tectonic Version.')} <a href="https://coreos.com/tectonic/releases/" target="_blank" rel="noopener noreferrer">{gettext('Read the release notes')}</a> {gettext('for more information.')}</p>
+            <p>{gettext('Critical security updates will always be delivered to any vulnerable channels.')}</p>
           </div>
         </div>
         <div className="row co-m-form-row">
@@ -56,7 +56,7 @@ class ConfigureOperatorChannel extends PromiseComponent {
       <ModalSubmitFooter
         errorMessage={this.state.errorMessage}
         inProgress={this.state.inProgress}
-        submitText="Save Channel"
+        submitText={gettext('Save Channel')}
         cancel={this._cancel} />
     </form>;
   }

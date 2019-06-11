@@ -4,7 +4,7 @@ import * as PropTypes from 'prop-types';
 
 import { k8sPatch } from '../../module/k8s';
 import { createModalLauncher, ModalTitle, ModalBody, ModalSubmitFooter } from '../factory/modal';
-import { PromiseComponent, NumberSpinner } from '../utils';
+import { PromiseComponent, NumberSpinner, gettext } from '../utils';
 
 class ConfigureCountModal extends PromiseComponent {
   constructor(props) {
@@ -81,30 +81,30 @@ export const configureCountModal = createModalLauncher(ConfigureCountModal);
 export const configureReplicaCountModal = (props) => {
   return configureCountModal(_.defaults({}, {
     defaultValue: 0,
-    title: 'Edit Count',
-    message: `${props.resourceKind.labelPlural} maintain the desired number of healthy pods.`,
+    title: gettext('Edit Count'),
+    message: `${props.resourceKind.labelPlural} ${gettext('maintain the desired number of healthy pods.')}`,
     path: '/spec/replicas',
-    buttonText: 'Save Desired Count'
+    buttonText: gettext('Save Desired Count')
   }, props));
 };
 
 export const configureJobParallelismModal = (props) => {
   return configureCountModal(_.defaults({}, {
     defaultValue: 1,
-    title: 'Edit Parallelism',
-    message: `${props.resourceKind.labelPlural} create one or more pods and ensure that a specified number of them successfully terminate. When the specified number of completions is successfully reached, the job is complete.`,
+    title: gettext('Edit Parallelism'),
+    message: `${props.resourceKind.labelPlural} ${gettext('create one or more pods and ensure that a specified number of them successfully terminate. When the specified number of completions is successfully reached, the job is complete.')}`,
     path: '/spec/parallelism',
-    buttonText: 'Save Desired Parallelism'
+    buttonText: gettext('Save Desired Parallelism')
   }, props));
 };
 
 export const configureClusterSizeModal = (props) => {
   return configureCountModal(_.defaults({}, {
     defaultValue: 0,
-    title: 'Edit Cluster Size',
-    message: `${props.resourceKind.labelPlural} maintain the desired number of healthy pods.`,
+    title: gettext('Edit Cluster Size'),
+    message: `${props.resourceKind.labelPlural} ${gettext('maintain the desired number of healthy pods.')}`,
     path: '/spec/size',
-    buttonText: 'Save Cluster Size'
+    buttonText: gettext('Save Cluster Size')
   }, props));
 };
 

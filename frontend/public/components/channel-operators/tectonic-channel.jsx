@@ -1,7 +1,7 @@
 import * as _ from 'lodash-es';
 import * as React from 'react';
 
-import {LoadingInline, Firehose, determineOperatorState, StatusBox} from '../utils';
+import {LoadingInline, Firehose, determineOperatorState, StatusBox, gettext} from '../utils';
 import {AppVersionDetails} from './app-version';
 import {SafetyFirst} from '../safety-first';
 import * as k8sSelector from '../../module/k8s/selector';
@@ -171,9 +171,9 @@ class TectonicChannelWithData extends React.Component {
     if (appVersions.loadError) {
       return <div className="co-cluster-updates__component">
         <div className="co-cluster-updates__heading--name-wrapper">
-          <span className="co-cluster-updates__heading--name">Tectonic</span>
+          <span className="co-cluster-updates__heading--name">{gettext('Tectonic')}</span>
         </div>
-        <StatusBox loadError={appVersions.loadError} label="Operators" />
+        <StatusBox loadError={appVersions.loadError} label={gettext('Operators')} />
       </div>;
     }
 

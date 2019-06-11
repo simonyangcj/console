@@ -70,7 +70,7 @@ const FeatureFlagGate = connectToFlags(FLAGS.MULTI_CLUSTER)(props => {
         <button className="btn btn-info">{gettext('Installing Multi-cluster Directory')} <i className="fa fa-external-link" /></button>
       </a>
     </div>
-    <ListPage {...props} title="Cluster Directory" kind={referenceForModel(ClusterModel)} ListComponent={ClustersList} canCreate={true} fake={true} />
+    <ListPage {...props} title={gettext('Cluster Directory')} kind={referenceForModel(ClusterModel)} ListComponent={ClustersList} canCreate={true} fake={true} />
     <div style={{marginTop: '-60px', textAlign: 'center'}}>
       <EmptyMsg />
     </div>

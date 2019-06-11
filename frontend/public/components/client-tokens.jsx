@@ -89,8 +89,8 @@ const ClientTokens = ({clients, onTokenRevocation, resourceLoaded, loadingError}
 
         <div className="co-m-table-grid__body">
           { !resourceLoaded && <div className="text-center"><LoadingInline /></div> }
-          { loadingError && <div className="text-center"><LoadError label="Clients" /></div> }
-          { clients && clients.length === 0 && !loadingError && <EmptyBox label="Clients" />}
+          { loadingError && <div className="text-center"><LoadError label={gettext('Clients')} /></div> }
+          { clients && clients.length === 0 && !loadingError && <EmptyBox label={gettext('Clients')} />}
           { clients && clients.length > 0 && _.map(clients, (client) => <ClientRow client={client} key={client.id} onTokenRevocation={onTokenRevocation} />)}
         </div>
       </div>

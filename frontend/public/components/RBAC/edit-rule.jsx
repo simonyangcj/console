@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import { k8sGet, k8sUpdate } from '../../module/k8s';
 import { RoleModel, ClusterRoleModel } from '../../models';
 import { errorModal } from '../modals';
-import { SectionHeading, history, ResourceIcon, resourceObjPath, PromiseComponent, ButtonBar, LoadingBox } from '../utils';
+import { SectionHeading, history, ResourceIcon, resourceObjPath, PromiseComponent, ButtonBar, LoadingBox, gettext } from '../utils';
 import k8sActions from '../../module/k8s/k8s-actions';
 
 const NON_RESOURCE_VERBS = ['get', 'post', 'put', 'delete'];
@@ -263,7 +263,7 @@ const EditRule = connect(stateToProps, {getResources: k8sActions.getResources}) 
     render () {
       const {name, namespace, namespacedSet, safeResources, adminResources, rule} = this.props;
       const {verbControl, resourceControl, nonResourceURLs, APIGroups, role} = this.state;
-      const heading = `${rule === undefined ? 'Create' : 'Edit'} Access Rule`;
+      const heading = `${rule === undefined ? gettext('Create') : gettext('Edit')} ${gettext('Access Rule')}`;
 
       return (
         <div className="co-m-pane edit-rule">
@@ -275,14 +275,14 @@ const EditRule = connect(stateToProps, {getResources: k8sActions.getResources}) 
             <div className="row">
               <div className="col-xs-12">
                 <p className="text-secondary">
-                Each role is made up of a set of rules, which defines the type of access and resources that are allowed to be manipulated.
+                {gettext('Each role is made up of a set of rules, which defines the type of access and resources that are allowed to be manipulated.')}
                 </p>
               </div>
             </div>
 
             <div className="row rule-row">
               <div className="col-xs-2">
-                <strong>{ this.kind.label } Name</strong>
+                <strong>{ this.kind.label } {gettext('Name')}</strong>
               </div>
               <div className="col-xs-10">
                 <ResourceIcon kind={this.kind.kind} className="no-margin" /> {name}
@@ -293,7 +293,7 @@ const EditRule = connect(stateToProps, {getResources: k8sActions.getResources}) 
               namespace &&
             <div className="row rule-row">
               <div className="col-xs-2">
-                <strong>Namespace</strong>
+                <strong>{gettext('Namespace')}</strong>
               </div>
               <div className="col-xs-10">
                 <ResourceIcon kind="Namespace" className="no-margin" /> {namespace}
@@ -304,15 +304,15 @@ const EditRule = connect(stateToProps, {getResources: k8sActions.getResources}) 
 
             <div className="row rule-row">
               <div className="col-xs-2">
-                <strong>Type of Access</strong>
+                <strong>{gettext('Type of Access')}</strong>
               </div>
               <div className="col-xs-10">
                 <RadioButton name="verbControl" activeValue={verbControl} onChange={this.set}
-                  value={VERBS_ENUM.RO} label="Read-only (Default)" text="Users can view, but not edit" />
+                  value={VERBS_ENUM.RO} label={gettext('Read-only (Default)')} text={gettext('Users can view, but not edit')} />
                 <RadioButton name="verbControl" activeValue={verbControl} onChange={this.set}
-                  value={VERBS_ENUM.ALL} label="All" text="Full access to all actions, including deletion" />
+                  value={VERBS_ENUM.ALL} label={gettext('All')} text={gettext('Full access to all actions, including deletion')} />
                 <RadioButton name="verbControl" activeValue={verbControl} onChange={this.set}
-                  value={VERBS_ENUM.CUSTOM} label="Custom (Advanced)" text="Granular selection of actions" />
+                  value={VERBS_ENUM.CUSTOM} label={gettext('Custom (Advanced)')} text={gettext('Granular selection of actions')} />
               </div>
             </div>
             <div className="row">
@@ -321,7 +321,7 @@ const EditRule = connect(stateToProps, {getResources: k8sActions.getResources}) 
               <div className="col-xs-10">
                 <HRMinor />
                 <p>
-                  <strong>Actions</strong>
+                  <strong>{gettext('Actions')}</strong>
                 </p>
                 <div className="newspaper-columns">
                   {
@@ -335,26 +335,26 @@ const EditRule = connect(stateToProps, {getResources: k8sActions.getResources}) 
 
             <div className="row rule-row">
               <div className="col-xs-2">
-                <strong>Allowed Resources</strong>
+                <strong>{gettext('Allowed Resources')}</strong>
               </div>
 
               <div className="col-xs-10">
                 <RadioButton name="resourceControl" activeValue={resourceControl} onChange={this.set}
-                  value={RESOURCE_ENUM.SAFE} label="Recommended (Default)" text="Curated resources ideal for most users" />
+                  value={RESOURCE_ENUM.SAFE} label={gettext('Recommended (Default)')} text={gettext('Curated resources ideal for most users')} />
 
                 <RadioButton name="resourceControl" activeValue={resourceControl} onChange={this.set}
-                  value={RESOURCE_ENUM.ALL} label="All Access" text="Full access, including admin resources" />
+                  value={RESOURCE_ENUM.ALL} label={gettext('All Access')} text={gettext('Full access, including admin resources')} />
 
                 <RadioButton name="resourceControl" activeValue={resourceControl} onChange={this.set}
-                  value={RESOURCE_ENUM.CUSTOM} label="Custom" text="Granular selection of resources" />
+                  value={RESOURCE_ENUM.CUSTOM} label={gettext('Custom')} text={gettext('Granular selection of resources')} />
 
                 {
                   !namespace && <div>
                     <RadioButton name="resourceControl" activeValue={resourceControl} onChange={this.set}
-                      value={RESOURCE_ENUM.NON} label="Non-resource URLs" text="API URLs that do not correspond to objects" />
+                      value={RESOURCE_ENUM.NON} label={gettext('Non-resource URLs')} text={gettext('API URLs that do not correspond to objects')} />
                     <HelpText>
                       <input type="text" value={nonResourceURLs} className="form-control text-input"
-                        onChange={e => this.setNonResourceURL(e.target.value)} placeholder="Comma separated list of non-resource urls (/apis/extensions/v1beta1)" />
+                        onChange={e => this.setNonResourceURL(e.target.value)} placeholder={gettext('Comma separated list of non-resource urls (/apis/extensions/v1beta1)')} />
                     </HelpText>
                   </div>
                 }
@@ -366,7 +366,7 @@ const EditRule = connect(stateToProps, {getResources: k8sActions.getResources}) 
               </div>
               <div className="col-xs-10">
                 <HRMinor />
-                <p><strong>Safe Resources</strong></p>
+                <p><strong>{gettext('Safe Resources')}</strong></p>
                 <div className="newspaper-columns">
                   { safeResources
                     ? safeResources
@@ -384,7 +384,7 @@ const EditRule = connect(stateToProps, {getResources: k8sActions.getResources}) 
               <div className="col-xs-10">
                 <HRMinor />
                 <p>
-                  <strong>Admin Resources</strong>
+                  <strong>{gettext('Admin Resources')}</strong>
                 </p>
                 <div className="newspaper-columns">
                   { adminResources
@@ -402,11 +402,11 @@ const EditRule = connect(stateToProps, {getResources: k8sActions.getResources}) 
               </div>
               <div className="col-xs-10">
                 <HRMinor />
-                <label htmlFor="api-groups">API Groups</label>
-                <p className="text-secondary">Restrict this role to a subset of API URLs that don&rsquo;t correspond to objects.</p>
+                <label htmlFor="api-groups">{gettext('API Groups')}</label>
+                <p className="text-secondary">{gettext('Restrict this role to a subset of API URLs that don\'t correspond to objects.')}</p>
 
                 <div>
-                  <input id="api-groups" type="text" value={APIGroups} className="form-control text-input" onChange={e => this.setApiGroups(e.target.value)} placeholder="Comma separated list of the api groups for the selected resources." />
+                  <input id="api-groups" type="text" value={APIGroups} className="form-control text-input" onChange={e => this.setApiGroups(e.target.value)} placeholder={gettext('Comma separated list of the api groups for the selected resources.')} />
                 </div>
               </div>
             </div>
@@ -416,8 +416,8 @@ const EditRule = connect(stateToProps, {getResources: k8sActions.getResources}) 
             <div className="row">
               <div className="col-xs-12">
                 <ButtonBar errorMessage={this.state.errorMessage} inProgress={this.state.inProgress}>
-                  <button type="submit" className="btn btn-primary" onClick={this.save}>Save Rule</button>
-                  {role && <Link to={`${resourceObjPath(role, this.kind.kind)}`} className="btn btn-default">Cancel</Link>}
+                  <button type="submit" className="btn btn-primary" onClick={this.save}>{gettext('Save Rule')}</button>
+                  {role && <Link to={`${resourceObjPath(role, this.kind.kind)}`} className="btn btn-default">{gettext('Cancel')}</Link>}
                 </ButtonBar>
               </div>
             </div>

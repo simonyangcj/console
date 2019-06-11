@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { k8sBasePath } from '../../module/k8s';
 import { coFetchJSON } from '../../co-fetch';
-import { PromiseComponent } from '../utils';
+import { PromiseComponent, gettext } from '../utils';
 import { createModalLauncher, ModalTitle, ModalBody, ModalFooter } from '../factory/modal';
 
 class TokenInfoModal extends PromiseComponent {
@@ -35,10 +35,10 @@ class TokenInfoModal extends PromiseComponent {
       this.props.close(e);
     };
     return <div>
-      <ModalTitle>Token Information</ModalTitle>
+      <ModalTitle>{gettext('Token Information')}</ModalTitle>
       <ModalBody><pre style={{whiteSpace: 'pre-wrap'}}>{this.state.tokenReview}</pre></ModalBody>
       <ModalFooter inProgress={this.state.inProgress} errorMessage={this.state.errorMessage}>
-        <button type="button" onClick={onCloseClick} className="btn btn-default">Close</button>
+        <button type="button" onClick={onCloseClick} className="btn btn-default">{gettext('Close')}</button>
       </ModalFooter>
     </div>;
   }

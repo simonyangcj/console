@@ -69,14 +69,14 @@ DetailWrapper.propTypes = {
 const Details = ({config, channelState, tcAppVersion}) => {
   if (config.loadError) {
     return <div className="row">
-      <DetailWrapper title="Current Version">
+      <DetailWrapper title={gettext('Current Version')}>
         {tcAppVersion.currentVersion || <LoadingInline />}
       </DetailWrapper>
     </div>;
   }
 
   return <div className="row">
-    <DetailWrapper title="Status">
+    <DetailWrapper title={gettext('Status')}>
       <DetailStatus config={config} channelState={channelState} version={tcAppVersion.desiredVersion} />
     </DetailWrapper>
     <DetailWrapper title={gettext('Current Version')}>

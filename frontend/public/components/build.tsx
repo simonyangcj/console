@@ -182,7 +182,7 @@ const filters = [{
 export const BuildsPage: React.SFC<BuildsPageProps> = props =>
   <ListPage
     {...props}
-    title="Builds"
+    title={gettext('Builds')}
     kind={BuildsReference}
     ListComponent={BuildsList}
     canCreate={false}
