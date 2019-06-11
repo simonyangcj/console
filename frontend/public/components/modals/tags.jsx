@@ -3,7 +3,7 @@ import * as React from 'react';
 
 import { k8sPatch } from '../../module/k8s';
 import { createModalLauncher, ModalTitle, ModalBody, ModalSubmitFooter } from '../factory/modal';
-import { PromiseComponent, NameValueEditorPair } from '../utils';
+import { PromiseComponent, NameValueEditorPair, gettext } from '../utils';
 import { AsyncComponent } from '../utils/async';
 
 /**
@@ -61,7 +61,7 @@ class TagsModal extends PromiseComponent {
       <ModalBody>
         <NameValueEditorComponent nameValuePairs={tags} submit={this._submit} updateParentData={this._updateTags} />
       </ModalBody>
-      <ModalSubmitFooter submitText="Save Changes" cancel={this._cancel} errorMessage={this.state.errorMessage} inProgress={this.state.inProgress} />
+      <ModalSubmitFooter submitText={gettext('Save Changes')} cancel={this._cancel} errorMessage={this.state.errorMessage} inProgress={this.state.inProgress} />
     </form>;
   }
 }
@@ -69,6 +69,6 @@ class TagsModal extends PromiseComponent {
 export const annotationsModal = createModalLauncher(props => <TagsModal
   path="/metadata/annotations"
   tags={props.resource.metadata.annotations}
-  title="Edit Annotations"
+  title={gettext('Edit Annotations')}
   {...props}
 />);

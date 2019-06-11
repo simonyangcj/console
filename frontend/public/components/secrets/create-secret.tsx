@@ -5,7 +5,7 @@ import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 
 import { k8sCreate, k8sUpdate, K8sResourceKind } from '../../module/k8s';
-import { ButtonBar, Firehose, history, kindObj, StatusBox, FileInput } from '../utils';
+import { ButtonBar, Firehose, history, kindObj, StatusBox, FileInput, gettext } from '../utils';
 import { formatNamespacedRouteForResource } from '../../ui/ui-actions';
 import { WebHookSecretKey } from '../secret';
 
@@ -115,7 +115,7 @@ const withSecretForm = (SubForm) => class SecretFormComponent extends React.Comp
 
         <fieldset disabled={!this.props.isCreate}>
           <div className="form-group">
-            <label className="control-label" htmlFor="secret-name">Secret Name</label>
+            <label className="control-label" htmlFor="secret-name">{gettext('Secret Name')}</label>
             <div>
               <input className="form-control"
                 type="text"
@@ -124,7 +124,7 @@ const withSecretForm = (SubForm) => class SecretFormComponent extends React.Comp
                 aria-describedby="secret-name-help"
                 id="secret-name"
                 required />
-              <p className="help-block" id="secret-name-help">Unique name of the new secret.</p>
+              <p className="help-block" id="secret-name-help">{gettext('Unique name of the new secret.')}</p>
             </div>
           </div>
         </fieldset>
@@ -135,8 +135,8 @@ const withSecretForm = (SubForm) => class SecretFormComponent extends React.Comp
           isCreate={this.props.isCreate}
         />
         <ButtonBar errorMessage={this.state.error} inProgress={this.state.inProgress} >
-          <button type="submit" className="btn btn-primary" id="save-changes">{this.props.saveButtonText || 'Create'}</button>
-          <Link to={formatNamespacedRouteForResource('secrets')} className="btn btn-default" id="cancel">Cancel</Link>
+          <button type="submit" className="btn btn-primary" id="save-changes">{this.props.saveButtonText || gettext('Create')}</button>
+          <Link to={formatNamespacedRouteForResource('secrets')} className="btn btn-default" id="cancel">{gettext('Cancel')}</Link>
         </ButtonBar>
       </form>
     </div>;
@@ -164,7 +164,7 @@ class WebHookSecretForm extends React.Component<WebHookSecretFormProps, WebHookS
   }
   render () {
     return <div className="form-group">
-      <label className="control-label" htmlFor="webhook-secret-key">Webhook Secret Key</label>
+      <label className="control-label" htmlFor="webhook-secret-key">{gettext('Webhook Secret Key')}</label>
       <div className="input-group">
         <input className="form-control"
           id="webhook-secret-key"
@@ -175,10 +175,10 @@ class WebHookSecretForm extends React.Component<WebHookSecretFormProps, WebHookS
           aria-describedby="webhook-secret-help"
           required />
         <span className="input-group-btn">
-          <button type="button" onClick={this.generateWebHookSecret} className="btn btn-default">Generate</button>
+          <button type="button" onClick={this.generateWebHookSecret} className="btn btn-default">{gettext('Generate')}</button>
         </span>
       </div>
-      <p className="help-block" id="webhook-secret-help">Value of the secret will be supplied when invoking the webhook. </p>
+      <p className="help-block" id="webhook-secret-help">{gettext('Value of the secret will be supplied when invoking the webhook.')} </p>
     </div>;
   }
 }
@@ -207,11 +207,11 @@ class SourceSecretForm extends React.Component<SourceSecretFormProps, SourceSecr
     return <React.Fragment>
       {this.props.isCreate
         ? <div className="form-group">
-          <label className="control-label" htmlFor="secret-type" >Authentication Type</label>
+          <label className="control-label" htmlFor="secret-type" >{gettext('Authentication Type')}</label>
           <div>
             <select onChange={this.changeAuthenticationType} value={this.state.type} className="form-control" id="secret-type">
-              <option value={SecretType.basicAuth}>Basic Authentication</option>
-              <option value={SecretType.sshAuth}>SSH Key</option>
+              <option value={SecretType.basicAuth}>{gettext('Basic Authentication')}</option>
+              <option value={SecretType.sshAuth}>{gettext('SSH Key')}</option>
             </select>
           </div>
         </div>
@@ -246,7 +246,7 @@ class BasicAuthSubform extends React.Component<BasicAuthSubformProps, BasicAuthS
   render() {
     return <React.Fragment>
       <div className="form-group">
-        <label className="control-label" htmlFor="username">Username</label>
+        <label className="control-label" htmlFor="username">{gettext('Username')}</label>
         <div>
           <input className="form-control"
             id="username"
@@ -255,11 +255,11 @@ class BasicAuthSubform extends React.Component<BasicAuthSubformProps, BasicAuthS
             name="username"
             onChange={this.changeData}
             value={this.state.username} />
-          <p className="help-block" id="username-help">Optional username for Git authentication.</p>
+          <p className="help-block" id="username-help">{gettext('Optional username for Git authentication.')}</p>
         </div>
       </div>
       <div className="form-group">
-        <label className="control-label" htmlFor="password">Password or Token</label>
+        <label className="control-label" htmlFor="password">{gettext('Password or Token')}</label>
         <div>
           <input className="form-control"
             id="password"
@@ -269,7 +269,7 @@ class BasicAuthSubform extends React.Component<BasicAuthSubformProps, BasicAuthS
             onChange={this.changeData}
             value={this.state.password}
             required />
-          <p className="help-block" id="password-help">Password or token for Git authentication. Required if a ca.crt or .gitconfig file is not specified.</p>
+          <p className="help-block" id="password-help">{gettext('Password or token for Git authentication. Required if a ca.crt or .gitconfig file is not specified.')}</p>
         </div>
       </div>
     </React.Fragment>;
@@ -297,10 +297,10 @@ class SSHAuthSubform extends React.Component<SSHAuthSubformProps, SSHAuthSubform
   }
   render() {
     return <div className="form-group">
-      <label className="control-label" htmlFor="ssh-privatekey">SSH Private Key</label>
+      <label className="control-label" htmlFor="ssh-privatekey">{gettext('SSH Private Key')}</label>
       <div>
         <FileInput onChange={this.onFileChange} />
-        <p className="help-block">Upload your private SSH key file.</p>
+        <p className="help-block">{gettext('Upload your private SSH key file.')}</p>
         <textarea className="form-control co-create-secret-form__textarea"
           id="ssh-privatekey"
           name="privateKey"
@@ -308,7 +308,7 @@ class SSHAuthSubform extends React.Component<SSHAuthSubformProps, SSHAuthSubform
           value={this.state['ssh-privatekey']}
           aria-describedby="ssh-privatekey-help"
           required />
-        <p className="help-block" id="ssh-privatekey-help">Private SSH key file for Git authentication.</p>
+        <p className="help-block" id="ssh-privatekey-help">{gettext('Private SSH key file for Git authentication.')}</p>
       </div>
     </div>;
   }
@@ -339,7 +339,7 @@ export const CreateSecret = ({match: {params}}) => {
 };
 
 export const EditSecret = ({match: {params}, kind}) => <Firehose resources={[{kind: kind, name: params.name, namespace: params.ns, isList: false, prop: 'obj'}]}>
-  <SecretLoadingWrapper fixedKeys={['kind', 'metadata']} titleVerb="Edit" saveButtonText="Save Changes" />
+  <SecretLoadingWrapper fixedKeys={['kind', 'metadata']} titleVerb="Edit" saveButtonText={gettext('Save Changes')} />
 </Firehose>;
 
 

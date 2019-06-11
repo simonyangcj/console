@@ -359,7 +359,7 @@ class EventStream extends SafetyFirst {
       sysEventStatus = (
         <Box className="co-sysevent-stream__status-box-empty">
           <div className="text-center cos-status-box__detail">
-          No Events in the past hour
+            {gettext('No Events in the past hour')}
           </div>
         </Box>
       );

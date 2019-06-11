@@ -6,7 +6,7 @@ import { Field, reduxForm, getFormValues } from 'redux-form';
 
 import store from '../../../redux';
 import { ClusterServiceVersionResourceKind } from '../index';
-import { PromiseComponent } from '../../utils';
+import { PromiseComponent, gettext } from '../../utils';
 import { k8sUpdate, referenceFor } from '../../../module/k8s';
 import { createModalLauncher, ModalTitle, ModalBody, ModalSubmitFooter } from '../../factory/modal';
 
@@ -36,7 +36,7 @@ export class ResourceRequirementsModal extends PromiseComponent {
           <this.props.Form handleSubmit={this.submit} />
         </div>
       </ModalBody>
-      <ModalSubmitFooter errorMessage={this.state.errorMessage} inProgress={this.state.inProgress} submitText="Save Changes" cancel={e => this.props.cancel(e)} />
+      <ModalSubmitFooter errorMessage={this.state.errorMessage} inProgress={this.state.inProgress} submitText={gettext('Save Changes')} cancel={e => this.props.cancel(e)} />
     </form>;
   }
 }

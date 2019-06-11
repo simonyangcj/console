@@ -7,6 +7,7 @@ import { Route, Switch, Link } from 'react-router-dom';
 import { EmptyBox, StatusBox } from './index';
 import { PodsPage } from '../pod';
 import { AsyncComponent } from '../utils/async';
+import { gettext } from './gettext';
 
 const editYamlComponent = (props) => <AsyncComponent loader={() => import('../edit-yaml').then(c => c.EditYAML)} obj={props.obj} />;
 
@@ -27,42 +28,42 @@ class PodsComponent extends React.PureComponent {
 export const navFactory = {
   details: component => ({
     href: '',
-    name: 'Overview',
+    name: gettext('Overview'),
     component,
   }),
   events: component => ({
     href: 'events',
-    name: 'Events',
+    name: gettext('Events'),
     component,
   }),
   logs: component => ({
     href: 'logs',
-    name: 'Logs',
+    name: gettext('Logs'),
     component,
   }),
   editYaml: (component = editYamlComponent) => ({
     href: 'yaml',
-    name: 'YAML',
+    name: gettext('YAML'),
     component: component,
   }),
   pods: component => ({
     href: 'pods',
-    name: 'Pods',
+    name: gettext('Pods'),
     component: component || PodsComponent,
   }),
   roles: component => ({
     href: 'roles',
-    name: 'Role Bindings',
+    name: gettext('Role Bindings'),
     component,
   }),
   builds: component => ({
     href: 'builds',
-    name: 'Builds',
+    name: gettext('Builds'),
     component,
   }),
   envEditor: (component) => ({
     href: 'environment',
-    name: 'Environment',
+    name: gettext('Environment'),
     component: component,
   })
 };

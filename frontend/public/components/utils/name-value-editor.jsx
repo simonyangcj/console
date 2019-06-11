@@ -8,6 +8,7 @@ import HTML5Backend from 'react-dnd-html5-backend';
 
 import { NameValueEditorPair } from './index';
 import { ValueFromPair } from './value-from-pair';
+import { gettext } from './gettext';
 
 export const NameValueEditor = DragDropContext(HTML5Backend)(class NameValueEditor extends React.Component {
   constructor (props) {
@@ -115,7 +116,7 @@ NameValueEditor.propTypes = {
 NameValueEditor.defaultProps = {
   nameString: 'Key',
   valueString: 'Value',
-  addString: 'Add More',
+  addString: gettext('Add More'),
   allowSorting: false,
   readOnly: false,
   nameValueId: 0

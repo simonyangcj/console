@@ -68,6 +68,10 @@ msgstr ""
 msgid "Active Pods"
 msgstr ""
 
+#: public/components/utils/name-value-editor.jsx:119
+msgid "Add More"
+msgstr ""
+
 #: public/components/clusters.tsx:49
 msgid "Adding clusters to the directory allows administrators to change configuration across many clusters at once"
 msgstr ""
@@ -201,6 +205,10 @@ msgstr ""
 msgid "Args"
 msgstr ""
 
+#: public/components/secrets/create-secret.tsx:210
+msgid "Authentication Type"
+msgstr ""
+
 #: public/components/cluster-settings/ldap.jsx:133
 #: public/components/cluster-settings/ldap.jsx:95
 msgid "Base DN"
@@ -212,6 +220,10 @@ msgstr ""
 
 #: public/components/cluster-settings/ldap.jsx:96
 msgid "BaseDN to start the user search from. It will translate to the query: \"(&(objectClass=person)(uid=<username>))\"."
+msgstr ""
+
+#: public/components/secrets/create-secret.tsx:213
+msgid "Basic Authentication"
 msgstr ""
 
 #: public/components/node.tsx:199
@@ -235,6 +247,7 @@ msgid "Build Overview"
 msgstr ""
 
 #: public/components/nav.jsx:416
+#: public/components/utils/vertnav.jsx:61
 #: public/models/index.ts:294
 msgid "Builds"
 msgstr ""
@@ -246,6 +259,7 @@ msgstr ""
 
 #: public/components/edit-yaml.jsx:318
 #: public/components/factory/modal.jsx:64
+#: public/components/secrets/create-secret.tsx:139
 msgid "Cancel"
 msgstr ""
 
@@ -552,8 +566,10 @@ msgstr ""
 msgid "CRDs"
 msgstr ""
 
+#: public/components/cloud-services/clusterserviceversion-resource.tsx:124
 #: public/components/edit-yaml.jsx:315
 #: public/components/factory/list-page.jsx:269
+#: public/components/secrets/create-secret.tsx:138
 msgid "Create"
 msgstr ""
 
@@ -760,6 +776,10 @@ msgstr ""
 msgid "Each user of Tectonic gets a single kubectl CLI refresh token for use in their kubeconfig file. This token never expires, unless revoked here."
 msgstr ""
 
+#: public/components/modals/tags.jsx:72
+msgid "Edit Annotations"
+msgstr ""
+
 #: public/components/deployment.jsx:16
 msgid "Edit Update Strategy"
 msgstr ""
@@ -778,6 +798,10 @@ msgstr ""
 
 #: public/components/image-stream-tag.tsx:65
 msgid "Entrypoint"
+msgstr ""
+
+#: public/components/utils/vertnav.jsx:66
+msgid "Environment"
 msgstr ""
 
 #: public/components/container.jsx:226
@@ -828,6 +852,7 @@ msgstr ""
 
 #: public/components/cluster-overview.jsx:162
 #: public/components/nav.jsx:375
+#: public/components/utils/vertnav.jsx:36
 #: public/models/index.ts:359
 msgid "Events"
 msgstr ""
@@ -905,6 +930,10 @@ msgstr ""
 
 #: public/components/cluster-settings/cluster-settings.jsx:33
 msgid "General"
+msgstr ""
+
+#: public/components/secrets/create-secret.tsx:178
+msgid "Generate"
 msgstr ""
 
 #: public/components/chargeback.tsx:89
@@ -1266,6 +1295,10 @@ msgstr ""
 msgid "Logout"
 msgstr ""
 
+#: public/components/utils/vertnav.jsx:41
+msgid "Logs"
+msgstr ""
+
 #: public/components/persistent-volume-claim.jsx:24
 msgid "Lost"
 msgstr ""
@@ -1559,6 +1592,10 @@ msgstr ""
 msgid "No environment variables"
 msgstr ""
 
+#: public/components/events.jsx:362
+msgid "No Events in the past hour"
+msgstr ""
+
 #: public/components/ingress.jsx:18
 msgid "No hosts"
 msgstr ""
@@ -1750,6 +1787,10 @@ msgstr ""
 msgid "Optional filter to apply when searching the directory."
 msgstr ""
 
+#: public/components/secrets/create-secret.tsx:258
+msgid "Optional username for Git authentication."
+msgstr ""
+
 #: public/components/node.tsx:45
 msgid "OS Update"
 msgstr ""
@@ -1757,6 +1798,7 @@ msgstr ""
 #: public/components/cluster-overview.jsx:248
 #: public/components/cluster-overview.jsx:250
 #: public/components/namespace.jsx:192
+#: public/components/utils/vertnav.jsx:31
 msgid "Overview"
 msgstr ""
 
@@ -1784,6 +1826,14 @@ msgstr ""
 #: public/components/cluster-settings/ldap.jsx:75
 #: public/components/cluster-settings/ldap.jsx:87
 msgid "Password"
+msgstr ""
+
+#: public/components/secrets/create-secret.tsx:262
+msgid "Password or Token"
+msgstr ""
+
+#: public/components/secrets/create-secret.tsx:272
+msgid "Password or token for Git authentication. Required if a ca.crt or .gitconfig file is not specified."
 msgstr ""
 
 #: public/components/ingress.jsx:58
@@ -1908,6 +1958,7 @@ msgstr ""
 
 #: public/components/cluster-overview.jsx:68
 #: public/components/nav.jsx:387
+#: public/components/utils/vertnav.jsx:51
 #: public/models/index.ts:161
 msgid "Pods"
 msgstr ""
@@ -1944,6 +1995,10 @@ msgstr ""
 
 #: public/components/cloud-services/install-plan.tsx:72
 msgid "Preview Install Plan"
+msgstr ""
+
+#: public/components/secrets/create-secret.tsx:311
+msgid "Private SSH key file for Git authentication."
 msgstr ""
 
 #: public/components/profile.jsx:26
@@ -2203,6 +2258,7 @@ msgid "Revoking this client's access token will immediately remove it. Once remo
 msgstr ""
 
 #: public/components/nav.jsx:431
+#: public/components/utils/vertnav.jsx:56
 #: public/models/index.ts:492
 msgid "Role Bindings"
 msgstr ""
@@ -2249,9 +2305,12 @@ msgstr ""
 msgid "sample retention"
 msgstr ""
 
+#: public/components/cloud-services/spec-descriptors/resource-requirements.tsx:39
 #: public/components/cluster-settings/cluster-monitoring.jsx:63
 #: public/components/edit-yaml.jsx:316
 #: public/components/environment.jsx:253
+#: public/components/modals/tags.jsx:64
+#: public/components/secrets/create-secret.tsx:342
 msgid "Save Changes"
 msgstr ""
 
@@ -2285,6 +2344,10 @@ msgstr ""
 
 #: public/components/utils/webhooks.tsx:61
 msgid "Secret"
+msgstr ""
+
+#: public/components/secrets/create-secret.tsx:118
+msgid "Secret Name"
 msgstr ""
 
 #: public/components/secret.jsx:66
@@ -2397,6 +2460,14 @@ msgstr ""
 
 #: public/components/cluster-settings/cluster-monitoring.jsx:238
 msgid "Specify the retention time of cluster monitoring samples."
+msgstr ""
+
+#: public/components/secrets/create-secret.tsx:214
+msgid "SSH Key"
+msgstr ""
+
+#: public/components/secrets/create-secret.tsx:300
+msgid "SSH Private Key"
 msgstr ""
 
 #: public/components/job.jsx:71
@@ -2717,6 +2788,10 @@ msgstr ""
 msgid "Type"
 msgstr ""
 
+#: public/components/secrets/create-secret.tsx:127
+msgid "Unique name of the new secret."
+msgstr ""
+
 #: public/components/cloud-services/clusterserviceversion-resource.tsx:54
 #: public/components/cloud-services/clusterserviceversion-resource.tsx:57
 #: public/components/cloud-services/subscription.tsx:30
@@ -2797,6 +2872,10 @@ msgstr ""
 msgid "Upgrading"
 msgstr ""
 
+#: public/components/secrets/create-secret.tsx:303
+msgid "Upload your private SSH key file."
+msgstr ""
+
 #: public/components/utils/operator-states.jsx:150
 msgid "UpToDate"
 msgstr ""
@@ -2827,6 +2906,7 @@ msgstr ""
 
 #: public/components/cluster-settings/ldap.jsx:71
 #: public/components/cluster-settings/ldap.jsx:82
+#: public/components/secrets/create-secret.tsx:249
 msgid "Username"
 msgstr ""
 
@@ -2854,6 +2934,10 @@ msgstr ""
 
 #: public/components/configmap-and-secret-data.jsx:8
 msgid "Value hidden"
+msgstr ""
+
+#: public/components/secrets/create-secret.tsx:181
+msgid "Value of the secret will be supplied when invoking the webhook."
 msgstr ""
 
 #: public/components/alert-manager.jsx:139
@@ -2910,6 +2994,10 @@ msgstr ""
 msgid "Volumes allow data to be shared as files with the pod"
 msgstr ""
 
+#: public/components/secrets/create-secret.tsx:167
+msgid "Webhook Secret Key"
+msgstr ""
+
 #: public/components/utils/webhooks.tsx:60
 msgid "Webhook URL"
 msgstr ""
@@ -2932,6 +3020,10 @@ msgstr ""
 
 #: public/components/nav.jsx:386
 msgid "Workloads"
+msgstr ""
+
+#: public/components/utils/vertnav.jsx:46
+msgid "YAML"
 msgstr ""
 
 #: public/components/utils/status-box.jsx:44

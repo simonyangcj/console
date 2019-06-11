@@ -70,6 +70,10 @@ msgstr "有效截止日期"
 msgid "Active Pods"
 msgstr "运行中Pods"
 
+#: public/components/utils/name-value-editor.jsx:119
+msgid "Add More"
+msgstr "添加更多"
+
 #: public/components/clusters.tsx:49
 msgid ""
 "Adding clusters to the directory allows administrators to change "
@@ -204,6 +208,10 @@ msgstr "架构"
 msgid "Args"
 msgstr "参数"
 
+#: public/components/secrets/create-secret.tsx:210
+msgid "Authentication Type"
+msgstr "验证类型"
+
 #: public/components/cluster-settings/ldap.jsx:133
 #: public/components/cluster-settings/ldap.jsx:95
 msgid "Base DN"
@@ -225,6 +233,10 @@ msgstr ""
 "BaseDN启动用户搜索。 它将转换为查询：\"(&(objectClass=person)"
 "(uid=<username>))\"。"
 
+#: public/components/secrets/create-secret.tsx:213
+msgid "Basic Authentication"
+msgstr "基本认证"
+
 #: public/components/node.tsx:199
 msgid "Boot ID"
 msgstr ""
@@ -245,7 +257,8 @@ msgstr "构建配置"
 msgid "Build Overview"
 msgstr "构建概述"
 
-#: public/components/nav.jsx:416 public/models/index.ts:294
+#: public/components/nav.jsx:416 public/components/utils/vertnav.jsx:61
+#: public/models/index.ts:294
 msgid "Builds"
 msgstr "构建"
 
@@ -255,6 +268,7 @@ msgid "CA Certificate"
 msgstr "CA证书"
 
 #: public/components/edit-yaml.jsx:318 public/components/factory/modal.jsx:64
+#: public/components/secrets/create-secret.tsx:139
 msgid "Cancel"
 msgstr "取消"
 
@@ -562,8 +576,10 @@ msgstr ""
 msgid "CRDs"
 msgstr ""
 
+#: public/components/cloud-services/clusterserviceversion-resource.tsx:124
 #: public/components/edit-yaml.jsx:315
 #: public/components/factory/list-page.jsx:269
+#: public/components/secrets/create-secret.tsx:138
 msgid "Create"
 msgstr "创建"
 
@@ -774,6 +790,10 @@ msgstr ""
 "Tectonic的每个用户都会获得一个kubectl CLI刷新令牌，以便在其kubeconfig文件中使"
 "用。 除非在此处撤消，否则此令牌永不过期。"
 
+#: public/components/modals/tags.jsx:72
+msgid "Edit Annotations"
+msgstr "编辑注释"
+
 #: public/components/deployment.jsx:16
 msgid "Edit Update Strategy"
 msgstr "编辑更新策略"
@@ -793,6 +813,10 @@ msgstr "Email属性"
 #: public/components/image-stream-tag.tsx:65
 msgid "Entrypoint"
 msgstr "入口"
+
+#: public/components/utils/vertnav.jsx:66
+msgid "Environment"
+msgstr "环境"
 
 #: public/components/container.jsx:226
 #: public/components/image-stream-tag.tsx:103
@@ -841,7 +865,7 @@ msgid "Event stream is paused."
 msgstr "事件流已暂停"
 
 #: public/components/cluster-overview.jsx:162 public/components/nav.jsx:375
-#: public/models/index.ts:359
+#: public/components/utils/vertnav.jsx:36 public/models/index.ts:359
 msgid "Events"
 msgstr "事件"
 
@@ -919,6 +943,10 @@ msgstr "来源"
 #: public/components/cluster-settings/cluster-settings.jsx:33
 msgid "General"
 msgstr "普通"
+
+#: public/components/secrets/create-secret.tsx:178
+msgid "Generate"
+msgstr "生成"
 
 #: public/components/chargeback.tsx:89
 msgid "Generation Query"
@@ -1273,6 +1301,10 @@ msgstr "日志片段"
 msgid "Logout"
 msgstr "退出"
 
+#: public/components/utils/vertnav.jsx:41
+msgid "Logs"
+msgstr "日志"
+
 #: public/components/persistent-volume-claim.jsx:24
 msgid "Lost"
 msgstr ""
@@ -1529,6 +1561,10 @@ msgstr "无数据"
 msgid "No environment variables"
 msgstr "无环境变量"
 
+#: public/components/events.jsx:362
+msgid "No Events in the past hour"
+msgstr "过去一小时内没有任何事件"
+
 #: public/components/ingress.jsx:18
 msgid "No hosts"
 msgstr "无主机"
@@ -1713,13 +1749,17 @@ msgstr "操作控制器"
 msgid "Optional filter to apply when searching the directory."
 msgstr "搜索目录时要应用的可选过滤器。"
 
+#: public/components/secrets/create-secret.tsx:258
+msgid "Optional username for Git authentication."
+msgstr "Git身份验证的可选用户名。"
+
 #: public/components/node.tsx:45
 msgid "OS Update"
 msgstr "OS更新"
 
 #: public/components/cluster-overview.jsx:248
 #: public/components/cluster-overview.jsx:250
-#: public/components/namespace.jsx:192
+#: public/components/namespace.jsx:192 public/components/utils/vertnav.jsx:31
 msgid "Overview"
 msgstr "概述"
 
@@ -1747,6 +1787,16 @@ msgstr ""
 #: public/components/cluster-settings/ldap.jsx:87
 msgid "Password"
 msgstr "密码"
+
+#: public/components/secrets/create-secret.tsx:262
+msgid "Password or Token"
+msgstr "密码或令牌"
+
+#: public/components/secrets/create-secret.tsx:272
+msgid ""
+"Password or token for Git authentication. Required if a ca.crt or .gitconfig "
+"file is not specified."
+msgstr "Git身份验证的密码或令牌。 如果未指定ca.crt或.gitconfig文件，则为必需。"
 
 #: public/components/ingress.jsx:58 public/components/routes.tsx:250
 msgid "Path"
@@ -1865,7 +1915,7 @@ msgid "Pod Volumes"
 msgstr "Pod卷"
 
 #: public/components/cluster-overview.jsx:68 public/components/nav.jsx:387
-#: public/models/index.ts:161
+#: public/components/utils/vertnav.jsx:51 public/models/index.ts:161
 msgid "Pods"
 msgstr ""
 
@@ -1901,6 +1951,10 @@ msgstr "预停止："
 #: public/components/cloud-services/install-plan.tsx:72
 msgid "Preview Install Plan"
 msgstr "预览安装计划"
+
+#: public/components/secrets/create-secret.tsx:311
+msgid "Private SSH key file for Git authentication."
+msgstr "用于Git身份验证的私有SSH密钥文件。"
 
 #: public/components/profile.jsx:26
 msgid "Profile"
@@ -2153,7 +2207,8 @@ msgstr ""
 "撤消此客户端的访问令牌将立即将其删除。 删除后，您无法恢复令牌。 如果这是最后"
 "授权的客户端，则在提交后将失去对控制台的访问权限。"
 
-#: public/components/nav.jsx:431 public/models/index.ts:492
+#: public/components/nav.jsx:431 public/components/utils/vertnav.jsx:56
+#: public/models/index.ts:492
 msgid "Role Bindings"
 msgstr "角色绑定"
 
@@ -2199,8 +2254,11 @@ msgstr "马上运行？"
 msgid "sample retention"
 msgstr "留样"
 
+#: public/components/cloud-services/spec-descriptors/resource-requirements.tsx:39
 #: public/components/cluster-settings/cluster-monitoring.jsx:63
 #: public/components/edit-yaml.jsx:316 public/components/environment.jsx:253
+#: public/components/modals/tags.jsx:64
+#: public/components/secrets/create-secret.tsx:342
 msgid "Save Changes"
 msgstr "保存更改"
 
@@ -2232,6 +2290,10 @@ msgstr "秒"
 #: public/components/utils/webhooks.tsx:61
 msgid "Secret"
 msgstr ""
+
+#: public/components/secrets/create-secret.tsx:118
+msgid "Secret Name"
+msgstr "Secret名称"
 
 #: public/components/secret.jsx:66
 msgid "Secret Overview"
@@ -2342,6 +2404,14 @@ msgstr "软件更新失败"
 #: public/components/cluster-settings/cluster-monitoring.jsx:238
 msgid "Specify the retention time of cluster monitoring samples."
 msgstr "指定群集监视样本的保留时间。"
+
+#: public/components/secrets/create-secret.tsx:214
+msgid "SSH Key"
+msgstr "SSH密钥"
+
+#: public/components/secrets/create-secret.tsx:300
+msgid "SSH Private Key"
+msgstr "SSH私钥"
 
 #: public/components/job.jsx:71
 msgid "Start Time"
@@ -2656,6 +2726,10 @@ msgstr "再试一次"
 msgid "Type"
 msgstr "所有类型"
 
+#: public/components/secrets/create-secret.tsx:127
+msgid "Unique name of the new secret."
+msgstr "唯一标识"
+
 #: public/components/cloud-services/clusterserviceversion-resource.tsx:54
 #: public/components/cloud-services/clusterserviceversion-resource.tsx:57
 #: public/components/cloud-services/subscription.tsx:30
@@ -2733,6 +2807,10 @@ msgstr "升级状态"
 msgid "Upgrading"
 msgstr "升级中"
 
+#: public/components/secrets/create-secret.tsx:303
+msgid "Upload your private SSH key file."
+msgstr "上传您的SSH私钥文件。"
+
 #: public/components/utils/operator-states.jsx:150
 msgid "UpToDate"
 msgstr "最新"
@@ -2763,6 +2841,7 @@ msgstr "用户名"
 
 #: public/components/cluster-settings/ldap.jsx:71
 #: public/components/cluster-settings/ldap.jsx:82
+#: public/components/secrets/create-secret.tsx:249
 msgid "Username"
 msgstr "用户名"
 
@@ -2796,6 +2875,10 @@ msgstr "值"
 #: public/components/configmap-and-secret-data.jsx:8
 msgid "Value hidden"
 msgstr "数据隐藏"
+
+#: public/components/secrets/create-secret.tsx:181
+msgid "Value of the secret will be supplied when invoking the webhook."
+msgstr "调用webhook时将提供secret值。"
 
 #: public/components/alert-manager.jsx:139
 #: public/components/alert-manager.jsx:60
@@ -2850,6 +2933,10 @@ msgstr "查看订阅"
 msgid "Volumes allow data to be shared as files with the pod"
 msgstr "卷允许将数据作为pod的文件共享"
 
+#: public/components/secrets/create-secret.tsx:167
+msgid "Webhook Secret Key"
+msgstr ""
+
 #: public/components/utils/webhooks.tsx:60
 msgid "Webhook URL"
 msgstr ""
@@ -2875,6 +2962,10 @@ msgstr "工作路径"
 #: public/components/nav.jsx:386
 msgid "Workloads"
 msgstr "应用容器"
+
+#: public/components/utils/vertnav.jsx:46
+msgid "YAML"
+msgstr ""
 
 #: public/components/utils/status-box.jsx:44
 msgid "You don't have access to this section due to cluster policy."
@@ -2922,9 +3013,6 @@ msgstr "由于群集策略，您没有访问此部分的权限。"
 #~ msgid "Info"
 #~ msgstr "信息"
 
-#~ msgid "No Events in the past hour"
-#~ msgstr "过去一小时内没有任何事件"
-
 #~ msgid "Showing"
 #~ msgstr "展示"
 
@@ -2933,6 +3021,3 @@ msgstr "由于群集策略，您没有访问此部分的权限。"
 
 #~ msgid "There are no events before"
 #~ msgstr "以前没有事件"
-
-#~ msgid "Unique name of the new secret."
-#~ msgstr "唯一标识"
