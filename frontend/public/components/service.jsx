@@ -119,7 +119,7 @@ const Details = ({obj: s}) => <div className="co-m-pane__body">
       </ResourceSummary>
     </div>
     <div className="col-sm-6">
-      <SectionHeading text="Service Routing" />
+      <SectionHeading text={gettext('Service Routing')} />
       <dl>
         <dt>{gettext('Service Address')}</dt>
         <dd className="service-ips">

@@ -86,7 +86,7 @@ export const SubscriptionDetails: React.SFC<SubscriptionDetailsProps> = (props) 
   const catalogNS = obj.spec.sourceNamespace || olmNamespace;
 
   return <div className="co-m-pane__body">
-    <SectionHeading text="Subscription Overview" />
+    <SectionHeading text={gettext('Subscription Overview')} />
     <div className="co-m-pane__body-group">
       <SubscriptionUpdates pkg={pkg} obj={obj} installedCSV={installedCSV} />
     </div>

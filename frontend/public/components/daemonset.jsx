@@ -37,7 +37,7 @@ const DaemonSetRow = ({obj: daemonset}) => <ResourceRow obj={daemonset}>
 </ResourceRow>;
 
 const Details = ({obj: daemonset}) => <div className="co-m-pane__body">
-  <SectionHeading text="Daemon Set Overview" />
+  <SectionHeading text={gettext('Daemon Set Overview')} />
   <div className="row">
     <div className="col-lg-6">
       <ResourceSummary resource={daemonset} />

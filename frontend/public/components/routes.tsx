@@ -253,11 +253,11 @@ const RouteDetails: React.SFC<RoutesDetailsProps> = ({obj: route}) => <React.Fra
     </div>
   </div>
   <div className="co-m-pane__body">
-    <SectionHeading text="TLS Settings" />
+    <SectionHeading text={gettext('TLS Settings')} />
     <TLSSettings tls={route.spec.tls} />
   </div>
   { !_.isEmpty(route.spec.alternateBackends) && <div className="co-m-pane__body">
-    <SectionHeading text="Traffic" />
+    <SectionHeading text={gettext('Traffic')} />
     <p className="co-m-pane__explanation">
       {gettext('This route splits traffic across multiple services.')}
     </p>

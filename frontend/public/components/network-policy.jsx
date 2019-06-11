@@ -95,11 +95,11 @@ const Details_ = ({flags, obj: np}) => {
     : 'https://kubernetes.io/docs/concepts/services-networking/network-policies/';
   return <React.Fragment>
     <div className="co-m-pane__body">
-      <SectionHeading text="Namespace Overview" />
+      <SectionHeading text={gettext('Namespace Overview')} />
       <ResourceSummary resource={np} podSelector={'spec.podSelector'} showNodeSelector={false} />
     </div>
     <div className="co-m-pane__body">
-      <SectionHeading text="Ingress Rules" />
+      <SectionHeading text={gettext('Ingress Rules')} />
       <p className="co-m-pane__explanation">
         {gettext('Pods accept all traffic by default.')}
         {gettext('They can be isolated via Network Policies which specify a whitelist of ingress rules.')}

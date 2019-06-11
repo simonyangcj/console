@@ -147,7 +147,7 @@ export const LogoImage = () => {
     default:
       logoImg = okdLogoImg;
       logoImg = require("../imgs/logo.png");
-      logoAlt = 'OKD';
+      logoAlt = 'Animbus CaaS';
   }
 
   return <div className="co-masthead__logo">

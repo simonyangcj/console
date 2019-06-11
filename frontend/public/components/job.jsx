@@ -53,7 +53,7 @@ const JobRow = ({obj: job}) => {
 const Details = ({obj: job}) => <div className="co-m-pane__body">
   <div className="row">
     <div className="col-md-6">
-      <SectionHeading text="Job Overview" />
+      <SectionHeading text={gettext('Job Overview')} />
       <ResourceSummary resource={job} showNodeSelector={false}>
         <dt>{gettext('Desired Completions')}</dt>
         <dd>{job.spec.completions || '-'}</dd>
@@ -64,10 +64,10 @@ const Details = ({obj: job}) => <div className="co-m-pane__body">
       </ResourceSummary>
     </div>
     <div className="col-md-6">
-      <SectionHeading text="Job Status" />
+      <SectionHeading text={gettext('Job Status')} />
       <dl className="co-m-pane__details">
         <dt>{gettext('Status')}</dt>
-        <dd>{job.status.conditions ? job.status.conditions[0].type : 'In Progress'}</dd>
+        <dd>{job.status.conditions ? job.status.conditions[0].type : gettext('In Progress')}</dd>
         <dt>{gettext('Start Time')}</dt>
         <dd><Timestamp timestamp={job.status.startTime} /></dd>
         <dt>{gettext('Completion Time')}</dt>

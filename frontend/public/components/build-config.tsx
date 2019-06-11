@@ -33,7 +33,7 @@ const menuActions = [
 
 export const BuildConfigsDetails: React.SFC<BuildConfigsDetailsProps> = ({obj: buildConfig}) => <React.Fragment>
   <div className="co-m-pane__body">
-    <SectionHeading text="Build Config Overview" />
+    <SectionHeading text={gettext('Build Config Overview')} />
     <div className="row">
       <div className="col-sm-6">
         <ResourceSummary resource={buildConfig} showPodSelector={false} showNodeSelector={false} />

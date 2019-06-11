@@ -9,7 +9,7 @@ const getProductName = () => {
     case 'azure':
       return 'Azure Red Hat OpenShift';
     default:
-      return 'OKD';
+      return 'Animbus CaaS';
   }
 };
 export const productName = getProductName();

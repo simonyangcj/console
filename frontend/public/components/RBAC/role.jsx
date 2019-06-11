@@ -4,7 +4,7 @@ import * as fuzzy from 'fuzzysearch';
 // import { Link } from 'react-router-dom';
 
 import { ColHead, DetailsPage, List, ListHeader, MultiListPage, ResourceRow, TextFilter } from '../factory';
-import { Cog, SectionHeading, MsgBox, navFactory, ResourceCog, ResourceLink, Timestamp } from '../utils';
+import { Cog, SectionHeading, MsgBox, navFactory, ResourceCog, ResourceLink, Timestamp, gettext } from '../utils';
 import { BindingName, BindingsList, RulesList } from './index';
 import { flatten as bindingsFlatten } from './bindings';
 import { flagPending, connectToFlags, FLAGS } from '../../features';
@@ -30,8 +30,8 @@ const menuActions = [
 ];
 
 const Header = props => <ListHeader>
-  <ColHead {...props} className="col-xs-6" sortField="metadata.name">Name</ColHead>
-  <ColHead {...props} className="col-xs-6" sortField="metadata.namespace">Namespace</ColHead>
+  <ColHead {...props} className="col-xs-6" sortField="metadata.name">{gettext('Name')}</ColHead>
+  <ColHead {...props} className="col-xs-6" sortField="metadata.namespace">{gettext('Namespace')}</ColHead>
 </ListHeader>;
 
 const Row = ({obj: role}) => <div className="row co-resource-list__item">
@@ -65,28 +65,28 @@ class Details extends React.Component {
 
     return <div>
       <div className="co-m-pane__body">
-        <SectionHeading text="Role Overview" />
+        <SectionHeading text={gettext('Role Overview')} />
         <div className="row">
           <div className="col-xs-6">
             <dl className="co-m-pane__details">
-              <dt>Role Name</dt>
+              <dt>{gettext('Role Name')}</dt>
               <dd>{name}</dd>
               {namespace && <div>
-                <dt>Namespace</dt>
+                <dt>{gettext('Namespace')}</dt>
                 <dd><ResourceLink kind="Namespace" name={namespace} /></dd>
               </div>}
             </dl>
           </div>
           <div className="col-xs-6">
             <dl className="co-m-pane__details">
-              <dt>Created At</dt>
+              <dt>{gettext('Created At')}</dt>
               <dd><Timestamp timestamp={creationTimestamp} /></dd>
             </dl>
           </div>
         </div>
       </div>
       <div className="co-m-pane__body">
-        <SectionHeading text="Rules" />
+        <SectionHeading text={gettext('Rules')} />
         <div className="co-m-pane__filter-bar co-m-pane__filter-bar--alt">
           {/* This page is temporarily disabled until we update the safe resources list.
           <div className="co-m-pane__filter-bar-group">
@@ -106,10 +106,10 @@ class Details extends React.Component {
 }
 
 const BindingHeader = props => <ListHeader>
-  <ColHead {...props} className="col-xs-4" sortField="metadata.name">Name</ColHead>
-  <ColHead {...props} className="col-xs-2" sortField="subject.kind">Subject Kind</ColHead>
-  <ColHead {...props} className="col-xs-4" sortField="subject.name">Subject Name</ColHead>
-  <ColHead {...props} className="col-xs-2" sortField="metadata.namespace">Namespace</ColHead>
+  <ColHead {...props} className="col-xs-4" sortField="metadata.name">{gettext('Name')}</ColHead>
+  <ColHead {...props} className="col-xs-2" sortField="subject.kind">{gettext('Subject Kind')}</ColHead>
+  <ColHead {...props} className="col-xs-4" sortField="subject.name">{gettext('Subject Name')}</ColHead>
+  <ColHead {...props} className="col-xs-2" sortField="metadata.namespace">{gettext('Namespace')}</ColHead>
 </ListHeader>;
 
 const BindingRow = ({obj: binding}) => <ResourceRow obj={binding}>
@@ -155,7 +155,7 @@ export const RolesDetailsPage = props => <DetailsPage
 
 export const ClusterRolesDetailsPage = RolesDetailsPage;
 
-const EmptyMsg = () => <MsgBox title="No Roles Found" detail="Roles grant access to types of objects in the cluster. Roles are applied to a team or user via a Role Binding." />;
+const EmptyMsg = () => <MsgBox title={gettext('No Roles Found')} detail={gettext('Roles grant access to types of objects in the cluster. Roles are applied to a team or user via a Role Binding.')} />;
 
 const RolesList = props => <List {...props} EmptyMsg={EmptyMsg} Header={Header} Row={Row} />;
 

@@ -51,7 +51,7 @@ export class SecretData extends React.PureComponent {
       dl.push(<dd key={`${k}-v`}>{value}</dd>);
     });
     return <React.Fragment>
-      <SectionHeading text="Data">
+      <SectionHeading text={gettext('Data')}>
         {dl.length
           ? <button className="btn btn-link" type="button" onClick={this.toggleSecret}>
             {showSecret

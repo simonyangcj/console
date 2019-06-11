@@ -96,7 +96,7 @@ const resourceRow = (metric, current, key) => {
 
 const MetricsTable: React.SFC<MetricsTableProps> = ({obj: hpa}) => {
   return <React.Fragment>
-    <SectionHeading text="Metrics" />
+    <SectionHeading text={gettext('Metrics')} />
     <div className="co-m-table-grid co-m-table-grid--bordered">
       <div className="row co-m-table-grid__head">
         <div className="col-xs-6">{gettext('Type')}</div>
@@ -131,7 +131,7 @@ const MetricsTable: React.SFC<MetricsTableProps> = ({obj: hpa}) => {
 
 export const HorizontalPodAutoscalersDetails: React.SFC<HorizontalPodAutoscalersDetailsProps> = ({obj: hpa}) => <React.Fragment>
   <div className="co-m-pane__body">
-    <SectionHeading text="Horizontal Pod Autoscaler Overview" />
+    <SectionHeading text={gettext('Horizontal Pod Autoscaler Overview')} />
     <div className="row">
       <div className="col-sm-6">
         <ResourceSummary resource={hpa} showPodSelector={false} showNodeSelector={false} />
@@ -160,7 +160,7 @@ export const HorizontalPodAutoscalersDetails: React.SFC<HorizontalPodAutoscalers
     <MetricsTable obj={hpa} />
   </div>
   <div className="co-m-pane__body">
-    <SectionHeading text="Conditions" />
+    <SectionHeading text={gettext('Conditions')} />
     <Conditions conditions={hpa.status.conditions} />
   </div>
 </React.Fragment>;

@@ -57,7 +57,7 @@ export const DeploymentConfigsDetails: React.SFC<{obj: any}> = ({obj: deployment
 
   return <React.Fragment>
     <div className="co-m-pane__body">
-      <SectionHeading text="Deployment Config Overview" />
+      <SectionHeading text={gettext('Deployment Config Overview')} />
       <DeploymentPodCounts resource={deploymentConfig} resourceKind={DeploymentConfigModel} />
       <div className="co-m-pane__body-group">
         <div className="row">
@@ -95,11 +95,11 @@ export const DeploymentConfigsDetails: React.SFC<{obj: any}> = ({obj: deployment
       </div>
     </div>
     <div className="co-m-pane__body">
-      <SectionHeading text="Containers" />
+      <SectionHeading text={gettext('Containers')} />
       <ContainerTable containers={deploymentConfig.spec.template.spec.containers} />
     </div>
     <div className="co-m-pane__body">
-      <SectionHeading text="Conditions" />
+      <SectionHeading text={gettext('Conditions')} />
       <Conditions conditions={deploymentConfig.status.conditions} />
     </div>
   </React.Fragment>;

@@ -1,8 +1,7 @@
-const {
+import {
   GettextExtractor,
-  JsExtractors,
-  HtmlExtractors
-} = require('gettext-extractor');
+  JsExtractors
+} from 'gettext-extractor';
 
 let extractor = new GettextExtractor();
 
@@ -25,11 +24,11 @@ extractor
   // .parseFilesGlob('./public/components/masthead.tsx');
   .parseFilesGlob('./public/**/*.@(ts|js|tsx|jsx)');
 
-extractor
-  .createHtmlParser([
-    HtmlExtractors.elementContent('translate, [translate]')
-  ])
-  .parseFilesGlob('./public/**/*.html');
+// extractor
+//   .createHtmlParser([
+//     HtmlExtractors.elementContent('translate, [translate]')
+//   ])
+//   .parseFilesGlob('./public/**/*.html');
 
 extractor.savePotFile('./messages.pot');
 

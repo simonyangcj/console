@@ -164,7 +164,7 @@ const NodeGraphs = requirePrometheus(({node}) => {
 const Details = ({obj: node}) => {
   return <React.Fragment>
     <div className="co-m-pane__body">
-      <SectionHeading text="Node Overview" />
+      <SectionHeading text={gettext('Node Overview')} />
       <NodeGraphs node={node} />
       <div className="row">
         <div className="col-md-6 col-xs-12">
@@ -210,7 +210,7 @@ const Details = ({obj: node}) => {
     </div>
 
     { containerLinuxUpdateOperator.isOperatorInstalled(node) && <div className="co-m-pane__body">
-      <SectionHeading text="Container Linux" />
+      <SectionHeading text={gettext('Container Linux')} />
       <div className="row">
         <div className="col-md-6 col-xs-12">
           <dl className="co-m-pane__details">
@@ -230,7 +230,7 @@ const Details = ({obj: node}) => {
     </div> }
 
     <div className="co-m-pane__body">
-      <SectionHeading text="Node Conditions" />
+      <SectionHeading text={gettext('Node Conditions')} />
       <div className="co-table-container">
         <table className="table">
           <thead>
@@ -256,7 +256,7 @@ const Details = ({obj: node}) => {
     </div>
 
     <div className="co-m-pane__body">
-      <SectionHeading text="Images" />
+      <SectionHeading text={gettext('Images')} />
       <div className="co-table-container">
         <table className="table">
           <thead>

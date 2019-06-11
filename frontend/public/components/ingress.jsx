@@ -115,14 +115,14 @@ const RulesRows = (props) => {
 
 const Details = ({obj: ingress}) => <React.Fragment>
   <div className="co-m-pane__body">
-    <SectionHeading text="Ingress Overview" />
+    <SectionHeading text={gettext('Ingress Overview')} />
     <ResourceSummary resource={ingress} showPodSelector={false} showNodeSelector={false}>
       <dt>{gettext('TLS Certificate')}</dt>
       <dd>{getTLSCert(ingress)}</dd>
     </ResourceSummary>
   </div>
   <div className="co-m-pane__body">
-    <SectionHeading text="Ingress Rules" />
+    <SectionHeading text={gettext('Ingress Rules')} />
     <p className="co-m-pane__explanation">{gettext('These rules are handled by a routing layer (Ingress Controller) which is updated as the rules are modified. The Ingress controller implementation defines how headers and other metadata are forwarded or manipulated.')}</p>
     <div className="co-m-table-grid co-m-table-grid--bordered">
       <RulesHeader />

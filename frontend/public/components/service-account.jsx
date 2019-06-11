@@ -99,10 +99,10 @@ const Details = ({obj: serviceaccount}) => {
   return (
     <React.Fragment>
       <div className="co-m-pane__body">
-        <SectionHeading text="Service Account Overview" />
+        <SectionHeading text={gettext('Service Account Overview')} />
         <ResourceSummary resource={serviceaccount} showPodSelector={false} showNodeSelector={false} />
       </div>
-      <SectionHeading text="Secrets" style={{marginLeft: '30px', marginTop: '30px', marginBottom: '-20px'}} />
+      <SectionHeading text={gettext('Secrets')} style={{marginLeft: '30px', marginTop: '30px', marginBottom: '-20px'}} />
       <SecretsPage kind="Secret" canCreate={false} namespace={namespace} filters={filters} autoFocus={false} showTitle={false} />
     </React.Fragment>
   );

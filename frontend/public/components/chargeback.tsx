@@ -73,7 +73,7 @@ class ReportsDetails extends React.Component<ReportsDetailsProps> {
     const phase = _.get(obj, ['status', 'phase']);
     return <div>
       <div className="co-m-pane__body">
-        <SectionHeading text="Report Overview" />
+        <SectionHeading text={gettext('Report Overview')} />
         <div className="row">
           <div className="col-sm-6 col-xs-12">
             <ResourceSummary resource={obj} showNodeSelector={false} showPodSelector={false} showAnnotations={true} />
@@ -319,7 +319,7 @@ class ReportData extends SafetyFirst<ReportDataProps, ReportDataState> {
 
     return <div>
       <div className="co-m-pane__body">
-        <SectionHeading text="Usage Report">
+        <SectionHeading text={gettext('Usage Report')}>
           <DownloadButton className="pull-right" url={downloadURL} filename={`${name}.${format}`} />
         </SectionHeading>
         <div className="row">
@@ -411,7 +411,7 @@ const ReportGenerationQueriesDetails: React.SFC<ReportGenerationQueriesDetailsPr
 
   return <div>
     <div className="co-m-pane__body">
-      <SectionHeading text="Chargeback Report Generation Query" />
+      <SectionHeading text={gettext('Chargeback Report Generation Query')} />
       <ResourceSummary resource={obj} showNodeSelector={false} showPodSelector={false} showAnnotations={true}>
         <dt>{gettext('Query')}</dt>
         <dd><pre><code>{_.get(obj, ['spec', 'query'])}</code></pre></dd>

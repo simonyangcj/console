@@ -52,7 +52,7 @@ export const ImageStreamsDetails: React.SFC<ImageStreamsDetailsProps> = ({obj: i
 
   return <div>
     <div className="co-m-pane__body">
-      <SectionHeading text="Image Stream Overview" />
+      <SectionHeading text={gettext('Image Stream Overview')} />
       <ResourceSummary resource={imageStream} showPodSelector={false} showNodeSelector={false}>
         {imageRepository && <dt>{gettext('Image Repository')}</dt>}
         {imageRepository && <dd>{imageRepository}</dd>}
@@ -63,7 +63,7 @@ export const ImageStreamsDetails: React.SFC<ImageStreamsDetailsProps> = ({obj: i
       </ResourceSummary>
     </div>
     <div className="co-m-pane__body">
-      <SectionHeading text="Tags" />
+      <SectionHeading text={gettext('Tags')} />
       {_.isEmpty(imageStream.status.tags)
         ? <span className="text-muted">{gettext('No tags')}</span>
         : <div className="row">

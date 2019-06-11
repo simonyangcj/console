@@ -49,7 +49,7 @@ export const ImageStreamTagsDetails: React.SFC<ImageStreamTagsDetailsProps> = ({
     <div className="co-m-pane__body-group">
       <div className="row">
         <div className="col-md-6 col-sm-12">
-          <SectionHeading text="Image Overview" />
+          <SectionHeading text={gettext('Image Overview')} />
           <ResourceSummary resource={imageStreamTag} showPodSelector={false} showNodeSelector={false}>
             {labels.name && <dt>{gettext('Image Name')}</dt>}
             {labels.name && <dd>{labels.name}</dd>}
@@ -60,7 +60,7 @@ export const ImageStreamTagsDetails: React.SFC<ImageStreamTagsDetailsProps> = ({
           </ResourceSummary>
         </div>
         <div className="col-md-6 col-sm-12">
-          <SectionHeading text="Configuration" />
+          <SectionHeading text={gettext('Configuration')} />
           <dl className="co-m-pane__details">
             {entrypoint && <dt>{gettext('Entrypoint')}</dt>}
             {entrypoint && <dd><Overflow value={entrypoint} /></dd>}
@@ -79,7 +79,7 @@ export const ImageStreamTagsDetails: React.SFC<ImageStreamTagsDetailsProps> = ({
       </div>
     </div>
     <div className="co-m-pane__body-group">
-      <SectionHeading text="Image Labels" />
+      <SectionHeading text={gettext('Image Labels')} />
       {_.isEmpty(sortedLabels)
         ? <span className="text-muted">{gettext('No labels')}</span>
         : <div className="co-table-container">
@@ -100,7 +100,7 @@ export const ImageStreamTagsDetails: React.SFC<ImageStreamTagsDetailsProps> = ({
         </div>}
     </div>
     <div className="co-m-pane__body-group">
-      <SectionHeading text="Environment Variables" />
+      <SectionHeading text={gettext('Environment Variables')} />
       {_.isEmpty(config.Env)
         ? <span className="text-muted">{gettext('No environment variables')}</span>
         : <div className="co-table-container">

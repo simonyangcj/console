@@ -73,7 +73,7 @@ export const InstallPlanDetails: React.SFC<InstallPlanDetailsProps> = ({obj}) =>
       </Link>
     </div> }
     <div className="co-m-pane__body">
-      <SectionHeading text="Install Plan Overview" />
+      <SectionHeading text={gettext('Install Plan Overview')} />
       <div className="co-m-pane__body-group">
         <div className="row">
           <div className="col-sm-6">

@@ -170,7 +170,7 @@ const Details = ({obj: pod}) => {
     <ScrollToTopOnMount />
 
     <div className="co-m-pane__body">
-      <SectionHeading text="Pod Overview" />
+      <SectionHeading text={gettext('Pod Overview')} />
       <PodGraphs pod={pod} />
       <div className="row">
         <div className="col-sm-6">
@@ -207,7 +207,7 @@ const Details = ({obj: pod}) => {
     <ContainerTable key="containerTable" heading="Containers" containers={pod.spec.containers} pod={pod} />
 
     <div className="co-m-pane__body">
-      <SectionHeading text="Pod Volumes" />
+      <SectionHeading text={gettext('Pod Volumes')} />
       <div className="row">
         <div className="co-m-table-grid co-m-table-grid--bordered">
           <div className="row co-m-table-grid__head">
