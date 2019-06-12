@@ -30,10 +30,6 @@ export type BasicAuthSubformState = {
   password: string,
 };
 
-const secretFormExplanation = {
-  [SecretTypeAbstraction.source]: 'Source secrets allow you to authenticate against the SCM server.',
-  [SecretTypeAbstraction.webhook]: 'Webhook secrets allow you to authenticate a webhook trigger.',
-};
 
 const determineDefaultSecretType = (typeAbstraction: SecretTypeAbstraction) => {
   return typeAbstraction === SecretTypeAbstraction.source ? SecretType.basicAuth : SecretType.opaque;
@@ -315,6 +311,10 @@ class SSHAuthSubform extends React.Component<SSHAuthSubformProps, SSHAuthSubform
 }
 
 const SecretLoadingWrapper = props => {
+  const secretFormExplanation = {
+    [SecretTypeAbstraction.source]: gettext('Source secrets allow you to authenticate against the SCM server.'),
+    [SecretTypeAbstraction.webhook]: gettext('Webhook secrets allow you to authenticate a webhook trigger.'),
+  };
   const secretTypeAbstraction = determineSecretTypeAbstraction(_.get(props.obj.data, 'data'));
   const SecretFormComponent = secretFormFactory(secretTypeAbstraction);
   const fixed = _.reduce(props.fixedKeys, (acc, k) => ({...acc, k: _.get(props.obj.data, k)}), {});
@@ -329,17 +329,21 @@ const SecretLoadingWrapper = props => {
 };
 
 export const CreateSecret = ({match: {params}}) => {
+  const secretFormExplanation = {
+    [SecretTypeAbstraction.source]: gettext('Source secrets allow you to authenticate against the SCM server.'),
+    [SecretTypeAbstraction.webhook]: gettext('Webhook secrets allow you to authenticate a webhook trigger.'),
+  };
   const SecretFormComponent = secretFormFactory(params.type);
   return <SecretFormComponent fixed={{ metadata: { namespace: params.ns } }}
     secretTypeAbstraction={params.type}
     explanation={secretFormExplanation[params.type]}
-    titleVerb="Create"
+    titleVerb={gettext('Create')}
     isCreate={true}
   />;
 };
 
 export const EditSecret = ({match: {params}, kind}) => <Firehose resources={[{kind: kind, name: params.name, namespace: params.ns, isList: false, prop: 'obj'}]}>
-  <SecretLoadingWrapper fixedKeys={['kind', 'metadata']} titleVerb="Edit" saveButtonText={gettext('Save Changes')} />
+  <SecretLoadingWrapper fixedKeys={['kind', 'metadata']} titleVerb={gettext('Edit')} saveButtonText={gettext('Save Changes')} />
 </Firehose>;
 
 

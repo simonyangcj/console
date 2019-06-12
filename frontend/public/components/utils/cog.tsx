@@ -7,7 +7,7 @@ import { Tooltip } from './tooltip';
 
 import { annotationsModal, configureReplicaCountModal, labelsModal, podSelectorModal, deleteModal } from '../modals';
 import { DropdownMixin } from './dropdown';
-import { history, resourceObjPath } from './index';
+import { history, resourceObjPath, gettext } from './index';
 import { referenceForModel, K8sResourceKind, K8sResourceKindReference, K8sKind } from '../../module/k8s';
 import { connectToModel } from '../../kinds';
 
@@ -32,35 +32,35 @@ const cogFactory: CogFactory = {
     href: `${resourceObjPath(obj, kind.crd ? referenceForModel(kind) : kind.kind)}/yaml`,
   }),
   ModifyLabels: (kind, obj) => ({
-    label: 'Edit Labels',
+    label: gettext('Edit Labels'),
     callback: () => labelsModal({
       kind: kind,
       resource: obj,
     }),
   }),
   ModifyPodSelector: (kind, obj) => ({
-    label: 'Edit Pod Selector',
+    label: gettext('Edit Pod Selector'),
     callback: () => podSelectorModal({
       kind: kind,
       resource:  obj,
     }),
   }),
   ModifyAnnotations: (kind, obj) => ({
-    label: 'Edit Annotations',
+    label: gettext('Edit Annotations'),
     callback: () => annotationsModal({
       kind: kind,
       resource: obj,
     }),
   }),
   ModifyCount: (kind, obj) => ({
-    label: 'Edit Count',
+    label: gettext('Edit Count'),
     callback: () => configureReplicaCountModal({
       resourceKind: kind,
       resource: obj,
     }),
   }),
   EditEnvironment: (kind, obj) => ({
-    label: `${kind.kind === 'Pod' ? 'View' : 'Edit'} Environment`,
+    label: `${kind.kind === 'Pod' ? gettext('View') : gettext('Edit')} ${gettext('Environment')}`,
     href: `${resourceObjPath(obj, kind.crd ? referenceForModel(kind) : kind.kind)}/environment`,
   }),
 };
@@ -108,12 +108,12 @@ export class Cog extends DropdownMixin {
         <Tooltip content="disabled">
           <div ref={this.dropdownElement} className={classNames('co-m-cog', {'co-m-cog--disabled' : isDisabled})} >
             <span className={classNames('fa', 'fa-cog', 'co-m-cog__icon', {'co-m-cog__icon--disabled' : isDisabled})} aria-hidden="true"></span>
-            <span className="sr-only">Actions</span>
+            <span className="sr-only">{gettext('Actions')}</span>
           </div>
         </Tooltip> :
         <div ref={this.dropdownElement} onClick={this.toggle} className={classNames('co-m-cog', {'co-m-cog--disabled' : isDisabled})} >
           <span className={classNames('fa', 'fa-cog', 'co-m-cog__icon', {'co-m-cog__icon--disabled' : isDisabled})} aria-hidden="true"></span>
-          <span className="sr-only">Actions</span>
+          <span className="sr-only">{gettext('Actions')}</span>
           { this.state.active && <CogItems options={options} onClick={this.onClick} /> }
         </div>
       }

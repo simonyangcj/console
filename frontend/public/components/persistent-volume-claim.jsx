@@ -89,19 +89,21 @@ const Details_ = ({flags, obj: pvc}) => {
 const Details = connectToFlags(FLAGS.CAN_LIST_PV)(Details_);
 
 const allPhases = [ 'Pending', 'Bound', 'Lost' ];
-const filters = [{
-  type: 'pod-status',
-  selected: allPhases,
-  reducer: pvcPhase,
-  items: _.map(allPhases, phase => ({
-    id: phase,
-    title: phase,
-  }))
-}];
-
 
 export const PersistentVolumeClaimsList = props => <List {...props} Header={Header} Row={Row} />;
-export const PersistentVolumeClaimsPage = props => <ListPage {...props} ListComponent={PersistentVolumeClaimsList} kind={kind} canCreate={true} rowFilters={filters} />;
+export const PersistentVolumeClaimsPage = props => {
+  const filters = [{
+    type: 'pod-status',
+    selected: allPhases,
+    reducer: pvcPhase,
+    items: [
+      { id: 'Pending', title: gettext('Pending') },
+      { id: 'Bound', title: gettext('Bound') },
+      { id: 'Lost', title: gettext('Lost') }
+    ]
+  }];
+  return <ListPage {...props} ListComponent={PersistentVolumeClaimsList} kind={kind} canCreate={true} rowFilters={filters} />;
+};
 export const PersistentVolumeClaimsDetailsPage = props => <DetailsPage
   {...props}
   menuActions={menuActions}

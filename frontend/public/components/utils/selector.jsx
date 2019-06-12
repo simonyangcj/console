@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import * as classNames from 'classnames';
 
 import { selectorToString } from '../../module/k8s/selector';
+import { gettext } from './gettext';
 
 const Requirement = ({kind, requirements, namespace=''}) => {
   // Strip off any trailing '=' characters for valueless selectors
@@ -31,7 +32,7 @@ export const Selector = ({kind = 'Pod', expand = false, selector = {}, namespace
 
   return <div className={className} style={style}>
     { _.isEmpty(selector)
-      ? <p className="text-muted">No selector</p>
+      ? <p className="text-muted">{gettext('No selector')}</p>
       : <Requirement kind={kind} requirements={selector} namespace={namespace} /> }
   </div>;
 };

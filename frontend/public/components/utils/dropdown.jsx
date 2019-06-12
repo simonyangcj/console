@@ -3,7 +3,7 @@ import * as React from 'react';
 import * as classNames from 'classnames';
 import * as PropTypes from 'prop-types';
 
-import { history, ResourceName } from './index';
+import { history, ResourceName, gettext } from './index';
 
 export class DropdownMixin extends React.PureComponent {
   constructor(props) {
@@ -135,7 +135,7 @@ export class Dropdown extends DropdownMixin {
         }
       } catch (e) {
         // eslint-disable-next-line no-console
-        console.warn(`could not load bookmarks for ${props.storageKey}: ${e}`);
+        console.warn(`${gettext('could not load bookmarks for %s', props.storageKey)}: ${e}`);
       }
     }
     this.state.favoriteKey = favoriteKey;
@@ -385,7 +385,7 @@ export const ActionsMenu = (props) => {
   const {actions, title = undefined, menuClassName = undefined, noButton = false} = props;
   const shownActions = _.reject(actions, o => _.get(o, 'hidden', false));
   const items = _.fromPairs(_.map(shownActions, (v, k) => [k, v.label]));
-  const btnTitle = title || <span id="action-dropdown">Actions</span>;
+  const btnTitle = title || <span id="action-dropdown">{gettext('Actions')}</span>;
   const onChange = (key, e) => {
     const action = shownActions[key];
     if (action.callback) {
@@ -429,8 +429,8 @@ export class ContainerDropdown extends React.PureComponent {
 
   getHeaders(container, initContainer) {
     return initContainer ? {
-      [container.name]: 'Containers',
-      [initContainer.name]: 'Init Containers'
+      [container.name]: gettext('Containers'),
+      [initContainer.name]: gettext('Init Containers')
     } : {};
   }
 

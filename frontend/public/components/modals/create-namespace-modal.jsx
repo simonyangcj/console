@@ -75,7 +75,7 @@ class CreateNamespaceModal extends PromiseComponent {
   }
 
   render() {
-    const label = this.props.createProject ? 'Project' : 'Namespace';
+    const label = this.props.createProject ? gettext('Project') : gettext('Namespace');
     return <form onSubmit={this._submit.bind(this)} name="form" className="co-p-new-user-modal">
       <ModalTitle>{gettext('Create New')} {label}</ModalTitle>
       <ModalBody>

@@ -12,7 +12,7 @@ import { watchURL } from '../module/k8s';
 import { EventModel, NodeModel } from '../models';
 import { SafetyFirst } from './safety-first';
 import { TextFilter } from './factory';
-import { Dropdown, ResourceLink, Box, Loading, NavTitle, Timestamp, TogglePlay, pluralize, resourcePathFromModel, gettext } from './utils';
+import { Dropdown, ResourceLink, Box, Loading, NavTitle, Timestamp, TogglePlay, resourcePathFromModel, gettext } from './utils';
 import { WSFactory } from '../module/ws-factory';
 import { ResourceListDropdown } from './resource-dropdown';
 import { connectToFlags, FLAGS, flagPending } from '../features';
@@ -58,14 +58,14 @@ const Inner = connectToFlags(FLAGS.CAN_LIST_NODE)(class Inner extends React.Pure
           </div>
           <div className="co-sysevent__details">
             <small className="co-sysevent__source">
-              Generated from <span>{source.component}</span>
+              {gettext('Generated from')} <span>{source.component}</span>
               {source.component === 'kubelet' && <span> on {flags[FLAGS.CAN_LIST_NODE]
                 ? <Link to={resourcePathFromModel(NodeModel, source.host)}>{source.host}</Link>
                 : <React.Fragment>{source.host}</React.Fragment>}
               </span>}
             </small>
             {count > 1 && <small className="co-sysevent__count text-secondary">
-              {count} times in the last <Timestamp timestamp={firstTimestamp} simple={true} omitSuffix={true} />
+              {count} {gettext('times in the last')} <Timestamp timestamp={firstTimestamp} simple={true} omitSuffix={true} />
             </small>}
           </div>
         </div>
@@ -120,8 +120,6 @@ class SysEvent extends React.Component {
   }
 }
 
-const categories = {all: 'All Categories', info: 'Info', error: 'Error'};
-
 class EventsStreamPage_ extends React.Component {
   constructor (props) {
     super(props);
@@ -133,6 +131,7 @@ class EventsStreamPage_ extends React.Component {
   }
 
   render () {
+    const categories = {all: gettext('All Categories'), info: gettext('Info'), error: gettext('Error')};
     const { category, kind, textFilter } = this.state;
     const { flags, showTitle=true, autoFocus=true } = this.props;
     if (flagPending(flags.OPENSHIFT) || flagPending(flags.PROJECTS_AVAILABLE)) {
@@ -395,7 +394,7 @@ class EventStream extends SafetyFirst {
     const klass = classNames('co-sysevent-stream__timeline', {
       'co-sysevent-stream__timeline--empty': !allCount || !count
     });
-    const messageCount = count < maxMessages ? `Showing ${pluralize(count, 'event')}` : `Showing ${count} of ${allCount}+ events`;
+    const messageCount = count < maxMessages ? gettext('Showing %s event', count) : `${gettext('Showing')} ${count} of ${allCount}+ ${gettext('events')}`;
 
     return <div className="co-m-pane__body">
       <div className="co-sysevent-stream">
@@ -411,7 +410,7 @@ class EventStream extends SafetyFirst {
         <div className={klass}>
           <TogglePlay active={active} onClick={this.toggleStream} className="co-sysevent-stream__timeline__btn" />
           <div className="co-sysevent-stream__timeline__end-message">
-          There are no events before <Timestamp timestamp={this.state.oldestTimestamp} />
+            {gettext('There are no events before')} <Timestamp timestamp={this.state.oldestTimestamp} />
           </div>
         </div>
         { count > 0 &&

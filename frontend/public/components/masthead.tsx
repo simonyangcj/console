@@ -77,7 +77,7 @@ const UserMenuWrapper = connectToFlags(FLAGS.AUTH_ENABLED, FLAGS.OPENSHIFT)((pro
   }
 
   actions.unshift({
-    label: 'My Account',
+    label: gettext('My Account'),
     href: '/settings/profile'
   });
 

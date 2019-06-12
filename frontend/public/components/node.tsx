@@ -11,13 +11,13 @@ import { NodeModel } from '../models';
 import { CamelCaseWrap } from './utils/camel-case-wrap';
 
 const MarkAsUnschedulable = (kind, obj) => ({
-  label: 'Mark as Unschedulable',
+  label: gettext('Mark as Unschedulable'),
   hidden: _.get(obj, 'spec.unschedulable'),
   callback: () => configureUnschedulableModal({resource: obj}),
 });
 
 const MarkAsSchedulable = (kind, obj) => ({
-  label: 'Mark as Schedulable',
+  label: gettext('Mark as Schedulable'),
   hidden: !_.get(obj, 'spec.unschedulable', false),
   callback: () => makeNodeSchedulable(obj),
 });

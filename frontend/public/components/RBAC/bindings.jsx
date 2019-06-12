@@ -346,15 +346,6 @@ const ClusterRoleDropdown = props => <ListDropdown
   placeholder={gettext('Select role name')}
 />;
 
-const bindingKinds = [
-  {value: 'RoleBinding', title: gettext('Namespace Role Binding (RoleBinding)'), desc: gettext('Grant the permissions to a user or set of users within the selected namespace.')},
-  {value: 'ClusterRoleBinding', title: gettext('Cluster-wide Role Binding (ClusterRoleBinding)'), desc: gettext('Grant the permissions to a user or set of users at the cluster level and in all namespaces.')},
-];
-const subjectKinds = [
-  {value: 'User', title: gettext('User')},
-  {value: 'Group', title: gettext('Group')},
-  {value: 'ServiceAccount', title: gettext('Service Account')},
-];
 
 const Section = ({label, children}) => <div className="row">
   <div className="col-xs-2">
@@ -456,6 +447,15 @@ const BaseEditRoleBinding = connect(null, {setActiveNamespace: UIActions.setActi
     }
 
     render () {
+      const bindingKinds = [
+        {value: 'RoleBinding', title: gettext('Namespace Role Binding (RoleBinding)'), desc: gettext('Grant the permissions to a user or set of users within the selected namespace.')},
+        {value: 'ClusterRoleBinding', title: gettext('Cluster-wide Role Binding (ClusterRoleBinding)'), desc: gettext('Grant the permissions to a user or set of users at the cluster level and in all namespaces.')},
+      ];
+      const subjectKinds = [
+        {value: 'User', title: gettext('User')},
+        {value: 'Group', title: gettext('Group')},
+        {value: 'ServiceAccount', title: gettext('Service Account')},
+      ];
       const {kind, metadata, roleRef} = this.state.data;
       const subject = this.getSubject();
       const {fixed, saveButtonText} = this.props;

@@ -259,7 +259,7 @@ export const ListPage = props => {
   }
 
   return <MultiListPage
-    filterLabel={filterLabel || `${labelPlural} by name`}
+    filterLabel={filterLabel || `${labelPlural} ${gettext('by name')}`}
     selectorFilterLabel={gettext('Filter by selector (app=nginx) ...')}
     createProps={createProps}
     title={title}

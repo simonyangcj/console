@@ -8,7 +8,7 @@ import { Cog, SectionHeading, LabelList, ResourceCog, ResourceLink, ResourceSumm
 import { ResourceEventStream } from './events';
 
 const ModifyJobParallelism = (kind, obj) => ({
-  label: 'Edit Parallelism',
+  label: gettext('Edit Parallelism'),
   callback: () => configureJobParallelismModal({
     resourceKind: kind,
     resource: obj,

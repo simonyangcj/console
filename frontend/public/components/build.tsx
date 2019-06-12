@@ -20,7 +20,7 @@ const BuildsReference: K8sResourceKindReference = 'Build';
 const { common, EditEnvironment } = Cog.factory;
 
 const cloneBuildAction = (kind, build) => ({
-  label: 'Rebuild',
+  label: gettext('Rebuild'),
   callback: () => cloneBuild(build).then(clone => {
     history.push(resourceObjPath(clone, referenceFor(clone)));
   }).catch(err => {
@@ -47,6 +47,18 @@ export const BuildsDetails: React.SFC<BuildsDetailsProps> = ({ obj: build }) => 
   const triggeredBy = _.map(build.spec.triggeredBy, 'message').join(', ');
   const duration = formatBuildDuration(build);
   const hasPipeline = build.spec.strategy.type === BuildStrategyType.JenkinsPipeline;
+  const statusMap = {
+    'New': gettext('New'),
+    'Pending': gettext('Pending'),
+    'Running': gettext('Running'),
+    'Complete': gettext('Complete'),
+    'Failed': gettext('Failed'),
+    'Error': gettext('Error'),
+    'Cancelled': gettext('Cancelled'),
+  };
+  const getStatusStr = status => {
+    return statusMap[status] || status; 
+  }
 
   return <React.Fragment>
     <div className="co-m-pane__body">
@@ -68,7 +80,7 @@ export const BuildsDetails: React.SFC<BuildsDetailsProps> = ({ obj: build }) => 
         <div className="col-sm-6">
           <BuildStrategy resource={build}>
             <dt>{gettext('Status')}</dt>
-            <dd>{build.status.phase}</dd>
+            <dd>{getStatusStr(build.status.phase)}</dd>
             {logSnippet && <dt>{gettext('Log Snippet')}</dt>}
             {logSnippet && <dd><pre>{logSnippet}</pre></dd>}
             {message && <dt>{gettext('Reason')}</dt>}
@@ -147,21 +159,35 @@ const BuildsHeader = props => <ListHeader>
   <ColHead {...props} className="col-sm-3 hidden-xs" sortField="metadata.creationTimestamp">{gettext('Created')}</ColHead>
 </ListHeader>;
 
-const BuildsRow: React.SFC<BuildsRowProps> = ({ obj }) => <div className="row co-resource-list__item">
-  <div className="col-sm-3 col-xs-6 co-resource-link-wrapper">
-    <ResourceCog actions={menuActions} kind={BuildsReference} resource={obj} />
-    <ResourceLink kind={BuildsReference} name={obj.metadata.name} namespace={obj.metadata.namespace} title={obj.metadata.name} />
-  </div>
-  <div className="col-sm-3 col-xs-6 co-break-word">
-    <ResourceLink kind="Namespace" name={obj.metadata.namespace} />
-  </div>
-  <div className="col-sm-3 hidden-xs">
-    {obj.status.phase}
-  </div>
-  <div className="col-sm-3 hidden-xs">
-    {fromNow(obj.metadata.creationTimestamp)}
-  </div>
-</div>;
+const BuildsRow: React.SFC<BuildsRowProps> = ({ obj }) => {
+  const statusMap = {
+    'New': gettext('New'),
+    'Pending': gettext('Pending'),
+    'Running': gettext('Running'),
+    'Complete': gettext('Complete'),
+    'Failed': gettext('Failed'),
+    'Error': gettext('Error'),
+    'Cancelled': gettext('Cancelled'),
+  };
+  const getStatusStr = status => {
+    return statusMap[status] || status; 
+  }
+  return <div className="row co-resource-list__item">
+    <div className="col-sm-3 col-xs-6 co-resource-link-wrapper">
+      <ResourceCog actions={menuActions} kind={BuildsReference} resource={obj} />
+      <ResourceLink kind={BuildsReference} name={obj.metadata.name} namespace={obj.metadata.namespace} title={obj.metadata.name} />
+    </div>
+    <div className="col-sm-3 col-xs-6 co-break-word">
+      <ResourceLink kind="Namespace" name={obj.metadata.namespace} />
+    </div>
+    <div className="col-sm-3 hidden-xs">
+      {getStatusStr(obj.status.phase)}
+    </div>
+    <div className="col-sm-3 hidden-xs">
+      {fromNow(obj.metadata.creationTimestamp)}
+    </div>
+  </div>;
+};
 
 export const BuildsList: React.SFC = props => <List {...props} Header={BuildsHeader} Row={BuildsRow} />;
 BuildsList.displayName = 'BuildsList';
@@ -169,18 +195,24 @@ BuildsList.displayName = 'BuildsList';
 export const buildPhase = build => build.status.phase;
 
 const allPhases = ['New', 'Pending', 'Running', 'Complete', 'Failed', 'Error', 'Cancelled'];
-const filters = [{
-  type: 'build-status',
-  selected: allPhases,
-  reducer: buildPhase,
-  items: _.map(allPhases, phase => ({
-    id: phase,
-    title: phase,
-  })),
-}];
 
-export const BuildsPage: React.SFC<BuildsPageProps> = props =>
-  <ListPage
+export const BuildsPage: React.SFC<BuildsPageProps> = props => {
+  const filters = [{
+    type: 'build-status',
+    selected: allPhases,
+    reducer: buildPhase,
+    items: [
+      { id: 'New', title: gettext('New') },
+      { id: 'Pending', title: gettext('Pending') },
+      { id: 'Running', title: gettext('Running') },
+      { id: 'Complete', title: gettext('Complete') },
+      { id: 'Failed', title: gettext('Failed') },
+      { id: 'Error', title: gettext('Error') },
+      { id: 'Cancelled', title: gettext('Cancelled') }
+    ]
+  }];
+
+  return <ListPage
     {...props}
     title={gettext('Builds')}
     kind={BuildsReference}
@@ -188,6 +220,8 @@ export const BuildsPage: React.SFC<BuildsPageProps> = props =>
     canCreate={false}
     rowFilters={filters}
   />;
+};
+
 BuildsPage.displayName = 'BuildsListPage';
 
 export type BuildsRowProps = {

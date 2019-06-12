@@ -5,7 +5,7 @@ import { productName } from '../branding';
 import { k8sVersion } from '../module/status';
 import { coFetchJSON } from '../co-fetch';
 import { SafetyFirst } from './safety-first';
-import { LoadingInline } from './utils';
+import { LoadingInline, gettext } from './utils';
 import { FLAGS, connectToFlags, flagPending } from '../features';
 
 

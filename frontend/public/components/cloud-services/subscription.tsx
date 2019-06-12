@@ -34,7 +34,7 @@ const subscriptionState = (state: SubscriptionState) => {
 const menuActions = [
   Cog.factory.Edit,
   (kind, obj) => ({
-    label: 'Remove Subscription...',
+    label: gettext('Remove Subscription...'),
     callback: () => createDisableApplicationModal({k8sKill, subscription: obj}),
   }),
   (kind, obj) => ({

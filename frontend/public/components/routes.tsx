@@ -294,25 +294,27 @@ export const RoutesDetailsPage: React.SFC<RoutesDetailsPageProps> = props => <De
 />;
 export const RoutesList: React.SFC = props => <List {...props} Header={RouteListHeader} Row={RouteListRow} />;
 
-const filters = [{
-  type: 'route-status',
-  selected: ['Accepted', 'Rejected', 'Pending'],
-  reducer: routeStatus,
-  items: [
-    {id: 'Accepted', title: 'Accepted'},
-    {id: 'Rejected', title: 'Rejected'},
-    {id: 'Pending', title: 'Pending'}
-  ],
-}];
 
-export const RoutesPage: React.SFC<RoutesPageProps> = props =>
-  <ListPage
+export const RoutesPage: React.SFC<RoutesPageProps> = props => {
+  const filters = [{
+    type: 'route-status',
+    selected: ['Accepted', 'Rejected', 'Pending'],
+    reducer: routeStatus,
+    items: [
+      {id: 'Accepted', title: gettext('Accepted')},
+      {id: 'Rejected', title: gettext('Rejected')},
+      {id: 'Pending', title: gettext('Pending')}
+    ],
+  }];
+  return <ListPage
     ListComponent={RoutesList}
     kind={RoutesReference}
     canCreate={true}
     rowFilters={filters}
     {...props}
   />;
+};
+
 
 /* eslint-disable no-undef */
 export type RouteHostnameProps = {

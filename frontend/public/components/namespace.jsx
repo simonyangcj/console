@@ -248,7 +248,7 @@ class NamespaceDropdown_ extends React.Component {
 
     const { loaded, data } = this.props.namespace;
     const model = getModel(useProjects);
-    const allNamespacesTitle = `all ${model.labelPlural.toLowerCase()}`;
+    const allNamespacesTitle = `${gettext('all')} ${model.labelPlural.toLowerCase()}`;
     const items = {};
     if (canListNS) {
       items[ALL_NAMESPACES_KEY] = allNamespacesTitle;

@@ -16,7 +16,7 @@ const BuildConfigsReference: K8sResourceKindReference = 'BuildConfig';
 const { EditEnvironment, common } = Cog.factory;
 
 const startBuildAction = (kind, buildConfig) => ({
-  label: 'Start Build',
+  label: gettext('Start Build'),
   callback: () => startBuild(buildConfig).then(build => {
     history.push(resourceObjPath(build, referenceFor(build)));
   }).catch(err => {

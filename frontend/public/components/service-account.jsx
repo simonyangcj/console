@@ -12,7 +12,7 @@ import { saveAs } from 'file-saver';
 import { errorModal } from './modals';
 
 const KubeConfigify = (kind, sa) => ({
-  label: 'Download kubeconfig file',
+  label: gettext('Download kubeconfig file'),
   weight: 200,
   callback: () => {
     const name = _.get(sa, 'secrets[0].name');

@@ -22,7 +22,7 @@ const menuActions = [
   //   href: addHref(role.metadata.name, role.metadata.namespace),
   // }),
   (kind, role) => ({
-    label: 'Add Role Binding...',
+    label: gettext('Add Role Binding...'),
     href: `/k8s/cluster/rolebindings/new?rolekind=${roleKind(role)}&rolename=${role.metadata.name}`,
   }),
   Cog.factory.Edit,
@@ -189,9 +189,9 @@ export const RolesPage = connectToFlags(FLAGS.PROJECTS_AVAILBLE, FLAGS.PROJECTS_
       selected: ['cluster', 'namespace'],
       reducer: roleType,
       items: [
-        {id: 'cluster', title: 'Cluster-wide Roles'},
-        {id: 'namespace', title: 'Namespace Roles'},
-        {id: 'system', title: 'System Roles'},
+        {id: 'cluster', title: gettext('Cluster-wide Roles')},
+        {id: 'namespace', title: gettext('Namespace Roles')},
+        {id: 'system', title: gettext('System Roles')},
       ],
     }]}
     title="Roles"

@@ -236,7 +236,7 @@ export const EnvironmentPage = connect(stateToProps)(
         const keyString = _.isArray(rawEnvData) ? rawEnvData[i].name : obj.metadata.name;
         return <div key={keyString} className="co-m-pane__body-group">
           { _.isArray(rawEnvData) && <h2 className="co-section-heading co-section-heading--contains-resource-icon"><ResourceIcon kind="Container" className="co-m-resource-icon--align-left co-m-resource-icon--flex-child" /> {keyString}</h2> }
-          <NameValueEditorComponent nameValueId={i} nameValuePairs={envVar} updateParentData={this.updateEnvVars} addString="Add Value" nameString="Name" readOnly={readOnly} allowSorting={true} configMaps={configMaps} secrets={secrets} />
+          <NameValueEditorComponent nameValueId={i} nameValuePairs={envVar} updateParentData={this.updateEnvVars} addString={gettext('Add Value')} nameString={gettext('Name')} readOnly={readOnly} allowSorting={true} configMaps={configMaps} secrets={secrets} />
         </div>;
       });
 

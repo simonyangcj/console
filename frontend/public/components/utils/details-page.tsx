@@ -30,7 +30,7 @@ export const ResourceSummary: React.SFC<ResourceSummaryProps> = ({children, reso
     {showNodeSelector && <dt>{gettext('Node Selector')}</dt>}
     {showNodeSelector && <dd><Selector kind="Node" selector={_.get(resource, 'spec.template.spec.nodeSelector')} /></dd>}
     {showAnnotations && <dt>{gettext('Annotations')}</dt>}
-    {showAnnotations && <dd><a className="co-m-modal-link" onClick={Cog.factory.ModifyAnnotations(kindObj(resource.kind), resource).callback}>{pluralize(_.size(metadata.annotations), 'Annotation')}</a></dd>}
+    {showAnnotations && <dd><a className="co-m-modal-link" onClick={Cog.factory.ModifyAnnotations(kindObj(resource.kind), resource).callback}>{pluralize(_.size(metadata.annotations), gettext('Annotation'))}</a></dd>}
     {children}
     <dt>{gettext('Created At')}</dt>
     <dd><Timestamp timestamp={metadata.creationTimestamp} /></dd>

@@ -84,7 +84,7 @@ export const NameValueEditor = DragDropContext(HTML5Backend)(class NameValueEdit
                     <React.Fragment>
                       <span aria-hidden="true" className="pairs-list__action-divider">|</span>
                       <span className="btn-link pairs-list__btn" onClick={this._appendConfigMapOrSecret}>
-                        <i aria-hidden="true" className="fa fa-plus-circle pairs-list__add-icon" />Add Value from Config Map or Secret
+                        <i aria-hidden="true" className="fa fa-plus-circle pairs-list__add-icon" />{gettext('Add Value from Config Map or Secret')}
                       </span>
                     </React.Fragment>
                 }
@@ -114,8 +114,8 @@ NameValueEditor.propTypes = {
   secrets: PropTypes.object
 };
 NameValueEditor.defaultProps = {
-  nameString: 'Key',
-  valueString: 'Value',
+  nameString: gettext('Key'),
+  valueString: gettext('Value'),
   addString: gettext('Add More'),
   allowSorting: false,
   readOnly: false,

@@ -115,6 +115,7 @@
     "@types/webpack": "^4.1.1",
     "bootstrap-sass": "^3.3.7",
     "cache-loader": "1.x",
+    "commonjs": "0.0.1",
     "css-loader": "0.28.x",
     "enzyme": "3.x",
     "enzyme-adapter-react-16": "1.x",
@@ -148,8 +149,7 @@
     "typescript-eslint-parser": "16.0.1",
     "webpack": "4.12.0",
     "webpack-bundle-analyzer": "2.x",
-    "webpack-cli": "^2.0.12",
-    "commonjs": "0.0.1"
+    "webpack-cli": "^2.0.12"
   },
   "engines": {
     "node": ">=8.x <=10.x"

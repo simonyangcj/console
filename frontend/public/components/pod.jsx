@@ -270,22 +270,6 @@ PodsDetailsPage.displayName = 'PodsDetailsPage';
 export const PodList = props => <List {...props} Header={PodHeader} Row={PodRow} />;
 PodList.displayName = 'PodList';
 
-const filters = [{
-  type: 'pod-status',
-  selected: [ 'Running', 'Pending', 'Terminating', 'CrashLoopBackOff' ],
-  reducer: podPhaseFilterReducer,
-  items: [
-    { id: 'Running', title: 'Running' },
-    { id: 'Pending', title: 'Pending' },
-    { id: 'Terminating', title: 'Terminating' },
-    { id: 'CrashLoopBackOff', title: 'CrashLoopBackOff' },
-    // Use title "Completed" to match what appears in the status column for the pod.
-    // The pod phase is "Succeeded," but the container state is "Completed."
-    { id: 'Succeeded', title: 'Completed' },
-    { id: 'Failed', title: 'Failed' },
-    { id: 'Unknown', title: 'Unknown' }
-  ]
-}];
 
 export class PodsPage extends React.Component {
   shouldComponentUpdate(nextProps) {
@@ -293,6 +277,22 @@ export class PodsPage extends React.Component {
   }
   render() {
     const { canCreate = true } = this.props;
+    const filters = [{
+      type: 'pod-status',
+      selected: [ 'Running', 'Pending', 'Terminating', 'CrashLoopBackOff' ],
+      reducer: podPhaseFilterReducer,
+      items: [
+        { id: 'Running', title: gettext('Running') },
+        { id: 'Pending', title: gettext('Pending') },
+        { id: 'Terminating', title: gettext('Terminating') },
+        { id: 'CrashLoopBackOff', title: gettext('CrashLoopBackOff') },
+        // Use title "Completed" to match what appears in the status column for the pod.
+        // The pod phase is "Succeeded," but the container state is "Completed."
+        { id: 'Succeeded', title: gettext('Completed') },
+        { id: 'Failed', title: gettext('Failed') },
+        { id: 'Unknown', title: gettext('Unknown') }
+      ]
+    }];
     return <ListPage
       {...this.props}
       canCreate={canCreate}
