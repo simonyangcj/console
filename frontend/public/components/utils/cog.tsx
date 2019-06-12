@@ -21,14 +21,14 @@ const CogItems: React.SFC<CogItemsProps> = ({options, onClick}) => {
 
 const cogFactory: CogFactory = {
   Delete: (kind, obj) => ({
-    label: `Delete ${kind.label}`,
+    label: `${gettext('Delete')} ${kind.label}`,
     callback: () => deleteModal({
       kind: kind,
       resource: obj,
     }),
   }),
   Edit: (kind, obj) => ({
-    label: `Edit ${kind.label}`,
+    label: `${gettext('Edit')} ${kind.label}`,
     href: `${resourceObjPath(obj, kind.crd ? referenceForModel(kind) : kind.kind)}/yaml`,
   }),
   ModifyLabels: (kind, obj) => ({

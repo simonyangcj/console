@@ -3,7 +3,7 @@ import * as _ from 'lodash-es';
 
 // eslint-disable-next-line no-unused-vars
 import { K8sResourceKind, K8sResourceKindReference } from '../../module/k8s';
-import { ResourceLink } from './';
+import { ResourceLink, gettext } from './';
 import { getStrategyType } from '../build';
 
 const ImageStreamTagsReference: K8sResourceKindReference = 'ImageStreamTag';
@@ -29,40 +29,40 @@ export const BuildStrategy: React.SFC<BuildStrategyProps> = ({ resource, childre
 
   return <dl className="co-m-pane__details">
     {children}
-    <dt>Type</dt>
+    <dt>{gettext('Type')}</dt>
     <dd>{strategy.type}</dd>
-    {git && <dt>Git Repository</dt>}
+    {git && <dt>{gettext('Git Repository')}</dt>}
     {git && <dd>{git.uri}</dd>}
-    {gitRef && <dt>Git Ref</dt>}
+    {gitRef && <dt>{gettext('Git Ref')}</dt>}
     {gitRef && <dd>{gitRef}</dd>}
-    {commitMessage && <dt>Git Commit</dt>}
+    {commitMessage && <dt>{gettext('Git Commit')}</dt>}
     {commitMessage && <dd>{commitMessage}<br />{commitHash && <code>{commitHash.substring(0,7)}</code>} {commitAuthorName && `by ${commitAuthorName}`}</dd>}
-    {asFile && <dt>Binary Input as File</dt>}
+    {asFile && <dt>{gettext('Binary Input as File')}</dt>}
     {asFile && <dd>{asFile}</dd>}
-    {contextDir && <dt>Context Dir</dt>}
+    {contextDir && <dt>{gettext('Context Dir')}</dt>}
     {contextDir && <dd>{contextDir}</dd>}
-    {dockerfile && <dt>Dockerfile</dt>}
+    {dockerfile && <dt>{gettext('Dockerfile')}</dt>}
     {dockerfile && <dd><pre>{dockerfile}</pre></dd>}
-    {jenkinsfile && <dt>Jenkinsfile</dt>}
+    {jenkinsfile && <dt>{gettext('Jenkinsfile')}</dt>}
     {jenkinsfile && <dd><pre>{jenkinsfile}</pre></dd>}
-    {jenkinsfilePath && <dt>Jenkinsfile Path</dt>}
+    {jenkinsfilePath && <dt>{gettext('Jenkinsfile Path')}</dt>}
     {jenkinsfilePath && <dd>{jenkinsfilePath}</dd>}
-    {buildFrom && (buildFrom.kind === 'ImageStreamTag' || buildFrom.kind === 'DockerImage') && <dt>Builder Image</dt>}
+    {buildFrom && (buildFrom.kind === 'ImageStreamTag' || buildFrom.kind === 'DockerImage') && <dt>{gettext('Builder Image')}</dt>}
     {buildFrom && buildFrom.kind === 'ImageStreamTag' && <dd>
       <ResourceLink kind={ImageStreamTagsReference} name={buildFrom.name} namespace={buildFrom.namespace || resource.metadata.namespace} title={buildFrom.name} />
     </dd>}
     {buildFrom && buildFrom.kind === 'DockerImage' && <dd>{buildFrom.name}</dd>}
-    {outputTo && <dt>Output To</dt>}
+    {outputTo && <dt>{gettext('Output To')}</dt>}
     {outputTo && <dd>
       <ResourceLink kind={ImageStreamTagsReference} name={outputTo.name} namespace={outputTo.namespace || resource.metadata.namespace} title={outputTo.name} />
     </dd>}
-    {pushSecret && <dt>Push Secret</dt>}
+    {pushSecret && <dt>{gettext('Push Secret')}</dt>}
     {pushSecret && <dd><ResourceLink kind="Secret" name={pushSecret.name} namespace={resource.metadata.namespace} title={pushSecret.name} /></dd>}
-    <dt>Run Policy</dt>
+    <dt>{gettext('Run Policy')}</dt>
     <dd>{resource.spec.runPolicy || 'Serial'}</dd>
-    {resourceLimits && <dt>Resource Limits</dt>}
+    {resourceLimits && <dt>{gettext('Resource Limits')}</dt>}
     {resourceLimits && <dd>{_.map(resourceLimits, (v, k) => `${k}: ${v}`).join(', ')}</dd>}
-    {triggers && <dt>Triggers</dt>}
+    {triggers && <dt>{gettext('Triggers')}</dt>}
     {triggers && <dd>{triggers}</dd>}
   </dl>;
 };

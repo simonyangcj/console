@@ -118,16 +118,18 @@ const NodeRowSearch = ({obj: node}) => <div className="row co-resource-list__ite
 const NodesList = props => <List {...props} Header={Header} Row={NodeRow} />;
 export const NodesListSearch = props => <List {...props} Header={HeaderSearch} Row={NodeRowSearch} kind="node" />;
 
-const dropdownFilters = [{
-  type: 'node-status',
-  items: {
-    all: 'Status: All',
-    ready: 'Status: Ready',
-    notReady: 'Status: Not Ready',
-  },
-  title: 'Ready Status',
-}];
-export const NodesPage = props => <ListPage {...props} ListComponent={NodesList} dropdownFilters={dropdownFilters} canExpand={true} />;
+export const NodesPage = props => {
+  const dropdownFilters = [{
+    type: 'node-status',
+    items: {
+      all: gettext('Status: All'),
+      ready: gettext('Status: Ready'),
+      notReady: gettext('Status: Not Ready'),
+    },
+    title: gettext('Ready Status'),
+  }];
+  return <ListPage {...props} ListComponent={NodesList} dropdownFilters={dropdownFilters} canExpand={true} />;
+};
 
 const NodeGraphs = requirePrometheus(({node}) => {
   const nodeIp = _.find<{type: string, address: string}>(node.status.addresses, {type: 'InternalIP'});
@@ -178,7 +180,7 @@ const Details = ({obj: node}) => {
             <dt>{gettext('Node Labels')}</dt>
             <dd><LabelList kind="Node" labels={node.metadata.labels} /></dd>
             <dt>{gettext('Annotations')}</dt>
-            <dd><a className="co-m-modal-link" onClick={Cog.factory.ModifyAnnotations(NodeModel, node).callback}>{pluralize(_.size(node.metadata.annotations), 'Annotation')}</a></dd>
+            <dd><a className="co-m-modal-link" onClick={Cog.factory.ModifyAnnotations(NodeModel, node).callback}>{pluralize(_.size(node.metadata.annotations), gettext('Annotation'))}</a></dd>
             <dt>{gettext('Provider ID')}</dt>
             <dd>{cloudProviderNames([cloudProviderID(node)])}</dd>
             {_.has(node, 'spec.unschedulable') && <dt>{gettext('Unschedulable')}</dt>}

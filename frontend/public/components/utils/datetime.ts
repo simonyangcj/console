@@ -62,30 +62,30 @@ export const fromNow = (dateTime, now=undefined, options = { omitSuffix: false }
     return gettext('a minute from now');
   }
   if (minutesAgo > -45) {
-    return gettext('%s minutes from now', -Math.round(minutesAgo));
+    return gettext('%s minutes from now', (-Math.round(minutesAgo)).toString());
   }
   if (minutesAgo > -90) {
     return gettext('an hour from now');
   }
   if (hoursAgo > -22) {
-    return gettext('%s hours from now', -Math.round(hoursAgo));
+    return gettext('%s hours from now', (-Math.round(hoursAgo)).toString());
   }
   if (hoursAgo > -36) {
     return gettext('a day from now');
   }
   if (daysAgo > -26) {
-    return gettext('%s days from now', -Math.round(daysAgo));
+    return gettext('%s days from now', (-Math.round(daysAgo)).toString());
   }
   if (daysAgo > -45) {
     return gettext('a month from now');
   }
   if (daysAgo > -320) {
-    return gettext('%s months from now', -Math.round(daysAgo / 30));
+    return gettext('%s months from now', (-Math.round(daysAgo / 30)).toString());
   }
   if (daysAgo > -580) {
     return gettext('a year from now');
   }
-  return gettext('%s years from now', -Math.round(daysAgo / 365));
+  return gettext('%s years from now', (-Math.round(daysAgo / 365)).toString());
 };
 
 export const isValid = (dateTime: Date) => dateTime instanceof Date && !_.isNaN(dateTime.valueOf());

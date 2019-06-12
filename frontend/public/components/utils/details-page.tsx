@@ -15,6 +15,13 @@ export const ResourceSummary: React.SFC<ResourceSummaryProps> = ({children, reso
   const { metadata, type } = resource;
   const owners = (_.get(metadata, 'ownerReferences') || [])
     .map((o, i) => <ResourceLink key={i} kind={referenceForOwnerRef(o)} name={o.name} namespace={metadata.namespace} title={o.uid} />);
+  
+  const getAnnotations = (count: number) => {
+    return count === 1 ? `1 ${gettext('Annotation')}` : gettext(`%s Annotations`, count.toString());
+  };
+  const getOwner =  (count: number) => {
+    return count === 1 ? `1 ${gettext('Owner')}` : gettext(`%s Owners`, count.toString());
+  };
 
   return <dl className="co-m-pane__details">
     <dt>{gettext('Name')}</dt>
@@ -30,11 +37,11 @@ export const ResourceSummary: React.SFC<ResourceSummaryProps> = ({children, reso
     {showNodeSelector && <dt>{gettext('Node Selector')}</dt>}
     {showNodeSelector && <dd><Selector kind="Node" selector={_.get(resource, 'spec.template.spec.nodeSelector')} /></dd>}
     {showAnnotations && <dt>{gettext('Annotations')}</dt>}
-    {showAnnotations && <dd><a className="co-m-modal-link" onClick={Cog.factory.ModifyAnnotations(kindObj(resource.kind), resource).callback}>{pluralize(_.size(metadata.annotations), gettext('Annotation'))}</a></dd>}
+    {showAnnotations && <dd><a className="co-m-modal-link" onClick={Cog.factory.ModifyAnnotations(kindObj(resource.kind), resource).callback}>{getAnnotations(_.size(metadata.annotations))}</a></dd>}
     {children}
     <dt>{gettext('Created At')}</dt>
     <dd><Timestamp timestamp={metadata.creationTimestamp} /></dd>
-    { owners.length ? <dt>{pluralize(owners.length, 'Owner')}</dt> : null }
+    { owners.length ? <dt>{getOwner(owners.length)}</dt> : null }
     { owners.length ? <dd>{ owners }</dd> : null }
   </dl>;
 };

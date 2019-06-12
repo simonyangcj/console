@@ -36,7 +36,7 @@ const CRDRow = ({obj: crd}) => <div className="row co-resource-list__item">
     { crd.spec.version }
   </div>
   <div className="col-lg-2 col-md-2 hidden-sm hidden-xs">
-    { namespaced(crd) ? 'Yes' : 'No' }
+    { namespaced(crd) ? gettext('Yes') : gettext('No') }
   </div>
   <div className="col-lg-1 hidden-md hidden-sm hidden-xs">
     {

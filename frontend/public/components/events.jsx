@@ -394,7 +394,7 @@ class EventStream extends SafetyFirst {
     const klass = classNames('co-sysevent-stream__timeline', {
       'co-sysevent-stream__timeline--empty': !allCount || !count
     });
-    const messageCount = count < maxMessages ? gettext('Showing %s event', count) : `${gettext('Showing')} ${count} of ${allCount}+ ${gettext('events')}`;
+    const messageCount = count < maxMessages ? gettext('Showing %s event', count.toString()) : `${gettext('Showing')} ${count} of ${allCount}+ ${gettext('events')}`;
 
     return <div className="co-m-pane__body">
       <div className="co-sysevent-stream">

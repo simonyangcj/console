@@ -3,6 +3,7 @@ import * as React from 'react';
 
 import { SafetyFirst } from '../safety-first';
 import { plot, Plots, relayout } from 'plotly.js/lib/core';
+import { gettext } from '../utils/gettext';
 
 const colors = {
   '3': ['#3182bd', '#9ecae1', '#deebf7'],
@@ -106,7 +107,7 @@ export class Donut extends SafetyFirst {
 
     plot(this.node, this.data, this.layout, this.options).catch(e => {
       // eslint-disable-next-line no-console
-      console.error('error initializing graph:', e);
+      console.error(gettext('error initializing graph:'), e);
     });
   }
 
@@ -114,7 +115,7 @@ export class Donut extends SafetyFirst {
     if (err) {
       this.data[0].values = [];
       this.data[0].labels = [];
-      this.layout.annotations[0].text = 'Could not load data';
+      this.layout.annotations[0].text = gettext('Could not load data');
       this.layout.annotations[0].font.color = '#ccc';
       relayout(this.node, this.layout);
       return;
@@ -127,7 +128,7 @@ export class Donut extends SafetyFirst {
     this.data[0].marker.colors = colors[colorIndex.toString()];
 
     if (values.length === 0) {
-      this.layout.annotations[0].text = 'No data found';
+      this.layout.annotations[0].text = gettext('No data found');
       this.layout.annotations[0].font.color = '#ccc';
     } else {
       this.layout.annotations[0].text = `${values.reduce((total, num) => total + num)} ${this.props.kind}`;

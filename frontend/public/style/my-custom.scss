@@ -252,3 +252,9 @@ a:hover {
     outline: none;
     outline-offset: 0;
 }
+.co-text-pod:link, .co-text-pod:visited, .co-text-pod:hover, .co-text-pod:active {
+    color: $primary-color;
+}
+.co-text-daemonset:link, .co-text-daemonset:visited, .co-text-daemonset:hover, .co-text-daemonset:active {
+    color: $primary-color;
+}

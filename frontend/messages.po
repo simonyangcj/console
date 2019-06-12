@@ -42,6 +42,10 @@ msgstr "(无法识别的类型)"
 msgid "(Unsupported)"
 msgstr "(不支持)"
 
+#: ../console/frontend/public/components/utils/details-page.tsx:20
+msgid "%s Annotations"
+msgstr "%s 注释"
+
 #: ../console/frontend/public/components/utils/datetime.ts:77
 msgid "%s days from now"
 msgstr "%s天后"
@@ -58,6 +62,10 @@ msgstr "%s分钟后"
 msgid "%s months from now"
 msgstr "%s月后"
 
+#: ../console/frontend/public/components/utils/details-page.tsx:23
+msgid "%s Owners"
+msgstr "%s拥有者"
+
 #: ../console/frontend/public/components/software-details.jsx:118
 msgid "%s version could not be determined."
 msgstr "%s版本无法确定。"
@@ -65,6 +73,10 @@ msgstr "%s版本无法确定。"
 #: ../console/frontend/public/components/utils/datetime.ts:88
 msgid "%s years from now"
 msgstr "%s 版本无法确定。"
+
+#: ../console/frontend/public/components/RBAC/bindings.jsx:56
+msgid "`Edit %s Subject..."
+msgstr "编辑 %s Subject"
 
 #: ../console/frontend/public/components/cloud-services/subscription.tsx:174
 msgid "0 installed"
@@ -194,6 +206,7 @@ msgid "Accessible within the cluster only"
 msgstr "仅在群集内可访问"
 
 #: ../console/frontend/public/components/RBAC/edit-rule.jsx:324
+#: ../console/frontend/public/components/RBAC/rules.jsx:15
 #: ../console/frontend/public/components/utils/cog.tsx:111
 #: ../console/frontend/public/components/utils/cog.tsx:116
 #: ../console/frontend/public/components/utils/dropdown.jsx:388
@@ -259,7 +272,7 @@ msgstr "管理平台"
 
 #: ../console/frontend/public/components/service-account.jsx:70
 msgid "Age"
-msgstr "年龄"
+msgstr "创建时间"
 
 #: ../console/frontend/public/components/cluster-settings/cluster-monitoring.jsx:312
 msgid "Alert manager"
@@ -402,12 +415,13 @@ msgstr "1小时前"
 msgid "an hour from now"
 msgstr "1小时后"
 
-#: ../console/frontend/public/components/utils/details-page.tsx:33
+#: ../console/frontend/public/components/node.tsx:183
+#: ../console/frontend/public/components/utils/details-page.tsx:20
 msgid "Annotation"
 msgstr "注释"
 
-#: ../console/frontend/public/components/node.tsx:180
-#: ../console/frontend/public/components/utils/details-page.tsx:32
+#: ../console/frontend/public/components/node.tsx:182
+#: ../console/frontend/public/components/utils/details-page.tsx:39
 msgid "Annotations"
 msgstr "注释"
 
@@ -416,6 +430,7 @@ msgid "API Error Rate (5m)"
 msgstr "API错误率(5分钟)"
 
 #: ../console/frontend/public/components/RBAC/edit-rule.jsx:405
+#: ../console/frontend/public/components/RBAC/rules.jsx:18
 msgid "API Groups"
 msgstr "API组"
 
@@ -478,7 +493,7 @@ msgid "AppVersions"
 msgstr "APP版本"
 
 #: ../console/frontend/public/components/image-stream-tag.tsx:75
-#: ../console/frontend/public/components/node.tsx:195
+#: ../console/frontend/public/components/node.tsx:197
 msgid "Architecture"
 msgstr "架构"
 
@@ -488,7 +503,7 @@ msgstr "确定要删除"
 
 #: ../console/frontend/public/components/RBAC/rules.jsx:93
 msgid "Are you sure you want to delete Rule #%s?"
-msgstr "确定要删除规则＃％s吗？"
+msgstr "确定要删除规则＃%s吗？"
 
 #: ../console/frontend/public/components/container.jsx:190
 #: ../console/frontend/public/components/utils/build-hooks.tsx:20
@@ -542,11 +557,15 @@ msgstr "基本认证"
 msgid "below:"
 msgstr "以下："
 
+#: ../console/frontend/public/components/utils/build-strategy.tsx:40
+msgid "Binary Input as File"
+msgstr "二进制输入为文件"
+
 #: ../console/frontend/public/components/utils/documentation.tsx:45
 msgid "Blog"
 msgstr "博客"
 
-#: ../console/frontend/public/components/node.tsx:199
+#: ../console/frontend/public/components/node.tsx:201
 msgid "Boot ID"
 msgstr ""
 
@@ -576,11 +595,15 @@ msgstr "构建配置"
 msgid "Build from Dockerfile"
 msgstr "从Dockerfile构建"
 
-#: ../console/frontend/public/components/build.tsx:53
+#: ../console/frontend/public/components/build.tsx:65
 msgid "Build Overview"
 msgstr "构建概述"
 
-#: ../console/frontend/public/components/build.tsx:191
+#: ../console/frontend/public/components/utils/build-strategy.tsx:50
+msgid "Builder Image"
+msgstr "构建镜像"
+
+#: ../console/frontend/public/components/build.tsx:217
 #: ../console/frontend/public/components/nav.jsx:416
 #: ../console/frontend/public/components/utils/vertnav.jsx:61
 #: ../console/frontend/public/models/index.ts:294
@@ -604,7 +627,9 @@ msgstr "CA证书"
 msgid "Cancel"
 msgstr "取消"
 
-#: ../console/frontend/public/components/build.tsx:185
+#: ../console/frontend/public/components/build.tsx:170
+#: ../console/frontend/public/components/build.tsx:211
+#: ../console/frontend/public/components/build.tsx:57
 msgid "Cancelled"
 msgstr "已取消"
 
@@ -674,14 +699,14 @@ msgstr "更改订阅更新频道"
 msgid "Change Update Approval Strategy"
 msgstr "更改更新批准策略"
 
-#: ../console/frontend/public/components/node.tsx:242
+#: ../console/frontend/public/components/node.tsx:244
 msgid "Changed"
 msgstr "改变"
 
 #: ../console/frontend/public/components/channel-operators/app-version.jsx:85
 #: ../console/frontend/public/components/cloud-services/subscription.tsx:149
 #: ../console/frontend/public/components/cloud-services/subscription.tsx:21
-#: ../console/frontend/public/components/node.tsx:219
+#: ../console/frontend/public/components/node.tsx:221
 msgid "Channel"
 msgstr "通道"
 
@@ -897,7 +922,9 @@ msgstr "命令"
 msgid "Compact"
 msgstr "合并"
 
-#: ../console/frontend/public/components/build.tsx:182
+#: ../console/frontend/public/components/build.tsx:167
+#: ../console/frontend/public/components/build.tsx:208
+#: ../console/frontend/public/components/build.tsx:54
 #: ../console/frontend/public/components/utils/operator-states.jsx:114
 msgid "Complete"
 msgstr "完成"
@@ -992,7 +1019,7 @@ msgstr "容器"
 
 #: ../console/frontend/public/components/container-linux-update-operator/container-linux-update-details.jsx:134
 #: ../console/frontend/public/components/container-linux-update-operator/container-linux-update-details.jsx:142
-#: ../console/frontend/public/components/node.tsx:213
+#: ../console/frontend/public/components/node.tsx:215
 #: ../console/frontend/public/components/node.tsx:68
 msgid "Container Linux"
 msgstr "容器Linux"
@@ -1005,7 +1032,7 @@ msgstr "容器Linux是最新的"
 msgid "Container Overview"
 msgstr "容器概况"
 
-#: ../console/frontend/public/components/node.tsx:201
+#: ../console/frontend/public/components/node.tsx:203
 msgid "Container Runtime"
 msgstr "容器运行时"
 
@@ -1015,6 +1042,10 @@ msgstr "容器运行时"
 #: ../console/frontend/public/models/index.ts:172
 msgid "Containers"
 msgstr "容器"
+
+#: ../console/frontend/public/components/utils/build-strategy.tsx:42
+msgid "Context Dir"
+msgstr "上下文路径"
 
 #: ../console/frontend/public/components/cluster-settings/ldap.jsx:480
 #: ../console/frontend/public/components/cluster-settings/ldap.jsx:520
@@ -1037,11 +1068,15 @@ msgstr "无法加载%s的书签"
 msgid "Could not load config maps."
 msgstr "无法加载配置映射。"
 
+#: ../console/frontend/public/components/graphs/donut.jsx:118
+msgid "Could not load data"
+msgstr "无法加载数据"
+
 #: ../console/frontend/public/components/environment.jsx:100
 msgid "Could not load secrets."
 msgstr "无法加载secrets。"
 
-#: ../console/frontend/public/components/node.tsx:144
+#: ../console/frontend/public/components/node.tsx:146
 msgid "CPU"
 msgstr ""
 
@@ -1087,7 +1122,7 @@ msgstr "CRDs 通过名称"
 #: ../console/frontend/public/components/factory/list-page.jsx:302
 #: ../console/frontend/public/components/modals/create-namespace-modal.jsx:116
 #: ../console/frontend/public/components/RBAC/edit-rule.jsx:266
-#: ../console/frontend/public/components/secret.jsx:136
+#: ../console/frontend/public/components/secret.jsx:153
 #: ../console/frontend/public/components/secrets/create-secret.tsx:134
 #: ../console/frontend/public/components/secrets/create-secret.tsx:340
 msgid "Create"
@@ -1128,13 +1163,13 @@ msgid "Create Subscription"
 msgstr "创建订阅"
 
 #: ../console/frontend/public/components/build-config.tsx:72
-#: ../console/frontend/public/components/build.tsx:147
+#: ../console/frontend/public/components/build.tsx:159
 #: ../console/frontend/public/components/cloud-services/catalog-source.tsx:115
 #: ../console/frontend/public/components/cloud-services/k8s-resource.tsx:46
 #: ../console/frontend/public/components/configmap.jsx:15
 #: ../console/frontend/public/components/default-resource.jsx:15
 #: ../console/frontend/public/components/image-stream.tsx:104
-#: ../console/frontend/public/components/node.tsx:187
+#: ../console/frontend/public/components/node.tsx:189
 #: ../console/frontend/public/components/persistent-volume.jsx:11
 #: ../console/frontend/public/components/secret.jsx:42
 msgid "Created"
@@ -1144,7 +1179,7 @@ msgstr "创建时间"
 #: ../console/frontend/public/components/cloud-services/clusterserviceversion-resource.tsx:201
 #: ../console/frontend/public/components/cloud-services/clusterserviceversion.tsx:122
 #: ../console/frontend/public/components/RBAC/role.jsx:82
-#: ../console/frontend/public/components/utils/details-page.tsx:35
+#: ../console/frontend/public/components/utils/details-page.tsx:42
 msgid "Created At"
 msgstr "创建时间"
 
@@ -1176,7 +1211,7 @@ msgid "Current"
 msgstr "当前"
 
 #: ../console/frontend/public/components/daemonset.jsx:47
-#: ../console/frontend/public/components/utils/details-page.tsx:43
+#: ../console/frontend/public/components/utils/details-page.tsx:50
 msgid "Current Count"
 msgstr "当前数量"
 
@@ -1190,7 +1225,7 @@ msgstr "当前Pods"
 
 #: ../console/frontend/public/components/channel-operators/app-version.jsx:72
 #: ../console/frontend/public/components/channel-operators/app-version.jsx:82
-#: ../console/frontend/public/components/node.tsx:217
+#: ../console/frontend/public/components/node.tsx:219
 msgid "Current Version"
 msgstr "集群服务版本"
 
@@ -1290,6 +1325,7 @@ msgstr ""
 #: ../console/frontend/public/components/modals/delete-modal.jsx:47
 #: ../console/frontend/public/components/modals/delete-namespace-modal.jsx:32
 #: ../console/frontend/public/components/modals/delete-namespace-modal.jsx:38
+#: ../console/frontend/public/components/utils/cog.tsx:24
 msgid "Delete"
 msgstr "删除"
 
@@ -1367,7 +1403,7 @@ msgstr "订阅完成"
 
 #: ../console/frontend/public/components/daemonset.jsx:49
 #: ../console/frontend/public/components/utils/deployment-pod-counts.tsx:71
-#: ../console/frontend/public/components/utils/details-page.tsx:45
+#: ../console/frontend/public/components/utils/details-page.tsx:52
 msgid "Desired Count"
 msgstr "期望数量"
 
@@ -1381,7 +1417,7 @@ msgstr "目标CA证书"
 
 #: ../console/frontend/public/components/modals/labels-modal.jsx:82
 msgid "Determines the set of pods targeted by this %s."
-msgstr "确定此％s所定位的pod。"
+msgstr "确定此%s所定位的pod。"
 
 #: ../console/frontend/public/components/clusters.tsx:29
 msgid "Directory Cluster"
@@ -1400,6 +1436,10 @@ msgstr "硬盘使用率"
 #: ../console/frontend/public/components/namespace.jsx:196
 msgid "Display Name"
 msgstr "名称"
+
+#: ../console/frontend/public/components/utils/build-strategy.tsx:44
+msgid "Dockerfile"
+msgstr "Dockerfile"
 
 #: ../console/frontend/public/components/namespace.jsx:112
 msgid "documentation"
@@ -1452,7 +1492,7 @@ msgstr "下载中..."
 msgid "Duplicate keys found."
 msgstr "找到重复的密钥。"
 
-#: ../console/frontend/public/components/build.tsx:76
+#: ../console/frontend/public/components/build.tsx:88
 msgid "Duration"
 msgstr "持续时间"
 
@@ -1479,7 +1519,9 @@ msgstr ""
 #: ../console/frontend/public/components/edit-yaml.jsx:301
 #: ../console/frontend/public/components/modals/labels-modal.jsx:54
 #: ../console/frontend/public/components/RBAC/edit-rule.jsx:266
+#: ../console/frontend/public/components/secret.jsx:31
 #: ../console/frontend/public/components/secrets/create-secret.tsx:346
+#: ../console/frontend/public/components/utils/cog.tsx:31
 #: ../console/frontend/public/components/utils/cog.tsx:63
 msgid "Edit"
 msgstr "编辑"
@@ -1555,7 +1597,9 @@ msgstr "环境"
 msgid "Environment Variables"
 msgstr "环境变量"
 
-#: ../console/frontend/public/components/build.tsx:184
+#: ../console/frontend/public/components/build.tsx:169
+#: ../console/frontend/public/components/build.tsx:210
+#: ../console/frontend/public/components/build.tsx:56
 #: ../console/frontend/public/components/cluster-settings/ldap.jsx:493
 #: ../console/frontend/public/components/error.jsx:42
 #: ../console/frontend/public/components/events.jsx:134
@@ -1570,6 +1614,10 @@ msgstr "连接事件流出错"
 #: ../console/frontend/public/components/edit-yaml.jsx:167
 msgid "Error dumping YAML:"
 msgstr "转储YAML时出错："
+
+#: ../console/frontend/public/components/graphs/donut.jsx:110
+msgid "error initializing graph:"
+msgstr "初始化图形时出错："
 
 #: ../console/frontend/public/components/RBAC/bindings.jsx:205
 #: ../console/frontend/public/components/utils/status-box.jsx:14
@@ -1645,7 +1693,7 @@ msgstr "展开"
 msgid "Exposed Ports"
 msgstr "暴露的端口"
 
-#: ../console/frontend/public/components/node.tsx:174
+#: ../console/frontend/public/components/node.tsx:176
 msgid "External ID"
 msgstr "外部ID"
 
@@ -1661,7 +1709,9 @@ msgstr "外部负载均衡器"
 msgid "External Service Name"
 msgstr "外部服务名称"
 
-#: ../console/frontend/public/components/build.tsx:183
+#: ../console/frontend/public/components/build.tsx:168
+#: ../console/frontend/public/components/build.tsx:209
+#: ../console/frontend/public/components/build.tsx:55
 #: ../console/frontend/public/components/pod.jsx:292
 #: ../console/frontend/public/components/utils/operator-states.jsx:103
 #: ../console/frontend/public/components/utils/operator-states.jsx:143
@@ -1681,7 +1731,7 @@ msgstr "几秒"
 msgid "File Upload"
 msgstr "上传文件"
 
-#: ../console/frontend/public/components/node.tsx:156
+#: ../console/frontend/public/components/node.tsx:158
 msgid "Filesystem"
 msgstr "文件系统"
 
@@ -1785,6 +1835,18 @@ msgstr "开始使用CLI"
 #: ../console/frontend/public/components/clusters.tsx:61
 msgid "Getting Started"
 msgstr "入门指南"
+
+#: ../console/frontend/public/components/utils/build-strategy.tsx:38
+msgid "Git Commit"
+msgstr "Git提交"
+
+#: ../console/frontend/public/components/utils/build-strategy.tsx:36
+msgid "Git Ref"
+msgstr "Git参考"
+
+#: ../console/frontend/public/components/utils/build-strategy.tsx:34
+msgid "Git Repository"
+msgstr "Git存储库"
 
 #: ../console/frontend/public/components/chargeback.tsx:91
 msgid "Grace Period"
@@ -1939,6 +2001,8 @@ msgstr "如果LDAP服务器允许匿名授权，则必须提供其他凭据才�
 #: ../console/frontend/public/components/container.jsx:184
 #: ../console/frontend/public/components/deployment.jsx:43
 #: ../console/frontend/public/components/pod.jsx:125
+#: ../console/frontend/public/components/secret.jsx:140
+#: ../console/frontend/public/components/secret.jsx:50
 msgid "Image"
 msgstr "镜像"
 
@@ -1991,7 +2055,7 @@ msgstr "镜像流"
 msgid "Image Version/Tag"
 msgstr "镜像版本/标签"
 
-#: ../console/frontend/public/components/node.tsx:259
+#: ../console/frontend/public/components/node.tsx:261
 msgid "Images"
 msgstr "镜像"
 
@@ -2105,6 +2169,14 @@ msgid ""
 "backup of the current configuration before proceeding."
 msgstr "强烈建议您使用root kubeconfig，并在继续前备份当前配置。"
 
+#: ../console/frontend/public/components/utils/build-strategy.tsx:46
+msgid "Jenkinsfile"
+msgstr "Jenkinsfile"
+
+#: ../console/frontend/public/components/utils/build-strategy.tsx:48
+msgid "Jenkinsfile Path"
+msgstr "Jenkinsfile路径"
+
 #: ../console/frontend/public/models/index.ts:326
 msgid "Job"
 msgstr "任务"
@@ -2123,23 +2195,23 @@ msgstr "任务状态"
 msgid "Jobs"
 msgstr "任务"
 
-#: ../console/frontend/public/components/node.tsx:197
+#: ../console/frontend/public/components/node.tsx:199
 msgid "Kernel Version"
 msgstr "内核版本"
 
 #: ../console/frontend/public/components/utils/name-value-editor.jsx:117
 msgid "Key"
-msgstr "Key"
+msgstr "键"
 
 #: ../console/frontend/public/components/cloud-services/install-plan.tsx:146
 msgid "Kind"
 msgstr "种类"
 
-#: ../console/frontend/public/components/node.tsx:205
+#: ../console/frontend/public/components/node.tsx:207
 msgid "Kube-Proxy Version"
 msgstr "Kube-Proxy版本"
 
-#: ../console/frontend/public/components/node.tsx:203
+#: ../console/frontend/public/components/node.tsx:205
 msgid "Kubelet Version"
 msgstr "Kubelet版本"
 
@@ -2179,7 +2251,7 @@ msgstr "标签选择器"
 #: ../console/frontend/public/components/persistent-volume.jsx:10
 #: ../console/frontend/public/components/prometheus.jsx:35
 #: ../console/frontend/public/components/service.jsx:21
-#: ../console/frontend/public/components/utils/details-page.tsx:26
+#: ../console/frontend/public/components/utils/details-page.tsx:33
 msgid "Labels"
 msgstr "标签"
 
@@ -2276,7 +2348,7 @@ msgstr "地址"
 msgid "Location of the resource that backs the service"
 msgstr "支持服务的资源的位置"
 
-#: ../console/frontend/public/components/build.tsx:72
+#: ../console/frontend/public/components/build.tsx:84
 msgid "Log Snippet"
 msgstr "日志片段"
 
@@ -2460,7 +2532,7 @@ msgstr "我的账户"
 #: ../console/frontend/public/components/alert-manager.jsx:136
 #: ../console/frontend/public/components/alert-manager.jsx:50
 #: ../console/frontend/public/components/build-config.tsx:69
-#: ../console/frontend/public/components/build.tsx:144
+#: ../console/frontend/public/components/build.tsx:156
 #: ../console/frontend/public/components/chargeback.tsx:388
 #: ../console/frontend/public/components/chargeback.tsx:48
 #: ../console/frontend/public/components/cloud-services/catalog-source.tsx:112
@@ -2494,7 +2566,7 @@ msgstr "我的账户"
 #: ../console/frontend/public/components/namespace.jsx:56
 #: ../console/frontend/public/components/namespace.jsx:80
 #: ../console/frontend/public/components/network-policy.jsx:12
-#: ../console/frontend/public/components/node.tsx:264
+#: ../console/frontend/public/components/node.tsx:266
 #: ../console/frontend/public/components/persistent-volume-claim.jsx:31
 #: ../console/frontend/public/components/persistent-volume.jsx:9
 #: ../console/frontend/public/components/pod.jsx:123
@@ -2515,7 +2587,7 @@ msgstr "我的账户"
 #: ../console/frontend/public/components/service.jsx:19
 #: ../console/frontend/public/components/service.jsx:83
 #: ../console/frontend/public/components/storage-class.tsx:17
-#: ../console/frontend/public/components/utils/details-page.tsx:20
+#: ../console/frontend/public/components/utils/details-page.tsx:27
 msgid "Name"
 msgstr "名称"
 
@@ -2526,7 +2598,7 @@ msgstr "名称属性"
 
 #: ../console/frontend/public/components/alert-manager.jsx:137
 #: ../console/frontend/public/components/build-config.tsx:70
-#: ../console/frontend/public/components/build.tsx:145
+#: ../console/frontend/public/components/build.tsx:157
 #: ../console/frontend/public/components/chargeback.tsx:389
 #: ../console/frontend/public/components/chargeback.tsx:49
 #: ../console/frontend/public/components/cloud-services/catalog-source.tsx:113
@@ -2561,7 +2633,7 @@ msgstr "名称属性"
 #: ../console/frontend/public/components/service-account.jsx:68
 #: ../console/frontend/public/components/service-monitor.jsx:52
 #: ../console/frontend/public/components/service.jsx:20
-#: ../console/frontend/public/components/utils/details-page.tsx:22
+#: ../console/frontend/public/components/utils/details-page.tsx:29
 #: ../console/frontend/public/models/index.ts:375
 msgid "Namespace"
 msgstr "命名空间"
@@ -2601,11 +2673,11 @@ msgstr "命名空间"
 msgid "Network"
 msgstr "网络"
 
-#: ../console/frontend/public/components/node.tsx:150
+#: ../console/frontend/public/components/node.tsx:152
 msgid "Network In"
 msgstr "网络-进"
 
-#: ../console/frontend/public/components/node.tsx:153
+#: ../console/frontend/public/components/node.tsx:155
 msgid "Network Out"
 msgstr "网络-出"
 
@@ -2640,7 +2712,9 @@ msgstr "网络传输（字节/秒）"
 msgid "Networking"
 msgstr "网络"
 
-#: ../console/frontend/public/components/build.tsx:179
+#: ../console/frontend/public/components/build.tsx:164
+#: ../console/frontend/public/components/build.tsx:205
+#: ../console/frontend/public/components/build.tsx:51
 msgid "New"
 msgstr "新建"
 
@@ -2655,6 +2729,10 @@ msgstr "新的更新将在可用时立即安装。"
 #: ../console/frontend/public/components/cluster-settings/ldap.jsx:512
 msgid "Next: Update Tectonic Identity"
 msgstr "下一步：更新构造身份"
+
+#: ../console/frontend/public/components/custom-resource-definition.tsx:39
+msgid "No"
+msgstr "否"
 
 #: ../console/frontend/public/components/edit-yaml.jsx:197
 msgid "No \"apiVersion\" field found in YAML."
@@ -2703,6 +2781,10 @@ msgstr "无状况记录"
 #: ../console/frontend/public/components/chargeback.tsx:301
 #: ../console/frontend/public/components/chargeback.tsx:310
 msgid "No Data"
+msgstr "无数据"
+
+#: ../console/frontend/public/components/graphs/donut.jsx:131
+msgid "No data found"
 msgstr "无数据"
 
 #: ../console/frontend/public/components/image-stream-tag.tsx:105
@@ -2809,28 +2891,28 @@ msgstr "没有安装卷"
 msgid "Node"
 msgstr "节点"
 
-#: ../console/frontend/public/components/node.tsx:176
+#: ../console/frontend/public/components/node.tsx:178
 #: ../console/frontend/public/components/node.tsx:46
 #: ../console/frontend/public/components/node.tsx:54
 msgid "Node Addresses"
 msgstr "节点地址"
 
-#: ../console/frontend/public/components/node.tsx:233
+#: ../console/frontend/public/components/node.tsx:235
 msgid "Node Conditions"
 msgstr "节点状况"
 
-#: ../console/frontend/public/components/node.tsx:178
+#: ../console/frontend/public/components/node.tsx:180
 #: ../console/frontend/public/components/node.tsx:53
 msgid "Node Labels"
 msgstr "节点标签"
 
-#: ../console/frontend/public/components/node.tsx:172
+#: ../console/frontend/public/components/node.tsx:174
 #: ../console/frontend/public/components/node.tsx:43
 #: ../console/frontend/public/components/node.tsx:51
 msgid "Node Name"
 msgstr "节点名称"
 
-#: ../console/frontend/public/components/node.tsx:167
+#: ../console/frontend/public/components/node.tsx:169
 msgid "Node Overview"
 msgstr "节点概述"
 
@@ -2841,7 +2923,7 @@ msgstr "节点端口"
 
 #: ../console/frontend/public/components/alert-manager.jsx:141
 #: ../console/frontend/public/components/pod.jsx:178
-#: ../console/frontend/public/components/utils/details-page.tsx:30
+#: ../console/frontend/public/components/utils/details-page.tsx:37
 msgid "Node Selector"
 msgstr "节点选择器"
 
@@ -2887,7 +2969,7 @@ msgstr "没准备好"
 msgid "NS Selector:"
 msgstr "命名空间选择器: "
 
-#: ../console/frontend/public/components/node.tsx:147
+#: ../console/frontend/public/components/node.tsx:149
 msgid "Number of Pods"
 msgstr "Pod数量"
 
@@ -2921,6 +3003,11 @@ msgid ""
 "in different namespaces."
 msgstr "一个典型的用例是公共数据库，它由不同命名空间中的部署使用。"
 
+#: ../console/frontend/public/components/secret.jsx:144
+#: ../console/frontend/public/components/secret.jsx:54
+msgid "Opaque"
+msgstr ""
+
 #: ../console/frontend/public/components/cluster-overview.jsx:134
 #: ../console/frontend/public/components/cluster-overview.jsx:55
 msgid "OpenShift Console"
@@ -2930,7 +3017,7 @@ msgstr "OpenShift控制台"
 msgid "OpenShift helps you quickly develop, host, and scale applications."
 msgstr "OpenShift可帮助您快速开发，托管和扩展应用程序。"
 
-#: ../console/frontend/public/components/node.tsx:193
+#: ../console/frontend/public/components/node.tsx:195
 msgid "Operating System"
 msgstr "操作系统"
 
@@ -2972,12 +3059,21 @@ msgstr "或者创建一个操作员或集群服务版本，通过"
 msgid "OS Update"
 msgstr "OS更新"
 
+#: ../console/frontend/public/components/utils/build-strategy.tsx:55
+msgid "Output To"
+msgstr "输出到"
+
+#: ../console/frontend/public/components/cloud-services/clusterserviceversion-resource.tsx:178
 #: ../console/frontend/public/components/cluster-overview.jsx:248
 #: ../console/frontend/public/components/cluster-overview.jsx:250
 #: ../console/frontend/public/components/namespace.jsx:192
 #: ../console/frontend/public/components/utils/vertnav.jsx:31
 msgid "Overview"
 msgstr "概述"
+
+#: ../console/frontend/public/components/utils/details-page.tsx:23
+msgid "Owner"
+msgstr "拥有者"
 
 #: ../console/frontend/public/components/cloud-services/catalog-source.tsx:225
 msgid "Package Not Found"
@@ -3043,7 +3139,9 @@ msgstr "暂停中..."
 msgid "PEM data containing the root CAs."
 msgstr "PEM数据包含root CAs"
 
-#: ../console/frontend/public/components/build.tsx:180
+#: ../console/frontend/public/components/build.tsx:165
+#: ../console/frontend/public/components/build.tsx:206
+#: ../console/frontend/public/components/build.tsx:52
 #: ../console/frontend/public/components/persistent-volume-claim.jsx:100
 #: ../console/frontend/public/components/persistent-volume-claim.jsx:20
 #: ../console/frontend/public/components/pod.jsx:286
@@ -3141,7 +3239,7 @@ msgstr "Pod端口或名称"
 #: ../console/frontend/public/components/modals/labels-modal.jsx:81
 #: ../console/frontend/public/components/network-policy.jsx:14
 #: ../console/frontend/public/components/service.jsx:22
-#: ../console/frontend/public/components/utils/details-page.tsx:28
+#: ../console/frontend/public/components/utils/details-page.tsx:35
 msgid "Pod Selector"
 msgstr "Pod选择器"
 
@@ -3259,7 +3357,7 @@ msgstr "协议"
 msgid "Provider"
 msgstr "供应商"
 
-#: ../console/frontend/public/components/node.tsx:182
+#: ../console/frontend/public/components/node.tsx:184
 msgid "Provider ID"
 msgstr "供应商ID"
 
@@ -3281,6 +3379,10 @@ msgstr "发布者"
 msgid "Pull Policy"
 msgstr "拉取策略"
 
+#: ../console/frontend/public/components/utils/build-strategy.tsx:59
+msgid "Push Secret"
+msgstr "推Secret"
+
 #: ../console/frontend/public/components/image-stream.tsx:34
 msgid "pushed image"
 msgstr "推镜像"
@@ -3294,7 +3396,7 @@ msgid "Queued for Update"
 msgstr "排队等待更新"
 
 #: ../console/frontend/public/components/namespace.jsx:176
-#: ../console/frontend/public/components/node.tsx:141
+#: ../console/frontend/public/components/node.tsx:143
 #: ../console/frontend/public/components/pod.jsx:141
 msgid "RAM"
 msgstr "内存"
@@ -3319,10 +3421,14 @@ msgstr "准备就绪探测器"
 msgid "Ready"
 msgstr "准备"
 
-#: ../console/frontend/public/components/build.tsx:74
+#: ../console/frontend/public/components/node.tsx:129
+msgid "Ready Status"
+msgstr "就绪状态"
+
+#: ../console/frontend/public/components/build.tsx:86
 #: ../console/frontend/public/components/conditions.tsx:34
 #: ../console/frontend/public/components/deployment-config.tsx:74
-#: ../console/frontend/public/components/node.tsx:240
+#: ../console/frontend/public/components/node.tsx:242
 msgid "Reason"
 msgstr "原因"
 
@@ -3486,6 +3592,7 @@ msgstr "必填。 要映射到Email属性。"
 #: ../console/frontend/public/components/cloud-services/spec-descriptors/index.tsx:46
 #: ../console/frontend/public/components/container.jsx:164
 #: ../console/frontend/public/components/deployment.jsx:44
+#: ../console/frontend/public/components/utils/build-strategy.tsx:63
 msgid "Resource Limits"
 msgstr "资源限制"
 
@@ -3513,6 +3620,10 @@ msgstr "资源请求"
 #: ../console/frontend/public/components/namespace.jsx:165
 msgid "Resource Usage"
 msgstr "资源使用率"
+
+#: ../console/frontend/public/components/RBAC/rules.jsx:21
+msgid "Resources"
+msgstr "资源"
 
 #: ../console/frontend/public/components/cloud-services/clusterserviceversion-resource.tsx:119
 #: ../console/frontend/public/components/cloud-services/k8s-resource.tsx:59
@@ -3668,7 +3779,13 @@ msgstr "规则 通过 动作或资源"
 msgid "Run Immediately?"
 msgstr "马上运行？"
 
-#: ../console/frontend/public/components/build.tsx:181
+#: ../console/frontend/public/components/utils/build-strategy.tsx:61
+msgid "Run Policy"
+msgstr "运行策略"
+
+#: ../console/frontend/public/components/build.tsx:166
+#: ../console/frontend/public/components/build.tsx:207
+#: ../console/frontend/public/components/build.tsx:53
 #: ../console/frontend/public/components/pod.jsx:285
 msgid "Running"
 msgstr "运行中"
@@ -3771,7 +3888,7 @@ msgstr "秒"
 msgid "Secret"
 msgstr ""
 
-#: ../console/frontend/public/components/secret.jsx:128
+#: ../console/frontend/public/components/secret.jsx:132
 msgid "Secret from YAML"
 msgstr ""
 
@@ -3780,7 +3897,7 @@ msgstr ""
 msgid "Secret Name"
 msgstr "Secret名称"
 
-#: ../console/frontend/public/components/secret.jsx:66
+#: ../console/frontend/public/components/secret.jsx:77
 msgid "Secret Overview"
 msgstr "Secret概况"
 
@@ -3859,6 +3976,11 @@ msgstr "服务账户"
 #: ../console/frontend/public/components/service-account.jsx:102
 msgid "Service Account Overview"
 msgstr "服务账户概述"
+
+#: ../console/frontend/public/components/secret.jsx:143
+#: ../console/frontend/public/components/secret.jsx:53
+msgid "Service Account Token"
+msgstr "服务帐户令牌"
 
 #: ../console/frontend/public/components/nav.jsx:429
 #: ../console/frontend/public/models/index.ts:224
@@ -3948,7 +4070,7 @@ msgstr "在创建新pod之前关闭所有现有pod"
 
 #: ../console/frontend/public/components/configmap.jsx:14
 #: ../console/frontend/public/components/image-stream-tag.tsx:58
-#: ../console/frontend/public/components/node.tsx:265
+#: ../console/frontend/public/components/node.tsx:267
 #: ../console/frontend/public/components/persistent-volume-claim.jsx:81
 #: ../console/frontend/public/components/secret.jsx:41
 msgid "Size"
@@ -3967,7 +4089,12 @@ msgstr "软件信息"
 msgid "Software update failed"
 msgstr "软件更新失败"
 
-#: ../console/frontend/public/components/secret.jsx:126
+#: ../console/frontend/public/components/secret.jsx:141
+#: ../console/frontend/public/components/secret.jsx:51
+msgid "Source"
+msgstr "源"
+
+#: ../console/frontend/public/components/secret.jsx:130
 msgid "Source Secret"
 msgstr "源Secret"
 
@@ -4013,7 +4140,7 @@ msgstr "开始Rollout"
 msgid "Start Time"
 msgstr "开始时间"
 
-#: ../console/frontend/public/components/build.tsx:64
+#: ../console/frontend/public/components/build.tsx:76
 #: ../console/frontend/public/components/container.jsx:172
 #: ../console/frontend/public/components/pod.jsx:128
 msgid "Started"
@@ -4046,8 +4173,8 @@ msgstr ""
 msgid "StatefulSet Overview"
 msgstr "StatefulSet概况"
 
-#: ../console/frontend/public/components/build.tsx:146
-#: ../console/frontend/public/components/build.tsx:70
+#: ../console/frontend/public/components/build.tsx:158
+#: ../console/frontend/public/components/build.tsx:82
 #: ../console/frontend/public/components/channel-operators/app-version.jsx:79
 #: ../console/frontend/public/components/chargeback.tsx:51
 #: ../console/frontend/public/components/cloud-services/clusterserviceversion-resource.tsx:23
@@ -4067,7 +4194,7 @@ msgstr "StatefulSet概况"
 #: ../console/frontend/public/components/namespace.jsx:57
 #: ../console/frontend/public/components/namespace.jsx:81
 #: ../console/frontend/public/components/nav.jsx:373
-#: ../console/frontend/public/components/node.tsx:239
+#: ../console/frontend/public/components/node.tsx:241
 #: ../console/frontend/public/components/node.tsx:44
 #: ../console/frontend/public/components/node.tsx:52
 #: ../console/frontend/public/components/persistent-volume-claim.jsx:33
@@ -4082,6 +4209,18 @@ msgstr "状态"
 #: ../console/frontend/public/components/cluster-overview.jsx:243
 msgid "Status of %s"
 msgstr "%s 状态"
+
+#: ../console/frontend/public/components/node.tsx:125
+msgid "Status: All"
+msgstr "状态：全部"
+
+#: ../console/frontend/public/components/node.tsx:127
+msgid "Status: Not Ready"
+msgstr "状态：未就绪"
+
+#: ../console/frontend/public/components/node.tsx:126
+msgid "Status: Ready"
+msgstr "状态：就绪"
 
 #: ../console/frontend/public/components/modals/configure-operator-modal.jsx:83
 msgid "Stay up to date with the latest version automatically."
@@ -4270,7 +4409,7 @@ msgstr "无法连接控制台"
 msgid "The contents of the catalog source could not be retrieved."
 msgstr "无法检索目录源的内容。"
 
-#: ../console/frontend/public/components/build.tsx:118
+#: ../console/frontend/public/components/build.tsx:130
 msgid "The environment variable editor does not support build strategy:"
 msgstr "环境变量编辑器不支持生成策略："
 
@@ -4404,6 +4543,11 @@ msgstr "超时"
 msgid "times in the last"
 msgstr "次过去"
 
+#: ../console/frontend/public/components/secret.jsx:142
+#: ../console/frontend/public/components/secret.jsx:52
+msgid "TLS"
+msgstr ""
+
 #: ../console/frontend/public/components/ingress.jsx:120
 msgid "TLS Certificate"
 msgstr "TLS证书"
@@ -4505,11 +4649,12 @@ msgstr "从所有命名空间流向应用程序"
 msgid "traffic to an application within the same namespace"
 msgstr "流到同一名称空间内的应用程序"
 
-#: ../console/frontend/public/components/build.tsx:62
+#: ../console/frontend/public/components/build.tsx:74
 msgid "Triggered By"
 msgstr "触发器"
 
 #: ../console/frontend/public/components/deployment-config.tsx:90
+#: ../console/frontend/public/components/utils/build-strategy.tsx:65
 msgid "Triggers"
 msgstr "触发器"
 
@@ -4528,11 +4673,12 @@ msgstr "试一试"
 #: ../console/frontend/public/components/conditions.tsx:31
 #: ../console/frontend/public/components/hpa.tsx:102
 #: ../console/frontend/public/components/job.jsx:24
-#: ../console/frontend/public/components/node.tsx:238
+#: ../console/frontend/public/components/node.tsx:240
 #: ../console/frontend/public/components/pod.jsx:215
 #: ../console/frontend/public/components/secret.jsx:40
 #: ../console/frontend/public/components/service.jsx:71
-#: ../console/frontend/public/components/utils/details-page.tsx:24
+#: ../console/frontend/public/components/utils/build-strategy.tsx:32
+#: ../console/frontend/public/components/utils/details-page.tsx:31
 #: ../console/frontend/public/components/utils/webhooks.tsx:59
 msgid "Type"
 msgstr "所有类型"
@@ -4569,7 +4715,7 @@ msgstr "未知"
 msgid "Unknown graph type:"
 msgstr "未知的图表类型： "
 
-#: ../console/frontend/public/components/node.tsx:184
+#: ../console/frontend/public/components/node.tsx:186
 msgid "Unschedulable"
 msgstr "不可调度"
 
@@ -4604,7 +4750,7 @@ msgstr "更新时间"
 msgid "Update Requested..."
 msgstr " 请求更新…"
 
-#: ../console/frontend/public/components/node.tsx:225
+#: ../console/frontend/public/components/node.tsx:227
 msgid "Update Status"
 msgstr "更新状态"
 
@@ -4623,7 +4769,7 @@ msgid "UpdateAvailable"
 msgstr "更新可用"
 
 #: ../console/frontend/public/components/conditions.tsx:33
-#: ../console/frontend/public/components/node.tsx:241
+#: ../console/frontend/public/components/node.tsx:243
 msgid "Updated"
 msgstr "更新"
 
@@ -4827,7 +4973,7 @@ msgstr "查看订阅"
 msgid "Volumes allow data to be shared as files with the pod"
 msgstr "卷允许将数据作为pod的文件共享"
 
-#: ../console/frontend/public/components/secret.jsx:127
+#: ../console/frontend/public/components/secret.jsx:131
 msgid "Webhook Secret"
 msgstr "Webhook Secret"
 
@@ -4906,6 +5052,10 @@ msgstr "年"
 #: ../console/frontend/public/components/utils/datetime.ts:17
 msgid "years ago"
 msgstr "年前"
+
+#: ../console/frontend/public/components/custom-resource-definition.tsx:39
+msgid "Yes"
+msgstr "是"
 
 #: ../console/frontend/public/components/utils/status-box.jsx:44
 msgid "You don't have access to this section due to cluster policy."

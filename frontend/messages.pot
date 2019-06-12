@@ -39,6 +39,10 @@ msgstr ""
 msgid "(Unsupported)"
 msgstr ""
 
+#: ../console/frontend/public/components/utils/details-page.tsx:20
+msgid "%s Annotations"
+msgstr ""
+
 #: ../console/frontend/public/components/utils/datetime.ts:77
 msgid "%s days from now"
 msgstr ""
@@ -55,12 +59,20 @@ msgstr ""
 msgid "%s months from now"
 msgstr ""
 
+#: ../console/frontend/public/components/utils/details-page.tsx:23
+msgid "%s Owners"
+msgstr ""
+
 #: ../console/frontend/public/components/software-details.jsx:118
 msgid "%s version could not be determined."
 msgstr ""
 
 #: ../console/frontend/public/components/utils/datetime.ts:88
 msgid "%s years from now"
+msgstr ""
+
+#: ../console/frontend/public/components/RBAC/bindings.jsx:56
+msgid "`Edit %s Subject..."
 msgstr ""
 
 #: ../console/frontend/public/components/cloud-services/subscription.tsx:174
@@ -185,6 +197,7 @@ msgid "Accessible within the cluster only"
 msgstr ""
 
 #: ../console/frontend/public/components/RBAC/edit-rule.jsx:324
+#: ../console/frontend/public/components/RBAC/rules.jsx:15
 #: ../console/frontend/public/components/utils/cog.tsx:111
 #: ../console/frontend/public/components/utils/cog.tsx:116
 #: ../console/frontend/public/components/utils/dropdown.jsx:388
@@ -382,12 +395,13 @@ msgstr ""
 msgid "an hour from now"
 msgstr ""
 
-#: ../console/frontend/public/components/utils/details-page.tsx:33
+#: ../console/frontend/public/components/node.tsx:183
+#: ../console/frontend/public/components/utils/details-page.tsx:20
 msgid "Annotation"
 msgstr ""
 
-#: ../console/frontend/public/components/node.tsx:180
-#: ../console/frontend/public/components/utils/details-page.tsx:32
+#: ../console/frontend/public/components/node.tsx:182
+#: ../console/frontend/public/components/utils/details-page.tsx:39
 msgid "Annotations"
 msgstr ""
 
@@ -396,6 +410,7 @@ msgid "API Error Rate (5m)"
 msgstr ""
 
 #: ../console/frontend/public/components/RBAC/edit-rule.jsx:405
+#: ../console/frontend/public/components/RBAC/rules.jsx:18
 msgid "API Groups"
 msgstr ""
 
@@ -456,7 +471,7 @@ msgid "AppVersions"
 msgstr ""
 
 #: ../console/frontend/public/components/image-stream-tag.tsx:75
-#: ../console/frontend/public/components/node.tsx:195
+#: ../console/frontend/public/components/node.tsx:197
 msgid "Architecture"
 msgstr ""
 
@@ -510,11 +525,15 @@ msgstr ""
 msgid "below:"
 msgstr ""
 
+#: ../console/frontend/public/components/utils/build-strategy.tsx:40
+msgid "Binary Input as File"
+msgstr ""
+
 #: ../console/frontend/public/components/utils/documentation.tsx:45
 msgid "Blog"
 msgstr ""
 
-#: ../console/frontend/public/components/node.tsx:199
+#: ../console/frontend/public/components/node.tsx:201
 msgid "Boot ID"
 msgstr ""
 
@@ -544,11 +563,15 @@ msgstr ""
 msgid "Build from Dockerfile"
 msgstr ""
 
-#: ../console/frontend/public/components/build.tsx:53
+#: ../console/frontend/public/components/build.tsx:65
 msgid "Build Overview"
 msgstr ""
 
-#: ../console/frontend/public/components/build.tsx:191
+#: ../console/frontend/public/components/utils/build-strategy.tsx:50
+msgid "Builder Image"
+msgstr ""
+
+#: ../console/frontend/public/components/build.tsx:217
 #: ../console/frontend/public/components/nav.jsx:416
 #: ../console/frontend/public/components/utils/vertnav.jsx:61
 #: ../console/frontend/public/models/index.ts:294
@@ -572,7 +595,9 @@ msgstr ""
 msgid "Cancel"
 msgstr ""
 
-#: ../console/frontend/public/components/build.tsx:185
+#: ../console/frontend/public/components/build.tsx:170
+#: ../console/frontend/public/components/build.tsx:211
+#: ../console/frontend/public/components/build.tsx:57
 msgid "Cancelled"
 msgstr ""
 
@@ -636,14 +661,14 @@ msgstr ""
 msgid "Change Update Approval Strategy"
 msgstr ""
 
-#: ../console/frontend/public/components/node.tsx:242
+#: ../console/frontend/public/components/node.tsx:244
 msgid "Changed"
 msgstr ""
 
 #: ../console/frontend/public/components/channel-operators/app-version.jsx:85
 #: ../console/frontend/public/components/cloud-services/subscription.tsx:149
 #: ../console/frontend/public/components/cloud-services/subscription.tsx:21
-#: ../console/frontend/public/components/node.tsx:219
+#: ../console/frontend/public/components/node.tsx:221
 msgid "Channel"
 msgstr ""
 
@@ -857,7 +882,9 @@ msgstr ""
 msgid "Compact"
 msgstr ""
 
-#: ../console/frontend/public/components/build.tsx:182
+#: ../console/frontend/public/components/build.tsx:167
+#: ../console/frontend/public/components/build.tsx:208
+#: ../console/frontend/public/components/build.tsx:54
 #: ../console/frontend/public/components/utils/operator-states.jsx:114
 msgid "Complete"
 msgstr ""
@@ -952,7 +979,7 @@ msgstr ""
 
 #: ../console/frontend/public/components/container-linux-update-operator/container-linux-update-details.jsx:134
 #: ../console/frontend/public/components/container-linux-update-operator/container-linux-update-details.jsx:142
-#: ../console/frontend/public/components/node.tsx:213
+#: ../console/frontend/public/components/node.tsx:215
 #: ../console/frontend/public/components/node.tsx:68
 msgid "Container Linux"
 msgstr ""
@@ -965,7 +992,7 @@ msgstr ""
 msgid "Container Overview"
 msgstr ""
 
-#: ../console/frontend/public/components/node.tsx:201
+#: ../console/frontend/public/components/node.tsx:203
 msgid "Container Runtime"
 msgstr ""
 
@@ -974,6 +1001,10 @@ msgstr ""
 #: ../console/frontend/public/components/utils/dropdown.jsx:432
 #: ../console/frontend/public/models/index.ts:172
 msgid "Containers"
+msgstr ""
+
+#: ../console/frontend/public/components/utils/build-strategy.tsx:42
+msgid "Context Dir"
 msgstr ""
 
 #: ../console/frontend/public/components/cluster-settings/ldap.jsx:480
@@ -997,11 +1028,15 @@ msgstr ""
 msgid "Could not load config maps."
 msgstr ""
 
+#: ../console/frontend/public/components/graphs/donut.jsx:118
+msgid "Could not load data"
+msgstr ""
+
 #: ../console/frontend/public/components/environment.jsx:100
 msgid "Could not load secrets."
 msgstr ""
 
-#: ../console/frontend/public/components/node.tsx:144
+#: ../console/frontend/public/components/node.tsx:146
 msgid "CPU"
 msgstr ""
 
@@ -1047,7 +1082,7 @@ msgstr ""
 #: ../console/frontend/public/components/factory/list-page.jsx:302
 #: ../console/frontend/public/components/modals/create-namespace-modal.jsx:116
 #: ../console/frontend/public/components/RBAC/edit-rule.jsx:266
-#: ../console/frontend/public/components/secret.jsx:136
+#: ../console/frontend/public/components/secret.jsx:153
 #: ../console/frontend/public/components/secrets/create-secret.tsx:134
 #: ../console/frontend/public/components/secrets/create-secret.tsx:340
 msgid "Create"
@@ -1083,13 +1118,13 @@ msgid "Create Subscription"
 msgstr ""
 
 #: ../console/frontend/public/components/build-config.tsx:72
-#: ../console/frontend/public/components/build.tsx:147
+#: ../console/frontend/public/components/build.tsx:159
 #: ../console/frontend/public/components/cloud-services/catalog-source.tsx:115
 #: ../console/frontend/public/components/cloud-services/k8s-resource.tsx:46
 #: ../console/frontend/public/components/configmap.jsx:15
 #: ../console/frontend/public/components/default-resource.jsx:15
 #: ../console/frontend/public/components/image-stream.tsx:104
-#: ../console/frontend/public/components/node.tsx:187
+#: ../console/frontend/public/components/node.tsx:189
 #: ../console/frontend/public/components/persistent-volume.jsx:11
 #: ../console/frontend/public/components/secret.jsx:42
 msgid "Created"
@@ -1099,7 +1134,7 @@ msgstr ""
 #: ../console/frontend/public/components/cloud-services/clusterserviceversion-resource.tsx:201
 #: ../console/frontend/public/components/cloud-services/clusterserviceversion.tsx:122
 #: ../console/frontend/public/components/RBAC/role.jsx:82
-#: ../console/frontend/public/components/utils/details-page.tsx:35
+#: ../console/frontend/public/components/utils/details-page.tsx:42
 msgid "Created At"
 msgstr ""
 
@@ -1129,7 +1164,7 @@ msgid "Current"
 msgstr ""
 
 #: ../console/frontend/public/components/daemonset.jsx:47
-#: ../console/frontend/public/components/utils/details-page.tsx:43
+#: ../console/frontend/public/components/utils/details-page.tsx:50
 msgid "Current Count"
 msgstr ""
 
@@ -1143,7 +1178,7 @@ msgstr ""
 
 #: ../console/frontend/public/components/channel-operators/app-version.jsx:72
 #: ../console/frontend/public/components/channel-operators/app-version.jsx:82
-#: ../console/frontend/public/components/node.tsx:217
+#: ../console/frontend/public/components/node.tsx:219
 msgid "Current Version"
 msgstr ""
 
@@ -1233,6 +1268,7 @@ msgstr ""
 #: ../console/frontend/public/components/modals/delete-modal.jsx:47
 #: ../console/frontend/public/components/modals/delete-namespace-modal.jsx:32
 #: ../console/frontend/public/components/modals/delete-namespace-modal.jsx:38
+#: ../console/frontend/public/components/utils/cog.tsx:24
 msgid "Delete"
 msgstr ""
 
@@ -1308,7 +1344,7 @@ msgstr ""
 
 #: ../console/frontend/public/components/daemonset.jsx:49
 #: ../console/frontend/public/components/utils/deployment-pod-counts.tsx:71
-#: ../console/frontend/public/components/utils/details-page.tsx:45
+#: ../console/frontend/public/components/utils/details-page.tsx:52
 msgid "Desired Count"
 msgstr ""
 
@@ -1340,6 +1376,10 @@ msgstr ""
 #: ../console/frontend/public/components/modals/create-namespace-modal.jsx:89
 #: ../console/frontend/public/components/namespace.jsx:196
 msgid "Display Name"
+msgstr ""
+
+#: ../console/frontend/public/components/utils/build-strategy.tsx:44
+msgid "Dockerfile"
 msgstr ""
 
 #: ../console/frontend/public/components/namespace.jsx:112
@@ -1393,7 +1433,7 @@ msgstr ""
 msgid "Duplicate keys found."
 msgstr ""
 
-#: ../console/frontend/public/components/build.tsx:76
+#: ../console/frontend/public/components/build.tsx:88
 msgid "Duration"
 msgstr ""
 
@@ -1412,7 +1452,9 @@ msgstr ""
 #: ../console/frontend/public/components/edit-yaml.jsx:301
 #: ../console/frontend/public/components/modals/labels-modal.jsx:54
 #: ../console/frontend/public/components/RBAC/edit-rule.jsx:266
+#: ../console/frontend/public/components/secret.jsx:31
 #: ../console/frontend/public/components/secrets/create-secret.tsx:346
+#: ../console/frontend/public/components/utils/cog.tsx:31
 #: ../console/frontend/public/components/utils/cog.tsx:63
 msgid "Edit"
 msgstr ""
@@ -1488,7 +1530,9 @@ msgstr ""
 msgid "Environment Variables"
 msgstr ""
 
-#: ../console/frontend/public/components/build.tsx:184
+#: ../console/frontend/public/components/build.tsx:169
+#: ../console/frontend/public/components/build.tsx:210
+#: ../console/frontend/public/components/build.tsx:56
 #: ../console/frontend/public/components/cluster-settings/ldap.jsx:493
 #: ../console/frontend/public/components/error.jsx:42
 #: ../console/frontend/public/components/events.jsx:134
@@ -1502,6 +1546,10 @@ msgstr ""
 
 #: ../console/frontend/public/components/edit-yaml.jsx:167
 msgid "Error dumping YAML:"
+msgstr ""
+
+#: ../console/frontend/public/components/graphs/donut.jsx:110
+msgid "error initializing graph:"
 msgstr ""
 
 #: ../console/frontend/public/components/RBAC/bindings.jsx:205
@@ -1577,7 +1625,7 @@ msgstr ""
 msgid "Exposed Ports"
 msgstr ""
 
-#: ../console/frontend/public/components/node.tsx:174
+#: ../console/frontend/public/components/node.tsx:176
 msgid "External ID"
 msgstr ""
 
@@ -1593,7 +1641,9 @@ msgstr ""
 msgid "External Service Name"
 msgstr ""
 
-#: ../console/frontend/public/components/build.tsx:183
+#: ../console/frontend/public/components/build.tsx:168
+#: ../console/frontend/public/components/build.tsx:209
+#: ../console/frontend/public/components/build.tsx:55
 #: ../console/frontend/public/components/pod.jsx:292
 #: ../console/frontend/public/components/utils/operator-states.jsx:103
 #: ../console/frontend/public/components/utils/operator-states.jsx:143
@@ -1613,7 +1663,7 @@ msgstr ""
 msgid "File Upload"
 msgstr ""
 
-#: ../console/frontend/public/components/node.tsx:156
+#: ../console/frontend/public/components/node.tsx:158
 msgid "Filesystem"
 msgstr ""
 
@@ -1709,6 +1759,18 @@ msgstr ""
 #: ../console/frontend/public/components/chargeback.tsx:361
 #: ../console/frontend/public/components/clusters.tsx:61
 msgid "Getting Started"
+msgstr ""
+
+#: ../console/frontend/public/components/utils/build-strategy.tsx:38
+msgid "Git Commit"
+msgstr ""
+
+#: ../console/frontend/public/components/utils/build-strategy.tsx:36
+msgid "Git Ref"
+msgstr ""
+
+#: ../console/frontend/public/components/utils/build-strategy.tsx:34
+msgid "Git Repository"
 msgstr ""
 
 #: ../console/frontend/public/components/chargeback.tsx:91
@@ -1858,6 +1920,8 @@ msgstr ""
 #: ../console/frontend/public/components/container.jsx:184
 #: ../console/frontend/public/components/deployment.jsx:43
 #: ../console/frontend/public/components/pod.jsx:125
+#: ../console/frontend/public/components/secret.jsx:140
+#: ../console/frontend/public/components/secret.jsx:50
 msgid "Image"
 msgstr ""
 
@@ -1910,7 +1974,7 @@ msgstr ""
 msgid "Image Version/Tag"
 msgstr ""
 
-#: ../console/frontend/public/components/node.tsx:259
+#: ../console/frontend/public/components/node.tsx:261
 msgid "Images"
 msgstr ""
 
@@ -2018,6 +2082,14 @@ msgstr ""
 msgid "It is highly recommended you use the root kubeconfig and that you download a backup of the current configuration before proceeding."
 msgstr ""
 
+#: ../console/frontend/public/components/utils/build-strategy.tsx:46
+msgid "Jenkinsfile"
+msgstr ""
+
+#: ../console/frontend/public/components/utils/build-strategy.tsx:48
+msgid "Jenkinsfile Path"
+msgstr ""
+
 #: ../console/frontend/public/models/index.ts:326
 msgid "Job"
 msgstr ""
@@ -2036,7 +2108,7 @@ msgstr ""
 msgid "Jobs"
 msgstr ""
 
-#: ../console/frontend/public/components/node.tsx:197
+#: ../console/frontend/public/components/node.tsx:199
 msgid "Kernel Version"
 msgstr ""
 
@@ -2048,11 +2120,11 @@ msgstr ""
 msgid "Kind"
 msgstr ""
 
-#: ../console/frontend/public/components/node.tsx:205
+#: ../console/frontend/public/components/node.tsx:207
 msgid "Kube-Proxy Version"
 msgstr ""
 
-#: ../console/frontend/public/components/node.tsx:203
+#: ../console/frontend/public/components/node.tsx:205
 msgid "Kubelet Version"
 msgstr ""
 
@@ -2092,7 +2164,7 @@ msgstr ""
 #: ../console/frontend/public/components/persistent-volume.jsx:10
 #: ../console/frontend/public/components/prometheus.jsx:35
 #: ../console/frontend/public/components/service.jsx:21
-#: ../console/frontend/public/components/utils/details-page.tsx:26
+#: ../console/frontend/public/components/utils/details-page.tsx:33
 msgid "Labels"
 msgstr ""
 
@@ -2185,7 +2257,7 @@ msgstr ""
 msgid "Location of the resource that backs the service"
 msgstr ""
 
-#: ../console/frontend/public/components/build.tsx:72
+#: ../console/frontend/public/components/build.tsx:84
 msgid "Log Snippet"
 msgstr ""
 
@@ -2369,7 +2441,7 @@ msgstr ""
 #: ../console/frontend/public/components/alert-manager.jsx:136
 #: ../console/frontend/public/components/alert-manager.jsx:50
 #: ../console/frontend/public/components/build-config.tsx:69
-#: ../console/frontend/public/components/build.tsx:144
+#: ../console/frontend/public/components/build.tsx:156
 #: ../console/frontend/public/components/chargeback.tsx:388
 #: ../console/frontend/public/components/chargeback.tsx:48
 #: ../console/frontend/public/components/cloud-services/catalog-source.tsx:112
@@ -2403,7 +2475,7 @@ msgstr ""
 #: ../console/frontend/public/components/namespace.jsx:56
 #: ../console/frontend/public/components/namespace.jsx:80
 #: ../console/frontend/public/components/network-policy.jsx:12
-#: ../console/frontend/public/components/node.tsx:264
+#: ../console/frontend/public/components/node.tsx:266
 #: ../console/frontend/public/components/persistent-volume-claim.jsx:31
 #: ../console/frontend/public/components/persistent-volume.jsx:9
 #: ../console/frontend/public/components/pod.jsx:123
@@ -2424,7 +2496,7 @@ msgstr ""
 #: ../console/frontend/public/components/service.jsx:19
 #: ../console/frontend/public/components/service.jsx:83
 #: ../console/frontend/public/components/storage-class.tsx:17
-#: ../console/frontend/public/components/utils/details-page.tsx:20
+#: ../console/frontend/public/components/utils/details-page.tsx:27
 msgid "Name"
 msgstr ""
 
@@ -2435,7 +2507,7 @@ msgstr ""
 
 #: ../console/frontend/public/components/alert-manager.jsx:137
 #: ../console/frontend/public/components/build-config.tsx:70
-#: ../console/frontend/public/components/build.tsx:145
+#: ../console/frontend/public/components/build.tsx:157
 #: ../console/frontend/public/components/chargeback.tsx:389
 #: ../console/frontend/public/components/chargeback.tsx:49
 #: ../console/frontend/public/components/cloud-services/catalog-source.tsx:113
@@ -2470,7 +2542,7 @@ msgstr ""
 #: ../console/frontend/public/components/service-account.jsx:68
 #: ../console/frontend/public/components/service-monitor.jsx:52
 #: ../console/frontend/public/components/service.jsx:20
-#: ../console/frontend/public/components/utils/details-page.tsx:22
+#: ../console/frontend/public/components/utils/details-page.tsx:29
 #: ../console/frontend/public/models/index.ts:375
 msgid "Namespace"
 msgstr ""
@@ -2510,11 +2582,11 @@ msgstr ""
 msgid "Network"
 msgstr ""
 
-#: ../console/frontend/public/components/node.tsx:150
+#: ../console/frontend/public/components/node.tsx:152
 msgid "Network In"
 msgstr ""
 
-#: ../console/frontend/public/components/node.tsx:153
+#: ../console/frontend/public/components/node.tsx:155
 msgid "Network Out"
 msgstr ""
 
@@ -2549,7 +2621,9 @@ msgstr ""
 msgid "Networking"
 msgstr ""
 
-#: ../console/frontend/public/components/build.tsx:179
+#: ../console/frontend/public/components/build.tsx:164
+#: ../console/frontend/public/components/build.tsx:205
+#: ../console/frontend/public/components/build.tsx:51
 msgid "New"
 msgstr ""
 
@@ -2563,6 +2637,10 @@ msgstr ""
 
 #: ../console/frontend/public/components/cluster-settings/ldap.jsx:512
 msgid "Next: Update Tectonic Identity"
+msgstr ""
+
+#: ../console/frontend/public/components/custom-resource-definition.tsx:39
+msgid "No"
 msgstr ""
 
 #: ../console/frontend/public/components/edit-yaml.jsx:197
@@ -2612,6 +2690,10 @@ msgstr ""
 #: ../console/frontend/public/components/chargeback.tsx:301
 #: ../console/frontend/public/components/chargeback.tsx:310
 msgid "No Data"
+msgstr ""
+
+#: ../console/frontend/public/components/graphs/donut.jsx:131
+msgid "No data found"
 msgstr ""
 
 #: ../console/frontend/public/components/image-stream-tag.tsx:105
@@ -2718,28 +2800,28 @@ msgstr ""
 msgid "Node"
 msgstr ""
 
-#: ../console/frontend/public/components/node.tsx:176
+#: ../console/frontend/public/components/node.tsx:178
 #: ../console/frontend/public/components/node.tsx:46
 #: ../console/frontend/public/components/node.tsx:54
 msgid "Node Addresses"
 msgstr ""
 
-#: ../console/frontend/public/components/node.tsx:233
+#: ../console/frontend/public/components/node.tsx:235
 msgid "Node Conditions"
 msgstr ""
 
-#: ../console/frontend/public/components/node.tsx:178
+#: ../console/frontend/public/components/node.tsx:180
 #: ../console/frontend/public/components/node.tsx:53
 msgid "Node Labels"
 msgstr ""
 
-#: ../console/frontend/public/components/node.tsx:172
+#: ../console/frontend/public/components/node.tsx:174
 #: ../console/frontend/public/components/node.tsx:43
 #: ../console/frontend/public/components/node.tsx:51
 msgid "Node Name"
 msgstr ""
 
-#: ../console/frontend/public/components/node.tsx:167
+#: ../console/frontend/public/components/node.tsx:169
 msgid "Node Overview"
 msgstr ""
 
@@ -2750,7 +2832,7 @@ msgstr ""
 
 #: ../console/frontend/public/components/alert-manager.jsx:141
 #: ../console/frontend/public/components/pod.jsx:178
-#: ../console/frontend/public/components/utils/details-page.tsx:30
+#: ../console/frontend/public/components/utils/details-page.tsx:37
 msgid "Node Selector"
 msgstr ""
 
@@ -2796,7 +2878,7 @@ msgstr ""
 msgid "NS Selector:"
 msgstr ""
 
-#: ../console/frontend/public/components/node.tsx:147
+#: ../console/frontend/public/components/node.tsx:149
 msgid "Number of Pods"
 msgstr ""
 
@@ -2825,6 +2907,11 @@ msgstr ""
 msgid "One typical use case is for a common database which is used by deployments in different namespaces."
 msgstr ""
 
+#: ../console/frontend/public/components/secret.jsx:144
+#: ../console/frontend/public/components/secret.jsx:54
+msgid "Opaque"
+msgstr ""
+
 #: ../console/frontend/public/components/cluster-overview.jsx:134
 #: ../console/frontend/public/components/cluster-overview.jsx:55
 msgid "OpenShift Console"
@@ -2834,7 +2921,7 @@ msgstr ""
 msgid "OpenShift helps you quickly develop, host, and scale applications."
 msgstr ""
 
-#: ../console/frontend/public/components/node.tsx:193
+#: ../console/frontend/public/components/node.tsx:195
 msgid "Operating System"
 msgstr ""
 
@@ -2876,11 +2963,20 @@ msgstr ""
 msgid "OS Update"
 msgstr ""
 
+#: ../console/frontend/public/components/utils/build-strategy.tsx:55
+msgid "Output To"
+msgstr ""
+
+#: ../console/frontend/public/components/cloud-services/clusterserviceversion-resource.tsx:178
 #: ../console/frontend/public/components/cluster-overview.jsx:248
 #: ../console/frontend/public/components/cluster-overview.jsx:250
 #: ../console/frontend/public/components/namespace.jsx:192
 #: ../console/frontend/public/components/utils/vertnav.jsx:31
 msgid "Overview"
+msgstr ""
+
+#: ../console/frontend/public/components/utils/details-page.tsx:23
+msgid "Owner"
 msgstr ""
 
 #: ../console/frontend/public/components/cloud-services/catalog-source.tsx:225
@@ -2945,7 +3041,9 @@ msgstr ""
 msgid "PEM data containing the root CAs."
 msgstr ""
 
-#: ../console/frontend/public/components/build.tsx:180
+#: ../console/frontend/public/components/build.tsx:165
+#: ../console/frontend/public/components/build.tsx:206
+#: ../console/frontend/public/components/build.tsx:52
 #: ../console/frontend/public/components/persistent-volume-claim.jsx:100
 #: ../console/frontend/public/components/persistent-volume-claim.jsx:20
 #: ../console/frontend/public/components/pod.jsx:286
@@ -3041,7 +3139,7 @@ msgstr ""
 #: ../console/frontend/public/components/modals/labels-modal.jsx:81
 #: ../console/frontend/public/components/network-policy.jsx:14
 #: ../console/frontend/public/components/service.jsx:22
-#: ../console/frontend/public/components/utils/details-page.tsx:28
+#: ../console/frontend/public/components/utils/details-page.tsx:35
 msgid "Pod Selector"
 msgstr ""
 
@@ -3157,7 +3255,7 @@ msgstr ""
 msgid "Provider"
 msgstr ""
 
-#: ../console/frontend/public/components/node.tsx:182
+#: ../console/frontend/public/components/node.tsx:184
 msgid "Provider ID"
 msgstr ""
 
@@ -3179,6 +3277,10 @@ msgstr ""
 msgid "Pull Policy"
 msgstr ""
 
+#: ../console/frontend/public/components/utils/build-strategy.tsx:59
+msgid "Push Secret"
+msgstr ""
+
 #: ../console/frontend/public/components/image-stream.tsx:34
 msgid "pushed image"
 msgstr ""
@@ -3192,7 +3294,7 @@ msgid "Queued for Update"
 msgstr ""
 
 #: ../console/frontend/public/components/namespace.jsx:176
-#: ../console/frontend/public/components/node.tsx:141
+#: ../console/frontend/public/components/node.tsx:143
 #: ../console/frontend/public/components/pod.jsx:141
 msgid "RAM"
 msgstr ""
@@ -3217,10 +3319,14 @@ msgstr ""
 msgid "Ready"
 msgstr ""
 
-#: ../console/frontend/public/components/build.tsx:74
+#: ../console/frontend/public/components/node.tsx:129
+msgid "Ready Status"
+msgstr ""
+
+#: ../console/frontend/public/components/build.tsx:86
 #: ../console/frontend/public/components/conditions.tsx:34
 #: ../console/frontend/public/components/deployment-config.tsx:74
-#: ../console/frontend/public/components/node.tsx:240
+#: ../console/frontend/public/components/node.tsx:242
 msgid "Reason"
 msgstr ""
 
@@ -3382,6 +3488,7 @@ msgstr ""
 #: ../console/frontend/public/components/cloud-services/spec-descriptors/index.tsx:46
 #: ../console/frontend/public/components/container.jsx:164
 #: ../console/frontend/public/components/deployment.jsx:44
+#: ../console/frontend/public/components/utils/build-strategy.tsx:63
 msgid "Resource Limits"
 msgstr ""
 
@@ -3408,6 +3515,10 @@ msgstr ""
 
 #: ../console/frontend/public/components/namespace.jsx:165
 msgid "Resource Usage"
+msgstr ""
+
+#: ../console/frontend/public/components/RBAC/rules.jsx:21
+msgid "Resources"
 msgstr ""
 
 #: ../console/frontend/public/components/cloud-services/clusterserviceversion-resource.tsx:119
@@ -3554,7 +3665,13 @@ msgstr ""
 msgid "Run Immediately?"
 msgstr ""
 
-#: ../console/frontend/public/components/build.tsx:181
+#: ../console/frontend/public/components/utils/build-strategy.tsx:61
+msgid "Run Policy"
+msgstr ""
+
+#: ../console/frontend/public/components/build.tsx:166
+#: ../console/frontend/public/components/build.tsx:207
+#: ../console/frontend/public/components/build.tsx:53
 #: ../console/frontend/public/components/pod.jsx:285
 msgid "Running"
 msgstr ""
@@ -3652,7 +3769,7 @@ msgstr ""
 msgid "Secret"
 msgstr ""
 
-#: ../console/frontend/public/components/secret.jsx:128
+#: ../console/frontend/public/components/secret.jsx:132
 msgid "Secret from YAML"
 msgstr ""
 
@@ -3661,7 +3778,7 @@ msgstr ""
 msgid "Secret Name"
 msgstr ""
 
-#: ../console/frontend/public/components/secret.jsx:66
+#: ../console/frontend/public/components/secret.jsx:77
 msgid "Secret Overview"
 msgstr ""
 
@@ -3735,6 +3852,11 @@ msgstr ""
 
 #: ../console/frontend/public/components/service-account.jsx:102
 msgid "Service Account Overview"
+msgstr ""
+
+#: ../console/frontend/public/components/secret.jsx:143
+#: ../console/frontend/public/components/secret.jsx:53
+msgid "Service Account Token"
 msgstr ""
 
 #: ../console/frontend/public/components/nav.jsx:429
@@ -3825,7 +3947,7 @@ msgstr ""
 
 #: ../console/frontend/public/components/configmap.jsx:14
 #: ../console/frontend/public/components/image-stream-tag.tsx:58
-#: ../console/frontend/public/components/node.tsx:265
+#: ../console/frontend/public/components/node.tsx:267
 #: ../console/frontend/public/components/persistent-volume-claim.jsx:81
 #: ../console/frontend/public/components/secret.jsx:41
 msgid "Size"
@@ -3844,7 +3966,12 @@ msgstr ""
 msgid "Software update failed"
 msgstr ""
 
-#: ../console/frontend/public/components/secret.jsx:126
+#: ../console/frontend/public/components/secret.jsx:141
+#: ../console/frontend/public/components/secret.jsx:51
+msgid "Source"
+msgstr ""
+
+#: ../console/frontend/public/components/secret.jsx:130
 msgid "Source Secret"
 msgstr ""
 
@@ -3885,7 +4012,7 @@ msgstr ""
 msgid "Start Time"
 msgstr ""
 
-#: ../console/frontend/public/components/build.tsx:64
+#: ../console/frontend/public/components/build.tsx:76
 #: ../console/frontend/public/components/container.jsx:172
 #: ../console/frontend/public/components/pod.jsx:128
 msgid "Started"
@@ -3918,8 +4045,8 @@ msgstr ""
 msgid "StatefulSet Overview"
 msgstr ""
 
-#: ../console/frontend/public/components/build.tsx:146
-#: ../console/frontend/public/components/build.tsx:70
+#: ../console/frontend/public/components/build.tsx:158
+#: ../console/frontend/public/components/build.tsx:82
 #: ../console/frontend/public/components/channel-operators/app-version.jsx:79
 #: ../console/frontend/public/components/chargeback.tsx:51
 #: ../console/frontend/public/components/cloud-services/clusterserviceversion-resource.tsx:23
@@ -3939,7 +4066,7 @@ msgstr ""
 #: ../console/frontend/public/components/namespace.jsx:57
 #: ../console/frontend/public/components/namespace.jsx:81
 #: ../console/frontend/public/components/nav.jsx:373
-#: ../console/frontend/public/components/node.tsx:239
+#: ../console/frontend/public/components/node.tsx:241
 #: ../console/frontend/public/components/node.tsx:44
 #: ../console/frontend/public/components/node.tsx:52
 #: ../console/frontend/public/components/persistent-volume-claim.jsx:33
@@ -3953,6 +4080,18 @@ msgstr ""
 
 #: ../console/frontend/public/components/cluster-overview.jsx:243
 msgid "Status of %s"
+msgstr ""
+
+#: ../console/frontend/public/components/node.tsx:125
+msgid "Status: All"
+msgstr ""
+
+#: ../console/frontend/public/components/node.tsx:127
+msgid "Status: Not Ready"
+msgstr ""
+
+#: ../console/frontend/public/components/node.tsx:126
+msgid "Status: Ready"
 msgstr ""
 
 #: ../console/frontend/public/components/modals/configure-operator-modal.jsx:83
@@ -4137,7 +4276,7 @@ msgstr ""
 msgid "The contents of the catalog source could not be retrieved."
 msgstr ""
 
-#: ../console/frontend/public/components/build.tsx:118
+#: ../console/frontend/public/components/build.tsx:130
 msgid "The environment variable editor does not support build strategy:"
 msgstr ""
 
@@ -4231,6 +4370,11 @@ msgstr ""
 
 #: ../console/frontend/public/components/events.jsx:68
 msgid "times in the last"
+msgstr ""
+
+#: ../console/frontend/public/components/secret.jsx:142
+#: ../console/frontend/public/components/secret.jsx:52
+msgid "TLS"
 msgstr ""
 
 #: ../console/frontend/public/components/ingress.jsx:120
@@ -4328,11 +4472,12 @@ msgstr ""
 msgid "traffic to an application within the same namespace"
 msgstr ""
 
-#: ../console/frontend/public/components/build.tsx:62
+#: ../console/frontend/public/components/build.tsx:74
 msgid "Triggered By"
 msgstr ""
 
 #: ../console/frontend/public/components/deployment-config.tsx:90
+#: ../console/frontend/public/components/utils/build-strategy.tsx:65
 msgid "Triggers"
 msgstr ""
 
@@ -4351,11 +4496,12 @@ msgstr ""
 #: ../console/frontend/public/components/conditions.tsx:31
 #: ../console/frontend/public/components/hpa.tsx:102
 #: ../console/frontend/public/components/job.jsx:24
-#: ../console/frontend/public/components/node.tsx:238
+#: ../console/frontend/public/components/node.tsx:240
 #: ../console/frontend/public/components/pod.jsx:215
 #: ../console/frontend/public/components/secret.jsx:40
 #: ../console/frontend/public/components/service.jsx:71
-#: ../console/frontend/public/components/utils/details-page.tsx:24
+#: ../console/frontend/public/components/utils/build-strategy.tsx:32
+#: ../console/frontend/public/components/utils/details-page.tsx:31
 #: ../console/frontend/public/components/utils/webhooks.tsx:59
 msgid "Type"
 msgstr ""
@@ -4387,7 +4533,7 @@ msgstr ""
 msgid "Unknown graph type:"
 msgstr ""
 
-#: ../console/frontend/public/components/node.tsx:184
+#: ../console/frontend/public/components/node.tsx:186
 msgid "Unschedulable"
 msgstr ""
 
@@ -4420,7 +4566,7 @@ msgstr ""
 msgid "Update Requested..."
 msgstr ""
 
-#: ../console/frontend/public/components/node.tsx:225
+#: ../console/frontend/public/components/node.tsx:227
 msgid "Update Status"
 msgstr ""
 
@@ -4439,7 +4585,7 @@ msgid "UpdateAvailable"
 msgstr ""
 
 #: ../console/frontend/public/components/conditions.tsx:33
-#: ../console/frontend/public/components/node.tsx:241
+#: ../console/frontend/public/components/node.tsx:243
 msgid "Updated"
 msgstr ""
 
@@ -4638,7 +4784,7 @@ msgstr ""
 msgid "Volumes allow data to be shared as files with the pod"
 msgstr ""
 
-#: ../console/frontend/public/components/secret.jsx:127
+#: ../console/frontend/public/components/secret.jsx:131
 msgid "Webhook Secret"
 msgstr ""
 
@@ -4709,6 +4855,10 @@ msgstr ""
 
 #: ../console/frontend/public/components/utils/datetime.ts:17
 msgid "years ago"
+msgstr ""
+
+#: ../console/frontend/public/components/custom-resource-definition.tsx:39
+msgid "Yes"
 msgstr ""
 
 #: ../console/frontend/public/components/utils/status-box.jsx:44

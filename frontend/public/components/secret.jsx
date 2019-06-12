@@ -28,7 +28,7 @@ const menuActions = [
   Cog.factory.ModifyLabels,
   Cog.factory.ModifyAnnotations,
   (kind, obj) => ({
-    label: `Edit ${kind.label}`,
+    label: `${gettext('Edit')} ${kind.label}`,
     href: editInYaml(obj) ? `${resourceObjPath(obj, kind.kind)}/edit-yaml` : `${resourceObjPath(obj, kind.kind)}/edit`,
   }),
   Cog.factory.Delete,
@@ -46,6 +46,17 @@ const SecretRow = ({obj: secret}) => {
   const data = _.size(secret.data);
   const age = fromNow(secret.metadata.creationTimestamp);
 
+  const typeMap = {
+    'Image': gettext('Image'),
+    'Source': gettext('Source'),
+    'TLS': gettext('TLS'),
+    'Service Account Token': gettext('Service Account Token'),
+    'Opaque': gettext('Opaque')
+  };
+  const getTypeStr = type => {
+    return typeMap[type] || type;
+  };
+
   return <ResourceRow obj={secret}>
     <div className="col-md-3 col-sm-4 col-xs-6 co-resource-link-wrapper">
       <ResourceCog actions={menuActions} kind="Secret" resource={secret} />
@@ -54,7 +65,7 @@ const SecretRow = ({obj: secret}) => {
     <div className="col-md-3 col-sm-4 col-xs-6 co-break-word">
       <ResourceLink kind="Namespace" name={secret.metadata.namespace} title={secret.metadata.namespace} />
     </div>
-    <div className="col-md-3 col-sm-4 hidden-xs co-break-word">{secret.type}</div>
+    <div className="col-md-3 col-sm-4 hidden-xs co-break-word">{getTypeStr(secret.type)}</div>
     <div className="col-md-1 hidden-sm hidden-xs">{data}</div>
     <div className="col-md-2 hidden-sm hidden-xs">{age}</div>
   </ResourceRow>;
@@ -112,13 +123,6 @@ export const secretTypeFilterReducer = secret => {
   }
 };
 
-const filters = [{
-  type: 'secret-type',
-  selected: secretTypeFilterValues,
-  reducer: secretTypeFilterReducer,
-  items: secretTypeFilterValues.map(filterValue => ({ id: filterValue, title: filterValue })),
-}];
-
 const SecretsPage = props => {
   const createItems = {
     // image: 'Create Image Pull Secret',
@@ -127,6 +131,19 @@ const SecretsPage = props => {
     webhook: gettext('Webhook Secret'),
     yaml: gettext('Secret from YAML'),
   };
+
+  const filters = [{
+    type: 'secret-type',
+    selected: secretTypeFilterValues,
+    reducer: secretTypeFilterReducer,
+    items: [
+      { id: 'Image', title: gettext('Image') },
+      { id: 'Source', title: gettext('Source') },
+      { id: 'TLS', title: gettext('TLS') },
+      { id: 'Service Account Token', title: gettext('Service Account Token') },
+      { id: 'Opaque', title: gettext('Opaque') }
+    ]
+  }];
 
   const createProps = {
     items: createItems,
