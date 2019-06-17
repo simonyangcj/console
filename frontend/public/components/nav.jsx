@@ -19,6 +19,7 @@ import * as operatorActiveImg from '../imgs/operator-active.svg';
 import * as routingImg from '../imgs/routing.svg';
 import * as routingActiveImg from '../imgs/routing-active.svg';
 import { history, stripBasePath, gettext } from './utils';
+import cookie from 'js-cookie';
 
 export const matchesPath = (resourcePath, prefix) => resourcePath === prefix || _.startsWith(resourcePath, `${prefix}/`);
 export const matchesModel = (resourcePath, model) => model && matchesPath(resourcePath, referenceForModel(model));
@@ -303,13 +304,33 @@ const UserNavSection = connectToFlags(FLAGS.AUTH_ENABLED, FLAGS.OPENSHIFT)(({fla
     }
   };
 
+  const handleLanguage = (v) => {
+    window.locale = v;
+    cookie.set('openshift_language', v);
+    location.reload();
+  };
+  const lanuageTitle = () => {
+    const currentLanguage = cookie.get('openshift_language') || 'zh-cn';
+    return currentLanguage === 'zh-cn' ? gettext('Language: CN -> EN') : gettext('Language: EN -> CN');
+  };
+  const changeLanguage = e => {
+    e.preventDefault();
+    const currentLanguage = cookie.get('openshift_language') || 'zh-cn';
+    currentLanguage === 'zh-cn' ? handleLanguage('en-us') : handleLanguage('zh-cn');
+  };
+
   if (flags[FLAGS.OPENSHIFT]) {
-    return <NavSection text={gettext('Logout')} icon="pficon pficon-user" klass="visible-xs-block" onClick={logout} />;
+    // return <NavSection text={gettext('Logout')} icon="pficon pficon-user" klass="visible-xs-block" onClick={logout} />;
+    return <NavSection text={gettext('User')} icon="pficon pficon-user" klass="visible-xs-block">
+      <HrefLink href="#" name={lanuageTitle()} onClick={changeLanguage} key="language" />
+      <HrefLink href="#" name={gettext('Logout')} onClick={logout} key="logout" />
+    </NavSection>;
   }
 
   return <NavSection text={gettext('User')} icon="pficon pficon-user" klass="visible-xs-block">
-    <HrefLink href="/settings/profile" name="My Account" onClick={closeMenu} key="myAccount" />
-    <HrefLink href="#" name="Logout" onClick={logout} key="logout" />
+    <HrefLink href="/settings/profile" name={gettext('My Account')} onClick={closeMenu} key="myAccount" />
+    <HrefLink href="#" name={lanuageTitle()} onClick={changeLanguage} key="language" />
+    <HrefLink href="#" name={gettext('Logout')} onClick={logout} key="logout" />
   </NavSection>;
 });
 

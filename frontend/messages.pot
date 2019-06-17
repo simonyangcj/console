@@ -254,7 +254,7 @@ msgstr ""
 msgid "Admin Resources"
 msgstr ""
 
-#: ../console/frontend/public/components/nav.jsx:424
+#: ../console/frontend/public/components/nav.jsx:445
 msgid "Administration"
 msgstr ""
 
@@ -575,7 +575,7 @@ msgid "Builder Image"
 msgstr ""
 
 #: ../console/frontend/public/components/build.tsx:217
-#: ../console/frontend/public/components/nav.jsx:416
+#: ../console/frontend/public/components/nav.jsx:437
 #: ../console/frontend/public/components/utils/vertnav.jsx:61
 #: ../console/frontend/public/models/index.ts:294
 msgid "Builds"
@@ -632,7 +632,7 @@ msgstr ""
 msgid "Catalog"
 msgstr ""
 
-#: ../console/frontend/public/components/nav.jsx:381
+#: ../console/frontend/public/components/nav.jsx:402
 msgid "Catalog Sources"
 msgstr ""
 
@@ -683,7 +683,7 @@ msgstr ""
 msgid "Channel Operator Configs"
 msgstr ""
 
-#: ../console/frontend/public/components/nav.jsx:433
+#: ../console/frontend/public/components/nav.jsx:454
 msgid "Chargeback"
 msgstr ""
 
@@ -805,7 +805,7 @@ msgid "Cluster Service Plans"
 msgstr ""
 
 #: ../console/frontend/public/components/cloud-services/clusterserviceversion.tsx:88
-#: ../console/frontend/public/components/nav.jsx:379
+#: ../console/frontend/public/components/nav.jsx:400
 msgid "Cluster Service Versions"
 msgstr ""
 
@@ -818,7 +818,7 @@ msgid "Cluster Service Versions by name"
 msgstr ""
 
 #: ../console/frontend/public/components/cluster-settings/cluster-settings.jsx:26
-#: ../console/frontend/public/components/nav.jsx:428
+#: ../console/frontend/public/components/nav.jsx:449
 msgid "Cluster Settings"
 msgstr ""
 
@@ -943,7 +943,7 @@ msgstr ""
 msgid "Config Map Overview"
 msgstr ""
 
-#: ../console/frontend/public/components/nav.jsx:393
+#: ../console/frontend/public/components/nav.jsx:414
 #: ../console/frontend/public/models/index.ts:443
 msgid "Config Maps"
 msgstr ""
@@ -1071,7 +1071,7 @@ msgstr ""
 msgid "Crashlooping Pods"
 msgstr ""
 
-#: ../console/frontend/public/components/nav.jsx:434
+#: ../console/frontend/public/components/nav.jsx:455
 msgid "CRDs"
 msgstr ""
 
@@ -1150,7 +1150,7 @@ msgstr ""
 msgid "Cron Job"
 msgstr ""
 
-#: ../console/frontend/public/components/nav.jsx:395
+#: ../console/frontend/public/components/nav.jsx:416
 #: ../console/frontend/public/models/index.ts:657
 msgid "Cron Jobs"
 msgstr ""
@@ -1210,7 +1210,7 @@ msgstr ""
 msgid "Daemon Set Overview"
 msgstr ""
 
-#: ../console/frontend/public/components/nav.jsx:397
+#: ../console/frontend/public/components/nav.jsx:418
 #: ../console/frontend/public/models/index.ts:186
 msgid "Daemon Sets"
 msgstr ""
@@ -1331,7 +1331,7 @@ msgstr ""
 msgid "Deployment Overview"
 msgstr ""
 
-#: ../console/frontend/public/components/nav.jsx:388
+#: ../console/frontend/public/components/nav.jsx:409
 #: ../console/frontend/public/models/index.ts:252
 msgid "Deployments"
 msgstr ""
@@ -1600,7 +1600,7 @@ msgstr ""
 #: ../console/frontend/public/components/cluster-overview.jsx:162
 #: ../console/frontend/public/components/events.jsx:146
 #: ../console/frontend/public/components/events.jsx:148
-#: ../console/frontend/public/components/nav.jsx:375
+#: ../console/frontend/public/components/nav.jsx:396
 #: ../console/frontend/public/components/utils/vertnav.jsx:36
 #: ../console/frontend/public/models/index.ts:359
 msgid "Events"
@@ -1838,7 +1838,7 @@ msgstr ""
 msgid "Hide Values"
 msgstr ""
 
-#: ../console/frontend/public/components/nav.jsx:372
+#: ../console/frontend/public/components/nav.jsx:393
 msgid "Home"
 msgstr ""
 
@@ -1888,7 +1888,7 @@ msgstr ""
 msgid "How should the pods be replaced when a new revision is created?"
 msgstr ""
 
-#: ../console/frontend/public/components/nav.jsx:400
+#: ../console/frontend/public/components/nav.jsx:421
 msgid "HPAs"
 msgstr ""
 
@@ -1989,7 +1989,7 @@ msgstr ""
 msgid "Info"
 msgstr ""
 
-#: ../console/frontend/public/components/nav.jsx:406
+#: ../console/frontend/public/components/nav.jsx:427
 #: ../console/frontend/public/models/index.ts:409
 msgid "Ingress"
 msgstr ""
@@ -2028,7 +2028,7 @@ msgid "Install Plan Overview"
 msgstr ""
 
 #: ../console/frontend/public/components/cloud-services/install-plan.tsx:58
-#: ../console/frontend/public/components/nav.jsx:383
+#: ../console/frontend/public/components/nav.jsx:404
 msgid "Install Plans"
 msgstr ""
 
@@ -2106,7 +2106,7 @@ msgstr ""
 msgid "Job Status"
 msgstr ""
 
-#: ../console/frontend/public/components/nav.jsx:396
+#: ../console/frontend/public/components/nav.jsx:417
 #: ../console/frontend/public/models/index.ts:336
 msgid "Jobs"
 msgstr ""
@@ -2176,10 +2176,12 @@ msgid "Labels help you organize and select resources. Adding labels below will l
 msgstr ""
 
 #: ../console/frontend/public/components/masthead.tsx:48
+#: ../console/frontend/public/components/nav.jsx:314
 msgid "Language: CN -> EN"
 msgstr ""
 
 #: ../console/frontend/public/components/masthead.tsx:48
+#: ../console/frontend/public/components/nav.jsx:314
 msgid "Language: EN -> CN"
 msgstr ""
 
@@ -2265,7 +2267,8 @@ msgid "Log Snippet"
 msgstr ""
 
 #: ../console/frontend/public/components/masthead.tsx:70
-#: ../console/frontend/public/components/nav.jsx:307
+#: ../console/frontend/public/components/nav.jsx:326
+#: ../console/frontend/public/components/nav.jsx:333
 msgid "Logout"
 msgstr ""
 
@@ -2401,7 +2404,7 @@ msgstr ""
 msgid "Modify"
 msgstr ""
 
-#: ../console/frontend/public/components/nav.jsx:283
+#: ../console/frontend/public/components/nav.jsx:284
 msgid "Monitoring"
 msgstr ""
 
@@ -2438,6 +2441,7 @@ msgid "Multi-Cluster is an alpha feature."
 msgstr ""
 
 #: ../console/frontend/public/components/masthead.tsx:80
+#: ../console/frontend/public/components/nav.jsx:331
 msgid "My Account"
 msgstr ""
 
@@ -2575,7 +2579,7 @@ msgid "Namespaced"
 msgstr ""
 
 #: ../console/frontend/public/components/cluster-overview.jsx:196
-#: ../console/frontend/public/components/nav.jsx:426
+#: ../console/frontend/public/components/nav.jsx:447
 #: ../console/frontend/public/components/RBAC/bindings.jsx:308
 #: ../console/frontend/public/models/index.ts:381
 msgid "Namespaces"
@@ -2595,7 +2599,7 @@ msgstr ""
 
 #: ../console/frontend/public/components/namespace.jsx:208
 #: ../console/frontend/public/components/namespace.jsx:210
-#: ../console/frontend/public/components/nav.jsx:407
+#: ../console/frontend/public/components/nav.jsx:428
 #: ../console/frontend/public/models/index.ts:623
 msgid "Network Policies"
 msgstr ""
@@ -2620,7 +2624,7 @@ msgstr ""
 msgid "Network Transmitted (bytes/s)"
 msgstr ""
 
-#: ../console/frontend/public/components/nav.jsx:403
+#: ../console/frontend/public/components/nav.jsx:424
 msgid "Networking"
 msgstr ""
 
@@ -2839,7 +2843,7 @@ msgstr ""
 msgid "Node Selector"
 msgstr ""
 
-#: ../console/frontend/public/components/nav.jsx:427
+#: ../console/frontend/public/components/nav.jsx:448
 #: ../console/frontend/public/models/index.ts:347
 msgid "Nodes"
 msgstr ""
@@ -2937,7 +2941,7 @@ msgid "Operator Lifecycle Manager not enabled for this namespace"
 msgstr ""
 
 #: ../console/frontend/public/components/channel-operators/tectonic-channel.jsx:176
-#: ../console/frontend/public/components/nav.jsx:378
+#: ../console/frontend/public/components/nav.jsx:399
 msgid "Operators"
 msgstr ""
 
@@ -3073,12 +3077,12 @@ msgstr ""
 msgid "Persistent Volume Claim"
 msgstr ""
 
-#: ../console/frontend/public/components/nav.jsx:412
+#: ../console/frontend/public/components/nav.jsx:433
 #: ../console/frontend/public/models/index.ts:580
 msgid "Persistent Volume Claims"
 msgstr ""
 
-#: ../console/frontend/public/components/nav.jsx:411
+#: ../console/frontend/public/components/nav.jsx:432
 #: ../console/frontend/public/models/index.ts:568
 msgid "Persistent Volumes"
 msgstr ""
@@ -3166,7 +3170,7 @@ msgid "pods"
 msgstr ""
 
 #: ../console/frontend/public/components/cluster-overview.jsx:68
-#: ../console/frontend/public/components/nav.jsx:387
+#: ../console/frontend/public/components/nav.jsx:408
 #: ../console/frontend/public/components/utils/vertnav.jsx:18
 #: ../console/frontend/public/components/utils/vertnav.jsx:51
 #: ../console/frontend/public/models/index.ts:161
@@ -3233,7 +3237,7 @@ msgstr ""
 msgid "Project Requests"
 msgstr ""
 
-#: ../console/frontend/public/components/nav.jsx:425
+#: ../console/frontend/public/components/nav.jsx:446
 #: ../console/frontend/public/models/index.ts:393
 msgid "Projects"
 msgstr ""
@@ -3392,7 +3396,7 @@ msgstr ""
 msgid "Replica Set Overview"
 msgstr ""
 
-#: ../console/frontend/public/components/nav.jsx:398
+#: ../console/frontend/public/components/nav.jsx:419
 #: ../console/frontend/public/models/index.ts:238
 msgid "Replica Sets"
 msgstr ""
@@ -3413,7 +3417,7 @@ msgstr ""
 msgid "Replication Controller Overview"
 msgstr ""
 
-#: ../console/frontend/public/components/nav.jsx:399
+#: ../console/frontend/public/components/nav.jsx:420
 #: ../console/frontend/public/models/index.ts:199
 msgid "Replication Controllers"
 msgstr ""
@@ -3503,7 +3507,7 @@ msgstr ""
 msgid "Resource Quota Overview"
 msgstr ""
 
-#: ../console/frontend/public/components/nav.jsx:432
+#: ../console/frontend/public/components/nav.jsx:453
 #: ../console/frontend/public/models/index.ts:618
 msgid "Resource Quotas"
 msgstr ""
@@ -3589,7 +3593,7 @@ msgstr ""
 msgid "Role binding name"
 msgstr ""
 
-#: ../console/frontend/public/components/nav.jsx:431
+#: ../console/frontend/public/components/nav.jsx:452
 #: ../console/frontend/public/components/RBAC/bindings.jsx:147
 #: ../console/frontend/public/components/RBAC/bindings.jsx:168
 #: ../console/frontend/public/components/utils/vertnav.jsx:56
@@ -3615,7 +3619,7 @@ msgstr ""
 msgid "Role Ref"
 msgstr ""
 
-#: ../console/frontend/public/components/nav.jsx:430
+#: ../console/frontend/public/components/nav.jsx:451
 #: ../console/frontend/public/models/index.ts:505
 msgid "Roles"
 msgstr ""
@@ -3649,7 +3653,7 @@ msgstr ""
 msgid "Route Overview"
 msgstr ""
 
-#: ../console/frontend/public/components/nav.jsx:405
+#: ../console/frontend/public/components/nav.jsx:426
 #: ../console/frontend/public/models/index.ts:423
 msgid "Routes"
 msgstr ""
@@ -3757,7 +3761,7 @@ msgstr ""
 msgid "Script"
 msgstr ""
 
-#: ../console/frontend/public/components/nav.jsx:374
+#: ../console/frontend/public/components/nav.jsx:395
 #: ../console/frontend/public/components/search.jsx:79
 #: ../console/frontend/public/components/search.jsx:81
 msgid "Search"
@@ -3785,7 +3789,7 @@ msgstr ""
 msgid "Secret Overview"
 msgstr ""
 
-#: ../console/frontend/public/components/nav.jsx:392
+#: ../console/frontend/public/components/nav.jsx:413
 #: ../console/frontend/public/components/service-account.jsx:105
 #: ../console/frontend/public/components/service-account.jsx:69
 #: ../console/frontend/public/models/index.ts:455
@@ -3862,7 +3866,7 @@ msgstr ""
 msgid "Service Account Token"
 msgstr ""
 
-#: ../console/frontend/public/components/nav.jsx:429
+#: ../console/frontend/public/components/nav.jsx:450
 #: ../console/frontend/public/models/index.ts:224
 msgid "Service Accounts"
 msgstr ""
@@ -3923,7 +3927,7 @@ msgstr ""
 msgid "Service Selector"
 msgstr ""
 
-#: ../console/frontend/public/components/nav.jsx:404
+#: ../console/frontend/public/components/nav.jsx:425
 #: ../console/frontend/public/models/index.ts:149
 msgid "Services"
 msgstr ""
@@ -4043,7 +4047,7 @@ msgstr ""
 msgid "Stateful Set"
 msgstr ""
 
-#: ../console/frontend/public/components/nav.jsx:391
+#: ../console/frontend/public/components/nav.jsx:412
 #: ../console/frontend/public/models/index.ts:606
 msgid "Stateful Sets"
 msgstr ""
@@ -4072,7 +4076,7 @@ msgstr ""
 #: ../console/frontend/public/components/namespace.jsx:204
 #: ../console/frontend/public/components/namespace.jsx:57
 #: ../console/frontend/public/components/namespace.jsx:81
-#: ../console/frontend/public/components/nav.jsx:373
+#: ../console/frontend/public/components/nav.jsx:394
 #: ../console/frontend/public/components/node.tsx:241
 #: ../console/frontend/public/components/node.tsx:44
 #: ../console/frontend/public/components/node.tsx:52
@@ -4106,7 +4110,7 @@ msgid "Stay up to date with the latest version automatically."
 msgstr ""
 
 #: ../console/frontend/public/components/cluster-settings/cluster-monitoring.jsx:342
-#: ../console/frontend/public/components/nav.jsx:410
+#: ../console/frontend/public/components/nav.jsx:431
 msgid "Storage"
 msgstr ""
 
@@ -4115,7 +4119,7 @@ msgstr ""
 msgid "Storage Class"
 msgstr ""
 
-#: ../console/frontend/public/components/nav.jsx:413
+#: ../console/frontend/public/components/nav.jsx:434
 #: ../console/frontend/public/components/storage-class.tsx:59
 #: ../console/frontend/public/models/index.ts:663
 msgid "Storage Classes"
@@ -4171,7 +4175,7 @@ msgstr ""
 #: ../console/frontend/public/components/cloud-services/catalog-source.tsx:37
 #: ../console/frontend/public/components/cloud-services/install-plan.tsx:19
 #: ../console/frontend/public/components/cloud-services/subscription.tsx:76
-#: ../console/frontend/public/components/nav.jsx:382
+#: ../console/frontend/public/components/nav.jsx:403
 #: ../console/frontend/public/models/index.ts:48
 msgid "Subscriptions"
 msgstr ""
@@ -4408,7 +4412,7 @@ msgstr ""
 msgid "to ports"
 msgstr ""
 
-#: ../console/frontend/public/components/nav.jsx:364
+#: ../console/frontend/public/components/nav.jsx:385
 msgid "Toggle navigation"
 msgstr ""
 
@@ -4653,7 +4657,8 @@ msgid "Used Cores"
 msgstr ""
 
 #: ../console/frontend/public/components/image-stream-tag.tsx:73
-#: ../console/frontend/public/components/nav.jsx:310
+#: ../console/frontend/public/components/nav.jsx:324
+#: ../console/frontend/public/components/nav.jsx:330
 #: ../console/frontend/public/components/RBAC/bindings.jsx:455
 msgid "User"
 msgstr ""
@@ -4844,7 +4849,7 @@ msgstr ""
 msgid "Working Dir"
 msgstr ""
 
-#: ../console/frontend/public/components/nav.jsx:386
+#: ../console/frontend/public/components/nav.jsx:407
 msgid "Workloads"
 msgstr ""
 

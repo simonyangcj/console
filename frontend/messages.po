@@ -265,7 +265,7 @@ msgstr "管理员批准"
 msgid "Admin Resources"
 msgstr "管理员资源"
 
-#: ../console/frontend/public/components/nav.jsx:424
+#: ../console/frontend/public/components/nav.jsx:445
 msgid "Administration"
 msgstr "管理平台"
 
@@ -607,7 +607,7 @@ msgid "Builder Image"
 msgstr "构建镜像"
 
 #: ../console/frontend/public/components/build.tsx:217
-#: ../console/frontend/public/components/nav.jsx:416
+#: ../console/frontend/public/components/nav.jsx:437
 #: ../console/frontend/public/components/utils/vertnav.jsx:61
 #: ../console/frontend/public/models/index.ts:294
 msgid "Builds"
@@ -664,7 +664,7 @@ msgstr "容量规划"
 msgid "Catalog"
 msgstr "目录"
 
-#: ../console/frontend/public/components/nav.jsx:381
+#: ../console/frontend/public/components/nav.jsx:402
 msgid "Catalog Sources"
 msgstr "目录源"
 
@@ -721,7 +721,7 @@ msgstr "通道操作配置"
 msgid "Channel Operator Configs"
 msgstr "通道配置"
 
-#: ../console/frontend/public/components/nav.jsx:433
+#: ../console/frontend/public/components/nav.jsx:454
 msgid "Chargeback"
 msgstr "充值"
 
@@ -843,7 +843,7 @@ msgid "Cluster Service Plans"
 msgstr "集群服务方案"
 
 #: ../console/frontend/public/components/cloud-services/clusterserviceversion.tsx:88
-#: ../console/frontend/public/components/nav.jsx:379
+#: ../console/frontend/public/components/nav.jsx:400
 msgid "Cluster Service Versions"
 msgstr "集群服务版本"
 
@@ -858,7 +858,7 @@ msgid "Cluster Service Versions by name"
 msgstr "按集群服务版本名称"
 
 #: ../console/frontend/public/components/cluster-settings/cluster-settings.jsx:26
-#: ../console/frontend/public/components/nav.jsx:428
+#: ../console/frontend/public/components/nav.jsx:449
 msgid "Cluster Settings"
 msgstr "集群设置"
 
@@ -983,7 +983,7 @@ msgstr "配置映射或Secret"
 msgid "Config Map Overview"
 msgstr "配置映射概述"
 
-#: ../console/frontend/public/components/nav.jsx:393
+#: ../console/frontend/public/components/nav.jsx:414
 #: ../console/frontend/public/models/index.ts:443
 msgid "Config Maps"
 msgstr "配置映射"
@@ -1111,7 +1111,7 @@ msgstr "CrashLoopBackOff"
 msgid "Crashlooping Pods"
 msgstr "Crashlooping Pods"
 
-#: ../console/frontend/public/components/nav.jsx:434
+#: ../console/frontend/public/components/nav.jsx:455
 msgid "CRDs"
 msgstr ""
 
@@ -1197,7 +1197,7 @@ msgstr "关键安全更新将始终传递给任何易受攻击的渠道。"
 msgid "Cron Job"
 msgstr "定时任务"
 
-#: ../console/frontend/public/components/nav.jsx:395
+#: ../console/frontend/public/components/nav.jsx:416
 #: ../console/frontend/public/models/index.ts:657
 msgid "Cron Jobs"
 msgstr "定时任务"
@@ -1257,7 +1257,7 @@ msgstr "Daemon Set"
 msgid "Daemon Set Overview"
 msgstr "Daemon Set概述"
 
-#: ../console/frontend/public/components/nav.jsx:397
+#: ../console/frontend/public/components/nav.jsx:418
 #: ../console/frontend/public/models/index.ts:186
 msgid "Daemon Sets"
 msgstr ""
@@ -1390,7 +1390,7 @@ msgstr "部署配置"
 msgid "Deployment Overview"
 msgstr "部署概况"
 
-#: ../console/frontend/public/components/nav.jsx:388
+#: ../console/frontend/public/components/nav.jsx:409
 #: ../console/frontend/public/models/index.ts:252
 msgid "Deployments"
 msgstr "部署"
@@ -1667,7 +1667,7 @@ msgstr "事件"
 #: ../console/frontend/public/components/cluster-overview.jsx:162
 #: ../console/frontend/public/components/events.jsx:146
 #: ../console/frontend/public/components/events.jsx:148
-#: ../console/frontend/public/components/nav.jsx:375
+#: ../console/frontend/public/components/nav.jsx:396
 #: ../console/frontend/public/components/utils/vertnav.jsx:36
 #: ../console/frontend/public/models/index.ts:359
 msgid "Events"
@@ -1917,7 +1917,7 @@ msgstr "隐藏失败原因"
 msgid "Hide Values"
 msgstr "隐藏数据"
 
-#: ../console/frontend/public/components/nav.jsx:372
+#: ../console/frontend/public/components/nav.jsx:393
 msgid "Home"
 msgstr "首页"
 
@@ -1967,7 +1967,7 @@ msgstr "小时前"
 msgid "How should the pods be replaced when a new revision is created?"
 msgstr "创建新订阅时如何更换pod？"
 
-#: ../console/frontend/public/components/nav.jsx:400
+#: ../console/frontend/public/components/nav.jsx:421
 msgid "HPAs"
 msgstr ""
 
@@ -2070,7 +2070,7 @@ msgstr "进行中"
 msgid "Info"
 msgstr "信息"
 
-#: ../console/frontend/public/components/nav.jsx:406
+#: ../console/frontend/public/components/nav.jsx:427
 #: ../console/frontend/public/models/index.ts:409
 msgid "Ingress"
 msgstr ""
@@ -2111,7 +2111,7 @@ msgid "Install Plan Overview"
 msgstr "安装计划概述"
 
 #: ../console/frontend/public/components/cloud-services/install-plan.tsx:58
-#: ../console/frontend/public/components/nav.jsx:383
+#: ../console/frontend/public/components/nav.jsx:404
 msgid "Install Plans"
 msgstr "安装计划"
 
@@ -2193,7 +2193,7 @@ msgstr "任务概述"
 msgid "Job Status"
 msgstr "任务状态"
 
-#: ../console/frontend/public/components/nav.jsx:396
+#: ../console/frontend/public/components/nav.jsx:417
 #: ../console/frontend/public/models/index.ts:336
 msgid "Jobs"
 msgstr "任务"
@@ -2267,10 +2267,12 @@ msgstr ""
 "标签的对象。"
 
 #: ../console/frontend/public/components/masthead.tsx:48
+#: ../console/frontend/public/components/nav.jsx:314
 msgid "Language: CN -> EN"
 msgstr "语言：中文 -> 英文"
 
 #: ../console/frontend/public/components/masthead.tsx:48
+#: ../console/frontend/public/components/nav.jsx:314
 msgid "Language: EN -> CN"
 msgstr "语言：英文 -> 中文"
 
@@ -2356,7 +2358,8 @@ msgid "Log Snippet"
 msgstr "日志片段"
 
 #: ../console/frontend/public/components/masthead.tsx:70
-#: ../console/frontend/public/components/nav.jsx:307
+#: ../console/frontend/public/components/nav.jsx:326
+#: ../console/frontend/public/components/nav.jsx:333
 msgid "Logout"
 msgstr "退出"
 
@@ -2492,7 +2495,7 @@ msgstr "分钟前"
 msgid "Modify"
 msgstr "更改"
 
-#: ../console/frontend/public/components/nav.jsx:283
+#: ../console/frontend/public/components/nav.jsx:284
 msgid "Monitoring"
 msgstr "监控"
 
@@ -2529,6 +2532,7 @@ msgid "Multi-Cluster is an alpha feature."
 msgstr "多集群是alpha功能。"
 
 #: ../console/frontend/public/components/masthead.tsx:80
+#: ../console/frontend/public/components/nav.jsx:331
 msgid "My Account"
 msgstr "我的账户"
 
@@ -2666,7 +2670,7 @@ msgid "Namespaced"
 msgstr "命名空间"
 
 #: ../console/frontend/public/components/cluster-overview.jsx:196
-#: ../console/frontend/public/components/nav.jsx:426
+#: ../console/frontend/public/components/nav.jsx:447
 #: ../console/frontend/public/components/RBAC/bindings.jsx:308
 #: ../console/frontend/public/models/index.ts:381
 msgid "Namespaces"
@@ -2686,7 +2690,7 @@ msgstr "网络-出"
 
 #: ../console/frontend/public/components/namespace.jsx:208
 #: ../console/frontend/public/components/namespace.jsx:210
-#: ../console/frontend/public/components/nav.jsx:407
+#: ../console/frontend/public/components/nav.jsx:428
 #: ../console/frontend/public/models/index.ts:623
 msgid "Network Policies"
 msgstr "网络规则"
@@ -2711,7 +2715,7 @@ msgstr "网络传输（前10个命名空间）"
 msgid "Network Transmitted (bytes/s)"
 msgstr "网络传输（字节/秒）"
 
-#: ../console/frontend/public/components/nav.jsx:403
+#: ../console/frontend/public/components/nav.jsx:424
 msgid "Networking"
 msgstr "网络"
 
@@ -2930,7 +2934,7 @@ msgstr "节点端口"
 msgid "Node Selector"
 msgstr "节点选择器"
 
-#: ../console/frontend/public/components/nav.jsx:427
+#: ../console/frontend/public/components/nav.jsx:448
 #: ../console/frontend/public/models/index.ts:347
 msgid "Nodes"
 msgstr "节点"
@@ -3033,7 +3037,7 @@ msgid "Operator Lifecycle Manager not enabled for this namespace"
 msgstr "没有为此命名空间启用Operator Lifecycle管理器"
 
 #: ../console/frontend/public/components/channel-operators/tectonic-channel.jsx:176
-#: ../console/frontend/public/components/nav.jsx:378
+#: ../console/frontend/public/components/nav.jsx:399
 msgid "Operators"
 msgstr "操作控制器"
 
@@ -3171,12 +3175,12 @@ msgstr "持久化卷"
 msgid "Persistent Volume Claim"
 msgstr "持久化卷声明"
 
-#: ../console/frontend/public/components/nav.jsx:412
+#: ../console/frontend/public/components/nav.jsx:433
 #: ../console/frontend/public/models/index.ts:580
 msgid "Persistent Volume Claims"
 msgstr "持久化卷声明"
 
-#: ../console/frontend/public/components/nav.jsx:411
+#: ../console/frontend/public/components/nav.jsx:432
 #: ../console/frontend/public/models/index.ts:568
 msgid "Persistent Volumes"
 msgstr "持久化卷"
@@ -3266,7 +3270,7 @@ msgid "pods"
 msgstr ""
 
 #: ../console/frontend/public/components/cluster-overview.jsx:68
-#: ../console/frontend/public/components/nav.jsx:387
+#: ../console/frontend/public/components/nav.jsx:408
 #: ../console/frontend/public/components/utils/vertnav.jsx:18
 #: ../console/frontend/public/components/utils/vertnav.jsx:51
 #: ../console/frontend/public/models/index.ts:161
@@ -3333,7 +3337,7 @@ msgstr "项目请求"
 msgid "Project Requests"
 msgstr "项目请求"
 
-#: ../console/frontend/public/components/nav.jsx:425
+#: ../console/frontend/public/components/nav.jsx:446
 #: ../console/frontend/public/models/index.ts:393
 msgid "Projects"
 msgstr "项目"
@@ -3494,7 +3498,7 @@ msgstr "副本集"
 msgid "Replica Set Overview"
 msgstr "副本集概况"
 
-#: ../console/frontend/public/components/nav.jsx:398
+#: ../console/frontend/public/components/nav.jsx:419
 #: ../console/frontend/public/models/index.ts:238
 msgid "Replica Sets"
 msgstr "副本集"
@@ -3515,7 +3519,7 @@ msgstr "副本控制器"
 msgid "Replication Controller Overview"
 msgstr "副本控制器详细信息"
 
-#: ../console/frontend/public/components/nav.jsx:399
+#: ../console/frontend/public/components/nav.jsx:420
 #: ../console/frontend/public/models/index.ts:199
 msgid "Replication Controllers"
 msgstr "副本控制器"
@@ -3607,7 +3611,7 @@ msgstr "资源配额"
 msgid "Resource Quota Overview"
 msgstr "资源配额概述"
 
-#: ../console/frontend/public/components/nav.jsx:432
+#: ../console/frontend/public/components/nav.jsx:453
 #: ../console/frontend/public/models/index.ts:618
 msgid "Resource Quotas"
 msgstr "资源配额"
@@ -3699,7 +3703,7 @@ msgstr "角色绑定"
 msgid "Role binding name"
 msgstr "角色绑定名称"
 
-#: ../console/frontend/public/components/nav.jsx:431
+#: ../console/frontend/public/components/nav.jsx:452
 #: ../console/frontend/public/components/RBAC/bindings.jsx:147
 #: ../console/frontend/public/components/RBAC/bindings.jsx:168
 #: ../console/frontend/public/components/utils/vertnav.jsx:56
@@ -3725,7 +3729,7 @@ msgstr "角色概述"
 msgid "Role Ref"
 msgstr "角色参考"
 
-#: ../console/frontend/public/components/nav.jsx:430
+#: ../console/frontend/public/components/nav.jsx:451
 #: ../console/frontend/public/models/index.ts:505
 msgid "Roles"
 msgstr "角色"
@@ -3763,7 +3767,7 @@ msgstr "路由"
 msgid "Route Overview"
 msgstr "路由概述"
 
-#: ../console/frontend/public/components/nav.jsx:405
+#: ../console/frontend/public/components/nav.jsx:426
 #: ../console/frontend/public/models/index.ts:423
 msgid "Routes"
 msgstr "路由"
@@ -3876,7 +3880,7 @@ msgstr "调度状态"
 msgid "Script"
 msgstr "脚本"
 
-#: ../console/frontend/public/components/nav.jsx:374
+#: ../console/frontend/public/components/nav.jsx:395
 #: ../console/frontend/public/components/search.jsx:79
 #: ../console/frontend/public/components/search.jsx:81
 msgid "Search"
@@ -3904,7 +3908,7 @@ msgstr "Secret名称"
 msgid "Secret Overview"
 msgstr "Secret概况"
 
-#: ../console/frontend/public/components/nav.jsx:392
+#: ../console/frontend/public/components/nav.jsx:413
 #: ../console/frontend/public/components/service-account.jsx:105
 #: ../console/frontend/public/components/service-account.jsx:69
 #: ../console/frontend/public/models/index.ts:455
@@ -3985,7 +3989,7 @@ msgstr "服务账户概述"
 msgid "Service Account Token"
 msgstr "服务帐户令牌"
 
-#: ../console/frontend/public/components/nav.jsx:429
+#: ../console/frontend/public/components/nav.jsx:450
 #: ../console/frontend/public/models/index.ts:224
 msgid "Service Accounts"
 msgstr "服务账户"
@@ -4046,7 +4050,7 @@ msgstr "服务路由"
 msgid "Service Selector"
 msgstr "服务选择器: "
 
-#: ../console/frontend/public/components/nav.jsx:404
+#: ../console/frontend/public/components/nav.jsx:425
 #: ../console/frontend/public/models/index.ts:149
 msgid "Services"
 msgstr "服务"
@@ -4171,7 +4175,7 @@ msgstr "状态"
 msgid "Stateful Set"
 msgstr "Stateful Set"
 
-#: ../console/frontend/public/components/nav.jsx:391
+#: ../console/frontend/public/components/nav.jsx:412
 #: ../console/frontend/public/models/index.ts:606
 msgid "Stateful Sets"
 msgstr ""
@@ -4200,7 +4204,7 @@ msgstr "StatefulSet概况"
 #: ../console/frontend/public/components/namespace.jsx:204
 #: ../console/frontend/public/components/namespace.jsx:57
 #: ../console/frontend/public/components/namespace.jsx:81
-#: ../console/frontend/public/components/nav.jsx:373
+#: ../console/frontend/public/components/nav.jsx:394
 #: ../console/frontend/public/components/node.tsx:241
 #: ../console/frontend/public/components/node.tsx:44
 #: ../console/frontend/public/components/node.tsx:52
@@ -4234,7 +4238,7 @@ msgid "Stay up to date with the latest version automatically."
 msgstr "及时了解最新版本。"
 
 #: ../console/frontend/public/components/cluster-settings/cluster-monitoring.jsx:342
-#: ../console/frontend/public/components/nav.jsx:410
+#: ../console/frontend/public/components/nav.jsx:431
 msgid "Storage"
 msgstr "存储"
 
@@ -4243,7 +4247,7 @@ msgstr "存储"
 msgid "Storage Class"
 msgstr "存储类"
 
-#: ../console/frontend/public/components/nav.jsx:413
+#: ../console/frontend/public/components/nav.jsx:434
 #: ../console/frontend/public/components/storage-class.tsx:59
 #: ../console/frontend/public/models/index.ts:663
 msgid "Storage Classes"
@@ -4299,7 +4303,7 @@ msgstr "订阅概述"
 #: ../console/frontend/public/components/cloud-services/catalog-source.tsx:37
 #: ../console/frontend/public/components/cloud-services/install-plan.tsx:19
 #: ../console/frontend/public/components/cloud-services/subscription.tsx:76
-#: ../console/frontend/public/components/nav.jsx:382
+#: ../console/frontend/public/components/nav.jsx:403
 #: ../console/frontend/public/models/index.ts:48
 msgid "Subscriptions"
 msgstr "订阅"
@@ -4579,7 +4583,7 @@ msgstr "了解更多信息，请访问OpenShift"
 msgid "to ports"
 msgstr "到端口"
 
-#: ../console/frontend/public/components/nav.jsx:364
+#: ../console/frontend/public/components/nav.jsx:385
 msgid "Toggle navigation"
 msgstr "切换导航"
 
@@ -4837,7 +4841,8 @@ msgid "Used Cores"
 msgstr "使用的核心"
 
 #: ../console/frontend/public/components/image-stream-tag.tsx:73
-#: ../console/frontend/public/components/nav.jsx:310
+#: ../console/frontend/public/components/nav.jsx:324
+#: ../console/frontend/public/components/nav.jsx:330
 #: ../console/frontend/public/components/RBAC/bindings.jsx:455
 msgid "User"
 msgstr "用户"
@@ -5040,7 +5045,7 @@ msgstr ""
 msgid "Working Dir"
 msgstr "工作路径"
 
-#: ../console/frontend/public/components/nav.jsx:386
+#: ../console/frontend/public/components/nav.jsx:407
 msgid "Workloads"
 msgstr "应用容器"
 
