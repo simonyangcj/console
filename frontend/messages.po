@@ -4444,7 +4444,7 @@ msgstr "服务器没有资源类型\"kind："
 
 #: ../console/frontend/public/components/events.jsx:413
 msgid "There are no events before"
-msgstr "以前没有事件"
+msgstr "之前没有事件"
 
 #: ../console/frontend/public/components/cloud-services/k8s-resource.tsx:72
 msgid "There are no Kubernetes resources used by this %s."

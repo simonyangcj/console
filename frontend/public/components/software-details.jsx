@@ -87,7 +87,7 @@ export const SoftwareDetails = connectToFlags(FLAGS.OPENSHIFT)(
       if (openshiftFlag) {
         coFetchJSON('api/kubernetes/version/openshift')
           .then((data) => {
-            this.setState({openshiftVersion: data.gitVersion, openshiftVersionObj: data});
+            this.setState({openshiftVersion: 'v1.0', openshiftVersionObj: data});
           }).catch(() => this.setState({openshiftVersion: 'unknown'}));
       }
     }
@@ -101,7 +101,7 @@ export const SoftwareDetails = connectToFlags(FLAGS.OPENSHIFT)(
     _checkOpenshiftVersion() {
       coFetchJSON('api/kubernetes/version/openshift')
         .then((data) => {
-          this.setState({openshiftVersion: data.gitVersion, openshiftVersionObj: data});
+          this.setState({openshiftVersion: 'v1.0', openshiftVersionObj: data});
         }).catch(() => this.setState({openshiftVersion: 'unknown'}));
     }
 

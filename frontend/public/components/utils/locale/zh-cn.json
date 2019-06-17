@@ -946,7 +946,7 @@
    "The name of a group.": "组名",
    "The Pipeline build strategy allows developers to define a Jenkins pipeline for execution by the Jenkins pipeline plugin. The build can be started, monitored, and managed in the same way as any other build type.": "Pipeline构建策略允许开发人员定义Jenkins管道，以便由Jenkins管道插件执行。 可以使用与任何其他构建类型相同的方式启动，监视和管理构建。",
    "The server doesn't have a resource type \"kind:": "服务器没有资源类型\"kind：",
-   "There are no events before": "以前没有事件",
+   "There are no events before": "之前没有事件",
    "There are no Kubernetes resources used by this %s.": "{0} 没有使用Kubernetes资源。",
    "These rules are handled by a routing layer (Ingress Controller) which is updated as the rules are modified. The Ingress controller implementation defines how headers and other metadata are forwarded or manipulated.": "这些规则由路由层（Ingress控制器）处理，该路由层在修改规则时更新。 Ingress控制器实现定义了如何转发或操纵头和其他元数据。",
    "They can be isolated via Network Policies which specify a whitelist of ingress rules.": "它们可以通过网络策略指定入口规则的白名单来隔离。",

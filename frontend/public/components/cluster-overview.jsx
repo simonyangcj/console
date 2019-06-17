@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 
 import { coFetch, coFetchJSON } from '../co-fetch';
-import { NavTitle, AsyncComponent, Firehose, StatusBox, DocumentationLinks, AdditionalSupportLinks, gettext } from './utils';
+import { NavTitle, AsyncComponent, Firehose, StatusBox, gettext } from './utils';
 import { k8sBasePath } from '../module/k8s';
 import { StartGuide } from './start-guide';
 import { Gauge, prometheusBasePath, requirePrometheus } from './graphs';
@@ -174,22 +174,6 @@ const GraphsPage = ({fake, limited, namespace, openshiftFlag}) => {
         </div>
         <div className="container-fluid group__body">
           <SoftwareDetails />
-        </div>
-      </div>
-      <div className="group">
-        <div className="group__title">
-          <h2 className="h3">{gettext('Documentation')}</h2>
-        </div>
-        <div className="container-fluid group__body group__documentation">
-          <DocumentationLinks />
-        </div>
-      </div>
-      <div className="group">
-        <div className="group__title">
-          <h2 className="h3">{gettext('Additional Support')}</h2>
-        </div>
-        <div className="container-fluid group__body group__additional-support">
-          <AdditionalSupportLinks />
         </div>
       </div>
     </div>
