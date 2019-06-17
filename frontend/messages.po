@@ -249,7 +249,6 @@ msgid ""
 "configuration across many clusters at once"
 msgstr "将集群添加到目录，允许管理员一次更改多个集群中的配置"
 
-#: ../console/frontend/public/components/cluster-overview.jsx:189
 #: ../console/frontend/public/components/utils/documentation.tsx:60
 msgid "Additional Support"
 msgstr "其他支持"
@@ -461,6 +460,10 @@ msgstr "API写请求/秒（前10个客户端）"
 #: ../console/frontend/public/components/edit-yaml.jsx:208
 msgid "apiVersion:"
 msgstr "api版本："
+
+#: ../console/frontend/public/components/masthead.tsx:116
+msgid "Application Console"
+msgstr "应用控制台"
 
 #: ../console/frontend/public/components/cloud-services/clusterserviceversion-resource.tsx:68
 msgid "Application Resources"
@@ -760,6 +763,7 @@ msgstr "集群"
 msgid "Cluster Alerting"
 msgstr "集群警报"
 
+#: ../console/frontend/public/components/masthead.tsx:117
 #: ../console/frontend/public/components/masthead.tsx:121
 msgid "Cluster Console"
 msgstr "集群控制台"
@@ -858,7 +862,7 @@ msgstr "按集群服务版本名称"
 msgid "Cluster Settings"
 msgstr "集群设置"
 
-#: ../console/frontend/public/components/cluster-overview.jsx:243
+#: ../console/frontend/public/components/cluster-overview.jsx:227
 msgid "Cluster Status"
 msgstr "集群设置"
 
@@ -1445,7 +1449,6 @@ msgstr "Dockerfile"
 msgid "documentation"
 msgstr "文档"
 
-#: ../console/frontend/public/components/cluster-overview.jsx:181
 #: ../console/frontend/public/components/utils/documentation.tsx:58
 msgid "Documentation"
 msgstr "文档"
@@ -2662,7 +2665,7 @@ msgstr "命名空间角色(Role)"
 msgid "Namespaced"
 msgstr "命名空间"
 
-#: ../console/frontend/public/components/cluster-overview.jsx:212
+#: ../console/frontend/public/components/cluster-overview.jsx:196
 #: ../console/frontend/public/components/nav.jsx:426
 #: ../console/frontend/public/components/RBAC/bindings.jsx:308
 #: ../console/frontend/public/models/index.ts:381
@@ -3064,8 +3067,8 @@ msgid "Output To"
 msgstr "输出到"
 
 #: ../console/frontend/public/components/cloud-services/clusterserviceversion-resource.tsx:178
-#: ../console/frontend/public/components/cluster-overview.jsx:248
-#: ../console/frontend/public/components/cluster-overview.jsx:250
+#: ../console/frontend/public/components/cluster-overview.jsx:232
+#: ../console/frontend/public/components/cluster-overview.jsx:234
 #: ../console/frontend/public/components/namespace.jsx:192
 #: ../console/frontend/public/components/utils/vertnav.jsx:31
 msgid "Overview"
@@ -3999,6 +4002,10 @@ msgstr "服务绑定"
 msgid "Service Bindings"
 msgstr "服务绑定"
 
+#: ../console/frontend/public/components/masthead.tsx:115
+msgid "Service Catalog"
+msgstr "服务目录"
+
 #: ../console/frontend/public/models/index.ts:714
 msgid "Service Instance"
 msgstr "服务实例"
@@ -4081,7 +4088,7 @@ msgid "Skip Verification"
 msgstr "跳过验证"
 
 #: ../console/frontend/public/components/cluster-overview.jsx:173
-#: ../console/frontend/public/components/cluster-overview.jsx:252
+#: ../console/frontend/public/components/cluster-overview.jsx:236
 msgid "Software Info"
 msgstr "软件信息"
 
@@ -4206,7 +4213,7 @@ msgstr "StatefulSet概况"
 msgid "Status"
 msgstr "状态"
 
-#: ../console/frontend/public/components/cluster-overview.jsx:243
+#: ../console/frontend/public/components/cluster-overview.jsx:227
 msgid "Status of %s"
 msgstr "%s 状态"
 

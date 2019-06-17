@@ -112,9 +112,9 @@ export class OSUserMenu extends SafetyFirst<OSUserMenuProps, OSUserMenuState> {
 
 const ContextSwitcher = () => {
   const items = {
-    [`${developerConsoleURL}catalog`]: 'Service Catalog',
-    [`${developerConsoleURL}projects`]: 'Application Console',
-    [(window as any).SERVER_FLAGS.basePath]: 'Cluster Console'
+    [`${developerConsoleURL}catalog`]: gettext('Service Catalog'),
+    [`${developerConsoleURL}projects`]: gettext('Application Console'),
+    [(window as any).SERVER_FLAGS.basePath]: gettext('Cluster Console')
   };
 
   return <div className="contextselector-pf">
