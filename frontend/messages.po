@@ -1198,11 +1198,11 @@ msgstr "定时任务"
 #: ../console/frontend/public/components/nav.jsx:416
 #: ../console/frontend/public/models/index.ts:657
 msgid "Cron Jobs"
-msgstr ""
+msgstr "定时任务"
 
 #: ../console/frontend/public/components/cron-job.jsx:43
 msgid "CronJob Overview"
-msgstr "CronJob概况"
+msgstr "定时任务概况"
 
 #: ../console/frontend/public/components/RBAC/edit-rule.jsx:343
 msgid "Curated resources ideal for most users"
@@ -5049,7 +5049,7 @@ msgstr "工作路径"
 
 #: ../console/frontend/public/components/nav.jsx:407
 msgid "Workloads"
-msgstr ""
+msgstr "工作负载"
 
 #: ../console/frontend/public/components/utils/vertnav.jsx:46
 msgid "YAML"
