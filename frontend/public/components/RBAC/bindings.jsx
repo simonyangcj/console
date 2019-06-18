@@ -53,7 +53,7 @@ const menuActions = ({subjectIndex, subjects}, startImpersonate) => {
       href: `${resourceObjPath(obj, kind.kind)}/copy?subjectIndex=${subjectIndex}`,
     }),
     (kind, obj) => ({
-      label: gettext('`Edit %s Subject...', kind.label),
+      label: gettext('Edit %s Subject...', kind.label),
       href: `${resourceObjPath(obj, kind.kind)}/edit?subjectIndex=${subjectIndex}`,
     }),
     subjects.length === 1 ? Cog.factory.Delete : (kind, binding) => ({

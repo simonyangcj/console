@@ -44,7 +44,7 @@ msgstr "(不支持)"
 
 #: ../console/frontend/public/components/utils/details-page.tsx:20
 msgid "%s Annotations"
-msgstr "%s 注释"
+msgstr ""
 
 #: ../console/frontend/public/components/utils/datetime.ts:77
 msgid "%s days from now"
@@ -72,11 +72,7 @@ msgstr "%s版本无法确定。"
 
 #: ../console/frontend/public/components/utils/datetime.ts:88
 msgid "%s years from now"
-msgstr "%s 版本无法确定。"
-
-#: ../console/frontend/public/components/RBAC/bindings.jsx:56
-msgid "`Edit %s Subject..."
-msgstr "编辑 %s Subject"
+msgstr "%s 年后"
 
 #: ../console/frontend/public/components/cloud-services/subscription.tsx:174
 msgid "0 installed"
@@ -104,7 +100,7 @@ msgstr "2. 将配置文件放在"
 
 #: ../console/frontend/public/components/modals/kubectl-config.jsx:150
 msgid "3. Done! Interact with the cluster, i.e."
-msgstr "3. 做完了！ 与集群交互，即"
+msgstr "3. 完成！ 与集群交互，即"
 
 #: ../console/frontend/public/components/utils/status-box.jsx:67
 msgid "404: Not Found"
@@ -112,7 +108,7 @@ msgstr "404: 未找到"
 
 #: ../console/frontend/public/components/error.jsx:61
 msgid "404: Page Not Found"
-msgstr "404: 找不到页"
+msgstr "404: 无法找到该页"
 
 #: ../console/frontend/public/components/utils/datetime.ts:34
 msgid "a day ago"
@@ -126,13 +122,14 @@ msgstr "1天后"
 msgid ""
 "A default pull secret exists, but can't be parsed. Saving this will "
 "overwrite it."
-msgstr "存在一个默认的secret，但无法解析。如果保存将覆盖掉。"
+msgstr "存在一个默认的secret，但无法解析。如果保存将覆盖原有内容。"
 
 #: ../console/frontend/public/components/sidebars/build-config-sidebar.jsx:12
 msgid ""
 "A Dockerfile build performs an image build using a Dockerfile in the source "
 "repository or specified in build configuration."
-msgstr "使用源存储库或指定构建配置的的Dockerfile来执行镜像构建。"
+msgstr ""
+"Dockerfile build使用source仓库或构建配置指定的Dockerfile来执行镜像构建。"
 
 #: ../console/frontend/public/components/utils/datetime.ts:55
 msgid "a few seconds ago"
@@ -221,11 +218,11 @@ msgstr "运行中"
 
 #: ../console/frontend/public/components/pod.jsx:191
 msgid "Active Deadline"
-msgstr "有效截止日期"
+msgstr "有效状态的截止日期"
 
 #: ../console/frontend/public/components/job.jsx:77
 msgid "Active Pods"
-msgstr "运行中Pods"
+msgstr "运行中的Pods"
 
 #: ../console/frontend/public/components/utils/name-value-editor.jsx:119
 msgid "Add More"
@@ -247,11 +244,11 @@ msgstr "从配置映射或Secret添加值"
 msgid ""
 "Adding clusters to the directory allows administrators to change "
 "configuration across many clusters at once"
-msgstr "将集群添加到目录，允许管理员一次更改多个集群中的配置"
+msgstr "将集群添加到directory能允许管理员一次更改多个集群的配置"
 
 #: ../console/frontend/public/components/utils/documentation.tsx:60
 msgid "Additional Support"
-msgstr "其他支持"
+msgstr "附加支持"
 
 #: ../console/frontend/public/components/clusters.tsx:16
 msgid "Addresses"
@@ -275,31 +272,31 @@ msgstr "创建时间"
 
 #: ../console/frontend/public/components/cluster-settings/cluster-monitoring.jsx:312
 msgid "Alert manager"
-msgstr "报警管理"
+msgstr "告警管理"
 
 #: ../console/frontend/public/components/alert-manager.jsx:54
 msgid "Alert Manager Node Selector"
-msgstr "报警管理节点选择器"
+msgstr "告警管理节点选择器"
 
 #: ../console/frontend/public/components/alert-manager.jsx:46
 msgid "Alert Manager Overview"
-msgstr "报警管理概述"
+msgstr "告警管理概况"
 
 #: ../console/frontend/public/models/index.ts:102
 msgid "Alertmanager"
-msgstr "报警管理"
+msgstr "告警管理"
 
 #: ../console/frontend/public/models/index.ts:103
 msgid "Alertmanagers"
-msgstr "报警管理"
+msgstr "告警管理"
 
 #: ../console/frontend/public/components/cluster-overview.jsx:60
 msgid "Alerts"
-msgstr "报警"
+msgstr "告警"
 
 #: ../console/frontend/public/components/cluster-overview.jsx:59
 msgid "Alerts Firing"
-msgstr "警报触发"
+msgstr "告警触发"
 
 #: ../console/frontend/public/components/namespace.jsx:251
 msgid "all"
@@ -327,7 +324,7 @@ msgstr "完美"
 
 #: ../console/frontend/public/components/RBAC/rules.jsx:79
 msgid "All Non-resource URLs"
-msgstr "所有非资源URL"
+msgstr "所有非资源类型的URL"
 
 #: ../console/frontend/public/components/sidebars/network-policy-sidebar.jsx:43
 msgid "all non-whitelisted traffic in the current namespace"
@@ -350,7 +347,7 @@ msgstr "所有类型"
 msgid ""
 "All updates must be approved by an admin. Important security patches may be "
 "missed."
-msgstr "所有更新必须由管理员批准。可能会遗漏重要的安全补丁。"
+msgstr "所有更新必须由管理员批准。这可能会遗漏重要的安全补丁。"
 
 #: ../console/frontend/public/components/sidebars/network-policy-sidebar.jsx:34
 #: ../console/frontend/public/components/sidebars/network-policy-sidebar.jsx:50
@@ -368,15 +365,15 @@ msgstr "允许对不同类型的资源和API组具有不同的访问权限"
 msgid ""
 "Allow external service from public Internet directly or through a Load "
 "Balancer to access the pod."
-msgstr "允许从外部公共网络或通过负载均衡访问pod。"
+msgstr "允许外部服务从Internet网络直接访问或通过负载均衡访问pod。"
 
 #: ../console/frontend/public/components/sidebars/network-policy-sidebar.jsx:29
 msgid ""
 "Allow inbound traffic from only certain Pods. One typical use case is to "
 "restrict the connections to a database only to the specific applications."
 msgstr ""
-"仅允许来自某些Pod的流量。一个典型的用例是将与数据库的连接限制为仅限于特定的应"
-"用程序。"
+"仅允许来自某些Pod的流量。一个典型的用例是将与数据库的连接限制为特定的应用程"
+"序。"
 
 #: ../console/frontend/public/components/sidebars/role-sidebar.jsx:29
 msgid "Allow reading a ConfigMap in a specific namespace"
@@ -404,7 +401,7 @@ msgstr "传递配置值的简便方法"
 
 #: ../console/frontend/public/components/events.jsx:382
 msgid "An error occurred during event retrieval. Attempting to reconnect..."
-msgstr "时间检索过程中出错，正在尝试重新连接..."
+msgstr "事件读取过程中出错，正在尝试重新连接..."
 
 #: ../console/frontend/public/components/utils/datetime.ts:41
 msgid "an hour ago"
@@ -417,12 +414,12 @@ msgstr "1小时后"
 #: ../console/frontend/public/components/node.tsx:183
 #: ../console/frontend/public/components/utils/details-page.tsx:20
 msgid "Annotation"
-msgstr "注释"
+msgstr ""
 
 #: ../console/frontend/public/components/node.tsx:182
 #: ../console/frontend/public/components/utils/details-page.tsx:39
 msgid "Annotations"
-msgstr "注释"
+msgstr ""
 
 #: ../console/frontend/public/components/cluster-health.jsx:128
 msgid "API Error Rate (5m)"
@@ -435,7 +432,7 @@ msgstr "API组"
 
 #: ../console/frontend/public/components/cluster-health.jsx:136
 msgid "API Reads Req/sec (Top 10 Clients)"
-msgstr "API读请求/秒（前10个客户端）"
+msgstr "API读请求/秒（排名前10的客户端）"
 
 #: ../console/frontend/public/components/cluster-overview.jsx:95
 msgid "API Request Success Rate"
@@ -443,11 +440,11 @@ msgstr "API请求成功率"
 
 #: ../console/frontend/public/components/cluster-overview.jsx:86
 msgid "API Servers Up"
-msgstr "API服务状态"
+msgstr "API服务启动状态"
 
 #: ../console/frontend/public/components/RBAC/edit-rule.jsx:354
 msgid "API URLs that do not correspond to objects"
-msgstr "未与与对象对应的API URL"
+msgstr "未与对象对应的API URL"
 
 #: ../console/frontend/public/components/cloud-services/install-plan.tsx:147
 msgid "API Version"
@@ -455,7 +452,7 @@ msgstr "API版本"
 
 #: ../console/frontend/public/components/cluster-health.jsx:133
 msgid "API Writes Req/sec (Top 10 Clients)"
-msgstr "API写请求/秒（前10个客户端）"
+msgstr "API写请求/秒（排名前10的客户端）"
 
 #: ../console/frontend/public/components/edit-yaml.jsx:208
 msgid "apiVersion:"
@@ -554,7 +551,7 @@ msgstr ""
 
 #: ../console/frontend/public/components/secrets/create-secret.tsx:209
 msgid "Basic Authentication"
-msgstr "基本认证"
+msgstr "Basic认证"
 
 #: ../console/frontend/public/components/modals/delete-namespace-modal.jsx:35
 msgid "below:"
@@ -562,7 +559,7 @@ msgstr "以下："
 
 #: ../console/frontend/public/components/utils/build-strategy.tsx:40
 msgid "Binary Input as File"
-msgstr "二进制输入为文件"
+msgstr "二进制文件输入"
 
 #: ../console/frontend/public/components/utils/documentation.tsx:45
 msgid "Blog"
@@ -579,20 +576,20 @@ msgstr "范围"
 
 #: ../console/frontend/public/models/index.ts:284
 msgid "Build"
-msgstr "构建"
+msgstr ""
 
 #: ../console/frontend/public/models/index.ts:270
 msgid "Build Config"
-msgstr "构建配置"
+msgstr ""
 
 #: ../console/frontend/public/components/build-config.tsx:36
 msgid "Build Config Overview"
-msgstr "构建配置概述"
+msgstr "Build Config概况"
 
 #: ../console/frontend/public/components/build-config.tsx:110
 #: ../console/frontend/public/models/index.ts:280
 msgid "Build Configs"
-msgstr "构建配置"
+msgstr ""
 
 #: ../console/frontend/public/components/sidebars/build-config-sidebar.jsx:11
 msgid "Build from Dockerfile"
@@ -600,7 +597,7 @@ msgstr "从Dockerfile构建"
 
 #: ../console/frontend/public/components/build.tsx:65
 msgid "Build Overview"
-msgstr "构建概述"
+msgstr "Build概况"
 
 #: ../console/frontend/public/components/utils/build-strategy.tsx:50
 msgid "Builder Image"
@@ -611,11 +608,11 @@ msgstr "构建镜像"
 #: ../console/frontend/public/components/utils/vertnav.jsx:61
 #: ../console/frontend/public/models/index.ts:294
 msgid "Builds"
-msgstr "构建"
+msgstr ""
 
 #: ../console/frontend/public/components/factory/list-page.jsx:262
 msgid "by name"
-msgstr "通过 名字"
+msgstr "按名称"
 
 #: ../console/frontend/public/components/cluster-settings/certs-info.jsx:50
 #: ../console/frontend/public/components/routes.tsx:181
@@ -662,33 +659,33 @@ msgstr "容量规划"
 
 #: ../console/frontend/public/components/cloud-services/subscription.tsx:108
 msgid "Catalog"
-msgstr "目录"
+msgstr ""
 
 #: ../console/frontend/public/components/nav.jsx:402
 msgid "Catalog Sources"
-msgstr "目录源"
+msgstr "Catalog源"
 
 #: ../console/frontend/public/components/cloud-services/catalog-source.tsx:141
 msgid ""
 "Catalog Sources contain packaged Operators which can be subscribed to for "
 "automatic upgrades."
-msgstr "目标源包含打包控制器，可订阅这些控制器进行自动升级。"
+msgstr "Catalog源包含打包控制器，可订阅这些控制器进行自动升级。"
 
 #: ../console/frontend/public/components/cloud-services/catalog-source.tsx:140
 msgid ""
 "Catalogs are groups of Operators you can make available on the cluster. "
 "Subscribe and grant a namespace access to use the installed Operators."
 msgstr ""
-"目录是可以在集群上使用的操作控制器。订阅并授予命名空间访问权以使用已安装的控"
-"制器。"
+"Catalogs是可以在集群上使用的操作控制器。订阅并授予命名空间访问权以使用已安装"
+"的控制器。"
 
 #: ../console/frontend/public/models/index.ts:7
 msgid "CatalogSource"
-msgstr "目录源"
+msgstr ""
 
 #: ../console/frontend/public/models/index.ts:8
 msgid "CatalogSources"
-msgstr "目录源"
+msgstr ""
 
 #: ../console/frontend/public/components/routes.tsx:169
 msgid "Certificate"
@@ -711,19 +708,19 @@ msgstr "改变"
 #: ../console/frontend/public/components/cloud-services/subscription.tsx:21
 #: ../console/frontend/public/components/node.tsx:221
 msgid "Channel"
-msgstr "通道"
+msgstr ""
 
 #: ../console/frontend/public/models/index.ts:535
 msgid "Channel Operator Config"
-msgstr "通道操作配置"
+msgstr ""
 
 #: ../console/frontend/public/models/index.ts:544
 msgid "Channel Operator Configs"
-msgstr "通道配置"
+msgstr ""
 
 #: ../console/frontend/public/components/nav.jsx:454
 msgid "Chargeback"
-msgstr "充值"
+msgstr ""
 
 #: ../console/frontend/public/components/chargeback.tsx:367
 msgid "Chargeback is an alpha feature."
@@ -735,12 +732,12 @@ msgstr "尚未安装和启用Chargeback。"
 
 #: ../console/frontend/public/components/chargeback.tsx:414
 msgid "Chargeback Report Generation Query"
-msgstr "退款报告生成查询"
+msgstr "Chargeback报告生成查询"
 
 #: ../console/frontend/public/components/chargeback.tsx:373
 #: ../console/frontend/public/components/chargeback.tsx:42
 msgid "Chargeback Reporting"
-msgstr "退款报告"
+msgstr "Chargeback报告"
 
 #: ../console/frontend/public/components/client-tokens.jsx:85
 msgid "Client Id"
@@ -761,7 +758,7 @@ msgstr "集群"
 
 #: ../console/frontend/public/components/cluster-settings/cluster-monitoring.jsx:326
 msgid "Cluster Alerting"
-msgstr "集群警报"
+msgstr "集群告警"
 
 #: ../console/frontend/public/components/masthead.tsx:117
 #: ../console/frontend/public/components/masthead.tsx:121
@@ -771,7 +768,7 @@ msgstr "集群控制台"
 #: ../console/frontend/public/components/clusters.tsx:57
 #: ../console/frontend/public/components/clusters.tsx:73
 msgid "Cluster Directory"
-msgstr "集群目录"
+msgstr "集群Directory"
 
 #: ../console/frontend/public/components/cluster-health.jsx:46
 #: ../console/frontend/public/components/cluster-health.jsx:49
@@ -800,7 +797,7 @@ msgstr "集群名称"
 
 #: ../console/frontend/public/components/clusters.tsx:44
 msgid "Cluster Overview"
-msgstr "集群概述"
+msgstr "集群概况"
 
 #: ../console/frontend/public/models/index.ts:471
 msgid "Cluster Role"
@@ -851,11 +848,12 @@ msgstr "集群服务版本"
 msgid ""
 "Cluster Service Versions are installed per namespace from Catalog Sources. "
 "For more information, see"
-msgstr "从目录源每个命名空间安装集群服务版本。更多信息，请参阅"
+msgstr ""
+"Cluster Service Version基于Catalog源安装到各个namesapce。更多信息，请参阅"
 
 #: ../console/frontend/public/components/cloud-services/clusterserviceversion.tsx:94
 msgid "Cluster Service Versions by name"
-msgstr "按集群服务版本名称"
+msgstr "按Cluster Service Versions名称"
 
 #: ../console/frontend/public/components/cluster-settings/cluster-settings.jsx:26
 #: ../console/frontend/public/components/nav.jsx:449
@@ -889,11 +887,11 @@ msgstr "集群"
 
 #: ../console/frontend/public/models/index.ts:20
 msgid "ClusterServiceVersion"
-msgstr "集群服务版本"
+msgstr ""
 
 #: ../console/frontend/public/models/index.ts:21
 msgid "ClusterServiceVersions"
-msgstr "集群服务版本"
+msgstr ""
 
 #: ../console/frontend/public/components/cluster-settings/cluster-monitoring.jsx:275
 #: ../console/frontend/public/components/terminal.jsx:108
@@ -969,24 +967,24 @@ msgstr "并发策略"
 #: ../console/frontend/public/components/hpa.tsx:163
 #: ../console/frontend/public/components/routes.tsx:222
 msgid "Conditions"
-msgstr "状况"
+msgstr ""
 
 #: ../console/frontend/public/models/index.ts:436
 msgid "Config Map"
-msgstr "配置映射"
+msgstr ""
 
 #: ../console/frontend/public/components/utils/value-from-pair.jsx:125
 msgid "Config Map or Secret"
-msgstr "配置映射或Secret"
+msgstr "Config Map或Secret"
 
 #: ../console/frontend/public/components/configmap.jsx:33
 msgid "Config Map Overview"
-msgstr "配置映射概述"
+msgstr "Config Map概况"
 
 #: ../console/frontend/public/components/nav.jsx:414
 #: ../console/frontend/public/models/index.ts:443
 msgid "Config Maps"
-msgstr "配置映射"
+msgstr ""
 
 #: ../console/frontend/public/components/image-stream-tag.tsx:63
 msgid "Configuration"
@@ -1062,7 +1060,7 @@ msgstr "控制台状态"
 
 #: ../console/frontend/public/components/cluster-overview.jsx:89
 msgid "Controller Managers Up"
-msgstr "控制器状态"
+msgstr "控制器启动状态"
 
 #: ../console/frontend/public/components/utils/dropdown.jsx:138
 msgid "could not load bookmarks for %s"
@@ -1070,7 +1068,7 @@ msgstr "无法加载%s的书签"
 
 #: ../console/frontend/public/components/environment.jsx:91
 msgid "Could not load config maps."
-msgstr "无法加载配置映射。"
+msgstr "无法加载config maps。"
 
 #: ../console/frontend/public/components/graphs/donut.jsx:118
 msgid "Could not load data"
@@ -1087,7 +1085,7 @@ msgstr ""
 #: ../console/frontend/public/components/cluster-settings/cluster-monitoring.jsx:304
 #: ../console/frontend/public/components/cluster-settings/cluster-monitoring.jsx:330
 msgid "CPU Resources"
-msgstr " CPU资源"
+msgstr "CPU资源"
 
 #: ../console/frontend/public/components/namespace.jsx:168
 #: ../console/frontend/public/components/pod.jsx:144
@@ -1117,7 +1115,7 @@ msgstr ""
 
 #: ../console/frontend/public/components/custom-resource-definition.tsx:51
 msgid "CRDs by name"
-msgstr "CRDs 通过名称"
+msgstr "CRDs 按名称"
 
 #: ../console/frontend/public/components/cloud-services/clusterserviceversion-resource.tsx:124
 #: ../console/frontend/public/components/edit-yaml.jsx:301
@@ -1200,11 +1198,11 @@ msgstr "定时任务"
 #: ../console/frontend/public/components/nav.jsx:416
 #: ../console/frontend/public/models/index.ts:657
 msgid "Cron Jobs"
-msgstr "定时任务"
+msgstr ""
 
 #: ../console/frontend/public/components/cron-job.jsx:43
 msgid "CronJob Overview"
-msgstr "CronJob概述"
+msgstr "CronJob概况"
 
 #: ../console/frontend/public/components/RBAC/edit-rule.jsx:343
 msgid "Curated resources ideal for most users"
@@ -1231,7 +1229,7 @@ msgstr "当前Pods"
 #: ../console/frontend/public/components/channel-operators/app-version.jsx:82
 #: ../console/frontend/public/components/node.tsx:219
 msgid "Current Version"
-msgstr "集群服务版本"
+msgstr "当前版本"
 
 #: ../console/frontend/public/components/RBAC/edit-rule.jsx:349
 msgid "Custom"
@@ -1243,19 +1241,19 @@ msgstr "自定义(高级)"
 
 #: ../console/frontend/public/models/index.ts:635
 msgid "Custom Resource Definition"
-msgstr "自定义资源定义"
+msgstr ""
 
 #: ../console/frontend/public/models/index.ts:644
 msgid "Custom Resource Definitions"
-msgstr "自定义资源类型"
+msgstr ""
 
 #: ../console/frontend/public/models/index.ts:176
 msgid "Daemon Set"
-msgstr "Daemon Set"
+msgstr ""
 
 #: ../console/frontend/public/components/daemonset.jsx:40
 msgid "Daemon Set Overview"
-msgstr "Daemon Set概述"
+msgstr "Daemon Set概况"
 
 #: ../console/frontend/public/components/nav.jsx:418
 #: ../console/frontend/public/models/index.ts:186
@@ -1344,11 +1342,11 @@ msgstr "删除此资源的依赖对象"
 #: ../console/frontend/public/components/RBAC/rules.jsx:92
 #: ../console/frontend/public/components/RBAC/rules.jsx:94
 msgid "Delete Rule"
-msgstr "删除角色"
+msgstr "删除Rule"
 
 #: ../console/frontend/public/components/RBAC/rules.jsx:90
 msgid "Delete Rule..."
-msgstr "删除角色..."
+msgstr "删除Rule..."
 
 #: ../console/frontend/public/components/RBAC/bindings.jsx:64
 msgid "Delete Subject"
@@ -1371,39 +1369,39 @@ msgstr "拒绝来自其他名称空间的流量，同时允许来自Pod所在的
 #: ../console/frontend/public/components/cloud-services/clusterserviceversion.tsx:22
 #: ../console/frontend/public/models/index.ts:242
 msgid "Deployment"
-msgstr "部署"
+msgstr ""
 
 #: ../console/frontend/public/models/index.ts:256
 msgid "Deployment Config"
-msgstr "部署配置"
+msgstr ""
 
 #: ../console/frontend/public/components/deployment-config.tsx:60
 msgid "Deployment Config Overview"
-msgstr "部署配置概述"
+msgstr "Deployment Config概况"
 
 #: ../console/frontend/public/components/deployment-config.tsx:136
 #: ../console/frontend/public/models/index.ts:266
 msgid "Deployment Configs"
-msgstr "部署配置"
+msgstr ""
 
 #: ../console/frontend/public/components/deployment.jsx:58
 msgid "Deployment Overview"
-msgstr "部署概况"
+msgstr "Deployment概况"
 
 #: ../console/frontend/public/components/nav.jsx:409
 #: ../console/frontend/public/models/index.ts:252
 msgid "Deployments"
-msgstr "部署"
+msgstr ""
 
 #: ../console/frontend/public/components/cloud-services/clusterserviceversion.tsx:146
 #: ../console/frontend/public/components/modals/create-namespace-modal.jsx:95
 msgid "Description"
-msgstr "订阅"
+msgstr "描述"
 
 #: ../console/frontend/public/components/cron-job.jsx:58
 #: ../console/frontend/public/components/job.jsx:58
 msgid "Desired Completions"
-msgstr "订阅完成"
+msgstr "期望完成"
 
 #: ../console/frontend/public/components/daemonset.jsx:49
 #: ../console/frontend/public/components/utils/deployment-pod-counts.tsx:71
@@ -1425,7 +1423,7 @@ msgstr "确定此%s所定位的pod。"
 
 #: ../console/frontend/public/components/clusters.tsx:29
 msgid "Directory Cluster"
-msgstr "目录集群"
+msgstr "Directory集群"
 
 #: ../console/frontend/public/components/cluster-health.jsx:105
 msgid "Disk"
@@ -1434,16 +1432,16 @@ msgstr "磁盘"
 #: ../console/frontend/public/components/cluster-health.jsx:93
 #: ../console/frontend/public/components/cluster-overview.jsx:117
 msgid "Disk Usage"
-msgstr "硬盘使用率"
+msgstr "磁盘使用率"
 
 #: ../console/frontend/public/components/modals/create-namespace-modal.jsx:89
 #: ../console/frontend/public/components/namespace.jsx:196
 msgid "Display Name"
-msgstr "名称"
+msgstr "显示名称"
 
 #: ../console/frontend/public/components/utils/build-strategy.tsx:44
 msgid "Dockerfile"
-msgstr "Dockerfile"
+msgstr ""
 
 #: ../console/frontend/public/components/namespace.jsx:112
 msgid "documentation"
@@ -1529,10 +1527,14 @@ msgstr ""
 msgid "Edit"
 msgstr "编辑"
 
+#: ../console/frontend/public/components/RBAC/bindings.jsx:56
+msgid "Edit %s Subject..."
+msgstr "编辑 %s Subject"
+
 #: ../console/frontend/public/components/modals/tags.jsx:72
 #: ../console/frontend/public/components/utils/cog.tsx:49
 msgid "Edit Annotations"
-msgstr "编辑注释"
+msgstr "编辑Annotations"
 
 #: ../console/frontend/public/components/modals/configure-count-modal.jsx:104
 msgid "Edit Cluster Size"
@@ -1634,7 +1636,7 @@ msgstr "加载事件出错"
 #: ../console/frontend/public/components/cloud-services/catalog-source.tsx:109
 #: ../console/frontend/public/components/cloud-services/catalog-source.tsx:155
 msgid "Error Parsing Catalog"
-msgstr "分析目录出错"
+msgstr "分析Catalog出错"
 
 #: ../console/frontend/public/components/edit-yaml.jsx:192
 msgid "Error parsing YAML:"
@@ -1675,11 +1677,11 @@ msgstr "事件"
 
 #: ../console/frontend/public/components/events.jsx:155
 msgid "Events by name or message"
-msgstr "事件 通过 名称/信息 "
+msgstr "事件按名称或信息"
 
 #: ../console/frontend/public/components/events.jsx:371
 msgid "events exist, but none match the current filter"
-msgstr "事件，但不匹配当前筛选器"
+msgstr "事件存在，但没有匹配当前筛选器的内容"
 
 #: ../console/frontend/public/components/modals/configure-update-strategy-modal.jsx:84
 msgid ""
@@ -1923,15 +1925,15 @@ msgstr "首页"
 
 #: ../console/frontend/public/models/index.ts:203
 msgid "Horizontal Pod Autoscaler"
-msgstr "Pod扩展自动调节器"
+msgstr ""
 
 #: ../console/frontend/public/components/hpa.tsx:134
 msgid "Horizontal Pod Autoscaler Overview"
-msgstr "Pod扩展自动调节器概述"
+msgstr "Horizontal Pod Autoscaler概况"
 
 #: ../console/frontend/public/models/index.ts:212
 msgid "Horizontal Pod Autoscalers"
-msgstr "Pod扩展自动调节器"
+msgstr ""
 
 #: ../console/frontend/public/components/cluster-settings/ldap.jsx:62
 #: ../console/frontend/public/components/ingress.jsx:57
@@ -1965,7 +1967,7 @@ msgstr "小时前"
 
 #: ../console/frontend/public/components/modals/configure-update-strategy-modal.jsx:69
 msgid "How should the pods be replaced when a new revision is created?"
-msgstr "创建新订阅时如何更换pod？"
+msgstr "创建新revision时时pod如何被自动替换？"
 
 #: ../console/frontend/public/components/nav.jsx:421
 msgid "HPAs"
@@ -2027,7 +2029,7 @@ msgstr "镜像名称"
 
 #: ../console/frontend/public/components/image-stream-tag.tsx:52
 msgid "Image Overview"
-msgstr "镜像概述"
+msgstr "镜像概况"
 
 #: ../console/frontend/public/components/image-stream.tsx:57
 msgid "Image Repository"
@@ -2039,7 +2041,7 @@ msgstr "镜像流"
 
 #: ../console/frontend/public/components/image-stream.tsx:55
 msgid "Image Stream Overview"
-msgstr "镜像流概述"
+msgstr "镜像流概况"
 
 #: ../console/frontend/public/models/index.ts:312
 msgid "Image Stream Tag"
@@ -2077,11 +2079,11 @@ msgstr ""
 
 #: ../console/frontend/public/components/ingress.jsx:118
 msgid "Ingress Overview"
-msgstr "Ingress概述"
+msgstr "Ingress概况"
 
 #: ../console/frontend/public/components/service.jsx:61
 msgid "Ingress point(s) of load balancer"
-msgstr "负载平衡的Ingress点"
+msgstr "负载平衡的Ingress端点"
 
 #: ../console/frontend/public/components/ingress.jsx:125
 #: ../console/frontend/public/components/network-policy.jsx:102
@@ -2108,7 +2110,7 @@ msgstr "在批准之前，请检查本安装计划中指定的组件的要求。
 
 #: ../console/frontend/public/components/cloud-services/install-plan.tsx:76
 msgid "Install Plan Overview"
-msgstr "安装计划概述"
+msgstr "安装计划概况"
 
 #: ../console/frontend/public/components/cloud-services/install-plan.tsx:58
 #: ../console/frontend/public/components/nav.jsx:404
@@ -2135,7 +2137,7 @@ msgstr "安装Chargeback报告"
 
 #: ../console/frontend/public/components/clusters.tsx:70
 msgid "Installing Multi-cluster Directory"
-msgstr "安装多集群目录"
+msgstr "安装多集群Directory"
 
 #: ../console/frontend/public/models/index.ts:34
 msgid "InstallPlan"
@@ -2187,7 +2189,7 @@ msgstr "任务"
 #: ../console/frontend/public/components/cron-job.jsx:56
 #: ../console/frontend/public/components/job.jsx:56
 msgid "Job Overview"
-msgstr "任务概述"
+msgstr "任务概况"
 
 #: ../console/frontend/public/components/job.jsx:67
 msgid "Job Status"
@@ -2331,7 +2333,7 @@ msgstr "活力探测"
 
 #: ../console/frontend/public/components/cluster-settings/ldap.jsx:458
 msgid "Loading Configuration"
-msgstr "加载配置 "
+msgstr "加载配置"
 
 #: ../console/frontend/public/components/events.jsx:386
 msgid "Loading events..."
@@ -2380,7 +2382,7 @@ msgstr "保持所需数量的健康Pod。"
 
 #: ../console/frontend/public/components/cluster-picker.tsx:41
 msgid "Manage Cluster Directory…"
-msgstr "管理集群目录..."
+msgstr "管理集群Directory..."
 
 #: ../console/frontend/public/components/cluster-settings/ldap.jsx:126
 msgid "Maps to display name of users. No default value."
@@ -2414,13 +2416,13 @@ msgstr "匹配的Pods"
 #: ../console/frontend/public/components/hpa.tsx:147
 #: ../console/frontend/public/components/hpa.tsx:183
 msgid "Max Pods"
-msgstr "最大Pods"
+msgstr "Pods最大值"
 
 #: ../console/frontend/public/components/deployment-config.tsx:86
 #: ../console/frontend/public/components/deployment.jsx:74
 #: ../console/frontend/public/components/modals/configure-update-strategy-modal.jsx:111
 msgid "Max Surge"
-msgstr "最大涌动"
+msgstr "最大增幅"
 
 #: ../console/frontend/public/components/deployment-config.tsx:84
 #: ../console/frontend/public/components/deployment.jsx:72
@@ -2473,7 +2475,7 @@ msgstr "度量"
 #: ../console/frontend/public/components/hpa.tsx:145
 #: ../console/frontend/public/components/hpa.tsx:182
 msgid "Min Pods"
-msgstr "最小Pods"
+msgstr "Pods最小值"
 
 #: ../console/frontend/public/components/deployment.jsx:78
 msgid "Min Ready Seconds"
@@ -2525,7 +2527,7 @@ msgstr "已安装的卷"
 
 #: ../console/frontend/public/components/clusters.tsx:63
 msgid "Multi-Cluster Directory is not yet installed and enabled."
-msgstr "尚未安装和启用多集群目录。"
+msgstr "尚未安装和启用多集群Directory。"
 
 #: ../console/frontend/public/components/clusters.tsx:67
 msgid "Multi-Cluster is an alpha feature."
@@ -2701,7 +2703,7 @@ msgstr "网络规则"
 
 #: ../console/frontend/public/components/cluster-health.jsx:114
 msgid "Network Receive (Top 10 Namespaces)"
-msgstr "网络接收（前10个命名空间）"
+msgstr "网络接收（排名前10的命名空间）"
 
 #: ../console/frontend/public/components/cluster-health.jsx:111
 msgid "Network Received (bytes/s)"
@@ -2709,7 +2711,7 @@ msgstr "网络接收（字节/秒）"
 
 #: ../console/frontend/public/components/cluster-health.jsx:123
 msgid "Network Transmit (Top 10 Namespaces)"
-msgstr "网络传输（前10个命名空间）"
+msgstr "网络传输（排名前10的命名空间）"
 
 #: ../console/frontend/public/components/cluster-health.jsx:120
 msgid "Network Transmitted (bytes/s)"
@@ -2735,7 +2737,7 @@ msgstr "新的更新将在可用时立即安装。"
 
 #: ../console/frontend/public/components/cluster-settings/ldap.jsx:512
 msgid "Next: Update Tectonic Identity"
-msgstr "下一步：更新构造身份"
+msgstr "下一步：更新Tectonic Identity"
 
 #: ../console/frontend/public/components/custom-resource-definition.tsx:39
 msgid "No"
@@ -2767,7 +2769,7 @@ msgstr "找不到应用程序资源"
 
 #: ../console/frontend/public/components/cloud-services/catalog-source.tsx:141
 msgid "No Catalog Sources Found"
-msgstr " 找不到目录源 "
+msgstr " 找不到Catalog源 "
 
 #: ../console/frontend/public/components/cloud-services/clusterserviceversion.tsx:60
 msgid "No Cluster Service Versions Found"
@@ -2775,7 +2777,7 @@ msgstr "无集群服务版本"
 
 #: ../console/frontend/public/components/clusters.tsx:49
 msgid "No Clusters in Directory"
-msgstr "目录中没有集群"
+msgstr "Directory中没有集群"
 
 #: ../console/frontend/public/components/cloud-services/install-plan.tsx:169
 msgid "No Components Resolved"
@@ -2889,7 +2891,7 @@ msgstr "没有设置任何变量"
 
 #: ../console/frontend/public/components/container.jsx:67
 msgid "No volumes have been mounted"
-msgstr "没有安装卷"
+msgstr "没有挂载卷"
 
 #: ../console/frontend/public/components/container.jsx:200
 #: ../console/frontend/public/components/pod.jsx:198
@@ -2921,7 +2923,7 @@ msgstr "节点名称"
 
 #: ../console/frontend/public/components/node.tsx:169
 msgid "Node Overview"
-msgstr "节点概述"
+msgstr "节点概况"
 
 #: ../console/frontend/public/components/service.jsx:59
 #: ../console/frontend/public/components/service.jsx:94
@@ -3030,7 +3032,7 @@ msgstr "操作系统"
 
 #: ../console/frontend/public/components/cloud-services/catalog-source.tsx:163
 msgid "Operator Catalog Sources"
-msgstr "目录源"
+msgstr "Operator Catalog源"
 
 #: ../console/frontend/public/components/cloud-services/clusterserviceversion.tsx:85
 msgid "Operator Lifecycle Manager not enabled for this namespace"
@@ -3044,7 +3046,7 @@ msgstr "操作控制器"
 #: ../console/frontend/public/components/cluster-settings/ldap.jsx:102
 #: ../console/frontend/public/components/cluster-settings/ldap.jsx:140
 msgid "Optional filter to apply when searching the directory."
-msgstr "搜索目录时要应用的可选过滤器。"
+msgstr "用于搜索directory的可选过滤器。"
 
 #: ../console/frontend/public/components/secrets/create-secret.tsx:254
 msgid "Optional username for Git authentication."
@@ -3076,7 +3078,7 @@ msgstr "输出到"
 #: ../console/frontend/public/components/namespace.jsx:192
 #: ../console/frontend/public/components/utils/vertnav.jsx:31
 msgid "Overview"
-msgstr "概述"
+msgstr "概况"
 
 #: ../console/frontend/public/components/utils/details-page.tsx:23
 msgid "Owner"
@@ -3093,11 +3095,11 @@ msgstr "包"
 
 #: ../console/frontend/public/components/cloud-services/catalog-source.tsx:166
 msgid "Packages by name"
-msgstr "按名称"
+msgstr "包 按名称"
 
 #: ../console/frontend/public/components/error.jsx:59
 msgid "Page Not Found (404)"
-msgstr "找不到页（404）"
+msgstr "找不到该页面（404）"
 
 #: ../console/frontend/public/components/cron-job.jsx:60
 #: ../console/frontend/public/components/job.jsx:60
@@ -3235,7 +3237,7 @@ msgstr "Pod标签"
 
 #: ../console/frontend/public/components/pod.jsx:173
 msgid "Pod Overview"
-msgstr "Pod概述"
+msgstr "Pod概况"
 
 #: ../console/frontend/public/components/service.jsx:86
 msgid "Pod Port or Name"
@@ -3318,7 +3320,7 @@ msgstr "用于Git身份验证的私有SSH密钥文件。"
 #: ../console/frontend/public/components/profile.jsx:26
 #: ../console/frontend/public/components/profile.jsx:28
 msgid "Profile"
-msgstr "概述"
+msgstr "概况"
 
 #: ../console/frontend/public/components/deployment.jsx:76
 msgid "Progress Deadline"
@@ -3488,45 +3490,45 @@ msgstr "删除订阅..."
 
 #: ../console/frontend/public/components/clusters.tsx:29
 msgid "Replica Cluster"
-msgstr "副本集群"
+msgstr "Replica集群"
 
 #: ../console/frontend/public/models/index.ts:228
 msgid "Replica Set"
-msgstr "副本集"
+msgstr "Replica Set"
 
 #: ../console/frontend/public/components/replicaset.jsx:14
 msgid "Replica Set Overview"
-msgstr "副本集概况"
+msgstr "Replica Set概况"
 
 #: ../console/frontend/public/components/nav.jsx:419
 #: ../console/frontend/public/models/index.ts:238
 msgid "Replica Sets"
-msgstr "副本集"
+msgstr ""
 
 #: ../console/frontend/public/components/alert-manager.jsx:62
 msgid "Replicas"
-msgstr "副本集"
+msgstr ""
 
 #: ../console/frontend/public/components/replicaset.jsx:38
 msgid "ReplicaSet Details"
-msgstr "副本集详细信息"
+msgstr "ReplicaSet详细信息"
 
 #: ../console/frontend/public/models/index.ts:191
 msgid "Replication Controller"
-msgstr "副本控制器"
+msgstr ""
 
 #: ../console/frontend/public/components/replication-controller.jsx:12
 msgid "Replication Controller Overview"
-msgstr "副本控制器详细信息"
+msgstr "Replication Controller概况"
 
 #: ../console/frontend/public/components/nav.jsx:420
 #: ../console/frontend/public/models/index.ts:199
 msgid "Replication Controllers"
-msgstr "副本控制器"
+msgstr ""
 
 #: ../console/frontend/public/components/replication-controller.jsx:37
 msgid "ReplicationController Details"
-msgstr "副本控制器详细信息"
+msgstr "Replication Controller详细信息"
 
 #: ../console/frontend/public/components/chargeback.tsx:305
 #: ../console/frontend/public/components/chargeback.tsx:313
@@ -3609,7 +3611,7 @@ msgstr "资源配额"
 
 #: ../console/frontend/public/components/resource-quota.jsx:26
 msgid "Resource Quota Overview"
-msgstr "资源配额概述"
+msgstr "资源配额概况"
 
 #: ../console/frontend/public/components/nav.jsx:453
 #: ../console/frontend/public/models/index.ts:618
@@ -3714,7 +3716,7 @@ msgstr "角色绑定"
 #: ../console/frontend/public/components/RBAC/bindings.jsx:145
 #: ../console/frontend/public/components/RBAC/role.jsx:146
 msgid "Role Bindings by role or subject"
-msgstr "角色绑定 通过角色或subject"
+msgstr "角色绑定 按角色或subject"
 
 #: ../console/frontend/public/components/RBAC/bindings.jsx:492
 #: ../console/frontend/public/components/RBAC/role.jsx:72
@@ -3723,7 +3725,7 @@ msgstr "角色名称"
 
 #: ../console/frontend/public/components/RBAC/role.jsx:68
 msgid "Role Overview"
-msgstr "角色概述"
+msgstr "角色概况"
 
 #: ../console/frontend/public/components/RBAC/bindings.jsx:82
 msgid "Role Ref"
@@ -3736,7 +3738,7 @@ msgstr "角色"
 
 #: ../console/frontend/public/components/RBAC/role.jsx:181
 msgid "Roles by name"
-msgstr "角色 通过名称"
+msgstr "角色 按名称"
 
 #: ../console/frontend/public/components/RBAC/bindings.jsx:121
 msgid ""
@@ -3765,7 +3767,7 @@ msgstr "路由"
 
 #: ../console/frontend/public/components/routes.tsx:229
 msgid "Route Overview"
-msgstr "路由概述"
+msgstr "路由概况"
 
 #: ../console/frontend/public/components/nav.jsx:426
 #: ../console/frontend/public/models/index.ts:423
@@ -3780,7 +3782,7 @@ msgstr "规则"
 
 #: ../console/frontend/public/components/RBAC/role.jsx:99
 msgid "Rules by action or resource"
-msgstr "规则 通过 动作或资源"
+msgstr "规则 按动作或资源"
 
 #: ../console/frontend/public/components/chargeback.tsx:93
 msgid "Run Immediately?"
@@ -3929,7 +3931,7 @@ msgstr "有关如何在Tectonic Cluster上安装Chargeback Report，请参阅您
 msgid ""
 "See our documention for instructions on how to install Multi-Cluster "
 "Directory on your Tectonic Cluster."
-msgstr "有关如何在Tectonic Cluster上安装多集群目录，请参阅您的文档。"
+msgstr "有关如何在Tectonic Cluster上安装多集群Directory，请参阅您的文档。"
 
 #: ../console/frontend/public/components/namespace.jsx:281
 msgid "Select"
@@ -3982,7 +3984,7 @@ msgstr "服务账户"
 
 #: ../console/frontend/public/components/service-account.jsx:102
 msgid "Service Account Overview"
-msgstr "服务账户概述"
+msgstr "服务账户概况"
 
 #: ../console/frontend/public/components/secret.jsx:143
 #: ../console/frontend/public/components/secret.jsx:53
@@ -4008,7 +4010,7 @@ msgstr "服务绑定"
 
 #: ../console/frontend/public/components/masthead.tsx:115
 msgid "Service Catalog"
-msgstr "服务目录"
+msgstr "服务Catalog"
 
 #: ../console/frontend/public/models/index.ts:714
 msgid "Service Instance"
@@ -4032,7 +4034,7 @@ msgstr "服务监控"
 
 #: ../console/frontend/public/components/service.jsx:115
 msgid "Service Overview"
-msgstr "服务概述"
+msgstr "服务概况"
 
 #: ../console/frontend/public/components/ingress.jsx:60
 msgid "Service Port"
@@ -4255,7 +4257,7 @@ msgstr "存储类"
 
 #: ../console/frontend/public/components/storage-class.tsx:43
 msgid "StorageClass Overview"
-msgstr "存储类概述"
+msgstr "存储类概况"
 
 #: ../console/frontend/public/components/channel-operators/app-version.jsx:88
 msgid "Strategy"
@@ -4298,7 +4300,7 @@ msgstr "订阅"
 
 #: ../console/frontend/public/components/cloud-services/subscription.tsx:89
 msgid "Subscription Overview"
-msgstr "订阅概述"
+msgstr "订阅概况"
 
 #: ../console/frontend/public/components/cloud-services/catalog-source.tsx:37
 #: ../console/frontend/public/components/cloud-services/install-plan.tsx:19
@@ -4409,7 +4411,7 @@ msgstr "检测结果"
 
 #: ../console/frontend/public/components/cloud-services/catalog-source.tsx:80
 msgid "The catalog author has not added any packages."
-msgstr "目录管理员未添加任何包。"
+msgstr "Catalog作者未添加任何包。"
 
 #: ../console/frontend/public/components/cluster-overview.jsx:32
 msgid "The console service cannot be reached"
@@ -4418,7 +4420,7 @@ msgstr "无法连接控制台"
 #: ../console/frontend/public/components/cloud-services/catalog-source.tsx:109
 #: ../console/frontend/public/components/cloud-services/catalog-source.tsx:155
 msgid "The contents of the catalog source could not be retrieved."
-msgstr "无法检索目录源的内容。"
+msgstr "无法检索catalog源的内容。"
 
 #: ../console/frontend/public/components/build.tsx:130
 msgid "The environment variable editor does not support build strategy:"
@@ -4601,11 +4603,11 @@ msgstr "令牌上次使用"
 
 #: ../console/frontend/public/components/cluster-health.jsx:139
 msgid "Top 10 Pod Memory"
-msgstr "前10个Pod内存"
+msgstr "排名前10的Pod内存"
 
 #: ../console/frontend/public/components/cluster-health.jsx:142
 msgid "Top 10 Pod Memory (non-system)"
-msgstr "前10个内存（非系统）"
+msgstr "排名前10的内存（非系统）"
 
 #: ../console/frontend/public/components/cluster-health.jsx:24
 #: ../console/frontend/public/components/cluster-health.jsx:35
@@ -4940,7 +4942,7 @@ msgstr "查看全部"
 
 #: ../console/frontend/public/components/cloud-services/catalog-source.tsx:149
 msgid "View catalog details"
-msgstr "查看目录详细信息"
+msgstr "查看catalog详细信息"
 
 #: ../console/frontend/public/components/cloud-services/catalog-source.tsx:187
 msgid "View Contents..."
@@ -4987,7 +4989,7 @@ msgstr "卷允许将数据作为pod的文件共享"
 
 #: ../console/frontend/public/components/secret.jsx:131
 msgid "Webhook Secret"
-msgstr "Webhook Secret"
+msgstr ""
 
 #: ../console/frontend/public/components/secrets/create-secret.tsx:163
 msgid "Webhook Secret Key"
@@ -5047,7 +5049,7 @@ msgstr "工作路径"
 
 #: ../console/frontend/public/components/nav.jsx:407
 msgid "Workloads"
-msgstr "应用容器"
+msgstr ""
 
 #: ../console/frontend/public/components/utils/vertnav.jsx:46
 msgid "YAML"

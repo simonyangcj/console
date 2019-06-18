@@ -71,10 +71,6 @@ msgstr ""
 msgid "%s years from now"
 msgstr ""
 
-#: ../console/frontend/public/components/RBAC/bindings.jsx:56
-msgid "`Edit %s Subject..."
-msgstr ""
-
 #: ../console/frontend/public/components/cloud-services/subscription.tsx:174
 msgid "0 installed"
 msgstr ""
@@ -1460,6 +1456,10 @@ msgstr ""
 #: ../console/frontend/public/components/utils/cog.tsx:31
 #: ../console/frontend/public/components/utils/cog.tsx:63
 msgid "Edit"
+msgstr ""
+
+#: ../console/frontend/public/components/RBAC/bindings.jsx:56
+msgid "Edit %s Subject..."
 msgstr ""
 
 #: ../console/frontend/public/components/modals/tags.jsx:72
